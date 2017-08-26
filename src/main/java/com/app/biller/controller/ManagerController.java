@@ -1,4 +1,4 @@
-package com.ibm.biller.controller;
+package com.app.biller.controller;
 
 import java.util.ArrayList;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ibm.biller.model.ILCData;
-import com.ibm.biller.services.DataValidationService;
+import com.app.biller.model.ILCData;
+import com.app.biller.services.DataValidationService;
 
 @Controller
 @RequestMapping("/manage")

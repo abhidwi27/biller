@@ -1,4 +1,4 @@
-package com.ibm.biller;
+package com.app.biller;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

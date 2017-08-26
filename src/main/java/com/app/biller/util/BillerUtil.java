@@ -1,4 +1,4 @@
-package com.ibm.biller.util;
+package com.app.biller.util;
 
 import java.text.DateFormat;
 import java.text.ParseException;

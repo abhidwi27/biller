@@ -1,4 +1,4 @@
-package com.ibm.biller.controller;
+package com.app.biller.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.ibm.biller.model.User;
-import com.ibm.biller.services.LoginService;
-import com.ibm.biller.view.LoginBean;
+import com.app.biller.model.User;
+import com.app.biller.services.LoginService;
+import com.app.biller.view.LoginBean;
 
 @Controller
 @SessionAttributes("userObj")

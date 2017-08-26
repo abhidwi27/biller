@@ -1,12 +1,12 @@
-package com.ibm.biller.services;
+package com.app.biller.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ibm.biller.dao.UserDao;
-import com.ibm.biller.model.User;
+import com.app.biller.dao.UserDao;
+import com.app.biller.model.User;
 
 @Service
 public class LoginServiceImpl implements LoginService {
