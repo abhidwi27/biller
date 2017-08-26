@@ -1,4 +1,4 @@
-package com.ibm.biller.model;
+package com.app.biller.model;
 
 import org.springframework.stereotype.Component;
 

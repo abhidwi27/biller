@@ -1,4 +1,4 @@
-package com.ibm.biller.services;
+package com.app.biller.services;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,8 +23,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.ibm.biller.dao.ILCDataDao;
-import com.ibm.biller.model.ILCData;
+import com.app.biller.dao.ILCDataDao;
+import com.app.biller.model.ILCData;
 import com.microsoft.schemas.office.visio.x2012.main.CellType;
 
 @Component

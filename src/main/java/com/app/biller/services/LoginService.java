@@ -1,6 +1,6 @@
-package com.ibm.biller.services;
+package com.app.biller.services;
 
-import com.ibm.biller.model.User;
+import com.app.biller.model.User;
 
 public interface LoginService {
 	

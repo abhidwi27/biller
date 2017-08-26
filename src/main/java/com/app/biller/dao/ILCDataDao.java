@@ -1,9 +1,9 @@
-package com.ibm.biller.dao;
+package com.app.biller.dao;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ibm.biller.model.ILCData;
+import com.app.biller.model.ILCData;
 
 public interface ILCDataDao {
 

@@ -1,4 +1,5 @@
-package com.ibm.biller;
+package com.app.biller;
+
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

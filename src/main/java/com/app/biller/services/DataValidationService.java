@@ -1,11 +1,11 @@
-package com.ibm.biller.services;
+package com.app.biller.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.ui.Model;
 
-import com.ibm.biller.model.ILCData;
+import com.app.biller.model.ILCData;
 
 public interface DataValidationService {
 	public ArrayList<ILCData> readILCData();

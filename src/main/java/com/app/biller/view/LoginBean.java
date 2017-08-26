@@ -1,4 +1,4 @@
-package com.ibm.biller.view;
+package com.app.biller.view;
 
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.ibm.biller.dao;
+package com.app.biller.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,7 +14,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.ibm.biller.model.User;
+import com.app.biller.model.User;
 
 @Repository("userDao")
 public class UserDaoImpl implements UserDao {

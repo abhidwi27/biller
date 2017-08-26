@@ -1,4 +1,4 @@
-package com.ibm.biller.services;
+package com.app.biller.services;
 
 import java.util.ArrayList;
 
@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.ibm.biller.dao.ILCDataDao;
-import com.ibm.biller.model.ILCData;
+import com.app.biller.dao.ILCDataDao;
+import com.app.biller.model.ILCData;
 
 @Component
 public class DataValidationServiceImpl implements DataValidationService {

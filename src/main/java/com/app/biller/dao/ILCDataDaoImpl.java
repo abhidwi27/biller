@@ -1,4 +1,4 @@
-package com.ibm.biller.dao;
+package com.app.biller.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,8 +18,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.ibm.biller.model.ILCData;
-import com.ibm.biller.util.BillerUtil;
+import com.app.biller.model.ILCData;
+import com.app.biller.util.BillerUtil;
 
 @Repository("ilcDataDao")
 public class ILCDataDaoImpl implements ILCDataDao {

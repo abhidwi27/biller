@@ -1,4 +1,4 @@
-package com.ibm.biller.services;
+package com.app.biller.services;
 
 public interface SystemAdminService {
 	String unlockData(String billCycle);
