@@ -2,6 +2,8 @@ package com.app.biller.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.app.biller.model.ILCData;
+import com.app.biller.model.User;
 import com.app.biller.services.DataValidationService;
+import com.app.biller.services.EmailService;
 
 @Controller
 @RequestMapping("/manage")
@@ -24,17 +28,15 @@ public class ManagerController {
 	@Autowired
 	DataValidationService dataValidationService;
 
+	@Autowired
+	EmailService emailService;
+
 	@RequestMapping(path = "/read.do", method = RequestMethod.GET)
 	public ModelAndView readILCData() {
-		logger.info("in read ilc data...");
-		ArrayList<ILCData> ilcDataList = dataValidationService.readILCData();
-		logger.info("ilc data list size is in controller: " + ilcDataList.size());
-		//String myname = "Abhishek";
-		
+		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) dataValidationService.readILCData();
 		ModelAndView mv = new ModelAndView("Data");
 		mv.addObject("ilcDataList", ilcDataList);
-		//mv.addObject("myname", myname);
-		logger.info("viewname issss: "+mv.getViewName());
+		// mv.addObject("myname", myname);
 		return mv;
 
 		// model.addAttribute("ilcDataList", ilcDataList);
@@ -47,10 +49,20 @@ public class ManagerController {
 		return dataValidationService.updateILCData(userId);
 	}
 
-	@RequestMapping(path = "/signoff.do", method = RequestMethod.POST)
+	@RequestMapping(path = "/signoff.do", method = RequestMethod.GET)
 	@ResponseBody
-	public String signoffILCData(@RequestParam("userID") String userId) {
-		return dataValidationService.signoffILCData(userId);
+	public String signoffILCData(HttpSession userSession) {
+		User loggedUser = (User) userSession.getAttribute("userObj");
+		String userId = loggedUser.getUserID();
+		String signOff = dataValidationService.signoffILCData(userId);
+		if (signOff.equalsIgnoreCase("success")) {
+			sendSignOffMail(userId);
+		}
+		return "approved";
+	}
+
+	private void sendSignOffMail(String userId) {
+		emailService.sendEmail(userId);
 	}
 
 }

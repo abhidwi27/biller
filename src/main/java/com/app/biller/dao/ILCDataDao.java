@@ -9,5 +9,5 @@ public interface ILCDataDao {
 
 	void insertILCData(ArrayList<ILCData> ilcModelList, String billCycle, String billCycleType, String userId);
 	
-	ArrayList<ILCData> readILCData();
+	List<ILCData> readILCData();
 }

@@ -40,11 +40,11 @@ public class LoginController {
 		if (loginBean != null && loginBean.getUserId() != null & loginBean.getPassword() != null) {
 			user = loginService.validateCredentials(loginBean.getUserId(), loginBean.getPassword());
 			if (user != null) {
-				logger.info("Logged in User: " + user.getName());
+//				logger.info("Logged in User: " + user.getName());
 				model.addAttribute("userObj", user);
 				viewName = loginService.getUserHome(user.getRoleID());
 				if(viewName.equalsIgnoreCase("Data")){
-					logger.info("User View Name: " + viewName);
+//					logger.info("User View Name: " + viewName);
 					return "redirect:/manage/read.do";
 				}
 				return viewName;

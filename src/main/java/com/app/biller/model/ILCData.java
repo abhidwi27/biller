@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ILCData {
 
+	//TODO: Change variables to camelCase and do necessary changes.
 	private int seqID;	
 	private String EmpID;
 	private String EmpName;
