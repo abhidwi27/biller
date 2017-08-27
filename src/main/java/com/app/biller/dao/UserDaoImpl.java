@@ -67,9 +67,9 @@ public class UserDaoImpl implements UserDao {
 			@Override
 			public User mapRow(ResultSet rs, int rownumber) throws SQLException {
 				User usr = new User();
-				usr.setUserID(rs.getString("userID"));
-				usr.setName(rs.getString("firstName") + " " + rs.getString("lastName"));
-				usr.setRoleID(rs.getInt("roleid"));
+				usr.setUserID(rs.getString("user_id"));
+				usr.setName(rs.getString("first_name"));
+				usr.setRoleID(rs.getInt("role_id"));
 				return usr;
 			}
 		});

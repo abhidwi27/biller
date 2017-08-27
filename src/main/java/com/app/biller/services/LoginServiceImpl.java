@@ -25,25 +25,24 @@ public class LoginServiceImpl implements LoginService {
 		return user;
 	}
 
-	//TODO: Use this method to get User Home based on Role
 	@Override
 	public String getUserHome(int roleID) {
 		logger.info("Role is " + roleID);
 		String viewName = "Data";
-		switch (roleID) {		 
-		   case	1:
-		   case 2:
-		   case 3:
-		   case 4:
-		   case 5:
-		   case 6:
-			   viewName = "Data";
-				break;
-		   case 7:
-		   case 8:
-			   viewName = "Home";
-				break;			   
-		 }   		
+		switch (roleID) {
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+			viewName = "Data";
+			break;
+		case 7:
+		case 8:
+			viewName = "Home";
+			break;
+		}
 		return viewName;
 	}
 }

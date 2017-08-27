@@ -4,7 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -35,7 +34,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	@Value("${PMO_INSERT_ILC_DATA_SIGN}")
 	private String insertIlcDataSign;
 
-	@Value("${MANAGE_READ_ILC_DATA}")
+	@Value("${MANAGE_FETCH_ILC_DATA}")
 	private String readIlcData;
 
 	private JdbcTemplate jdbcTemplate;
@@ -48,60 +47,60 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	@Override
 	public ArrayList<ILCData> readILCData() {
 		
-		logger.info("read ilc data query is: "+readIlcData);
+//		logger.info("read ilc data query is: "+readIlcData);
 
 		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(readIlcData, new RowMapper<ILCData>() {
 			@Override
 			public ILCData mapRow(ResultSet rs, int rownumber) throws SQLException {
 				ILCData ilcModel = new ILCData();
-				ilcModel.setSeqID(Integer.parseInt(rs.getString("SeqID")));
-				ilcModel.setEmpID(rs.getString("EmpID"));
-				ilcModel.setEmpName(rs.getString("EmpName"));
-				ilcModel.setClaimCode(rs.getString("ClaimCode"));
-				ilcModel.setActivity(rs.getString("Activity"));
-				ilcModel.setWeekEndDate(rs.getString("WeekEndDate"));
-				ilcModel.setTotHrs(Integer.parseInt(rs.getString("TotHrs")));
-				ilcModel.setShiftType(rs.getString("ShiftType"));
-				ilcModel.setUsInd(rs.getString("UsInd"));
-				ilcModel.setOnOffShore(rs.getString("OnOffshore"));
-				ilcModel.setBillingType(rs.getString("BillingType"));
-				ilcModel.setCategory(rs.getString("Category"));
-				ilcModel.setBam(rs.getString("Bam"));
-				ilcModel.setAppArea(rs.getString("AppArea"));
-				ilcModel.setBusinessArea(rs.getString("BusinessArea"));
-				ilcModel.setMonth(rs.getString("Month"));
-				ilcModel.setQuarter(rs.getString("Quarter"));
-				ilcModel.setDm(rs.getString("Dm"));
-				ilcModel.setAsm(rs.getString("Asm"));
-				ilcModel.setAsd(rs.getString("Asd"));
-				ilcModel.setWrNo(rs.getString("WrNo"));
-				ilcModel.setIsTicket(rs.getString("IsTicket"));
-				ilcModel.setStaffType(rs.getString("StaffType"));
-				ilcModel.setIsCTC(rs.getString("IsCTC"));
-				ilcModel.setIsRTC(rs.getString("IsRTC"));
-				ilcModel.setPlannedHrs(Integer.parseInt(rs.getString("PlannedHrs")));
-				ilcModel.setIsBillable(rs.getString("IsBillable"));
-				ilcModel.setRemarks(rs.getString("Remarks"));
-				ilcModel.setCtcOrRtc(rs.getString("CtcOrRtc"));
-				ilcModel.setWorkType(rs.getString("WorkType"));
-				ilcModel.setWrDesc(rs.getString("WrDesc"));
-				ilcModel.setCostCenter(rs.getString("CostCenter"));
-				ilcModel.setCategory2(rs.getString("Category2"));
-				ilcModel.setOnOffLanded(rs.getString("OnOffLanded"));
-				ilcModel.setTower(rs.getString("Tower"));
-				ilcModel.setAsmItwr(rs.getString("AsmItwr"));
-				ilcModel.setAsdItwr(rs.getString("AsdItwr"));
-				ilcModel.setItwrActual(Integer.parseInt(rs.getString("ItwrActual")));
-				ilcModel.setGroupType(rs.getString("GroupType"));
-				ilcModel.setVendorClass(rs.getString("VendorClass"));
-				ilcModel.setWrIncDef(rs.getString("WrIncDef"));
-				ilcModel.setBillCycle(rs.getString("billCycle"));
+				ilcModel.setSeqID(Integer.parseInt(rs.getString("seq_id")));
+				ilcModel.setEmpID(rs.getString("emp_id"));
+				ilcModel.setEmpName(rs.getString("emp_name"));
+				ilcModel.setClaimCode(rs.getString("claim_code"));
+				ilcModel.setActivity(rs.getString("activity"));
+				ilcModel.setWeekEndDate(rs.getString("weekend_date"));
+				ilcModel.setTotHrs(Integer.parseInt(rs.getString("total_hours")));
+				ilcModel.setShiftType(rs.getString("shift_type"));
+				ilcModel.setUsInd(rs.getString("us_ind"));
+				ilcModel.setOnOffShore(rs.getString("on_off_shore"));
+				ilcModel.setBillingType(rs.getString("billing_type"));
+				ilcModel.setCategory(rs.getString("category"));
+				ilcModel.setBam(rs.getString("bam"));
+				ilcModel.setAppArea(rs.getString("app_area"));
+				ilcModel.setBusinessArea(rs.getString("business_area"));
+				ilcModel.setMonth(rs.getString("month"));
+				ilcModel.setQuarter(rs.getString("quarter"));
+				ilcModel.setDm(rs.getString("dm"));
+				ilcModel.setAsm(rs.getString("asm"));
+				ilcModel.setAsd(rs.getString("asd"));
+				ilcModel.setWrNo(rs.getString("wr_no"));
+				ilcModel.setIsTicket(rs.getString("is_ticket"));
+				ilcModel.setStaffType(rs.getString("staff_type"));
+				ilcModel.setIsCTC(rs.getString("is_ctc"));
+				ilcModel.setIsRTC(rs.getString("is_rtc"));
+				ilcModel.setPlannedHrs(Integer.parseInt(rs.getString("planned_hours")));
+				ilcModel.setIsBillable(rs.getString("is_billable"));
+				ilcModel.setRemarks(rs.getString("remarks"));
+				ilcModel.setCtcOrRtc(rs.getString("ctc_or_rtc"));
+				ilcModel.setWorkType(rs.getString("work_type"));
+				ilcModel.setWrDesc(rs.getString("wr_desc"));
+				ilcModel.setCostCenter(rs.getString("cost_center"));
+				ilcModel.setCategory2(rs.getString("category2"));
+				ilcModel.setOnOffLanded(rs.getString("on_off_landed"));
+				ilcModel.setTower(rs.getString("tower"));
+				ilcModel.setAsmItwr(rs.getString("asm_itwr"));
+				ilcModel.setAsdItwr(rs.getString("asd_itwr"));
+				ilcModel.setItwrActual(Integer.parseInt(rs.getString("itwr_actual")));
+				ilcModel.setGroupType(rs.getString("group_type"));
+				ilcModel.setVendorClass(rs.getString("vendor_class"));
+				ilcModel.setWrIncDef(rs.getString("wr_inc_def"));
+				ilcModel.setBillCycle(rs.getString("bill_cycle"));
 
 				return ilcModel;
 			}
 		});
 		
-		logger.info("ilc data list size is: "+ilcDataList.size());
+//		logger.info("ilc data list size is: "+ilcDataList.size());
 		return ilcDataList;
 	}
 
