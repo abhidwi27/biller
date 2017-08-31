@@ -13,7 +13,7 @@ import com.app.biller.model.User;
 import com.app.biller.model.UserApproval;
 
 @Service
-public class DataApprovalServiceImpl {
+public class DataApprovalServiceImpl implements DataApprovalService {
 
 	@Autowired
 	UserApprovalDao userApprovalDao;
@@ -80,6 +80,24 @@ public class DataApprovalServiceImpl {
 
 	public GroupApproval getGroupApprovals(String billCycle) {
 		return groupApprovalDao.getGroupApprovals(billCycle);
+	}
+
+	@Override
+	public int getPendingApprvoalByRole(String billCycle, int roleID) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean setUserApproval(String billCycle, String userID, int roleID) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void updateGroupApproval(String billCycle, String columnName, int status) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

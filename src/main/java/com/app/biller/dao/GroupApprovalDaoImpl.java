@@ -11,7 +11,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 import com.app.biller.model.GroupApproval;
 
-@Repository("groupApproval")
+@Repository("groupApprovalDao")
 public class GroupApprovalDaoImpl implements GroupApprovalDao {
 
 	@Value("${ALLGROUP_APPROVAL}")

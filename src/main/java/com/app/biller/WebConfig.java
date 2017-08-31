@@ -1,6 +1,5 @@
 package com.app.biller;
 
-
 import java.util.Properties;
 
 import org.springframework.context.annotation.Bean;
@@ -32,26 +31,26 @@ public class WebConfig {
 		multipartResolver.setMaxUploadSize(20848820);
 		return multipartResolver;
 	}
-	
+
 	@Bean
-	public JavaMailSender getMailSender(){
-		
+	public JavaMailSender getMailSender() {
+
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-		
-		//GMAIL SMTP Configuration
+
+		// GMAIL SMTP Configuration
 		mailSender.setHost("smtp.gmail.com");
 		mailSender.setPort(587);
 		mailSender.setUsername("user_gmail_id");
 		mailSender.setPassword("user_gmail_password");
-		
+
 		Properties javaMailProperties = new Properties();
 		javaMailProperties.put("mail.smtp.starttls.enable", "true");
 		javaMailProperties.put("mail.smtp.auth", "true");
 		javaMailProperties.put("mail.transport.protocol", "smtp");
-		javaMailProperties.put("mail.debug", "true");		
-		
+		javaMailProperties.put("mail.debug", "true");
+
 		mailSender.setJavaMailProperties(javaMailProperties);
-		
+
 		return mailSender;
 	}
 }

@@ -1,5 +1,7 @@
 package com.app.biller.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +37,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
-	public String authenticateUser(Model model, @ModelAttribute("loginBean") LoginBean loginBean) {
+	public String login(Model model, @ModelAttribute("loginBean") LoginBean loginBean) {
 		String viewName = LOGIN_VIEW;
 		if (loginBean != null && loginBean.getUserId() != null & loginBean.getPassword() != null) {
 			user = loginService.validateCredentials(loginBean.getUserId(), loginBean.getPassword());
@@ -57,4 +59,11 @@ public class LoginController {
 		}
 		return viewName;
 	}
+	
+	@RequestMapping(value = "/logout.do", method = RequestMethod.GET)
+    public String logout(HttpSession userSession ) {
+		userSession.removeAttribute("userProfile");
+		userSession.invalidate();
+       return LOGIN_VIEW;
+    }
 }
