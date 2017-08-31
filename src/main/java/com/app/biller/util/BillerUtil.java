@@ -5,19 +5,29 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class BillerUtil {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.app.biller.controller.PmoController;
+
+public final class BillerUtil {
+	
+	private static final Logger logger = LoggerFactory.getLogger(BillerUtil.class);
+	
+	private BillerUtil() {		
+	}
 
 	public static String getDateStr(String date) {
-		String formattedDateStr = "";
+		String formattedDate = "";
 		try {
 			DateFormat sourceDateFormat = new SimpleDateFormat("mm/dd/yyyy");
 			Date parsedDate = sourceDateFormat.parse(date);
 			DateFormat targetDateFormat = new SimpleDateFormat("yyyy-mm-dd");
-			formattedDateStr = targetDateFormat.format(parsedDate);
+			formattedDate = targetDateFormat.format(parsedDate);
 
 		} catch (ParseException e) {
-			System.out.println(e);
+			logger.info(e.getStackTrace().toString());
 		}
-		return formattedDateStr;
+		return formattedDate;
 	}
 }

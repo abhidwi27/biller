@@ -4,9 +4,9 @@ import com.app.biller.model.User;
 
 public interface LoginService {
 
-	User validateCredentials(String userid, String password);
+	User validateCredentials(String userID, String password);
 
-	String getUserHome(int RoleID);
+	String getUserHome(int roleID);
 
 	// String resetUserPassword(String userid, String newpassword);
 }

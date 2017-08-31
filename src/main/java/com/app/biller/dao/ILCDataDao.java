@@ -7,7 +7,9 @@ import com.app.biller.model.ILCData;
 
 public interface ILCDataDao {
 
-	void insertILCData(ArrayList<ILCData> ilcModelList, String billCycle, String billCycleType, String userId);
+	void createILCData(ArrayList<ILCData> ilcModelList, String billCycle, String userId);	
 	
-	List<ILCData> readILCData();
+	List<ILCData> readILCData(String billCycle, String towerID);
+	
+	List<ILCData> readCustomILCData(String billCycle, String towerID, String weekEndDate[], String wrNo[], String empID[], String modifiedBy[]);
 }

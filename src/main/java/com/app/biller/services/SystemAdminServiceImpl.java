@@ -10,7 +10,7 @@ public class SystemAdminServiceImpl implements SystemAdminService {
 	private static final Logger logger = LoggerFactory.getLogger(SystemAdminServiceImpl.class);
 
 	@Override
-	public String unlockData(String billCycle) {
+	public String unLockData(String billCycle) {
 		return null;
 	}	
 }

@@ -17,10 +17,10 @@ public class LoginServiceImpl implements LoginService {
 	UserDao userDao;
 
 	@Override
-	public User validateCredentials(String userid, String userPassword) {
+	public User validateCredentials(String userID, String userPassword) {
 		User user = null;
-		if (userPassword.equals(userDao.getPassword(userid))) {
-			user = userDao.createUserProfile(userid);
+		if (userPassword.equals(userDao.getPassword(userID))) {
+			user = userDao.createUserProfile(userID);
 		}
 		return user;
 	}

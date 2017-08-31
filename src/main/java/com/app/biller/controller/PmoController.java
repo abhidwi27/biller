@@ -1,5 +1,8 @@
 package com.app.biller.controller;
 
+import static com.app.biller.util.BillerHelper.getUserProfile;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -28,45 +31,44 @@ public class PmoController {
 
 	@Autowired
 	DataLoadService dataLoadService;
-	
+
 	@Autowired
 	DataValidationService dataValidationService;
-	
+
 	@RequestMapping(method = RequestMethod.GET)
 	public String showHome() {
 		return "Home";
 	}
 
-	@RequestMapping(value="/upload.do", method = RequestMethod.POST)
+	@RequestMapping(value = "/upload.do", method = RequestMethod.POST)
 	@ResponseBody
-	public String uploadFiles(MultipartHttpServletRequest request, HttpSession userSession) {
-		//String billCycle = (String) request.getAttribute("billCycle");
-		//String dataType = (String) request.getAttribute("billCycleType");
-		//ToDo: Fetch billCycle and dataType from UI. Setting here until then.
-		String billCycle = "082017";
-		String dataType = "0";
-		String status = dataLoadService.uploadFiles(request);		
-		if(status.equalsIgnoreCase("Success")){
-			User loggedUser = (User) userSession.getAttribute("userObj");
-			return dataLoadService.loadILCData(billCycle, dataType, loggedUser.getUserID());
+	public String uploadFiles(MultipartHttpServletRequest request, @RequestParam("billCycle") String billCycle, HttpSession userSession) {
+		billCycle = "082017";
+		String status = dataLoadService.uploadFiles(request);
+		if (status.equalsIgnoreCase("Success")) {
+			User userProfile = getUserProfile(userSession);
+			String userId = userProfile.getUserID();
+			return dataLoadService.loadILCData(billCycle, userId);
 		} else {
-			logger.info("status = "+status);
+			logger.info("status = " + status);
 		}
 		return "File Upload Failed";
 	}
-	
+
 	@RequestMapping(path = "/read.do", method = RequestMethod.GET)
 	@ResponseBody
-	public String readILCData(Model model) {
-		List<ILCData> ilcDataList = dataValidationService.readILCData();
+	public String readILCData(@RequestParam("billCycle") String billCycle, @RequestParam("towerID") String towerID,
+			Model model) {
+		List<ILCData> ilcDataList = dataValidationService.readILCData(billCycle, towerID);
 		model.addAttribute("ilcDataList", ilcDataList);
-		
 		return null;
 	}
 
 	@RequestMapping(path = "/update.do", method = RequestMethod.POST)
 	@ResponseBody
-	public String updateILCData(@RequestParam("userID") String userId) {
-		return dataValidationService.updateILCData(userId);
+	public String updateSLAData(@RequestParam("billCycle") String billCycle, @RequestParam("towerID") String towerID, @RequestParam("records") ArrayList records, HttpSession userSession) {
+		User userProfile = getUserProfile(userSession);
+		String userId = userProfile.getUserID();
+		return dataValidationService.updateSLAData(billCycle, towerID, userId, records);
 	}
 }

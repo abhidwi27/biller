@@ -26,7 +26,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Value("${LOGIN_FETCH_PASSWORD}")
 	private String fetchPassword;
-	
+
 	@Value("${LOGIN_SET_PASSWORD}")
 	private String setPassword;
 
@@ -75,5 +75,4 @@ public class UserDaoImpl implements UserDao {
 		});
 		return user;
 	}
-
 }

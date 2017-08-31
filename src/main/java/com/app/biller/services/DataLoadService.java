@@ -3,7 +3,10 @@ package com.app.biller.services;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 public interface DataLoadService {
-	public String uploadFiles(MultipartHttpServletRequest request);
-	
-	public String loadILCData(String billCycle, String billCycleType, String userId);
+
+	String uploadFiles(MultipartHttpServletRequest request);
+
+	String loadILCData(String billCycle, String userId);
+
+	String loadSLAData(String billCycle, String userId);
 }

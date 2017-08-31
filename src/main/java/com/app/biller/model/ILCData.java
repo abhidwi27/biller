@@ -5,301 +5,383 @@ import org.springframework.stereotype.Component;
 @Component
 public class ILCData {
 
-	//TODO: Change variables to camelCase and do necessary changes.
-	private int seqID;	
-	private String EmpID;
-	private String EmpName;
-	private String ClaimCode;
-	private String Activity;
-	private String WeekEndDate;
-	private int TotHrs;
-	private String ShiftType;
-	private String UsInd;
-	private String OnOffShore;
-	private String BillingType;
-	private String Category;
-	private String Bam;
-	private String AppArea;
-	private String BusinessArea;
-	private String Month;
-	private String Quarter;
-	private String Dm;
-	private String Asm;
-	private String Asd;
-	private String WrNo;
-	private String IsTicket;
-	private String StaffType;
-	private String IsCTC;
-	private String IsRTC;
-	private int PlannedHrs;
-	private String IsBillable;
-	private String Remarks;
-	private String CtcOrRtc;
-	private String WorkType;
-	private String WrDesc;
-	private String CostCenter;
-	private String Category2;
-	private String OnOffLanded;
-	private String Tower;
-	private String AsmItwr;
-	private String AsdItwr;
-	private int ItwrActual;
-	private String GroupType;
-	private String VendorClass;
-	private String WrIncDef;
+	private String empID;
+	private String empName;
+	private String claimCode;
+	private String activity;
+	private String weekEndDate;
+	private int totHrs;
+	private String shiftType;
+	private String usInd;
+	private String onOffShore;
+	private String billingType;
+	private String category;
+	private String bam;
+	private String appArea;
+	private String businessArea;
+	private String month;
+	private String quarter;
+	private String dm;
+	private String asm;
+	private String asd;
+	private String wrNo;
+	private String isTicket;
+	private String staffType;
+	private String isCTC;
+	private String isRTC;
+	private int plannedHrs;
+	private String isBillable;
+	private String remarks;
+	private String ctcOrRtc;
+	private String workType;
+	private String wrDesc;
+	private String costCenter;
+	private String category2;
+	private String onOffLanded;
+	private String tower;
+	private String asmItwr;
+	private String asdItwr;
+	private int itwrActual;
+	private String groupType;
+	private String vendorClass;
+	private String wrIncDef;
 	private String billCycle;
+	private String createdBy;
 
-	public int getSeqID() {
-		return seqID;
-	}
-	public void setSeqID(int seqID) {
-		this.seqID = seqID;
-	}
 	public String getEmpID() {
-		return EmpID;
+		return empID;
 	}
+
 	public void setEmpID(String empID) {
-		EmpID = empID;
+		this.empID = empID;
 	}
+
 	public String getEmpName() {
-		return EmpName;
+		return empName;
 	}
+
 	public void setEmpName(String empName) {
-		EmpName = empName;
+		this.empName = empName;
 	}
+
 	public String getClaimCode() {
-		return ClaimCode;
+		return claimCode;
 	}
+
 	public void setClaimCode(String claimCode) {
-		ClaimCode = claimCode;
+		this.claimCode = claimCode;
 	}
+
 	public String getActivity() {
-		return Activity;
+		return activity;
 	}
+
 	public void setActivity(String activity) {
-		Activity = activity;
+		this.activity = activity;
 	}
+
 	public String getWeekEndDate() {
-		return WeekEndDate;
+		return weekEndDate;
 	}
+
 	public void setWeekEndDate(String weekEndDate) {
-		WeekEndDate = weekEndDate;
+		this.weekEndDate = weekEndDate;
 	}
+
 	public int getTotHrs() {
-		return TotHrs;
+		return totHrs;
 	}
+
 	public void setTotHrs(int totHrs) {
-		TotHrs = totHrs;
+		this.totHrs = totHrs;
 	}
+
 	public String getShiftType() {
-		return ShiftType;
+		return shiftType;
 	}
+
 	public void setShiftType(String shiftType) {
-		ShiftType = shiftType;
+		this.shiftType = shiftType;
 	}
+
 	public String getUsInd() {
-		return UsInd;
+		return usInd;
 	}
+
 	public void setUsInd(String usInd) {
-		UsInd = usInd;
+		this.usInd = usInd;
 	}
+
 	public String getOnOffShore() {
-		return OnOffShore;
+		return onOffShore;
 	}
+
 	public void setOnOffShore(String onOffShore) {
-		OnOffShore = onOffShore;
+		this.onOffShore = onOffShore;
 	}
+
 	public String getBillingType() {
-		return BillingType;
+		return billingType;
 	}
+
 	public void setBillingType(String billingType) {
-		BillingType = billingType;
+		this.billingType = billingType;
 	}
+
 	public String getCategory() {
-		return Category;
+		return category;
 	}
+
 	public void setCategory(String category) {
-		Category = category;
+		this.category = category;
 	}
+
 	public String getBam() {
-		return Bam;
+		return bam;
 	}
+
 	public void setBam(String bam) {
-		Bam = bam;
+		this.bam = bam;
 	}
+
 	public String getAppArea() {
-		return AppArea;
+		return appArea;
 	}
+
 	public void setAppArea(String appArea) {
-		AppArea = appArea;
+		this.appArea = appArea;
 	}
+
 	public String getBusinessArea() {
-		return BusinessArea;
+		return businessArea;
 	}
+
 	public void setBusinessArea(String businessArea) {
-		BusinessArea = businessArea;
+		this.businessArea = businessArea;
 	}
+
 	public String getMonth() {
-		return Month;
+		return month;
 	}
+
 	public void setMonth(String month) {
-		Month = month;
+		this.month = month;
 	}
+
 	public String getQuarter() {
-		return Quarter;
+		return quarter;
 	}
+
 	public void setQuarter(String quarter) {
-		Quarter = quarter;
+		this.quarter = quarter;
 	}
+
 	public String getDm() {
-		return Dm;
+		return dm;
 	}
+
 	public void setDm(String dm) {
-		Dm = dm;
+		this.dm = dm;
 	}
+
 	public String getAsm() {
-		return Asm;
+		return asm;
 	}
+
 	public void setAsm(String asm) {
-		Asm = asm;
+		this.asm = asm;
 	}
+
 	public String getAsd() {
-		return Asd;
+		return asd;
 	}
+
 	public void setAsd(String asd) {
-		Asd = asd;
+		this.asd = asd;
 	}
+
 	public String getWrNo() {
-		return WrNo;
+		return wrNo;
 	}
+
 	public void setWrNo(String wrNo) {
-		WrNo = wrNo;
+		this.wrNo = wrNo;
 	}
+
 	public String getIsTicket() {
-		return IsTicket;
+		return isTicket;
 	}
+
 	public void setIsTicket(String isTicket) {
-		IsTicket = isTicket;
+		this.isTicket = isTicket;
 	}
+
 	public String getStaffType() {
-		return StaffType;
+		return staffType;
 	}
+
 	public void setStaffType(String staffType) {
-		StaffType = staffType;
+		this.staffType = staffType;
 	}
+
 	public String getIsCTC() {
-		return IsCTC;
+		return isCTC;
 	}
+
 	public void setIsCTC(String isCTC) {
-		IsCTC = isCTC;
+		this.isCTC = isCTC;
 	}
+
 	public String getIsRTC() {
-		return IsRTC;
+		return isRTC;
 	}
+
 	public void setIsRTC(String isRTC) {
-		IsRTC = isRTC;
+		this.isRTC = isRTC;
 	}
+
 	public int getPlannedHrs() {
-		return PlannedHrs;
+		return plannedHrs;
 	}
+
 	public void setPlannedHrs(int plannedHrs) {
-		PlannedHrs = plannedHrs;
+		this.plannedHrs = plannedHrs;
 	}
+
 	public String getIsBillable() {
-		return IsBillable;
+		return isBillable;
 	}
+
 	public void setIsBillable(String isBillable) {
-		IsBillable = isBillable;
+		this.isBillable = isBillable;
 	}
+
 	public String getRemarks() {
-		return Remarks;
+		return remarks;
 	}
+
 	public void setRemarks(String remarks) {
-		Remarks = remarks;
+		this.remarks = remarks;
 	}
+
 	public String getCtcOrRtc() {
-		return CtcOrRtc;
+		return ctcOrRtc;
 	}
+
 	public void setCtcOrRtc(String ctcOrRtc) {
-		CtcOrRtc = ctcOrRtc;
+		this.ctcOrRtc = ctcOrRtc;
 	}
+
 	public String getWorkType() {
-		return WorkType;
+		return workType;
 	}
+
 	public void setWorkType(String workType) {
-		WorkType = workType;
+		this.workType = workType;
 	}
+
 	public String getWrDesc() {
-		return WrDesc;
+		return wrDesc;
 	}
+
 	public void setWrDesc(String wrDesc) {
-		WrDesc = wrDesc;
+		this.wrDesc = wrDesc;
 	}
+
 	public String getCostCenter() {
-		return CostCenter;
+		return costCenter;
 	}
+
 	public void setCostCenter(String costCenter) {
-		CostCenter = costCenter;
+		this.costCenter = costCenter;
 	}
+
 	public String getCategory2() {
-		return Category2;
+		return category2;
 	}
+
 	public void setCategory2(String category2) {
-		Category2 = category2;
+		this.category2 = category2;
 	}
+
 	public String getOnOffLanded() {
-		return OnOffLanded;
+		return onOffLanded;
 	}
+
 	public void setOnOffLanded(String onOffLanded) {
-		OnOffLanded = onOffLanded;
+		this.onOffLanded = onOffLanded;
 	}
+
 	public String getTower() {
-		return Tower;
+		return tower;
 	}
+
 	public void setTower(String tower) {
-		Tower = tower;
+		this.tower = tower;
 	}
+
 	public String getAsmItwr() {
-		return AsmItwr;
+		return asmItwr;
 	}
+
 	public void setAsmItwr(String asmItwr) {
-		AsmItwr = asmItwr;
+		this.asmItwr = asmItwr;
 	}
+
 	public String getAsdItwr() {
-		return AsdItwr;
+		return asdItwr;
 	}
+
 	public void setAsdItwr(String asdItwr) {
-		AsdItwr = asdItwr;
+		this.asdItwr = asdItwr;
 	}
+
 	public int getItwrActual() {
-		return ItwrActual;
+		return itwrActual;
 	}
+
 	public void setItwrActual(int itwrActual) {
-		ItwrActual = itwrActual;
+		this.itwrActual = itwrActual;
 	}
+
 	public String getGroupType() {
-		return GroupType;
+		return groupType;
 	}
+
 	public void setGroupType(String groupType) {
-		GroupType = groupType;
+		this.groupType = groupType;
 	}
+
 	public String getVendorClass() {
-		return VendorClass;
+		return vendorClass;
 	}
+
 	public void setVendorClass(String vendorClass) {
-		VendorClass = vendorClass;
+		this.vendorClass = vendorClass;
 	}
+
 	public String getWrIncDef() {
-		return WrIncDef;
+		return wrIncDef;
 	}
+
 	public void setWrIncDef(String wrIncDef) {
-		WrIncDef = wrIncDef;
+		this.wrIncDef = wrIncDef;
 	}
+
 	public String getBillCycle() {
 		return billCycle;
 	}
+
 	public void setBillCycle(String billCycle) {
 		this.billCycle = billCycle;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
 
 }
