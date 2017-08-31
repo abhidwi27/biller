@@ -39,7 +39,7 @@ public class AdminController {
 	@RequestMapping(value = "/unlock.do", method = RequestMethod.GET)
 	public String unlockData(HttpServletRequest request) {
 		String billCycle = (String) request.getAttribute("billCycle");
-		systemAdminService.unlockData(billCycle);
+		systemAdminService.unLockData(billCycle);
 		return null;
 	}
 }

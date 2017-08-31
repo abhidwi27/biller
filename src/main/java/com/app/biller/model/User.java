@@ -15,6 +15,7 @@ public class User implements Serializable {
 	private String userID;
 	private String name;
 	private int roleID;
+	private String roleDesc;
 	
 	public String getName() {
 		return name;
@@ -38,5 +39,13 @@ public class User implements Serializable {
 
 	public void setUserID(String userID) {
 		this.userID = userID;
+	}
+
+	public String getRoleDesc() {
+		return roleDesc;
+	}
+
+	public void setRoleDesc(String roleDesc) {
+		this.roleDesc = roleDesc;
 	}
 }

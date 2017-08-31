@@ -22,7 +22,7 @@ public class UserAdminServiceImpl implements UserAdminService {
 	}
 
 	@Override
-	public String deactiveUser() {
+	public String deActivateUser() {
 		return null;
 	}
 

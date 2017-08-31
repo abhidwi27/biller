@@ -15,7 +15,7 @@ import com.app.biller.services.LoginService;
 import com.app.biller.view.LoginBean;
 
 @Controller
-@SessionAttributes("userObj")
+@SessionAttributes("userProfile")
 public class LoginController {
 
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
@@ -41,7 +41,7 @@ public class LoginController {
 			user = loginService.validateCredentials(loginBean.getUserId(), loginBean.getPassword());
 			if (user != null) {
 //				logger.info("Logged in User: " + user.getName());
-				model.addAttribute("userObj", user);
+				model.addAttribute("userProfile", user);
 				viewName = loginService.getUserHome(user.getRoleID());
 				if(viewName.equalsIgnoreCase("Data")){
 //					logger.info("User View Name: " + viewName);
@@ -57,5 +57,4 @@ public class LoginController {
 		}
 		return viewName;
 	}
-
 }

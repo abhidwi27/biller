@@ -1,5 +1,7 @@
 package com.app.biller.controller;
 
+import static com.app.biller.util.BillerHelper.getUserProfile;
+
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
@@ -16,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.app.biller.model.ILCData;
 import com.app.biller.model.User;
+import com.app.biller.services.DataApprovalService;
 import com.app.biller.services.DataValidationService;
 import com.app.biller.services.EmailService;
 
@@ -29,11 +32,15 @@ public class ManagerController {
 	DataValidationService dataValidationService;
 
 	@Autowired
+	DataApprovalService dataApprovalService;
+
+	@Autowired
 	EmailService emailService;
 
 	@RequestMapping(path = "/read.do", method = RequestMethod.GET)
-	public ModelAndView readILCData() {
-		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) dataValidationService.readILCData();
+	public ModelAndView readILCData(@RequestParam("billCycle") String billCycle,
+			@RequestParam("towerID") String towerID) {
+		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) dataValidationService.readILCData(billCycle, towerID);
 		ModelAndView mv = new ModelAndView("Data");
 		mv.addObject("ilcDataList", ilcDataList);
 		// mv.addObject("myname", myname);
@@ -45,24 +52,25 @@ public class ManagerController {
 
 	@RequestMapping(path = "/update.do", method = RequestMethod.POST)
 	@ResponseBody
-	public String updateILCData(@RequestParam("userID") String userId) {
-		return dataValidationService.updateILCData(userId);
+	public String updateSLAData(@RequestParam("billCycle") String billCycle, @RequestParam("towerID") String towerID,
+			@RequestParam("records") ArrayList records, HttpSession userSession) {
+
+		User userProfile = getUserProfile(userSession);
+		String userId = userProfile.getUserID();
+		return dataValidationService.updateSLAData(userId, billCycle, towerID, records);
 	}
 
 	@RequestMapping(path = "/signoff.do", method = RequestMethod.GET)
 	@ResponseBody
-	public String signoffILCData(HttpSession userSession) {
-		User loggedUser = (User) userSession.getAttribute("userObj");
-		String userId = loggedUser.getUserID();
-		String signOff = dataValidationService.signoffILCData(userId);
-		if (signOff.equalsIgnoreCase("success")) {
-			sendSignOffMail(userId);
+	public String approveSLAData(@RequestParam("billCycle") String billCycle, HttpSession userSession) {
+		User userProfile = getUserProfile(userSession);
+		String userId = userProfile.getUserID();
+		int roleId = userProfile.getRoleID();
+		boolean signOff = dataApprovalService.setUserApproval(billCycle, userId, roleId);
+		if (signOff) {
+			emailService.sendEmail(userId);
+			return "approved";
 		}
-		return "approved";
+		return "rejected";
 	}
-
-	private void sendSignOffMail(String userId) {
-		emailService.sendEmail(userId);
-	}
-
 }

@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -45,67 +46,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	}
 
 	@Override
-	public ArrayList<ILCData> readILCData() {
-		
-//		logger.info("read ilc data query is: "+readIlcData);
-
-		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(readIlcData, new RowMapper<ILCData>() {
-			@Override
-			public ILCData mapRow(ResultSet rs, int rownumber) throws SQLException {
-				ILCData ilcModel = new ILCData();
-				ilcModel.setSeqID(Integer.parseInt(rs.getString("seq_id")));
-				ilcModel.setEmpID(rs.getString("emp_id"));
-				ilcModel.setEmpName(rs.getString("emp_name"));
-				ilcModel.setClaimCode(rs.getString("claim_code"));
-				ilcModel.setActivity(rs.getString("activity"));
-				ilcModel.setWeekEndDate(rs.getString("weekend_date"));
-				ilcModel.setTotHrs(Integer.parseInt(rs.getString("total_hours")));
-				ilcModel.setShiftType(rs.getString("shift_type"));
-				ilcModel.setUsInd(rs.getString("us_ind"));
-				ilcModel.setOnOffShore(rs.getString("on_off_shore"));
-				ilcModel.setBillingType(rs.getString("billing_type"));
-				ilcModel.setCategory(rs.getString("category"));
-				ilcModel.setBam(rs.getString("bam"));
-				ilcModel.setAppArea(rs.getString("app_area"));
-				ilcModel.setBusinessArea(rs.getString("business_area"));
-				ilcModel.setMonth(rs.getString("month"));
-				ilcModel.setQuarter(rs.getString("quarter"));
-				ilcModel.setDm(rs.getString("dm"));
-				ilcModel.setAsm(rs.getString("asm"));
-				ilcModel.setAsd(rs.getString("asd"));
-				ilcModel.setWrNo(rs.getString("wr_no"));
-				ilcModel.setIsTicket(rs.getString("is_ticket"));
-				ilcModel.setStaffType(rs.getString("staff_type"));
-				ilcModel.setIsCTC(rs.getString("is_ctc"));
-				ilcModel.setIsRTC(rs.getString("is_rtc"));
-				ilcModel.setPlannedHrs(Integer.parseInt(rs.getString("planned_hours")));
-				ilcModel.setIsBillable(rs.getString("is_billable"));
-				ilcModel.setRemarks(rs.getString("remarks"));
-				ilcModel.setCtcOrRtc(rs.getString("ctc_or_rtc"));
-				ilcModel.setWorkType(rs.getString("work_type"));
-				ilcModel.setWrDesc(rs.getString("wr_desc"));
-				ilcModel.setCostCenter(rs.getString("cost_center"));
-				ilcModel.setCategory2(rs.getString("category2"));
-				ilcModel.setOnOffLanded(rs.getString("on_off_landed"));
-				ilcModel.setTower(rs.getString("tower"));
-				ilcModel.setAsmItwr(rs.getString("asm_itwr"));
-				ilcModel.setAsdItwr(rs.getString("asd_itwr"));
-				ilcModel.setItwrActual(Integer.parseInt(rs.getString("itwr_actual")));
-				ilcModel.setGroupType(rs.getString("group_type"));
-				ilcModel.setVendorClass(rs.getString("vendor_class"));
-				ilcModel.setWrIncDef(rs.getString("wr_inc_def"));
-				ilcModel.setBillCycle(rs.getString("bill_cycle"));
-
-				return ilcModel;
-			}
-		});
-		
-//		logger.info("ilc data list size is: "+ilcDataList.size());
-		return ilcDataList;
-	}
-
-	@Override
-	public void insertILCData(ArrayList<ILCData> ilcModelList, String billCycle, String dataType, String userId) {
+	public void createILCData(ArrayList<ILCData> ilcModelList, String billCycle, String userId) {
 
 		try {
 			jdbcTemplate.update(deleteIlcData);
@@ -165,6 +106,69 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			}
 		});
 
-		jdbcTemplate.update(insertIlcDataSign, new Object[] { billCycle, userId, dataType });
+		jdbcTemplate.update(insertIlcDataSign, new Object[] { billCycle, userId});
+	}
+
+	@Override
+	public ArrayList<ILCData> readILCData(String billCycle, String towerID) {
+
+		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(readIlcData, new RowMapper<ILCData>() {
+			@Override
+			public ILCData mapRow(ResultSet rs, int rownumber) throws SQLException {
+				ILCData ilcModel = new ILCData();
+				ilcModel.setEmpID(rs.getString("emp_id"));
+				ilcModel.setEmpName(rs.getString("emp_name"));
+				ilcModel.setClaimCode(rs.getString("claim_code"));
+				ilcModel.setActivity(rs.getString("activity"));
+				ilcModel.setWeekEndDate(rs.getString("weekend_date"));
+				ilcModel.setTotHrs(Integer.parseInt(rs.getString("total_hours")));
+				ilcModel.setShiftType(rs.getString("shift_type"));
+				ilcModel.setUsInd(rs.getString("us_ind"));
+				ilcModel.setOnOffShore(rs.getString("on_off_shore"));
+				ilcModel.setBillingType(rs.getString("billing_type"));
+				ilcModel.setCategory(rs.getString("category"));
+				ilcModel.setBam(rs.getString("bam"));
+				ilcModel.setAppArea(rs.getString("app_area"));
+				ilcModel.setBusinessArea(rs.getString("business_area"));
+				ilcModel.setMonth(rs.getString("month"));
+				ilcModel.setQuarter(rs.getString("quarter"));
+				ilcModel.setDm(rs.getString("dm"));
+				ilcModel.setAsm(rs.getString("asm"));
+				ilcModel.setAsd(rs.getString("asd"));
+				ilcModel.setWrNo(rs.getString("wr_no"));
+				ilcModel.setIsTicket(rs.getString("is_ticket"));
+				ilcModel.setStaffType(rs.getString("staff_type"));
+				ilcModel.setIsCTC(rs.getString("is_ctc"));
+				ilcModel.setIsRTC(rs.getString("is_rtc"));
+				ilcModel.setPlannedHrs(Integer.parseInt(rs.getString("planned_hours")));
+				ilcModel.setIsBillable(rs.getString("is_billable"));
+				ilcModel.setRemarks(rs.getString("remarks"));
+				ilcModel.setCtcOrRtc(rs.getString("ctc_or_rtc"));
+				ilcModel.setWorkType(rs.getString("work_type"));
+				ilcModel.setWrDesc(rs.getString("wr_desc"));
+				ilcModel.setCostCenter(rs.getString("cost_center"));
+				ilcModel.setCategory2(rs.getString("category2"));
+				ilcModel.setOnOffLanded(rs.getString("on_off_landed"));
+				ilcModel.setTower(rs.getString("tower"));
+				ilcModel.setAsmItwr(rs.getString("asm_itwr"));
+				ilcModel.setAsdItwr(rs.getString("asd_itwr"));
+				ilcModel.setItwrActual(Integer.parseInt(rs.getString("itwr_actual")));
+				ilcModel.setGroupType(rs.getString("group_type"));
+				ilcModel.setVendorClass(rs.getString("vendor_class"));
+				ilcModel.setWrIncDef(rs.getString("wr_inc_def"));
+				ilcModel.setBillCycle(rs.getString("bill_cycle"));
+
+				return ilcModel;
+			}
+		});
+
+		return ilcDataList;
+	}
+
+	@Override
+	public List<ILCData> readCustomILCData(String billCycle, String towerID, String[] weekEndDate, String[] wrNo,
+			String[] empID, String[] modifiedBy) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -65,10 +65,16 @@ public class DataLoadServiceImpl implements DataLoadService {
 	}
 
 	@Override
-	public String loadILCData(String billCycle, String dataType, String userId) {
+	public String loadILCData(String billCycle, String userId) {
 		createILCDataSheet();
-		ilcDataDao.insertILCData(extractILCData(), billCycle, dataType, userId);
+		ilcDataDao.createILCData(extractILCData(), billCycle, userId);
 		return "ILC Report generated successfully";
+	}
+
+	@Override
+	public String loadSLAData(String billCycle, String userId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	private void createILCDataSheet() {
@@ -215,5 +221,4 @@ public class DataLoadServiceImpl implements DataLoadService {
 		ilcModel.setWrIncDef(rowData.get("WR/INC/DEF"));
 		return ilcModel;
 	}
-
 }
