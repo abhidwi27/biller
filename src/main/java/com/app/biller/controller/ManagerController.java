@@ -4,6 +4,7 @@ import static com.app.biller.util.BillerHelper.getUserProfile;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -53,7 +54,7 @@ public class ManagerController {
 	@RequestMapping(path = "/update.do", method = RequestMethod.POST)
 	@ResponseBody
 	public String updateSLAData(@RequestParam("billCycle") String billCycle, @RequestParam("towerID") String towerID,
-			@RequestParam("records") ArrayList records, HttpSession userSession) {
+			@RequestParam("records") ArrayList<?> records, HttpSession userSession) {
 
 		User userProfile = getUserProfile(userSession);
 		String userId = userProfile.getUserID();
@@ -62,12 +63,17 @@ public class ManagerController {
 
 	@RequestMapping(path = "/signoff.do", method = RequestMethod.GET)
 	@ResponseBody
-	public String approveSLAData(@RequestParam("billCycle") String billCycle, HttpSession userSession) {
-		User userProfile = getUserProfile(userSession);
-		String userId = userProfile.getUserID();
-		int roleId = userProfile.getRoleID();
-		boolean signOff = dataApprovalService.setUserApproval(billCycle, userId, roleId);
-		if (signOff) {
+	public String approveSLAData(@RequestParam("billCycle") String billCycle, HttpServletRequest request) {
+		boolean signOff = false;
+		String userId = null;
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			User userProfile = getUserProfile(session);
+			userId = userProfile.getUserID();
+			int roleId = userProfile.getRoleID();
+			signOff = dataApprovalService.setUserApproval(billCycle, userId, roleId);
+		}
+		if (signOff && userId != null) {
 			emailService.sendEmail(userId);
 			return "approved";
 		}

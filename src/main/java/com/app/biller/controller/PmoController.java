@@ -61,7 +61,7 @@ public class PmoController {
 			Model model) {
 		List<ILCData> ilcDataList = dataValidationService.readILCData(billCycle, towerID);
 		model.addAttribute("ilcDataList", ilcDataList);
-		return null;
+		return "Data";
 	}
 
 	@RequestMapping(path = "/update.do", method = RequestMethod.POST)

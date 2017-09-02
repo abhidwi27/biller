@@ -1,5 +1,7 @@
 package com.app.biller.controller;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import com.app.biller.model.User;
 import com.app.biller.services.LoginService;
@@ -42,11 +45,11 @@ public class LoginController {
 		if (loginBean != null && loginBean.getUserId() != null & loginBean.getPassword() != null) {
 			user = loginService.validateCredentials(loginBean.getUserId(), loginBean.getPassword());
 			if (user != null) {
-//				logger.info("Logged in User: " + user.getName());
+				// logger.info("Logged in User: " + user.getName());
 				model.addAttribute("userProfile", user);
 				viewName = loginService.getUserHome(user.getRoleID());
-				if(viewName.equalsIgnoreCase("Data")){
-//					logger.info("User View Name: " + viewName);
+				if (viewName.equalsIgnoreCase("Data")) {
+					// logger.info("User View Name: " + viewName);
 					return "redirect:/manage/read.do";
 				}
 				return viewName;
@@ -59,11 +62,20 @@ public class LoginController {
 		}
 		return viewName;
 	}
-	
+
 	@RequestMapping(value = "/logout.do", method = RequestMethod.GET)
-    public String logout(HttpSession userSession ) {
-		userSession.removeAttribute("userProfile");
-		userSession.invalidate();
-       return LOGIN_VIEW;
-    }
+	public String logoutDo(HttpServletRequest request, SessionStatus sessionStatus) {
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			session.removeAttribute("userProfile");
+			session.invalidate();
+		}
+		for (Cookie cookie : request.getCookies()) {
+			cookie.setMaxAge(0);
+		}
+
+		sessionStatus.setComplete();
+
+		return LOGIN_VIEW;
+	}
 }
