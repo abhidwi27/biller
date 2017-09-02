@@ -64,7 +64,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/logout.do", method = RequestMethod.GET)
-	public String logoutDo(HttpServletRequest request, SessionStatus sessionStatus) {
+	public String logout(HttpServletRequest request, SessionStatus sessionStatus) {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			session.removeAttribute("userProfile");
