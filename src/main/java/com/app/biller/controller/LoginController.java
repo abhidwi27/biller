@@ -18,6 +18,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import com.app.biller.model.User;
 import com.app.biller.services.LoginService;
 import com.app.biller.view.LoginBean;
+import com.google.gson.Gson;
 
 @Controller
 @SessionAttributes("userProfile")
@@ -46,12 +47,16 @@ public class LoginController {
 			user = loginService.validateCredentials(loginBean.getUserId(), loginBean.getPassword());
 			if (user != null) {
 				// logger.info("Logged in User: " + user.getName());
+				Gson gson = new Gson();
+				String strUserProfile = gson.toJson(user);
 				model.addAttribute("userProfile", user);
-				viewName = loginService.getUserHome(user.getRoleID());
-				if (viewName.equalsIgnoreCase("Data")) {
+				model.addAttribute("strUserProfile", strUserProfile);
+				//viewName = loginService.getUserHome(user.getRoleID());
+				viewName = "Home";
+				/*if (viewName.equalsIgnoreCase("Data")) {
 					// logger.info("User View Name: " + viewName);
 					return "redirect:/manage/read.do";
-				}
+				}*/
 				return viewName;
 			} else {
 				model.addAttribute("error", "User Authentication Failed");

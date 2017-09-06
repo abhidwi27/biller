@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import com.app.biller.dao.ILCDataDao;
+import com.app.biller.dao.SLADataDao;
 import com.app.biller.model.ILCData;
 import com.app.biller.model.SLAData;
 
@@ -22,37 +23,23 @@ public class DataValidationServiceImpl implements DataValidationService {
 
 	@Autowired
 	ILCDataDao ilcDataDao;
-
-	private JdbcTemplate jdbcTemplate;
-
+	
 	@Autowired
-	public void setDataSource(DataSource dataSource) {
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
+	SLADataDao slaDataDao;
+
+	
+
+	
+
+	@Override
+	public ArrayList<ILCData> readILCData(String billCycle, String towerID) {
+		 return ilcDataDao.readILCData(billCycle, towerID);
+		
 	}
 
 	@Override
-	public List<ILCData> readILCData(String billCycle, String towerID) {
-		// return ilcDataDao.readILCData();
-		// List<ILCData> ilcData = new ArrayList<ILCData>();
-		// ilcData = DisplayReportDAO.getReport();
-		// ModelAndView mv = new ModelAndView("/tableData");
-		// mv.addObject("ilcDataList", ilcData);
-		// return ilcData;
-		return null;
-	}
-
-	@Override
-	public List<SLAData> readSLAData(String billCycle, String towerID) {
-		// String lockedBy = EditTableDAO.checkTableLock();
-		// if( lockedBy.equals("")){
-		// EditTableDAO.lockTable(userID);
-		// return "success";
-		// }
-		// else{
-		// System.out.println("Table is locked by " + lockedBy);
-		// return lockedBy;
-		// }
-		return null;
+	public ArrayList<SLAData> readSLAData(String billCycle, String towerID) {
+		return slaDataDao.readSLAData(billCycle, towerID);
 	}
 
 	@Override

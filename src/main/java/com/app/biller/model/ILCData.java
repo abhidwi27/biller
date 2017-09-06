@@ -39,6 +39,7 @@ public class ILCData {
 	private String category2;
 	private String onOffLanded;
 	private String tower;
+	private String lastModified;
 	private String asmItwr;
 	private String asdItwr;
 	private int itwrActual;
@@ -318,6 +319,14 @@ public class ILCData {
 
 	public void setTower(String tower) {
 		this.tower = tower;
+	}
+
+	public String getLastModified() {
+		return lastModified;
+	}
+
+	public void setLastModified(String lastModified) {
+		this.lastModified = lastModified;
 	}
 
 	public String getAsmItwr() {
