@@ -2,13 +2,14 @@ package com.app.biller.model;
 
 public class Month {
 
-	public int monthID;
+	public String monthID;
 	public String monthDesc;
 	
-	public int getMonthID() {
+	
+	public String getMonthID() {
 		return monthID;
 	}
-	public void setMonthID(int monthID) {
+	public void setMonthID(String monthID) {
 		this.monthID = monthID;
 	}
 	public String getMonthDesc() {

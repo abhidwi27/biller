@@ -36,7 +36,7 @@ public class MonthDaoImpl implements MonthDao{
 			@Override
 			public Month mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Month month = new Month();
-				month.setMonthID(rs.getInt("month_id"));
+				month.setMonthID(rs.getString("month_id"));
 				month.setMonthDesc(rs.getString("month_desc"));
 				return month;
 			}

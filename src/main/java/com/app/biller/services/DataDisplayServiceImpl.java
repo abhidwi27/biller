@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import com.app.biller.dao.ILCDataDaoImpl;
 import com.app.biller.dao.MonthDaoImpl;
 import com.app.biller.dao.SLADataDaoImpl;
@@ -12,7 +15,8 @@ import com.app.biller.dao.YearDaoImpl;
 import com.app.biller.model.Month;
 import com.app.biller.model.Tower;
 
-public class DataDisplayServiceImpl {
+@Service
+public class DataDisplayServiceImpl implements DataDisplayService {
 
 	@Autowired
 	MonthDaoImpl monthDao;
@@ -48,7 +52,7 @@ public class DataDisplayServiceImpl {
 		
 	}
 
-	public List<Tower> getTowerList(String billCycle){
+	public List<Tower> getTowerList(){
 		return towerDao.getTowerList();
 	}
 	

@@ -10,8 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
 import com.app.biller.model.Tower;
 
+
+@Repository("towerDao")
 public class TowerDaoImpl {
 	
 	@Value("${GET_TOWER_LIST}")

@@ -10,13 +10,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.app.biller.dao.ILCDataDao;
 import com.app.biller.dao.SLADataDao;
 import com.app.biller.model.ILCData;
 import com.app.biller.model.SLAData;
 
-@Component
+@Service
 public class DataValidationServiceImpl implements DataValidationService {
 
 	private static final Logger logger = LoggerFactory.getLogger(DataValidationServiceImpl.class);

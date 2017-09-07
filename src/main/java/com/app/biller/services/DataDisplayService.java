@@ -12,7 +12,7 @@ public interface DataDisplayService {
 	
 	public List<String> getWRList(String billCycle, int dataType);
 
-	public ArrayList<Tower> getTowerList(String billCycle);
+	public List<Tower> getTowerList();
 	
 	public List<String> getWeekendList(String billCycle, int dataType);
 	

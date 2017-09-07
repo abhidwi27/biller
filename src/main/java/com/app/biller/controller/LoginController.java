@@ -1,5 +1,8 @@
 package com.app.biller.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,7 +18,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import com.app.biller.model.Month;
+import com.app.biller.model.Tower;
 import com.app.biller.model.User;
+import com.app.biller.services.DataDisplayService;
+import com.app.biller.services.DataDisplayServiceImpl;
 import com.app.biller.services.LoginService;
 import com.app.biller.view.LoginBean;
 import com.google.gson.Gson;
@@ -33,6 +40,9 @@ public class LoginController {
 
 	@Autowired
 	private LoginService loginService;
+	
+	@Autowired
+	private DataDisplayService dataDisplayService;
 
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String showLogin(Model model) {
@@ -46,17 +56,18 @@ public class LoginController {
 		if (loginBean != null && loginBean.getUserId() != null & loginBean.getPassword() != null) {
 			user = loginService.validateCredentials(loginBean.getUserId(), loginBean.getPassword());
 			if (user != null) {
-				// logger.info("Logged in User: " + user.getName());
 				Gson gson = new Gson();
-				String strUserProfile = gson.toJson(user);
+				ArrayList<Month> monthList = dataDisplayService.getMonth();
+				List<String> yearList = dataDisplayService.getYear();
+				List<Tower> towerList = dataDisplayService.getTowerList();
+				String strUserProfile = gson.toJson(user);				
 				model.addAttribute("userProfile", user);
 				model.addAttribute("strUserProfile", strUserProfile);
-				//viewName = loginService.getUserHome(user.getRoleID());
+				model.addAttribute("monthList", monthList);
+				model.addAttribute("yearList", yearList);
+				model.addAttribute("towerList", towerList);
 				viewName = "Home";
-				/*if (viewName.equalsIgnoreCase("Data")) {
-					// logger.info("User View Name: " + viewName);
-					return "redirect:/manage/read.do";
-				}*/
+				
 				return viewName;
 			} else {
 				model.addAttribute("error", "User Authentication Failed");
