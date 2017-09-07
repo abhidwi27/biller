@@ -37,6 +37,18 @@ public class ILCDataDaoImpl implements ILCDataDao {
 
 	@Value("${MANAGE_FETCH_ILC_DATA}")
 	private String readIlcData;
+	
+	@Value("${READ_CUSTOM_ILC_DATA}")
+	private String readCustomIlcData;
+	
+	@Value("${GET_ILC_EMPLOYEE_LIST}")
+	private String getILCEmployee;
+	
+	@Value("${GET_ILC_WR_LIST}")
+	private String getILCWr;
+	
+	@Value("${GET_ILC_WEEKEND_LIST}")
+	private String getILCWeekend;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -112,7 +124,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	@Override
 	public ArrayList<ILCData> readILCData(String billCycle, String towerID) {
 
-		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(readIlcData, new RowMapper<ILCData>() {
+		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(readIlcData, new Object[] {towerID, billCycle}, new RowMapper<ILCData>() {
 			@Override
 			public ILCData mapRow(ResultSet rs, int rownumber) throws SQLException {
 				ILCData ilcModel = new ILCData();
@@ -150,13 +162,13 @@ public class ILCDataDaoImpl implements ILCDataDao {
 				ilcModel.setCategory2(rs.getString("category2"));
 				ilcModel.setOnOffLanded(rs.getString("on_off_landed"));
 				ilcModel.setTower(rs.getString("tower"));
+				ilcModel.setLastModified(rs.getString("last_modified"));
 				ilcModel.setAsmItwr(rs.getString("asm_itwr"));
 				ilcModel.setAsdItwr(rs.getString("asd_itwr"));
 				ilcModel.setItwrActual(Integer.parseInt(rs.getString("itwr_actual")));
 				ilcModel.setGroupType(rs.getString("group_type"));
 				ilcModel.setVendorClass(rs.getString("vendor_class"));
 				ilcModel.setWrIncDef(rs.getString("wr_inc_def"));
-				ilcModel.setBillCycle(rs.getString("bill_cycle"));
 
 				return ilcModel;
 			}
@@ -166,9 +178,117 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	}
 
 	@Override
-	public List<ILCData> readCustomILCData(String billCycle, String towerID, String[] weekEndDate, String[] wrNo,
-			String[] empID, String[] modifiedBy) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndDate, String wrNo,
+			String empName) {
+		
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("SELECT * FROM biller.blr_ilc_data ilc where ilc.tower in(select tower_desc from biller.blr_tower tower where tower.tower_id=")
+		  .append(towerID)
+		  .append(" and ilc.bill_cycle =")
+		  .append(billCycle);
+		
+		if (!(weekEndDate.equals("All"))) {
+			 sb.append(" ilc.weekend_date=")
+			   .append(weekEndDate);
+		}
+		
+		if (!(wrNo.equals("All"))) {
+			 sb.append(" ilc.wr_no=")
+			   .append(wrNo);
+		}
+		
+		if (!(empName.equals("All"))) {
+			 sb.append(" ilc.emp_name=")
+			   .append(empName);
+		}
+		
+		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(sb.toString(),  new RowMapper<ILCData>() {
+			@Override
+			public ILCData mapRow(ResultSet rs, int rownumber) throws SQLException {
+				ILCData ilcModel = new ILCData();
+				ilcModel.setEmpID(rs.getString("emp_id"));
+				ilcModel.setEmpName(rs.getString("emp_name"));
+				ilcModel.setClaimCode(rs.getString("claim_code"));
+				ilcModel.setActivity(rs.getString("activity"));
+				ilcModel.setWeekEndDate(rs.getString("weekend_date"));
+				ilcModel.setTotHrs(Integer.parseInt(rs.getString("total_hours")));
+				ilcModel.setShiftType(rs.getString("shift_type"));
+				ilcModel.setUsInd(rs.getString("us_ind"));
+				ilcModel.setOnOffShore(rs.getString("on_off_shore"));
+				ilcModel.setBillingType(rs.getString("billing_type"));
+				ilcModel.setCategory(rs.getString("category"));
+				ilcModel.setBam(rs.getString("bam"));
+				ilcModel.setAppArea(rs.getString("app_area"));
+				ilcModel.setBusinessArea(rs.getString("business_area"));
+				ilcModel.setMonth(rs.getString("month"));
+				ilcModel.setQuarter(rs.getString("quarter"));
+				ilcModel.setDm(rs.getString("dm"));
+				ilcModel.setAsm(rs.getString("asm"));
+				ilcModel.setAsd(rs.getString("asd"));
+				ilcModel.setWrNo(rs.getString("wr_no"));
+				ilcModel.setIsTicket(rs.getString("is_ticket"));
+				ilcModel.setStaffType(rs.getString("staff_type"));
+				ilcModel.setIsCTC(rs.getString("is_ctc"));
+				ilcModel.setIsRTC(rs.getString("is_rtc"));
+				ilcModel.setPlannedHrs(Integer.parseInt(rs.getString("planned_hours")));
+				ilcModel.setIsBillable(rs.getString("is_billable"));
+				ilcModel.setRemarks(rs.getString("remarks"));
+				ilcModel.setCtcOrRtc(rs.getString("ctc_or_rtc"));
+				ilcModel.setWorkType(rs.getString("work_type"));
+				ilcModel.setWrDesc(rs.getString("wr_desc"));
+				ilcModel.setCostCenter(rs.getString("cost_center"));
+				ilcModel.setCategory2(rs.getString("category2"));
+				ilcModel.setOnOffLanded(rs.getString("on_off_landed"));
+				ilcModel.setTower(rs.getString("tower"));
+				ilcModel.setLastModified(rs.getString("last_modified"));
+				ilcModel.setAsmItwr(rs.getString("asm_itwr"));
+				ilcModel.setAsdItwr(rs.getString("asd_itwr"));
+				ilcModel.setItwrActual(Integer.parseInt(rs.getString("itwr_actual")));
+				ilcModel.setGroupType(rs.getString("group_type"));
+				ilcModel.setVendorClass(rs.getString("vendor_class"));
+				ilcModel.setWrIncDef(rs.getString("wr_inc_def"));
+
+				return ilcModel;
+			}
+		});
+
+		return ilcDataList;
+	}
+	
+	public List<String> getEmployeeList(String billCycle){
+		RowMapper<String> rowMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+		
+		List<String> ilcEmployeeList =  jdbcTemplate.query(getILCEmployee, rowMap);		
+		return ilcEmployeeList;
+	}
+	
+	public List<String> getWRList(String billCycle){
+		RowMapper<String> rowMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+		
+		List<String> ilcWrList =  jdbcTemplate.query(getILCWr, rowMap);		
+		return ilcWrList;
+	}
+	
+	public List<String> getWeekendList(String billCycle){
+		RowMapper<String> rowMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+		
+		List<String> ilcWeekendList =  jdbcTemplate.query(getILCWeekend, rowMap);		
+		return ilcWeekendList;
 	}
 }
