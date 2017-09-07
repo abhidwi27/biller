@@ -42,13 +42,14 @@ public class PmoController {
 
 	@RequestMapping(value = "/upload.do", method = RequestMethod.POST)
 	@ResponseBody
-	public String uploadFiles(MultipartHttpServletRequest request, @RequestParam("billCycle") String billCycle, HttpSession userSession) {
-		billCycle = "082017";
+	public String uploadFiles(MultipartHttpServletRequest request, @RequestParam("billCycle") String billCycle,
+			@RequestParam("dataType") String uploadDataType,@RequestParam("reportWeekend") String reportWeekend,HttpSession userSession) {
+		//billCycle = "082017";
 		String status = dataLoadService.uploadFiles(request);
 		if (status.equalsIgnoreCase("Success")) {
 			User userProfile = getUserProfile(userSession);
 			String userId = userProfile.getUserID();
-			return dataLoadService.loadILCData(billCycle, userId);
+			return dataLoadService.loadILCData(billCycle, userId,uploadDataType,reportWeekend);
 		} else {
 			logger.info("status = " + status);
 		}

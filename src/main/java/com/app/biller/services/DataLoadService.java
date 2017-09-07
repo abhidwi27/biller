@@ -6,7 +6,7 @@ public interface DataLoadService {
 
 	String uploadFiles(MultipartHttpServletRequest request);
 
-	String loadILCData(String billCycle, String userId);
+	String loadILCData(String billCycle, String userId,String uploadDataType, String reportWeekend);
 
 	String loadSLAData(String billCycle, String userId);
 }

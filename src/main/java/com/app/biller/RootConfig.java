@@ -20,7 +20,7 @@ public class RootConfig {
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/biller");
 		dataSource.setUsername("root");
-		dataSource.setPassword("shivsuman@123");	//Change before Run
+		dataSource.setPassword("$ecurity44S");	//Change before Run
 		return dataSource;
 	}
 
