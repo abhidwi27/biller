@@ -7,11 +7,12 @@ $(document).ready(function(){
 	
 	$("#reportSubmit").click(function(){
 		$(".biller-loader-div").fadeIn(1);		
-		$("#reportPanel").hide();
+		$("#reportSelection").hide();
 		$("#reportDiv").show();
 		
 		if ( dataTableInitialized ) {
 			  $('#report').DataTable().destroy();
+			  $('#report').empty();
 			}
 		
 		
@@ -43,7 +44,9 @@ $(document).ready(function(){
 			    type: 'GET',
 			    success: function(data){
 				    var tableJson = JSON.parse(data);			    	
-	                var editMode = false;	    
+	                var editMode = false;
+	                $('#report').append("<thead>" +"<tr>" + "</tr>"  + "</thead>");
+	                $('#report').append("<tbody>" + "</tbody>");
 				    for(var i=0 ; i< tableJson["header"].length; i++){
 	                	$('#report').find("thead tr").append("<th>" + tableJson["header"][i] + "</th>");                	
 	                }                
@@ -56,22 +59,24 @@ $(document).ready(function(){
 				            	"iDisplayLength": 10
 				    			} 	
 			        var reportTable = $('#report').DataTable(settings);
-	                for(var i=0; i<tableJson["tableBody"].length; i++){			    	
-						    //var seqID = tableJson["tableBody"][i].seqID;
-						    //newRowID = "row-" + seqID;			    
-						    delete tableJson["tableBody"][i].seqID;   
+				    dataTableInitialized = true;
+				    var rowNo;
+	                for(rowNo=0; rowNo<tableJson["tableBody"].length; rowNo++){			    	
+						    var seqID = tableJson["tableBody"][rowNo].seqID;
+						    newRowID = "row-" + seqID;			    
+						    delete tableJson["tableBody"][rowNo].seqID;   
 						     var newRowData = [];			    
-						    newRowData.push('<input type=\"checkbox\" class=\"rowcheckbox\" onclick=\"editRow(this.parentNode.parentNode.id)\" />');			    
-							    for (var prop in tableJson["tableBody"][i]){
-							    	newRowData.push(tableJson["tableBody"][i][prop]);				    	
+						    newRowData.push('<div class=\"checkbox\"> <input type=\"checkbox\"  class=\"styled\"  onclick=\"editRow(this.parentNode.parentNode.id)\" />  <label > </label> </div>');			    
+							    for (var prop in tableJson["tableBody"][rowNo]){
+							    	newRowData.push(tableJson["tableBody"][rowNo][prop]);				    	
 								 }
-					    newRowData.push('<img src=\"resources/image/copy.png\" onclick=\"copyRow(this.parentNode.parentNode.id)\"></img> <img src=\"resources/image/delete.png\" onclick=\"deleteRow(this.parentNode.parentNode.id)\"></img>');
+					    //newRowData.push('<img src=\"resources/image/copy.png\" onclick=\"copyRow(this.parentNode.parentNode.id)\"></img> <img src=\"resources/image/delete.png\" onclick=\"deleteRow(this.parentNode.parentNode.id)\"></img>');
 					    newRow = $("#report").dataTable().fnAddData(newRowData);
-					  	//$(newRow).attr("id", newRowID);
+					  	
 				    }
-			 			reportTable.rows().nodes().to$().each(function(){
+			 			/*reportTable.rows().nodes().to$().each(function(){
 			 				$(this).find('input[type="checkbox"]').attr("disabled", true);
-			 			});			    
+			 			});	*/		    
 			    }
 		 		
 			  });
