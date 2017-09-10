@@ -2,8 +2,9 @@ package com.app.biller.services;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.app.biller.model.ILCData;
-import com.app.biller.model.SLAData;
+
+import com.app.biller.domain.ILCData;
+import com.app.biller.domain.SLAData;
 
 public interface DataValidationService {
 

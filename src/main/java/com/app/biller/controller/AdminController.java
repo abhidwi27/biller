@@ -13,7 +13,7 @@ import com.app.biller.services.SystemAdminService;
 import com.app.biller.services.UserAdminService;
 
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/admin")
 public class AdminController {
 
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);

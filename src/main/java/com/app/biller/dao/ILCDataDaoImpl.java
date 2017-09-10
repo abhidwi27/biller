@@ -18,7 +18,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.app.biller.model.ILCData;
+import com.app.biller.domain.ILCData;
 import com.app.biller.util.BillerUtil;
 
 @Repository("ilcDataDao")
@@ -26,29 +26,26 @@ public class ILCDataDaoImpl implements ILCDataDao {
 
 	private static final Logger logger = LoggerFactory.getLogger(ILCDataDaoImpl.class);
 
-	@Value("${PMO_DELETE_ILC_DATA}")
+	@Value("${DELETE_ILC_DATA}")
 	private String deleteIlcData;
 
-	@Value("${PMO_INSERT_ILC_DATA}")
+	@Value("${INSERT_ILC_DATA}")
 	private String insertIlcData;
 
-	@Value("${PMO_INSERT_ILC_DATA_SIGN}")
-	private String insertIlcDataSign;
+	@Value("${INSERT_ILC_DATA_APPROVAL}")
+	private String insertIlcDataApproval;
 
-	@Value("${MANAGE_FETCH_ILC_DATA}")
-	private String readIlcData;
+	@Value("${SELECT_ILC_DATA}")
+	private String selectIlcData;
+
+	@Value("${SELECT_ILC_EMPLOYEE_LIST}")
+	private String selectILCEmployeeList;
 	
-	@Value("${READ_CUSTOM_ILC_DATA}")
-	private String readCustomIlcData;
+	@Value("${SELECT_ILC_WR_LIST}")
+	private String selectILCWrList;
 	
-	@Value("${GET_ILC_EMPLOYEE_LIST}")
-	private String getILCEmployee;
-	
-	@Value("${GET_ILC_WR_LIST}")
-	private String getILCWr;
-	
-	@Value("${GET_ILC_WEEKEND_LIST}")
-	private String getILCWeekend;
+	@Value("${SELECT_ILC_WEEKEND_LIST}")
+	private String selectILCWeekendList;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -118,13 +115,13 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			}
 		});
 
-		jdbcTemplate.update(insertIlcDataSign, new Object[] { billCycle, userId});
+		jdbcTemplate.update(insertIlcDataApproval, new Object[] { billCycle, userId});
 	}
 
 	@Override
 	public ArrayList<ILCData> readILCData(String billCycle, String towerID) {
 
-		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(readIlcData, new Object[] {towerID, billCycle}, new RowMapper<ILCData>() {
+		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(selectIlcData, new Object[] {towerID, billCycle}, new RowMapper<ILCData>() {
 			@Override
 			public ILCData mapRow(ResultSet rs, int rownumber) throws SQLException {
 				ILCData ilcModel = new ILCData();
@@ -264,7 +261,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			}
 		};
 		
-		List<String> ilcEmployeeList =  jdbcTemplate.query(getILCEmployee, rowMap);		
+		List<String> ilcEmployeeList =  jdbcTemplate.query(selectILCEmployeeList, rowMap);		
 		return ilcEmployeeList;
 	}
 	
@@ -276,7 +273,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			}
 		};
 		
-		List<String> ilcWrList =  jdbcTemplate.query(getILCWr, rowMap);		
+		List<String> ilcWrList =  jdbcTemplate.query(selectILCWrList, rowMap);		
 		return ilcWrList;
 	}
 	
@@ -288,7 +285,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			}
 		};
 		
-		List<String> ilcWeekendList =  jdbcTemplate.query(getILCWeekend, rowMap);		
+		List<String> ilcWeekendList =  jdbcTemplate.query(selectILCWeekendList, rowMap);		
 		return ilcWeekendList;
 	}
 }

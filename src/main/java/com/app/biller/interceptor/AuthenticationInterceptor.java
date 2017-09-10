@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.app.biller.model.User;
+import com.app.biller.domain.User;
 
 @Component
 public class AuthenticationInterceptor extends HandlerInterceptorAdapter {

@@ -1,6 +1,6 @@
 package com.app.biller.services;
 
-import com.app.biller.model.User;
+import com.app.biller.domain.User;
 
 public interface LoginService {
 

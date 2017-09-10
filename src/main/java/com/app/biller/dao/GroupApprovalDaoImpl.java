@@ -9,16 +9,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
-import com.app.biller.model.GroupApproval;
+
+import com.app.biller.domain.GroupApproval;
 
 @Repository("groupApprovalDao")
 public class GroupApprovalDaoImpl implements GroupApprovalDao {
 
-	@Value("${ALLGROUP_APPROVAL}")
-	String allGroupApproval;
+	@Value("${SELECT_GROUP_APPROVAL}")
+	String selectGroupApproval;
 
-	@Value("${SET_BILLCYLE_STATUS}")
-	String setBillCycleStatus;
+	@Value("${UPDATE_BILLCYCLE_STATUS}")
+	String updateBillCycleStatus;
 
 	@Value("${INSERT_GROUP_APPROVAL}")
 	String insertGroupApproval;
@@ -46,7 +47,7 @@ public class GroupApprovalDaoImpl implements GroupApprovalDao {
 
 		List<GroupApproval> allGroupStatus;
 
-		allGroupStatus = (List<GroupApproval>) jdbcTemplate.query(allGroupApproval, new Object[] { billCycle },
+		allGroupStatus = (List<GroupApproval>) jdbcTemplate.query(selectGroupApproval, new Object[] { billCycle },
 				groupMap);
 
 		if (allGroupStatus.size() == 0) {
@@ -63,7 +64,7 @@ public class GroupApprovalDaoImpl implements GroupApprovalDao {
 	}
 
 	public void setBillCycleStatus(String billCycle, int billCycleStatus) {
-		jdbcTemplate.update(setBillCycleStatus, new Object[] { billCycle, billCycleStatus });
+		jdbcTemplate.update(updateBillCycleStatus, new Object[] { billCycle, billCycleStatus });
 	}
 
 	public void createGroupApproval(String billCycle, String userID) {

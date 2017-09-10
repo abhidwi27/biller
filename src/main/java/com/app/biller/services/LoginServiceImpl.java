@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.biller.dao.UserDao;
-import com.app.biller.model.User;
+import com.app.biller.domain.User;
 
 @Service
 public class LoginServiceImpl implements LoginService {

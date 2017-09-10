@@ -2,7 +2,7 @@ package com.app.biller.dao;
 
 import java.util.List;
 
-import com.app.biller.model.UserApproval;
+import com.app.biller.domain.UserApproval;
 
 public interface UserApprovalDao {
 
@@ -11,12 +11,12 @@ public interface UserApprovalDao {
 	int getPendingApprovalsByRole(String billCycle, int roleID);
 
 	void setUserApproval(String billCycle, String userID);
-	
+
 	void updateUserApproval(String billCycle, String userID);
 
 	void rejectUserApproval(String billCycle, String rejectedBy, String rejectedFor);
-	
+
 	int checkPriorApproval(String billCycle, String userID);
-	
+
 	int checkRejection(String billCycle, String userID);
 }

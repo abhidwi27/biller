@@ -2,8 +2,8 @@ package com.app.biller.services;
 
 import java.util.List;
 
-import com.app.biller.model.GroupApproval;
-import com.app.biller.model.UserApproval;
+import com.app.biller.domain.GroupApproval;
+import com.app.biller.domain.UserApproval;
 
 public interface DataApprovalService {
 

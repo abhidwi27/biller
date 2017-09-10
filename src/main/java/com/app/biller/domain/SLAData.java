@@ -1,4 +1,4 @@
-package com.app.biller.model;
+package com.app.biller.domain;
 
 import java.util.Date;
 
