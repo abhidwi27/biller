@@ -24,7 +24,7 @@ import com.app.biller.services.DataApprovalService;
 import com.app.biller.services.DataValidationService;
 import com.app.biller.services.EmailService;
 import com.app.biller.services.ReferenceDataService;
-import com.app.biller.ui.model.DataTableModel;
+import com.app.biller.ui.DataTableModel;
 import com.google.gson.Gson;
 
 @Controller

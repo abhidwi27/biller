@@ -20,6 +20,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -27,7 +28,7 @@ import com.app.biller.dao.ILCDataDao;
 import com.app.biller.domain.ILCData;
 import com.microsoft.schemas.office.visio.x2012.main.CellType;
 
-@Component
+@Service
 public class FileUploadServiceImpl implements FileUploadService {
 
 	private static final Logger logger = LoggerFactory.getLogger(FileUploadServiceImpl.class);

@@ -1,5 +1,8 @@
 package com.app.biller.services;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class FileDownloadServiceImpl implements FileDownloadService {
 
 	@Override

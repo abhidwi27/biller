@@ -1,4 +1,4 @@
-package com.app.biller.ui.model;
+package com.app.biller.ui;
 
 import java.util.List;
 

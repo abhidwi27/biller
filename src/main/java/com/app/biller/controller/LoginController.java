@@ -18,7 +18,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import com.app.biller.domain.User;
 import com.app.biller.services.LoginService;
 import com.app.biller.services.ReferenceDataService;
-import com.app.biller.ui.model.LoginModel;
+import com.app.biller.ui.LoginModel;
 import com.google.gson.Gson;
 
 @Controller
