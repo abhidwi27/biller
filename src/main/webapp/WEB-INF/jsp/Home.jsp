@@ -28,6 +28,7 @@
 <body>
 
 <jsp:include page="billerLoader.jsp"></jsp:include>
+<jsp:include page="billerHeader.jsp"></jsp:include>
 
 <br>
 <br>
@@ -41,9 +42,9 @@
     <div class="col-md-12">      
       <div class="card">
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active" id="myhome"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-upload "></i>  <span>Upload</span></a></li>
+          <li role="presentation" class="active" ><a href="#upload" aria-controls="upload" role="tab" data-toggle="tab"><i class="fa fa-upload "></i>  <span>Upload</span></a></li>
           <li role="presentation"><a href="#reportPanel" aria-controls="reportPanel" role="tab" data-toggle="tab"><i class="fa fa-tablet"></i>  <span>View</span></a></li>
-          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-tasks"></i>  <span>Status</span></a></li>
+          <li role="presentation"><a href="#status" aria-controls="status" role="tab" data-toggle="tab"><i class="fa fa-tasks"></i>  <span>Status</span></a></li>
           <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-cog"></i>  <span>Settings</span></a></li>
           <li role="presentation"><a href="#extra" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-plus-square-o"></i>  <span>extra</span></a></li>
         </ul>
@@ -53,8 +54,9 @@
           
           <jsp:include page="upload.jsp"></jsp:include>
 		  <jsp:include page="reportViewTab.jsp"></jsp:include>
+		  <jsp:include page="statusViewTab.jsp"></jsp:include>
           
-          <div role="tabpanel" class="tab-pane fade" id="messages">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+          
           <div role="tabpanel" class="tab-pane fade" id="settings">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>
           <div role="tabpanel" class="tab-pane fade" id="extra">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>
         </div>

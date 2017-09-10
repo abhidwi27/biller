@@ -40,7 +40,10 @@ public class FileUploadServiceImpl implements FileUploadService {
 	public String uploadFiles(MultipartHttpServletRequest request) {
 		// File Upload directory on Server.
 		// String uploadRootPath = request.getServletContext().getRealPath("uploads");
-		String uploadRootPath = "C:/invoice/uploads";
+		//String uploadRootPath = "C:/invoice/uploads";
+		String newpath = System.getProperty("user.dir");
+		String rootdir[] = newpath.split("\\\\",2);
+		String uploadRootPath = rootdir[0] + "\\billerData\\Uploads";
 		File uploadRootDir = new File(uploadRootPath);
 
 		// Create directory if it does not exists.
@@ -66,9 +69,9 @@ public class FileUploadServiceImpl implements FileUploadService {
 	}
 
 	@Override
-	public String uploadILCData(String billCycle, String userId) {
-		createILCDataSheet();
-		ilcDataDao.createILCData(extractILCData(), billCycle, userId);
+	public String uploadILCData(String billCycle, String userId, String uploadDataType,String reportWeekend) {
+		createILCDataSheet(reportWeekend,uploadDataType);
+		ilcDataDao.createILCData(extractILCData(), billCycle, userId, uploadDataType);
 		return "ILC Report generated successfully";
 	}
 
@@ -78,18 +81,22 @@ public class FileUploadServiceImpl implements FileUploadService {
 		return null;
 	}
 
-	private void createILCDataSheet() {
+	private void createILCDataSheet(String reportWeekend,String uploadDataType) {
 
 		// String[] command = { "cmd.exe", "/C", "Start",
 		// "C:\\Users\\IBM_ADMIN\\Desktop\\Workbench\\trigger.bat" };
-		String[] command = { "cmd.exe", "/C", "Start", "C:\\invoice\\uploads\\trigger.bat" };
+		//String[] command = { "cmd.exe", "/C", "Start", "C:\\invoice\\uploads\\trigger.bat" };
+		String[] command = { "cmd.exe", "/C", "Start", "C:\\biller\\src\\main\\webapp\\Workbench\\trigger.bat",reportWeekend,uploadDataType};
 		Process process = null;
 		try {
 			process = Runtime.getRuntime().exec(command);
+			process.waitFor();
 			Runtime.getRuntime().exec("taskkill /f /im cmd.exe");
 		} catch (IOException e) {
 			e.printStackTrace();
-		} finally {
+		} catch (InterruptedException e){
+			System.out.println("got interrupted!");
+		}finally {
 			process.destroy();
 		}
 	}
@@ -118,7 +125,8 @@ public class FileUploadServiceImpl implements FileUploadService {
 		int cellType;
 
 		try {
-			ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
+			//ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
+			ilcInput = new FileInputStream(new File("C:\\biller\\src\\main\\webapp\\Workbench\\FFIC ILC Report.xlsx"));
 			ilcBook = new XSSFWorkbook(ilcInput);
 			ilcSheet = ilcBook.getSheet("WNPPT");
 			rowIterator = ilcSheet.iterator();

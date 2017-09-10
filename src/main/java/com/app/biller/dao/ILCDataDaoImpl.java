@@ -55,7 +55,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	}
 
 	@Override
-	public void createILCData(ArrayList<ILCData> ilcModelList, String billCycle, String userId) {
+	public void createILCData(ArrayList<ILCData> ilcModelList, String billCycle, String userId, String uploadDataType) {
 
 		try {
 			jdbcTemplate.update(deleteIlcData);
@@ -115,7 +115,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			}
 		});
 
-		jdbcTemplate.update(insertIlcDataApproval, new Object[] { billCycle, userId});
+		//jdbcTemplate.update(insertIlcDataSign, new Object[] { billCycle, userId, uploadDataType });
 	}
 
 	@Override

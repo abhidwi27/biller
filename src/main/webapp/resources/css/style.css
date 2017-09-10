@@ -231,13 +231,13 @@ color: #04A3ED;
 	width: 50px;
 }
 
-.my-row{
+.biller-row{
 	height: 70px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
-.my-label{
+.biller-label{
 	margin-right: 5px;
 }
 
@@ -248,4 +248,82 @@ color: #04A3ED;
 
 .upload-submit{
 	width: 100px;
+}
+
+
+
+#yrselect{
+	width:100px;
+}
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+.biller-panel{
+	margin-left:50px;
+}
+
+.biller-label-bill{
+	margin-top:7px;
+	margin-left:-40px;
+}
+
+.biller-label-bill-view{
+	margin-left: -5px;
+}
+
+.biller-label-data{
+	margin-left:-20px;
+}
+
+.biller-label-file{
+	margin-top:14px;
+	margin-left:35px;
+}
+.biller-drop-1st{
+	margin-left:-30px;
+	
+}
+
+.biller-upld-box{
+	float:right;
+	margin-top:10px;
+	margin-right:50px;
+}
+
+.biller-report-label{
+	margin-left:15px;
+}
+
+.biller-drop-2nd{
+	margin-left:-10px;
+}
+
+.biller-label-Tower{
+	margin-top:10px;
+	margin-left:-20px;
+}
+
+.biller-drop-3rd{
+	margin-left:35px;
+}
+
+.panel-primary{
+  border-color: transparent;
+  box-shadow: 0 0 20px #DDD;
+  }
+  
+ .navbar-brand > .my-navbar-brand{
+	margin-top:50px;
+	color:#554dcf;
+}
+
+.biller-weekend-label{
+	margin-left:35px;
+	margin-top:4px;
+}
+
+.biller-weekend-box{
+	float:right;
+	margin-right:50px;
 }

@@ -26,7 +26,7 @@ set fso1 = CreateObject("Scripting.FileSystemObject")
 vbpath = fso1.GetParentFolderName(WScript.ScriptFullName)
 currentpath = Left(WScript.ScriptFullName, InStrRev(WScript.ScriptFullName, "\"))
 backupath = split(currentpath,"\")
-msgbox(backupath (0))
+'msgbox(backupath (0))
 backupdir = backupath (0) + "\"
 '***************************************************************************************************
 
