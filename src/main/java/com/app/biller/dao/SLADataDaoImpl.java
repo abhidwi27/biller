@@ -15,27 +15,27 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.app.biller.model.ILCData;
-import com.app.biller.model.SLAData;
+import com.app.biller.domain.ILCData;
+import com.app.biller.domain.SLAData;
 import com.app.biller.util.BillerUtil;
 
 @Repository("slaDataDao")
 public class SLADataDaoImpl implements SLADataDao {
 	
-	@Value("${GET_SLA_EMPLOYEE_LIST}")
+	@Value("${SELECT_SLA_EMPLOYEE_LIST}")
 	private String getSLAEmployee;
 	
-	@Value("${GET_SLA_WR_LIST}")
+	@Value("${SELECT_SLA_WR_LIST}")
 	private String getSLAWr;
 	
-	@Value("${GET_SLA_WEEKEND_LIST}")
+	@Value("${SELECT_SLA_WEEKEND_LIST}")
 	private String getSLAWeekend;
 	
-	@Value("${READ_SLA_DATA}")
-	private String readSLAData;
+	@Value("${SELECT_SLA_DATA}")
+	private String selectSLAData;
 	
 	@Value("${READ_CUSTOM_SLA_DATA}")
-	private String readCustomSLAData;
+	private String selectCustomSLAData;
 	
 	@Value("${INSERT_SLA_DATA}")
 	private String insertSLAData;
@@ -49,7 +49,7 @@ public class SLADataDaoImpl implements SLADataDao {
 
 	@Override
 	public ArrayList<SLAData> readSLAData(String billCycle, String towerID) {
-		ArrayList<SLAData> slaDataList = (ArrayList<SLAData>) jdbcTemplate.query(readSLAData, new Object[] {towerID, billCycle}, new RowMapper<SLAData>() {
+		ArrayList<SLAData> slaDataList = (ArrayList<SLAData>) jdbcTemplate.query(selectSLAData, new Object[] {towerID, billCycle}, new RowMapper<SLAData>() {
 			@Override
 			public SLAData mapRow(ResultSet rs, int rownumber) throws SQLException {
 				SLAData slaModel = new SLAData();
@@ -218,7 +218,7 @@ public class SLADataDaoImpl implements SLADataDao {
 			   .append(empName);
 		}
 		
-		ArrayList<SLAData> slaDataList = (ArrayList<SLAData>) jdbcTemplate.query(readSLAData, new Object[] {towerID, billCycle}, new RowMapper<SLAData>() {
+		ArrayList<SLAData> slaDataList = (ArrayList<SLAData>) jdbcTemplate.query(selectCustomSLAData, new Object[] {towerID, billCycle}, new RowMapper<SLAData>() {
 			@Override
 			public SLAData mapRow(ResultSet rs, int rownumber) throws SQLException {
 				SLAData slaModel = new SLAData();
@@ -296,5 +296,4 @@ public class SLADataDaoImpl implements SLADataDao {
 		List<String> ilcWeekendList =  jdbcTemplate.query(getSLAWeekend, rowMap);		
 		return ilcWeekendList;
 	}
-
 }

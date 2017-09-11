@@ -1,6 +1,6 @@
 package com.app.biller.dao;
 
-import com.app.biller.model.GroupApproval;
+import com.app.biller.domain.GroupApproval;
 
 public interface GroupApprovalDao {
 

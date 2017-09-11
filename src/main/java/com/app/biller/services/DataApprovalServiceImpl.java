@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import com.app.biller.dao.GroupApprovalDao;
 import com.app.biller.dao.UserApprovalDao;
 import com.app.biller.dao.UserDao;
-import com.app.biller.model.GroupApproval;
-import com.app.biller.model.User;
-import com.app.biller.model.UserApproval;
+import com.app.biller.domain.GroupApproval;
+import com.app.biller.domain.User;
+import com.app.biller.domain.UserApproval;
 
 @Service
 public class DataApprovalServiceImpl implements DataApprovalService {

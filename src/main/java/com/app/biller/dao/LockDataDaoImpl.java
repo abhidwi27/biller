@@ -19,14 +19,14 @@ public class LockDataDaoImpl implements LockDataDao {
 
 	private static final Logger logger = LoggerFactory.getLogger(LockDataDaoImpl.class);
 
-	@Value("${CHECK_LOCK}")
-	private String checkLock;
+	@Value("${CHECK_DATA_LOCK}")
+	private String checkDataLock;
 
-	@Value("${SET_LOCK}")
-	private String setLock;
+	@Value("${SET_DATA_LOCK}")
+	private String setDataLock;
 
-	@Value("${UNSET_LOCK}")
-	private String unsetLock;
+	@Value("${UNSET_DATA_LOCK}")
+	private String unsetDataLock;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -42,7 +42,7 @@ public class LockDataDaoImpl implements LockDataDao {
 				return rs.getString(1);
 			}
 		};
-		List<String> lockedBy = jdbcTemplate.query(checkLock, new Object[] { billCycle, towerID }, rowMap);
+		List<String> lockedBy = jdbcTemplate.query(checkDataLock, new Object[] { billCycle, towerID }, rowMap);
 
 		if (lockedBy.isEmpty()) {
 			return "";
@@ -54,10 +54,10 @@ public class LockDataDaoImpl implements LockDataDao {
 	}
 
 	public void setLock(String billCycle, String userID, int towerID) {
-		jdbcTemplate.update(setLock, new Object[] { billCycle, towerID, userID });
+		jdbcTemplate.update(setDataLock, new Object[] { billCycle, towerID, userID });
 	}
 
 	public void unSetLock(String userID, String billCycle, int towerID) {
-		jdbcTemplate.update(unsetLock, new Object[] { billCycle, userID, towerID });
+		jdbcTemplate.update(unsetDataLock, new Object[] { billCycle, userID, towerID });
 	}
 }

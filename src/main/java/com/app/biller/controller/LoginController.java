@@ -1,8 +1,5 @@
 package com.app.biller.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -18,13 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import com.app.biller.model.Month;
-import com.app.biller.model.Tower;
-import com.app.biller.model.User;
-import com.app.biller.services.DataDisplayService;
-import com.app.biller.services.DataDisplayServiceImpl;
+import com.app.biller.domain.User;
 import com.app.biller.services.LoginService;
-import com.app.biller.view.LoginBean;
+import com.app.biller.services.ReferenceDataService;
+import com.app.biller.ui.LoginModel;
 import com.google.gson.Gson;
 
 @Controller
@@ -42,7 +36,7 @@ public class LoginController {
 	private LoginService loginService;
 	
 	@Autowired
-	private DataDisplayService dataDisplayService;
+	private ReferenceDataService referenceDataService;
 
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String showLogin(Model model) {
@@ -51,23 +45,20 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
-	public String login(Model model, @ModelAttribute("loginBean") LoginBean loginBean) {
+	public String processLogin(Model model, @ModelAttribute("loginModel") LoginModel loginModel) {
 		String viewName = LOGIN_VIEW;
-		if (loginBean != null && loginBean.getUserId() != null & loginBean.getPassword() != null) {
-			user = loginService.validateCredentials(loginBean.getUserId(), loginBean.getPassword());
+		if (loginModel != null && loginModel.getUserId() != null & loginModel.getPassword() != null) {
+			user = loginService.validateCredentials(loginModel.getUserId(), loginModel.getPassword());
 			if (user != null) {
 				Gson gson = new Gson();
-				ArrayList<Month> monthList = dataDisplayService.getMonth();
-				List<String> yearList = dataDisplayService.getYear();
-				List<Tower> towerList = dataDisplayService.getTowerList();
 				String strUserProfile = gson.toJson(user);				
 				model.addAttribute("userProfile", user);
 				model.addAttribute("strUserProfile", strUserProfile);
-				model.addAttribute("monthList", monthList);
-				model.addAttribute("yearList", yearList);
-				model.addAttribute("towerList", towerList);
-				viewName = "Home";
-				
+				model.addAttribute("monthList", referenceDataService.getMonth());
+				model.addAttribute("yearList", referenceDataService.getYear());
+				model.addAttribute("towerList", referenceDataService.getTowerList());
+//				viewName = "Home";
+				viewName = loginService.getUserHome(user.getRoleID());
 				return viewName;
 			} else {
 				model.addAttribute("error", "User Authentication Failed");
@@ -80,7 +71,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/logout.do", method = RequestMethod.GET)
-	public String logout(HttpServletRequest request, SessionStatus sessionStatus) {
+	public String processLogout(HttpServletRequest request, SessionStatus sessionStatus) {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			session.removeAttribute("userProfile");

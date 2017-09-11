@@ -9,16 +9,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
-import com.app.biller.model.UserApproval;
+
+import com.app.biller.domain.UserApproval;
 
 @Repository("userApprovalDao")
 public class UserApprovalDaoImpl implements UserApprovalDao {
 
-	@Value("${CHECK_PRIOR_APPROVAL}")
-	String checkPriorApproval;
+	@Value("${COUNT_USER_APPROVALS}")
+	String countUserApprovals;
 
-	@Value("${CHECK_REJECTED}")
-	String checkRejected;
+	@Value("${COUNT_USER_REJECTIONS}")
+	String countUserRejections;
 
 	@Value("${INSERT_USER_APPROVAL}")
 	String insertUserApproval;
@@ -26,14 +27,14 @@ public class UserApprovalDaoImpl implements UserApprovalDao {
 	@Value("${UPDATE_USER_APPROVAL}")
 	String updateUserApproval;
 
-	@Value("${REJECT_USER_APPROVAL}")
-	String rejectApproval;
+	@Value("${UPDATE_USER_REJECTION}")
+	String updateUserRejection;
 
-	@Value("${USER_APPROVAL_BY_ROLE}")
-	String userApproval;
+	@Value("${SELECT_USER_APPROVAL_BY_ROLE}")
+	String selectUserApprovalByRole;
 
-	@Value("${PENDING_APPROVAL_BY_ROLE}")
-	String pendingApproval;
+	@Value("${SELECT_PENDING_USER_APPROVAL_BY_ROLE}")
+	String selectPendingUserApprovalByRole;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -43,26 +44,26 @@ public class UserApprovalDaoImpl implements UserApprovalDao {
 	}
 
 	public int checkPriorApproval(String billCycle, String userID) {
-		int isAlreadyApproved = jdbcTemplate.queryForObject(checkPriorApproval, new Object[] { billCycle, userID },
+		int isAlreadyApproved = jdbcTemplate.queryForObject(countUserApprovals, new Object[] { billCycle, userID },
 				Integer.class);
 		return isAlreadyApproved;
 	}
 
 	public int checkRejection(String billCycle, String userID) {
-		int isRejected = jdbcTemplate.queryForObject(checkRejected, new Object[] { billCycle, userID }, Integer.class);
+		int isRejected = jdbcTemplate.queryForObject(countUserRejections, new Object[] { billCycle, userID }, Integer.class);
 		return isRejected;
 	}
 
 	public ArrayList<UserApproval> getUserApprovalByRole(String billCycle, int roleID) {
 
-		ArrayList<UserApproval> userApprovalDetail = (ArrayList<UserApproval>) jdbcTemplate.query(userApproval,
+		ArrayList<UserApproval> userApprovalDetail = (ArrayList<UserApproval>) jdbcTemplate.query(selectUserApprovalByRole,
 				new Object[] { billCycle, roleID, roleID }, new RowMapper<UserApproval>() {
 
 					@Override
 					public UserApproval mapRow(ResultSet rs, int rowNum) throws SQLException {
 						UserApproval sign = new UserApproval();
 						sign.setUserID(rs.getString("user_id"));
-						sign.setUserName(rs.getNString("Name"));
+						sign.setUserName(rs.getString("name"));
 						sign.setRoleID(Integer.parseInt(rs.getString("role_id")));
 						sign.setBillCycle(rs.getString("bill_cycle"));
 						return sign;
@@ -72,7 +73,7 @@ public class UserApprovalDaoImpl implements UserApprovalDao {
 	}
 
 	public int getPendingApprovalsByRole(String billCycle, int roleID) {
-		Integer count = (Integer) jdbcTemplate.queryForObject(pendingApproval, new Object[] { billCycle, roleID },
+		Integer count = (Integer) jdbcTemplate.queryForObject(selectPendingUserApprovalByRole, new Object[] { billCycle, roleID },
 				Integer.class);
 		return count;
 	}
@@ -86,6 +87,6 @@ public class UserApprovalDaoImpl implements UserApprovalDao {
 	}
 
 	public void rejectUserApproval(String billCycle, String rejectedBy, String rejectedFor) {
-		jdbcTemplate.update(rejectApproval, new Object[] { rejectedBy, rejectedBy, billCycle, rejectedFor });
+		jdbcTemplate.update(updateUserRejection, new Object[] { rejectedBy, rejectedBy, billCycle, rejectedFor });
 	}
 }

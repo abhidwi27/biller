@@ -17,9 +17,9 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.app.biller.interceptor.AuthenticationInterceptor;
 
+@EnableWebMvc
 @Configuration
 @ComponentScan
-@EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 	@Override

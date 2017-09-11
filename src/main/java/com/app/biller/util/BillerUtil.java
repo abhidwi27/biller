@@ -8,8 +8,6 @@ import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.app.biller.controller.PmoController;
-
 public final class BillerUtil {
 	
 	private static final Logger logger = LoggerFactory.getLogger(BillerUtil.class);

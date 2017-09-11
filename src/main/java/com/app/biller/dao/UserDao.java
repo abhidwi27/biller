@@ -1,6 +1,6 @@
 package com.app.biller.dao;
 
-import com.app.biller.model.User;
+import com.app.biller.domain.User;
 
 public interface UserDao {
 

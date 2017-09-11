@@ -20,17 +20,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.app.biller.dao.ILCDataDao;
-import com.app.biller.model.ILCData;
+import com.app.biller.domain.ILCData;
 import com.microsoft.schemas.office.visio.x2012.main.CellType;
 
-@Component
-public class DataLoadServiceImpl implements DataLoadService {
+@Service
+public class FileUploadServiceImpl implements FileUploadService {
 
-	private static final Logger logger = LoggerFactory.getLogger(DataLoadServiceImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(FileUploadServiceImpl.class);
 
 	@Autowired
 	ILCDataDao ilcDataDao;
@@ -68,14 +69,14 @@ public class DataLoadServiceImpl implements DataLoadService {
 	}
 
 	@Override
-	public String loadILCData(String billCycle, String userId, String uploadDataType,String reportWeekend) {
+	public String uploadILCData(String billCycle, String userId, String uploadDataType,String reportWeekend) {
 		createILCDataSheet(reportWeekend,uploadDataType);
 		ilcDataDao.createILCData(extractILCData(), billCycle, userId, uploadDataType);
 		return "ILC Report generated successfully";
 	}
 
 	@Override
-	public String loadSLAData(String billCycle, String userId) {
+	public String uploadSLAData(String billCycle, String userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

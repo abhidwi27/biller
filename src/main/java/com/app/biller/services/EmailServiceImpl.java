@@ -36,8 +36,8 @@ public class EmailServiceImpl implements EmailService {
 			public void prepare(MimeMessage mimeMessage) throws Exception {
 				mimeMessage.setFrom("vivekveera@gmail.com");
 				mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress("vivekveera@gmail.com"));
-				mimeMessage.setText("Signoff completed by " + mailObj);
-				mimeMessage.setSubject("Biller Signoff Notice");
+				mimeMessage.setText("Approved by " + mailObj);
+				mimeMessage.setSubject("Biller Data Approval Notice");
 			}
 		};
 		return preparator;

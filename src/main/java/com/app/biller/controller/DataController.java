@@ -16,65 +16,49 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.app.biller.model.ILCData;
-import com.app.biller.model.SLAData;
-import com.app.biller.model.TableData;
-import com.app.biller.model.User;
+import com.app.biller.domain.ILCData;
+import com.app.biller.domain.SLAData;
+import com.app.biller.domain.User;
 import com.app.biller.services.DataApprovalService;
-import com.app.biller.services.DataDisplayService;
 import com.app.biller.services.DataValidationService;
 import com.app.biller.services.EmailService;
-import com.app.biller.services.TableHeaderService;
+import com.app.biller.services.ReferenceDataService;
+import com.app.biller.ui.DataTableModel;
 import com.google.gson.Gson;
 
 @Controller
-@RequestMapping("/manage")
-public class ManagerController {
+@RequestMapping("/data")
+public class DataController {
 
-	private static final Logger logger = LoggerFactory.getLogger(ManagerController.class);
+	private static final Logger logger = LoggerFactory.getLogger(DataController.class);
 
 	@Autowired
 	DataValidationService dataValidationService;
 
 	@Autowired
 	DataApprovalService dataApprovalService;
-	
+
 	@Autowired
-	TableHeaderService tableHeaderService;
+	ReferenceDataService referenceDataService;
 
 	@Autowired
 	EmailService emailService;
-	
+
 	@Autowired
-	TableData tableData;
-	
-	
+	DataTableModel dataTable;
 
 	@RequestMapping(path = "/read.do", method = RequestMethod.GET)
-	public @ResponseBody String readData(
-			@RequestParam("dataType") int dataType,
-			@RequestParam("billCycle") String billCycle,
+	@ResponseBody
+	public String readILCorSLAData(@RequestParam("dataType") int dataType, @RequestParam("billCycle") String billCycle,
 			@RequestParam("towerID") String towerID) {
-		
 		List<?> dataList;
-		
-		if(dataType == 0) {
+		if (dataType == 0) {
 			dataList = (ArrayList<ILCData>) dataValidationService.readILCData(billCycle, towerID);
-		}else {
-			 dataList = (ArrayList<SLAData>) dataValidationService.readSLAData(billCycle, towerID);
+		} else {
+			dataList = (ArrayList<SLAData>) dataValidationService.readSLAData(billCycle, towerID);
 		}
-		
-		tableData.setHeader(tableHeaderService.getTableHeader(dataType));
-		tableData.setTableBody(dataList);
-		
-		Gson gson = new Gson();
-		String tableDataStr = gson.toJson(tableData);
-		
-		return tableDataStr;
-
-		
+		return getJsonDataTable(dataType, dataList);
 	}
 
 	@RequestMapping(path = "/update.do", method = RequestMethod.POST)
@@ -87,22 +71,30 @@ public class ManagerController {
 		return dataValidationService.updateSLAData(userId, billCycle, towerID, records);
 	}
 
-	@RequestMapping(path = "/signoff.do", method = RequestMethod.GET)
+	@RequestMapping(path = "/approve.do", method = RequestMethod.GET)
 	@ResponseBody
 	public String approveSLAData(@RequestParam("billCycle") String billCycle, HttpServletRequest request) {
-		boolean signOff = false;
+		boolean approved = false;
 		String userId = null;
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			User userProfile = getUserProfile(session);
 			userId = userProfile.getUserID();
 			int roleId = userProfile.getRoleID();
-			signOff = dataApprovalService.setUserApproval(billCycle, userId, roleId);
+			approved = dataApprovalService.setUserApproval(billCycle, userId, roleId);
 		}
-		if (signOff && userId != null) {
+		if (approved && userId != null) {
 			emailService.sendEmail(userId);
 			return "approved";
 		}
 		return "rejected";
+	}
+
+	private String getJsonDataTable(int dataType, List<?> dataList) {
+		dataTable.setHeader(referenceDataService.getTableHeader(dataType));
+		dataTable.setBody(dataList);
+		Gson gson = new Gson();
+		String jsonDataTable = gson.toJson(dataTable);
+		return jsonDataTable;
 	}
 }
