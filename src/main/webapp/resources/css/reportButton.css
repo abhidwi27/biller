@@ -1,0 +1,17 @@
+ul.nav li:hover > ul.dropdown-menu{
+display: block;
+}
+
+.dropdown .dropdown-menu{
+	padding-left: 10px;
+	height: 200px;
+	overflow-y: scroll;
+}
+
+.dropdown .divider{
+	margin-left: 0px;
+}
+
+ul.nav li a:hover{
+	cursor: pointer;
+}

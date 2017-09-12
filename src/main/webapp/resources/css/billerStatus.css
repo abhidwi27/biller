@@ -1,9 +1,11 @@
-.billerProgress .board{
+.billerProgress .board {
 	/*width: 75%;
 	margin: 60px auto;
 	margin-bottom: 0;
 	box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
+	
 }
+
 .billerProgress .board .nav-tabs {
 	position: relative;
 	/* border-bottom: 0; */
@@ -11,19 +13,18 @@
 	margin: 40px auto;
 	margin-bottom: 0;
 	box-sizing: border-box;
-
 }
 
-.billerProgress .board > div.board-inner > .nav-tabs {
+.billerProgress .board>div.board-inner>.nav-tabs {
 	border: none;
 }
 
-.billerProgress p.narrow{
+.billerProgress p.narrow {
 	width: 60%;
 	margin: 10px auto;
 }
 
-.billerProgress .liner{
+.billerProgress .liner {
 	height: 2px;
 	background: #ddd;
 	position: absolute;
@@ -35,7 +36,8 @@
 	z-index: 1;
 }
 
-.billerProgress .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+.billerProgress .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover,
+	.nav-tabs>li.active>a:focus {
 	color: #555555;
 	cursor: default;
 	/* background-color: #ffffff; */
@@ -44,7 +46,7 @@
 	outline: 0;
 }
 
-.billerProgress span.round-tabs{
+.billerProgress span.round-tabs {
 	width: 70px;
 	height: 70px;
 	line-height: 70px;
@@ -58,45 +60,48 @@
 	font-size: 25px;
 }
 
-.billerProgress span.round-tabs.one{
+.billerProgress span.round-tabs.one {
 	border: 2px solid #ddd;
 	color: #ddd;
 }
 
-.billerProgress li.active span.round-tabs.one, li.active span.round-tabs.two, li.active span.round-tabs.three, li.active span.round-tabs.four, li.active span.round-tabs.five {
+.billerProgress li.active span.round-tabs.one, li.active span.round-tabs.two,
+	li.active span.round-tabs.three, li.active span.round-tabs.four, li.active span.round-tabs.five
+	{
 	background: #69cb95 !important;
 	border: 2px solid #69cb95;
 	color: #fff;
 }
 
-.billerProgress span.round-tabs.two{
+.billerProgress span.round-tabs.two {
 	border: 2px solid #ddd;
 	color: #ddd;
 }
 
-.billerProgress span.round-tabs.three{
+.billerProgress span.round-tabs.three {
 	border: 2px solid #ddd;
 	color: #ddd;
 }
 
-.billerProgress span.round-tabs.four{
+.billerProgress span.round-tabs.four {
 	border: 2px solid #ddd;
 	color: #ddd;
 }
 
-.billerProgress span.round-tabs.five{
+.billerProgress span.round-tabs.five {
 	border: 2px solid #ddd;
 	color: #ddd;
 }
 
-.billerProgress .nav-tabs > li.active > a span.round-tabs{
+.billerProgress .nav-tabs>li.active>a span.round-tabs {
 	background: #fafafa;
 }
-.billerProgress .nav-tabs > li {
+
+.billerProgress .nav-tabs>li {
 	width: 20%;
 }
 
-.billerProgress .nav-tabs > li a{
+.billerProgress .nav-tabs>li a {
 	width: 70px;
 	height: 70px;
 	margin: 20px auto;
@@ -104,58 +109,57 @@
 	padding: 0;
 }
 
-.billerProgress .nav-tabs > li a:hover{
+.billerProgress .nav-tabs>li a:hover {
 	background: transparent;
 }
 
-.billerProgress .tab-content{
+.billerProgress .tab-content {
+	
 }
-.tab-pane{
+
+.tab-pane {
 	position: relative;
 	padding-top: 50px;
 }
 
-.billerProgress .btn-outline-rounded{
+.billerProgress .btn-outline-rounded {
 	padding: 10px 40px;
 	margin: 20px 0;
 	border: 2px solid transparent;
 	border-radius: 25px;
 }
 
-.billerProgress .btn.green{
-	background-color:#69cb95;
+.billerProgress .btn.green {
+	background-color: #69cb95;
 	/*border: 2px solid #5cb85c;*/
 	color: #ffffff;
 }
 
-@media( max-width : 585px ){
-
+@media ( max-width : 585px ) {
 	.billerProgress .board {
 		width: 90%;
-		height:auto !important;
+		height: auto !important;
 	}
 	.billerProgress span.round-tabs {
-		font-size:16px;
+		font-size: 16px;
 		width: 50px;
 		height: 50px;
 		line-height: 50px;
 	}
-	.billerProgress .tab-content .head{
-		font-size:20px;
+	.billerProgress .tab-content .head {
+		font-size: 20px;
 	}
-	.billerProgress .nav-tabs > li a {
+	.billerProgress .nav-tabs>li a {
 		width: 50px;
 		height: 50px;
-		line-height:50px;
+		line-height: 50px;
 	}
-
 	.billerProgress li.active:after {
 		content: " ";
 		position: absolute;
 		left: 35%;
 	}
-
 	.billerProgress .btn-outline-rounded {
-		padding:12px 20px;
+		padding: 12px 20px;
 	}
 }

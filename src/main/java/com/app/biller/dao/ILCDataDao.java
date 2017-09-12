@@ -9,7 +9,7 @@ public interface ILCDataDao {
 
 	void createILCData(ArrayList<ILCData> ilcModelList, String billCycle, String userId, String uploadDataType);	
 
-	ArrayList<ILCData> readILCData(String billCycle, String towerID);
+	ArrayList<ILCData> readILCData(String billCycle, int towerID);
 
 	ArrayList<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndData, String wrNo,
 			String empName);

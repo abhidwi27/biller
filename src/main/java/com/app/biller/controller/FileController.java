@@ -39,7 +39,7 @@ public class FileController {
 		if (status.equalsIgnoreCase("Success")) {
 			User userProfile = getUserProfile(userSession);
 			String userId = userProfile.getUserID();
-			return fileUploadService.uploadILCData(billCycle, userId);
+			return fileUploadService.uploadILCData(billCycle, userId, billCycle, status);
 		} else {
 			logger.info("status = " + status);
 		}

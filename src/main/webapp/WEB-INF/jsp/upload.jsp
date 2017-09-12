@@ -60,7 +60,7 @@
 							  <select class="selectpicker"  data-dropup-auto="false" data-width="100px" data-live-search="true" id="uploadMonth">
 							  <c:if test="${not empty monthList}">
 									<c:forEach var="o" items="${monthList}">
-									 <option value="${o.monthID}"> ${o.monthDesc}</option>
+									 <option value="${o.monthID}"> ${o.monthName}</option>
 									 </c:forEach>
 							  </c:if>
 							  </select>

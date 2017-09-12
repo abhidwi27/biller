@@ -43,23 +43,18 @@ public class DataApprovalServiceImpl implements DataApprovalService {
 		}
 
 		int pendingApprovalCount = userApprovalDao.getPendingApprovalsByRole(billCycle, roleID);
-
 		if (pendingApprovalCount == 0) {
 			approvalStatus = 2;
 		} else {
 			approvalStatus = 1;
 		}
 		groupApprovalDao.updateGroupApproval(billCycle, roleDesc, approvalStatus);
-
 		GroupApproval group = groupApprovalDao.getGroupApprovals(billCycle);
-
 		if (group.getDmApprvoal() == 2 && group.getBamApproval() == 2 && group.getSrBamApproval() == 2
 				&& group.getPmoApproval() == 2) {
 			groupApprovalDao.setBillCycleStatus(billCycle, 1);
 		}
-
 		return true;
-
 	}
 
 	public void rejectUserApproval(String billCycle, String rejectedBy, String rejectedFor) {
@@ -81,23 +76,4 @@ public class DataApprovalServiceImpl implements DataApprovalService {
 	public GroupApproval getGroupApprovals(String billCycle) {
 		return groupApprovalDao.getGroupApprovals(billCycle);
 	}
-
-	@Override
-	public int getPendingApprvoalByRole(String billCycle, int roleID) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public boolean setUserApproval(String billCycle, String userID, int roleID) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void updateGroupApproval(String billCycle, String columnName, int status) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

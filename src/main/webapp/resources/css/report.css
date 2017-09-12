@@ -1,15 +1,41 @@
-th {
+.billerTable {
+	margin-top: -50px;
+}
+
+.billerTable th {
 	font-size: 12px;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-td {
+
+.billerTable td {
 	font-size: 10px;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+	vertical-align: middle;
 }
+
 .dataTables_filter {
 	display: none;
+}
+
+.table>tbody>tr>td {
+	vertical-align: middle;
+}
+
+.table>tbody>tr>td .checkbox {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.billerTable .container-fluid {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.billerTable .col-sm-12 {
+	padding-left: 0px;
+	padding-right: 0px;
 }
