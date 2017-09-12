@@ -1,5 +1,8 @@
 
-
+<head>
+<link rel="stylesheet" href="resources/css/reportCustom.css">
+<script src="resources/js/reportCustom.js"> </script>
+</head>
 <div id="customize" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -8,38 +11,50 @@
 					<h4 class="modal-title"> Customize Report </h4>
 				</div>
 				<div class="modal-body">
-					<div class="row my-row">
-							<div class="col-md-2 ">
-								<label>
-									Tower:
+					<div class="row biller-row">
+							<div class="col-md-4 ">
+								<label class="biller-customReport-label">
+									Team Name:
 								</label>
 							</div>
 								<div class="form-group col-md-5 text-left">																	
-									<select class="selectpicker"  data-live-search="true" id="customWr">
+									<select class="selectpicker"  data-live-search="true" id="customTeam">
 																				
 									</select>
 									
 								</div>
 					</div>
-					<div class="row my-row">
-								<div class="col-md-2 ">
-									<label>
+					<div class="row biller-row">
+								<div class="col-md-4 ">
+									<label class="biller-customReport-label">
 										Work Request :
 									</label>
 								</div>
 								<div class="form-group col-md-5 text-left">																	
-									<select class="selectpicker"  data-live-search="true" id="customWeekend">
+									<select class="selectpicker"  data-live-search="true" id="customWr">
 																				
 									</select>
 								</div>
 					</div>
-					<div class="row my-row">
-								<div class="col-md-2 ">
-									<label>
-										Employee Name :
+					<div class="row biller-row">
+								<div class="col-md-4 ">
+									<label class="biller-customReport-label">
+										Weekend :
 									</label>
 								</div>
 								<div class="form-group col-md-5 text-left">																	
+									<select class="selectpicker"  data-live-search="true" id="customWeekend">
+																							
+									</select>
+								</div>
+					</div>
+					<div class="row biller-row">
+								<div class="col-md-4 ">
+									<label class="biller-customReport-label">
+										Employee Name :
+									</label>
+								</div>
+								<div class="form-group col-md-8 text-left">																	
 									<select class="selectpicker"  data-live-search="true" id="customEmp">
 																							
 									</select>

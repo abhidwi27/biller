@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DataTableModel {
+public class TableData {
 
 	private List<String> tableHeader;
 	private List<?> tableBody;

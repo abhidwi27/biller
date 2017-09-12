@@ -73,8 +73,8 @@ public class GroupApprovalDaoImpl implements GroupApprovalDao {
 
 	public void updateGroupApproval(String billCycle, String groupName, int status) {
 		String groupColName = groupName + "_approval";
-		String sql = "update bill.blr_group_approval set " + groupColName + "=" + status + "where bill_cycle = "
-				+ billCycle;
+		String sql = "update biller.blr_group_approval set " + groupColName + " = " + status + " where bill_cycle = '"
+				+ billCycle + "'";
 		jdbcTemplate.update(sql);
 	}
 

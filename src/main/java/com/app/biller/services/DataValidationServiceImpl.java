@@ -25,12 +25,13 @@ public class DataValidationServiceImpl implements DataValidationService {
 	SLADataDao slaDataDao;
 
 	@Override
-	public ArrayList<ILCData> readILCData(String billCycle, String towerID) {
+	public ArrayList<ILCData> readILCData(String billCycle, int towerID) {
 		return ilcDataDao.readILCData(billCycle, towerID);
+
 	}
 
 	@Override
-	public ArrayList<SLAData> readSLAData(String billCycle, String towerID) {
+	public ArrayList<SLAData> readSLAData(String billCycle, int towerID) {
 		return slaDataDao.readSLAData(billCycle, towerID);
 	}
 
@@ -40,24 +41,26 @@ public class DataValidationServiceImpl implements DataValidationService {
 	}
 
 	@Override
-	public String updateSLAData(String billCycle, String towerID, String userID, ArrayList<?> records) {
+	public String updateSLAData(String billCycle, int towerID, String userID, ArrayList<?> records) {
 		return null;
 	}
 
 	@Override
 	public String createNewSLARecord(String billCycle, String userID, ArrayList<?> records) {
 		return null;
+
 	}
 
 	@Override
-	public List<ILCData> readCustomILCData(String billCycle, String towerID, String[] weekEndDate, String[] wrNo,
-			String[] empID) {
-		return null;
+	public List<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndDate, String wrNo,
+			String empName) {
+
+		return ilcDataDao.readCustomILCData(billCycle, towerID, weekEndDate, wrNo, empName);
 	}
 
 	@Override
-	public List<SLAData> readCustomSLAData(String billCycle, String towerID, String[] weekEndDate, String[] wrNo,
-			String[] empID) {
-		return null;
+	public List<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo,
+			String empName) {
+		return slaDataDao.readCustomSLAData(billCycle, towerID, weekEndDate, wrNo, empName);
 	}
 }

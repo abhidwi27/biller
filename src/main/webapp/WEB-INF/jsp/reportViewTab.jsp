@@ -2,6 +2,14 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 
+<head>
+<script src="resources/js/reportView.js"> </script>
+</head>
+
+<input name="currentBillCycle" id="currentBillCycle" type="hidden" value='' />
+<input name="currentDtaType" id="currentDataType" type="hidden" value='' />
+<input name="currentTower" id="currentTower" type="hidden" value='' />
+
 <div role="tabpanel" class="tab-pane fade" id="reportPanel">
 	<div class="container container-table" id="reportSelection">
 		<div class="row vertical-center-row">
@@ -52,7 +60,7 @@
 							<select class="selectpicker"  data-dropup-auto="false" data-width="100px" data-live-search="true" id="reportMonth">
 							<c:if test="${not empty monthList}">
 									<c:forEach var="o" items="${monthList}">
-									 <option value="${o.monthID}"> ${o.monthDesc}</option>
+									 <option value="${o.monthID}"> ${o.monthName}</option>
 									 </c:forEach>
 							  </c:if>														
 							</select>
@@ -81,7 +89,7 @@
 							<select class="selectpicker" data-dropup-auto="false" data-width="auto"  data-live-search="true" id="reportTower">
 								<c:if test="${not empty towerList}">
 									<c:forEach var="o" items="${towerList}">
-									 <option value="${o.towerID}"> ${o.towerDesc}</option>
+									 <option value="${o.towerID}"> ${o.towerName}</option>
 									 </c:forEach>
 							  </c:if>
 							</select>

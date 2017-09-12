@@ -31,7 +31,7 @@ $(document).ready(function(){
 		
 		
 		$.ajax({
-			    url: '/biller/pmo/upload.do?dataType=' + uploadDataType + '&billCycle=' + billCycle + '&reportWeekend=' + reportWeekend,
+			    url: 'file/upload.do?dataType=' + uploadDataType + '&billCycle=' + billCycle + '&reportWeekend=' + reportWeekend,
 			    data: oMyForm,
 			    processData: false,
 			    contentType: false,

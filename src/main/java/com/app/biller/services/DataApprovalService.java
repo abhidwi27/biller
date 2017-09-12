@@ -9,13 +9,9 @@ public interface DataApprovalService {
 
 	List<UserApproval> getUserApprovalByRole(String billCycle, int roleID);
 
-	int getPendingApprvoalByRole(String billCycle, int roleID);
-
-	boolean setUserApproval(String billCycle, String userID, int roleID);
+	boolean setUserApproval(String billCycle, String userID, int roleID, String roleDesc);
 
 	void rejectUserApproval(String billCycle, String rejectedBy, String rejectedFor);
 
 	GroupApproval getGroupApprovals(String billCycle);
-
-	void updateGroupApproval(String billCycle, String columnName, int status);
 }
