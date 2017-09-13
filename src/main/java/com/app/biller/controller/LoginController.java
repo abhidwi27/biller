@@ -27,7 +27,7 @@ public class LoginController {
 
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
-	private static final String LOGIN_VIEW = "Login";
+	private static final String LOGIN_VIEW = "login";
 
 	@Autowired
 	private User user;

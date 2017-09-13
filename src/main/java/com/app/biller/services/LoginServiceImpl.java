@@ -27,8 +27,7 @@ public class LoginServiceImpl implements LoginService {
 
 	@Override
 	public String getUserHome(int roleID) {
-		logger.info("Role is " + roleID);
-		String viewName = "Data";
+		String viewName = "home";
 		switch (roleID) {
 		case 1:
 		case 2:
@@ -36,11 +35,11 @@ public class LoginServiceImpl implements LoginService {
 		case 4:
 		case 5:
 		case 6:
-			viewName = "Data";
-			break;
 		case 7:
 		case 8:
-			viewName = "Home";
+		case 9:
+		case 10:
+			viewName = "home";
 			break;
 		}
 		return viewName;
