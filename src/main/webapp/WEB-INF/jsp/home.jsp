@@ -37,15 +37,15 @@
 <input name="strUserProfile" id="strUserProfile" type="hidden" value='${fn:escapeXml(strUserProfile)}' />
 
 <div class=".container-fluid">
-  <div class="row">
+  <div class="row biller-tab-row">
     <div class="col-md-12">      
-      <div class="card">
+      <div class="card biller-Home">
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active" ><a href="#upload" aria-controls="upload" role="tab" data-toggle="tab"><i class="fa fa-upload "></i>  <span>Upload</span></a></li>
-          <li role="presentation"><a href="#reportPanel" aria-controls="reportPanel" role="tab" data-toggle="tab"><i class="fa fa-tablet"></i>  <span>View</span></a></li>
-          <li role="presentation"><a href="#status" aria-controls="status" role="tab" data-toggle="tab"><i class="fa fa-tasks"></i>  <span>Status</span></a></li>
-          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-cog"></i>  <span>Settings</span></a></li>
-          <li role="presentation"><a href="#extra" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-plus-square-o"></i>  <span>extra</span></a></li>
+           <li role="presentation"><a href="#reportPanel" aria-controls="reportPanel" role="tab" data-toggle="tab"><i class="fa fa-tablet"></i>  <span>Data</span></a></li>
+          <li role="presentation" class="active" ><a href="#upload" aria-controls="upload" role="tab" data-toggle="tab"><i class="fa fa-upload "></i>  <span>Files</span></a></li>
+          <li role="presentation" id="statusTab"><a href="#status" aria-controls="status" role="tab" data-toggle="tab"><i class="fa fa-tasks"></i>  <span>Status</span></a></li>
+          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-download"></i>  <span>Admin</span></a></li>
+          <!--<li role="presentation"><a href="#extra" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-plus-square-o"></i>  <span>extra</span></a></li>-->
         </ul>
         
      
@@ -57,7 +57,7 @@
           
           
           <div role="tabpanel" class="tab-pane fade" id="settings">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>
-          <div role="tabpanel" class="tab-pane fade" id="extra">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>
+          <!--  role="tabpanel" class="tab-pane fade" id="extra">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>--> 
         </div>
       </div>
     </div>

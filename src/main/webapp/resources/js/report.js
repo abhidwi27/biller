@@ -225,3 +225,13 @@
 		  rowID = "#" + seqID;
 		  reportTable.rows(rowID).remove().draw();
 	  }
+	  
+	  $(document).ready(function(){
+
+		    $('[data-toggle="tooltip"]').tooltip({
+
+		        placement : 'bottom'
+
+		    });
+
+		});

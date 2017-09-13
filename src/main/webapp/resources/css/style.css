@@ -1,27 +1,27 @@
-.nav-tabs {
+.biller-Home > .nav-tabs {
 	border-bottom: 2px solid #DDD;
 }
 
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover
+.biller-Home >.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover
 	{
 	border-width: 0;
 }
 
-.nav-tabs>li>a {
-	border: none;
-	color: #ffffff;
-	background: #5a4080;
+.biller-Home >.nav-tabs>li>a {
+	border: 2px;
+	color: #337ab7;
+	background: #ffffff;
 }
 
-.nav-tabs>li.active>a, .nav-tabs>li>a:hover {
-	border: none;
-	color: #5a4080 !important;
-	background: #fff;
+.biller-Home >.nav-tabs>li.active>a, .nav-tabs>li>a:hover {
+	border: 2px;
+	color: #fff !important;
+	background: #337ab7;
 }
 
-.nav-tabs>li>a::after {
+.biller-Home > .nav-tabs>li>a::after {
 	content: "";
-	background: #5a4080;
+	background: #fff;
 	height: 2px;
 	position: absolute;
 	width: 100%;
@@ -31,24 +31,24 @@
 	transform: scale(0);
 }
 
-.nav-tabs>li.active>a::after, .nav-tabs>li:hover>a::after {
+.biller-Home > .nav-tabs>li.active>a::after, .nav-tabs>li:hover>a::after {
 	transform: scale(1);
 }
 
-.tab-nav>li>a::after {
+.biller-Home > .tab-nav>li>a::after {
 	background: ##5a4080 none repeat scroll 0% 0%;
 	color: #fff;
 }
 
-.tab-pane {
+.biller-Home > .tab-pane {
 	padding: 15px 0;
 }
 
-.tab-content {
-	padding: 20px
+.biller-Home > .tab-content {
+	padding-bottom: 20px
 }
 
-.nav-tabs>li {
+.biller-Home > .nav-tabs>li {
 	width: 20%;
 	text-align: center;
 }
@@ -73,7 +73,7 @@ body {
 }
 
 .menu {
-	background-color: #5a4080;
+	background-color:#5a4080;
 	border-bottom: 4px solid #04A3ED;
 	width: 100%;
 	height: auto;
@@ -325,7 +325,7 @@ rotate
 
 .biller-label-bill {
 	margin-top: 7px;
-	margin-left: -40px;
+	margin-left: -46px;
 }
 
 .biller-label-bill-view {
@@ -338,7 +338,7 @@ rotate
 
 .biller-label-file {
 	margin-top: 14px;
-	margin-left: 35px;
+	margin-left: 32px;
 }
 
 .biller-drop-1st {
@@ -379,11 +379,16 @@ rotate
 }
 
 .biller-weekend-label {
-	margin-left: 35px;
+	margin-left: 32px;
 	margin-top: 4px;
 }
 
 .biller-weekend-box {
 	float: right;
 	margin-right: 50px;
+}
+
+.biller-tab-row{
+	margin-top:10px;
+	margin-bottom:-20px;
 }

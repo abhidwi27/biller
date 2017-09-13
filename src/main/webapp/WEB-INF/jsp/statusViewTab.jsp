@@ -16,11 +16,12 @@
                         <ul class="nav nav-tabs" id="myTab">
                             <div class="liner"></div>
                             <li class="active">
-                                <a href="#home" aria-controls="home" role="tab" data-toggle="tab" title="User Experience">
+                                <a href="#home" aria-controls="home" role="tab" data-toggle="tab" title="DM">
                       <span class="round-tabs one">
                               <i class="icon icon-profile-male"></i>
                       </span>
-                                </a></li>
+                                </a>
+                            </li>
 
                             <li><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" title="Sketch">
                      <span class="round-tabs two">
@@ -46,18 +47,34 @@
                          </span> </a>
                             </li>
 
-                        </ul></div>
+                        </ul>
+                        </div>
 
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="home">
-
-                            <h3 class="head text-center">User Experience</h3>
                             <p class="narrow text-center">
-                                Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                            </p>
-
-                            <p class="text-center">
-                                <a href="" class="btn btn-success btn-outline-rounded green"> Get Quote <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                                <table class="table table-striped table-bordered text-center" style="width:50%;margin-left:auto;margin-right:auto;">
+										    <thead>
+										      <tr >
+										        <th style="text-align:center;">Name</th>
+										        <th style="text-align:center;">SignoffStatus</th>
+										      </tr>
+										    </thead>
+										    	<tbody style="vertical-align:middle;">
+											      <tr>
+											       <td>Jyothi</td>
+												   <td>&#10004</td>
+											      </tr>
+											      <tr>
+											        <td>Prabha</td>
+													<td>&#10004</td>
+											      </tr>
+											      <tr>
+											        <td>Vinitha</td>
+													<td>&#10004</td>
+											      </tr>
+										    	</tbody>
+  								</table>
                             </p>
                         </div>
                         <div class="tab-pane fade" id="profile">
