@@ -2,29 +2,29 @@
 	border-bottom: 2px solid #DDD;
 }
 
-.biller-Home >.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover
+.biller-Home >.nav-pills>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover
 	{
-	border-width: 0;
+	border-width: 2;
 }
 
-.biller-Home >.nav-tabs>li>a {
-	border: 2px;
-	color: #337ab7;
-	background: #ffffff;
+.biller-Home >.nav-pills>li>a {
+	border: 3px;	
+	color: #23547c;
+	background: #d0ebee;
 }
 
-.biller-Home >.nav-tabs>li.active>a, .nav-tabs>li>a:hover {
-	border: 2px;
-	color: #fff !important;
-	background: #337ab7;
+.biller-Home >.nav-pills>li.active>a, .nav-tabs>li>a:hover {
+	border: 3px;
+	color: #00ffff!important;
+	background: #46b5c1;
 }
 
-.biller-Home > .nav-tabs>li>a::after {
+.biller-Home > .nav-pills>li>a::after {
 	content: "";
 	background: #fff;
 	height: 2px;
 	position: absolute;
-	width: 100%;
+	width: auto;
 	left: 0px;
 	bottom: -1px;
 	transition: all 250ms ease 0s;
@@ -36,7 +36,7 @@
 }
 
 .biller-Home > .tab-nav>li>a::after {
-	background: ##5a4080 none repeat scroll 0% 0%;
+	background: #46b5c1 none repeat scroll 0% 0%;
 	color: #fff;
 }
 
@@ -45,11 +45,13 @@
 }
 
 .biller-Home > .tab-content {
-	padding-bottom: 20px
+	padding-bottom: 20px;
+	margin-left: 2px;
+	margin-right: 2px;	
 }
 
-.biller-Home > .nav-tabs>li {
-	width: 20%;
+.biller-Home > .nav-pills>li {
+	width: 15%;
 	text-align: center;
 }
 
@@ -73,8 +75,8 @@ body {
 }
 
 .menu {
-	background-color:#5a4080;
-	border-bottom: 4px solid #04A3ED;
+	background-color:#276f76;
+	border-bottom: 4px solid #c2e7eb;
 	width: 100%;
 	height: auto;
 	padding: 0 10px;
@@ -86,27 +88,28 @@ body {
 
 .menu  .navbar-nav>.active>a {
 	background-color: blue;
-	color: white;
+	color: #00ffff;
 	font-weight: bold;
 }
 
 .menu  .navbar-nav>li>a {
 	font-size: 13px;
-	color: white;
+	color: #00ffff;
 	padding: 10px 35px;
 }
 
 .menu  .navbar-nav>li>a:hover {
-	background-color: #04A3ED;
+	background-color: #276f76;
 }
 
 .navbar-header>a {
-	font-family: 'Ubuntu Condensed', sans-serif;
+	font-family: serif;
 	padding: 0px;
 	margin: 0px;
-	text-decoration: none;
+	text-decoration: blink;
 	color: white;
 	font-size: 25px;
+	font-weight: bold;
 	padding: 5px 30px;
 }
 
@@ -117,7 +120,7 @@ body {
 
 .loader {
 	border: 16px solid #f3f3f3; /* Light grey */
-	border-top: 16px solid #3498db; /* Blue */
+	border-top: 16px solid #46b5c1; /* #3498db Blue */
 	border-radius: 50%;
 	width: 120px;
 	height: 120px;
@@ -250,7 +253,7 @@ rotate
 
 .loader-div .loader {
 	border: 16px solid #f3f3f3; /* Light grey */
-	border-top: 16px solid #3498db; /* Blue */
+	border-top: 16px solid #46b5c1; /* #3498db Blue */
 	border-radius: 50%;
 	width: 120px;
 	height: 120px;

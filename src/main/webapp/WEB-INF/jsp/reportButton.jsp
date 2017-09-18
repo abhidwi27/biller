@@ -6,22 +6,30 @@
 
 <div id="reportButtons">
 	<ul class="nav navbar-nav navbar-right">
-		<li><a id="reportBack"><span class="glyphicon glyphicon-arrow-left" style="font-size:20px;" data-toggle="tooltip" data-original-title="Back"></span></a></li>
+		<li><a id="reportBack"><span class="glyphicon glyphicon-arrow-left" style="font-size:24px;color:#46b5c1;" data-toggle="tooltip" data-original-title="Back"></span></a></li>
+		<li><a ><span style="font-size:24px; color:#c0c0c0;"> | </span></a></li>
 		<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-th-list" style="font-size:25px;"data-toggle="tooltip" data-original-title="Select Columns"></span></a>
-          <ul class="dropdown-menu">
-            
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-filter" style="font-size:24px; color:#46b5c1;" data-toggle="tooltip" data-original-title="Select Columns"></span></a>
+          <ul class="dropdown-menu">            
          </ul>
         </li>
-		<li><a ><span class="glyphicon glyphicon-plus-sign" style="font-size:25px;" data-toggle="tooltip" data-original-title="total hours"></span></a></li>
-		<li data-toggle="modal" data-target="#customize"><a href="#"><span class="glyphicon glyphicon-wrench" style="font-size:25px;" data-toggle="tooltip" data-original-title="Customize"></span></a></li>   
-		<li><a ><span class="glyphicon glyphicon-lock" style="font-size:25px;" data-toggle="tooltip" data-original-title="Lock Data"></span></a></li>						
-		<li><a ><span class="glyphicon glyphicon-edit" style="font-size:25px;" data-toggle="tooltip" data-original-title="Edit"></span></a></li>
-		<li><a ><span class="glyphicon glyphicon-retweet" style="font-size:25px;" data-toggle="tooltip" data-original-title="Copy"></span></a></li>
-		<li><a ><span class="glyphicon glyphicon-trash" style="font-size:25px;" data-toggle="tooltip" data-original-title="Delete"></span></a></li>
-		<li><a ><span class="glyphicon glyphicon-floppy-save" style="font-size:25px;" data-toggle="tooltip" data-original-title="Save"></span></a></li>
-		<li><a ><span class="glyphicon glyphicon-remove" style="font-size:25px;" data-toggle="tooltip" data-original-title="Reject"></span></a></li>
-		<li><a ><span class="glyphicon glyphicon-ok" style="font-size:25px;" data-toggle="tooltip" data-original-title="Approve"></span></a></li>
+		<li data-toggle="modal" data-target="#customize"><a ><span data-toggle="tooltip" data-original-title="Customize"><i class="fa fa-sliders" style="font-size:24px; color:#46b5c1;"></i></span></a></li>
+		<!-- DO NOT REMOVE THIS COMMENTED CODE
+		<li><a ><span data-toggle="tooltip" data-original-title="total hours"><i class="fa fa-plus-square-o" style="font-size:24px; color:#46b5c1;"></i></span></a></li>
+		-->
+		<li><a ><span style="font-size:24px; color:#c0c0c0;"> | </span></a></li>  
+		<li><a ><span data-toggle="tooltip" data-original-title="Lock Data"><i class="fa fa-lock" style="font-size:26px; color:#46b5c1;"></i></span></a></li>						
+		<li><a ><span data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-edit" style="font-size:26px; color:#46b5c1;"></i></span></a></li>
+		<li><a ><span data-toggle="tooltip" data-original-title="Copy"><i class="fa fa-copy" style="font-size:24px; color:#46b5c1;"></i></span></a></li>		
+		<li><a ><span data-toggle="tooltip" data-original-title="Save"><i class="fa fa-save" style="font-size:24px; color:#46b5c1;"></i></span></a></li>
+		<li><a ><span data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash-o" style="font-size:24px; color:#46b5c1;"></i></span></a></li>
+		<li><a ><span style="font-size:24px; color:#c0c0c0;"> | </span></a></li>
+		<li><a ><span data-toggle="tooltip" data-original-title="Approve"><i class="fa fa-thumbs-o-up" style="font-size:24px;color:#46b5c1;"></i></span></a></li>
+		<li><a ><span data-toggle="tooltip" data-original-title="Reject"><i class="fa fa-thumbs-o-down" style="font-size:24px;color:#46b5c1;"></i></span></a></li>
+		<!-- DO NOT REMOVE THIS COMMENTED CODE
+		<li><a ><span data-toggle="tooltip" data-original-title="Approve"><i class="fa fa-thumbs-o-up" style="font-size:24px;color:#00d535;"></i></span></a></li>
+		<li><a ><span data-toggle="tooltip" data-original-title="Reject"><i class="fa fa-thumbs-o-down" style="font-size:24px;color:#fa032f;"></i></span></a></li>
+		 -->
 	</ul>
 </div>
 

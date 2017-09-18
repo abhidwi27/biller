@@ -1,7 +1,7 @@
 <div class="menu">
     <div class="container-fluid">
 		<div class="navbar-header">
-			<a href="#">Biller</a>
+			<a><span style="font-size:24px; color:#00ffff;">BILLER</span></a>
 		</div>
 		<div>
 			<ul class="nav navbar-nav navbar-right">

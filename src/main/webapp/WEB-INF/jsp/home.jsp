@@ -31,20 +31,20 @@
 
 <br>
 <br>
-<br>
 
 
 <input name="strUserProfile" id="strUserProfile" type="hidden" value='${fn:escapeXml(strUserProfile)}' />
 
+<div style="margin-left: 10px; margin-right: 10px;">
 <div class=".container-fluid">
   <div class="row biller-tab-row">
     <div class="col-md-12">      
       <div class="card biller-Home">
-        <ul class="nav nav-tabs" role="tablist">
-           <li role="presentation"><a href="#reportPanel" aria-controls="reportPanel" role="tab" data-toggle="tab"><i class="fa fa-tablet"></i>  <span>Data</span></a></li>
-          <li role="presentation" class="active" ><a href="#upload" aria-controls="upload" role="tab" data-toggle="tab"><i class="fa fa-upload "></i>  <span>Files</span></a></li>
-          <li role="presentation" id="statusTab"><a href="#status" aria-controls="status" role="tab" data-toggle="tab"><i class="fa fa-tasks"></i>  <span>Status</span></a></li>
-          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-download"></i>  <span>Admin</span></a></li>
+        <ul class="nav nav-pills" role="tablist">
+           <li role="presentation"><a href="#reportPanel" aria-controls="reportPanel" role="tab" data-toggle="tab"><i class="fa fa-table" style="font-size:16px;"></i>    <span style="font-size:16px;">Data</span></a></li>
+          <li role="presentation" class="active" ><a href="#upload" aria-controls="upload" role="tab" data-toggle="tab"><i class="fa fa-upload "></i>  <span style="font-size:16px;">Files</span></a></li>
+          <li role="presentation" id="statusTab"><a href="#status" aria-controls="status" role="tab" data-toggle="tab"><i class="fa fa-list-ul"></i>  <span style="font-size:16px;">Status</span></a></li>
+          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-user-circle-o" style="font-size:16px"></i>   <span style="font-size:16px;">Admin</span></a></li>
           <!--<li role="presentation"><a href="#extra" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-plus-square-o"></i>  <span>extra</span></a></li>-->
         </ul>
         
@@ -62,6 +62,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 
