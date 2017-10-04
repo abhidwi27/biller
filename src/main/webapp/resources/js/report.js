@@ -39,16 +39,18 @@
 				  		var isCopied = selectedRow.split("_");
 				  		var rowIDSplit = selectedRow.split("-");
 				  		if (isCopied.length ==1){
+				  		rowData.push( parseInt(rowIDSplit[1]));
 			  			$(selectedRow).find('input[type="text"]').each(function(){			  				  
 			  				  rowData.push("\"" + $(this).val() +"\"")
 			  			});			  		
 			  				updateRows.push("{ \"rowID\" : " + rowIDSplit[1] + " , " + "\"rowData\" : [" + rowData.join(',') + ']}' );	
 				  		}
 				  		if(isCopied.length==2){
+				  			rowData.push(~(parseInt(isCopied[1])));
 			  				$(selectedRow).find('input[type="text"]').each(function(){			  				  
 			  				  	rowData.push("\"" + $(this).val() +"\"")
 			  			});
-			  				newRows.push("{ \"rowID\" : " + rowIDSplit[1] + " , " + "\"rowData\" : [" + rowData.join(',') + ']}' );
+			  				newRows.push("{ \"rowID\" : " + "\"rowIDSplit[1]\"" + " , " + "\"rowData\" : [" + rowData.join(',') + ']}' );
 				  		}
 	  		    });	
 	        	
@@ -59,7 +61,7 @@
 	        	
 	        	$.ajax({	        		
 	        		type: 'POST',
-	        		url: '/Inwisey/Inwisey/Save',
+	        		url: 'data/Update?billCycle=' + billCycle,
 	        		contentType: 'application/json',
 	        		data: JSON.stringify(saveRecords),
 	        		success: function (data){	        			

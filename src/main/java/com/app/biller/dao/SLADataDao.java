@@ -9,11 +9,11 @@ public interface SLADataDao {
 
 	ArrayList<SLAData> readSLAData(String billCycle, int towerID);
 
-	void updateSLAData(String billCycle, int towerID, ArrayList<SLAData> records);
+	void updateSLAData(String billCycle, ArrayList<SLAData> records);
 
-	String deleteSLAData(String billCycle, int seqID[]);
+	void deleteSLAData(String billCycle, List<Integer> seqIDList);
 
-	void createNewSLARecord(String billCycle, String userID, ArrayList<SLAData> records);
+	void createNewSLARecord(String billCycle, ArrayList<SLAData> records);
 
 	List<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName);
 

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.app.biller.domain.DataFilter;
 import com.app.biller.domain.ILCData;
 import com.app.biller.domain.SLAData;
+import com.app.biller.domain.SaveRecords;
 import com.app.biller.domain.User;
 import com.app.biller.services.DataApprovalService;
 import com.app.biller.services.DataLockService;
@@ -93,13 +94,21 @@ public class DataController {
 		return dataList;
 	}
 
-	@RequestMapping(path = "/update.do", method = RequestMethod.POST)
-	@ResponseBody
-	public String updateSLAData(@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID,
-			@RequestParam("records") ArrayList<?> records, HttpSession userSession) {
+	@RequestMapping(path = "/update.do", method = RequestMethod.POST)	
+	public @ResponseBody boolean updateSLAData(@RequestParam("billCycle") String billCycle,
+			@RequestBody SaveRecords saveRecords, HttpSession userSession) {
 		User userProfile = getUserProfile(userSession);
-		String userId = userProfile.getUserID();
-		return dataValidationService.updateSLAData(billCycle, towerID, userId, records);
+		String userID = userProfile.getUserID();
+		
+		try {
+			dataValidationService.updateSLAData(billCycle, userID, saveRecords.getUpdateRecords());
+			dataValidationService.createNewSLARecord(billCycle, userID, saveRecords.getNewRecords());
+			return true;
+		} catch(Exception ex)
+		{
+			return false;
+		}
+		
 	}
 
 	@RequestMapping(path = "/lock.do", method = RequestMethod.GET)
@@ -114,6 +123,15 @@ public class DataController {
 		} else {
 			return lockedBy;
 		}
+	}
+	
+	@RequestMapping(path = "/delete.do", method = RequestMethod.POST)
+	public @ResponseBody boolean deleteSLAData(@RequestParam("billCycle") String billCycle,
+			@RequestBody List<Integer> seqIDList, HttpSession userSession) {
+		User userProfile = getUserProfile(userSession);
+		String userID = userProfile.getUserID();
+		dataValidationService.deleteSLAData(billCycle, seqIDList);
+		return true;
 	}
 
 	@RequestMapping(path = "/approve.do", method = RequestMethod.GET)
@@ -134,6 +152,20 @@ public class DataController {
 			emailService.sendEmail(userID);
 			return "approved";
 		}
+		return "rejected";
+	}
+	
+	@RequestMapping(path = "/reject.do", method = RequestMethod.POST)
+	@ResponseBody
+	public String rejectSLAData(@RequestParam("billCycle") String billCycle, @RequestParam("rejectedFor") String rejectedFor, HttpServletRequest request) {
+		
+		String userID = null;;
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			User userProfile = getUserProfile(session);
+			userID = userProfile.getUserID();
+			dataApprovalService.rejectUserApproval(billCycle, userID, rejectedFor);
+		}		
 		return "rejected";
 	}
 }

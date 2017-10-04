@@ -37,7 +37,7 @@ public class SLAData {
 	private String fundType;
 	private String vendorClass;
 	private String changeLog;
-	private String active;
+	private int active;
 	private String modifiedBy;
 	private Date modifiedDate;
 
@@ -281,11 +281,11 @@ public class SLAData {
 		this.changeLog = changeLog;
 	}
 
-	public String getActive() {
+	public int getActive() {
 		return active;
 	}
 
-	public void setActive(String active) {
+	public void setActive(int active) {
 		this.active = active;
 	}
 
