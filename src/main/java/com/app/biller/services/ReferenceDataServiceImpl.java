@@ -64,4 +64,8 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 		}
 		return referenceDataDao.getSLATableHeader();
 	}
+	
+	public String getActiveBillCycle() {
+		return slaDataDao.getActiveBillCycle();
+	}
 }

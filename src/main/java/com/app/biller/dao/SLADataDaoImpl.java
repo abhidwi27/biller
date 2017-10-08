@@ -43,6 +43,9 @@ public class SLADataDaoImpl implements SLADataDao {
 	
 	@Value("${GET_MAX_SEQID}")
 	private String getMaxSeqID;
+	
+	@Value("${GET_ACTIVE_BILLCYCLE}")
+	private String getActiveBillCycle;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -319,5 +322,24 @@ public class SLADataDaoImpl implements SLADataDao {
 
 		List<String> slaWeekendList = jdbcTemplate.query(selectSLAWeekendList, new Object[] { billCycle }, rowMap);
 		return slaWeekendList;
+	}
+	
+	public String getActiveBillCycle() {
+		RowMapper<String> rowMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+
+		List<String> activeBillCycle = jdbcTemplate.query(getActiveBillCycle, rowMap);
+		
+		if(activeBillCycle.size() > 0) {
+			return activeBillCycle.get(0);
+		}
+		else {
+			return null;
+		}
+		
 	}
 }

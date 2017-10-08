@@ -8,7 +8,7 @@ public class UserApproval {
 	private String userID;
 	private String userName;
 	private int roleID;
-	private String billCycle;
+	private int approvalStatus;
 
 	public String getUserID() {
 		return userID;
@@ -34,12 +34,14 @@ public class UserApproval {
 		this.roleID = roleID;
 	}
 
-	public String getBillCycle() {
-		return billCycle;
+	public int getApprovalStatus() {
+		return approvalStatus;
 	}
 
-	public void setBillCycle(String billCycle) {
-		this.billCycle = billCycle;
+	public void setApprovalStatus(int approvalStatus) {
+		this.approvalStatus = approvalStatus;
 	}
+
+	
 
 }

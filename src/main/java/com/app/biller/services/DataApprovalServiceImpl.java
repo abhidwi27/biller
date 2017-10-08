@@ -1,6 +1,9 @@
 package com.app.biller.services;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +14,7 @@ import com.app.biller.dao.UserDao;
 import com.app.biller.domain.GroupApproval;
 import com.app.biller.domain.User;
 import com.app.biller.domain.UserApproval;
+import com.app.biller.ui.ApprovalStatus;
 
 @Service
 public class DataApprovalServiceImpl implements DataApprovalService {
@@ -75,5 +79,20 @@ public class DataApprovalServiceImpl implements DataApprovalService {
 
 	public GroupApproval getGroupApprovals(String billCycle) {
 		return groupApprovalDao.getGroupApprovals(billCycle);
+	}
+	
+	public ApprovalStatus getApprovalStatus(String billCycle) {
+		ApprovalStatus approvalStatus = new ApprovalStatus();
+		Map<String,List<UserApproval>> userApprovalList = new HashMap<String,List<UserApproval>>();
+					
+		userApprovalList.put("dmApprovalList",getUserApprovalByRole(billCycle, 2));
+		userApprovalList.put("bamApprovalList",getUserApprovalByRole(billCycle, 3));
+		userApprovalList.put("srBamApprovalList",getUserApprovalByRole(billCycle, 4));
+		userApprovalList.put("pmoApprovalList",getUserApprovalByRole(billCycle, 8));
+		
+		approvalStatus.setGroupApproval(getGroupApprovals(billCycle));
+		approvalStatus.setUserApprovalList(userApprovalList);	
+			
+		return approvalStatus;
 	}
 }

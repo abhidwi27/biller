@@ -22,4 +22,6 @@ public interface SLADataDao {
 	List<String> getWRList(String billCycle);
 
 	List<String> getWeekendList(String billCycle);
+	
+	String getActiveBillCycle();
 }

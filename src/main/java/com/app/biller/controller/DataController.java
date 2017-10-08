@@ -23,11 +23,13 @@ import com.app.biller.domain.ILCData;
 import com.app.biller.domain.SLAData;
 import com.app.biller.domain.SaveRecords;
 import com.app.biller.domain.User;
+import com.app.biller.domain.UserApproval;
 import com.app.biller.services.DataApprovalService;
 import com.app.biller.services.DataLockService;
 import com.app.biller.services.DataValidationService;
 import com.app.biller.services.EmailService;
 import com.app.biller.services.ReferenceDataService;
+import com.app.biller.ui.ApprovalStatus;
 import com.app.biller.ui.ResponseDataEnvelope;
 import com.app.biller.ui.TableData;
 import com.google.gson.Gson;
@@ -167,5 +169,11 @@ public class DataController {
 			dataApprovalService.rejectUserApproval(billCycle, userID, rejectedFor);
 		}		
 		return "rejected";
+	}
+	
+	@RequestMapping(path = "/getApprovalStatus.do", method = RequestMethod.GET)	
+	public @ResponseBody ApprovalStatus getApprovalStatus() {
+			String activeBillCycle = referenceDataService.getActiveBillCycle();
+			return dataApprovalService.getApprovalStatus(activeBillCycle);			
 	}
 }
