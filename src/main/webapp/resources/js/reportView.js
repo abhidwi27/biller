@@ -93,7 +93,9 @@ $(document).ready(function(){
 	                	
 						 newRowData.push('<div class=\"checkbox\"> <input type=\"checkbox\"  class=\"styled\"/>  <label > </label> </div>');			    
 						    for (var prop in tableJson["tableBody"][rowNo]){
-						    	newRowData.push(tableJson["tableBody"][rowNo][prop]);				    	
+						    	if(prop != "active"){
+						    		newRowData.push(tableJson["tableBody"][rowNo][prop]);
+						    	}
 							 }
 					   var temp = $("#report").dataTable().fnAddData(newRowData);
 					    if (!(reportDataType == 0)){

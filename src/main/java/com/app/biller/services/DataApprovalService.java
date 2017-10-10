@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.app.biller.domain.GroupApproval;
 import com.app.biller.domain.UserApproval;
+import com.app.biller.ui.ApprovalStatus;
 
 public interface DataApprovalService {
 
@@ -14,4 +15,6 @@ public interface DataApprovalService {
 	void rejectUserApproval(String billCycle, String rejectedBy, String rejectedFor);
 
 	GroupApproval getGroupApprovals(String billCycle);
+	
+	ApprovalStatus getApprovalStatus(String billCycle);
 }

@@ -18,14 +18,14 @@
 		<li><a ><span data-toggle="tooltip" data-original-title="total hours"><i class="fa fa-plus-square-o" style="font-size:24px; color:#46b5c1;"></i></span></a></li>
 		-->
 		<li><a ><span style="font-size:24px; color:#c0c0c0;"> | </span></a></li>  
-		<li><a ><span data-toggle="tooltip" data-original-title="Lock Data"><i class="fa fa-lock" style="font-size:26px; color:#46b5c1;"></i></span></a></li>						
-		<li><a ><span data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-edit" style="font-size:26px; color:#46b5c1;"></i></span></a></li>
-		<li><a ><span data-toggle="tooltip" data-original-title="Copy"><i class="fa fa-copy" style="font-size:24px; color:#46b5c1;"></i></span></a></li>		
-		<li><a ><span data-toggle="tooltip" data-original-title="Save"><i class="fa fa-save" style="font-size:24px; color:#46b5c1;"></i></span></a></li>
-		<li><a ><span data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash-o" style="font-size:24px; color:#46b5c1;"></i></span></a></li>
+		<li><a id="reportLock"><span data-toggle="tooltip" data-original-title="Lock Data"><i class="fa fa-lock" style="font-size:26px; color:#46b5c1;"></i></span></a></li>						
+		<li><a id="reportEdit"><span data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-edit" style="font-size:26px; color:#46b5c1;"></i></span></a></li>
+		<li><a id="reportCopy"><span data-toggle="tooltip" data-original-title="Copy"><i class="fa fa-copy" style="font-size:24px; color:#46b5c1;"></i></span></a></li>		
+		<li><a id="reportSave"><span data-toggle="tooltip" data-original-title="Save"><i class="fa fa-save" style="font-size:24px; color:#46b5c1;"></i></span></a></li>
+		<li><a id="reportDelete"><span data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash-o" style="font-size:24px; color:#46b5c1;"></i></span></a></li>
 		<li><a ><span style="font-size:24px; color:#c0c0c0;"> | </span></a></li>
-		<li><a ><span data-toggle="tooltip" data-original-title="Approve"><i class="fa fa-thumbs-o-up" style="font-size:24px;color:#46b5c1;"></i></span></a></li>
-		<li><a ><span data-toggle="tooltip" data-original-title="Reject"><i class="fa fa-thumbs-o-down" style="font-size:24px;color:#46b5c1;"></i></span></a></li>
+		<li><a id="reportApprove"><span data-toggle="tooltip" data-original-title="Approve"><i class="fa fa-thumbs-o-up" style="font-size:24px;color:#46b5c1;"></i></span></a></li>
+		<li><a id="reportReject"><span data-toggle="tooltip" data-original-title="Reject"><i class="fa fa-thumbs-o-down" style="font-size:24px;color:#46b5c1;"></i></span></a></li>
 		<!-- DO NOT REMOVE THIS COMMENTED CODE
 		<li><a ><span data-toggle="tooltip" data-original-title="Approve"><i class="fa fa-thumbs-o-up" style="font-size:24px;color:#00d535;"></i></span></a></li>
 		<li><a ><span data-toggle="tooltip" data-original-title="Reject"><i class="fa fa-thumbs-o-down" style="font-size:24px;color:#fa032f;"></i></span></a></li>

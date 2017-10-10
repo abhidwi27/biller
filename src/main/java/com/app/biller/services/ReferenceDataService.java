@@ -21,4 +21,6 @@ public interface ReferenceDataService {
 	List<String> getYear();
 	
 	List<String> getTableHeader(int dataType);
+	
+	String getActiveBillCycle();
 }

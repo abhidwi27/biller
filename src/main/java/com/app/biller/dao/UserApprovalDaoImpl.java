@@ -57,7 +57,7 @@ public class UserApprovalDaoImpl implements UserApprovalDao {
 	public ArrayList<UserApproval> getUserApprovalByRole(String billCycle, int roleID) {
 
 		ArrayList<UserApproval> userApprovalDetail = (ArrayList<UserApproval>) jdbcTemplate.query(selectUserApprovalByRole,
-				new Object[] { billCycle, roleID, roleID }, new RowMapper<UserApproval>() {
+				new Object[] { billCycle, roleID}, new RowMapper<UserApproval>() {
 
 					@Override
 					public UserApproval mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -65,7 +65,7 @@ public class UserApprovalDaoImpl implements UserApprovalDao {
 						sign.setUserID(rs.getString("user_id"));
 						sign.setUserName(rs.getString("name"));
 						sign.setRoleID(Integer.parseInt(rs.getString("role_id")));
-						sign.setBillCycle(rs.getString("bill_cycle"));
+						sign.setApprovalStatus(Integer.parseInt(rs.getString("approval_status")));
 						return sign;
 					}
 				});

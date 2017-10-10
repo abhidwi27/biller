@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.app.biller.domain.ILCData;
+import com.app.biller.domain.Record;
 import com.app.biller.domain.SLAData;
+import com.app.biller.domain.SaveRecords;
 
 public interface DataValidationService {
 
@@ -16,9 +18,9 @@ public interface DataValidationService {
 
 	List<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName);
 
-	String updateSLAData(String billCycle,  int towerID, String userID, ArrayList<?> records);
+	void updateSLAData(String billCycle,  String userID, ArrayList<Record> records);
 
-	String deleteSLAData(String billCycle, int recordID[]);
+	void deleteSLAData(String billCycle, List<Integer> seqIDList);
 
-	String createNewSLARecord(String billCycle, String userID, ArrayList<?> records);	
+	void createNewSLARecord(String billCycle, String userID, ArrayList<Record> records);	
 }

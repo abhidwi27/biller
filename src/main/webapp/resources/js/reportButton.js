@@ -58,17 +58,17 @@ $(function() {
 
 						if (rowCount == 0) {
 							alert("You have not selected any records for editing, please select record for editing");
-						} else if (rowCount == 1) {
-
+						} else {
+							$('#report tbody tr').find(
+							'input[type="checkbox"]:checked').each(
+							function(){
 							var rowID = "#"
-									+ $('#report tbody tr').find(
-											'input[type="checkbox"]:checked')
-											.closest('tr').attr("id");
+									+ $(this).closest('tr').attr("id");
 							var rowIdx = reportTable.row(rowID).index();
 							var oldData = reportTable.row(rowIdx).data();
 
 							if (!rowEditMap[rowID]) {
-								for (i = 1; i < oldData.length; i++) {
+								for (i = 1; i < oldData.length-1; i++) {
 									var selector = rowID + " " + "td";
 									$(selector).eq(i).html(
 											'<input type=\"text\" class=\"form-control\" value=\"'
@@ -80,9 +80,9 @@ $(function() {
 							}
 
 							$('#report th').eq(0).click();
-						} else {
-							alert("You have selected more than one records for editing, please select one record at a time");
+						});
 						}
+					
 
 					});
 
@@ -111,8 +111,9 @@ $(function() {
 							var copiedData = [];
 							var newRowID;
 							var newData = new Array();
-
+							var tempData = [];
 							if (rowEditMap[rowIDSelector]) {
+								tempData =  reportTable.row(rowIdx).data();
 								copiedData
 										.push('<div class=\"checkbox\"> <input type=\"checkbox\"  class=\"styled\"/>  <label > </label> </div>');
 								$(rowIDSelector)
@@ -125,6 +126,7 @@ $(function() {
 																			.val()
 																	+ '\">');
 												});
+								copiedData.push(tempData[tempData.length - 1]);
 
 							} else {
 								copiedData = reportTable.row(rowIdx).data();
@@ -156,8 +158,6 @@ $(function() {
 							var newRow = $('#report').dataTable().fnGetNodes(
 									temp);
 							$(newRow).attr('id', newRowID);
-							// reportTable.row(rowCount).data().DT_RowId =
-							// newRowID;
 							insertedRow = reportTable.row(rowCount).data();
 							for (var i = rowCount; i > rowIdx + 1; i--) {
 								var tempRow = reportTable.row(i - 1).data();
@@ -190,16 +190,114 @@ $(function() {
 					});
 
 	$("#reportDelete").click(function() {
+		var billCycle = $('#currentBillCycle').val();
+		var reportTable = $('#report').DataTable();
+		var seqIDList = new Array();
+		
+		$("#report  tr").find('input[type="checkbox"]:checked').each(function(){
+			var selectedRowID = $(this).closest('tr').attr("id");
+			var rowIDSelector = "#" + selectedRowID;
+			var isCopied = selectedRowID.split("_");
+			var rowIDSplit = selectedRowID.split("-");
+			if (isCopied.length ==1){
+				seqIDList.push(rowIDSplit[1]);
+			}
+			reportTable.rows(rowIDSelector).remove().draw();
+			
+			});
+			if (seqIDList.length != 0){		
+				$.ajax({
+					url : 'data/delete.do?billCycle=' + billCycle,
+					data : JSON.stringify(seqIDList),
+					contentType: 'application/json',
+		    		dataType: 'json',
+					type : 'POST',
+					success : function(result) {
+						if (result) {
+							alert("Data deleted successfuly");
+						}
+					}
+				});
+			}
+			
+		
+		
 
 	});
 
 	$("#reportSave").click(function() {
-
+		$(".biller-loader-div").fadeIn(1);		
+		var reportTable = $('#report').DataTable();
+    	var updateRows = [];
+    	var newRows=[];
+    	var saveRecords = {};
+    	
+    	$("#report  tr").find('input[type="checkbox"]:checked').each(function(){
+    			var selectedRowID = $(this).closest('tr').attr("id");
+	  			selectedRowID = '#' + selectedRowID;
+		  		var rowData = [];				  		
+		  		var isCopied = selectedRowID.split("_");
+		  		var rowIDSplit = selectedRowID.split("-");
+		  		if (isCopied.length ==1){
+			  		rowData.push( rowIDSplit[1]);
+		  			$(selectedRowID).find('input[type="text"]').each(function(){			  				  
+		  				  rowData.push("\"" + $(this).val() +"\"")
+		  			});			  		
+		  				updateRows.push("{ \"rowID\" : " + rowIDSplit[1] + " , " + "\"rowData\" : [" + rowData.join(',') + ']}' );	
+		  		}
+		  		if(isCopied.length==2){
+		  			rowData.push("\"" + rowIDSplit[1] + "\"");
+	  				$(selectedRowID).find('input[type="text"]').each(function(){			  				  
+	  				  	rowData.push("\"" + $(this).val() +"\"")
+	  			});
+	  				newRows.push("{ \"rowID\" : " + "\"" + rowIDSplit[1] +"\"" + " , " + "\"rowData\" : [" + rowData.join(',') + ']}' );
+		  		}
+		    });	
+    	
+    	var updateRecords ="[" +  updateRows.join(' , ') + "]";
+    	var newRecords = "[" +  newRows.join(' , ') + "]";
+    	saveRecords["updateRecords"] = JSON.parse(updateRecords);
+    	saveRecords["newRecords"] = JSON.parse(newRecords);	
+    	var billCycle = $('#currentBillCycle').val();
+    	
+    	$.ajax({	        		
+    		type: 'POST',
+    		url: 'data/update.do?billCycle=' + billCycle,
+    		contentType: 'application/json',
+    		dataType: 'json',
+    		data: JSON.stringify(saveRecords),
+    		success: function (result){	
+    			if(result){
+    				alert("Data saved successfully");
+    				editMode = false;
+    				$("#reportSubmit").trigger("click");
+    			}else{
+    				alert("Error occured while saving data");
+    			}    			
+    		}        			
+    	});
 	});
 
 	$("#reportReject").click(function() {
+		var billCycle = $('#currentBillCycle').val();
+		var rejectedFor = "adwivedi";
+		url = 'data/reject.do?billCycle=' + billCycle + '&rejectedFor=' + rejectedFor;
+		$.ajax({
+			url : url,
+			data : false,
+			dataType : 'text',
+			processData : false,
+			contentType : false,
+			type : 'POST',
+			success : function(msg) {
+				if (msg == "rejected") {
+					alert("Rejection submitted successfully");		
+				}
+			}
+		});
 
 	});
+	
 	$("#reportApprove").click(function() {
 		var billCycle = $('#currentBillCycle').val();
 		url = 'data/approve.do?billCycle=' + billCycle;
