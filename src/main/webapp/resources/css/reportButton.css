@@ -15,3 +15,8 @@ display: block;
 ul.nav li a:hover{
 	cursor: pointer;
 }
+
+.report-button-icon{
+	font-size:24px; 
+	color:var(--biller-report-button-icon-color);
+}

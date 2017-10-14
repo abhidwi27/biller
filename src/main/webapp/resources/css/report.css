@@ -2,6 +2,8 @@
 	margin-top: -40px;
 	margin-left: 15px;
 	margin-right: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .billerTable th {
@@ -40,4 +42,13 @@
 .billerTable .col-sm-12 {
 	padding-left: 0px;
 	padding-right: 0px;
+}
+
+.table > tbody > tr > td> input[type="text"]{
+	padding-top: 0px;
+	padding-left: 4px; 
+	padding-right: 4px; 
+	padding-bottom: 0px; 
+	font-size: 11px;
+	height: 25px;
 }

@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="resources/css/style.css" />
 <link rel="stylesheet" href="resources/css/animate.css" />
 <link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="resources/css/billerHome.css">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
 <script	src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"> </script>
 <script	src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js"> </script>
@@ -28,6 +29,7 @@
 
 <jsp:include page="billerLoader.jsp"></jsp:include>
 <jsp:include page="billerHeader.jsp"></jsp:include>
+<jsp:include page="billerAlert.jsp"></jsp:include>
 
 <br>
 <br>
@@ -35,29 +37,25 @@
 
 <input name="strUserProfile" id="strUserProfile" type="hidden" value='${fn:escapeXml(strUserProfile)}' />
 
-<div style="margin-left: 10px; margin-right: 10px;">
+<div class="biller-home-margin">
 <div class=".container-fluid">
   <div class="row biller-tab-row">
     <div class="col-md-12">      
-      <div class="card biller-Home">
+      <div class="card biller-Home">      	
         <ul class="nav nav-pills" role="tablist">
-           <li role="presentation"><a href="#reportPanel" aria-controls="reportPanel" role="tab" data-toggle="tab"><i class="fa fa-table" style="font-size:16px;"></i>    <span style="font-size:16px;">Data</span></a></li>
-          <li role="presentation" class="active" ><a href="#upload" aria-controls="upload" role="tab" data-toggle="tab"><i class="fa fa-upload "></i>  <span style="font-size:16px;">Files</span></a></li>
-          <li role="presentation" id="statusTab"><a href="#status" aria-controls="status" role="tab" data-toggle="tab"><i class="fa fa-list-ul"></i>  <span style="font-size:16px;">Status</span></a></li>
-          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-user-circle-o" style="font-size:16px"></i>   <span style="font-size:16px;">Admin</span></a></li>
-          <!--<li role="presentation"><a href="#extra" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-plus-square-o"></i>  <span>extra</span></a></li>-->
+          <li role="presentation" class="active" ><a href="#reportPanel" aria-controls="reportPanel" role="tab" data-toggle="tab"><i class="fa fa-table biller-home-tab-icon"></i><span class="biller-home-tab-icon">Data</span></a></li>
+          <li role="presentation" ><a href="#upload" aria-controls="upload" role="tab" data-toggle="tab"><i class="fa fa-upload biller-home-tab-icon"></i><span class="biller-home-tab-icon">Upload</span></a></li>
+          <li role="presentation" ><a href="#statusTab" aria-controls="statusTab" role="tab" data-toggle="tab"><i class="fa fa-list-ul biller-home-tab-icon"></i><span class="biller-home-tab-icon" >Status</span></a></li>
+          <li role="presentation"><a href="#download" aria-controls="download" role="tab" data-toggle="tab"><i class="fa fa-download biller-home-tab-icon"></i><span class="biller-home-tab-icon">Download</span></a></li>
+          <li role="presentation"><a href="#admin" aria-controls="admin" role="tab" data-toggle="tab"><i class="fa fa-user-circle-o biller-home-tab-icon"></i><span class="biller-home-tab-icon">Admin</span></a></li>
         </ul>
-        
      
-        <div class="tab-content">
-          
+        <div class="tab-content">          
           <jsp:include page="upload.jsp"></jsp:include>
 		  <jsp:include page="reportViewTab.jsp"></jsp:include>
 		  <jsp:include page="statusViewTab.jsp"></jsp:include>
-          
-          
-          <div role="tabpanel" class="tab-pane fade" id="settings">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>
-          <!--  role="tabpanel" class="tab-pane fade" id="extra">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>--> 
+          <jsp:include page="download.jsp"></jsp:include>
+          <jsp:include page="admin.jsp"></jsp:include>      
         </div>
       </div>
     </div>

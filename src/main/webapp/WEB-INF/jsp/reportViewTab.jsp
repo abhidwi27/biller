@@ -4,88 +4,84 @@
 
 <head>
 <script src="resources/js/reportView.js"> </script>
+<link rel="stylesheet" href="resources/css/reportViewTab.css">
 </head>
 
 <input name="currentBillCycle" id="currentBillCycle" type="hidden" value='' />
 <input name="currentDtaType" id="currentDataType" type="hidden" value='' />
 <input name="currentTower" id="currentTower" type="hidden" value='' />
 
-<div role="tabpanel" class="tab-pane fade" id="reportPanel">
+<div role="tabpanel" class="tab-pane fade  in active" id="reportPanel">
 	<div class="container container-table" id="reportSelection">
 		<div class="row vertical-center-row">
 			<div class="text-center col-md-1">					
 			</div>
 			<div class="text-center col-md-9 biller-panel">						
-				<div class="panel panel-primary">
+				<div class="panel">
 					<div class="panel-heading"> Data View Criteria </span>
 					</div>
 				<div class="panel-body">  
 					<div class="row biller-row" id="reportDataType">
-						<div class="col-md-3">
-							<label class="biller-report-label">
+						<div class="col-md-3 text-left biller-panel-label">
+							<label class="biller-label">
 								Report Type :
 							</label>
 						</div>
-						<div class="col-md-9">
+						<div class="col-md-9">								  
 								<div class="col-md-4 text-left">
 									<div class="radio-inline">
-										<label>
-												<input type="radio" name="reportRadio" value="0"  checked="">
+										<label class="biller-radio-label">
+												<input type="radio" name="reportRadio" value="0"  checked>
 												<span class="cr"><i class="cr-icon fa fa-circle"></i></span>
 												ILC Report
 										</label>
 									</div>
 								</div>
-								<div class="col-md-4 text-left">
+								<div class="col-md-4 text-left biller-radio-align">
 									<div class="radio-inline">
-										<label>
+										<label class="biller-radio-label">
 												<input type="radio" name="reportRadio" value="1"  >
 												<span class="cr"><i class="cr-icon fa fa-circle"></i></span>
 												SLA Report
 										</label>
 									</div>
-								</div>	
+								</div>
 						</div>					
 					</div>
 					<div class="row biller-row">
-						<div class="col-md-3 ">
-							<label class="biller-label-bill-view">
-								Bill Cycle:
-							</label>
-						</div>
-						<div class="form-group col-md-4 biller-drop-2nd ">	
+						<div class="col-md-3 text-left biller-panel-label">
 							<label class="biller-label">
-										Month:
+								Bill Cycle :
 							</label>
-							<select class="selectpicker"  data-dropup-auto="false" data-width="100px" data-live-search="true" id="reportMonth">
-							<c:if test="${not empty monthList}">
-									<c:forEach var="o" items="${monthList}">
-									 <option value="${o.monthID}"> ${o.monthName}</option>
-									 </c:forEach>
-							  </c:if>														
-							</select>
-							
 						</div>
-						<div class="form-group col-md-3 ">	
-								<label class="biller-label">
-										Year:
-								</label>
-								<select class="selectpicker"  data-dropup-auto="false" data-width="100px" data-live-search="true" id="reportYear">
-									<c:if test="${not empty yearList}">
-										<c:forEach var="o" items="${yearList}">
-									 		<option > ${o}</option>
-									 </c:forEach>
-							  		</c:if>
-								</select>
+						<div class="col-md-9">
+							<div class="form-group col-md-4 biller-month-dropdown">								
+								<select class="selectpicker"  data-dropup-auto="false" data-width="100px" data-live-search="true" id="reportMonth">
+								<c:if test="${not empty monthList}">
+										<c:forEach var="o" items="${monthList}">
+										 <option value="${o.monthID}"> ${o.monthName}</option>
+										 </c:forEach>
+								  </c:if>														
+								</select>								
+							</div>
+							<div class="form-group col-md-4 biller-year-dropdown">									
+									<select class="selectpicker"  data-dropup-auto="false" data-width="100px" data-live-search="true" id="reportYear">
+										<c:if test="${not empty yearList}">
+											<c:forEach var="o" items="${yearList}">
+										 		<option > ${o}</option>
+										 </c:forEach>
+								  		</c:if>
+									</select>
+							</div>
 						</div>						
 					</div>
 					<div class="row biller-row">
-						<div class="col-md-3 ">
-							<label class="biller-label-Tower">
-								Tower:
+						<div class="col-md-3 text-left biller-panel-label">
+							<label class="biller-label">
+								Tower :
 							</label>
 						</div>
-						<div class="form-group col-md-5 text-left biller-drop-3rd">	
+						<div class="form-group col-md-5 text-left biller-tower-dropdown">	
 							<select class="selectpicker" data-dropup-auto="false" data-width="auto"  data-live-search="true" id="reportTower">
 								<c:if test="${not empty towerList}">
 									<c:forEach var="o" items="${towerList}">
@@ -96,20 +92,16 @@
 								
 							</div>
 						</div>
-						<div class="row biller-row">
-								<div class="col-md-3">										
+						<div class="panel-footer">
+							<div class="text-center">					
+								<div class="biller-footer">	
+									<a class="btn btn-primary btn-outline biller-btn" id="reportSubmit">Submit</a>
 								</div>
-								<div class="col-md-8">
-									<div class="col-md-4 text-center">	
-										<a class="btn btn-primary btn-outline btn-block btn-md" id="reportSubmit">Submit</a>
-									</div>
-									<div class="col-md-4 text-center">	
-										<a class="btn btn-primary btn-outline btn-block btn-md">Cancel</a>
-									</div>
-								</div>
-									
-						</div>
-						
+								<div class="biller-footer">	
+									<a class="btn btn-primary btn-outline biller-btn">Cancel</a>
+								</div>						
+							</div>
+						</div>						
 					</div>
 					</div>
 				</div>

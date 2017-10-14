@@ -1,0 +1,17 @@
+.file {
+	visibility: hidden;
+	position: absolute;
+}
+
+.biller-upload-input{
+	margin-top: -5px;
+	margin-left: 35px;
+}
+
+.biller-upload-input .input-group input[type="text"],
+.biller-upload-input .input-group button,
+.biller-upload-input .input-group span{
+	height: 33.6px;
+}
+
+

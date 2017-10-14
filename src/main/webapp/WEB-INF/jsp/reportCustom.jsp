@@ -13,57 +13,53 @@
 				<div class="modal-body">
 					<div class="row biller-row">
 							<div class="col-md-4 ">
-								<label class="biller-customReport-label">
+								<label class="biller-label biller-modal-label">
 									Team Name:
 								</label>
 							</div>
-								<div class="form-group col-md-5 text-left">																	
-									<select class="selectpicker"  data-live-search="true" id="customTeam">
-																				
+								<div class="form-group col-md-5 text-left biller-modal-dropdown">																	
+									<select class="selectpicker"  data-live-search="true" id="customTeam">																				
 									</select>
 									
 								</div>
 					</div>
 					<div class="row biller-row">
 								<div class="col-md-4 ">
-									<label class="biller-customReport-label">
+									<label class="biller-label biller-modal-label">
 										Work Request :
 									</label>
 								</div>
-								<div class="form-group col-md-5 text-left">																	
-									<select class="selectpicker"  data-live-search="true" id="customWr">
-																				
+								<div class="form-group col-md-5 text-left biller-modal-dropdown">																	
+									<select class="selectpicker"  data-live-search="true" id="customWr">																				
 									</select>
 								</div>
 					</div>
 					<div class="row biller-row">
 								<div class="col-md-4 ">
-									<label class="biller-customReport-label">
+									<label class="biller-label biller-modal-label">
 										Weekend :
 									</label>
 								</div>
-								<div class="form-group col-md-5 text-left">																	
-									<select class="selectpicker"  data-live-search="true" id="customWeekend">
-																							
+								<div class="form-group col-md-5 text-left biller-modal-dropdown">																	
+									<select class="selectpicker"  data-live-search="true" id="customWeekend">																							
 									</select>
 								</div>
 					</div>
 					<div class="row biller-row">
 								<div class="col-md-4 ">
-									<label class="biller-customReport-label">
+									<label class="biller-label biller-modal-label">
 										Employee Name :
 									</label>
 								</div>
-								<div class="form-group col-md-8 text-left">																	
-									<select class="selectpicker"  data-live-search="true" id="customEmp">
-																							
+								<div class="form-group col-md-8 text-left biller-modal-dropdown">																	
+									<select class="selectpicker"  data-live-search="true" id="customEmp">																							
 									</select>
 								</div>
 					</div>
 			</div>
 		  	<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal" id="customSubmit">Submit</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal" id="customClose">Close</button>
+				<a class="btn btn-outline biller-btn" data-dismiss="modal" id="customSubmit">Submit</a>
+				<a class="btn btn-outline biller-btn" data-dismiss="modal" id="customClose">Close</a>
 			</div>
 		</div>
 	</div>
