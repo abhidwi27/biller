@@ -1,0 +1,33 @@
+.biller-wrapper {
+	margin-top: 45px;
+}
+
+.biller-wrapper .input-group {
+	border: 0;
+	outline: 0;
+	height: 45px;
+	margin-bottom: 15px;
+	border-radius: 0px;
+	border-bottom: 2px solid var(--biller-login-input-bottom-color);
+	width: 100%;
+}
+
+.biller-wrapper .form-control {
+	outline: none;
+	border: none !important;
+	box-shadow: none !important;
+	height: 45px;
+}
+
+.biller-wrapper .biller-signin-form {
+	max-width: 420px;
+	padding: 30px 38px 66px;
+	margin: 0 auto;
+	border: 1px solid var(--biller-login-border-color);
+}
+
+.biller-wrapper .biller-login-top {
+	position: relative;
+	margin-top: -38px;
+	color: var(--biller-login-top-heading-color);
+}

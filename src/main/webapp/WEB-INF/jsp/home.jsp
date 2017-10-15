@@ -4,14 +4,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page isELIgnored="false" %>
 
-<!DOCTYPE HTML>
+
 <html>
 <head>
 
 <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" /> 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
-<link rel="stylesheet" href="resources/css/sweetalert.css">
 <link rel="stylesheet" href="resources/css/style.css" />
 <link rel="stylesheet" href="resources/css/animate.css" />
 <link rel="stylesheet" href="resources/css/style.css">
@@ -21,7 +20,7 @@
 <script	src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js"> </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
-<script src="resources/js/sweetalert.min.js"> </script>
+
 
 </head>
 
@@ -65,4 +64,3 @@
 
 
 </body>
-</html>

@@ -1,6 +1,5 @@
 
 <head>
-<link rel="stylesheet" href="resources/css/reportReject.css">
 <script src="resources/js/reportReject.js"> </script>
 </head>
 <div id="rejectView" class="modal fade" role="dialog">

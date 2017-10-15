@@ -1,6 +1,10 @@
 
 :root{
-	--biller-body-background-color: #fff;
+	
+	--biller-login-border-color: #cccccc;
+	--biller-login-input-bottom-color: #808080;
+	--biller-login-top-heading-color: #808080;	
+	--biller-body-background-color: #fff;	
 	--biller-header-background-color: #276f76;
 	--biller-header-left-font-color: #fff;
 	--biller-header-right-font-color: #fff;
