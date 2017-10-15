@@ -34,9 +34,10 @@
 	
 }
 body {
-	background: var(--biller-body-background-color);
+	 background: var(--biller-body-background-color);	
 	letter-spacing: 0.07em;
 }
+
 
 @media all and (max-width:724px) {
 	.nav-tabs>li>a>span {
@@ -120,6 +121,20 @@ body {
 	border-radius: 0px;
 	border-color: var(--biller-button-border-color);
 	
+}
+
+.btn-primary{	
+	background-color: var(--biller-button-outline-background-color);
+	color: var(--biller-button-font-color);
+	transition: all .5s;
+	border-radius: 0px;
+	border-color: var(--biller-button-border-color);
+	
+}
+.btn-primary:hover{
+	background-color: var(--biller-button-background-color-hover);
+	color: var(--biller-button-font-color-hover);
+	transition: all .5s;
 }
 
 

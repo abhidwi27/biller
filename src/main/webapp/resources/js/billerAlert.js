@@ -18,5 +18,6 @@ function billerAlert(message, isFirstBtn, firstBtnLabel, isSecondBtn, secondBtnL
 		$(selector).find(".modal-footer").append(secondBtnDiv);
 	}	
 	$(selector).find(".modal-body #alertMessageText").append(message);
+	$("#biller-alert").modal('toggle');
 	
 }

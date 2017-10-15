@@ -58,8 +58,7 @@ $(function() {
 
 						if (rowCount == 0) {
 							var msg="You have not selected any records for editing, please select at least one record for editing.";
-							billerAlert(msg,true,"Okay",false,"NO","","Notification");
-							$("#biller-alert").modal('toggle');
+							billerAlert(msg,true,"Okay",false,"NO","","Notification");							
 							//alert("You have not selected any records for editing, please select record for editing");
 						} else {
 							$('#report tbody tr').find(
