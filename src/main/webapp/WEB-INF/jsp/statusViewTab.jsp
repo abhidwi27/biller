@@ -8,7 +8,7 @@
 	
 </head>
 
-<div role="tabpanel" class="tab-pane fade" id="status">
+<div role="tabpanel" class="tab-pane fade" id="statusTab">
 	
 <div class="billerProgress">
 	<div class="row">

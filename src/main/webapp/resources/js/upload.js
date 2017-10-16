@@ -22,7 +22,7 @@ $(document).ready(function(){
 	    var month = $("#uploadMonth").val();
 		var year = $("#uploadYear option:selected").text().trim();
 		var billCycle = month+ year;
-		var reportWeekend = $('#reportWeekEndDate input[type="text"]').val();
+		var reportWeekend = $('#uploadWeekEndDate input[type="text"]').val();
 		var oMyForm = new FormData();
 		 
 		for( i=0 ; i<uploadFile.files.length ; i++){				

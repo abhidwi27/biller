@@ -13,6 +13,7 @@
 	margin: 40px auto;
 	margin-bottom: 0;
 	box-sizing: border-box;
+	padding-left: 17%;
 }
 
 .billerProgress .board>div.board-inner>.nav-tabs {
@@ -29,7 +30,7 @@
 	height: 2px;
 	background: #ddd;
 	position: absolute;
-	width: 80%;
+	width: 50%;
 	margin: 0 auto;
 	left: 0;
 	right: 0;

@@ -57,7 +57,9 @@ $(function() {
 								});
 
 						if (rowCount == 0) {
-							alert("You have not selected any records for editing, please select record for editing");
+							var msg="You have not selected any records for editing, please select at least one record for editing.";
+							billerAlert(msg,true,"Okay",false,"NO","","Notification");							
+							//alert("You have not selected any records for editing, please select record for editing");
 						} else {
 							$('#report tbody tr').find(
 							'input[type="checkbox"]:checked').each(
@@ -278,7 +280,7 @@ $(function() {
     	});
 	});
 
-	$("#reportReject").click(function() {
+	$("#rejectSubmit").click(function() {
 		var billCycle = $('#currentBillCycle').val();
 		var rejectedFor = "adwivedi";
 		url = 'data/reject.do?billCycle=' + billCycle + '&rejectedFor=' + rejectedFor;
