@@ -24,10 +24,54 @@
 	padding: 30px 38px 66px;
 	margin: 0 auto;
 	border: 1px solid var(--biller-login-border-color);
+	background-color: #000;
+	opacity: 0.7;
 }
 
 .biller-wrapper .biller-login-top {
 	position: relative;
 	margin-top: -38px;
 	color: var(--biller-login-top-heading-color);
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('biller-login-background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    opacity: 0.9;
+    z-index: -999;
+}
+
+
+input[type="text"], input[type="password"] {
+	background: transparent;    
+}
+
+input[type="text"]::-moz-placeholder{
+	color: var(--biller-login-placeholder-color);    
+}
+
+input[type="password"]::-moz-placeholder{
+	color: var(--biller-login-placeholder-color);    
+}
+
+#loginForm .input-group input[type="text"], input[type="password"]{
+	color: var(--biller-login-input-text-color);
+}
+
+#loginForm .btn {
+	color: var(--biller-login-btn-text-color);
+	border-color: var(--biller-login-btn-border-color);
+}
+
+#loginForm .btn:hover {
+	background-color: var(--biller-login-btn-hover-color);
+	color: var(--biller-login-btn-font-color-hover);
+	border-color: var(--biller-login-btn-border-hover-color);
 }

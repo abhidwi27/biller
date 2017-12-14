@@ -16,25 +16,34 @@
            <div class="board-inner">
                <ul class="nav nav-tabs" id="myTab">
                    <div class="liner"></div>
-                   <li class="active">
+                   <li class="active" id="dmApprovalGroupTab">
                        <a href="#dmApprovalList" aria-controls="dmApprovalList" role="tab" data-toggle="tab" title="DM Group Approval Status">
-             			<span class="round-tabs one">                     		
+             			<span class="round-tabs one">
+             			<!--  
+             			<i class="fa fa-thumbs-o-up fa-2x" style="margin-top: 8px; color: green;" aria-hidden="true"></i>   
+             			-->          			                     		
              			</span>
                        </a>
                    </li>
-                   <li>
+                   <li id="bamApprovalGroupTab">
                    	<a href="#bamApprovalList" aria-controls="bamApprovalList" role="tab" data-toggle="tab" title="BAM Group Approval Status">
-           			 <span class="round-tabs two">                		
+           			 <span class="round-tabs two">
+           			 <!-- 
+           			 <i class="fa fa-spinner fa-2x" style="margin-top: 8px; color: blue;" aria-hidden="true"></i>  
+           			  -->              		
             		 </span>
                    	</a>
                    </li>
-                   <li>
+                   <li id="srBamApprovalGroupTab">
                    	<a href="#srBamApprovalList" aria-controls="srBamApprovalList" role="tab" data-toggle="tab" title="Sr BAM Group Approval Status">
             			<span class="round-tabs three">
+            			<!--  
+            			<i class="fa fa-ban fa-2x" style="margin-top: 8px; color: red;" aria-hidden="true"></i>
+            			-->
             			</span>
             		</a>
                    </li>
-                   <li>
+                   <li id="pmoApprovalGroupTab">
                    	<a href="#pmoApprovalList" aria-controls="pmoApprovalList" role="tab" data-toggle="tab" title="PMO Approval Status">
                 		<span class="round-tabs four">
                		    </span>

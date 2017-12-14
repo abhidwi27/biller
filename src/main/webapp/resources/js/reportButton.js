@@ -20,6 +20,7 @@ $(function() {
 		var tower = $('#currentTower').val();
 		var billCycle = $('#currentBillCycle').val();
 		var reportTable = $('#ilcReport').DataTable();
+		var userProfile = JSON.parse($('#strUserProfile').val());
 
 		url = 'data/lock.do?billCycle=' + billCycle + '&towerID=' + tower;
 
@@ -30,24 +31,56 @@ $(function() {
 			processData : false,
 			contentType : false,
 			type : 'GET',
-			success : function(msg) {
-				if (msg == "success") {
+			success : function(strlockResponseMap) {
+				var lockResponseMap = JSON.parse(strlockResponseMap);
+				if (lockResponseMap.msg == "success") {
 					editMode = true;
 					alert("Table lock established successfully.");
-				} else if (msg == userProfile.name) {
+				} else if (lockResponseMap.lockedBy.userID == userProfile.userID) {
+					editMode = true;
 					alert("You have already established Lock..!!");
-				} else {
+				} else if(lockResponseMap.lockedBy != ''){
 					editMode = false;
-					alert("Table is already locked by " + msg);
+					alert("Table is already locked by " + lockResponseMap.lockedBy.name);
+				} else if(lockResponseMap.lockedForTower != ''){
+					editMode = false;
+					alert("You have already established for tower " + lockResponseMap.lockedForTower + ".You can not lock data for more than one tower.")
+				} 
+				
+				if (!editMode){
+					$('#reportEdit').find('span i').addClass('biller-icon-disabled');
+					$('#reportCopy').find('span i').addClass('biller-icon-disabled');
+					$('#reportSave').find('span i').addClass('biller-icon-disabled');
+					$('#reportDelete').find('span i').addClass('biller-icon-disabled');
+				}else{
+					if($('#reportEdit').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportEdit').find('span i').removeClass('biller-icon-disabled');
+					}
+					if($('#reportCopy').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportCopy').find('span i').removeClass('biller-icon-disabled');
+					}
+					if($('#reportSave').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportSave').find('span i').removeClass('biller-icon-disabled');
+					}
+					if($('#reportDelete').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportDelete').find('span i').removeClass('biller-icon-disabled');
+					}
 				}
+				
+		    	
 			}
+			
 		});
 	});
 
 	$("#reportEdit")
 			.click(
 					function() {
-
+						if(!editMode){
+							e.stopPropagation();
+							e.preventDefault();
+						}
+						
 						var reportTable = $('#report').DataTable();
 						var rowCount = 0;
 						$('#report tbody tr').find(
@@ -91,6 +124,12 @@ $(function() {
 	$("#reportCopy")
 			.click(
 					function() {
+						
+						if(!editMode){
+							e.stopPropagation();
+							e.preventDefault();
+						}
+						
 						var reportTable = $('#report').DataTable();
 						var rowCount = 0;
 
@@ -192,6 +231,12 @@ $(function() {
 					});
 
 	$("#reportDelete").click(function() {
+		
+		if(!editMode){
+			e.stopPropagation();
+			e.preventDefault();
+		}
+		
 		var billCycle = $('#currentBillCycle').val();
 		var reportTable = $('#report').DataTable();
 		var seqIDList = new Array();
@@ -228,6 +273,12 @@ $(function() {
 	});
 
 	$("#reportSave").click(function() {
+		
+		if(!editMode){
+			e.stopPropagation();
+			e.preventDefault();
+		}
+		
 		$(".biller-loader-div").fadeIn(1);		
 		var reportTable = $('#report').DataTable();
     	var updateRows = [];
@@ -261,10 +312,11 @@ $(function() {
     	saveRecords["updateRecords"] = JSON.parse(updateRecords);
     	saveRecords["newRecords"] = JSON.parse(newRecords);	
     	var billCycle = $('#currentBillCycle').val();
+    	var tower = $('#currentTower').val();
     	
     	$.ajax({	        		
     		type: 'POST',
-    		url: 'data/update.do?billCycle=' + billCycle,
+    		url: 'data/update.do?billCycle=' + billCycle + '&towerID=' + tower,
     		contentType: 'application/json',
     		dataType: 'json',
     		data: JSON.stringify(saveRecords),
@@ -280,45 +332,8 @@ $(function() {
     	});
 	});
 
-	$("#rejectSubmit").click(function() {
-		var billCycle = $('#currentBillCycle').val();
-		var rejectedFor = "adwivedi";
-		url = 'data/reject.do?billCycle=' + billCycle + '&rejectedFor=' + rejectedFor;
-		$.ajax({
-			url : url,
-			data : false,
-			dataType : 'text',
-			processData : false,
-			contentType : false,
-			type : 'POST',
-			success : function(msg) {
-				if (msg == "rejected") {
-					alert("Rejection submitted successfully");		
-				}
-			}
-		});
-
-	});
 	
-	$("#reportApprove").click(function() {
-		var billCycle = $('#currentBillCycle').val();
-		url = 'data/approve.do?billCycle=' + billCycle;
-		$.ajax({
-			url : url,
-			data : false,
-			dataType : 'text',
-			processData : false,
-			contentType : false,
-			type : 'GET',
-			success : function(msg) {
-				if (msg == "approved") {
-					alert("Arpproval submitted successfully");
-				} else {
-					alert("Error: Report could not be approved");
-				}
-			}
-		});
-	});
+	
 
 	$(document)
 			.on(

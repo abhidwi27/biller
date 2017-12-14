@@ -1,9 +1,12 @@
 package com.app.biller.services;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.biller.dao.LockDataDao;
+import com.app.biller.domain.User;
 
 @Service
 public class DataLockServiceImpl implements DataLockService {
@@ -11,8 +14,8 @@ public class DataLockServiceImpl implements DataLockService {
 	@Autowired
 	LockDataDao lockDataDao;
 
-	public String checkLock(String billCycle, int towerID) {
-		return lockDataDao.checkLock(billCycle, towerID);
+	public User checkLockForTower(String billCycle, int towerID) {
+		return lockDataDao.checkLockForTower(billCycle, towerID);
 	}
 
 	public void setLock(String billCycle, String userID, int towerID) {
@@ -21,5 +24,9 @@ public class DataLockServiceImpl implements DataLockService {
 
 	public void unSetLock(String userID, String billCycle, int towerID) {
 		lockDataDao.unSetLock(userID, billCycle, towerID);
+	}
+	
+	public String checkLockByUser(String userID, String billCycle) {
+		return lockDataDao.checkLockByUser(userID, billCycle);
 	}
 }

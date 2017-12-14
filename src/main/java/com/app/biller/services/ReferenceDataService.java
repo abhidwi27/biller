@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
+import com.app.biller.domain.User;
 
 public interface ReferenceDataService {
 	
@@ -23,4 +24,8 @@ public interface ReferenceDataService {
 	List<String> getTableHeader(int dataType);
 	
 	String getActiveBillCycle();
+	
+	List<User> getDelegateUserList(String userID);
+	
+	String getMonthForBillCycle(String billCycle);
 }

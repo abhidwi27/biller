@@ -3,6 +3,8 @@ package com.app.biller.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,6 +12,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import com.app.biller.domain.User;
 import com.app.biller.domain.UserApproval;
 
 @Repository("userApprovalDao")
@@ -35,6 +38,9 @@ public class UserApprovalDaoImpl implements UserApprovalDao {
 
 	@Value("${SELECT_PENDING_USER_APPROVAL_BY_ROLE}")
 	String selectPendingUserApprovalByRole;
+	
+	@Value("${GET_REJECT_FOR_LIST}")
+	String getRejectForList;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -78,8 +84,8 @@ public class UserApprovalDaoImpl implements UserApprovalDao {
 		return count;
 	}
 
-	public void setUserApproval(String billCycle, String userID) {
-		jdbcTemplate.update(insertUserApproval, new Object[] { billCycle, userID, userID });
+	public void setUserApproval(String billCycle, String approveBy, String approveFor) {
+		jdbcTemplate.update(insertUserApproval, new Object[] { billCycle, approveFor, approveBy });
 	}
 
 	public void updateUserApproval(String billCycle, String userID) {
@@ -88,5 +94,24 @@ public class UserApprovalDaoImpl implements UserApprovalDao {
 
 	public void rejectUserApproval(String billCycle, String rejectedBy, String rejectedFor) {
 		jdbcTemplate.update(updateUserRejection, new Object[] { rejectedBy, rejectedBy, billCycle, rejectedFor });
+	}
+	
+	public List<User> getRejectForUserList(String billCycle){
+		
+		List<User> rejectForUserList = (List<User>) jdbcTemplate.query(getRejectForList,
+				new Object[] { billCycle}, new RowMapper<User>() {
+
+					@Override
+					public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+						User user = new User();
+						user.setUserID(rs.getString("userID"));
+						user.setName(rs.getString("Name"));
+						user.setRoleID(Integer.parseInt(rs.getString("roleID")));
+						user.setRoleDesc(rs.getString("roleDesc"));
+						return user;
+					}
+				});
+		return rejectForUserList;
+		
 	}
 }

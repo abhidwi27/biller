@@ -1,4 +1,5 @@
 var dataTableInitialized = false;
+var editMode;
 $(document).ready(function(){		
 		
 	var userProfile = JSON.parse($('#strUserProfile').val());	
@@ -54,7 +55,12 @@ $(document).ready(function(){
 			 $('#reportSaveSubmit').show();
 			 $('#reportReject').show();
 			 $('#reportApprove').show();
-		 }	 
+		 }
+		if( userProfile.roleID != 3){
+			$('#reportReject').hide();
+		}else{
+			$('#reportReject').show();
+		}
 		 
 		 url = 'data/read.do?dataType=' + reportDataType + '&billCycle=' + billCycle + '&towerID=' + tower;		 
 		 $.ajax({
@@ -67,8 +73,38 @@ $(document).ready(function(){
 			    	var tableJson = responseDataEnvelope["tableData"];
 			    	var employeeList = responseDataEnvelope["employeeList"];
 			    	var weekEndList = responseDataEnvelope["weekEndList"];
-			    	var wrList = responseDataEnvelope["wrList"];			    	
-	                var editMode = false;
+			    	var wrList = responseDataEnvelope["wrList"];
+			    	var rejectForUserList = responseDataEnvelope["rejectForUserList"];
+			    	var dataLockedBy = responseDataEnvelope["dataLockedBy"];
+			    	var userProfile = JSON.parse($('#strUserProfile').val());
+			    	
+			    	if(dataLockedBy != null && dataLockedBy.userID == userProfile.userID ){
+			    		editMode = true;
+			    	}else{
+			    		editMode = false;
+			    	}
+			    	
+			    	if (!editMode){
+						$('#reportEdit').find('span i').addClass('biller-icon-disabled');
+						$('#reportCopy').find('span i').addClass('biller-icon-disabled');
+						$('#reportSave').find('span i').addClass('biller-icon-disabled');
+						$('#reportDelete').find('span i').addClass('biller-icon-disabled');
+					}else{
+						if($('#reportEdit').find('span i').hasClass('biller-icon-disabled')){
+							$('#reportEdit').find('span i').removeClass('biller-icon-disabled');
+						}
+						if($('#reportCopy').find('span i').hasClass('biller-icon-disabled')){
+							$('#reportCopy').find('span i').removeClass('biller-icon-disabled');
+						}
+						if($('#reportSave').find('span i').hasClass('biller-icon-disabled')){
+							$('#reportSave').find('span i').removeClass('biller-icon-disabled');
+						}
+						if($('#reportDelete').find('span i').hasClass('biller-icon-disabled')){
+							$('#reportDelete').find('span i').removeClass('biller-icon-disabled');
+						}
+					}
+			    	
+			    	
 	                var seqID;
 	                $('#report').append("<thead>" +"<tr>" + "</tr>"  + "</thead>");
 	                $('#report').append("<tbody>" + "</tbody>");
@@ -106,10 +142,10 @@ $(document).ready(function(){
 	                
 	                addListContent('#customEmp', employeeList);
 	                addListContent('#customWr', wrList);
-	                addListContent('#customWeekend', weekEndList);
+	                addListContent('#customWeekend', weekEndList);  
+	                addListContent('#rejectForUser', rejectForUserList);
 	                
-		 
-			    }
+	            }
 		 
 			});
 		 $(".biller-loader-div").fadeOut("slow");
@@ -119,9 +155,15 @@ $(document).ready(function(){
 function addListContent(element, content){
 	
 	$(element).empty();
+	if(element != '#rejectForUser' ){
 	$(element).append('<option>' + 'ALL' + '</option>');
+	}
     for (var i=0 ; i< content.length ; i++){
- 		 $(element).append('<option>' + content[i] + '</option>');
+    	if(element == '#rejectForUser' ){
+    		$(element).append('<option value=' + content[i]["userID"] + '>' + content[i]["name"] +  '</option>'); 		 
+    	}else{
+    		$(element).append('<option>' + content[i] + '</option>');
+    	}
  	  }
  	  $(element).selectpicker('refresh');
 }

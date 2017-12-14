@@ -15,16 +15,39 @@
 <link rel="stylesheet" href="resources/css/animate.css" />
 <link rel="stylesheet" href="resources/css/style.css">
 <link rel="stylesheet" href="resources/css/billerHome.css">
+
+<style>
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(resources/image/Preloader_1.gif) center no-repeat #fff;
+}
+</style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
 <script	src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"> </script>
 <script	src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js"> </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
-
+<script >
+//paste this code under the head tag or in a separate js file.
+	// Wait for window load
+	 $(window).on("load", function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	}); 
+</script>
 
 </head>
 
 <body>
+
+<div class="se-pre-con"></div>
 
 <jsp:include page="billerLoader.jsp"></jsp:include>
 <jsp:include page="billerHeader.jsp"></jsp:include>
@@ -37,16 +60,16 @@
 <input name="strUserProfile" id="strUserProfile" type="hidden" value='${fn:escapeXml(strUserProfile)}' />
 
 <div class="biller-home-margin">
-<div class=".container-fluid">
+<div class=".container-fluid">	
   <div class="row biller-tab-row">
     <div class="col-md-12">      
       <div class="card biller-Home">      	
         <ul class="nav nav-pills" role="tablist">
           <li role="presentation" class="active" ><a href="#reportPanel" aria-controls="reportPanel" role="tab" data-toggle="tab"><i class="fa fa-table biller-home-tab-icon"></i><span class="biller-home-tab-icon">Data</span></a></li>
-          <li role="presentation" ><a href="#upload" aria-controls="upload" role="tab" data-toggle="tab"><i class="fa fa-upload biller-home-tab-icon"></i><span class="biller-home-tab-icon">Upload</span></a></li>
+          <li role="presentation" id='uploadTab'><a href="#upload" aria-controls="upload" role="tab" data-toggle="tab"><i class="fa fa-upload biller-home-tab-icon"></i><span class="biller-home-tab-icon">Upload</span></a></li>
           <li role="presentation" ><a href="#statusTab" aria-controls="statusTab" role="tab" data-toggle="tab"><i class="fa fa-list-ul biller-home-tab-icon"></i><span class="biller-home-tab-icon" >Status</span></a></li>
           <li role="presentation"><a href="#download" aria-controls="download" role="tab" data-toggle="tab"><i class="fa fa-download biller-home-tab-icon"></i><span class="biller-home-tab-icon">Download</span></a></li>
-          <li role="presentation"><a href="#admin" aria-controls="admin" role="tab" data-toggle="tab"><i class="fa fa-user-circle-o biller-home-tab-icon"></i><span class="biller-home-tab-icon">Admin</span></a></li>
+          <li role="presentation" id='adminTab'><a href="#admin" aria-controls="admin" role="tab" data-toggle="tab"><i class="fa fa-user-circle-o biller-home-tab-icon"></i><span class="biller-home-tab-icon">Admin</span></a></li>
         </ul>
      
         <div class="tab-content">          

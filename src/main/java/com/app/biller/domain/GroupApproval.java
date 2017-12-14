@@ -5,17 +5,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class GroupApproval {
 
-	private int dmApprvoal;
+	private int dmApproval;
 	private int bamApproval;
 	private int srBamApproval;
 	private int pmoApproval;
 
-	public int getDmApprvoal() {
-		return dmApprvoal;
+	public int getDmApproval() {
+		return dmApproval;
 	}
 
-	public void setDmApprvoal(int dmApprvoal) {
-		this.dmApprvoal = dmApprvoal;
+	public void setDmApproval(int dmApproval) {
+		this.dmApproval = dmApproval;
 	}
 
 	public int getBamApproval() {

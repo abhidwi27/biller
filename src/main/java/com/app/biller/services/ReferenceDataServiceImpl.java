@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 import com.app.biller.dao.ILCDataDao;
 import com.app.biller.dao.ReferenceDataDao;
 import com.app.biller.dao.SLADataDao;
+import com.app.biller.dao.UserDao;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
+import com.app.biller.domain.User;
 
 @Service
 public class ReferenceDataServiceImpl implements ReferenceDataService {
@@ -23,6 +25,9 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 
 	@Autowired
 	ReferenceDataDao referenceDataDao;
+	
+	@Autowired
+	UserDao userDao;
 
 	public List<String> getEmployeeList(String billCycle, int dataType) {
 		if (dataType == 0) {
@@ -67,5 +72,13 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 	
 	public String getActiveBillCycle() {
 		return slaDataDao.getActiveBillCycle();
+	}
+	
+	public List<User> getDelegateUserList(String userID) {
+		return userDao.getDelegateUserList(userID);
+	}
+	
+	public String getMonthForBillCycle(String billCycle) {
+		return referenceDataDao.getMonthForBillCycle(billCycle);
 	}
 }

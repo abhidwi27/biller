@@ -28,7 +28,7 @@
 
 .billerProgress .liner {
 	height: 2px;
-	background: #ddd;
+	background: var(--biller-status-linear-bar-color);
 	position: absolute;
 	width: 50%;
 	margin: 0 auto;
@@ -63,30 +63,30 @@
 }
 
 .billerProgress span.round-tabs.one {
-	border: 2px solid #ddd;
-	color: #ddd;
+	border: 2px solid var(--biller-status-round-tab-border);
+	color: var(--biller-status-round-tab-border);
 }
 
 .billerProgress li.active span.round-tabs.one, li.active span.round-tabs.two,
 	li.active span.round-tabs.three, li.active span.round-tabs.four, li.active span.round-tabs.five
 	{
 	
-	border: 2px solid #ddd;
+	border: 2px solid var(--biller-status-round-tab-border);
 	color: #fff;
 }
 
 .billerProgress span.round-tabs.two {
-	border: 2px solid #ddd;
+	border: 2px solid var(--biller-status-round-tab-border);
 	color: #ddd;
 }
 
 .billerProgress span.round-tabs.three {
-	border: 2px solid #ddd;
+	border: 2px solid var(--biller-status-round-tab-border);
 	color: #ddd;
 }
 
 .billerProgress span.round-tabs.four {
-	border: 2px solid #ddd;
+	border: 2px solid var(--biller-status-round-tab-border);
 	color: #ddd;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .billerProgress .nav-tabs>li.active>a span.round-tabs {
-	background: #fafafa;
+	background: var(--biller-status-round-tab-active);
 }
 
 .billerProgress .nav-tabs>li {
@@ -164,4 +164,9 @@
 	.billerProgress .btn-outline-rounded {
 		padding: 12px 20px;
 	}
+}
+
+.billerProgress .nav-tabs>li a span i{
+	color: var(--biller-status-round-tab-icon-color);
+	margin-top: 20px;
 }

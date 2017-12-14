@@ -29,7 +29,28 @@ public class UserDaoImpl implements UserDao {
 
 	@Value("${UPDATE_USER_PASSWORD}")
 	private String updateUserPassword;
+	
+	@Value("${GET_DELEGATE_USER_LIST}")
+	private String getDelegateUserList;
+	
+	@Value("${SET_DELEGATE_USER}")
+	private String setDelegateUser;
+	
+	@Value("${UNSET_DELEGATE_USER}")
+	private String unsetDelegateUser;
+	
+	@Value("${GET_DELEGATE_BY_USER_LIST}")
+	private String getDelegateByUserList;
+	
+	@Value("${GET_EMAIL_ID}")
+	private String getEmailID;
+	
+	@Value("${GET_PMO_EMAIL_ID}")
+	private String getPmoEmailID;
 
+	@Value("${GET_USER_COUNT_BY_ROLE}")
+	private String getUserCountByRole;
+	
 	private JdbcTemplate jdbcTemplate;
 
 	@Autowired
@@ -76,4 +97,97 @@ public class UserDaoImpl implements UserDao {
 		});
 		return user;
 	}
+	
+	@Override
+	public List<User> getDelegateUserList(String userid) {
+		RowMapper<User> delegateUserList = new RowMapper<User>() {
+			@Override
+			public User mapRow(ResultSet rs, int rownumber) throws SQLException {
+				User user = new User();
+				user.setUserID(rs.getString("userID"));				
+				user.setName(rs.getString("Name"));
+				user.setRoleID(rs.getInt("roleID"));
+				user.setRoleDesc("roleDesc");				
+				return user;
+			}
+		};
+		List<User> strDelegateList = jdbcTemplate.query(getDelegateUserList, new Object[] { userid, userid }, delegateUserList);
+		if (strDelegateList.isEmpty()) {
+			return null;		
+		} else { // list contains more than 1 elements
+			return strDelegateList;
+		}
+	}
+	
+	@Override
+	public int setDelegateUser(String delegateBy, String delegateTo) {		
+	 int result = jdbcTemplate.update(setDelegateUser, new Object[] {delegateTo, delegateBy});		
+		return result;
+	}
+	
+	@Override
+	public int unsetDelegateUser(String delegateBy) {		
+		 int result = jdbcTemplate.update(unsetDelegateUser, new Object[] {delegateBy});		
+			return result;
+		}
+	
+	@Override
+	public List<User> getDelegateBy(String userid) {
+		RowMapper<User> delegateUserList = new RowMapper<User>() {
+			@Override
+			public User mapRow(ResultSet rs, int rownumber) throws SQLException {
+				User user = new User();
+				user.setUserID(rs.getString("userID"));				
+				user.setName(rs.getString("Name"));
+				user.setRoleID(rs.getInt("roleID"));
+				user.setRoleDesc("roleDesc");				
+				return user;
+			}
+		};
+		List<User> strDelegatedBy = jdbcTemplate.query(getDelegateByUserList, new Object[] { userid }, delegateUserList);
+		if (strDelegatedBy.isEmpty()) {
+			return null;		
+		} else { // list contains more than 1 elements
+			return strDelegatedBy;
+		}
+	}
+	
+	@Override
+	public String getEmailID(String userID) {
+		
+		RowMapper<String> emailMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+		List<String> emailID = jdbcTemplate.query(getEmailID, new Object[] {userID}, emailMap) ; 
+		if (emailID.isEmpty()) {
+			return null;		
+		} else { // list contains more than 1 elements
+			return emailID.get(0);
+		}
+	 }
+	
+	public String getPmoEmailID() {
+		RowMapper<String> emailMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+		List<String> emailID = jdbcTemplate.query(getPmoEmailID, new Object[] {}, emailMap) ; 
+		if (emailID.isEmpty()) {
+			return null;		
+		} else { // list contains more than 1 elements
+			return emailID.get(0);
+		}
+		
+	}
+	
+	public int getUserCountByRole(int roleID) {
+		int result = jdbcTemplate.queryForObject(getUserCountByRole, new Object[] {roleID}, Integer.class);		
+		return result;
+	}
 }
+	

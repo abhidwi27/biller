@@ -37,7 +37,7 @@ public class GroupApprovalDaoImpl implements GroupApprovalDao {
 			@Override
 			public GroupApproval mapRow(ResultSet rs, int rowNum) throws SQLException {
 				GroupApproval group = new GroupApproval();
-				group.setDmApprvoal(rs.getInt("dm_approval"));
+				group.setDmApproval(rs.getInt("dm_approval"));
 				group.setBamApproval(rs.getInt("bam_approval"));
 				group.setSrBamApproval(rs.getInt("srbam_approval"));
 				group.setPmoApproval(rs.getInt("pmo_approval"));

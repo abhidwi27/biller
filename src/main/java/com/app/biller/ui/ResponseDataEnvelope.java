@@ -1,8 +1,11 @@
 package com.app.biller.ui;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Component;
+
+import com.app.biller.domain.User;
 
 @Component
 public class ResponseDataEnvelope {
@@ -11,6 +14,9 @@ public class ResponseDataEnvelope {
 	private List<String> wrList;
 	private List<String> employeeList;
 	private List<String> weekEndList;
+	private List<User> rejectForUserList;
+	private User dataLockedBy;
+	//private String dataLockedBy;
 
 	public TableData getTableData() {
 		return tableData;
@@ -43,5 +49,23 @@ public class ResponseDataEnvelope {
 	public void setWeekEndList(List<String> weekEndList) {
 		this.weekEndList = weekEndList;
 	}
+
+	public List<User> getRejectForUserList() {
+		return rejectForUserList;
+	}
+
+	public void setRejectForUserList(List<User> rejectForUserList) {
+		this.rejectForUserList = rejectForUserList;
+	}
+
+	public User getDataLockedBy() {
+		return dataLockedBy;
+	}
+
+	public void setDataLockedBy(User dataLockedBy) {
+		this.dataLockedBy = dataLockedBy;
+	}
+
+	
 
 }

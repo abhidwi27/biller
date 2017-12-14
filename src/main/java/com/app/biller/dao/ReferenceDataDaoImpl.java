@@ -33,6 +33,10 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 
 	@Value("${SELECT_YEAR_LIST}")
 	String selectYearList;
+	
+	@Value("${GET_MONTH_FOR_BILL_CYCLE}")
+	String getMonthForBillCycle;
+	
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -99,5 +103,11 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 			}
 		};
 		return rowMapper;
+	}
+	
+	public String getMonthForBillCycle(String billCycle) {
+		String monthID = billCycle.substring(0, 2);		
+		String month = jdbcTemplate.queryForObject(getMonthForBillCycle, new Object[] {monthID}, String.class );
+		return month;
 	}
 }

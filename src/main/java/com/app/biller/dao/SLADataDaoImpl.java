@@ -245,8 +245,8 @@ public class SLADataDaoImpl implements SLADataDao {
 			sb.append(" and sla.emp_name='").append(empName).append("'");
 		}
 
-		ArrayList<SLAData> slaDataList = (ArrayList<SLAData>) jdbcTemplate.query(selectSLAData,
-				new Object[] { towerID, billCycle }, new RowMapper<SLAData>() {
+		ArrayList<SLAData> slaDataList = (ArrayList<SLAData>) jdbcTemplate.query(sb.toString(),
+				new Object[] { }, new RowMapper<SLAData>() {
 					@Override
 					public SLAData mapRow(ResultSet rs, int rownumber) throws SQLException {
 						SLAData slaModel = new SLAData();
