@@ -16,11 +16,12 @@
 		<div class="row vertical-center-row">
 			<div class="text-center col-md-1">					
 			</div>
-			<div class="text-center col-md-9 biller-panel">						
+			<div class="text-center col-md-9 biller-panel">										
 				<div class="panel">
+					
 					<div class="panel-heading"> Data View Criteria </span>
 					</div>
-				<div class="panel-body">  
+				<div class="panel-body">					 
 					<div class="row biller-row" id="reportDataType">
 						<div class="col-md-3 text-left biller-panel-label">
 							<label class="biller-label">

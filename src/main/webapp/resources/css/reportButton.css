@@ -20,3 +20,7 @@ ul.nav li a:hover{
 	font-size:24px; 
 	color:var(--biller-report-button-icon-color);
 }
+
+.biller-icon-disabled{
+	color: var(--biller-icon-disabled-color);
+}

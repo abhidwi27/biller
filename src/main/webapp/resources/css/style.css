@@ -1,40 +1,52 @@
 
 :root{
 	
-	--biller-login-border-color: #cccccc;
-	--biller-login-input-bottom-color: #808080;
-	--biller-login-top-heading-color: #808080;	
+	--biller-login-border-color: #00ffff;
+	--biller-login-input-bottom-color: #fff;
+	--biller-login-top-heading-color: #fff;
+	--biller-login-input-text-color: #fff;
+	--biller-login-btn-border-color: #fff;
+	--biller-login-btn-border-hover-color: #6666b2;
+	--biller-login-btn-font-color-hover: #fff;
+	--biller-login-btn-text-color: #fff;
+	--biller-login-placeholder-color: #fff;
+	--biller-login-btn-hover-color: #6666b2;
 	--biller-body-background-color: #fff;	
-	--biller-header-background-color: #276f76;
+	--biller-header-background-color: #323299;
 	--biller-header-left-font-color: #fff;
 	--biller-header-right-font-color: #fff;
 	--biller-header-font-color-hover: #fff;
-	--biller-header-right-links-background-color-hover: #276f76;
-	--biller-home-navtab-background-color: #d0ebee;	
+	--biller-header-right-links-background-color-hover: #000080;
+	--biller-home-navtab-background-color: #6666b2;	
 	--biller-home-navtab-background-color-hover: #46b5c1 ;
-	--biller-home-navtab-background-color-active: #46b5c1;
-	--biller-home-navtab-font-color: #23547c;
+	--biller-home-navtab-background-color-active: #000080;
+	--biller-home-navtab-font-color: #fff;
 	--biller-home-navtab-font-color-hover: #00ffff;
 	--biller-home-navtab-font-color-active: #00ffff;
 	--biller-panel-border-color: transparent;
-	--biller-panel-header-background-color: #39a3ac;
+	--biller-panel-header-background-color: #6666b2;
 	--biller-panel-header-font-color: #fff;
-	--biller-panel-main-icon-label-color: #276f76;
-	--biller-panel-form-input-color: #276f76;
+	--biller-panel-main-icon-label-color: #6666b2;
+	--biller-panel-form-input-color: #6666b2;
 	--biller-panel-footer-background-color: #fff;	
-	--biller-button-border-color: #46b5c1;
-	--biller-button-font-color: #276f76;
-	--biller-button-background-color: #46b5c1;
+	--biller-button-border-color: #6666b2;
+	--biller-button-font-color: #6666b2;
+	--biller-button-background-color: #6666b2;
 	--biller-button-font-color-hover: #fff;
-	--biller-button-background-color-hover: #276f76;
+	--biller-button-background-color-hover: #6666b2;
 	--biller-button-outline-background-color: transparent;
-	--biller-report-button-icon-color: #46b5c1;
+	--biller-input-group-addon-color: #4c4ca6;
+	--biller-report-button-icon-color: #6666b2;
 	--biller-well-background-color: #fff;
-	--biller-header-background-color: #276f76;
 	--biller-header-font-color: #fff;
 	--biller-alert-message-font-color: #000;
 	--biller-header-close-icon-color: #fff;
-	
+	--biller-status-round-tab-border: #22C222;
+	--biller-status-linear-bar-color: #22C222;
+	--biller-status-round-tab-active: #FFF;
+	--biller-status-round-tab-icon-color: #22C222;
+	--biller-form-control-border-color: #4c4ca6;
+	--biller-icon-disabled-color: #46b5c1;
 	
 }
 body {
@@ -283,3 +295,27 @@ body {
 .biller-modal-label{
 	margin-left: 10px;
 }
+
+.input-group-addon{
+	color: var(--biller-input-group-addon-color);
+	border: 1px solid var(--biller-input-group-addon-color);
+}
+
+.form-control{
+	border: 1px solid var(--biller-form-control-border-color);
+}
+
+
+/* body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('biller-login-background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    opacity: 0.9;
+    z-index: -999;
+} */

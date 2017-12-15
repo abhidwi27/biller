@@ -1,5 +1,15 @@
 $(document).ready(function(){	
-	
+		
+		var userProfile = JSON.parse($('#strUserProfile').val());
+		
+		if(userProfile.roleID == 8){
+			$('#uploadTab').show();
+			$('#adminTab').show();
+			
+		}else{
+			$('#uploadTab').hide();
+			$('#adminTab').hide();
+		}
 		$('#uploadBrowse').click(function(){
 		  var file = $(this).parent().parent().parent().find('.file');
 		  file.trigger('click');

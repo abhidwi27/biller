@@ -2,8 +2,11 @@ package com.app.biller.controller;
 
 import static com.app.biller.util.BillerHelper.getUserProfile;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -31,8 +34,11 @@ import com.app.biller.services.EmailService;
 import com.app.biller.services.ReferenceDataService;
 import com.app.biller.ui.ApprovalStatus;
 import com.app.biller.ui.ResponseDataEnvelope;
+import com.app.biller.ui.ReviewWrapper;
 import com.app.biller.ui.TableData;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 
 @Controller
 @RequestMapping("/data")
@@ -76,7 +82,9 @@ public class DataController {
 		responseDataEnvelope.setEmployeeList(referenceDataService.getEmployeeList(billCycle, dataType));
 		responseDataEnvelope.setWrList(referenceDataService.getWRList(billCycle, dataType));
 		responseDataEnvelope.setWeekEndList(referenceDataService.getWeekendList(billCycle, dataType));
-
+		responseDataEnvelope.setRejectForUserList(dataApprovalService.getRejectForUserList(billCycle));
+		responseDataEnvelope.setDataLockedBy(dataLockService.checkLockForTower(billCycle, towerID));
+		
 		return responseDataEnvelope;
 	}
 
@@ -97,7 +105,7 @@ public class DataController {
 	}
 
 	@RequestMapping(path = "/update.do", method = RequestMethod.POST)	
-	public @ResponseBody boolean updateSLAData(@RequestParam("billCycle") String billCycle,
+	public @ResponseBody boolean updateSLAData(@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID,
 			@RequestBody SaveRecords saveRecords, HttpSession userSession) {
 		User userProfile = getUserProfile(userSession);
 		String userID = userProfile.getUserID();
@@ -105,6 +113,12 @@ public class DataController {
 		try {
 			dataValidationService.updateSLAData(billCycle, userID, saveRecords.getUpdateRecords());
 			dataValidationService.createNewSLARecord(billCycle, userID, saveRecords.getNewRecords());
+			User lockedBy = dataLockService.checkLockForTower(billCycle, towerID);
+			if(lockedBy!= null) {				
+					if(lockedBy.getUserID().equals(userID)) {
+							dataLockService.unSetLock(userID, billCycle, towerID);
+					}
+			}
 			return true;
 		} catch(Exception ex)
 		{
@@ -118,13 +132,22 @@ public class DataController {
 			@RequestParam("towerID") int towerID, HttpSession userSession) {
 		User userProfile = getUserProfile(userSession);
 		String userID = userProfile.getUserID();
-		String lockedBy = dataLockService.checkLock(billCycle, towerID);
-		if (lockedBy.equals("")) {
+		
+		Gson gson = new Gson();
+		HashMap<String, Object> lockResponseMap = new HashMap<String, Object>();
+		User lockedBy = dataLockService.checkLockForTower(billCycle, towerID);
+		String lockedForTower = dataLockService.checkLockByUser(userID, billCycle);
+		
+		lockResponseMap.put("lockedBy", lockedBy);
+		lockResponseMap.put("lockedForTower", lockedForTower);
+		if (lockedBy == null && lockedForTower.equals("")) {
 			dataLockService.setLock(billCycle, userID, towerID);
-			return "success";
+			lockResponseMap.put("msg", "success");
 		} else {
-			return lockedBy;
+			lockResponseMap.put("msg", "failed");
 		}
+		
+		return gson.toJson(lockResponseMap);
 	}
 	
 	@RequestMapping(path = "/delete.do", method = RequestMethod.POST)
@@ -138,42 +161,79 @@ public class DataController {
 
 	@RequestMapping(path = "/approve.do", method = RequestMethod.GET)
 	@ResponseBody
-	public String approveSLAData(@RequestParam("billCycle") String billCycle, HttpServletRequest request) {
+	public ReviewWrapper approveSLAData(@RequestParam("billCycle") String billCycle, @RequestParam("approveFor") String approveFor, HttpServletRequest request) {
 		boolean approval = false;
-		String userID = null;
+		String approveBy = null;
 		String roleDesc = null;
 		HttpSession session = request.getSession(false);
+		ReviewWrapper reviewWrapper = new ReviewWrapper();
 		if (session != null) {
 			User userProfile = getUserProfile(session);
-			userID = userProfile.getUserID();
+			approveBy = userProfile.getUserID();
 			roleDesc = userProfile.getRoleDesc();
 			int roleID = userProfile.getRoleID();
-			approval = dataApprovalService.setUserApproval(billCycle, userID, roleID, roleDesc);
+			approval = dataApprovalService.setUserApproval(billCycle, approveBy, approveFor, roleID, roleDesc);
 		}
-		if (approval && userID != null) {
-			emailService.sendEmail(userID);
-			return "approved";
+		String activeBillCycle = referenceDataService.getActiveBillCycle();		
+		reviewWrapper.setApprovalStatus( dataApprovalService.getApprovalStatus(activeBillCycle));
+		if (approval && approveFor != null) {
+			//emailService.sendEmail(emailService.getEmailID(approveFor));
+			String billMonth = referenceDataService.getMonthForBillCycle(billCycle);
+			String billYear = billCycle.substring(2, 6);
+			emailService.sendApprovalEmail(approveFor, approveBy, billMonth, billYear);
+			reviewWrapper.setReviewFlag(1);
+		}else {
+			reviewWrapper.setReviewFlag(0);
 		}
-		return "rejected";
+		return reviewWrapper;
 	}
 	
+	@SuppressWarnings("unchecked")
 	@RequestMapping(path = "/reject.do", method = RequestMethod.POST)
 	@ResponseBody
-	public String rejectSLAData(@RequestParam("billCycle") String billCycle, @RequestParam("rejectedFor") String rejectedFor, HttpServletRequest request) {
+	public ReviewWrapper rejectSLAData(@RequestParam("billCycle") String billCycle, @RequestParam("rejectedFor") String rejectedFor, @RequestBody String rejectComments, HttpServletRequest request) {
 		
+		Gson gson = new Gson(); 
+		ReviewWrapper reviewWrapper = new ReviewWrapper();
+		Map<String,String> map = new HashMap<String,String>();
+		map = (Map<String,String>) gson.fromJson(rejectComments, map.getClass());
 		String userID = null;;
 		HttpSession session = request.getSession(false);
+		String activeBillCycle = referenceDataService.getActiveBillCycle();		
+		
 		if (session != null) {
 			User userProfile = getUserProfile(session);
 			userID = userProfile.getUserID();
 			dataApprovalService.rejectUserApproval(billCycle, userID, rejectedFor);
-		}		
-		return "rejected";
+			String billMonth = referenceDataService.getMonthForBillCycle(billCycle);
+			String billYear = billCycle.substring(2, 6);
+			emailService.sendRejectionEmail(rejectedFor, userID, map.get("rejectComments"), billMonth, billYear);
+			reviewWrapper.setReviewFlag(1);
+		}else {
+			reviewWrapper.setReviewFlag(0);
+		}
+		reviewWrapper.setApprovalStatus( dataApprovalService.getApprovalStatus(activeBillCycle));
+		return reviewWrapper;
 	}
 	
 	@RequestMapping(path = "/getApprovalStatus.do", method = RequestMethod.GET)	
 	public @ResponseBody ApprovalStatus getApprovalStatus() {
 			String activeBillCycle = referenceDataService.getActiveBillCycle();
 			return dataApprovalService.getApprovalStatus(activeBillCycle);			
+	}
+	
+	@RequestMapping(path = "/delegate.do", method = RequestMethod.POST)	
+	public @ResponseBody int delegateTo(String delegateTo, String delegateStatus, HttpServletRequest request) {
+		
+		int delegateResult = 0;		
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			User userProfile = getUserProfile(session);			
+		    String delegateBy = userProfile.getUserID();
+			delegateResult = dataApprovalService.updateDelegateUser(delegateBy, delegateTo, Integer.parseInt(delegateStatus));
+		}		
+		return delegateResult;
+		
+		
 	}
 }

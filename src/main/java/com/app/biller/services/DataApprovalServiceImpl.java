@@ -32,29 +32,32 @@ public class DataApprovalServiceImpl implements DataApprovalService {
 		return userApprovalDao.getUserApprovalByRole(billCycle, roleID);
 	}
 
-	public boolean setUserApproval(String billCycle, String userID, int roleID, String roleDesc) {
+	public boolean setUserApproval(String billCycle, String approveBy, String approveFor, int roleID, String roleDesc) {
 
 		int approvalStatus;
-		int isAlreadyApproved = userApprovalDao.checkPriorApproval(billCycle, userID);
-		int isRejected = userApprovalDao.checkRejection(billCycle, userID);
+		int isAlreadyApproved = userApprovalDao.checkPriorApproval(billCycle, approveFor);
+		int isRejected = userApprovalDao.checkRejection(billCycle, approveFor);
 
 		if (isAlreadyApproved == 1) {
 			return false;
 		} else if (isAlreadyApproved == 0 && isRejected == 0) {
-			userApprovalDao.setUserApproval(billCycle, userID);
+			userApprovalDao.setUserApproval(billCycle, approveBy, approveFor);
 		} else if (isAlreadyApproved == 0 && isRejected == 1) {
-			userApprovalDao.updateUserApproval(billCycle, userID);
+			userApprovalDao.updateUserApproval(billCycle, approveFor);
 		}
 
 		int pendingApprovalCount = userApprovalDao.getPendingApprovalsByRole(billCycle, roleID);
+		int userCountForRole = userDao.getUserCountByRole(roleID);
 		if (pendingApprovalCount == 0) {
 			approvalStatus = 2;
+		} else if (pendingApprovalCount == userCountForRole ){
+			approvalStatus = 0;
 		} else {
 			approvalStatus = 1;
 		}
 		groupApprovalDao.updateGroupApproval(billCycle, roleDesc, approvalStatus);
 		GroupApproval group = groupApprovalDao.getGroupApprovals(billCycle);
-		if (group.getDmApprvoal() == 2 && group.getBamApproval() == 2 && group.getSrBamApproval() == 2
+		if (group.getDmApproval() == 2 && group.getBamApproval() == 2 && group.getSrBamApproval() == 2
 				&& group.getPmoApproval() == 2) {
 			groupApprovalDao.setBillCycleStatus(billCycle, 1);
 		}
@@ -67,10 +70,12 @@ public class DataApprovalServiceImpl implements DataApprovalService {
 
 		int approvalStatus;
 		User rejectedUser = userDao.createUserProfile(rejectedFor);
-		int pendingApprovalcount = userApprovalDao.getPendingApprovalsByRole(billCycle, rejectedUser.getRoleID());
-
-		if (pendingApprovalcount == 0) {
+		int pendingApprovalCount = userApprovalDao.getPendingApprovalsByRole(billCycle, rejectedUser.getRoleID());
+		int userCountForRole = userDao.getUserCountByRole(rejectedUser.getRoleID());
+		if (pendingApprovalCount == 0) {
 			approvalStatus = 2;
+		} else if (pendingApprovalCount == userCountForRole ){
+			approvalStatus = 0;
 		} else {
 			approvalStatus = 1;
 		}
@@ -94,5 +99,24 @@ public class DataApprovalServiceImpl implements DataApprovalService {
 		approvalStatus.setUserApprovalList(userApprovalList);	
 			
 		return approvalStatus;
+	}
+	
+	public int updateDelegateUser(String delegateBy, String delegateTo, int delegateStatus) {		
+		int result;		
+		if (delegateStatus == 0) {
+			result = userDao.unsetDelegateUser(delegateBy );
+		}else {
+			result = userDao.setDelegateUser( delegateBy, delegateTo);
+		}
+		return result;
+	}
+	
+	
+	public List<User> getDelegateByUserList(String userID) {
+		return userDao.getDelegateBy(userID);
+	}
+	
+	public List<User> getRejectForUserList(String billCycle){
+		return userApprovalDao.getRejectForUserList(billCycle);
 	}
 }

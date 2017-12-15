@@ -1,5 +1,7 @@
 package com.app.biller.controller;
 
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.app.biller.domain.User;
+import com.app.biller.services.DataApprovalService;
 import com.app.biller.services.LoginService;
 import com.app.biller.services.ReferenceDataService;
 import com.app.biller.ui.LoginModel;
@@ -37,6 +40,9 @@ public class LoginController {
 	
 	@Autowired
 	private ReferenceDataService referenceDataService;
+	
+	@Autowired
+	private DataApprovalService dataApprovalService;
 
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String showLogin(Model model) {
@@ -57,6 +63,11 @@ public class LoginController {
 				model.addAttribute("monthList", referenceDataService.getMonth());
 				model.addAttribute("yearList", referenceDataService.getYear());
 				model.addAttribute("towerList", referenceDataService.getTowerList());
+				
+				if(user.getRoleID() == 2 || user.getRoleID() == 3) {
+					model.addAttribute("delegateUserList", referenceDataService.getDelegateUserList(user.getUserID()));
+					model.addAttribute("delegateByUserList", dataApprovalService.getDelegateByUserList(user.getUserID()));
+				}
 //				viewName = "Home";
 				viewName = loginService.getUserHome(user.getRoleID());
 				return viewName;

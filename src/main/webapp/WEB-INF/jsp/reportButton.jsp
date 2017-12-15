@@ -6,7 +6,7 @@
 
 <div id="reportButtons">
 	<ul class="nav navbar-nav navbar-right">
-		<li><a id="reportBack"><span class="glyphicon glyphicon-arrow-left" style="font-size:24px;color:#46b5c1;" data-toggle="tooltip" data-original-title="Back"></span></a></li>
+		<li><a id="reportBack"><span class="glyphicon glyphicon-arrow-left report-button-icon"  data-toggle="tooltip" data-original-title="Back"></span></a></li>
 		<li><a ><span class="report-button-icon"> | </span></a></li>
 		<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-filter report-button-icon" data-toggle="tooltip" data-original-title="Select Columns"></span></a>
@@ -24,7 +24,7 @@
 		<li><a id="reportSave"><span data-toggle="tooltip" data-original-title="Save"><i class="fa fa-save report-button-icon"></i></span></a></li>
 		<li><a id="reportDelete"><span data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash-o report-button-icon"></i></span></a></li>
 		<li><a ><span class="report-button-icon"> | </span></a></li>
-		<li><a id="reportApprove"><span data-toggle="tooltip" data-original-title="Approve"><i class="fa fa-thumbs-o-up report-button-icon"></i></span></a></li>
+		<li data-toggle="modal" data-target="#approveView"><a id="reportApprove"><span data-toggle="tooltip" data-original-title="Approve"><i class="fa fa-thumbs-o-up report-button-icon"></i></span></a></li>
 		<li data-toggle="modal" data-target="#rejectView"><a id="reportReject"><span data-toggle="tooltip" data-original-title="Reject"><i class="fa fa-thumbs-o-down report-button-icon"></i></span></a></li>
 		
 		<!-- DO NOT REMOVE THIS COMMENTED CODE
@@ -36,3 +36,4 @@
 
 <jsp:include page="reportCustom.jsp"></jsp:include>
 <jsp:include page="reportReject.jsp"></jsp:include>
+<jsp:include page="reportApprove.jsp"></jsp:include>

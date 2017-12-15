@@ -15,7 +15,8 @@
 
 
 <body>
-	
+<div id=background>	
+</div>
  <div class="container">
      <div class="biller-wrapper">
          <form  method="post" id="loginForm" class="biller-signin-form">         	  
@@ -32,9 +33,10 @@
              <div class="input-group">                 
                 <input type="password" class="form-control" name="password" placeholder="Password"/>         	  
              </div>
-             <a class="btn btn-primary button-outline biller-btn btn-block"  id="loginSubmit"> Log In</a> 
+             <a class="btn btn-primary button-outline biller-btn btn-block"  id="loginSubmit"> Sign In</a> 
           </form>	
       </div>
-</div>	
+</div>
+	
 			
 </body>

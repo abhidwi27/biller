@@ -1,16 +1,18 @@
+<head>
 <link rel="stylesheet" href="resources/css/billerHeader.css">
-
+<script src="resources/js/logout.js"> </script>
+</head>
 <div class="menu">
     <div class="container-fluid">
 		<div >
 			<ul class="nav navbar-nav navbar-left" >
-			<li><a>BILLER</a></li>
+			<li>BILLER</li>
 			</ul>
 		</div>
 		<div>
 			<ul class="nav navbar-nav navbar-right">
-				<li data-toggle="modal" data-target="#delegate"><a href="#"><span class="glyphicon glyphicon-hand-right"></span>Delegate</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+				<li data-toggle="modal" data-target="#delegate" id="delegateOption"><a href="#"><span class="glyphicon glyphicon-hand-right"></span>Delegate</a></li>
+				<li id="billerLogout"><a href="#"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
 			</ul>
 		</div>
 	</div>

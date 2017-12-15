@@ -17,4 +17,8 @@ public interface ReferenceDataDao {
 	ArrayList<Month> getMonthList();
 
 	List<String> getYearList();
+	
+	String getMonthForBillCycle(String billCycle);
+	
+	
 }

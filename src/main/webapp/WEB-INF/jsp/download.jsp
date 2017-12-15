@@ -7,7 +7,9 @@
 <script src="resources/js/moment.min.js"> </script>
 <script src="resources/js/bootstrap-datetimepicker.js"> </script>
 <script src="resources/js/billerDatePicker.js"> </script>
+<script src="resources/js/download.js"> </script>
 <link rel="stylesheet" href="resources/css/bootstrap-datetimepicker.css">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 
 <div role="tabpanel" class="tab-pane fade" id="download">
@@ -26,8 +28,8 @@
 								Data Type :
 							</label>
 						</div>
-						<div class="col-md-9">			
-							<div class="col-md-4 text-left" id="downloadDataType">
+						<div class="col-md-9" id="downloadDataType">			
+							<div class="col-md-4 text-left" >
 								<div class="radio-inline">
 									<label class="biller-radio-label">
 											<input type="radio" name="downloadRadio" value="0" checked>
@@ -35,7 +37,7 @@
 											ILC Data 
 									</label>
 								</div>
-							</div>
+							</div>						
 							<div class="col-md-4 text-left biller-radio-align">
 								<div class="radio-inline">
 									<label class="biller-radio-label">
