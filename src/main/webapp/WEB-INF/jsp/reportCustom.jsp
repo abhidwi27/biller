@@ -58,7 +58,7 @@
 					</div>
 			</div>
 		  	<div class="modal-footer">
-				<a class="btn btn-outline biller-btn"  id="customSubmit">Submit</a>
+				<a class="btn btn-outline biller-btn" data-dismiss="modal" id="customSubmit">Submit</a>
 				<a class="btn btn-outline biller-btn" data-dismiss="modal" id="customClose">Close</a>
 			</div>
 		</div>

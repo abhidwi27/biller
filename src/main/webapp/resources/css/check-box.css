@@ -286,3 +286,8 @@ input[type="checkbox"] .styled:checked+label::after, input[type="radio"] .styled
 .checkbox input[type="checkbox"]:hover {
 	cursor: pointer;
 }
+
+.checkbox, .radio{
+	margin-top: 5px;
+	margin-bottom: 0px;
+}

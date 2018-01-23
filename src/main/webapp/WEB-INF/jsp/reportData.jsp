@@ -18,7 +18,7 @@
 	<br>
 	
 	<div >
-			<table id="report" class="table table-striped table-bordered" cellspacing="0" width="10%">					 
+			<table id="report" class="table" cellspacing="0" width="10%">					 
 			</table>
 	</div>
 </div>

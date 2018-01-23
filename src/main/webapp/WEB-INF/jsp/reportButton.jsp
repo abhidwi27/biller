@@ -5,6 +5,7 @@
 </head>
 
 <div id="reportButtons">
+	
 	<ul class="nav navbar-nav navbar-right">
 		<li><a id="reportBack"><span class="glyphicon glyphicon-arrow-left report-button-icon"  data-toggle="tooltip" data-original-title="Back"></span></a></li>
 		<li><a ><span class="report-button-icon"> | </span></a></li>
@@ -15,8 +16,9 @@
         </li>
 		<li data-toggle="modal" data-target="#customize"><a ><span data-toggle="tooltip" data-original-title="Customize"><i class="fa fa-sliders report-button-icon" ></i></span></a></li>
 		<!-- DO NOT REMOVE THIS COMMENTED CODE
-		<li><a ><span data-toggle="tooltip" data-original-title="total hours"><i class="fa fa-plus-square-o" style="font-size:24px; color:#46b5c1;"></i></span></a></li>
 		-->
+		<li><a id="reportTotHrs"><span data-toggle="tooltip" data-original-title="Total Hours"><i class="fa fa-plus-square-o report-button-icon" ></i></span></a></li>
+		
 		<li><a ><span class="report-button-icon"> | </span></a></li>  
 		<li><a id="reportLock"><span data-toggle="tooltip" data-original-title="Lock Data"><i class="fa fa-lock report-button-icon" ></i></span></a></li>						
 		<li><a id="reportEdit"><span data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-edit report-button-icon"></i></span></a></li>
