@@ -170,3 +170,24 @@
 	color: var(--biller-status-round-tab-icon-color);
 	margin-top: 20px;
 }
+
+.billerProgress .billerwell{
+		margin-left: 350px;
+		width: 50%;
+		height: 150px;
+		border: 1px solid black;
+		text-align: center;
+		padding-bottom: 50px;
+}
+
+
+.table{
+	border-radius: 15px;
+	box-shadow: 0 0 5px #a3a3a3;
+}
+
+
+.billerProgress li.active span{
+	border: none;	
+	box-shadow: 0 0 10px #a3a3a3;
+}
