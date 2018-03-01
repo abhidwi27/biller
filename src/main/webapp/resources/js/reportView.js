@@ -1,5 +1,8 @@
 var dataTableInitialized = false;
 var editMode;
+var hasApprovedBillCycle;
+var approveListlength;
+
 $(document).ready(function(){		
 		
 	var userProfile = JSON.parse($('#strUserProfile').val());	
@@ -76,9 +79,19 @@ $(document).ready(function(){
 			    	var wrList = responseDataEnvelope["wrList"];
 			    	var rejectForUserList = responseDataEnvelope["rejectForUserList"];
 			    	var dataLockedBy = responseDataEnvelope["dataLockedBy"];
+			    	hasApprovedBillCycle = responseDataEnvelope["hasApprovedBillCycle"];
+			    	approveListlength = $('#reportApprovalList').children('option').length;
 			    	var userProfile = JSON.parse($('#strUserProfile').val());
 			    	
-			    	if(dataLockedBy != null && dataLockedBy.userID == userProfile.userID ){
+			    	if(hasApprovedBillCycle == 1){
+			    		$('#reportLock').find('span i').addClass('biller-icon-disabled');
+			    	}
+			    	
+			    	if(approveListlength == 0 && hasApprovedBillCycle ==1 ){
+			    		$('#reportApprove').find('span i').addClass('biller-icon-disabled');
+			    	}
+			    	
+			    	if(hasApprovedBillCycle != 0 && dataLockedBy != null && dataLockedBy.userID == userProfile.userID ){
 			    		editMode = true;
 			    	}else{
 			    		editMode = false;
@@ -111,8 +124,12 @@ $(document).ready(function(){
 	                $('#reportButtons').find('.dropdown .dropdown-menu').empty();
 	                $('#reportButtons').find('.dropdown .dropdown-menu').append('<li><a class=\"checkbox\"><input type=\"checkbox\" checked class=\"styled\" onclick=\"modifyAllColumns(this)\"/>  <label > </label></input>' + 'Select All' + '</a></li>');
 	                $('#reportButtons').find('.dropdown .dropdown-menu').append('<li role=\"separator\" class=\"divider\"></li>');
-				    for(var i=0 ; i< tableJson["tableHeader"].length; i++){				    	
-	                	$('#report').find("thead tr").append("<th>" + tableJson["tableHeader"][i] + "</th>");   
+				    for(var i=0 ; i< tableJson["tableHeader"].length; i++){	
+				    	if(i==0){
+				    		$('#report').find("thead tr").append("<th>" + '<a class=\"checkbox\"><input type=\"checkbox\" class=\"styled\" onclick=\"SelectAllRecords(this)\" />  <label > </label></input>' + "</th>");	
+				    	}else{
+	                	$('#report').find("thead tr").append("<th>" + tableJson["tableHeader"][i] + "</th>"); 
+				        }
 	                	$('#reportButtons').find('.dropdown .dropdown-menu').append('<li><a class=\"checkbox\"><input type=\"checkbox\" value=\"'+ i +' \"checked class=\"styled\"/>  <label > </label></input>' + tableJson["tableHeader"][i] + '</a></li>');
 	                }
 				    $('#reportButtons').find('.dropdown .dropdown-menu').append('<li><a><button type=\"button\" class=\"btn btn-primary btn-outline btn-block btn-md\" id=\"columnSelectOk\" onclick=\"customizeColumns()\"> Done </button><a><li>');

@@ -14,9 +14,9 @@ public interface ILCDataDao {
 	ArrayList<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndData, String wrNo,
 			String empName);
 
-	List<String> getEmployeeList(String billCycle);
+	List<String> getEmployeeList(String billCycle,int towerID);
 
-	List<String> getWRList(String billCycle);
+	List<String> getWRList(String billCycle, int towerID);
 
-	List<String> getWeekendList(String billCycle);
+	List<String> getWeekendList(String billCycle, int towerID);
 }

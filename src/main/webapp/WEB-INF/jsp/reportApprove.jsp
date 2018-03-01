@@ -27,7 +27,7 @@
 							<div class="row text-left biller-approve-row">
 								<div class="radio-inline">
 									<label class="biller-radio-label">
-											<input type="radio" name="approvedForRadio" value="0" checked>
+											<input type="radio" name="approveForRadio" value="0" checked>
 											<span class="cr"><i class="cr-icon fa fa-circle"></i></span>
 											Self 
 									</label>

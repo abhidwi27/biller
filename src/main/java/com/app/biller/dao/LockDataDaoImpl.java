@@ -16,6 +16,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
 
 @Repository("dataLockDao")
@@ -72,21 +73,24 @@ public class LockDataDaoImpl implements LockDataDao {
 		}
 	}
 	
-	public String checkLockByUser(String userID, String billCycle) {
-		RowMapper<String> rowMap = new RowMapper<String>() {
+	public Tower checkLockByUser(String userID, String billCycle) {
+		RowMapper<Tower> rowMap = new RowMapper<Tower>() {
 			@Override
-			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
-				return rs.getString(1);
+			public Tower mapRow(ResultSet rs, int rownumber) throws SQLException {
+				Tower towerInfo = new Tower ();
+				towerInfo.setTowerID(rs.getInt(1));
+				towerInfo.setTowerName(rs.getString(2));
+				return towerInfo;
 			}
 		};
-		List<String> tower = jdbcTemplate.query(checkLockByUser, new Object[] { userID, billCycle }, rowMap);
+		List<Tower> tower = jdbcTemplate.query(checkLockByUser, new Object[] { userID, billCycle }, rowMap);
 
 		if (tower.isEmpty()) {
-			return "";
+			return null;
 		} else if (tower.size() == 1) {
 			return tower.get(0);
 		} else {
-			return "";
+			return null;
 		}
 	}
 

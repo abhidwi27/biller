@@ -39,6 +39,7 @@ $(document).ready(function(){
 						    var seqID = tableBody[rowNo].seqID;
 						    newRowID = "row-" + seqID;			    
 						   delete tableBody[rowNo].seqID;
+						   delete tableBody[rowNo].active;
 	                	}
 						     var newRowData = [];			    
 						    newRowData.push('<div class=\"checkbox\"> <input type=\"checkbox\"  class=\"styled\"/>  <label > </label> </div>');			    

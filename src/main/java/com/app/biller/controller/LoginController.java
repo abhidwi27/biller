@@ -94,6 +94,7 @@ public class LoginController {
 
 		sessionStatus.setComplete();
 
-		return LOGIN_VIEW;
-	}
+		//return LOGIN_VIEW;
+		return "redirect:" + "/login.do	";
+}
 }

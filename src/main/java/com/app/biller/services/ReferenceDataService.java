@@ -9,13 +9,13 @@ import com.app.biller.domain.User;
 
 public interface ReferenceDataService {
 	
-	List<String> getEmployeeList(String billCycle, int dataType);	
+	List<String> getEmployeeList(String billCycle, int dataType, int towerID);	
 	
-	List<String> getWRList(String billCycle, int dataType);
+	List<String> getWRList(String billCycle, int dataType, int towerID);
 
 	List<Tower> getTowerList();
 	
-	List<String> getWeekendList(String billCycle, int dataType);
+	List<String> getWeekendList(String billCycle, int dataType, int towerID);
 	
 	ArrayList<Month> getMonth();
 	

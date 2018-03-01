@@ -1,13 +1,9 @@
 
 <head>
 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="resources/css/datatable.bootstrap4.min.1.10.15.css">
 <link rel="stylesheet" href="resources/css/check-box.css">
 <link rel="stylesheet" href="resources/css/report.css">
-
-
-
-<script src="resources/js/report.js"> </script>
 
 </head>
 

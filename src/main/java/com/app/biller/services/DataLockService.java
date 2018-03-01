@@ -2,6 +2,7 @@ package com.app.biller.services;
 
 import java.util.Map;
 
+import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
 
 public interface DataLockService {
@@ -12,5 +13,5 @@ public interface DataLockService {
 
 	void unSetLock(String userID, String billCycle, int towerID);
 	
-	String checkLockByUser( String userID, String billCycle);
+	Tower checkLockByUser( String userID, String billCycle);
 }

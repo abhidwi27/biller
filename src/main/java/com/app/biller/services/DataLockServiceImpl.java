@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.biller.dao.LockDataDao;
+import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
 
 @Service
@@ -26,7 +27,7 @@ public class DataLockServiceImpl implements DataLockService {
 		lockDataDao.unSetLock(userID, billCycle, towerID);
 	}
 	
-	public String checkLockByUser(String userID, String billCycle) {
+	public Tower checkLockByUser(String userID, String billCycle) {
 		return lockDataDao.checkLockByUser(userID, billCycle);
 	}
 }

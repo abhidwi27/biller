@@ -5,8 +5,8 @@
 <head>
 <link rel="stylesheet" href="resources/css/reportCustom.css">
 <script src="resources/js/delegate.js"> </script>
-<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<link href="resources/css/bootstrap-toggle-min-2.2.3.css" rel="stylesheet">
+<script src="resources/js/bootstrap-toggle-min-2.2.3.js"></script>
 </head>
 
 <div id="delegate" class="modal fade" role="dialog">

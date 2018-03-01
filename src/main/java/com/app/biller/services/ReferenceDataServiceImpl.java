@@ -29,29 +29,29 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 	@Autowired
 	UserDao userDao;
 
-	public List<String> getEmployeeList(String billCycle, int dataType) {
+	public List<String> getEmployeeList(String billCycle, int dataType, int towerID) {
 		if (dataType == 0) {
-			return ilcDataDao.getEmployeeList(billCycle);
+			return ilcDataDao.getEmployeeList(billCycle, towerID);
 		}
-		return slaDataDao.getEmployeeList(billCycle);
+		return slaDataDao.getEmployeeList(billCycle, towerID);
 	}
 
-	public List<String> getWRList(String billCycle, int dataType) {
+	public List<String> getWRList(String billCycle, int dataType, int towerID) {
 		if (dataType == 0) {
-			return ilcDataDao.getWRList(billCycle);
+			return ilcDataDao.getWRList(billCycle, towerID);
 		}
-		return slaDataDao.getWRList(billCycle);
+		return slaDataDao.getWRList(billCycle, towerID);
 	}
 
 	public List<Tower> getTowerList() {
 		return referenceDataDao.getTowerList();
 	}
 
-	public List<String> getWeekendList(String billCycle, int dataType) {
+	public List<String> getWeekendList(String billCycle, int dataType, int towerID) {
 		if (dataType == 0) {
-			return ilcDataDao.getWeekendList(billCycle);
+			return ilcDataDao.getWeekendList(billCycle, towerID);
 		}
-		return slaDataDao.getWeekendList(billCycle);
+		return slaDataDao.getWeekendList(billCycle, towerID);
 	}
 
 	public ArrayList<Month> getMonth() {

@@ -8,9 +8,9 @@
 <html>
 <head>
 
-<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" /> 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+<link rel="stylesheet" href="resources/css/font-awesome-4.7.0.css" /> 
+<link rel="stylesheet" href="resources/css/bootstrap-min-3.3.7.css">
+<link rel="stylesheet" href="resources/css/bootstrap-select.min-1.6.3.css" />
 <link rel="stylesheet" href="resources/css/style.css" />
 <link rel="stylesheet" href="resources/css/animate.css" />
 <link rel="stylesheet" href="resources/css/style.css">
@@ -29,11 +29,11 @@
 	background: url(resources/image/Preloader_1.gif) center no-repeat #fff;
 }
 </style>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
-<script	src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"> </script>
-<script	src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js"> </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+<script src="resources/js/jquery-3.2.1-min.js"></script>
+<script	src="resources/js/jquery.datatable.min-1.10.15.js"> </script>
+<script	src="resources/js/datatables.bootstrap4.min.1.10.15.js"> </script>
+<script src="resources/js/bootstrap.min.3.3.7.js"></script>
+<script src="resources/js/bootstrap-select-min-1.6.3.js"></script>
 <script >
 //paste this code under the head tag or in a separate js file.
 	// Wait for window load

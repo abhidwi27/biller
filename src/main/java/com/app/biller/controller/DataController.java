@@ -25,6 +25,7 @@ import com.app.biller.domain.DataFilter;
 import com.app.biller.domain.ILCData;
 import com.app.biller.domain.SLAData;
 import com.app.biller.domain.SaveRecords;
+import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
 import com.app.biller.domain.UserApproval;
 import com.app.biller.services.DataApprovalService;
@@ -69,8 +70,11 @@ public class DataController {
 
 	@RequestMapping(path = "/read.do", method = RequestMethod.GET)
 	public @ResponseBody ResponseDataEnvelope readILCorSLAData(@RequestParam("dataType") int dataType,
-			@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID) {
+			@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID, HttpSession userSession) {
 		List<?> dataList;
+		User userProfile = getUserProfile(userSession);
+		String userID = userProfile.getUserID();
+		
 		if (dataType == 0) {
 			dataList = (ArrayList<ILCData>) dataValidationService.readILCData(billCycle, towerID);
 		} else {
@@ -79,11 +83,12 @@ public class DataController {
 		tableData.setHeader(referenceDataService.getTableHeader(dataType));
 		tableData.setBody(dataList);
 		responseDataEnvelope.setTableData(tableData);
-		responseDataEnvelope.setEmployeeList(referenceDataService.getEmployeeList(billCycle, dataType));
-		responseDataEnvelope.setWrList(referenceDataService.getWRList(billCycle, dataType));
-		responseDataEnvelope.setWeekEndList(referenceDataService.getWeekendList(billCycle, dataType));
+		responseDataEnvelope.setEmployeeList(referenceDataService.getEmployeeList(billCycle, dataType, towerID));
+		responseDataEnvelope.setWrList(referenceDataService.getWRList(billCycle, dataType, towerID));
+		responseDataEnvelope.setWeekEndList(referenceDataService.getWeekendList(billCycle, dataType, towerID));
 		responseDataEnvelope.setRejectForUserList(dataApprovalService.getRejectForUserList(billCycle));
 		responseDataEnvelope.setDataLockedBy(dataLockService.checkLockForTower(billCycle, towerID));
+		responseDataEnvelope.setHasApprovedBillCycle(dataApprovalService.checkPriorApproval(billCycle, userID));
 		
 		return responseDataEnvelope;
 	}
@@ -127,6 +132,7 @@ public class DataController {
 		
 	}
 
+	@SuppressWarnings("unused")
 	@RequestMapping(path = "/lock.do", method = RequestMethod.GET)
 	public @ResponseBody String lockSLAData(@RequestParam("billCycle") String billCycle,
 			@RequestParam("towerID") int towerID, HttpSession userSession) {
@@ -136,11 +142,17 @@ public class DataController {
 		Gson gson = new Gson();
 		HashMap<String, Object> lockResponseMap = new HashMap<String, Object>();
 		User lockedBy = dataLockService.checkLockForTower(billCycle, towerID);
-		String lockedForTower = dataLockService.checkLockByUser(userID, billCycle);
+		Tower lockedForTower = dataLockService.checkLockByUser(userID, billCycle);
+		
 		
 		lockResponseMap.put("lockedBy", lockedBy);
-		lockResponseMap.put("lockedForTower", lockedForTower);
-		if (lockedBy == null && lockedForTower.equals("")) {
+		if(lockedForTower != null) {
+			lockResponseMap.put("lockedForTower", lockedForTower.getTowerName());
+		}else {
+			lockResponseMap.put("lockedForTower", "");
+		}
+		
+		if (lockedBy == null && lockedForTower == null) {
 			dataLockService.setLock(billCycle, userID, towerID);
 			lockResponseMap.put("msg", "success");
 		} else {
@@ -173,7 +185,13 @@ public class DataController {
 			roleDesc = userProfile.getRoleDesc();
 			int roleID = userProfile.getRoleID();
 			approval = dataApprovalService.setUserApproval(billCycle, approveBy, approveFor, roleID, roleDesc);
+			Tower LockForTower = dataLockService.checkLockByUser(approveFor, billCycle);
+			if (approval && LockForTower != null) {
+				dataLockService.unSetLock(approveFor, billCycle, LockForTower.getTowerID());
+			}
+			
 		}
+		
 		String activeBillCycle = referenceDataService.getActiveBillCycle();		
 		reviewWrapper.setApprovalStatus( dataApprovalService.getApprovalStatus(activeBillCycle));
 		if (approval && approveFor != null) {
