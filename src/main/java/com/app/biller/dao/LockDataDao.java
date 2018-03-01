@@ -2,6 +2,7 @@ package com.app.biller.dao;
 
 import java.util.Map;
 
+import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
 
 public interface LockDataDao {
@@ -12,5 +13,5 @@ public interface LockDataDao {
 	
 	void unSetLock(String userID, String billCycle, int towerID);
 	
-	String checkLockByUser(String userID, String billCycle);
+	Tower checkLockByUser(String userID, String billCycle);
 }

@@ -252,7 +252,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 		return ilcDataList;
 	}
 
-	public List<String> getEmployeeList(String billCycle) {
+	public List<String> getEmployeeList(String billCycle, int towerID) {
 		RowMapper<String> rowMap = new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -260,11 +260,11 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			}
 		};
 
-		List<String> ilcEmployeeList = jdbcTemplate.query(selectILCEmployeeList, new Object[] { billCycle }, rowMap);
+		List<String> ilcEmployeeList = jdbcTemplate.query(selectILCEmployeeList, new Object[] { billCycle, towerID }, rowMap);
 		return ilcEmployeeList;
 	}
 
-	public List<String> getWRList(String billCycle) {
+	public List<String> getWRList(String billCycle, int towerID) {
 		RowMapper<String> rowMap = new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -272,11 +272,11 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			}
 		};
 
-		List<String> ilcWrList = jdbcTemplate.query(selectILCWrList, new Object[] { billCycle }, rowMap);
+		List<String> ilcWrList = jdbcTemplate.query(selectILCWrList, new Object[] { billCycle, towerID }, rowMap);
 		return ilcWrList;
 	}
 
-	public List<String> getWeekendList(String billCycle) {
+	public List<String> getWeekendList(String billCycle, int towerID) {
 		RowMapper<String> rowMap = new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -284,7 +284,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			}
 		};
 
-		List<String> ilcWeekendList = jdbcTemplate.query(selectILCWeekendList, new Object[] { billCycle }, rowMap);
+		List<String> ilcWeekendList = jdbcTemplate.query(selectILCWeekendList, new Object[] { billCycle, towerID }, rowMap);
 		return ilcWeekendList;
 	}
 }

@@ -230,7 +230,7 @@ public class SLADataDaoImpl implements SLADataDao {
 		StringBuilder sb = new StringBuilder();
 
 		sb.append(
-				"SELECT * FROM biller.blr_sla_data sla where sla.tower in(select tower_desc from biller.blr_tower tower where tower.tower_id=")
+				"SELECT * FROM biller.blr_sla_data sla where sla.tower in(select tower_desc from biller.blr_tower tower where sla.active = 1 AND tower.tower_id=")
 				.append(towerID).append(" )and sla.bill_cycle ='").append(billCycle).append("'");
 
 		if (!(weekEndDate.equals("ALL"))) {
@@ -288,7 +288,7 @@ public class SLADataDaoImpl implements SLADataDao {
 		return slaDataList;
 	}
 
-	public List<String> getEmployeeList(String billCycle) {
+	public List<String> getEmployeeList(String billCycle, int towerID) {
 		RowMapper<String> rowMap = new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -296,11 +296,11 @@ public class SLADataDaoImpl implements SLADataDao {
 			}
 		};
 
-		List<String> slaEmployeeList = jdbcTemplate.query(selectSLAEmployeeList, new Object[] { billCycle }, rowMap);
+		List<String> slaEmployeeList = jdbcTemplate.query(selectSLAEmployeeList, new Object[] { billCycle, towerID }, rowMap);
 		return slaEmployeeList;
 	}
 
-	public List<String> getWRList(String billCycle) {
+	public List<String> getWRList(String billCycle, int towerID) {
 		RowMapper<String> rowMap = new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -308,11 +308,11 @@ public class SLADataDaoImpl implements SLADataDao {
 			}
 		};
 
-		List<String> slaWrList = jdbcTemplate.query(selectSLAWrList, new Object[] { billCycle }, rowMap);
+		List<String> slaWrList = jdbcTemplate.query(selectSLAWrList, new Object[] { billCycle, towerID }, rowMap);
 		return slaWrList;
 	}
 
-	public List<String> getWeekendList(String billCycle) {
+	public List<String> getWeekendList(String billCycle, int towerID) {
 		RowMapper<String> rowMap = new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -320,7 +320,7 @@ public class SLADataDaoImpl implements SLADataDao {
 			}
 		};
 
-		List<String> slaWeekendList = jdbcTemplate.query(selectSLAWeekendList, new Object[] { billCycle }, rowMap);
+		List<String> slaWeekendList = jdbcTemplate.query(selectSLAWeekendList, new Object[] { billCycle, towerID }, rowMap);
 		return slaWeekendList;
 	}
 	

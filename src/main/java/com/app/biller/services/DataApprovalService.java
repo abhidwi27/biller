@@ -24,4 +24,6 @@ public interface DataApprovalService {
 	List<User> getDelegateByUserList(String userID);
 	
 	List<User> getRejectForUserList(String billCycle);
+	
+	int checkPriorApproval(String billCycle, String userID);
 }
