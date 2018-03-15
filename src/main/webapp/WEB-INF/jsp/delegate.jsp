@@ -38,7 +38,7 @@
 					<div class="row biller-row">
 								<div class="col-md-4 ">
 									<label class="biller-label biller-modal-label">
-										Delegation Status :
+										Delegation :
 									</label>
 								</div>
 								<div class="form-group col-md-8 text-left">																	

@@ -37,15 +37,27 @@ public class ILCDataDaoImpl implements ILCDataDao {
 
 	@Value("${SELECT_ILC_DATA}")
 	private String selectIlcData;
+	
+	@Value("${SELECT_ALL_ILC_DATA}")
+	private String selectAllIlcData;
 
 	@Value("${SELECT_ILC_EMPLOYEE_LIST}")
 	private String selectILCEmployeeList;
+	
+	@Value("${SELECT_ALL_ILC_EMPLOYEE_LIST}")
+	private String selectAllILCEmployeeList;
 
 	@Value("${SELECT_ILC_WR_LIST}")
 	private String selectILCWrList;
+	
+	@Value("${SELECT_ALL_ILC_WR_LIST}")
+	private String selectAllILCWrList;
 
 	@Value("${SELECT_ILC_WEEKEND_LIST}")
 	private String selectILCWeekendList;
+	
+	@Value("${SELECT_ALL_ILC_WEEKEND_LIST}")
+	private String selectAllILCWeekendList;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -121,9 +133,19 @@ public class ILCDataDaoImpl implements ILCDataDao {
 
 	@Override
 	public ArrayList<ILCData> readILCData(String billCycle, int towerID) {
+		
+		Object queryParam[];
+		String readIlcQuery;
+		if(towerID != 0 ) {
+			queryParam = new Object [] {towerID, billCycle };
+			readIlcQuery = selectIlcData;
+		}else {
+			queryParam = new Object [] { billCycle };
+			readIlcQuery = selectAllIlcData;
+		}
 
-		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(selectIlcData,
-				new Object[] { towerID, billCycle }, new RowMapper<ILCData>() {
+		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(readIlcQuery,
+				queryParam, new RowMapper<ILCData>() {
 					@Override
 					public ILCData mapRow(ResultSet rs, int rownumber) throws SQLException {
 						ILCData ilcModel = new ILCData();
@@ -183,9 +205,15 @@ public class ILCDataDaoImpl implements ILCDataDao {
 		StringBuilder sb = new StringBuilder();
 
 		sb.append(
-				"SELECT * FROM biller.blr_ilc_data ilc where ilc.tower in(select tower_desc from biller.blr_tower tower where tower.tower_id=")
-				.append(towerID).append(" )and ilc.bill_cycle ='").append(billCycle).append("'");
-
+				"SELECT * FROM biller.blr_ilc_data ilc where ")
+				.append("ilc.bill_cycle ='").append(billCycle).append("'");
+		if(towerID != 0) {
+			sb.append(" and ilc.tower in(select tower_desc from biller.blr_tower tower where tower.tower_id= ")				
+			.append(towerID)
+			.append(")");
+		  
+		}
+		
 		if (!(weekEndDate.equals("ALL"))) {
 			sb.append(" and ilc.weekend_date='").append(weekEndDate).append("'");
 		}
@@ -253,6 +281,18 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	}
 
 	public List<String> getEmployeeList(String billCycle, int towerID) {
+		
+		Object queryParam[];
+		String getIlcEmployeeQuery;
+		if(towerID != 0 ) {
+			queryParam = new Object [] {towerID, billCycle };
+			getIlcEmployeeQuery = selectILCEmployeeList;
+		}else {
+			queryParam = new Object [] { billCycle };
+			getIlcEmployeeQuery = selectAllILCEmployeeList;
+		}
+		
+		
 		RowMapper<String> rowMap = new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -260,11 +300,23 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			}
 		};
 
-		List<String> ilcEmployeeList = jdbcTemplate.query(selectILCEmployeeList, new Object[] { billCycle, towerID }, rowMap);
+		List<String> ilcEmployeeList = jdbcTemplate.query(getIlcEmployeeQuery, queryParam, rowMap);
 		return ilcEmployeeList;
 	}
 
 	public List<String> getWRList(String billCycle, int towerID) {
+		
+		Object queryParam[];
+		String getIlcWrQuery;
+		if(towerID != 0 ) {
+			queryParam = new Object [] {towerID, billCycle };
+			getIlcWrQuery = selectILCWrList;
+		}else {
+			queryParam = new Object [] { billCycle };
+			getIlcWrQuery = selectAllILCWrList;
+		}
+		
+		
 		RowMapper<String> rowMap = new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -272,11 +324,22 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			}
 		};
 
-		List<String> ilcWrList = jdbcTemplate.query(selectILCWrList, new Object[] { billCycle, towerID }, rowMap);
+		List<String> ilcWrList = jdbcTemplate.query(getIlcWrQuery, queryParam, rowMap);
 		return ilcWrList;
 	}
 
 	public List<String> getWeekendList(String billCycle, int towerID) {
+		
+		Object queryParam[];
+		String getIlcWeekendQuery;
+		if(towerID != 0 ) {
+			queryParam = new Object [] {towerID, billCycle };
+			getIlcWeekendQuery = selectILCWeekendList;
+		}else {
+			queryParam = new Object [] { billCycle };
+			getIlcWeekendQuery = selectAllILCWeekendList;
+		}
+		
 		RowMapper<String> rowMap = new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -284,7 +347,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			}
 		};
 
-		List<String> ilcWeekendList = jdbcTemplate.query(selectILCWeekendList, new Object[] { billCycle, towerID }, rowMap);
+		List<String> ilcWeekendList = jdbcTemplate.query(getIlcWeekendQuery, queryParam, rowMap);
 		return ilcWeekendList;
 	}
 }
