@@ -8,6 +8,10 @@ $(document).ready(function(){
 	var userProfile = JSON.parse($('#strUserProfile').val());	
 	
 	$('#reportDiv').hide();
+	if( userProfile.roleID != 8){
+		$("#reportTower option[value=0]").remove();
+		$('#reportTower').selectpicker('refresh');
+	}
 	
 	$("#reportSubmit").click(function(){
 		$(".biller-loader-div").fadeIn(1);		
@@ -25,19 +29,27 @@ $(document).ready(function(){
 		var year = $("#reportYear option:selected").text().trim();
 		var tower = $("#reportTower").val();
 		var billCycle = month+ year;
-		
+		var excelFileName = 'SLA Report_' + month + "_" + year; 
 		$('#currentBillCycle').val(billCycle);
 		$('#currentDataType').val(reportDataType);
 		$('#currentTower').val(tower);
 		
-		var settings = {   		
+		var settings = {   	
+				dom: 'Blfrtip',
+		    	buttons: [
+		    		{
+		                extend: 'excelHtml5',
+		                filename: excelFileName
+		            },
+		            
+		        ],
 				    		"scrollX": true,
+				    		"scrollY": "380px",
 				            "aoColumnDefs": [
 				            	{ "bVisible": true, "aTargets": ['_all'] },
 				            	{ "bVisible": false, "aTargets": ['_all'] }	            	
 				            	],
-				            	"iDisplayLength": 10
-				            	
+				            	"iDisplayLength": 10				            	
 	    				}
 		 
 		 if(reportDataType == 0 || userProfile.roleID == 1){
@@ -52,7 +64,7 @@ $(document).ready(function(){
 		 }else{
 			 $('#reportLock').show();
 			 $('#reportEdit').show();
-			 $('#reportCopy').show();
+			 $('#repor	tCopy').show();
 			 $('#reportDelete').show();
 			 $('#reportSave').show();
 			 $('#reportSaveSubmit').show();
@@ -64,7 +76,7 @@ $(document).ready(function(){
 		}else{
 			$('#reportReject').show();
 		}
-		 
+		
 		 url = 'data/read.do?dataType=' + reportDataType + '&billCycle=' + billCycle + '&towerID=' + tower;		 
 		 $.ajax({
 			    url: url,
@@ -92,9 +104,9 @@ $(document).ready(function(){
 			    	}
 			    	
 			    	if(hasApprovedBillCycle != 0 && dataLockedBy != null && dataLockedBy.userID == userProfile.userID ){
-			    		editMode = true;
-			    	}else{
 			    		editMode = false;
+			    	}else{
+			    		editMode = true;
 			    	}
 			    	
 			    	if (!editMode){
@@ -134,6 +146,7 @@ $(document).ready(function(){
 	                }
 				    $('#reportButtons').find('.dropdown .dropdown-menu').append('<li><a><button type=\"button\" class=\"btn btn-primary btn-outline btn-block btn-md\" id=\"columnSelectOk\" onclick=\"customizeColumns()\"> Done </button><a><li>');
 				    var reportTable = $('#report').DataTable(settings);
+				    reportTable.buttons().container().appendTo( '#report_wrapper .col-sm-6:eq(0)' );
 				    dataTableInitialized = true;
 				    var rowNo;
 	                for(rowNo=0; rowNo<tableJson["tableBody"].length; rowNo++){	

@@ -6,7 +6,7 @@
     <div class="container-fluid">
 		<div >
 			<ul class="nav navbar-nav navbar-left" >
-			<li>BILLER</li>
+			<li><img alt="" src="resources/image/B1.png"></img></li>
 			</ul>
 		</div>
 		<div>

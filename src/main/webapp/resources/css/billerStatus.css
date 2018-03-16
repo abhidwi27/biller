@@ -181,13 +181,13 @@
 }
 
 
-.table{
+.billerProgress .table{
 	border-radius: 15px;
-	box-shadow: 0 0 5px #a3a3a3;
+	box-shadow: 0 0 10px #fa8111e6;
 }
 
 
 .billerProgress li.active span{
 	border: none;	
-	box-shadow: 0 0 10px #a3a3a3;
+	box-shadow: 0 0 15px #fa8111e6;
 }

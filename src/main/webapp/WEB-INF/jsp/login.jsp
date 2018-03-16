@@ -11,6 +11,15 @@
 <script src="resources/js/bootstrap.min.3.3.7.js"></script>
 <script src="resources/js/login.js"> </script>
 <title>Biller</title>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("[name='password']").keyup(function(event) {
+		    if (event.keyCode === 13) {
+		        $('#loginSubmit').click();
+		    }
+		});
+});
+</script>
 </head>
 
 
