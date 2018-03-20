@@ -24,6 +24,16 @@ $(document).ready(function(){
 		
 	});
 	
+	$('#reportReject').click(function(e){
+		var userProfile = JSON.parse($('#strUserProfile').val());
+		if(userProfile.roleID == 3 && hasApprovedBillCycle == 1){
+			e.stopPropagation();
+			e.preventDefault();
+			return;
+		}else{
+			$("#rejectView").modal('toggle');
+		}
+	});
 	
 	$("#rejectSubmit").click(function() {
 		var billCycle = $('#currentBillCycle').val();
@@ -55,9 +65,11 @@ $(document).ready(function(){
 				var reviewFlag = reviewWrapper["reviewFlag"];
 				updateStatusView(approvalStatus);
 				if (reviewFlag == 1) {
-					alert("Rejection submitted successfully");		
+					var msg = "Rejection submitted successfully";	
+					billerAlert(msg,true, 'Okay', false, '','', "Alert !");
 				}else{
-					alert("Error occured while rejecting");
+					var msg = "Error occured while rejecting";
+					billerAlert(msg,true, 'Okay', false, '','', "Alert !");
 				}
 			}
 		});

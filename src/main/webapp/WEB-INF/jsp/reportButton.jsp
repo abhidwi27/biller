@@ -39,3 +39,4 @@
 <jsp:include page="reportCustom.jsp"></jsp:include>
 <jsp:include page="reportReject.jsp"></jsp:include>
 <jsp:include page="reportApprove.jsp"></jsp:include>
+<jsp:include page="reportDelete.jsp"></jsp:include>

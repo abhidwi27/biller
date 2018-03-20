@@ -59,7 +59,9 @@ $(function() {
 				totSum = data + totSum;
 			}
 		});
-		alert("Total Sum is " + totSum);
+		var msg = "Total Sum is " + totSum;
+		billerAlert(msg,true, 'Okay', false, '','', "Alert !");
+		
 	});
 
 	$("#reportLock").click(function(e) {
@@ -87,16 +89,21 @@ $(function() {
 				var lockResponseMap = JSON.parse(strlockResponseMap);
 				if (lockResponseMap.msg == "success") {
 					editMode = true;
-					alert("Table lock established successfully.");
+					billerAlert("Table lock established successfully.",true, 'Okay', false, '','', "Alert !");
+					
 				} else if (lockResponseMap.lockedBy != undefined && lockResponseMap.lockedBy.userID == userProfile.userID) {
 					editMode = true;
-					alert("You have already established Lock..!!");
+					billerAlert("You have already established Lock..!!",true, 'Okay', false, '','', "Alert !");
+					
 				} else if(lockResponseMap.lockedBy != undefined && lockResponseMap.lockedBy != ''){
 					editMode = false;
-					alert("Table is already locked by " + lockResponseMap.lockedBy.name);
+					var msg = "Table is already locked by " + lockResponseMap.lockedBy.name;
+					billerAlert(msg,true, 'Okay', false, '','', "Alert !");
+					
 				} else if(lockResponseMap.lockedForTower != ''){
 					editMode = false;
-					alert("You have already established for tower " + lockResponseMap.lockedForTower + ".You can not lock data for more than one tower.")
+					var msg = "You have already established for tower " + lockResponseMap.lockedForTower;
+					billerAlert(msg,true, 'Okay', false, '','', "Alert !");
 				} 
 				
 				if (!editMode){
@@ -137,11 +144,18 @@ $(function() {
 						var reportTable = $('#report').DataTable();
 						var reportTable2 = $('#report').dataTable();
 						var rowCount = 0;
-						$('#report tbody tr').find(
-								'input[type="checkbox"]:checked').each(
-								function() {
-									rowCount = rowCount + 1;
-								});
+						
+						
+						reportTable.rows().every(function(){
+							var rowIdx = this.index();
+							var rowNode = reportTable2.fnGetNodes(rowIdx);
+							
+							var rowIDSelector = '#' +  $(rowNode).attr('id');
+							if($(rowNode).find('td input[type="checkbox"]').prop('checked')){
+								rowCount = rowCount + 1;
+								
+								}
+						});
 
 						if (rowCount == 0) {
 							var msg="You have not selected any records for editing, please select at least one record for editing.";
@@ -297,14 +311,17 @@ $(function() {
 								});*/
 
 						if (rowCount == 0) {
-							alert("You have not selected any row, please select one row for copying.");
+							var msg = "You have not selected any row, please select one row for copying.";
+							billerAlert(msg,true, 'Okay', false, '','', "Alert !");
 							//break;
 							return;
 						} else if (rowCount == 1) {
 							
 							
 							if(!(visibleColumns.length == 0 || visibleColumns.length ==30)){
-								alert("You can not copy data in column filter mode.");
+								
+								var msg = "You can not copy data in column filter mode.";
+								billerAlert(msg,true, 'Okay', false, '','', "Alert !");
 								return;
 							}
 							var prevCount;
@@ -394,11 +411,13 @@ $(function() {
 							$(newRowNode).find('input[type="checkbox"]')
 							.prop("checked", true);
 							$(newRowNode).css("background-color", "#b7e1fe");
-							alert("Data copied successfully");
+							var msg = "Data copied successfully";
+							billerAlert(msg,true, 'Okay', false, '','', "Alert !");
 						} else {
 							//break;
 							
-							alert("You have selected more than one row, please select one row for copying.");
+							var msg = "You have selected more than one row, please select one row for copying.";
+							billerAlert(msg,true, 'Okay', false, '','', "Alert !");
 							return;
 						}
 						
@@ -406,65 +425,7 @@ $(function() {
 
 					});
 
-	$("#reportDelete").click(function(e) {
-		
-		if(!editMode){
-			e.stopPropagation();
-			e.preventDefault();
-			return;
-		}
-		
-		var billCycle = $('#currentBillCycle').val();
-		var reportTable = $('#report').DataTable();
-		var reportTable2 = $('#report').dataTable();
-		var seqIDList = new Array();
-		
-		/*$("#report  tr").find('input[type="checkbox"]:checked').each(function(){
-			var selectedRowID = $(this).closest('tr').attr("id");
-			var rowIDSelector = "#" + selectedRowID;
-			var isCopied = selectedRowID.split("_");
-			var rowIDSplit = selectedRowID.split("-");
-			if (isCopied.length ==1){
-				seqIDList.push(rowIDSplit[1]);
-			}
-			reportTable.rows(rowIDSelector).remove().draw();
-			
-			});*/
-			reportTable.rows().every(function(){
-				var rowIdx = this.index();
-				var rowNode = reportTable2.fnGetNodes(rowIdx);
-				var rowIDSelector = '#' +  $(rowNode).attr('id');
-				if($(rowNode).find('td input[type="checkbox"]').prop('checked')){
-					
-					var isCopied = rowIDSelector.split("_");
-					var rowIDSplit = rowIDSelector.split("-");
-					if (isCopied.length ==1){
-						seqIDList.push(rowIDSplit[1]);
-					}
-					reportTable.rows(rowIDSelector).remove().draw();
-					
-				}
-				
-			});
-			if (seqIDList.length != 0){		
-				$.ajax({
-					url : 'data/delete.do?billCycle=' + billCycle,
-					data : JSON.stringify(seqIDList),
-					contentType: 'application/json',
-		    		dataType: 'json',
-					type : 'POST',
-					success : function(result) {
-						if (result) {
-							alert("Data deleted successfuly");
-						}
-					}
-				});
-			}
-			
-		
-		
-
-	});
+	
 
 	$("#reportSave").click(function(e) {
 		
@@ -631,7 +592,8 @@ $(function() {
     		data: JSON.stringify(saveRecords),
     		success: function (result){	
     			if(result){
-    				alert("Data saved successfully");
+    				var msg = "Data saved successfully";
+    				billerAlert(msg,true, 'Okay', false, '','', "Alert !");
     				editMode = false;
     				rowEditMap = {};
     				copyInfo = {};
@@ -640,7 +602,8 @@ $(function() {
     				$("#reportSubmit").trigger("click");
     				
     			}else{
-    				alert("Error occured while saving data");
+    				var msg = "Error occured while saving data";
+    				billerAlert(msg,true, 'Okay', false, '','', "Alert !");
     			}    			
     		}        			
     	});
@@ -654,7 +617,8 @@ $(function() {
 						var rowID = "#" + $(this).closest('tr').attr("id");
 
 						if (copyEditMap[rowID]) {
-							alert("This operation will keep copied data in read only mode");
+							var msg = "This operation will keep copied data in read only mode";
+							billerAlert(msg,true, 'Okay', false, '','', "Alert !");
 							var reportTable = $('#report').DataTable();
 							var rowIdx = reportTable.row(rowID).index();
 							var rowData = new Array();
@@ -673,7 +637,8 @@ $(function() {
 
 						}
 						if (!(this.checked) && rowEditMap[rowID] == true) {
-							alert("This operation will undo any changes made for this record");
+							var msg = "This operation will undo any changes made for this record";
+							billerAlert(msg,true, 'Okay', false, '','', "Alert !");
 							var reportTable = $('#report').DataTable();
 							var rowIdx = reportTable.row(rowID).index();
 							var oldData = reportTable.row(rowIdx).data();

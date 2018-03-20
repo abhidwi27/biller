@@ -39,6 +39,7 @@ $(document).ready(function(){
 		    	buttons: [
 		    		{
 		                extend: 'excelHtml5',
+		                text:   '<i class="fa fa-file-excel-o" style="font-size:20px;color:#6666b2;"></i>',
 		                filename: excelFileName
 		            },
 		            
@@ -103,10 +104,14 @@ $(document).ready(function(){
 			    		$('#reportApprove').find('span i').addClass('biller-icon-disabled');
 			    	}
 			    	
-			    	if(hasApprovedBillCycle != 0 && dataLockedBy != null && dataLockedBy.userID == userProfile.userID ){
-			    		editMode = false;
-			    	}else{
+			    	if(userProfile.roleID ==3 && hasApprovedBillCycle ==1 ){
+			    		$('#reportReject').find('span i').addClass('biller-icon-disabled');
+			    	}
+			    	
+			    	if(hasApprovedBillCycle == 0 && dataLockedBy != null && dataLockedBy.userID == userProfile.userID ){
 			    		editMode = true;
+			    	}else{
+			    		editMode = false;
 			    	}
 			    	
 			    	if (!editMode){
@@ -142,8 +147,10 @@ $(document).ready(function(){
 				    	}else{
 	                	$('#report').find("thead tr").append("<th>" + tableJson["tableHeader"][i] + "</th>"); 
 				        }
+				    	if(i != 0){
 	                	$('#reportButtons').find('.dropdown .dropdown-menu').append('<li><a class=\"checkbox\"><input type=\"checkbox\" value=\"'+ i +' \"checked class=\"styled\"/>  <label > </label></input>' + tableJson["tableHeader"][i] + '</a></li>');
-	                }
+				    	}
+				    }
 				    $('#reportButtons').find('.dropdown .dropdown-menu').append('<li><a><button type=\"button\" class=\"btn btn-primary btn-outline btn-block btn-md\" id=\"columnSelectOk\" onclick=\"customizeColumns()\"> Done </button><a><li>');
 				    var reportTable = $('#report').DataTable(settings);
 				    reportTable.buttons().container().appendTo( '#report_wrapper .col-sm-6:eq(0)' );
@@ -178,7 +185,21 @@ $(document).ready(function(){
 	            }
 		 
 			});
+		// button.dt-button, div.dt-button, a.dt-button
+		 
+		
+		 //$("div.dt-button").css("margin-right","1em");
+		 //$("a.dt-button").css("margin-right","1em");
+		 //$("button.dt-button").css("margin-right","1em");
+		 
+		 
 		 $(".biller-loader-div").fadeOut("slow");
+		 setTimeout(function(){			
+			 $("#report_wrapper .dt-buttons button").css("margin-right", "1em");
+			 $("#report_wrapper .dataTables_scrollHead table").css("margin-left", "2px");
+
+		 }, 1000);
+		 
 	});
 });
 

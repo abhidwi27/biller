@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 
 <head>
-<link rel="stylesheet" href="resources/css/reportCustom.css">
+<link rel="stylesheet" href="resources/css/delegate.css">
 <script src="resources/js/delegate.js"> </script>
 <link href="resources/css/bootstrap-toggle-min-2.2.3.css" rel="stylesheet">
 <script src="resources/js/bootstrap-toggle-min-2.2.3.js"></script>

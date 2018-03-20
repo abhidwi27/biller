@@ -66,16 +66,19 @@ $(document).ready(function(){
 				var reviewFlag = reviewWrapper["reviewFlag"];				
 				updateStatusView(approvalStatus);
 				if (reviewFlag == 1) {
-					alert("Approval submitted successfully");
+					billerAlert("Approval submitted successfully",true, 'Okay', false, '','', "Alert !");
 					if(approveFor ==  userProfile.userID){
 						hasApprovedBillCycle == 1;
-						$('#reportLock').find('span i').addClass('biller-icon-disabled');
+						editMode = false;
+						//$('#reportLock').find('span i').addClass('biller-icon-disabled');
 					}
 					
 				}else if (reviewFlag == 0){
-					alert("Error: Your have already approved report for selected bill cycle.");
+					billerAlert("Error: Your have already approved report for selected bill cycle.",true, 'Okay', false, '','', "Alert !");
+					
 				}else{
-					alert("Error: report could not be approved.");
+					billerAlert("Error: report could not be approved.",true, 'Okay', false, '','', "Alert !");
+					
 				}
 			}
 		});
