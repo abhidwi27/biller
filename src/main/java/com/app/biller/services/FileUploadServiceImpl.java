@@ -26,6 +26,8 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.app.biller.dao.ILCDataDao;
 import com.app.biller.domain.ILCData;
+import com.app.biller.dao.SLADataDao;
+import com.app.biller.domain.SLAData;
 import com.microsoft.schemas.office.visio.x2012.main.CellType;
 
 @Service
@@ -35,7 +37,11 @@ public class FileUploadServiceImpl implements FileUploadService {
 
 	@Autowired
 	ILCDataDao ilcDataDao;
-
+	
+	@Autowired
+	SLADataDao slaDataDao;
+	
+	
 	@Override
 	public String uploadFiles(MultipartHttpServletRequest request) {
 		// File Upload directory on Server.
@@ -70,22 +76,24 @@ public class FileUploadServiceImpl implements FileUploadService {
 
 	@Override
 	public String uploadILCData(String billCycle, String userId, String uploadDataType,String reportWeekend) {
-		createILCDataSheet(reportWeekend,uploadDataType);
+		//createILCDataSheet(reportWeekend,uploadDataType);
 		ilcDataDao.createILCData(extractILCData(), billCycle, userId, uploadDataType);
 		return "ILC Report generated successfully";
 	}
 
 	@Override
-	public String uploadSLAData(String billCycle, String userId) {
-		// TODO Auto-generated method stub
-		return null;
+	public String uploadSLAData(String billCycle, String userId,String uploadDataType,String reportWeekend) {
+		//createILCDataSheet(reportWeekend,uploadDataType);
+		System.out.println("start createSLA...");
+		ArrayList<SLAData> slaDataList = extractSLAData();
+		System.out.println("before createSLA...");
+		slaDataDao.createSLAData(slaDataList, billCycle, userId, uploadDataType);
+//		System.out.println("after createSLA...");
+		return "SLA Report generated successfully";
 	}
 
 	private void createILCDataSheet(String reportWeekend,String uploadDataType) {
 
-		// String[] command = { "cmd.exe", "/C", "Start",
-		// "C:\\Users\\IBM_ADMIN\\Desktop\\Workbench\\trigger.bat" };
-		//String[] command = { "cmd.exe", "/C", "Start", "C:\\invoice\\uploads\\trigger.bat" };
 		String[] command = { "cmd.exe", "/C", "Start", "C:\\biller\\src\\main\\webapp\\Workbench\\trigger.bat",reportWeekend,uploadDataType};
 		Process process = null;
 		try {
@@ -186,6 +194,133 @@ public class FileUploadServiceImpl implements FileUploadService {
 		}
 	}
 
+	
+	
+	private ArrayList<SLAData> extractSLAData(){
+		
+		
+		FileInputStream slaInput = null;
+		XSSFWorkbook slaBook = null;
+		XSSFSheet slaSheet;
+		XSSFRow row;
+		ArrayList<SLAData> sladatalist=null;
+		Map<String, String> rowData;
+		Iterator<Row> rowIterator;
+		Iterator<Cell> cellIterator;
+		SLAData slaData;
+		Cell cell;
+		DataFormatter formatter;
+		String colName;
+		String colVal;
+		String numColName;
+		String numColVal;
+		CellType BLANK;
+		boolean dataExists;
+		String curRowData;
+		int curRow;
+		int cellType;
+
+		try {
+			//ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
+			slaInput = new FileInputStream(new File("C:\\biller\\src\\main\\webapp\\Workbench\\FFIC SLA Report.xlsx"));
+			slaBook = new XSSFWorkbook(slaInput);
+			slaSheet = slaBook.getSheet("WNPPT - Billed Hours");
+			rowIterator = slaSheet.iterator();
+			sladatalist = new ArrayList<SLAData>();
+			dataExists = true;
+			curRow = 1;
+
+			while (dataExists) {
+				row = (XSSFRow) rowIterator.next();
+				cellIterator = row.cellIterator();
+				rowData = new HashMap<String, String>();
+				slaData = new SLAData();
+
+				while (cellIterator.hasNext()) {
+					cell = cellIterator.next();
+					cellType = slaSheet.getRow(curRow).getCell(cell.getColumnIndex()).getCellType();
+					switch (cellType) {
+					case 1:
+						colName = (slaSheet.getRow(0).getCell(cell.getColumnIndex()).getStringCellValue()).trim();
+						colVal = (slaSheet.getRow(curRow).getCell(cell.getColumnIndex()).getStringCellValue()).trim();
+						rowData.put(colName, colVal);
+						break;
+					case 0:
+						numColName = slaSheet.getRow(0).getCell(cell.getColumnIndex()).getStringCellValue();
+						numColVal = Long.toString(Math
+								.round(slaSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
+						rowData.put(numColName, numColVal);
+						break;
+					default:
+						break;
+					}
+				}
+				
+				slaData = populateSLADataModel(rowData, slaData);				
+				sladatalist.add(slaData);
+				curRow++;
+				//curRowData = slaSheet.getRow(curRow).getCell(0).getStringCellValue();
+				Row curRowDataType = slaSheet.getRow(curRow);
+				dataExists = (curRowDataType != null);
+				rowData = null;
+				slaData = null;
+			}
+
+			return sladatalist;
+
+		} catch (FileNotFoundException fnfe) {
+			logger.info("FileNotFoundException: " + fnfe.getStackTrace());
+			return sladatalist;
+		} catch (Exception e) {
+			logger.info("Exception: " + e.getStackTrace());
+			return sladatalist;
+		} finally {
+			try {
+				slaBook.close();
+				slaInput.close();
+			} catch (Exception e) {
+				logger.info("Exception occured while closing: " + e);
+			}
+		}
+		
+	}
+	
+	private SLAData populateSLADataModel(Map<String,String> rowData, SLAData slaModel) {
+		
+		slaModel.setWeekEndDate(rowData.get("Week ending"));
+		slaModel.setAsm(rowData.get("ASM"));
+		slaModel.setAsd(rowData.get("ASD"));
+		slaModel.setAsmItwr(rowData.get("ASM (ITWR)"));
+		slaModel.setAsdItwr(rowData.get("ASD (ITWR)"));
+		slaModel.setEmpID(rowData.get("Emp ID"));
+		slaModel.setEmpName(rowData.get("Emp Name"));
+		slaModel.setActivity(rowData.get("Activity Description"));
+		slaModel.setWorkItem(rowData.get("Workitem ID"));
+		slaModel.setOnOffShore(rowData.get("On/Offshore"));
+		slaModel.setTotHrs(Integer.parseInt(rowData.get("Hours")));
+		slaModel.setShiftDetail(rowData.get("ShiftDetails"));
+		slaModel.setCategory(rowData.get("Category"));
+		slaModel.setBillType(rowData.get("Bill Type"));
+		slaModel.setDm(rowData.get("exculsively on"));
+		slaModel.setAppArea(rowData.get("APP Area"));
+		slaModel.setBusinessArea(rowData.get("BA"));
+		slaModel.setTower(rowData.get("Tower"));
+		slaModel.setBam(rowData.get("BAMs"));
+		slaModel.setRemarks(rowData.get("Remarks"));
+		slaModel.setIsBillable(rowData.get("Billable"));
+		slaModel.setWrNo(rowData.get("WR"));
+		slaModel.setPlannedHrs(Integer.parseInt(rowData.get("Plan Effort")));
+		slaModel.setComments(rowData.get("Comments"));
+		slaModel.setWrDesc(rowData.get("ITWR Description"));
+		slaModel.setCostCenter(rowData.get("Cost Centre"));
+		slaModel.setFundType(rowData.get("Funding Type"));
+		slaModel.setVendorClass(rowData.get("Vendor Classification"));
+				
+		
+		return slaModel;
+		
+	}
+	
 	private ILCData populateILCDataModel(Map<String, String> rowData, ILCData ilcModel) {
 
 		ilcModel.setEmpID(rowData.get("Emp Ser Num"));

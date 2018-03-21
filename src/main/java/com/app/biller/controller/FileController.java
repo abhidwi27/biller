@@ -49,13 +49,21 @@ public class FileController {
 	@RequestMapping(value = "/upload.do", method = RequestMethod.POST)
 	@ResponseBody
 	public String uploadFiles(MultipartHttpServletRequest request, @RequestParam("billCycle") String billCycle,
-			HttpSession userSession) {
-		billCycle = "082017";
+			@RequestParam("dataType") String uploadDataType,@RequestParam("reportWeekend") String reportWeekend,HttpSession userSession) {
+	//public String uploadFiles(MultipartHttpServletRequest request, @RequestParam("billCycle") String billCycle,
+		//	HttpSession userSession) {
+		//billCycle = "112017";
 		String status = fileUploadService.uploadFiles(request);
 		if (status.equalsIgnoreCase("Success")) {
 			User userProfile = getUserProfile(userSession);
 			String userId = userProfile.getUserID();
-			return fileUploadService.uploadILCData(billCycle, userId, billCycle, status);
+			if (uploadDataType.equals("0")) {
+				return fileUploadService.uploadILCData(billCycle, userId, uploadDataType, reportWeekend);
+			}else {
+				//String returnValue = fileUploadService.uploadSLAData(billCycle, userId, uploadDataType, reportWeekend);
+				String returnValue = fileUploadService.uploadSLAData(billCycle, userId, uploadDataType, reportWeekend);
+				return returnValue;
+			}
 		} else {
 			logger.info("status = " + status);
 		}

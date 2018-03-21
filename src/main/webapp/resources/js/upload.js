@@ -28,7 +28,7 @@ $(document).ready(function(){
 		
 
 		$("#uploadSubmit").click(function(){
-		var uploadDataType = $("#uploadDataType .radio-inline input:radio[name='uploadRadio']:checked").val().trim();
+		var uploadDataType = $("#uploadDataType .radio-inline input:radio[name='uploadRadio']:checked").val();
 	    var month = $("#uploadMonth").val();
 		var year = $("#uploadYear option:selected").text().trim();
 		var billCycle = month+ year;

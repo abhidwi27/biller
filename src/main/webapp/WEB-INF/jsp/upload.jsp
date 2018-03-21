@@ -21,14 +21,14 @@
 					<div class="panel-heading"> Upload Criteria 
 					</div>
 				<div class="panel-body">  
-					<div class="row biller-row">
+					<div class="row biller-row" id="uploadDataType">
 						<div class="col-md-3 text-left biller-panel-label">
 							<label class="biller-label">
 								Data Type :
 							</label>
 						</div>
 						<div class="col-md-9">			
-							<div class="col-md-4 text-left" id="uploadDataType">
+							<div class="col-md-4 text-left" >
 								<div class="radio-inline">
 									<label class="biller-radio-label">
 											<input type="radio" name="uploadRadio" value="0" checked>
