@@ -77,7 +77,10 @@
 		  <jsp:include page="reportViewTab.jsp"></jsp:include>
 		  <jsp:include page="statusViewTab.jsp"></jsp:include>
           <jsp:include page="download.jsp"></jsp:include>
-          <jsp:include page="admin.jsp"></jsp:include>      
+          <!--  
+          <jsp:include page="admin.jsp"></jsp:include>
+          --> 
+               
         </div>
       </div>
     </div>
@@ -85,5 +88,6 @@
 </div>
 </div>
 
+<jsp:include page="billerFooter.jsp"></jsp:include>
 
 </body>

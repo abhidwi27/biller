@@ -51,10 +51,14 @@
 	padding-bottom: 0px; 
 	font-size: 11px;
 	height: 25px;
+	box-shadow: 0 0 5px #c1c1c1;
+	border: 1px solid #fbe9e9;
 }
 
 
 .billerTable .table{
 	border-radius: 15px;
-	box-shadow: 0 0 10px #ddd;
+	box-shadow: 0 0 5px #8f8383;
+	margin-left: 2px;
+
 }

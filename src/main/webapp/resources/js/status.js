@@ -32,11 +32,11 @@ function updateStatusView(approvalStatus){
 		 var selector = "#" + key + "GroupTab";
 		 $(selector).find("a span i").remove();
 		 if(value==2){
-			 $(selector).find("a span").append("<i class=\"fa fa-thumbs-o-up fa-lg\"  aria-hidden=\"true\"></i>");
+			 $(selector).find("a span").append("<i class=\"fa fa-thumbs-o-up fa-lg\"  style=\"color: #22C222;\" aria-hidden=\"true\"></i>");
 		 }else if (value == 1){
-			 $(selector).find("a span").append("<i class=\"fa fa-spinner fa-lg\"  aria-hidden=\"true\"></i>");
+			 $(selector).find("a span").append("<i class=\"fa fa-spinner fa-lg\"   style=\"color: #6666b2;\"aria-hidden=\"true\"></i>");
 		 }else{
-			 $(selector).find("a span").append("<i class=\"fa fa-ban fa-lg\"  aria-hidden=\"true\"></i>"); 
+			 $(selector).find("a span").append("<i class=\"fa fa-ban fa-lg\"  style=\"color: #ff704d;\" aria-hidden=\"true\"></i>"); 
 		 }
 	 });
 	 var roleDescMap = {

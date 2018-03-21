@@ -1,4 +1,4 @@
-.modal-body .biller-report-Approve{
+.modal-body .biller-report-Delete{
 	text-align: center;
 	padding-left: 40px;
 	padding-right:40px;
@@ -8,11 +8,11 @@
 	font-weight: 500;
 }
 
-.biller-approve-row{
+.biller-delete-row{
 	height: 35px;
 	margin-bottom: 10px;	
 }
 
-#approveView .modal-content .modal-header .modal-title{
+#deleteView .modal-content .modal-header .modal-title{
 	text-align: center;
 }
