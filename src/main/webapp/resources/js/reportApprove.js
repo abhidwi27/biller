@@ -2,6 +2,16 @@ $(document).ready(function(){
 	
 	var approveListlength = $('#reportApprovalList').children('option').length;
 	
+	$('#reportApprove').click(function(e){
+		if(approveListlength == 0 && hasApprovedBillCycle == 1){
+			e.stopPropagation();
+			e.preventDefault();
+			return;
+		}else{
+			$("#approveView").modal('toggle');
+		}
+	});
+	
 	if(approveListlength == 0){
 		$('#approvalRadio').hide();
 		$('#approvalUserBlock').hide();
@@ -25,6 +35,9 @@ $(document).ready(function(){
 	});
 	
 	$("#reportApproveSubmit").click(function() {
+		
+		$(".biller-loader-div").fadeIn(1);
+		
 		var billCycle = $('#currentBillCycle').val();
 		var approveFor;
 		
@@ -52,13 +65,25 @@ $(document).ready(function(){
 				var approvalStatus = reviewWrapper["approvalStatus"];
 				var reviewFlag = reviewWrapper["reviewFlag"];				
 				updateStatusView(approvalStatus);
-				if (reveiwFlag == 1) {
-					alert("Arpproval submitted successfully");
-				} else {
-					alert("Error: Report could not be approved");
+				if (reviewFlag == 1) {
+					billerAlert("Approval submitted successfully",true, 'Okay', false, '','', "Alert !");
+					if(approveFor ==  userProfile.userID){
+						hasApprovedBillCycle == 1;
+						editMode = false;
+						//$('#reportLock').find('span i').addClass('biller-icon-disabled');
+					}
+					
+				}else if (reviewFlag == 0){
+					billerAlert("Error: Your have already approved report for selected bill cycle.",true, 'Okay', false, '','', "Alert !");
+					
+				}else{
+					billerAlert("Error: report could not be approved.",true, 'Okay', false, '','', "Alert !");
+					
 				}
 			}
 		});
+		
+		$(".biller-loader-div").fadeOut("slow");
 	});
 	
 });

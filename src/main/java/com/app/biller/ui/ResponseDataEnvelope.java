@@ -16,6 +16,7 @@ public class ResponseDataEnvelope {
 	private List<String> weekEndList;
 	private List<User> rejectForUserList;
 	private User dataLockedBy;
+	private int hasApprovedBillCycle;
 	//private String dataLockedBy;
 
 	public TableData getTableData() {
@@ -64,6 +65,14 @@ public class ResponseDataEnvelope {
 
 	public void setDataLockedBy(User dataLockedBy) {
 		this.dataLockedBy = dataLockedBy;
+	}
+
+	public int isHasApprovedBillCycle() {
+		return hasApprovedBillCycle;
+	}
+
+	public void setHasApprovedBillCycle(int hasApprovedBillCycle) {
+		this.hasApprovedBillCycle = hasApprovedBillCycle;
 	}
 
 	

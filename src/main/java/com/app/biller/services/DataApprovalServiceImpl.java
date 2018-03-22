@@ -119,4 +119,8 @@ public class DataApprovalServiceImpl implements DataApprovalService {
 	public List<User> getRejectForUserList(String billCycle){
 		return userApprovalDao.getRejectForUserList(billCycle);
 	}
+	
+	public int checkPriorApproval(String billCycle, String userID) {
+		return userApprovalDao.checkPriorApproval(billCycle, userID);
+	}
 }

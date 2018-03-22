@@ -12,3 +12,7 @@
 	height: 35px;
 	margin-bottom: 10px;	
 }
+
+#approveView .modal-content .modal-header .modal-title{
+	text-align: center;
+}

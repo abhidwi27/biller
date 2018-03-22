@@ -20,11 +20,11 @@ public interface SLADataDao {
 
 	List<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName);
 
-	List<String> getEmployeeList(String billCycle);
+	List<String> getEmployeeList(String billCycle, int towerID);
 
-	List<String> getWRList(String billCycle);
+	List<String> getWRList(String billCycle, int towerID);
 
-	List<String> getWeekendList(String billCycle);
+	List<String> getWeekendList(String billCycle, int towerID);
 	
 	String getActiveBillCycle();
 }

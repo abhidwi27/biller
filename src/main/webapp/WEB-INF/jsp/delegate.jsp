@@ -3,10 +3,10 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 
 <head>
-<link rel="stylesheet" href="resources/css/reportCustom.css">
+<link rel="stylesheet" href="resources/css/delegate.css">
 <script src="resources/js/delegate.js"> </script>
-<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<link href="resources/css/bootstrap-toggle-min-2.2.3.css" rel="stylesheet">
+<script src="resources/js/bootstrap-toggle-min-2.2.3.js"></script>
 </head>
 
 <div id="delegate" class="modal fade" role="dialog">
@@ -38,7 +38,7 @@
 					<div class="row biller-row">
 								<div class="col-md-4 ">
 									<label class="biller-label biller-modal-label">
-										Delegation Status :
+										Delegation :
 									</label>
 								</div>
 								<div class="form-group col-md-8 text-left">																	

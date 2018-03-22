@@ -1,10 +1,17 @@
 var dataTableInitialized = false;
 var editMode;
+var hasApprovedBillCycle;
+var approveListlength;
+
 $(document).ready(function(){		
 		
 	var userProfile = JSON.parse($('#strUserProfile').val());	
 	
 	$('#reportDiv').hide();
+	if( userProfile.roleID != 8){
+		$("#reportTower option[value=0]").remove();
+		$('#reportTower').selectpicker('refresh');
+	}
 	
 	$("#reportSubmit").click(function(){
 		$(".biller-loader-div").fadeIn(1);		
@@ -22,19 +29,28 @@ $(document).ready(function(){
 		var year = $("#reportYear option:selected").text().trim();
 		var tower = $("#reportTower").val();
 		var billCycle = month+ year;
-		
+		var excelFileName = 'SLA Report_' + month + "_" + year; 
 		$('#currentBillCycle').val(billCycle);
 		$('#currentDataType').val(reportDataType);
 		$('#currentTower').val(tower);
 		
-		var settings = {   		
+		var settings = {   	
+				dom: 'Blfrtip',
+		    	buttons: [
+		    		{
+		                extend: 'excelHtml5',
+		                text:   '<i class="fa fa-file-excel-o" style="font-size:20px;color:#6666b2;"></i>',
+		                filename: excelFileName
+		            },
+		            
+		        ],
 				    		"scrollX": true,
+				    		"scrollY": "380px",
 				            "aoColumnDefs": [
 				            	{ "bVisible": true, "aTargets": ['_all'] },
 				            	{ "bVisible": false, "aTargets": ['_all'] }	            	
 				            	],
-				            	"iDisplayLength": 10
-				            	
+				            	"iDisplayLength": 10				            	
 	    				}
 		 
 		 if(reportDataType == 0 || userProfile.roleID == 1){
@@ -49,7 +65,7 @@ $(document).ready(function(){
 		 }else{
 			 $('#reportLock').show();
 			 $('#reportEdit').show();
-			 $('#reportCopy').show();
+			 $('#repor	tCopy').show();
 			 $('#reportDelete').show();
 			 $('#reportSave').show();
 			 $('#reportSaveSubmit').show();
@@ -61,7 +77,7 @@ $(document).ready(function(){
 		}else{
 			$('#reportReject').show();
 		}
-		 
+		
 		 url = 'data/read.do?dataType=' + reportDataType + '&billCycle=' + billCycle + '&towerID=' + tower;		 
 		 $.ajax({
 			    url: url,
@@ -76,9 +92,23 @@ $(document).ready(function(){
 			    	var wrList = responseDataEnvelope["wrList"];
 			    	var rejectForUserList = responseDataEnvelope["rejectForUserList"];
 			    	var dataLockedBy = responseDataEnvelope["dataLockedBy"];
+			    	hasApprovedBillCycle = responseDataEnvelope["hasApprovedBillCycle"];
+			    	approveListlength = $('#reportApprovalList').children('option').length;
 			    	var userProfile = JSON.parse($('#strUserProfile').val());
 			    	
-			    	if(dataLockedBy != null && dataLockedBy.userID == userProfile.userID ){
+			    	if(hasApprovedBillCycle == 1){
+			    		$('#reportLock').find('span i').addClass('biller-icon-disabled');
+			    	}
+			    	
+			    	if(approveListlength == 0 && hasApprovedBillCycle ==1 ){
+			    		$('#reportApprove').find('span i').addClass('biller-icon-disabled');
+			    	}
+			    	
+			    	if(userProfile.roleID ==3 && hasApprovedBillCycle ==1 ){
+			    		$('#reportReject').find('span i').addClass('biller-icon-disabled');
+			    	}
+			    	
+			    	if(hasApprovedBillCycle == 0 && dataLockedBy != null && dataLockedBy.userID == userProfile.userID ){
 			    		editMode = true;
 			    	}else{
 			    		editMode = false;
@@ -111,12 +141,19 @@ $(document).ready(function(){
 	                $('#reportButtons').find('.dropdown .dropdown-menu').empty();
 	                $('#reportButtons').find('.dropdown .dropdown-menu').append('<li><a class=\"checkbox\"><input type=\"checkbox\" checked class=\"styled\" onclick=\"modifyAllColumns(this)\"/>  <label > </label></input>' + 'Select All' + '</a></li>');
 	                $('#reportButtons').find('.dropdown .dropdown-menu').append('<li role=\"separator\" class=\"divider\"></li>');
-				    for(var i=0 ; i< tableJson["tableHeader"].length; i++){				    	
-	                	$('#report').find("thead tr").append("<th>" + tableJson["tableHeader"][i] + "</th>");   
+				    for(var i=0 ; i< tableJson["tableHeader"].length; i++){	
+				    	if(i==0){
+				    		$('#report').find("thead tr").append("<th>" + '<a class=\"checkbox\"><input type=\"checkbox\" class=\"styled\" onclick=\"SelectAllRecords(this)\" />  <label > </label></input>' + "</th>");	
+				    	}else{
+	                	$('#report').find("thead tr").append("<th>" + tableJson["tableHeader"][i] + "</th>"); 
+				        }
+				    	if(i != 0){
 	                	$('#reportButtons').find('.dropdown .dropdown-menu').append('<li><a class=\"checkbox\"><input type=\"checkbox\" value=\"'+ i +' \"checked class=\"styled\"/>  <label > </label></input>' + tableJson["tableHeader"][i] + '</a></li>');
-	                }
+				    	}
+				    }
 				    $('#reportButtons').find('.dropdown .dropdown-menu').append('<li><a><button type=\"button\" class=\"btn btn-primary btn-outline btn-block btn-md\" id=\"columnSelectOk\" onclick=\"customizeColumns()\"> Done </button><a><li>');
 				    var reportTable = $('#report').DataTable(settings);
+				    reportTable.buttons().container().appendTo( '#report_wrapper .col-sm-6:eq(0)' );
 				    dataTableInitialized = true;
 				    var rowNo;
 	                for(rowNo=0; rowNo<tableJson["tableBody"].length; rowNo++){	
@@ -148,7 +185,21 @@ $(document).ready(function(){
 	            }
 		 
 			});
+		// button.dt-button, div.dt-button, a.dt-button
+		 
+		
+		 //$("div.dt-button").css("margin-right","1em");
+		 //$("a.dt-button").css("margin-right","1em");
+		 //$("button.dt-button").css("margin-right","1em");
+		 
+		 
 		 $(".biller-loader-div").fadeOut("slow");
+		 setTimeout(function(){			
+			 $("#report_wrapper .dt-buttons button").css("margin-right", "1em");
+			 $("#report_wrapper .dataTables_scrollHead table").css("margin-left", "2px");
+
+		 }, 1000);
+		 
 	});
 });
 

@@ -3,6 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <head>
 <script src="resources/js/reportReject.js"> </script>
+<link rel="stylesheet" href="resources/css/reportReject.css">
 </head>
 <div id="rejectView" class="modal fade" role="dialog">
 		<div class="modal-dialog">

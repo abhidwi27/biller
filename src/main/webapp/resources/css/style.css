@@ -12,7 +12,7 @@
 	--biller-login-placeholder-color: #fff;
 	--biller-login-btn-hover-color: #6666b2;
 	--biller-body-background-color: #fff;	
-	--biller-header-background-color: #323299;
+	--biller-header-background-color: #083b66;
 	--biller-header-left-font-color: #fff;
 	--biller-header-right-font-color: #fff;
 	--biller-header-font-color-hover: #fff;
@@ -46,7 +46,8 @@
 	--biller-status-round-tab-active: #FFF;
 	--biller-status-round-tab-icon-color: #22C222;
 	--biller-form-control-border-color: #4c4ca6;
-	--biller-icon-disabled-color: #46b5c1;
+	--biller-icon-disabled-color: #bbbbdd;
+	--biller-main-footer-background-color: #083b66;
 	
 }
 body {
@@ -318,4 +319,76 @@ body {
     background-size: 100%;
     opacity: 0.9;
     z-index: -999;
+} */
+
+
+
+/* #reportPanel:before{
+	
+	content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+  background-image: url('https://images3.alphacoders.com/233/233999.jpg');
+  background-size:cover;
+  width: 100%;
+  height: 100%;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+
+#reportSelection:before{
+	
+	content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+  background-image: url('https://images3.alphacoders.com/233/233999.jpg');
+  background-size:cover;
+  width: 100%;
+  height: 100%;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+
+.tab-content:before{
+	
+	content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+  background-image: url('https://images3.alphacoders.com/233/233999.jpg');
+  background-size:cover;
+  width: 100%;
+  height: 100%;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.biller-Home{
+	background-color: transparent;
+	background-image: transparent;
 } */

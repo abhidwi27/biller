@@ -14,7 +14,7 @@
 					<div class="row biller-row">
 							<div class="col-md-4 ">
 								<label class="biller-label biller-modal-label">
-									Team Name:
+									App Area:
 								</label>
 							</div>
 								<div class="form-group col-md-5 text-left biller-modal-dropdown">																	

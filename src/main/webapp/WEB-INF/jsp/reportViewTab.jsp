@@ -5,6 +5,14 @@
 <head>
 <script src="resources/js/reportView.js"> </script>
 <link rel="stylesheet" href="resources/css/reportViewTab.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"> </script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script> 
 </head>
 
 <input name="currentBillCycle" id="currentBillCycle" type="hidden" value='' />
@@ -85,8 +93,8 @@
 						<div class="form-group col-md-5 text-left biller-tower-dropdown">	
 							<select class="selectpicker" data-dropup-auto="false" data-width="auto"  data-live-search="true" id="reportTower">
 								<c:if test="${not empty towerList}">
-									<c:forEach var="o" items="${towerList}">
-									 <option value="${o.towerID}"> ${o.towerName}</option>
+									<c:forEach var="o" items="${towerList}">										
+									 		<option value="${o.towerID}"> ${o.towerName}</option>
 									 </c:forEach>
 							  </c:if>
 							</select>

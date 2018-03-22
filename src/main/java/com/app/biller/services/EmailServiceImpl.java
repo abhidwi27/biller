@@ -63,6 +63,7 @@ public class EmailServiceImpl implements EmailService {
 		String pmoEmailID = this.getPmoEmailID();
 		String approveByEmailID = this.getEmailID(approveBy);
 		User approveByUserProfile = userDao.createUserProfile(approveBy);
+		User approveForUserProfile = userDao.createUserProfile(approveFor);
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
 			public void prepare(MimeMessage mimeMessage) throws Exception {	
 				mimeMessage.setFrom("biller@billerinfo.com");
@@ -70,7 +71,7 @@ public class EmailServiceImpl implements EmailService {
 				mimeMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(pmoEmailID));
 				mimeMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(approveByEmailID));
 				mimeMessage.setText("Approved by " + approveBy);
-				mimeMessage.setSubject("Biller Notification: Bill Cycle " + billMonth + "-" + billYear + " approved by " + approveByUserProfile.getName() );
+				mimeMessage.setSubject("Biller Notification: Bill Cycle " + billMonth + "-" + billYear + " approved by " + approveByUserProfile.getName() + " for " + approveForUserProfile.getName() );
 				
 			}
 		};
@@ -83,6 +84,7 @@ public class EmailServiceImpl implements EmailService {
 		String pmoEmailID = this.getPmoEmailID();
 		String rejectByEmailID = this.getEmailID(rejectedBy);
 		User rejectedByUserProfile = userDao.createUserProfile(rejectedBy);
+		User rejectedForUserProfile = userDao.createUserProfile(rejectedFor);
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
 			public void prepare(MimeMessage mimeMessage) throws Exception {
 				mimeMessage.setFrom("biller@billerinfo.com");
@@ -90,7 +92,7 @@ public class EmailServiceImpl implements EmailService {
 				mimeMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(pmoEmailID));
 				mimeMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(rejectByEmailID));
 				mimeMessage.setText("Rejected by " + rejectedBy);
-				mimeMessage.setSubject("Biller Notification: Bill Cycle " + billMonth + "-" + billYear + " rejected by " + rejectedByUserProfile.getName() );
+				mimeMessage.setSubject("Biller Notification: Bill Cycle " + billMonth + "-" + billYear + " rejected by " + rejectedByUserProfile.getName() + " for " + rejectedForUserProfile.getName() );
 				mimeMessage.setText(rejectComments);
 				
 			}

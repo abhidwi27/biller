@@ -25,15 +25,28 @@ public class SLADataDaoImpl implements SLADataDao {
 
 	@Value("${SELECT_SLA_EMPLOYEE_LIST}")
 	private String selectSLAEmployeeList;
+	
+	@Value("${SELECT_ALL_SLA_EMPLOYEE_LIST}")
+	private String selectAllSLAEmployeeList;
+	
 
 	@Value("${SELECT_SLA_WR_LIST}")
 	private String selectSLAWrList;
+	
+	@Value("${SELECT_ALL_SLA_WR_LIST}")
+	private String selectAllSLAWrList;
 
 	@Value("${SELECT_SLA_WEEKEND_LIST}")
 	private String selectSLAWeekendList;
+	
+	@Value("${SELECT_ALL_SLA_WEEKEND_LIST}")
+	private String selectAllSLAWeekendList;
 
 	@Value("${SELECT_SLA_DATA}")
 	private String selectSLAData;
+	
+	@Value("${SELECT_ALL_SLA_DATA}")
+	private String selectAllSLAData;
 
 	@Value("${INSERT_SLA_DATA}")
 	private String insertSLAData;
@@ -164,8 +177,19 @@ public class SLADataDaoImpl implements SLADataDao {
 	
 	@Override
 	public ArrayList<SLAData> readSLAData(String billCycle, int towerID) {
-		ArrayList<SLAData> slaDataList = (ArrayList<SLAData>) jdbcTemplate.query(selectSLAData,
-				new Object[] { towerID, billCycle }, new RowMapper<SLAData>() {
+		
+		Object queryParam[];
+		String readSlaQuery;
+		if(towerID != 0 ) {
+			queryParam = new Object [] {towerID, billCycle };
+			readSlaQuery = selectSLAData;
+		}else {
+			queryParam = new Object [] { billCycle };
+			readSlaQuery = selectAllSLAData;
+		}
+		
+		ArrayList<SLAData> slaDataList = (ArrayList<SLAData>) jdbcTemplate.query(readSlaQuery,
+				queryParam, new RowMapper<SLAData>() {
 					@Override
 					public SLAData mapRow(ResultSet rs, int rownumber) throws SQLException {
 						SLAData slaModel = new SLAData();
@@ -338,9 +362,15 @@ public class SLADataDaoImpl implements SLADataDao {
 		StringBuilder sb = new StringBuilder();
 
 		sb.append(
-				"SELECT * FROM biller.blr_sla_data sla where sla.tower in(select tower_desc from biller.blr_tower tower where tower.tower_id=")
-				.append(towerID).append(" )and sla.bill_cycle ='").append(billCycle).append("'");
-
+				"SELECT * FROM biller.blr_sla_data sla where sla.active = 1 and sla.bill_cycle ='")
+		  .append(billCycle).append("'");
+		
+		if(towerID != 0) {
+			sb.append(" and sla.tower in(select tower_desc from biller.blr_tower tower where tower.tower_id= ")				
+			.append(towerID)
+			.append(")");
+		  
+		}
 		if (!(weekEndDate.equals("ALL"))) {
 			sb.append(" and sla.weekend_date='").append(weekEndDate).append("'");
 		}
@@ -396,7 +426,18 @@ public class SLADataDaoImpl implements SLADataDao {
 		return slaDataList;
 	}
 
-	public List<String> getEmployeeList(String billCycle) {
+	public List<String> getEmployeeList(String billCycle, int towerID) {
+		
+		Object queryParam[];
+		String getSlaEmployeeQuery;
+		if(towerID != 0 ) {
+			queryParam = new Object [] {towerID, billCycle };
+			getSlaEmployeeQuery = selectSLAEmployeeList;
+		}else {
+			queryParam = new Object [] { billCycle };
+			getSlaEmployeeQuery = selectAllSLAEmployeeList;
+		}
+		
 		RowMapper<String> rowMap = new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -404,11 +445,23 @@ public class SLADataDaoImpl implements SLADataDao {
 			}
 		};
 
-		List<String> slaEmployeeList = jdbcTemplate.query(selectSLAEmployeeList, new Object[] { billCycle }, rowMap);
+		List<String> slaEmployeeList = jdbcTemplate.query(getSlaEmployeeQuery, queryParam, rowMap);
 		return slaEmployeeList;
 	}
 
-	public List<String> getWRList(String billCycle) {
+	public List<String> getWRList(String billCycle, int towerID) {
+		
+		Object queryParam[];
+		String getSlaWrQuery;
+		if(towerID != 0 ) {
+			queryParam = new Object [] {towerID, billCycle };
+			getSlaWrQuery = selectSLAWrList;
+		}else {
+			queryParam = new Object [] { billCycle };
+			getSlaWrQuery = selectAllSLAWrList;
+		}
+		
+		
 		RowMapper<String> rowMap = new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -416,11 +469,23 @@ public class SLADataDaoImpl implements SLADataDao {
 			}
 		};
 
-		List<String> slaWrList = jdbcTemplate.query(selectSLAWrList, new Object[] { billCycle }, rowMap);
+		List<String> slaWrList = jdbcTemplate.query(getSlaWrQuery, queryParam, rowMap);
 		return slaWrList;
 	}
 
-	public List<String> getWeekendList(String billCycle) {
+	public List<String> getWeekendList(String billCycle, int towerID) {
+		
+		Object queryParam[];
+		String getSlaWeekEndQuery;
+		if(towerID != 0 ) {
+			queryParam = new Object [] {towerID, billCycle };
+			getSlaWeekEndQuery = selectSLAWeekendList;
+		}else {
+			queryParam = new Object [] { billCycle };
+			getSlaWeekEndQuery = selectAllSLAWeekendList;
+		}
+		
+		
 		RowMapper<String> rowMap = new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -428,7 +493,7 @@ public class SLADataDaoImpl implements SLADataDao {
 			}
 		};
 
-		List<String> slaWeekendList = jdbcTemplate.query(selectSLAWeekendList, new Object[] { billCycle }, rowMap);
+		List<String> slaWeekendList = jdbcTemplate.query(getSlaWeekEndQuery, queryParam , rowMap);
 		return slaWeekendList;
 	}
 	
