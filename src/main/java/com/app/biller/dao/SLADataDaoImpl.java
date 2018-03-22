@@ -154,7 +154,7 @@ public class SLADataDaoImpl implements SLADataDao {
 
 		// jdbcTemplate.update(insertIlcDataSign, new Object[] { billCycle,
 		// userId,uploadDataType });
-		System.out.println("created..SLA...");
+//		System.out.println("created..SLA...");
 	}
 	
 	

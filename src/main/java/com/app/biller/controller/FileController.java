@@ -53,7 +53,9 @@ public class FileController {
 	//public String uploadFiles(MultipartHttpServletRequest request, @RequestParam("billCycle") String billCycle,
 		//	HttpSession userSession) {
 		//billCycle = "112017";
-		String status = fileUploadService.uploadFiles(request);
+		String status = "Success";
+		status = fileUploadService.uploadFiles(request);
+//		System.out.println("uploadDataType = "+uploadDataType);
 		if (status.equalsIgnoreCase("Success")) {
 			User userProfile = getUserProfile(userSession);
 			String userId = userProfile.getUserID();
@@ -61,6 +63,7 @@ public class FileController {
 				return fileUploadService.uploadILCData(billCycle, userId, uploadDataType, reportWeekend);
 			}else {
 				//String returnValue = fileUploadService.uploadSLAData(billCycle, userId, uploadDataType, reportWeekend);
+//				System.out.println("calling upload sla in filecontroler...");
 				String returnValue = fileUploadService.uploadSLAData(billCycle, userId, uploadDataType, reportWeekend);
 				return returnValue;
 			}

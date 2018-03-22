@@ -76,17 +76,17 @@ public class FileUploadServiceImpl implements FileUploadService {
 
 	@Override
 	public String uploadILCData(String billCycle, String userId, String uploadDataType,String reportWeekend) {
-		//createILCDataSheet(reportWeekend,uploadDataType);
+		createILCDataSheet(reportWeekend,uploadDataType);
 		ilcDataDao.createILCData(extractILCData(), billCycle, userId, uploadDataType);
 		return "ILC Report generated successfully";
 	}
 
 	@Override
 	public String uploadSLAData(String billCycle, String userId,String uploadDataType,String reportWeekend) {
-		//createILCDataSheet(reportWeekend,uploadDataType);
-		System.out.println("start createSLA...");
+		createILCDataSheet(reportWeekend,uploadDataType);
+//		System.out.println("start createSLA...");
 		ArrayList<SLAData> slaDataList = extractSLAData();
-		System.out.println("before createSLA...");
+//		System.out.println("before createSLA...");
 		slaDataDao.createSLAData(slaDataList, billCycle, userId, uploadDataType);
 //		System.out.println("after createSLA...");
 		return "SLA Report generated successfully";
