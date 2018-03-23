@@ -83,11 +83,11 @@ If (SLA=1) Then
 
 set filesys=CreateObject("Scripting.FileSystemObject")
 
-If filesys.FileExists(currentpath&"FFIC SLA Report.xlsm") Then
+If filesys.FileExists(currentpath&"FFIC SLA Report.xlsx") Then
 
-filesys.CopyFile currentpath&"FFIC SLA Report.xlsm", backupdir&"billerData\Downloads\"&FolderName&"\"
+filesys.CopyFile currentpath&"FFIC SLA Report.xlsx", backupdir&"billerData\Downloads\"&FolderName&"\"
 
-'filesys.MoveFile "C:\Biller\Workbench\BackUp\"&FolderName&"\FFIC ILC Report.xlsx" , "C:\Biller\Workbench\BackUp\"&FolderName&"\FFIC ILC Report_"&directory &".xlsx"
+'filesys.MoveFile "C:\Biller\Workbench\BackUp\"&FolderName&"\FFIC SLA Report.xlsx" , "C:\Biller\Workbench\BackUp\"&FolderName&"\FFIC SLA Report_"&directory &".xlsx"
 
 End If
 
