@@ -10,7 +10,7 @@ public class ILCData {
 	private String claimCode;
 	private String activity;
 	private String weekEndDate;
-	private int totHrs;
+	private Double totHrs;
 	private String shiftType;
 	private String usInd;
 	private String onOffShore;
@@ -48,6 +48,16 @@ public class ILCData {
 	private String wrIncDef;
 	private String billCycle;
 	private String createdBy;
+	private String accountId;
+
+	public String getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+	}
+
 
 	public String getEmpID() {
 		return empID;
@@ -89,11 +99,11 @@ public class ILCData {
 		this.weekEndDate = weekEndDate;
 	}
 
-	public int getTotHrs() {
+	public double getTotHrs() {
 		return totHrs;
 	}
 
-	public void setTotHrs(int totHrs) {
+	public void setTotHrs(double totHrs) {
 		this.totHrs = totHrs;
 	}
 

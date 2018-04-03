@@ -10,7 +10,7 @@ import com.app.biller.domain.SaveRecords;
 
 public interface DataValidationService {
 
-	List<ILCData> readILCData(String billCycle, int towerID);
+	List<ILCData> readILCData(String billCycle, int towerID , String accountId);
 
 	List<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName);
 

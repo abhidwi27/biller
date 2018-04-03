@@ -83,7 +83,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 				ps.setString(3, ilcModelList.get(i).getClaimCode());
 				ps.setString(4, ilcModelList.get(i).getActivity());
 				ps.setString(5, BillerUtil.getDateStr(ilcModelList.get(i).getWeekEndDate()));
-				ps.setInt(6, ilcModelList.get(i).getTotHrs());
+				ps.setDouble(6, ilcModelList.get(i).getTotHrs());
 				ps.setString(7, ilcModelList.get(i).getShiftType());
 				ps.setString(8, ilcModelList.get(i).getUsInd());
 				ps.setString(9, ilcModelList.get(i).getOnOffShore());
@@ -119,6 +119,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 				ps.setString(39, ilcModelList.get(i).getVendorClass());
 				ps.setString(40, ilcModelList.get(i).getWrIncDef());
 				ps.setString(41, billCycle);
+				ps.setString(42, ilcModelList.get(i).getAccountId());
 			}
 
 			@Override
@@ -132,12 +133,12 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	}
 
 	@Override
-	public ArrayList<ILCData> readILCData(String billCycle, int towerID) {
+	public ArrayList<ILCData> readILCData(String billCycle, int towerID , String accountId) {
 		
 		Object queryParam[];
 		String readIlcQuery;
 		if(towerID != 0 ) {
-			queryParam = new Object [] {towerID, billCycle };
+			queryParam = new Object [] {towerID, billCycle , accountId};
 			readIlcQuery = selectIlcData;
 		}else {
 			queryParam = new Object [] { billCycle };
@@ -154,7 +155,8 @@ public class ILCDataDaoImpl implements ILCDataDao {
 						ilcModel.setClaimCode(rs.getString("claim_code"));
 						ilcModel.setActivity(rs.getString("activity"));
 						ilcModel.setWeekEndDate(rs.getString("weekend_date"));
-						ilcModel.setTotHrs(Integer.parseInt(rs.getString("total_hours")));
+						//ilcModel.setTotHrs(Integer.parseInt(rs.getString("total_hours")));
+						ilcModel.setTotHrs(Double.parseDouble(rs.getString("total_hours")));
 						ilcModel.setShiftType(rs.getString("shift_type"));
 						ilcModel.setUsInd(rs.getString("us_ind"));
 						ilcModel.setOnOffShore(rs.getString("on_off_shore"));
@@ -190,7 +192,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 						ilcModel.setGroupType(rs.getString("group_type"));
 						ilcModel.setVendorClass(rs.getString("vendor_class"));
 						ilcModel.setWrIncDef(rs.getString("wr_inc_def"));
-
+						ilcModel.setAccountId(rs.getString("account_id"));
 						return ilcModel;
 					}
 				});
@@ -236,7 +238,8 @@ public class ILCDataDaoImpl implements ILCDataDao {
 						ilcModel.setClaimCode(rs.getString("claim_code"));
 						ilcModel.setActivity(rs.getString("activity"));
 						ilcModel.setWeekEndDate(rs.getString("weekend_date"));
-						ilcModel.setTotHrs(Integer.parseInt(rs.getString("total_hours")));
+						//ilcModel.setTotHrs(Integer.parseInt(rs.getString("total_hours")));
+						ilcModel.setTotHrs(Double.parseDouble(rs.getString("total_hours")));
 						ilcModel.setShiftType(rs.getString("shift_type"));
 						ilcModel.setUsInd(rs.getString("us_ind"));
 						ilcModel.setOnOffShore(rs.getString("on_off_shore"));

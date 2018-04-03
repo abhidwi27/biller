@@ -159,19 +159,23 @@ public class FileUploadServiceImpl implements FileUploadService {
 						break;
 					case 0:
 						numColName = ilcSheet.getRow(0).getCell(cell.getColumnIndex()).getStringCellValue();
-						numColVal = Long.toString(Math
-								.round(ilcSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
+						if(numColName.equals("Total Hrs") ) {
+						numColVal = Double.toString(Math.abs(ilcSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
+						}else {
+							numColVal = Long.toString(Math.round(ilcSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
+						}
 						rowData.put(numColName, numColVal);
 						break;
 					default:
 						break;
 					}
 				}
-				curRow++;
-				curRowData = ilcSheet.getRow(curRow).getCell(0).getStringCellValue();
-				dataExists = (curRowData != "");
 				ilcData = populateILCDataModel(rowData, ilcData);
 				ilcDataList.add(ilcData);
+				curRow++;
+				//curRowData = ilcSheet.getRow(curRow).getCell(0).getStringCellValue();
+				Row curRowDataType = ilcSheet.getRow(curRow);
+				dataExists = (curRowDataType != null);
 				rowData = null;
 				ilcData = null;
 			}
@@ -328,7 +332,8 @@ public class FileUploadServiceImpl implements FileUploadService {
 		ilcModel.setClaimCode(rowData.get("Work Item"));
 		ilcModel.setActivity(rowData.get("Activity"));
 		ilcModel.setWeekEndDate(rowData.get("Week Ending Date"));
-		ilcModel.setTotHrs(Integer.parseInt(rowData.get("Total Hrs")));
+		//ilcModel.setTotHrs(Integer.parseInt(rowData.get("Total Hrs")));
+		ilcModel.setTotHrs(Double.parseDouble(rowData.get("Total Hrs")));
 		ilcModel.setShiftType(rowData.get("ShiftDetails"));
 		ilcModel.setUsInd(rowData.get("US/INDIA"));
 		ilcModel.setOnOffShore(rowData.get("On/Offshore"));
@@ -363,6 +368,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 		ilcModel.setGroupType(rowData.get("Group"));
 		ilcModel.setVendorClass(rowData.get("Vendor Classification"));
 		ilcModel.setWrIncDef(rowData.get("WR/INC/DEF"));
+		ilcModel.setAccountId(rowData.get("Account ID"));
 		return ilcModel;
 	}
 }
