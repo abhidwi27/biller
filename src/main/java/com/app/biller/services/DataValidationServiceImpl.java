@@ -28,8 +28,8 @@ public class DataValidationServiceImpl implements DataValidationService {
 	SLADataDao slaDataDao;
 
 	@Override
-	public ArrayList<ILCData> readILCData(String billCycle, int towerID) {
-		return ilcDataDao.readILCData(billCycle, towerID);
+	public ArrayList<ILCData> readILCData(String billCycle, int towerID , String accountId) {
+		return ilcDataDao.readILCData(billCycle, towerID , accountId);
 
 	}
 

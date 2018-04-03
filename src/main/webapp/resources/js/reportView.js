@@ -33,6 +33,7 @@ $(document).ready(function(){
 		$('#currentBillCycle').val(billCycle);
 		$('#currentDataType').val(reportDataType);
 		$('#currentTower').val(tower);
+		var accountid = $("#accountId").val();
 		
 		var settings = {   	
 				dom: 'Blfrtip',
@@ -44,14 +45,18 @@ $(document).ready(function(){
 		            },
 		            
 		        ],
-				    		"scrollX": true,
-				    		"scrollY": "380px",
-				            "aoColumnDefs": [
+				    "scrollX": true,
+				    "scrollY": "380px",
+				     "aoColumnDefs": [
 				            	{ "bVisible": true, "aTargets": ['_all'] },
 				            	{ "bVisible": false, "aTargets": ['_all'] }	            	
 				            	],
-				            	"iDisplayLength": 10				            	
+				    "iDisplayLength": 10,
+				    "language": {
+						"decimal": ",",
+						"thousands": "."
 	    				}
+		}
 		 
 		 if(reportDataType == 0 || userProfile.roleID == 1){
 			 $('#reportLock').hide();
@@ -78,7 +83,7 @@ $(document).ready(function(){
 			$('#reportReject').show();
 		}
 		
-		 url = 'data/read.do?dataType=' + reportDataType + '&billCycle=' + billCycle + '&towerID=' + tower;		 
+		 url = 'data/read.do?dataType=' + reportDataType + '&billCycle=' + billCycle + '&towerID=' + tower  + '&accountId=' + accountid;		 
 		 $.ajax({
 			    url: url,
 			    dataType: false,
