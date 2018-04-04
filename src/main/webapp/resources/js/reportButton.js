@@ -686,7 +686,8 @@ function customizeColumns() {
 		} ],
 		"iDisplayLength" : 10
 	}
-
+	
+	visibleColumns.push(0);
 	$("#reportButtons .dropdown .dropdown-menu li.divider").nextAll().find(
 			'input[type="checkbox"]:checked').each(function() {
 				visibleColumns.push(Number($(this).val()));
