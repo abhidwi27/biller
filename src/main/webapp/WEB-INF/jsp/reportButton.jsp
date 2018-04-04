@@ -27,7 +27,7 @@
 		<li data-toggle="tooltip" data-original-title="Delete"><a id="reportDelete"><span ><i class="fa fa-trash-o report-button-icon"></i></span></a></li>
 		<li><a ><span class="report-button-icon"> | </span></a></li>
 		<li data-toggle="tooltip" data-original-title="Approve"><a id="reportApprove" ><span ><i class="fa fa-thumbs-o-up report-button-icon"></i></span></a></li>
-		<li data-toggle="tooltip" data-original-title="Reject"><a id="reportReject" data-toggle="modal" data-target="#rejectView"><span ><i class="fa fa-thumbs-o-down report-button-icon"></i></span></a></li>
+		<li data-toggle="tooltip" data-original-title="Reject"><a id="reportReject" data-toggle="modal" ><span ><i class="fa fa-thumbs-o-down report-button-icon"></i></span></a></li>
 		
 		<!-- DO NOT REMOVE THIS COMMENTED CODE
 		<li><a ><span data-toggle="tooltip" data-original-title="Approve"><i class="fa fa-thumbs-o-up" style="font-size:24px;color:#00d535;"></i></span></a></li>
