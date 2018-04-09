@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <head>
 <link rel="stylesheet" href="resources/css/bootstrap-min-3.3.7.css"> 
@@ -28,7 +29,7 @@ $(document).ready(function(){
 </div>
  <div class="container">
      <div class="biller-wrapper">
-         <form  method="post" id="loginForm" class="biller-signin-form">         	  
+         <form method="post" id="loginForm" class="biller-signin-form">         	  
               <div class="row text-center biller-login-top">
               	<i class="fa fa-circle"></i> 
               	<h3 class="text-center">
@@ -42,8 +43,11 @@ $(document).ready(function(){
              <div class="input-group">                 
                 <input type="password" class="form-control" name="password" placeholder="Password"/>         	  
              </div>
-             <a class="btn btn-primary button-outline biller-btn btn-block"  id="loginSubmit"> Sign In</a> 
-          </form>	
+             <a class="btn btn-primary button-outline biller-btn btn-block"  id="loginSubmit"> Sign In</a>
+             <div id="loginMessage" class="biller-login-message">
+             </div>                           
+         </form>
+      <input name="loginError" id="loginError" type="hidden" value='${fn:escapeXml(error)}' />  	
       </div>
 </div>
 	

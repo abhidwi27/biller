@@ -75,3 +75,11 @@ input[type="password"]::-moz-placeholder{
 	color: var(--biller-login-btn-font-color-hover);
 	border-color: var(--biller-login-btn-border-hover-color);
 }
+
+
+
+.biller-login-message{
+	margin-top: 10px; 
+	display: none; 
+	color: #FF4500;
+}
