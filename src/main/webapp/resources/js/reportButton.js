@@ -65,8 +65,8 @@ $(function() {
 	});
 
 	$("#reportLock").click(function(e) {
-
-		if(hasApprovedBillCycle == 1){
+		var tower = $("#reportTower").val();
+		if(hasApprovedBillCycle == 1 || (tower == 0)){
 			e.stopPropagation();
 			e.preventDefault();
 			return;

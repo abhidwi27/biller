@@ -8,10 +8,10 @@ $(document).ready(function(){
 	var userProfile = JSON.parse($('#strUserProfile').val());	
 	
 	$('#reportDiv').hide();
-	if( userProfile.roleID != 8){
+	/*if( userProfile.roleID != 8){
 		$("#reportTower option[value=0]").remove();
 		$('#reportTower').selectpicker('refresh');
-	}
+	}*/
 	
 	$("#reportSubmit").click(function(){
 		$(".biller-loader-div").fadeIn(1);		
@@ -70,7 +70,7 @@ $(document).ready(function(){
 		 }else{
 			 $('#reportLock').show();
 			 $('#reportEdit').show();
-			 $('#repor	tCopy').show();
+			 $('#reportCopy').show();
 			 $('#reportDelete').show();
 			 $('#reportSave').show();
 			 $('#reportSaveSubmit').show();
@@ -103,6 +103,11 @@ $(document).ready(function(){
 			    	
 			    	if(hasApprovedBillCycle == 1){
 			    		$('#reportLock').find('span i').addClass('biller-icon-disabled');
+			    	}
+			    	
+			    	if(tower == 0){
+			    		$('#reportLock').find('span i').addClass('biller-icon-disabled');
+			    		editMode = false;
 			    	}
 			    	
 			    	if(approveListlength == 0 && hasApprovedBillCycle ==1 ){
