@@ -19,7 +19,7 @@
 	--biller-header-right-links-background-color-hover: #000080;
 	--biller-home-navtab-background-color: #6666b2;	
 	--biller-home-navtab-background-color-hover: #46b5c1 ;
-	--biller-home-navtab-background-color-active: #000080;
+	--biller-home-navtab-background-color-active: #6666b2;
 	--biller-home-navtab-font-color: #fff;
 	--biller-home-navtab-font-color-hover: #00ffff;
 	--biller-home-navtab-font-color-active: #00ffff;
@@ -47,7 +47,7 @@
 	--biller-status-round-tab-icon-color: #22C222;
 	--biller-form-control-border-color: #4c4ca6;
 	--biller-icon-disabled-color: #bbbbdd;
-	--biller-main-footer-background-color: #083b66;
+	--biller-main-footer-background-color: #fff;
 	
 }
 body {

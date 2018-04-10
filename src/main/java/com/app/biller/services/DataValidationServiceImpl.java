@@ -28,8 +28,8 @@ public class DataValidationServiceImpl implements DataValidationService {
 	SLADataDao slaDataDao;
 
 	@Override
-	public ArrayList<ILCData> readILCData(String billCycle, int towerID) {
-		return ilcDataDao.readILCData(billCycle, towerID);
+	public ArrayList<ILCData> readILCData(String billCycle, int towerID , String accountId) {
+		return ilcDataDao.readILCData(billCycle, towerID , accountId);
 
 	}
 
@@ -74,10 +74,12 @@ public class DataValidationServiceImpl implements DataValidationService {
 	private ArrayList<SLAData> GetSLADataListfromRecords(String recordType, ArrayList<Record> records, String userID){
 		
 		ArrayList<SLAData> slaDataList = new ArrayList<SLAData>() ;
-		SLAData slaData = new SLAData();
-		String[] rowData;
+		
 				
 			for(Record record : records) {
+				SLAData slaData = new SLAData();
+				String[] rowData;
+				
 				rowData = record.getRowData();
 				if(recordType.equals("update")) {
 					slaData.setSeqID(Integer.parseInt(rowData[0]));
@@ -115,8 +117,7 @@ public class DataValidationServiceImpl implements DataValidationService {
 				slaData.setModifiedBy(userID);
 				
 				slaDataList.add(slaData);				
-				rowData = null;
-				slaData = null;			
+				
 				
 			} 			
 			return slaDataList;

@@ -11,6 +11,8 @@
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+	color: #fff;
+	background-color: #6666b2;
 }
 
 .billerTable td {
@@ -19,6 +21,7 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	vertical-align: middle;
+	font-weight: 600;
 }
 
 .dataTables_filter {
@@ -51,13 +54,14 @@
 	padding-bottom: 0px; 
 	font-size: 11px;
 	height: 25px;
-	box-shadow: 0 0 5px #c1c1c1;
-	border: 1px solid #fbe9e9;
+	box-shadow: 0 0 5px #78d4a8;
+	border: 1px solid #76cd88;
+	
 }
 
 
 .billerTable .table{
-	border-radius: 15px;
+	/* border-radius: 15px; */
 	box-shadow: 0 0 5px #8f8383;
 	margin-left: 2px;
 

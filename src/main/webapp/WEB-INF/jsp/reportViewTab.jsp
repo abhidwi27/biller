@@ -84,6 +84,7 @@
 							</div>
 						</div>						
 					</div>
+					
 					<div class="row biller-row">
 						<div class="col-md-3 text-left biller-panel-label">
 							<label class="biller-label">
@@ -101,6 +102,28 @@
 								
 							</div>
 						</div>
+						
+						
+						<div class="row biller-row">
+						<div class="col-md-3 text-left biller-panel-label">
+							<label class="biller-label">
+								Account Id :
+							</label>
+						</div>
+						<div class="form-group col-md-5 text-left biller-tower-dropdown">	
+							<select class="selectpicker" data-dropup-auto="false" data-width="auto"  data-live-search="true" id="accountId">
+								<option >WNPPT</option>
+								<option >WCF2R</option>
+							 	<option >W520O</option>
+							</select>
+								
+							</div>
+						</div>
+
+
+
+
+
 						<div class="panel-footer">
 							<div class="text-center">					
 								<div class="biller-footer">	

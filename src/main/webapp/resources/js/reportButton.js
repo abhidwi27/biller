@@ -65,8 +65,8 @@ $(function() {
 	});
 
 	$("#reportLock").click(function(e) {
-
-		if(hasApprovedBillCycle == 1){
+		var tower = $("#reportTower").val();
+		if(hasApprovedBillCycle == 1 || (tower == 0)){
 			e.stopPropagation();
 			e.preventDefault();
 			return;
@@ -686,7 +686,8 @@ function customizeColumns() {
 		} ],
 		"iDisplayLength" : 10
 	}
-
+	
+	visibleColumns.push(0);
 	$("#reportButtons .dropdown .dropdown-menu li.divider").nextAll().find(
 			'input[type="checkbox"]:checked').each(function() {
 				visibleColumns.push(Number($(this).val()));

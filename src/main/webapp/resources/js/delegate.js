@@ -3,7 +3,7 @@ $(document).ready(function(){
 	
 	 var userProfile = JSON.parse($('#strUserProfile').val());
 	 
-	 if(userProfile.roleID == 2 || userProfile.roleID == 3) {
+	 if(userProfile.roleID == 2 || userProfile.roleID == 3 || userProfile.roleID == 8) {
 		 $('#delegateOption').show();	
 	 }else{
 		 $('#delegateOption').hide();

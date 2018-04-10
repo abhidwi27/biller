@@ -73,12 +73,9 @@ public class LoginController {
 				viewName = loginService.getUserHome(user.getRoleID());
 				return viewName;
 			} else {
-				model.addAttribute("error", "User Authentication Failed");
+				model.addAttribute("error", "Wrong Username / Password. Authentication Failed");
+				logger.info("Wrong Username / Password. Authentication Failed");
 			}
-
-		} else {
-			model.addAttribute("error", "Please Enter Login Credentials");
-			logger.info("Login Credentials Wrong.");
 		}
 		return viewName;
 	}

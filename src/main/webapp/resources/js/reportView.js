@@ -8,10 +8,10 @@ $(document).ready(function(){
 	var userProfile = JSON.parse($('#strUserProfile').val());	
 	
 	$('#reportDiv').hide();
-	if( userProfile.roleID != 8){
+	/*if( userProfile.roleID != 8){
 		$("#reportTower option[value=0]").remove();
 		$('#reportTower').selectpicker('refresh');
-	}
+	}*/
 	
 	$("#reportSubmit").click(function(){
 		$(".biller-loader-div").fadeIn(1);		
@@ -33,6 +33,7 @@ $(document).ready(function(){
 		$('#currentBillCycle').val(billCycle);
 		$('#currentDataType').val(reportDataType);
 		$('#currentTower').val(tower);
+		var accountid = $("#accountId").val();
 		
 		var settings = {   	
 				dom: 'Blfrtip',
@@ -44,14 +45,18 @@ $(document).ready(function(){
 		            },
 		            
 		        ],
-				    		"scrollX": true,
-				    		"scrollY": "380px",
-				            "aoColumnDefs": [
+				    "scrollX": true,
+				    "scrollY": "380px",
+				     "aoColumnDefs": [
 				            	{ "bVisible": true, "aTargets": ['_all'] },
 				            	{ "bVisible": false, "aTargets": ['_all'] }	            	
 				            	],
-				            	"iDisplayLength": 10				            	
+				    "iDisplayLength": 10,
+				    "language": {
+						"decimal": ",",
+						"thousands": "."
 	    				}
+		}
 		 
 		 if(reportDataType == 0 || userProfile.roleID == 1){
 			 $('#reportLock').hide();
@@ -65,7 +70,7 @@ $(document).ready(function(){
 		 }else{
 			 $('#reportLock').show();
 			 $('#reportEdit').show();
-			 $('#repor	tCopy').show();
+			 $('#reportCopy').show();
 			 $('#reportDelete').show();
 			 $('#reportSave').show();
 			 $('#reportSaveSubmit').show();
@@ -78,7 +83,7 @@ $(document).ready(function(){
 			$('#reportReject').show();
 		}
 		
-		 url = 'data/read.do?dataType=' + reportDataType + '&billCycle=' + billCycle + '&towerID=' + tower;		 
+		 url = 'data/read.do?dataType=' + reportDataType + '&billCycle=' + billCycle + '&towerID=' + tower  + '&accountId=' + accountid;		 
 		 $.ajax({
 			    url: url,
 			    dataType: false,
@@ -98,6 +103,11 @@ $(document).ready(function(){
 			    	
 			    	if(hasApprovedBillCycle == 1){
 			    		$('#reportLock').find('span i').addClass('biller-icon-disabled');
+			    	}
+			    	
+			    	if(tower == 0){
+			    		$('#reportLock').find('span i').addClass('biller-icon-disabled');
+			    		editMode = false;
 			    	}
 			    	
 			    	if(approveListlength == 0 && hasApprovedBillCycle ==1 ){
