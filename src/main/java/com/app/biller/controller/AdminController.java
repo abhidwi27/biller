@@ -24,15 +24,17 @@ public class AdminController {
 	@Autowired
 	SystemAdminService systemAdminService;
 
-	@RequestMapping(path = "/create.do", method = RequestMethod.POST)
+	/*@RequestMapping(path = "/create.do", method = RequestMethod.POST)
 	public String createUser(HttpServletRequest request) {
 		userAdminService.createUser(request);
 		return "User";
-	}
+	}*/
 
-	@RequestMapping(value = "/update.do", method = RequestMethod.POST)
-	public String updateUser(HttpServletRequest request) {
-		userAdminService.updateUser();
+	@RequestMapping(value = "/reset.do", method = RequestMethod.POST)
+	public String resetPassword(HttpServletRequest request) {
+		String userId = (String) request.getAttribute("userId");
+		String password = (String) request.getAttribute("password");
+		userAdminService.resetPassword(userId, password);
 		return null;
 	}
 	

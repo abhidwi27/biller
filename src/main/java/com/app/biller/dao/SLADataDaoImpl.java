@@ -10,7 +10,6 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -18,7 +17,6 @@ import org.springframework.stereotype.Repository;
 
 //import com.app.biller.domain.ILCData;
 import com.app.biller.domain.SLAData;
-import com.app.biller.util.BillerUtil;
 
 @Repository("slaDataDao")
 public class SLADataDaoImpl implements SLADataDao {
