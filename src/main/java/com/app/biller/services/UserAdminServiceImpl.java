@@ -1,7 +1,5 @@
 package com.app.biller.services;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -11,7 +9,7 @@ public class UserAdminServiceImpl implements UserAdminService {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserAdminServiceImpl.class);
 
-	@Override
+	/*@Override
 	public String createUser(HttpServletRequest request) {
 		return null;
 	}
@@ -24,10 +22,10 @@ public class UserAdminServiceImpl implements UserAdminService {
 	@Override
 	public String deActivateUser() {
 		return null;
-	}
+	}*/
 
 	@Override
-	public String resetUserPassword(String userid, String newpassword) {
+	public String resetPassword(String userid, String newpassword) {
 		// TODO: Provide Reset Password Feature in Future
 		return null;
 	}	
