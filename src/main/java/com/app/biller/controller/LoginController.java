@@ -53,7 +53,8 @@ public class LoginController {
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public String processLogin(Model model, @ModelAttribute("loginModel") LoginModel loginModel) {
 		String viewName = LOGIN_VIEW;
-		if (loginModel != null && loginModel.getUserId() != null & loginModel.getPassword() != null) {
+		if (loginModel != null && !loginModel.getUserId().isEmpty() & !loginModel.getPassword().isEmpty()) {
+			logger.info("UserId: "+loginModel.getUserId()+" | "+"Password: "+loginModel.getPassword());
 			user = loginService.validateCredentials(loginModel.getUserId(), loginModel.getPassword());
 			if (user != null) {
 				Gson gson = new Gson();
@@ -73,11 +74,9 @@ public class LoginController {
 				return viewName;
 			} else {
 				model.addAttribute("error", "Wrong Username / Password. Authentication Failed");
+				logger.info("Wrong Username / Password. Authentication Failed");
 			}
-
-		} /*else {
-			model.addAttribute("error", "Please Enter Login Credentials");
-		}*/
+		}
 		return viewName;
 	}
 

@@ -3,7 +3,6 @@ package com.app.biller.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.app.biller.domain.ILCData;
 import com.app.biller.domain.SLAData;
 
 public interface SLADataDao {
