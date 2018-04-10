@@ -60,15 +60,15 @@ public class DataValidationServiceImpl implements DataValidationService {
 
 	@Override
 	public List<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndDate, String wrNo,
-			String empName) {
+			String empName, int billable, String remarks) {
 
-		return ilcDataDao.readCustomILCData(billCycle, towerID, weekEndDate, wrNo, empName);
+		return ilcDataDao.readCustomILCData(billCycle, towerID, weekEndDate, wrNo, empName, billable, remarks);
 	}
 
 	@Override
 	public List<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo,
-			String empName) {
-		return slaDataDao.readCustomSLAData(billCycle, towerID, weekEndDate, wrNo, empName);
+			String empName, int billable, String remarks) {
+		return slaDataDao.readCustomSLAData(billCycle, towerID, weekEndDate, wrNo, empName, billable, remarks);
 	}
 	
 	private ArrayList<SLAData> GetSLADataListfromRecords(String recordType, ArrayList<Record> records, String userID){

@@ -11,6 +11,8 @@ public class DataFilter {
 	private String wrNo;
 	private String weekEndDate;
 	private String empName;
+	private int billable;
+	private String remarks;
 
 	public int getDataType() {
 		return dataType;
@@ -58,6 +60,22 @@ public class DataFilter {
 
 	public void setEmpName(String empName) {
 		this.empName = empName;
+	}
+
+	public int getBillable() {
+		return billable;
+	}
+
+	public void setBillable(int billable) {
+		this.billable = billable;
+	}
+
+	public String getRemarks() {
+		return remarks;
+	}
+
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
 	}
 
 }

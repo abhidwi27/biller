@@ -12,11 +12,11 @@ public interface DataValidationService {
 
 	List<ILCData> readILCData(String billCycle, int towerID , String accountId);
 
-	List<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName);
+	List<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName, int billable, String remarks);
 
 	List<SLAData> readSLAData(String billCycle, int towerID);
 
-	List<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName);
+	List<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName, int billable, String remarks);
 
 	void updateSLAData(String billCycle,  String userID, ArrayList<Record> records);
 

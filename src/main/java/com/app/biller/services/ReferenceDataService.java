@@ -17,6 +17,8 @@ public interface ReferenceDataService {
 	
 	List<String> getWeekendList(String billCycle, int dataType, int towerID);
 	
+	List<String> getRemarksList(String billCycle, int dataType, int towerID);
+		
 	ArrayList<Month> getMonth();
 	
 	List<String> getYear();

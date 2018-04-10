@@ -17,6 +17,8 @@ public class ResponseDataEnvelope {
 	private List<User> rejectForUserList;
 	private User dataLockedBy;
 	private int hasApprovedBillCycle;
+	private List<String> remarksList;
+	
 	//private String dataLockedBy;
 
 	public TableData getTableData() {
@@ -73,6 +75,14 @@ public class ResponseDataEnvelope {
 
 	public void setHasApprovedBillCycle(int hasApprovedBillCycle) {
 		this.hasApprovedBillCycle = hasApprovedBillCycle;
+	}
+
+	public List<String> getRemarksList() {
+		return remarksList;
+	}
+
+	public void setRemarksList(List<String> remarksList) {
+		this.remarksList = remarksList;
 	}
 
 	

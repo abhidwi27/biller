@@ -11,6 +11,7 @@
 					<h4 class="modal-title"> Customize Report </h4>
 				</div>
 				<div class="modal-body">
+					<!--  
 					<div class="row biller-row">
 							<div class="col-md-4 ">
 								<label class="biller-label biller-modal-label">
@@ -21,6 +22,21 @@
 									<select class="selectpicker"  data-live-search="true" id="customTeam">																				
 									</select>
 									
+								</div>
+					</div>
+					-->
+					<div class="row biller-row">
+								<div class="col-md-4 ">
+									<label class="biller-label biller-modal-label">
+										Billable  :
+									</label>
+								</div>
+								<div class="form-group col-md-5 text-left biller-modal-dropdown">																	
+									<select class="selectpicker"  data-live-search="true" id="customBillable">
+										<option value="0"> ALL </option>
+										<option value="1"> Yes </option>
+										<option value="2"> No </option>																							
+									</select>
 								</div>
 					</div>
 					<div class="row biller-row">
@@ -53,6 +69,18 @@
 								</div>
 								<div class="form-group col-md-8 text-left biller-modal-dropdown">																	
 									<select class="selectpicker"  data-live-search="true" id="customEmp">																							
+									</select>
+								</div>
+					</div>
+					
+					<div class="row biller-row">
+								<div class="col-md-4 ">
+									<label class="biller-label biller-modal-label">
+										Remarks :
+									</label>
+								</div>
+								<div class="form-group col-md-8 text-left biller-modal-dropdown">																	
+									<select class="selectpicker"  data-live-search="true" id="customRemarks">																							
 									</select>
 								</div>
 					</div>

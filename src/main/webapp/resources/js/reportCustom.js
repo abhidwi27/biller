@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+		
 	$('#customSubmit').click(function(){
 		
 		$(".biller-loader-div").fadeIn(1);
@@ -11,6 +11,8 @@ $(document).ready(function(){
 		var billCycle = $('#currentBillCycle').val();
 		var dataType = $('#currentDataType').val();
 		var tower = $('#currentTower').val();
+		var billable = $("#customBillable option:selected").val();
+		var remarks = $("#customRemarks option:selected").val();
 		var url;
 		var dataFilter = {};
 		
@@ -20,6 +22,8 @@ $(document).ready(function(){
 		dataFilter["wrNo"]= wr;
 		dataFilter["weekEndDate"]= weekend;
 		dataFilter["empName"]= emp;
+		dataFilter["billable"]= billable;
+		dataFilter["remarks"]= remarks;
 		
 		var dataFilter = JSON.stringify(dataFilter);
 		$('#report').DataTable().clear();

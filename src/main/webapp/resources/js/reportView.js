@@ -97,6 +97,7 @@ $(document).ready(function(){
 			    	var wrList = responseDataEnvelope["wrList"];
 			    	var rejectForUserList = responseDataEnvelope["rejectForUserList"];
 			    	var dataLockedBy = responseDataEnvelope["dataLockedBy"];
+			    	var remarksList = responseDataEnvelope["remarksList"]; 
 			    	hasApprovedBillCycle = responseDataEnvelope["hasApprovedBillCycle"];
 			    	approveListlength = $('#reportApprovalList').children('option').length;
 			    	var userProfile = JSON.parse($('#strUserProfile').val());
@@ -189,7 +190,8 @@ $(document).ready(function(){
 	                
 	                addListContent('#customEmp', employeeList);
 	                addListContent('#customWr', wrList);
-	                addListContent('#customWeekend', weekEndList);  
+	                addListContent('#customWeekend', weekEndList);
+	                addListContent('#customRemarks', remarksList);
 	                addListContent('#rejectForUser', rejectForUserList);
 	                
 	            }

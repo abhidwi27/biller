@@ -88,6 +88,7 @@ public class DataController {
 		responseDataEnvelope.setWrList(referenceDataService.getWRList(billCycle, dataType, towerID));
 		responseDataEnvelope.setWeekEndList(referenceDataService.getWeekendList(billCycle, dataType, towerID));
 		responseDataEnvelope.setRejectForUserList(dataApprovalService.getRejectForUserList(billCycle));
+		responseDataEnvelope.setRemarksList(referenceDataService.getRemarksList(billCycle, dataType, towerID));
 		responseDataEnvelope.setDataLockedBy(dataLockService.checkLockForTower(billCycle, towerID));
 		responseDataEnvelope.setHasApprovedBillCycle(dataApprovalService.checkPriorApproval(billCycle, userID));
 		
@@ -100,11 +101,11 @@ public class DataController {
 		if (dataFilter.getDataType() == 0) {
 			dataList = (ArrayList<ILCData>) dataValidationService.readCustomILCData(dataFilter.getBillCycle(),
 					dataFilter.getTowerID(), dataFilter.getWeekEndDate(), dataFilter.getWrNo(),
-					dataFilter.getEmpName());
+					dataFilter.getEmpName(), dataFilter.getBillable(), dataFilter.getRemarks());
 		} else {
 			dataList = (ArrayList<SLAData>) dataValidationService.readCustomSLAData(dataFilter.getBillCycle(),
 					dataFilter.getTowerID(), dataFilter.getWeekEndDate(), dataFilter.getWrNo(),
-					dataFilter.getEmpName());
+					dataFilter.getEmpName(), dataFilter.getBillable(), dataFilter.getRemarks());
 		}
 
 		return dataList;
