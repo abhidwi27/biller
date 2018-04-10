@@ -76,6 +76,9 @@ public class LoginController {
 				model.addAttribute("error", "Wrong Username / Password. Authentication Failed");
 				logger.info("Wrong Username / Password. Authentication Failed");
 			}
+		} else {
+			model.addAttribute("error", "Empty Username / Password. Please enter valid input.");
+			logger.info("Empty Username / Password. Please enter valid input.");
 		}
 		return viewName;
 	}
