@@ -53,7 +53,14 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 		}
 		return slaDataDao.getWeekendList(billCycle, towerID);
 	}
-
+	
+	public List<String> getRemarksList(String billCycle, int dataType, int towerID) {
+		if (dataType == 0) {
+			return ilcDataDao.getRemarksList(billCycle, towerID);
+		}
+		return slaDataDao.getRemarksList(billCycle, towerID);
+	}
+	
 	public ArrayList<Month> getMonth() {
 		return referenceDataDao.getMonthList();
 

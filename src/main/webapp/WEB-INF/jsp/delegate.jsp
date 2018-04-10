@@ -42,7 +42,7 @@
 									</label>
 								</div>
 								<div class="form-group col-md-8 text-left">																	
-									<input id="delegationStatus"  checked data-toggle="toggle" type="checkbox">
+									<input id="delegationStatus"  checked data-toggle="toggle"  type="checkbox">
 								</div>
 					</div>
 					<div class="row biller-row">

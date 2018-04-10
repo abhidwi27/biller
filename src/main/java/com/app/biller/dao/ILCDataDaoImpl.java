@@ -58,6 +58,13 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	
 	@Value("${SELECT_ALL_ILC_WEEKEND_LIST}")
 	private String selectAllILCWeekendList;
+	
+	@Value("${SELECT_ILC_REMARKS_LIST}")
+	private String selectILCRemarksList;
+	
+	@Value("${SELECT_ALL_ILC_REMARKS_LIST}")
+	private String selectAllILCRemarksList;
+	
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -202,7 +209,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 
 	@Override
 	public ArrayList<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndDate, String wrNo,
-			String empName) {
+			String empName, int billable, String remarks) {
 
 		StringBuilder sb = new StringBuilder();
 
@@ -227,6 +234,26 @@ public class ILCDataDaoImpl implements ILCDataDao {
 		if (!(empName.equals("ALL"))) {
 			sb.append(" and ilc.emp_name='").append(empName).append("'");
 		}
+		if (billable !=0) {
+			String isBillable = null;
+			switch (billable) {
+			case 1:
+					isBillable = "Yes";
+					break;
+			case 2:
+					isBillable = "No";
+					break;
+			default:
+					isBillable = null;
+			}
+					
+			sb.append(" and ilc.is_billable='").append(isBillable).append("'");
+		}
+		if (!(remarks.equals("ALL"))) {
+			sb.append(" and ilc.remarks='").append(remarks).append("'");
+		}
+		
+			
 
 		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(sb.toString(),
 				new RowMapper<ILCData>() {
@@ -352,5 +379,29 @@ public class ILCDataDaoImpl implements ILCDataDao {
 
 		List<String> ilcWeekendList = jdbcTemplate.query(getIlcWeekendQuery, queryParam, rowMap);
 		return ilcWeekendList;
+	}
+	
+	
+	public List<String> getRemarksList(String billCycle, int towerID) {
+		
+		Object queryParam[];
+		String getIlcRemarkQuery;
+		if(towerID != 0 ) {
+			queryParam = new Object [] {towerID, billCycle };
+			getIlcRemarkQuery = selectILCRemarksList;
+		}else {
+			queryParam = new Object [] { billCycle };
+			getIlcRemarkQuery = selectAllILCRemarksList;
+		}
+		
+		RowMapper<String> rowMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+
+		List<String> ilcRemarksList = jdbcTemplate.query(getIlcRemarkQuery, queryParam, rowMap);
+		return ilcRemarksList;
 	}
 }

@@ -41,6 +41,12 @@ public class SLADataDaoImpl implements SLADataDao {
 	
 	@Value("${SELECT_ALL_SLA_WEEKEND_LIST}")
 	private String selectAllSLAWeekendList;
+	
+	@Value("${SELECT_SLA_REMARKS_LIST}")
+	private String selectSLARemarksList;
+	
+	@Value("${SELECT_ALL_SLA_REMARKS_LIST}")
+	private String selectAllSLARemarksList;
 
 	@Value("${SELECT_SLA_DATA}")
 	private String selectSLAData;
@@ -357,7 +363,7 @@ public class SLADataDaoImpl implements SLADataDao {
 
 	@Override
 	public ArrayList<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo,
-			String empName) {
+			String empName, int billable, String remarks) {
 
 		StringBuilder sb = new StringBuilder();
 
@@ -381,6 +387,24 @@ public class SLADataDaoImpl implements SLADataDao {
 
 		if (!(empName.equals("ALL"))) {
 			sb.append(" and sla.emp_name='").append(empName).append("'");
+		}
+		if (billable !=0) {
+			String isBillable = null;
+			switch (billable) {
+			case 1:
+					isBillable = "Yes";
+					break;
+			case 2:
+					isBillable = "No";
+					break;
+			default:
+					isBillable = null;
+			}
+					
+			sb.append(" and sla.is_billable='").append(isBillable).append("'");
+		}
+		if (!(remarks.equals("ALL"))) {
+			sb.append(" and sla.remarks='").append(remarks).append("'");
 		}
 
 		ArrayList<SLAData> slaDataList = (ArrayList<SLAData>) jdbcTemplate.query(sb.toString(),
@@ -495,6 +519,30 @@ public class SLADataDaoImpl implements SLADataDao {
 
 		List<String> slaWeekendList = jdbcTemplate.query(getSlaWeekEndQuery, queryParam , rowMap);
 		return slaWeekendList;
+	}
+	
+	public List<String> getRemarksList(String billCycle, int towerID) {
+		
+		Object queryParam[];
+		String getSlaRemarksQuery;
+		if(towerID != 0 ) {
+			queryParam = new Object [] {towerID, billCycle };
+			getSlaRemarksQuery = selectSLARemarksList;
+		}else {
+			queryParam = new Object [] { billCycle };
+			getSlaRemarksQuery = selectAllSLARemarksList;
+		}
+		
+		
+		RowMapper<String> rowMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+
+		List<String> slaRemarksList = jdbcTemplate.query(getSlaRemarksQuery, queryParam , rowMap);
+		return slaRemarksList;
 	}
 	
 	public String getActiveBillCycle() {

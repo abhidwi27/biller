@@ -12,11 +12,13 @@ public interface ILCDataDao {
 	ArrayList<ILCData> readILCData(String billCycle, int towerID , String accountId);
 
 	ArrayList<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndData, String wrNo,
-			String empName);
+			String empName, int billable, String remarks);
 
 	List<String> getEmployeeList(String billCycle,int towerID);
 
 	List<String> getWRList(String billCycle, int towerID);
 
 	List<String> getWeekendList(String billCycle, int towerID);
+	
+	List<String> getRemarksList(String billCycle, int towerID);
 }

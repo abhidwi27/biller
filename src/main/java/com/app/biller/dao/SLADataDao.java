@@ -18,13 +18,15 @@ public interface SLADataDao {
 
 	void createNewSLARecord(String billCycle, ArrayList<SLAData> records);
 
-	List<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName);
+	List<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName, int billable, String remarks);
 
 	List<String> getEmployeeList(String billCycle, int towerID);
 
 	List<String> getWRList(String billCycle, int towerID);
 
 	List<String> getWeekendList(String billCycle, int towerID);
+	
+	List<String> getRemarksList(String billCycle, int towerID);
 	
 	String getActiveBillCycle();
 }
