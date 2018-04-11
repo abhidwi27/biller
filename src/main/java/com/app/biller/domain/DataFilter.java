@@ -13,6 +13,7 @@ public class DataFilter {
 	private String empName;
 	private int billable;
 	private String remarks;
+	private int accountId;
 
 	public int getDataType() {
 		return dataType;
@@ -76,6 +77,14 @@ public class DataFilter {
 
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
+	}
+
+	public int getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
 	}
 
 }

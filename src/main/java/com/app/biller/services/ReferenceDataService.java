@@ -3,6 +3,7 @@ package com.app.biller.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.app.biller.domain.Account;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
@@ -30,4 +31,6 @@ public interface ReferenceDataService {
 	List<User> getDelegateUserList(String userID);
 	
 	String getMonthForBillCycle(String billCycle);
+	
+	List<Account> getAccountList();
 }
