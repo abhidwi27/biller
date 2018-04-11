@@ -94,7 +94,7 @@ public class DataValidationServiceImpl implements DataValidationService {
 				slaData.setActivity(rowData[8]);
 				slaData.setWorkItem(rowData[9]);
 				slaData.setOnOffShore(rowData[10]);
-				slaData.setTotHrs(Integer.parseInt(rowData[11]));
+				slaData.setTotHrs(Double.parseDouble(rowData[11]));
 				slaData.setShiftDetail(rowData[12]);
 				slaData.setCategory(rowData[13]);
 				slaData.setBillType(rowData[14]);
