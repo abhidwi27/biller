@@ -140,7 +140,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	}
 
 	@Override
-	public ArrayList<ILCData> readILCData(String billCycle, int towerID , String accountId) {
+	public ArrayList<ILCData> readILCData(String billCycle, int towerID , int accountId) {
 		
 		Object queryParam[];
 		String readIlcQuery;
@@ -148,7 +148,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			queryParam = new Object [] {towerID, billCycle , accountId};
 			readIlcQuery = selectIlcData;
 		}else {
-			queryParam = new Object [] { billCycle };
+			queryParam = new Object [] { billCycle, accountId };
 			readIlcQuery = selectAllIlcData;
 		}
 
@@ -209,7 +209,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 
 	@Override
 	public ArrayList<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndDate, String wrNo,
-			String empName, int billable, String remarks) {
+			String empName, int billable, String remarks, int accountId) {
 
 		StringBuilder sb = new StringBuilder();
 
@@ -252,6 +252,13 @@ public class ILCDataDaoImpl implements ILCDataDao {
 		if (!(remarks.equals("ALL"))) {
 			sb.append(" and ilc.remarks='").append(remarks).append("'");
 		}
+		
+		sb.append(" and ilc.account_id in(select account_desc from biller.blr_accounts ac where ac.account_id= ")				
+			.append(accountId)
+			.append(")");
+		  
+		
+		
 		
 			
 

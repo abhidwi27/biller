@@ -13,6 +13,7 @@ $(document).ready(function(){
 		var tower = $('#currentTower').val();
 		var billable = $("#customBillable option:selected").val();
 		var remarks = $("#customRemarks option:selected").val();
+		var accountId = $('#currentAccount').val(); 
 		var url;
 		var dataFilter = {};
 		
@@ -24,6 +25,7 @@ $(document).ready(function(){
 		dataFilter["empName"]= emp;
 		dataFilter["billable"]= billable;
 		dataFilter["remarks"]= remarks;
+		dataFilter["accountId"]= accountId;
 		
 		var dataFilter = JSON.stringify(dataFilter);
 		$('#report').DataTable().clear();
