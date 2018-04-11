@@ -180,15 +180,15 @@ public class SLADataDaoImpl implements SLADataDao {
 	
 	
 	@Override
-	public ArrayList<SLAData> readSLAData(String billCycle, int towerID) {
+	public ArrayList<SLAData> readSLAData(String billCycle, int towerID, int accountId) {
 		
 		Object queryParam[];
 		String readSlaQuery;
 		if(towerID != 0 ) {
-			queryParam = new Object [] {towerID, billCycle };
+			queryParam = new Object [] {towerID, billCycle, accountId };
 			readSlaQuery = selectSLAData;
 		}else {
-			queryParam = new Object [] { billCycle };
+			queryParam = new Object [] { billCycle, accountId };
 			readSlaQuery = selectAllSLAData;
 		}
 		
@@ -361,7 +361,7 @@ public class SLADataDaoImpl implements SLADataDao {
 
 	@Override
 	public ArrayList<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo,
-			String empName, int billable, String remarks) {
+			String empName, int billable, String remarks, int accountId) {
 
 		StringBuilder sb = new StringBuilder();
 
@@ -404,7 +404,11 @@ public class SLADataDaoImpl implements SLADataDao {
 		if (!(remarks.equals("ALL"))) {
 			sb.append(" and sla.remarks='").append(remarks).append("'");
 		}
-
+		
+		sb.append(" and sla.account_id in(select account_desc from biller.blr_accounts ac where ac.account_id= ")				
+		.append(accountId)
+		.append(")");
+		
 		ArrayList<SLAData> slaDataList = (ArrayList<SLAData>) jdbcTemplate.query(sb.toString(),
 				new Object[] { }, new RowMapper<SLAData>() {
 					@Override

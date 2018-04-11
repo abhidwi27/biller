@@ -71,7 +71,7 @@ public class DataController {
 
 	@RequestMapping(path = "/read.do", method = RequestMethod.GET)
 	public @ResponseBody ResponseDataEnvelope readILCorSLAData(@RequestParam("dataType") int dataType,
-			@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID, @RequestParam("accountId") String accountId, HttpSession userSession) {
+			@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID, @RequestParam("accountId") int accountId, HttpSession userSession) {
 		List<?> dataList;
 		User userProfile = getUserProfile(userSession);
 		String userID = userProfile.getUserID();
@@ -79,7 +79,7 @@ public class DataController {
 		if (dataType == 0) {
 			dataList = (ArrayList<ILCData>) dataValidationService.readILCData(billCycle, towerID , accountId);
 		} else {
-			dataList = (ArrayList<SLAData>) dataValidationService.readSLAData(billCycle, towerID);
+			dataList = (ArrayList<SLAData>) dataValidationService.readSLAData(billCycle, towerID, accountId);
 		}
 		tableData.setHeader(referenceDataService.getTableHeader(dataType));
 		tableData.setBody(dataList);
@@ -101,11 +101,11 @@ public class DataController {
 		if (dataFilter.getDataType() == 0) {
 			dataList = (ArrayList<ILCData>) dataValidationService.readCustomILCData(dataFilter.getBillCycle(),
 					dataFilter.getTowerID(), dataFilter.getWeekEndDate(), dataFilter.getWrNo(),
-					dataFilter.getEmpName(), dataFilter.getBillable(), dataFilter.getRemarks());
+					dataFilter.getEmpName(), dataFilter.getBillable(), dataFilter.getRemarks(), dataFilter.getAccountId());
 		} else {
 			dataList = (ArrayList<SLAData>) dataValidationService.readCustomSLAData(dataFilter.getBillCycle(),
 					dataFilter.getTowerID(), dataFilter.getWeekEndDate(), dataFilter.getWrNo(),
-					dataFilter.getEmpName(), dataFilter.getBillable(), dataFilter.getRemarks());
+					dataFilter.getEmpName(), dataFilter.getBillable(), dataFilter.getRemarks(), dataFilter.getAccountId());
 		}
 
 		return dataList;

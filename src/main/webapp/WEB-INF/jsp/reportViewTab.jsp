@@ -18,6 +18,7 @@
 <input name="currentBillCycle" id="currentBillCycle" type="hidden" value='' />
 <input name="currentDtaType" id="currentDataType" type="hidden" value='' />
 <input name="currentTower" id="currentTower" type="hidden" value='' />
+<input name="currentAccount" id="currentAccount" type="hidden" value='' />
 
 <div role="tabpanel" class="tab-pane fade  in active" id="reportPanel">
 	<div class="container container-table" id="reportSelection">
@@ -112,9 +113,11 @@
 						</div>
 						<div class="form-group col-md-5 text-left biller-tower-dropdown">	
 							<select class="selectpicker" data-dropup-auto="false" data-width="auto"  data-live-search="true" id="accountId">
-								<option >WNPPT</option>
-								<option >WCF2R</option>
-							 	<option >W520O</option>
+								<c:if test="${not empty accountList}">
+									<c:forEach var="o" items="${accountList}">										
+									 		<option value="${o.accountId}"> ${o.accountDesc}</option>
+									 </c:forEach>
+							  	</c:if>
 							</select>
 								
 							</div>

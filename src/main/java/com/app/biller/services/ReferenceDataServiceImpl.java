@@ -10,6 +10,7 @@ import com.app.biller.dao.ILCDataDao;
 import com.app.biller.dao.ReferenceDataDao;
 import com.app.biller.dao.SLADataDao;
 import com.app.biller.dao.UserDao;
+import com.app.biller.domain.Account;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
@@ -87,5 +88,9 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 	
 	public String getMonthForBillCycle(String billCycle) {
 		return referenceDataDao.getMonthForBillCycle(billCycle);
+	}
+	
+	public List<Account> getAccountList(){
+		return referenceDataDao.getAccountList();
 	}
 }

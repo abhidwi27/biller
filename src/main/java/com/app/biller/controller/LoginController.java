@@ -64,6 +64,7 @@ public class LoginController {
 				model.addAttribute("monthList", referenceDataService.getMonth());
 				model.addAttribute("yearList", referenceDataService.getYear());
 				model.addAttribute("towerList", referenceDataService.getTowerList());
+				model.addAttribute("accountList", referenceDataService.getAccountList());
 				
 				if(user.getRoleID() == 2 || user.getRoleID() == 3) {
 					model.addAttribute("delegateUserList", referenceDataService.getDelegateUserList(user.getUserID()));

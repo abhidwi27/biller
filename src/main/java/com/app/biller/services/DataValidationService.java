@@ -10,13 +10,13 @@ import com.app.biller.domain.SaveRecords;
 
 public interface DataValidationService {
 
-	List<ILCData> readILCData(String billCycle, int towerID , String accountId);
+	List<ILCData> readILCData(String billCycle, int towerID , int accountId);
 
-	List<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName, int billable, String remarks);
+	List<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName, int billable, String remarks, int accountId);
 
-	List<SLAData> readSLAData(String billCycle, int towerID);
+	List<SLAData> readSLAData(String billCycle, int towerID, int accountId);
 
-	List<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName, int billable, String remarks);
+	List<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName, int billable, String remarks, int accountId);
 
 	void updateSLAData(String billCycle,  String userID, ArrayList<Record> records);
 

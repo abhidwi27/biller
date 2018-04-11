@@ -13,6 +13,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import com.app.biller.domain.Account;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
 
@@ -36,6 +37,9 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 	
 	@Value("${GET_MONTH_FOR_BILL_CYCLE}")
 	String getMonthForBillCycle;
+	
+	@Value("${GET_ACCOUNT_LIST}")
+	String getAccountList;
 	
 
 	private JdbcTemplate jdbcTemplate;
@@ -109,5 +113,22 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 		String monthID = billCycle.substring(0, 2);		
 		String month = jdbcTemplate.queryForObject(getMonthForBillCycle, new Object[] {monthID}, String.class );
 		return month;
+	}
+	
+	public List<Account> getAccountList() {
+		
+		List<Account> accountList = new ArrayList<Account>();
+		RowMapper<Account> rowMapper = new RowMapper<Account>() {
+			@Override
+			public Account mapRow(ResultSet rs, int rownumber) throws SQLException {
+				Account account = new Account();
+				
+				account.setAccountId(rs.getInt("account_id"));
+				account.setAccountDesc(rs.getString("account_desc"));
+				return account;
+			}
+		};
+		accountList =  jdbcTemplate.query(getAccountList, rowMapper);
+		return accountList;
 	}
 }

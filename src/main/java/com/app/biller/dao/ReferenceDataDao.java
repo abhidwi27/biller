@@ -3,6 +3,7 @@ package com.app.biller.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.app.biller.domain.Account;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
 
@@ -20,5 +21,6 @@ public interface ReferenceDataDao {
 	
 	String getMonthForBillCycle(String billCycle);
 	
+	List<Account> getAccountList();
 	
 }
