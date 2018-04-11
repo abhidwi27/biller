@@ -18,7 +18,7 @@ public class SLAData {
 	private String activity;
 	private String workItem;
 	private String onOffShore;
-	private int totHrs;
+	private Double totHrs;
 	private String shiftDetail;
 	private String category;
 	private String billType;
@@ -39,6 +39,7 @@ public class SLAData {
 	private String changeLog;
 	private int active;
 	private String modifiedBy;
+	private String accountId;
 	private Date modifiedDate;
 
 	public int getSeqID() {
@@ -129,11 +130,11 @@ public class SLAData {
 		this.onOffShore = onOffShore;
 	}
 
-	public int getTotHrs() {
+	public Double getTotHrs() {
 		return totHrs;
 	}
 
-	public void setTotHrs(int totHrs) {
+	public void setTotHrs(Double totHrs) {
 		this.totHrs = totHrs;
 	}
 
@@ -271,6 +272,15 @@ public class SLAData {
 
 	public void setVendorClass(String vendorClass) {
 		this.vendorClass = vendorClass;
+	}
+	
+	
+	public String getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
 	}
 
 	public String getChangeLog() {

@@ -98,7 +98,7 @@ public class SLADataDaoImpl implements SLADataDao {
 				ps.setString(8, SLAModelList.get(i).getActivity());
 				ps.setString(9, SLAModelList.get(i).getWorkItem());
 				ps.setString(10, SLAModelList.get(i).getOnOffShore());
-				ps.setInt(11, SLAModelList.get(i).getTotHrs());
+				ps.setDouble(11, SLAModelList.get(i).getTotHrs());
 				ps.setString(12, SLAModelList.get(i).getShiftDetail());
 				ps.setString(13, SLAModelList.get(i).getCategory());
 				ps.setString(14, SLAModelList.get(i).getBillType());
@@ -116,8 +116,9 @@ public class SLADataDaoImpl implements SLADataDao {
 				ps.setString(26, SLAModelList.get(i).getCostCenter());
 				ps.setString(27, SLAModelList.get(i).getFundType());
 				ps.setString(28, SLAModelList.get(i).getVendorClass());
-				ps.setString(29, billCycle);
-				ps.setString(30,userId);
+				ps.setString(29, SLAModelList.get(i).getAccountId());
+				ps.setString(30, billCycle);
+				ps.setString(31,userId);
 				
 				
 				/*ps.setString(1, slaModelList.get(i).getEmpID());
@@ -208,7 +209,7 @@ public class SLADataDaoImpl implements SLADataDao {
 						slaModel.setActivity(rs.getString("activity"));
 						slaModel.setWorkItem(rs.getString("work_item"));
 						slaModel.setOnOffShore(rs.getString("on_off_shore"));
-						slaModel.setTotHrs(rs.getInt("total_hours"));
+						slaModel.setTotHrs(rs.getDouble("total_hours"));
 						slaModel.setShiftDetail(rs.getString("shift_detail"));
 						slaModel.setCategory(rs.getString("category"));
 						slaModel.setBillType(rs.getString("bill_type"));
@@ -227,6 +228,7 @@ public class SLADataDaoImpl implements SLADataDao {
 						slaModel.setFundType(rs.getString("fund_type"));
 						slaModel.setVendorClass(rs.getString("vendor_class"));
 						slaModel.setModifiedBy(rs.getString("modified_by"));
+						slaModel.setAccountId(rs.getString("account_id"));
 
 						return slaModel;
 					}
@@ -251,7 +253,7 @@ public class SLADataDaoImpl implements SLADataDao {
 				ps.setString(8, updateSLADataList.get(i).getActivity());
 				ps.setString(9, updateSLADataList.get(i).getWorkItem());
 				ps.setString(10, updateSLADataList.get(i).getOnOffShore());
-				ps.setInt(11, updateSLADataList.get(i).getTotHrs());
+				ps.setDouble(11, updateSLADataList.get(i).getTotHrs());
 				ps.setString(12, updateSLADataList.get(i).getShiftDetail());
 				ps.setString(13, updateSLADataList.get(i).getCategory());
 				ps.setString(14, updateSLADataList.get(i).getBillType());
@@ -269,11 +271,12 @@ public class SLADataDaoImpl implements SLADataDao {
 				ps.setString(26, updateSLADataList.get(i).getCostCenter());
 				ps.setString(27, updateSLADataList.get(i).getFundType());
 				ps.setString(28, updateSLADataList.get(i).getVendorClass());
-				ps.setString(29, updateSLADataList.get(i).getChangeLog());				
-				ps.setInt(30, updateSLADataList.get(i).getActive());
-				ps.setString(31, updateSLADataList.get(i).getModifiedBy());
-				ps.setString(32, billCycle);
-				ps.setInt(33, updateSLADataList.get(i).getSeqID());
+				ps.setString(29, updateSLADataList.get(i).getAccountId());
+				ps.setString(30, updateSLADataList.get(i).getChangeLog());				
+				ps.setInt(31, updateSLADataList.get(i).getActive());
+				ps.setString(32, updateSLADataList.get(i).getModifiedBy());
+				ps.setString(33, billCycle);
+				ps.setInt(34, updateSLADataList.get(i).getSeqID());
 
 			}
 
@@ -322,7 +325,7 @@ public class SLADataDaoImpl implements SLADataDao {
 				ps.setString(9, newSLADataList.get(i).getActivity());
 				ps.setString(10, newSLADataList.get(i).getWorkItem());
 				ps.setString(11, newSLADataList.get(i).getOnOffShore());
-				ps.setInt(12, newSLADataList.get(i).getTotHrs());
+				ps.setDouble(12, newSLADataList.get(i).getTotHrs());
 				ps.setString(13, newSLADataList.get(i).getShiftDetail());
 				ps.setString(14, newSLADataList.get(i).getCategory());
 				ps.setString(15, newSLADataList.get(i).getBillType());
@@ -340,10 +343,11 @@ public class SLADataDaoImpl implements SLADataDao {
 				ps.setString(27, newSLADataList.get(i).getCostCenter());
 				ps.setString(28, newSLADataList.get(i).getFundType());
 				ps.setString(29, newSLADataList.get(i).getVendorClass());
-				ps.setString(30, billCycle);
-				ps.setString(31, newSLADataList.get(i).getChangeLog());
-				ps.setInt(32, newSLADataList.get(i).getActive());
-				ps.setString(33, newSLADataList.get(i).getModifiedBy());
+				ps.setString(30, newSLADataList.get(i).getAccountId());
+				ps.setString(31, billCycle);
+				ps.setString(32, newSLADataList.get(i).getChangeLog());
+				ps.setInt(33, newSLADataList.get(i).getActive());
+				ps.setString(34, newSLADataList.get(i).getModifiedBy());
 
 			}
 
@@ -425,7 +429,7 @@ public class SLADataDaoImpl implements SLADataDao {
 						slaModel.setActivity(rs.getString("activity"));
 						slaModel.setWorkItem(rs.getString("work_item"));
 						slaModel.setOnOffShore(rs.getString("on_off_shore"));
-						slaModel.setTotHrs(rs.getInt("total_hours"));
+						slaModel.setTotHrs(rs.getDouble("total_hours"));
 						slaModel.setShiftDetail(rs.getString("shift_detail"));
 						slaModel.setCategory(rs.getString("category"));
 						slaModel.setBillType(rs.getString("bill_type"));
