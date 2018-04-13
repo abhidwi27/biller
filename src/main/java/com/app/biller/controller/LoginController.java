@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,6 +33,9 @@ public class LoginController {
 
 	private static final String LOGIN_VIEW = "login";
 
+	@Value("${TEST_LABEL}")
+	private String testLabel;
+
 	@Autowired
 	private User user;
 
@@ -46,7 +50,7 @@ public class LoginController {
 
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String showLogin(Model model) {
-		model.addAttribute("msg", "Please Enter Login Credentials");
+//		model.addAttribute("msg", "Please Enter Login Credentials");
 		return LOGIN_VIEW;
 	}
 

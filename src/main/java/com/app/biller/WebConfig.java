@@ -1,12 +1,17 @@
 package com.app.biller;
 
 import java.util.Properties;
+import java.util.concurrent.Executor;
 
+import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.scheduling.annotation.AsyncConfigurer;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
@@ -20,7 +25,8 @@ import com.app.biller.interceptor.AuthenticationInterceptor;
 @EnableWebMvc
 @Configuration
 @ComponentScan
-public class WebConfig extends WebMvcConfigurerAdapter {
+@EnableAsync
+public class WebConfig extends WebMvcConfigurerAdapter implements AsyncConfigurer {
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
@@ -62,5 +68,16 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		mailSender.setJavaMailProperties(javaMailProperties);
 
 		return mailSender;
+	}
+
+	@Override
+	@Bean(name = "threadPoolTaskExecutor")
+	public Executor getAsyncExecutor() {
+		return new ThreadPoolTaskExecutor();
+	}
+
+	@Override
+	public AsyncUncaughtExceptionHandler getAsyncUncaughtExceptionHandler() {
+		return null;
 	}
 }
