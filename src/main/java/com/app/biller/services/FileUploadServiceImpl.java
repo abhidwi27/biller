@@ -92,19 +92,25 @@ public class FileUploadServiceImpl implements FileUploadService {
 		return "SLA Report generated successfully";
 	}
 
-	private void createILCDataSheet(String reportWeekend,String uploadDataType) {
+	private void createILCDataSheet(String reportWeekend, String uploadDataType) {
 
-		String[] command = { "cmd.exe", "/C", "Start", "C:\\biller\\src\\main\\webapp\\Workbench\\trigger.bat",reportWeekend,uploadDataType};
+		String[] command = { "cmd.exe", "/C", "Start", "/wait", "C:\\biller\\src\\main\\webapp\\Workbench\\trigger.bat",
+				reportWeekend, uploadDataType };
 		Process process = null;
+		ProcessBuilder processBuilder = new ProcessBuilder(command);
 		try {
-			process = Runtime.getRuntime().exec(command);
+			process = processBuilder.start();
 			process.waitFor();
+			//int exitStatus = process.waitFor();
 			Runtime.getRuntime().exec("taskkill /f /im cmd.exe");
-		} catch (IOException e) {
+			//logger.info("Processed finished with status: " + exitStatus);
+		} catch (InterruptedException e) {
+			logger.error("InterruptedException: ");
 			e.printStackTrace();
-		} catch (InterruptedException e){
-			System.out.println("got interrupted!");
-		}finally {
+		} catch (IOException e) {
+			logger.error("IOException: ");
+			e.printStackTrace();
+		} finally {
 			process.destroy();
 		}
 	}

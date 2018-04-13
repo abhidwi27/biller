@@ -2,7 +2,6 @@ package com.app.biller.controller;
 
 import static com.app.biller.util.BillerHelper.getUserProfile;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,7 +14,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.SystemPropertyUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,7 +26,6 @@ import com.app.biller.domain.SLAData;
 import com.app.biller.domain.SaveRecords;
 import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
-import com.app.biller.domain.UserApproval;
 import com.app.biller.services.DataApprovalService;
 import com.app.biller.services.DataLockService;
 import com.app.biller.services.DataValidationService;
@@ -39,7 +36,6 @@ import com.app.biller.ui.ResponseDataEnvelope;
 import com.app.biller.ui.ReviewWrapper;
 import com.app.biller.ui.TableData;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 
 @Controller

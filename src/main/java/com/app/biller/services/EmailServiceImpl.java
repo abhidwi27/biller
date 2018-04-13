@@ -1,9 +1,6 @@
 package com.app.biller.services;
 
-import static com.app.biller.util.BillerHelper.getUserProfile;
-
 import javax.mail.Message;
-
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
@@ -13,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessagePreparator;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import com.app.biller.dao.UserDao;
@@ -58,7 +56,6 @@ public class EmailServiceImpl implements EmailService {
 	}
 	
 	private MimeMessagePreparator getApprovalMessagePreparator(String approveFor,  String approveBy, String billMonth, String billYear) {
-		
 		String toEmailID = this.getEmailID(approveFor);
 		String pmoEmailID = this.getPmoEmailID();
 		String approveByEmailID = this.getEmailID(approveBy);
@@ -79,7 +76,6 @@ public class EmailServiceImpl implements EmailService {
 	}
 	
 	private MimeMessagePreparator getRejectionMessagePreparator(String rejectedFor, String rejectedBy, String rejectComments, String billMonth, String billYear) {
-		
 		String rejectedForEmailID = this.getEmailID(rejectedFor);
 		String pmoEmailID = this.getPmoEmailID();
 		String rejectByEmailID = this.getEmailID(rejectedBy);
@@ -99,20 +95,12 @@ public class EmailServiceImpl implements EmailService {
 		};
 		return preparator;
 	}
-	
-	public void sendApprovalEmail(String approveFor,  String approveBy, String billMonth, String billYear) {
-		MimeMessagePreparator preparator = getApprovalMessagePreparator(approveFor,approveBy, billMonth, billYear);
-		try {
-			mailSender.send(preparator);
-		} catch (MailException ex) {
-			logger.error(ex.getMessage());
-		}
-	}
-	
+
 	public String getPmoEmailID() {
 		return userDao.getPmoEmailID();
 	}
-	
+
+	@Async("threadPoolTaskExecutor")
 	public void sendRejectionEmail(String rejectedFor, String rejectedBy, String rejectComments, String billMonth, String billYear) {
 		MimeMessagePreparator preparator = getRejectionMessagePreparator(rejectedFor, rejectedBy, rejectComments, billMonth, billYear);
 		try {
@@ -121,4 +109,15 @@ public class EmailServiceImpl implements EmailService {
 			logger.error(ex.getMessage());
 		}
 	}
+
+	@Async("threadPoolTaskExecutor")
+	public void sendApprovalEmail(String approveFor,  String approveBy, String billMonth, String billYear) {
+		MimeMessagePreparator preparator = getApprovalMessagePreparator(approveFor,approveBy, billMonth, billYear);
+		try {
+			mailSender.send(preparator);
+		} catch (MailException ex) {
+			logger.error(ex.getMessage());
+		}
+	}
+
 }

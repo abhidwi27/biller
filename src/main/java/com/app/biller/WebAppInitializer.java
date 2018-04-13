@@ -1,5 +1,8 @@
 package com.app.biller;
 
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -19,4 +22,9 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 		return new String[]{"*.do"};
 	}
 
+	@Override
+	public void onStartup(ServletContext servletContext) throws ServletException {
+		super.onStartup(servletContext);
+		servletContext.setInitParameter("spring.profiles.active", "dev");
+	}
 }
