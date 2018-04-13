@@ -29,11 +29,14 @@ $(document).ready(function(){
 		var year = $("#reportYear option:selected").text().trim();
 		var tower = $("#reportTower").val();
 		var billCycle = month+ year;
-		var excelFileName = 'SLA Report_' + month + "_" + year; 
+		var excelFileName = 'SLA Report_' + month + "_" + year;
+		var accountId = $("#accountId option:selected").val();
+		
 		$('#currentBillCycle').val(billCycle);
 		$('#currentDataType').val(reportDataType);
 		$('#currentTower').val(tower);
-		var accountid = $("#accountId").val();
+		$('#currentAccount').val(accountId);
+		
 		
 		var settings = {   	
 				dom: 'Blfrtip',
@@ -83,7 +86,7 @@ $(document).ready(function(){
 			$('#reportReject').show();
 		}
 		
-		 url = 'data/read.do?dataType=' + reportDataType + '&billCycle=' + billCycle + '&towerID=' + tower  + '&accountId=' + accountid;		 
+		 url = 'data/read.do?dataType=' + reportDataType + '&billCycle=' + billCycle + '&towerID=' + tower  + '&accountId=' + accountId;		 
 		 $.ajax({
 			    url: url,
 			    dataType: false,

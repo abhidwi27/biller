@@ -9,10 +9,10 @@ public interface ILCDataDao {
 
 	void createILCData(ArrayList<ILCData> ilcModelList, String billCycle, String userId, String uploadDataType);	
 
-	ArrayList<ILCData> readILCData(String billCycle, int towerID , String accountId);
+	ArrayList<ILCData> readILCData(String billCycle, int towerID , int accountId);
 
 	ArrayList<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndData, String wrNo,
-			String empName, int billable, String remarks);
+			String empName, int billable, String remarks, int accountId);
 
 	List<String> getEmployeeList(String billCycle,int towerID);
 

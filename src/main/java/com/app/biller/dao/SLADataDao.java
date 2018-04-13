@@ -9,7 +9,7 @@ public interface SLADataDao {
 	
 	void createSLAData(ArrayList<SLAData> slaModelList, String billCycle, String userId, String uploadDataType);
 
-	ArrayList<SLAData> readSLAData(String billCycle, int towerID);
+	ArrayList<SLAData> readSLAData(String billCycle, int towerID, int accountId);
 
 	void updateSLAData(String billCycle, ArrayList<SLAData> records);
 
@@ -17,7 +17,7 @@ public interface SLADataDao {
 
 	void createNewSLARecord(String billCycle, ArrayList<SLAData> records);
 
-	List<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName, int billable, String remarks);
+	List<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo, String empName, int billable, String remarks, int accountId);
 
 	List<String> getEmployeeList(String billCycle, int towerID);
 

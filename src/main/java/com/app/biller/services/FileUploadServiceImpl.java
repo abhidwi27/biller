@@ -84,11 +84,11 @@ public class FileUploadServiceImpl implements FileUploadService {
 	@Override
 	public String uploadSLAData(String billCycle, String userId,String uploadDataType,String reportWeekend) {
 		createILCDataSheet(reportWeekend,uploadDataType);
-//		System.out.println("start createSLA...");
+
 		ArrayList<SLAData> slaDataList = extractSLAData();
-//		System.out.println("before createSLA...");
+
 		slaDataDao.createSLAData(slaDataList, billCycle, userId, uploadDataType);
-//		System.out.println("after createSLA...");
+
 		return "SLA Report generated successfully";
 	}
 
@@ -257,8 +257,12 @@ public class FileUploadServiceImpl implements FileUploadService {
 						break;
 					case 0:
 						numColName = slaSheet.getRow(0).getCell(cell.getColumnIndex()).getStringCellValue();
+						if(numColName.equals("Hours") ) {
+							numColVal = Double.toString(Math.abs(slaSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
+							}else {
 						numColVal = Long.toString(Math
 								.round(slaSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
+							}
 						rowData.put(numColName, numColVal);
 						break;
 					default:
@@ -307,7 +311,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 		slaModel.setActivity(rowData.get("Activity Description"));
 		slaModel.setWorkItem(rowData.get("Workitem ID"));
 		slaModel.setOnOffShore(rowData.get("On/Offshore"));
-		slaModel.setTotHrs(Integer.parseInt(rowData.get("Hours")));
+		slaModel.setTotHrs(Double.parseDouble(rowData.get("Hours")));
 		slaModel.setShiftDetail(rowData.get("ShiftDetails"));
 		slaModel.setCategory(rowData.get("Category"));
 		slaModel.setBillType(rowData.get("Bill Type"));
@@ -325,6 +329,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 		slaModel.setCostCenter(rowData.get("Cost Centre"));
 		slaModel.setFundType(rowData.get("Funding Type"));
 		slaModel.setVendorClass(rowData.get("Vendor Classification"));
+		slaModel.setAccountId(rowData.get("Account Id"));
 				
 		
 		return slaModel;
