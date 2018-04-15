@@ -30,13 +30,8 @@ $(document).ready(function(){
  <div class="container">
      <div class="biller-wrapper">
          <form method="post" id="loginForm" class="biller-signin-form">         	  
-              <div class="row text-center biller-login-top">
-              	<i class="fa fa-circle"></i> 
-              	<h3 class="text-center">
-                 Biller
-                </h3>             	
-              </div>              
-                          
+              <div class="row text-center biller-login-top"><img src="resources/image/biller-login.png" alt="BILLER"></img>
+              </div>
              <div class="input-group">                 
                 <input type="text" class="form-control" name="userId" placeholder="Username" />
              </div>

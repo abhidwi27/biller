@@ -16,21 +16,21 @@
 	outline: none;
 	border: none !important;
 	box-shadow: none !important;
-	height: 45px;
+	height: 50px;
 }
 
 .biller-wrapper .biller-signin-form {
 	max-width: 420px;
 	padding: 30px 38px 66px;
 	margin: 0 auto;
-	border: 1px solid var(--biller-login-border-color);
-	background-color: #000;
+	border: 2px solid var(--biller-login-border-color);
+	background-color: #083b66;
 	opacity: 0.7;
 }
 
 .biller-wrapper .biller-login-top {
 	position: relative;
-	margin-top: -38px;
+	margin-top: -27px;
 	color: var(--biller-login-top-heading-color);
 }
 
