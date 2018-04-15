@@ -2,6 +2,9 @@ var dataTableInitialized = false;
 var editMode;
 var hasApprovedBillCycle;
 var approveListlength;
+var tableHeader;
+var excelFileName;
+
 
 $(document).ready(function(){		
 		
@@ -29,7 +32,7 @@ $(document).ready(function(){
 		var year = $("#reportYear option:selected").text().trim();
 		var tower = $("#reportTower").val();
 		var billCycle = month+ year;
-		var excelFileName = 'SLA Report_' + month + "_" + year;
+		excelFileName = 'SLA Report_' + month + "_" + year;
 		var accountId = $("#accountId option:selected").val();
 		
 		$('#currentBillCycle').val(billCycle);
@@ -37,29 +40,6 @@ $(document).ready(function(){
 		$('#currentTower').val(tower);
 		$('#currentAccount').val(accountId);
 		
-		
-		var settings = {   	
-				dom: 'Blfrtip',
-		    	buttons: [
-		    		{
-		                extend: 'excelHtml5',
-		                text:   '<i class="fa fa-file-excel-o" style="font-size:20px;color:#6666b2;"></i>',
-		                filename: excelFileName
-		            },
-		            
-		        ],
-				    "scrollX": true,
-				    "scrollY": "380px",
-				     "aoColumnDefs": [
-				            	{ "bVisible": true, "aTargets": ['_all'] },
-				            	{ "bVisible": false, "aTargets": ['_all'] }	            	
-				            	],
-				    "iDisplayLength": 10,
-				    "language": {
-						"decimal": ",",
-						"thousands": "."
-	    				}
-		}
 		 
 		 if(reportDataType == 0 || userProfile.roleID == 1){
 			 $('#reportLock').hide();
@@ -122,8 +102,13 @@ $(document).ready(function(){
 			    		$('#reportReject').find('span i').addClass('biller-icon-disabled');
 			    	}
 			    	
-			    	if(hasApprovedBillCycle == 0 && dataLockedBy != null && dataLockedBy.userID == userProfile.userID ){
-			    		editMode = true;
+			    	if(hasApprovedBillCycle == 0){
+			    			if( dataLockedBy!= undefined && dataLockedBy.userID == userProfile.userID){
+			    				editMode =true;
+			    			}
+				    	if($('#reportLock').find('span i').hasClass('biller-icon-disabled')){
+							$('#reportLock').find('span i').removeClass('biller-icon-disabled');
+			    		}
 			    	}else{
 			    		editMode = false;
 			    	}
@@ -155,43 +140,78 @@ $(document).ready(function(){
 	                $('#reportButtons').find('.dropdown .dropdown-menu').empty();
 	                $('#reportButtons').find('.dropdown .dropdown-menu').append('<li><a class=\"checkbox\"><input type=\"checkbox\" checked class=\"styled\" onclick=\"modifyAllColumns(this)\"/>  <label > </label></input>' + 'Select All' + '</a></li>');
 	                $('#reportButtons').find('.dropdown .dropdown-menu').append('<li role=\"separator\" class=\"divider\"></li>');
-				    for(var i=0 ; i< tableJson["tableHeader"].length; i++){	
+	                tableHeader = tableJson["tableHeader"];
+				    for(var i=0 ; i< tableHeader.length; i++){	
 				    	if(i==0){
 				    		$('#report').find("thead tr").append("<th>" + '<a class=\"checkbox\"><input type=\"checkbox\" class=\"styled\" onclick=\"SelectAllRecords(this)\" />  <label > </label></input>' + "</th>");	
 				    	}else{
-	                	$('#report').find("thead tr").append("<th>" + tableJson["tableHeader"][i] + "</th>"); 
+	                	$('#report').find("thead tr").append("<th>" + tableHeader[i] + "</th>"); 
 				        }
 				    	if(i != 0){
-	                	$('#reportButtons').find('.dropdown .dropdown-menu').append('<li><a class=\"checkbox\"><input type=\"checkbox\" value=\"'+ i +' \"checked class=\"styled\"/>  <label > </label></input>' + tableJson["tableHeader"][i] + '</a></li>');
+	                	$('#reportButtons').find('.dropdown .dropdown-menu').append('<li><a class=\"checkbox\"><input type=\"checkbox\" value=\"'+ i +' \"checked class=\"styled\"/>  <label > </label></input>' + tableHeader[i] + '</a></li>');
 				    	}
 				    }
 				    $('#reportButtons').find('.dropdown .dropdown-menu').append('<li><a><button type=\"button\" class=\"btn btn-primary btn-outline btn-block btn-md\" id=\"columnSelectOk\" onclick=\"customizeColumns()\"> Done </button><a><li>');
-				    var reportTable = $('#report').DataTable(settings);
-				    reportTable.buttons().container().appendTo( '#report_wrapper .col-sm-6:eq(0)' );
-				    dataTableInitialized = true;
-				    var rowNo;
-	                for(rowNo=0; rowNo<tableJson["tableBody"].length; rowNo++){	
-	                	if (reportDataType != 0){			    		
-	                		seqID = tableJson["tableBody"][rowNo].seqID;
+				    
+				    var tot = [];
+				    if(reportDataType == 0){
+					    for(rowNo=0; rowNo<tableJson["tableBody"].length; rowNo++){		                	
+		                	var newRowData = [];		                	
+		                	newRowData.push('<div class=\"checkbox\"> <input type=\"checkbox\"  class=\"styled\"/>  <label > </label> </div>');		    
+							    for (var prop in tableJson["tableBody"][rowNo]){							    		
+							    		newRowData.push(tableJson["tableBody"][rowNo][prop]);							    	
+								 }
+							    tot[rowNo] = newRowData;						   
+						}
+				    }
+				    if(reportDataType == 1){
+				    	for(rowNo=0; rowNo<tableJson["tableBody"].length; rowNo++){	
+					    	var seqID = tableJson["tableBody"][rowNo].seqID;
 						    newRowID = "row-" + seqID;			    
 						    delete tableJson["tableBody"][rowNo].seqID;
-	                	}
-	                	var newRowData = [];
-	                	
-						 newRowData.push('<div class=\"checkbox\"> <input type=\"checkbox\"  class=\"styled\"/>  <label > </label> </div>');			    
-						    for (var prop in tableJson["tableBody"][rowNo]){
-						    	if(prop != "active"){
-						    		newRowData.push(tableJson["tableBody"][rowNo][prop]);
-						    	}
-							 }
-					   var temp = $("#report").dataTable().fnAddData(newRowData);
-					    if (!(reportDataType == 0)){
-					    	var newRow = $('#report').dataTable().fnGetNodes(temp);
-					    		$(newRow).attr('id', newRowID);
-					    }
-					}
-	                
-	                addListContent('#customEmp', employeeList);
+						    delete tableJson["tableBody"][rowNo].active;
+				    	
+					     var newRowData = [];
+	                	 var checkBoxStr = '<div class=\"checkbox\"> <input id=\"' + newRowID + '\" type=\"checkbox\"  class=\"styled\"/>  <label > </label> </div>';
+						 newRowData.push(checkBoxStr);			    
+					    for (var prop in tableJson["tableBody"][rowNo]){					    	
+					    		newRowData.push(tableJson["tableBody"][rowNo][prop]);					    	
+						 }
+					    	tot[rowNo] = newRowData;
+				    	}
+				    }
+				    
+				    var reportTable = $('#report').DataTable({
+				    			dom:		 'Blfrtip',
+				    			buttons:      [{
+								                extend: 'excelHtml5',
+								                text:   '<i class="fa fa-file-excel-o" style="font-size:20px;color:#6666b2;"></i>',
+								                filename: excelFileName
+								              },
+							                  ],
+						        aoColumnDefs: [{ 
+						        				 "bVisible": true, 
+						        				 "aTargets": ['_all'] 
+							            		},{ 
+							            		   "bVisible": false, 
+							            		   "aTargets": ['_all'] 
+							            		}	            	
+							            	   ],						    
+							    language:     {
+							    				"decimal": ",",
+							    				"thousands": "."
+			    							   },
+				    			data:           tot,
+				    			deferRender:    false,
+				    	        scrollX: 		true,
+				    	        scrollY:        380,
+				    	        scrollCollapse: true,
+				    	        scroller:       true, 
+				    		});
+				    reportTable.buttons().container().appendTo( '#report_wrapper .col-sm-6:eq(0)' );
+				    dataTableInitialized = true;
+				    
+				    addListContent('#customEmp', employeeList);
 	                addListContent('#customWr', wrList);
 	                addListContent('#customWeekend', weekEndList);
 	                addListContent('#customRemarks', remarksList);
@@ -200,19 +220,10 @@ $(document).ready(function(){
 	            }
 		 
 			});
-		// button.dt-button, div.dt-button, a.dt-button
-		 
-		
-		 //$("div.dt-button").css("margin-right","1em");
-		 //$("a.dt-button").css("margin-right","1em");
-		 //$("button.dt-button").css("margin-right","1em");
-		 
-		 
-		 $(".biller-loader-div").fadeOut("slow");
-		 setTimeout(function(){			
+		setTimeout(function(){			
 			 $("#report_wrapper .dt-buttons button").css("margin-right", "1em");
 			 $("#report_wrapper .dataTables_scrollHead table").css("margin-left", "2px");
-
+			 $(".biller-loader-div").fadeOut("slow");
 		 }, 1000);
 		 
 	});

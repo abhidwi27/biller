@@ -64,6 +64,9 @@ public class SLADataDaoImpl implements SLADataDao {
 	@Value("${GET_MAX_SEQID}")
 	private String getMaxSeqID;
 	
+	@Value("${INSERT_NEW_SLA_RECORD}")
+	private String insertNewSLARecord;
+	
 	@Value("${GET_ACTIVE_BILLCYCLE}")
 	private String getActiveBillCycle;
 
@@ -308,46 +311,46 @@ public class SLADataDaoImpl implements SLADataDao {
 	@Override
 	public void createNewSLARecord(String billCycle,  ArrayList<SLAData> newSLADataList) {
 		
-		jdbcTemplate.batchUpdate(insertSLAData, new BatchPreparedStatementSetter() {
+		jdbcTemplate.batchUpdate(insertNewSLARecord, new BatchPreparedStatementSetter() {
 			@Override
 			public void setValues(PreparedStatement ps, int i) throws SQLException {
 				
-				int seqID = GetSeqID(billCycle);
+				//int seqID = GetSeqID(billCycle);
 				
-				ps.setInt(1, seqID);
-				ps.setString(2, newSLADataList.get(i).getWeekEndDate());
-				ps.setString(3, newSLADataList.get(i).getAsm());
-				ps.setString(4, newSLADataList.get(i).getAsd());
-				ps.setString(5, newSLADataList.get(i).getAsmItwr());
-				ps.setString(6, newSLADataList.get(i).getAsdItwr());
-				ps.setString(7, newSLADataList.get(i).getEmpID());
-				ps.setString(8, newSLADataList.get(i).getEmpName());
-				ps.setString(9, newSLADataList.get(i).getActivity());
-				ps.setString(10, newSLADataList.get(i).getWorkItem());
-				ps.setString(11, newSLADataList.get(i).getOnOffShore());
-				ps.setDouble(12, newSLADataList.get(i).getTotHrs());
-				ps.setString(13, newSLADataList.get(i).getShiftDetail());
-				ps.setString(14, newSLADataList.get(i).getCategory());
-				ps.setString(15, newSLADataList.get(i).getBillType());
-				ps.setString(16, newSLADataList.get(i).getDm());
-				ps.setString(17, newSLADataList.get(i).getAppArea());
-				ps.setString(18, newSLADataList.get(i).getBusinessArea());
-				ps.setString(19, newSLADataList.get(i).getTower());
-				ps.setString(20, newSLADataList.get(i).getBam());
-				ps.setString(21, newSLADataList.get(i).getRemarks());
-				ps.setString(22, newSLADataList.get(i).getIsBillable());
-				ps.setString(23, newSLADataList.get(i).getWrNo());
-				ps.setInt(24, newSLADataList.get(i).getPlannedHrs());
-				ps.setString(25, newSLADataList.get(i).getComments());
-				ps.setString(26, newSLADataList.get(i).getWrDesc());
-				ps.setString(27, newSLADataList.get(i).getCostCenter());
-				ps.setString(28, newSLADataList.get(i).getFundType());
-				ps.setString(29, newSLADataList.get(i).getVendorClass());
-				ps.setString(30, newSLADataList.get(i).getAccountId());
-				ps.setString(31, billCycle);
-				ps.setString(32, newSLADataList.get(i).getChangeLog());
-				ps.setInt(33, newSLADataList.get(i).getActive());
-				ps.setString(34, newSLADataList.get(i).getModifiedBy());
+				//ps.setInt(1, seqID);
+				ps.setString(1, newSLADataList.get(i).getWeekEndDate());
+				ps.setString(2, newSLADataList.get(i).getAsm());
+				ps.setString(3, newSLADataList.get(i).getAsd());
+				ps.setString(4, newSLADataList.get(i).getAsmItwr());
+				ps.setString(5, newSLADataList.get(i).getAsdItwr());
+				ps.setString(6, newSLADataList.get(i).getEmpID());
+				ps.setString(7, newSLADataList.get(i).getEmpName());
+				ps.setString(8, newSLADataList.get(i).getActivity());
+				ps.setString(9, newSLADataList.get(i).getWorkItem());
+				ps.setString(10, newSLADataList.get(i).getOnOffShore());
+				ps.setDouble(11, newSLADataList.get(i).getTotHrs());
+				ps.setString(12, newSLADataList.get(i).getShiftDetail());
+				ps.setString(13, newSLADataList.get(i).getCategory());
+				ps.setString(14, newSLADataList.get(i).getBillType());
+				ps.setString(15, newSLADataList.get(i).getDm());
+				ps.setString(16, newSLADataList.get(i).getAppArea());
+				ps.setString(17, newSLADataList.get(i).getBusinessArea());
+				ps.setString(18, newSLADataList.get(i).getTower());
+				ps.setString(19, newSLADataList.get(i).getBam());
+				ps.setString(20, newSLADataList.get(i).getRemarks());
+				ps.setString(21, newSLADataList.get(i).getIsBillable());
+				ps.setString(22, newSLADataList.get(i).getWrNo());
+				ps.setInt(23, newSLADataList.get(i).getPlannedHrs());
+				ps.setString(24, newSLADataList.get(i).getComments());
+				ps.setString(25, newSLADataList.get(i).getWrDesc());
+				ps.setString(26, newSLADataList.get(i).getCostCenter());
+				ps.setString(27, newSLADataList.get(i).getFundType());
+				ps.setString(28, newSLADataList.get(i).getVendorClass());
+				ps.setString(29, newSLADataList.get(i).getAccountId());
+				ps.setString(30, billCycle);
+				ps.setString(31, newSLADataList.get(i).getChangeLog());
+				ps.setInt(32, newSLADataList.get(i).getActive());
+				ps.setString(33, newSLADataList.get(i).getModifiedBy());
 
 			}
 
@@ -448,6 +451,7 @@ public class SLADataDaoImpl implements SLADataDao {
 						slaModel.setFundType(rs.getString("fund_type"));
 						slaModel.setVendorClass(rs.getString("vendor_class"));
 						slaModel.setModifiedBy(rs.getString("modified_by"));
+						slaModel.setAccountId(rs.getString("account_id"));
 
 						return slaModel;
 					}

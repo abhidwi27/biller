@@ -32,7 +32,7 @@
 									</label>
 								</div>
 								<div class="form-group col-md-5 text-left biller-modal-dropdown">																	
-									<select class="selectpicker"  data-live-search="true" id="customBillable">
+									<select class="selectpicker"  data-dropup-auto="false" data-live-search="true" id="customBillable">
 										<option value="0"> ALL </option>
 										<option value="1"> Yes </option>
 										<option value="2"> No </option>																							
@@ -46,7 +46,7 @@
 									</label>
 								</div>
 								<div class="form-group col-md-5 text-left biller-modal-dropdown">																	
-									<select class="selectpicker"  data-live-search="true" id="customWr">																				
+									<select class="selectpicker"  data-dropup-auto="false" data-live-search="true" id="customWr">																				
 									</select>
 								</div>
 					</div>
@@ -57,7 +57,7 @@
 									</label>
 								</div>
 								<div class="form-group col-md-5 text-left biller-modal-dropdown">																	
-									<select class="selectpicker"  data-live-search="true" id="customWeekend">																							
+									<select class="selectpicker" data-dropup-auto="false"  data-live-search="true" id="customWeekend">																							
 									</select>
 								</div>
 					</div>
@@ -68,7 +68,7 @@
 									</label>
 								</div>
 								<div class="form-group col-md-8 text-left biller-modal-dropdown">																	
-									<select class="selectpicker"  data-live-search="true" id="customEmp">																							
+									<select class="selectpicker"  data-dropup-auto="false" data-live-search="true" id="customEmp">																							
 									</select>
 								</div>
 					</div>
@@ -80,7 +80,7 @@
 									</label>
 								</div>
 								<div class="form-group col-md-8 text-left biller-modal-dropdown">																	
-									<select class="selectpicker"  data-live-search="true" id="customRemarks">																							
+									<select class="selectpicker" data-dropup-auto="false" data-live-search="true" id="customRemarks">																							
 									</select>
 								</div>
 					</div>

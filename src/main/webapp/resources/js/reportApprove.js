@@ -1,17 +1,6 @@
 $(document).ready(function(){
 	
 	var approveListlength = $('#reportApprovalList').children('option').length;
-	
-	$('#reportApprove').click(function(e){
-		if(approveListlength == 0 && hasApprovedBillCycle == 1){
-			e.stopPropagation();
-			e.preventDefault();
-			return;
-		}else{
-			$("#approveView").modal('toggle');
-		}
-	});
-	
 	if(approveListlength == 0){
 		$('#approvalRadio').hide();
 		$('#approvalUserBlock').hide();
@@ -25,6 +14,16 @@ $(document).ready(function(){
 		}
 	}
 	
+	$('#reportApprove').click(function(e){
+		if(approveListlength == 0 && hasApprovedBillCycle == 1){
+			e.stopPropagation();
+			e.preventDefault();
+			return;
+		}else{
+			$("#approveView").modal('toggle');
+		}
+	});	
+	
 	
 	$('#approvalRadio').change(function(){
 		if($("#approveRadioBlock .radio-inline input:radio[name='approveForRadio']:checked").val() == 1){
@@ -36,13 +35,10 @@ $(document).ready(function(){
 	
 	$("#reportApproveSubmit").click(function() {
 		
-		$(".biller-loader-div").fadeIn(1);
-		
+		$(".biller-loader-div").fadeIn(1);		
 		var billCycle = $('#currentBillCycle').val();
-		var approveFor;
-		
-		var userProfile = JSON.parse($('#strUserProfile').val());
-		
+		var approveFor;		
+		var userProfile = JSON.parse($('#strUserProfile').val());		
 		if(approveListlength != 0 ) {
 			if($("#approveRadioBlock .radio-inline input:radio[name='approveForRadio']:checked").val() == 0){
 				approveFor = userProfile.userID ;
@@ -51,8 +47,7 @@ $(document).ready(function(){
 			}
 		}else{
 			approveFor =  userProfile.userID;
-		}
-		
+		}		
 		url = 'data/approve.do?billCycle=' + billCycle + '&approveFor=' + approveFor;
 		$.ajax({
 			url : url,
@@ -71,18 +66,15 @@ $(document).ready(function(){
 						hasApprovedBillCycle == 1;
 						editMode = false;
 						//$('#reportLock').find('span i').addClass('biller-icon-disabled');
-					}
-					
+					}					
 				}else if (reviewFlag == 0){
 					billerAlert("Error: Your have already approved report for selected bill cycle.",true, 'Okay', false, '','', "Alert !");
 					
 				}else{
-					billerAlert("Error: report could not be approved.",true, 'Okay', false, '','', "Alert !");
-					
+					billerAlert("Error: report could not be approved.",true, 'Okay', false, '','', "Alert !");					
 				}
 			}
-		});
-		
+		});		
 		$(".biller-loader-div").fadeOut("slow");
 	});
 	

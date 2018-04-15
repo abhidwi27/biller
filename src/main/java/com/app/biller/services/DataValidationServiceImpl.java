@@ -111,7 +111,8 @@ public class DataValidationServiceImpl implements DataValidationService {
 				slaData.setWrDesc(rowData[25]);
 				slaData.setCostCenter(rowData[26]);
 				slaData.setFundType(rowData[27]);
-				slaData.setVendorClass(rowData[28]);				
+				slaData.setVendorClass(rowData[28]);	
+				slaData.setAccountId(rowData[30]);
 				slaData.setChangeLog("");
 				slaData.setActive(1);
 				slaData.setModifiedBy(userID);

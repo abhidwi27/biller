@@ -31,8 +31,14 @@ public class LockDataDaoImpl implements LockDataDao {
 	@Value("${UPDATE_DATA_LOCK}")
 	private String updateDataLock;
 	
+	@Value("${UNSET_DATA_LOCK}")
+	private String unsetDataLock;
+	
 	@Value("${CHECK_LOCK_BY_USER}")
 	private String checkLockByUser;
+	
+	@Value("${CHECK_LOCK_ENTRY}")
+	private String checkLockEntry;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -93,10 +99,18 @@ public class LockDataDaoImpl implements LockDataDao {
 	}
 
 	public void setLock(String billCycle, String userID, int towerID) {
+		
+		int count = jdbcTemplate.queryForObject(checkLockEntry, new Object[] {billCycle, towerID }, Integer.class);
+		
+		if(count == 0) {
 		jdbcTemplate.update(insertDataLock, new Object[] { billCycle, towerID, userID });
+		}else {
+			jdbcTemplate.update(updateDataLock, new Object[] { billCycle, towerID, userID });	
+		}
 	}
 
 	public void unSetLock(String userID, String billCycle, int towerID) {
-		jdbcTemplate.update(updateDataLock, new Object[] { billCycle, userID, towerID });
+		jdbcTemplate.update(unsetDataLock, new Object[] { billCycle, userID, towerID });
 	}
+	
 }

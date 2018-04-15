@@ -24,7 +24,7 @@
 		             			-->          			                     		
 		             			</span>
 		                       </a>
-		                   </li>
+		                   </li>		                   
 		                   <li id="bamApprovalGroupTab">
 		                   	<a href="#bamApprovalList" aria-controls="bamApprovalList" role="tab" data-toggle="tab" title="BAM Group Approval Status">
 		           			 <span class="round-tabs two">

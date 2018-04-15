@@ -12,4 +12,5 @@ public interface LockDataDao {
 	void unSetLock(String userID, String billCycle, int towerID);
 	
 	Tower checkLockByUser(String userID, String billCycle);
+	
 }
