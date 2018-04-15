@@ -3,5 +3,5 @@
  </head>
 
 <div class="biller-main-footer">
-  <p> Copyright © 2018 Biller. All rights reserved. </p>
+  <p> Copyright © 2018 BILLER. All rights reserved. </p>
 </div> 
