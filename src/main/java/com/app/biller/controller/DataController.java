@@ -89,7 +89,7 @@ public class DataController {
 		return responseDataEnvelope;
 	}
 
-	@RequestMapping(path = "/readCustom.do", method = RequestMethod.GET)
+	@RequestMapping(path = "/readCustom.do", method = RequestMethod.POST)
 	public @ResponseBody List<?> readCustomData(@RequestBody DataFilter dataFilter) {
 		List<?> dataList;
 		if (dataFilter.getDataType() == 0) {
@@ -159,7 +159,7 @@ public class DataController {
 		return true;
 	}
 
-	@RequestMapping(path = "/approve.do", method = RequestMethod.POST)
+	@RequestMapping(path = "/approve.do", method = RequestMethod.GET)
 	@ResponseBody
 	public ReviewWrapper approveSLAData(@RequestParam("billCycle") String billCycle,
 			@RequestParam("approveFor") String approveFor, HttpServletRequest request) {
