@@ -44,7 +44,7 @@
 		},1000);	
 	}); 
 </script>
-
+<link rel="shortcut icon" href="resources/image/biller-icon.ico"/>
 </head>
 
 <body>

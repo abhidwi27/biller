@@ -18,6 +18,7 @@
 <script src="resources/js/buttons.print.min.js"></script> 
 <script src="resources/js/dataTables.scroller.min.js"></script>
 <script src="resources/js/scrolling.js"></script>
+<link rel="shortcut icon" href="resources/image/biller-icon.ico"/>
 </head>
 
 <input name="currentBillCycle" id="currentBillCycle" type="hidden" value='' />

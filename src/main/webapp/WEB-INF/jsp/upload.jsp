@@ -9,6 +9,7 @@
 <script src="resources/js/billerDatePicker.js"> </script>
 <link rel="stylesheet" href="resources/css/bootstrap-datetimepicker.css">
 <link rel="stylesheet" href="resources/css/upload.css">
+<link rel="shortcut icon" href="resources/image/biller-icon.ico"/>
 </head>
 
 <div role="tabpanel" class="tab-pane fade" id="upload">
