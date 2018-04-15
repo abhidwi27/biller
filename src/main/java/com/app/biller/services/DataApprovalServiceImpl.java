@@ -123,4 +123,8 @@ public class DataApprovalServiceImpl implements DataApprovalService {
 	public int checkPriorApproval(String billCycle, String userID) {
 		return userApprovalDao.checkPriorApproval(billCycle, userID);
 	}
+	
+	public void createGroupApproval(String billCycle, String userID) {
+		groupApprovalDao.createGroupApproval(billCycle, userID);
+	}
 }

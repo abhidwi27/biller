@@ -41,10 +41,11 @@
 	--biller-header-font-color: #fff;
 	--biller-alert-message-font-color: #000;
 	--biller-header-close-icon-color: #fff;
-	--biller-status-round-tab-border: #22C222;
-	--biller-status-linear-bar-color: #22C222;
-	--biller-status-round-tab-active: #FFF;
-	--biller-status-round-tab-icon-color: #22C222;
+	--biller-status-round-tab-border: #269abc;
+	--biller-status-linear-bar-color: #39b3d7;
+	--biller-status-round-tab-active: #39b3d7;
+	--biller-status-round-tab-icon-color: #fff;
+	--biller-status-round-tab-background: #39b3d7;
 	--biller-form-control-border-color: #4c4ca6;
 	--biller-icon-disabled-color: #bbbbdd;
 	--biller-main-footer-background-color: #fff;
