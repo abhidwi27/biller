@@ -20,28 +20,28 @@ public class AdminController {
 
 	@Autowired
 	UserAdminService userAdminService;
-	
+
 	@Autowired
 	SystemAdminService systemAdminService;
 
-	/*@RequestMapping(path = "/create.do", method = RequestMethod.POST)
-	public String createUser(HttpServletRequest request) {
-		userAdminService.createUser(request);
-		return "User";
-	}*/
+	/*
+	 * @RequestMapping(path = "/create.do", method = RequestMethod.POST) public
+	 * String createUser(HttpServletRequest request) {
+	 * userAdminService.createUser(request); return "User"; }
+	 */
 
-	@RequestMapping(value = "/reset.do", method = RequestMethod.POST)
+	@RequestMapping(value = "/reset.do", method = RequestMethod.GET)
 	public String resetPassword(HttpServletRequest request) {
 		String userId = (String) request.getAttribute("userId");
 		String password = (String) request.getAttribute("password");
 		userAdminService.resetPassword(userId, password);
-		return null;
+		return "login";
 	}
-	
+
 	@RequestMapping(value = "/unlock.do", method = RequestMethod.GET)
 	public String unlockData(HttpServletRequest request) {
 		String billCycle = (String) request.getAttribute("billCycle");
 		systemAdminService.unLockData(billCycle);
-		return null;
+		return "login";
 	}
 }

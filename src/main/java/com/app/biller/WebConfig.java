@@ -50,23 +50,19 @@ public class WebConfig extends WebMvcConfigurerAdapter implements AsyncConfigure
 
 	@Bean
 	public JavaMailSender getMailSender() {
-
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-
-		// GMAIL SMTP Configuration
 		mailSender.setHost("inmbzp5180.in.dst.ibm.com");
 		mailSender.setPort(25);
-		mailSender.setUsername("abc");
-		mailSender.setPassword("abc");
+		mailSender.setUsername("billeradmin@biller-app.com");
+		mailSender.setPassword("billeradmin");
 
-		Properties javaMailProperties = new Properties();
-		javaMailProperties.put("mail.smtp.starttls.enable", "true");
-		javaMailProperties.put("mail.smtp.auth", "true");
-		javaMailProperties.put("mail.transport.protocol", "smtp");
-		javaMailProperties.put("mail.debug", "true");
+		Properties mailProperties = new Properties();
+		mailProperties.put("mail.smtp.starttls.enable", "true");
+		mailProperties.put("mail.smtp.auth", "true");
+		mailProperties.put("mail.transport.protocol", "smtp");
+		mailProperties.put("mail.debug", "true");
 
-		mailSender.setJavaMailProperties(javaMailProperties);
-
+		mailSender.setJavaMailProperties(mailProperties);
 		return mailSender;
 	}
 

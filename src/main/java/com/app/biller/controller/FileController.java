@@ -6,8 +6,6 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -49,7 +47,6 @@ public class FileController {
 			HttpSession userSession) {
 		String status = "";
 		status = fileUploadService.uploadFiles(request);
-
 		if (status.equalsIgnoreCase("Success")) {
 			User userProfile = getUserProfile(userSession);
 			String userId = userProfile.getUserID();
@@ -68,23 +65,18 @@ public class FileController {
 	@ResponseBody
 	public void downloadFiles(@RequestParam("billCycle") String billCycle, @RequestParam("weekEnd") String weekEnd,
 			@RequestParam("fileType") int fileType, HttpSession userSession, HttpServletResponse response) {
-
 		String fileName;
 		String filePath = "C:\\billerdata\\downloads";
 		String month = referenceDataService.getMonthForBillCycle(billCycle);
-
 		filePath = filePath + "\\" + month + "-" + billCycle.substring(2, 6);
 		if (fileType == 0) {
 			fileName = "FFIC_ILC_";
 		} else {
 			fileName = "FFIC_SLA_";
 		}
-
 		fileName = fileName + weekEnd + ".xlsx";
 		String fullFilePath = filePath + "\\" + fileName;
-
-		Path file = Paths.get(filePath, fileName);
-
+		// Path file = Paths.get(filePath, fileName);
 		try {
 			// Files.copy(file, response.getOutputStream());
 			// response.setContentType("application/application/vnd.ms-excel");
@@ -94,26 +86,20 @@ public class FileController {
 			// response.addHeader("Content-Disposition", "inline; filename=" + fileName);
 			// response.getOutputStream().flush();
 			// return new FileSystemResource(new File(fullFilePath));
-
 			response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8");
-
 			File xlfile = new File(fullFilePath);
-
 			response.setHeader("Content-disposition", "attachment; filename=\"" + fileName + "\"");
 			BufferedOutputStream bfos = new BufferedOutputStream(response.getOutputStream());
 			FileInputStream fis = new FileInputStream(xlfile);
 			byte[] buffer = new byte[fis.available()];
 			fis.read(buffer);
-
 			bfos.write(buffer, 0, buffer.length);
 			fis.close();
 			bfos.flush();
-
 		} catch (IOException e) {
 			System.out.println("Error :- " + e.getMessage());
 			// return null;
 		}
-
 		// return "Click Link to Download File.";
 	}
 }

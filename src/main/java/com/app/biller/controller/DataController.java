@@ -37,7 +37,6 @@ import com.app.biller.ui.ReviewWrapper;
 import com.app.biller.ui.TableData;
 import com.google.gson.Gson;
 
-
 @Controller
 @RequestMapping("/data")
 public class DataController {
@@ -67,13 +66,13 @@ public class DataController {
 
 	@RequestMapping(path = "/read.do", method = RequestMethod.GET)
 	public @ResponseBody ResponseDataEnvelope readILCorSLAData(@RequestParam("dataType") int dataType,
-			@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID, @RequestParam("accountId") int accountId, HttpSession userSession) {
+			@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID,
+			@RequestParam("accountId") int accountId, HttpSession userSession) {
 		List<?> dataList;
 		User userProfile = getUserProfile(userSession);
 		String userID = userProfile.getUserID();
-		
 		if (dataType == 0) {
-			dataList = (ArrayList<ILCData>) dataValidationService.readILCData(billCycle, towerID , accountId);
+			dataList = (ArrayList<ILCData>) dataValidationService.readILCData(billCycle, towerID, accountId);
 		} else {
 			dataList = (ArrayList<SLAData>) dataValidationService.readSLAData(billCycle, towerID, accountId);
 		}
@@ -87,137 +86,127 @@ public class DataController {
 		responseDataEnvelope.setRemarksList(referenceDataService.getRemarksList(billCycle, dataType, towerID));
 		responseDataEnvelope.setDataLockedBy(dataLockService.checkLockForTower(billCycle, towerID));
 		responseDataEnvelope.setHasApprovedBillCycle(dataApprovalService.checkPriorApproval(billCycle, userID));
-		
 		return responseDataEnvelope;
 	}
 
-	@RequestMapping(path = "/readCustom.do", method = RequestMethod.POST)
+	@RequestMapping(path = "/readCustom.do", method = RequestMethod.GET)
 	public @ResponseBody List<?> readCustomData(@RequestBody DataFilter dataFilter) {
 		List<?> dataList;
 		if (dataFilter.getDataType() == 0) {
 			dataList = (ArrayList<ILCData>) dataValidationService.readCustomILCData(dataFilter.getBillCycle(),
-					dataFilter.getTowerID(), dataFilter.getWeekEndDate(), dataFilter.getWrNo(),
-					dataFilter.getEmpName(), dataFilter.getBillable(), dataFilter.getRemarks(), dataFilter.getAccountId());
+					dataFilter.getTowerID(), dataFilter.getWeekEndDate(), dataFilter.getWrNo(), dataFilter.getEmpName(),
+					dataFilter.getBillable(), dataFilter.getRemarks(), dataFilter.getAccountId());
 		} else {
 			dataList = (ArrayList<SLAData>) dataValidationService.readCustomSLAData(dataFilter.getBillCycle(),
-					dataFilter.getTowerID(), dataFilter.getWeekEndDate(), dataFilter.getWrNo(),
-					dataFilter.getEmpName(), dataFilter.getBillable(), dataFilter.getRemarks(), dataFilter.getAccountId());
+					dataFilter.getTowerID(), dataFilter.getWeekEndDate(), dataFilter.getWrNo(), dataFilter.getEmpName(),
+					dataFilter.getBillable(), dataFilter.getRemarks(), dataFilter.getAccountId());
 		}
-
 		return dataList;
 	}
 
-	@RequestMapping(path = "/update.do", method = RequestMethod.POST)	
-	public @ResponseBody boolean updateSLAData(@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID,
-			@RequestBody SaveRecords saveRecords, HttpSession userSession) {
+	@RequestMapping(path = "/update.do", method = RequestMethod.POST)
+	public @ResponseBody boolean updateSLAData(@RequestParam("billCycle") String billCycle,
+			@RequestParam("towerID") int towerID, @RequestBody SaveRecords saveRecords, HttpSession userSession) {
 		User userProfile = getUserProfile(userSession);
 		String userID = userProfile.getUserID();
-		
 		try {
 			dataValidationService.updateSLAData(billCycle, userID, saveRecords.getUpdateRecords());
 			dataValidationService.createNewSLARecord(billCycle, userID, saveRecords.getNewRecords());
 			User lockedBy = dataLockService.checkLockForTower(billCycle, towerID);
-			if(lockedBy!= null) {				
-					if(lockedBy.getUserID().equals(userID)) {
-							dataLockService.unSetLock(userID, billCycle, towerID);
-					}
+			if (lockedBy != null) {
+				if (lockedBy.getUserID().equals(userID)) {
+					dataLockService.unSetLock(userID, billCycle, towerID);
+				}
 			}
 			return true;
-		} catch(Exception ex)
-		{
+		} catch (Exception ex) {
+			logger.error("Update SLA Data Failed.");
 			ex.printStackTrace();
 			return false;
 		}
-		
 	}
 
-	@SuppressWarnings("unused")
 	@RequestMapping(path = "/lock.do", method = RequestMethod.GET)
 	public @ResponseBody String lockSLAData(@RequestParam("billCycle") String billCycle,
 			@RequestParam("towerID") int towerID, HttpSession userSession) {
 		User userProfile = getUserProfile(userSession);
 		String userID = userProfile.getUserID();
-		
 		Gson gson = new Gson();
 		HashMap<String, Object> lockResponseMap = new HashMap<String, Object>();
 		User lockedBy = dataLockService.checkLockForTower(billCycle, towerID);
 		Tower lockedForTower = dataLockService.checkLockByUser(userID, billCycle);
-		
-		
 		lockResponseMap.put("lockedBy", lockedBy);
-		if(lockedForTower != null) {
+		if (lockedForTower != null) {
 			lockResponseMap.put("lockedForTower", lockedForTower.getTowerName());
-		}else {
+		} else {
 			lockResponseMap.put("lockedForTower", "");
 		}
-		
 		if (lockedBy == null && lockedForTower == null) {
 			dataLockService.setLock(billCycle, userID, towerID);
 			lockResponseMap.put("msg", "success");
 		} else {
 			lockResponseMap.put("msg", "failed");
 		}
-		
 		return gson.toJson(lockResponseMap);
 	}
-	
+
 	@RequestMapping(path = "/delete.do", method = RequestMethod.POST)
 	public @ResponseBody boolean deleteSLAData(@RequestParam("billCycle") String billCycle,
 			@RequestBody List<Integer> seqIDList, HttpSession userSession) {
-		User userProfile = getUserProfile(userSession);
-		String userID = userProfile.getUserID();
+		// User userProfile = getUserProfile(userSession);
+		// String userID = userProfile.getUserID();
 		dataValidationService.deleteSLAData(billCycle, seqIDList);
 		return true;
 	}
 
-	@RequestMapping(path = "/approve.do", method = RequestMethod.GET)
+	@RequestMapping(path = "/approve.do", method = RequestMethod.POST)
 	@ResponseBody
-	public ReviewWrapper approveSLAData(@RequestParam("billCycle") String billCycle, @RequestParam("approveFor") String approveFor, HttpServletRequest request) {
+	public ReviewWrapper approveSLAData(@RequestParam("billCycle") String billCycle,
+			@RequestParam("approveFor") String approveFor, HttpServletRequest request) {
 		boolean approval = false;
-		String approveBy = null;
-		String roleDesc = null;
+		String approveBy = "";
+		String roleDesc = "";
+		int roleID = -1;
 		HttpSession session = request.getSession(false);
 		ReviewWrapper reviewWrapper = new ReviewWrapper();
 		if (session != null) {
 			User userProfile = getUserProfile(session);
 			approveBy = userProfile.getUserID();
 			roleDesc = userProfile.getRoleDesc();
-			int roleID = userProfile.getRoleID();
+			roleID = userProfile.getRoleID();
 			approval = dataApprovalService.setUserApproval(billCycle, approveBy, approveFor, roleID, roleDesc);
 			Tower LockForTower = dataLockService.checkLockByUser(approveFor, billCycle);
 			if (approval && LockForTower != null) {
 				dataLockService.unSetLock(approveFor, billCycle, LockForTower.getTowerID());
 			}
-			
 		}
-		
-		String activeBillCycle = referenceDataService.getActiveBillCycle();		
-		reviewWrapper.setApprovalStatus( dataApprovalService.getApprovalStatus(activeBillCycle));
+		String activeBillCycle = referenceDataService.getActiveBillCycle();
+		reviewWrapper.setApprovalStatus(dataApprovalService.getApprovalStatus(activeBillCycle));
 		if (approval && approveFor != null) {
-			//emailService.sendEmail(emailService.getEmailID(approveFor));
+			// emailService.sendEmail(emailService.getEmailID(approveFor));
 			String billMonth = referenceDataService.getMonthForBillCycle(billCycle);
 			String billYear = billCycle.substring(2, 6);
 			emailService.sendApprovalEmail(approveFor, approveBy, billMonth, billYear);
 			reviewWrapper.setReviewFlag(1);
-		}else {
+		} else {
 			reviewWrapper.setReviewFlag(0);
 		}
 		return reviewWrapper;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@RequestMapping(path = "/reject.do", method = RequestMethod.POST)
 	@ResponseBody
-	public ReviewWrapper rejectSLAData(@RequestParam("billCycle") String billCycle, @RequestParam("rejectedFor") String rejectedFor, @RequestBody String rejectComments, HttpServletRequest request) {
-		
-		Gson gson = new Gson(); 
+	public ReviewWrapper rejectSLAData(@RequestParam("billCycle") String billCycle,
+			@RequestParam("rejectedFor") String rejectedFor, @RequestBody String rejectComments,
+			HttpServletRequest request) {
+		Gson gson = new Gson();
 		ReviewWrapper reviewWrapper = new ReviewWrapper();
-		Map<String,String> map = new HashMap<String,String>();
-		map = (Map<String,String>) gson.fromJson(rejectComments, map.getClass());
-		String userID = null;;
+		Map<String, String> map = new HashMap<String, String>();
+		map = (Map<String, String>) gson.fromJson(rejectComments, map.getClass());
+		String userID = "";
 		HttpSession session = request.getSession(false);
-		String activeBillCycle = referenceDataService.getActiveBillCycle();		
-		
+		String activeBillCycle = referenceDataService.getActiveBillCycle();
 		if (session != null) {
 			User userProfile = getUserProfile(session);
 			userID = userProfile.getUserID();
@@ -226,31 +215,29 @@ public class DataController {
 			String billYear = billCycle.substring(2, 6);
 			emailService.sendRejectionEmail(rejectedFor, userID, map.get("rejectComments"), billMonth, billYear);
 			reviewWrapper.setReviewFlag(1);
-		}else {
+		} else {
 			reviewWrapper.setReviewFlag(0);
 		}
-		reviewWrapper.setApprovalStatus( dataApprovalService.getApprovalStatus(activeBillCycle));
+		reviewWrapper.setApprovalStatus(dataApprovalService.getApprovalStatus(activeBillCycle));
 		return reviewWrapper;
 	}
-	
-	@RequestMapping(path = "/getApprovalStatus.do", method = RequestMethod.GET)	
+
+	@RequestMapping(path = "/getApprovalStatus.do", method = RequestMethod.GET)
 	public @ResponseBody ApprovalStatus getApprovalStatus() {
-			String activeBillCycle = referenceDataService.getActiveBillCycle();
-			return dataApprovalService.getApprovalStatus(activeBillCycle);			
+		String activeBillCycle = referenceDataService.getActiveBillCycle();
+		return dataApprovalService.getApprovalStatus(activeBillCycle);
 	}
-	
-	@RequestMapping(path = "/delegate.do", method = RequestMethod.POST)	
+
+	@RequestMapping(path = "/delegate.do", method = RequestMethod.POST)
 	public @ResponseBody int delegateTo(String delegateTo, String delegateStatus, HttpServletRequest request) {
-		
-		int delegateResult = 0;		
+		int delegateResult = 0;
 		HttpSession session = request.getSession(false);
 		if (session != null) {
-			User userProfile = getUserProfile(session);			
-		    String delegateBy = userProfile.getUserID();
-			delegateResult = dataApprovalService.updateDelegateUser(delegateBy, delegateTo, Integer.parseInt(delegateStatus));
-		}		
+			User userProfile = getUserProfile(session);
+			String delegateBy = userProfile.getUserID();
+			delegateResult = dataApprovalService.updateDelegateUser(delegateBy, delegateTo,
+					Integer.parseInt(delegateStatus));
+		}
 		return delegateResult;
-		
-		
 	}
 }
