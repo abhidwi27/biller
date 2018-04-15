@@ -5,7 +5,7 @@
 <head>
 	<script src="resources/js/status.js"> </script>
 	<link rel="stylesheet" href="resources/css/billerStatus.css">
-	
+	<link rel="shortcut icon" href="resources/image/biller-icon.ico"/>
 </head>
 
 <div role="tabpanel" class="tab-pane fade" id="statusTab">

@@ -10,6 +10,7 @@
 <script src="resources/js/billerDatePicker.js"> </script>
 <script src="resources/js/download.js"> </script>
 <link rel="stylesheet" href="resources/css/bootstrap-datetimepicker.css">
+<link rel="shortcut icon" href="resources/image/biller-icon.ico"/>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 

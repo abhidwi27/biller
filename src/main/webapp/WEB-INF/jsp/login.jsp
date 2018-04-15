@@ -11,7 +11,7 @@
 <script src="resources/js/jquery-3.2.1-min.js"></script>
 <script src="resources/js/bootstrap.min.3.3.7.js"></script>
 <script src="resources/js/login.js"> </script>
-<title>Biller</title>
+<link rel="shortcut icon" href="resources/image/biller-icon.ico"/>
 <script type="text/javascript">
 $(document).ready(function(){
 	$("[name='password']").keyup(function(event) {
