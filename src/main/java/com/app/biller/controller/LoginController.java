@@ -1,7 +1,5 @@
 package com.app.biller.controller;
 
-import java.util.List;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -41,40 +39,41 @@ public class LoginController {
 
 	@Autowired
 	private LoginService loginService;
-	
+
 	@Autowired
 	private ReferenceDataService referenceDataService;
-	
+
 	@Autowired
 	private DataApprovalService dataApprovalService;
 
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String showLogin(Model model) {
-//		model.addAttribute("msg", "Please Enter Login Credentials");
+		// model.addAttribute("msg", "Please Enter Login Credentials");
 		return LOGIN_VIEW;
 	}
 
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
-	public String processLogin(Model model, @ModelAttribute("loginModel") LoginModel loginModel) {
+	public String processLogin(Model model, @ModelAttribute("loginModel") LoginModel loginModel,
+			HttpServletRequest request) {
 		String viewName = LOGIN_VIEW;
 		if (loginModel != null && !loginModel.getUserId().isEmpty() & !loginModel.getPassword().isEmpty()) {
-			logger.info("UserId: "+loginModel.getUserId()+" | "+"Password: "+loginModel.getPassword());
+			logger.info("UserId: " + loginModel.getUserId() + " | " + "Password: " + loginModel.getPassword());
 			user = loginService.validateCredentials(loginModel.getUserId(), loginModel.getPassword());
 			if (user != null) {
 				Gson gson = new Gson();
-				String strUserProfile = gson.toJson(user);				
+				String strUserProfile = gson.toJson(user);
 				model.addAttribute("userProfile", user);
 				model.addAttribute("strUserProfile", strUserProfile);
 				model.addAttribute("monthList", referenceDataService.getMonth());
 				model.addAttribute("yearList", referenceDataService.getYear());
 				model.addAttribute("towerList", referenceDataService.getTowerList());
 				model.addAttribute("accountList", referenceDataService.getAccountList());
-				
-				if(user.getRoleID() == 2 || user.getRoleID() == 3) {
+				if (user.getRoleID() == 2 || user.getRoleID() == 3) {
 					model.addAttribute("delegateUserList", referenceDataService.getDelegateUserList(user.getUserID()));
-					model.addAttribute("delegateByUserList", dataApprovalService.getDelegateByUserList(user.getUserID()));
+					model.addAttribute("delegateByUserList",
+							dataApprovalService.getDelegateByUserList(user.getUserID()));
 				}
-//				viewName = "Home";
+				// viewName = "Home";
 				viewName = loginService.getUserHome(user.getRoleID());
 				return viewName;
 			} else {
@@ -98,10 +97,7 @@ public class LoginController {
 		for (Cookie cookie : request.getCookies()) {
 			cookie.setMaxAge(0);
 		}
-
 		sessionStatus.setComplete();
-
-		//return LOGIN_VIEW;
 		return "redirect:" + "/login.do	";
-}
+	}
 }
