@@ -1,11 +1,8 @@
 $(document).ready(function(){
 	
-	
 	$('a[title]').tooltip({
 	    trigger : 'hover'
 	});
-	
-		
 	
 	$.ajax({
 		url: 'data/getApprovalStatus.do',
@@ -19,14 +16,13 @@ $(document).ready(function(){
 });
 
 function updateStatusView(approvalStatus){
-	var groupApproval = approvalStatus["groupApproval"];
+	 var groupApproval = approvalStatus["groupApproval"];
 	 var userApprovalList = approvalStatus["userApprovalList"];
-	 var userListID;
-	 
-	 var userProfile = JSON.parse($('#strUserProfile').val());
-	 
+	 var userListID;	 
+	 var userProfile = JSON.parse($('#strUserProfile').val());	 
 	 var roleID = userProfile.roleID;
 	 var roleDesc = userProfile.roleDesc;
+	 var exitLoop = false;
 	 
 	 $.each(groupApproval, function(key,value){
 		 var selector = "#" + key + "GroupTab";
@@ -46,7 +42,7 @@ function updateStatusView(approvalStatus){
 	 		 8 : "pmoApproval"		 		 
 	 }
 	 
-	 var exitLoop = false;
+	 
 	 
 	 while(!exitLoop && roleID > 2){
 		 if(groupApproval[roleDescMap[roleID]] < 2){

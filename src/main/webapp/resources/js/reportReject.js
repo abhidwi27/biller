@@ -1,7 +1,4 @@
 $(document).ready(function(){
-	
-	
-	
 	$("#rejectFirstPage").show();
 	$("#rejectSecondPage").hide();
 	$("#rejectBack").hide();
@@ -37,20 +34,8 @@ $(document).ready(function(){
 	
 	$("#rejectSubmit").click(function() {
 		var billCycle = $('#currentBillCycle').val();
-		var rejectedFor = $("#rejectForUser option:selected").val();
-		
-		/*var emailTo = $('#rejectEmailTo').val();
-		var emailCc = $('#rejectEmailCopiedto').val();
-		var emailSubject = $('#rejectEmailSubject').val();*/
-		
+		var rejectedFor = $("#rejectForUser option:selected").val();		
 		var rejectComments = $('#rejectEmailComments').val();
-		//var rejectObject = new Array();
-		
-		/*emailObject.append("emailTo", emailTo);
-		emailObject.append("emailCc", emailCc);
-		emailObject.append("emailSubject", emailSubject);*/
-		
-		//rejectObject.push("rejectComments", rejectComments);
 		var rejectObj = "{" + "\"rejectComments\" : " + "\"" + rejectComments + "\"" + "}";
 		url = 'data/reject.do?billCycle=' + billCycle + '&rejectedFor=' + rejectedFor;
 		$.ajax({

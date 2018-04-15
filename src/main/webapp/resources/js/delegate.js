@@ -8,6 +8,7 @@ $(document).ready(function(){
 	 }else{
 		 $('#delegateOption').hide();
 	 }
+	 
 	$('#delegateSubmit').click(function(){
 		
 		$("#delegate").modal('toggle');

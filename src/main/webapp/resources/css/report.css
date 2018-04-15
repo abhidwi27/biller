@@ -66,3 +66,8 @@
 	margin-left: 2px;
 
 }
+
+
+div.DTS div.dataTables_scrollBody{
+	background: #fff;
+}

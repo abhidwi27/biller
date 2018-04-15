@@ -28,43 +28,88 @@ $(document).ready(function(){
 		dataFilter["accountId"]= accountId;
 		
 		var dataFilter = JSON.stringify(dataFilter);
-		$('#report').DataTable().clear();
-		$("#report").DataTable().draw();
- 
-		url = 'data/readCustom.do';
-		 $.ajax({
-			    url: url,
-			    data: dataFilter,
-			    contentType: 'application/json',
-			    processData:false,
-			    type: 'POST',
-			    success: function(tableBody){
-			    	var rowNo;
-	                for(rowNo=0; rowNo<tableBody.length; rowNo++){
-	                	if(!(dataType=0)){
-						    var seqID = tableBody[rowNo].seqID;
-						    newRowID = "row-" + seqID;			    
-						   delete tableBody[rowNo].seqID;
-						   delete tableBody[rowNo].active;
-	                	}
-						     var newRowData = [];			    
-						    newRowData.push('<div class=\"checkbox\"> <input type=\"checkbox\"  class=\"styled\"/>  <label > </label> </div>');			    
-							    for (var prop in tableBody[rowNo]){
-							    	newRowData.push(tableBody[rowNo][prop]);				    	
-								 }
-					    
-						var temp  = $("#report").dataTable().fnAddData(newRowData);
-						if (!(reportDataType == 0)){
-					    	var newRow = $('#report').dataTable().fnGetNodes(temp);
-					    		$(newRow).attr('id', newRowID);					    	
+		
+		setTimeout(function(){
+		if ( dataTableInitialized ){ 	
+			$('#report').DataTable().destroy();
+			$('#report tbody').empty();
+			dataTableInitialized = false;
+		}
+		
+			url = 'data/readCustom.do';
+			 $.ajax({
+				    url: url,
+				    data: dataFilter,
+				    contentType: 'application/json',
+				    processData:false,
+				    type: 'POST',
+				    success: function(tableBody){
+				    	var rowNo;	                
+				    	var customData=[];
+				    	if(dataType == 0){
+						    for(rowNo=0; rowNo<tableBody.length; rowNo++){		                	
+			                	var newRowData = [];		                	
+			                	newRowData.push('<div class=\"checkbox\"> <input type=\"checkbox\"  class=\"styled\"/>  <label > </label> </div>');		    
+								    for (var prop in tableBody[rowNo]){							    		
+								    		newRowData.push(tableBody[rowNo][prop]);							    	
+									 }
+								    customData[rowNo] = newRowData;						   
+							}
 					    }
-					  	
+				    	if(dataType == 1){
+					    	for(rowNo=0; rowNo<tableBody.length; rowNo++){	
+						    	var seqID = tableBody[rowNo].seqID;
+							    newRowID = "row-" + seqID;			    
+							    delete tableBody[rowNo].seqID;
+							    delete tableBody[rowNo].active;					    	
+							    var newRowData = [];
+			                	var checkBoxStr = '<div class=\"checkbox\"> <input id=\"' + 
+			                	 	newRowID +'\"type=\"checkbox\"  class=\"styled\"/>  <label > </label> </div>';
+			                	newRowData.push(checkBoxStr);			    
+							    for (var prop in tableBody[rowNo]){					    	
+							    		newRowData.push(tableBody[rowNo][prop]);					    	
+								 }
+							    customData[rowNo] = newRowData;
+					    	}
+					    }
+		                $("#report").DataTable({
+		                	dom: 			'Blfrtip',
+			    			buttons: 		[{
+								                extend: 'excelHtml5',
+								                text:   '<i class="fa fa-file-excel-o" style="font-size:20px;color:#6666b2;"></i>',
+								                filename: excelFileName
+							             	},
+							             	],
+					        aoColumnDefs: [{ 
+					        					"bVisible": true, "aTargets": ['_all'] 
+					        				 },{ 
+					        					 "bVisible": false, "aTargets": ['_all'] }	            	
+					        				 ],
+					    
+					        language: 		{
+												"decimal": ",",
+												"thousands": "."
+		    								},
+			    			
+		    			    data:           customData,
+		    	            deferRender:    true,
+		    	            scrollX: 		true,
+		    	            scrollY:        380,
+		    	            scrollCollapse: true,
+		    	            scroller:       true,
+			    	     });
+		                dataTableInitialized = true;
 				    }
-	                $("#report").DataTable().draw();
-			    }
-		 		
-			  });	 
-		 	  $(".biller-loader-div").fadeOut("slow");
+			 		
+				  });  	  
+			 		  
+			 }, 50);
+		setTimeout(function(){			
+			 $("#report_wrapper .dt-buttons button").css("margin-right", "1em");
+			 $("#report_wrapper .dataTables_scrollHead table").css("margin-left", "2px");
+			 $(".biller-loader-div").fadeOut("slow");
+		 }, 1500);
+		
 	});
 	
 });

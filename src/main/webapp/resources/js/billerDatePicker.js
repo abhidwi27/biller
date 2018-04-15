@@ -1,5 +1,4 @@
-$(function () {
-	
+$(function () {	
     $('#uploadWeekEndDate').datetimepicker({
     	format: 'DD-MMM-YYYY'
     });
