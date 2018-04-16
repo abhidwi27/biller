@@ -87,13 +87,27 @@
 						</div>
 			            <div class="form-group col-md-8 biller-weekend-input">
 			                <div class='input-group date col-xs-10' id='downloadWeekEndDate'>
-			                    <input type='text' class="form-control input-sm" />
+			                    <input type="text" class="form-control input-sm" />
 			                    <span class="input-group-addon">
 			                        <span class="glyphicon glyphicon-calendar"></span>
 			                    </span>
 			                </div>
 			            </div>
 				     </div>
+				     <div class="row biller-row">
+						<div class="col-lg-3 text-left biller-panel-label">
+							<label class="biller-label">
+								File name :
+							</label>
+						</div>
+						<div class="col-md-9">
+							<div class="form-group col-md-5 biller-download-filename-dropdown">							  
+								  <select class="selectpicker"  data-dropup-auto="false" data-width="250px" data-live-search="true" id="downloadFilename">							  
+								  </select>
+							</div>
+						
+						</div>						
+					</div>
 				    <div class="panel-footer">
 						<div class="text-center">
 								<div class="biller-footer">
