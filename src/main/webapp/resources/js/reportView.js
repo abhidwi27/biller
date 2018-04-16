@@ -1,5 +1,5 @@
 var dataTableInitialized = false;
-var editMode;
+var editMode = [];
 var hasApprovedBillCycle;
 var approveListlength;
 var tableHeader;
@@ -31,9 +31,16 @@ $(document).ready(function(){
 	    var month = $("#reportMonth").val();
 		var year = $("#reportYear option:selected").text().trim();
 		var tower = $("#reportTower").val();
-		var billCycle = month+ year;
-		excelFileName = 'SLA Report_' + month + "_" + year;
+		var billCycle = month+ year;		
 		var accountId = $("#accountId option:selected").val();
+		var accountIdStr = $("#accountId option:selected").text();
+		var strExcel;
+		if(reportDataType == 0){
+			strExcel = 'ILC_Report_';
+		}else{
+			strExcel = 'SLA_Report_';
+		}
+		excelFileName = strExcel + accountIdStr + "_" +  month + "_" + year;
 		
 		$('#currentBillCycle').val(billCycle);
 		$('#currentDataType').val(reportDataType);
@@ -91,7 +98,7 @@ $(document).ready(function(){
 			    	
 			    	if(tower == 0){
 			    		$('#reportLock').find('span i').addClass('biller-icon-disabled');
-			    		editMode = false;
+			    		editMode[tower] = false;
 			    	}
 			    	
 			    	if(approveListlength == 0 && hasApprovedBillCycle ==1 ){
@@ -102,18 +109,18 @@ $(document).ready(function(){
 			    		$('#reportReject').find('span i').addClass('biller-icon-disabled');
 			    	}
 			    	
-			    	if(hasApprovedBillCycle == 0){
-			    			if( dataLockedBy!= undefined && dataLockedBy.userID == userProfile.userID){
-			    				editMode =true;
+			    	if(hasApprovedBillCycle == 0 && tower != 0){
+			    			if(dataLockedBy!= undefined && dataLockedBy.userID == userProfile.userID){
+			    				editMode[tower] =true;
 			    			}
 				    	if($('#reportLock').find('span i').hasClass('biller-icon-disabled')){
 							$('#reportLock').find('span i').removeClass('biller-icon-disabled');
 			    		}
 			    	}else{
-			    		editMode = false;
+			    		editMode[tower] = false;
 			    	}
 			    	
-			    	if (!editMode){
+			    	if (!editMode[tower]){
 						$('#reportEdit').find('span i').addClass('biller-icon-disabled');
 						$('#reportCopy').find('span i').addClass('biller-icon-disabled');
 						$('#reportSave').find('span i').addClass('biller-icon-disabled');

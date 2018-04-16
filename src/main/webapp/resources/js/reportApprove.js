@@ -37,6 +37,7 @@ $(document).ready(function(){
 		
 		$(".biller-loader-div").fadeIn(1);		
 		var billCycle = $('#currentBillCycle').val();
+		var tower = $('#currentTower').val();
 		var approveFor;		
 		var userProfile = JSON.parse($('#strUserProfile').val());		
 		if(approveListlength != 0 ) {
@@ -64,7 +65,7 @@ $(document).ready(function(){
 					billerAlert("Approval submitted successfully",true, 'Okay', false, '','', "Alert !");
 					if(approveFor ==  userProfile.userID){
 						hasApprovedBillCycle == 1;
-						editMode = false;
+						editMode[tower] = false;
 						//$('#reportLock').find('span i').addClass('biller-icon-disabled');
 					}					
 				}else if (reviewFlag == 0){

@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	$('#reportDelete').click(function(e){
-		if(!editMode){
+		var tower = $('#currentTower').val();
+		if(!editMode[tower]){
 			e.stopPropagation();
 			e.preventDefault();
 			return;		
@@ -11,7 +12,7 @@ $(document).ready(function(){
 			reportTable.rows().every(function(){
 				var rowIdx = this.index();
 				var rowNode = reportTable2.fnGetNodes(rowIdx);				
-				var rowIDSelector = '#' +  $(rowNode).attr('id');
+				var rowIDSelector = '#' +  $(rowNode).find('td input[type="checkbox"]').attr('id');
 				if($(rowNode).find('td input[type="checkbox"]').prop('checked')){
 					rowCount = rowCount + 1;					
 				}
@@ -26,8 +27,9 @@ $(document).ready(function(){
 	});
 
 
-	$('#reportDeleteSubmit').click(function(e) {	
-		if(!editMode){
+	$('#reportDeleteSubmit').click(function(e) {
+		var tower = $('#currentTower').val();
+		if(!editMode[tower]){
 			e.stopPropagation();
 			e.preventDefault();
 			return;
@@ -36,31 +38,23 @@ $(document).ready(function(){
 		var reportTable = $('#report').DataTable();
 		var reportTable2 = $('#report').dataTable();
 		var seqIDList = new Array();
+		$(".biller-loader-div").fadeIn(1);
 		
-	/*$("#report  tr").find('input[type="checkbox"]:checked').each(function(){
-		var selectedRowID = $(this).closest('tr').attr("id");
-		var rowIDSelector = "#" + selectedRowID;
-		var isCopied = selectedRowID.split("_");
-		var rowIDSplit = selectedRowID.split("-");
-		if (isCopied.length ==1){
-			seqIDList.push(rowIDSplit[1]);
-		}
-		reportTable.rows(rowIDSelector).remove().draw();
-		
-		});*/
 		reportTable.rows().every(function(){
 			var rowIdx = this.index();
 			var rowNode = reportTable2.fnGetNodes(rowIdx);
-			var rowIDSelector = '#' +  $(rowNode).attr('id');
+			var rowIDSelector = '#' +  $(rowNode).find('td input[type="checkbox"]').attr('id');
 			if($(rowNode).find('td input[type="checkbox"]').prop('checked')){				
 				var isCopied = rowIDSelector.split("_");
 				var rowIDSplit = rowIDSelector.split("-");
 				if (isCopied.length ==1){
 					seqIDList.push(rowIDSplit[1]);
 				}
-				reportTable.rows(rowIDSelector).remove().draw();				
+					
+				reportTable.rows(rowIdx).remove().draw();
 			}			
 		});
+		
 		if (seqIDList.length != 0){		
 			$.ajax({
 				url : 'data/delete.do?billCycle=' + billCycle,
@@ -75,7 +69,11 @@ $(document).ready(function(){
 					}
 				}
 			});
-		}	
+		}
+		
+		setTimeout(function(){
+			$(".biller-loader-div").fadeOut("slow");
+		}, 100);
 
 	});
 
