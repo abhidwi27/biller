@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 
 <head>
-<title>| BILLER</title>
+<title>BILLER</title>
 <script src="resources/js/reportView.js"> </script>
 <link rel="stylesheet" href="resources/css/reportViewTab.css">
 <link rel="stylesheet" href="resources/css/buttons.dataTables.min.css">

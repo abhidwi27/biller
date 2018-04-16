@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <head>
-<title>| BILLER</title>
+<title>BILLER</title>
 <link rel="stylesheet" href="resources/css/bootstrap-min-3.3.7.css"> 
 <link rel="stylesheet" href="resources/css/font-awesome-4.7.0.css">
 <link rel="stylesheet" href="resources/css/login.css">

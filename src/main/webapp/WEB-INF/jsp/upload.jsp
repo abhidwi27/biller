@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 
 <head>
-<title>| BILLER</title>
+<title>BILLER</title>
 <script src="resources/js/upload.js"> </script>
 <script src="resources/js/moment.min.js"> </script>
 <script src="resources/js/bootstrap-datetimepicker.js"> </script>
