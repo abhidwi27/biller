@@ -3,13 +3,14 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 
 <head>
+<title>| BILLER</title>
 <script src="resources/js/upload.js"> </script>
 <script src="resources/js/moment.min.js"> </script>
 <script src="resources/js/bootstrap-datetimepicker.js"> </script>
 <script src="resources/js/billerDatePicker.js"> </script>
 <link rel="stylesheet" href="resources/css/bootstrap-datetimepicker.css">
 <link rel="stylesheet" href="resources/css/upload.css">
-<link rel="shortcut icon" href="resources/image/biller-icon.ico"/>
+<link rel="icon" type="image/png" href="resources/image/biller-icon.ico"/>
 </head>
 
 <div role="tabpanel" class="tab-pane fade" id="upload">
