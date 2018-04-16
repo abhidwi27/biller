@@ -98,7 +98,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 
 	private void createILCDataSheet(String reportWeekend, String uploadDataType) {
 
-		String[] command = { "cmd.exe", "/C", "Start", "/wait", "C:\\biller\\src\\main\\webapp\\Workbench\\trigger.bat",
+		String[] command = { "cmd.exe", "/C", "Start","/wait", "C:\\biller\\src\\main\\webapp\\Workbench\\trigger.bat",
 				reportWeekend, uploadDataType };
 		Process process = null;
 		ProcessBuilder processBuilder = new ProcessBuilder(command);
