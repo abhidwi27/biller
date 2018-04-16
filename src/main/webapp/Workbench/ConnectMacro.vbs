@@ -18,6 +18,7 @@ Dim SLA
 Dim vbpath
 Dim currentpath
 Dim backupath,backupdir
+Dim times
 '***************************************************************************************************
 
 '*******************************************APP PATH LOCATOR*****************************************
@@ -32,10 +33,11 @@ backupdir = backupath (0) + "\"
 
 '*******************************************ILC GENERATION******************************************
 
-
-set args = wscript.Arguments
-directory = args.item(0)
-SLA = args.item(1)
+times =  Right("0" & Hour(Now), 2) & Right("0" & Minute(Now), 2) & Right("0" & Second(Now), 2)
+'msgbox(times)
+ set args = wscript.Arguments
+ directory = args.item(0)
+ SLA = args.item(1)
 
 set objExcel = Createobject("Excel.Application")
 objExcel.Workbooks.Open(currentpath&"ILC Macro.xlsm")
@@ -89,6 +91,8 @@ filesys.CopyFile currentpath&"FFIC SLA Report.xlsx", backupdir&"billerData\Downl
 
 'filesys.MoveFile "C:\Biller\Workbench\BackUp\"&FolderName&"\FFIC SLA Report.xlsx" , "C:\Biller\Workbench\BackUp\"&FolderName&"\FFIC SLA Report_"&directory &".xlsx"
 
+filesys.MoveFile backupdir&"billerData\Downloads\"&FolderName&"\FFIC SLA Report.xlsx" , backupdir&"billerData\Downloads\"&FolderName&"\SLA Report_"&directory &"_"&times &".xlsx"
+
 End If
 
 Else
@@ -100,7 +104,7 @@ If filesys.FileExists(currentpath&"FFIC ILC Report.xlsx") Then
 
 filesys.CopyFile currentpath&"FFIC ILC Report.xlsx", backupdir&"billerData\Downloads\"&FolderName&"\"
 
-filesys.MoveFile backupdir&"billerData\Downloads\"&FolderName&"\FFIC ILC Report.xlsx" , backupdir&"billerData\Downloads\"&FolderName&"\FFIC ILC Report_"&directory &".xlsx"
+filesys.MoveFile backupdir&"billerData\Downloads\"&FolderName&"\FFIC ILC Report.xlsx" , backupdir&"billerData\Downloads\"&FolderName&"\ILC Report_"&directory &"_"&times &".xlsx"
 
 End If
 End If
