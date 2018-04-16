@@ -26,4 +26,6 @@ public interface DataApprovalService {
 	List<User> getRejectForUserList(String billCycle);
 	
 	int checkPriorApproval(String billCycle, String userID);
+	
+	void createGroupApproval(String billCycle, String userID);
 }

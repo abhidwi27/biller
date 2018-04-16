@@ -23,6 +23,11 @@ public class GroupApprovalDaoImpl implements GroupApprovalDao {
 
 	@Value("${INSERT_GROUP_APPROVAL}")
 	String insertGroupApproval;
+	
+	@Value("${CHECK_GROUP_APPROVAL_ENTRY}")
+	String checkGroupApprovalEntry;
+	
+	
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -68,7 +73,11 @@ public class GroupApprovalDaoImpl implements GroupApprovalDao {
 	}
 
 	public void createGroupApproval(String billCycle, String userID) {
-		jdbcTemplate.update(insertGroupApproval, new Object[] { billCycle, userID });
+		int count = jdbcTemplate.queryForObject(checkGroupApprovalEntry, new Object[] { billCycle }, Integer.class);
+		
+		if(count == 0) {
+			jdbcTemplate.update(insertGroupApproval, new Object[] { billCycle, userID });
+		}
 	}
 
 	public void updateGroupApproval(String billCycle, String groupName, int status) {

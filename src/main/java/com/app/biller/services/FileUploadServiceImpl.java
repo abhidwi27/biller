@@ -41,6 +41,9 @@ public class FileUploadServiceImpl implements FileUploadService {
 	@Autowired
 	SLADataDao slaDataDao;
 	
+	@Autowired
+	DataApprovalService dataApprovalService;
+	
 	
 	@Override
 	public String uploadFiles(MultipartHttpServletRequest request) {
@@ -88,6 +91,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 		ArrayList<SLAData> slaDataList = extractSLAData();
 
 		slaDataDao.createSLAData(slaDataList, billCycle, userId, uploadDataType);
+		dataApprovalService.createGroupApproval(billCycle, userId);
 
 		return "SLA Report generated successfully";
 	}

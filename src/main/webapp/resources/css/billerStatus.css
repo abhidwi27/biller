@@ -63,36 +63,41 @@
 }
 
 .billerProgress span.round-tabs.one {
-	border: 2px solid var(--biller-status-round-tab-border);
-	color: var(--biller-status-round-tab-border);
+	border: var(--biller-status-round-tab-border);
+	color: var(--biller-status-round-tab-icon-color);
+	background: var(--biller-status-round-tab-background);
 }
 
 .billerProgress li.active span.round-tabs.one, li.active span.round-tabs.two,
 	li.active span.round-tabs.three, li.active span.round-tabs.four, li.active span.round-tabs.five
 	{
 	
-	border: 2px solid var(--biller-status-round-tab-border);
+	border: var(--biller-status-round-tab-border);
 	color: #fff;
 }
 
 .billerProgress span.round-tabs.two {
-	 border: 2px solid var(--biller-status-round-tab-border); 
-	color: #ddd;
+	 border: var(--biller-status-round-tab-border); 
+	color: var(--biller-status-round-tab-icon-color);
+	background: var(--biller-status-round-tab-background);
 }
 
 .billerProgress span.round-tabs.three {
-	border: 2px solid var(--biller-status-round-tab-border); 
-	color: #ddd;
+	border: var(--biller-status-round-tab-border); 
+	color: var(--biller-status-round-tab-icon-color);
+	background: var(--biller-status-round-tab-background);
 }
 
 .billerProgress span.round-tabs.four {
-	border: 2px solid var(--biller-status-round-tab-border);
-	color: #ddd;
+	border: var(--biller-status-round-tab-border);
+	color: var(--biller-status-round-tab-icon-color);
+	background: var(--biller-status-round-tab-background);
 }
 
 .billerProgress span.round-tabs.five {
 	border: 2px solid #ddd;
 	color: #ddd;
+	background: var(--biller-status-round-tab-background);
 }
 
 .billerProgress .nav-tabs>li.active>a span.round-tabs {
@@ -168,7 +173,7 @@
 
 .billerProgress .nav-tabs>li a span i{
 	/* color: var(--biller-status-round-tab-icon-color); */
-	margin-top: 20px;
+	margin-top: 20.5px;
 }
 
 .billerProgress .billerwell{
@@ -182,19 +187,47 @@
 
 
 .billerProgress .table{
-	/* border-radius: 15px; */
-	box-shadow: 0 0 15px #908477e6;
+	border-radius: 15px; 
+	box-shadow: 0 0 5px #908477e6;
 	
 }
 
 .billerProgress .table thead{
-	background-color: #6666b2;
-	color: #fff;
+	/* background-color: #6666b2; */
+	color: #1f88a6;
+	
+}
+
+.billerProgress .table tbody{
+	/* background-color: #6666b2; */
+	color: #269abc;;
 	
 }
 
 
 .billerProgress li.active span{
 	border: none;	
-	box-shadow: 0 0 15px #908477e6;
+	/* box-shadow: 0 0 15px #908477e6; */
+}
+
+
+.billerProgress .tooltip-inner{
+	background-color: #41aa42;
+}
+
+
+.billerProgress .tooltip.top .tooltip-arrow{
+	border-top-color: #41aa42;
+}
+
+
+
+
+.billerProgress .tooltip .tooltip-inner.active{
+	background-color: #187519;
+}
+
+
+.billerProgress .tooltip.top .tooltip-arrow.active {	
+	border-top-color: #187519;
 }
