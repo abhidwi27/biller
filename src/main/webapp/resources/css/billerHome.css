@@ -29,7 +29,7 @@
 	border: 3px;
 	color: var(--biller-home-navtab-font-color-active) ;
 	background-color: var(--biller-home-navtab-background-color-active);
-	box-shadow: 0 4px 2px #07bcbc;
+	box-shadow: 0 4px 2px #00ffff;
 
 }
 .nav-tabs > li > a:hover {
