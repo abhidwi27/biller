@@ -5,12 +5,13 @@
 <head>
 <!-- <script src="resources/js/upload.js"> </script>
 -->
+<title>| BILLER</title>
 <script src="resources/js/moment.min.js"> </script>
 <script src="resources/js/bootstrap-datetimepicker.js"> </script>
 <script src="resources/js/billerDatePicker.js"> </script>
 <script src="resources/js/download.js"> </script>
 <link rel="stylesheet" href="resources/css/bootstrap-datetimepicker.css">
-<link rel="shortcut icon" href="resources/image/biller-icon.ico"/>
+<link rel="icon" type="image/png" href="resources/image/biller-icon.ico"/>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 
