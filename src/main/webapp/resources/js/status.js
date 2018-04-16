@@ -42,7 +42,7 @@ function updateStatusView(approvalStatus){
 		 }else if (value == 1){
 			 $(selector).find("a span").append("<i class=\"fa fa-spinner fa-lg\"  aria-hidden=\"true\"></i>");
 		 }else{
-			 $(selector).find("a span").append("<i class=\"fa fa-ban fa-lg\"  aria-hidden=\"true\"></i>"); 
+			 $(selector).find("a span").append("<i class=\"fa fa-dot-circle-o fa-lg\"  aria-hidden=\"true\"></i>"); 
 		 }
 	 });
 	 var roleDescMap = {

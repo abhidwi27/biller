@@ -309,7 +309,8 @@ public class ILCDataDaoImpl implements ILCDataDao {
 						ilcModel.setGroupType(rs.getString("group_type"));
 						ilcModel.setVendorClass(rs.getString("vendor_class"));
 						ilcModel.setWrIncDef(rs.getString("wr_inc_def"));
-
+						ilcModel.setAccountId(rs.getString("account_id"));
+						
 						return ilcModel;
 					}
 				});
