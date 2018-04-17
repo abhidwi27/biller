@@ -1,7 +1,12 @@
+
+@Echo off
+
 cd "C:\biller\src\main\webapp\Workbench"
-REM ECHO %1
-REM ECHO %2
+
+ECHO "Generating ILC/SLA Report, Please wait...."
+
 cscript ConnectMacro.vbs %1 %2
-ECHO "Generating ILC Report, Please wait...."
-REM cscript ConnectMacro.vbs 07-JUN-2020 0
+
+ECHO " ILC/SLA Generation complete!! please close the window to proceed "
+
 Pause
