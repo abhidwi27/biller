@@ -11,6 +11,7 @@ public class ApprovalStatus {
 	
 	private GroupApproval groupApproval;
 	private Map<String,List<UserApproval>> userApprovalList;
+	private String billCycle;
 	
 	public GroupApproval getGroupApproval() {
 		return groupApproval;
@@ -23,6 +24,12 @@ public class ApprovalStatus {
 	}
 	public void setUserApprovalList(Map<String, List<UserApproval>> userApprovalList) {
 		this.userApprovalList = userApprovalList;
+	}
+	public String getBillCycle() {
+		return billCycle;
+	}
+	public void setBillCycle(String billCycle) {
+		this.billCycle = billCycle;
 	}
 	
 

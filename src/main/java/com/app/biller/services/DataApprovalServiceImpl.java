@@ -24,7 +24,10 @@ public class DataApprovalServiceImpl implements DataApprovalService {
 
 	@Autowired
 	GroupApprovalDao groupApprovalDao;
-
+	
+	@Autowired
+	ReferenceDataService referenceDataService;
+	
 	@Autowired
 	UserDao userDao;
 
@@ -95,8 +98,12 @@ public class DataApprovalServiceImpl implements DataApprovalService {
 		userApprovalList.put("srBamApprovalList",getUserApprovalByRole(billCycle, 4));
 		userApprovalList.put("pmoApprovalList",getUserApprovalByRole(billCycle, 8));
 		
+		String billMonth = referenceDataService.getMonthForBillCycle(billCycle);
+		String billYear = billCycle.substring(2, 6);
+		String billCycleStr = billMonth + " " +  billYear;
 		approvalStatus.setGroupApproval(getGroupApprovals(billCycle));
-		approvalStatus.setUserApprovalList(userApprovalList);	
+		approvalStatus.setUserApprovalList(userApprovalList);
+		approvalStatus.setBillCycle(billCycleStr);
 			
 		return approvalStatus;
 	}

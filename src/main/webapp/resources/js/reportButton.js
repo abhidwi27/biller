@@ -45,7 +45,7 @@ $(function() {
 			}
 			if(!totHoursVisible){
 				var msg = "Total Hours can not be calulcated if this column is hidden."
-				billerAlert(msg,true, 'Okay', false, '','', "Alert !");
+				billerAlert(msg,true, 'Okay', false, '','', "Alert!");
 				setTimeout(function(){
 					$(".biller-loader-div").fadeOut("slow");
 				}, 10);
@@ -95,7 +95,7 @@ $(function() {
 		setTimeout(function(){
 	 		  $(".biller-loader-div").fadeOut("slow");
 	 		  var msg = "Total Sum is " + totSum;
-	 		  billerAlert(msg,true, 'Okay', false, '','', "Alert !");
+	 		  billerAlert(msg,true, 'Okay', false, '','', "Result");
 	 	}, 100);
 	 	
 		

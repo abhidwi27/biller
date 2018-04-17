@@ -231,3 +231,17 @@
 .billerProgress .tooltip.top .tooltip-arrow.active {	
 	border-top-color: #6666b2;
 }
+
+.billerProgress .tooltip{
+	z-index: 0;
+}
+
+.biller-status-header{
+	text-align: center;	
+	color: #6666b2;
+	text-transform: uppercase;
+}
+
+.biller-status-header span > h5{
+	font-weight: 700;
+}

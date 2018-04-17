@@ -55,6 +55,7 @@ $(document).ready(function(){
 				    success: function(tableBody){
 				    	var rowNo;	                
 				    	var customData=[];
+				    	$('#report').find('thead tr input[type="checkbox"]').prop('checked', false);
 				    	if(dataType == 0){
 						    for(rowNo=0; rowNo<tableBody.length; rowNo++){		                	
 			                	var newRowData = [];		                	
