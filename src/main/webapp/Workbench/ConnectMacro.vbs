@@ -71,9 +71,17 @@ FolderName = splitvar(1)
 
 Set fso = CreateObject("Scripting.FileSystemObject")
 If fso.FolderExists(backupdir&"billerData\Downloads\"&FolderName) Then
+	If fso.FolderExists(backupdir&"billerData\Downloads\"&FolderName&"\"&directory) Then
+			'Do Nothing
+	Else
+		Set vFolder = fso.CreateFolder(backupdir&"billerData\Downloads\"&FolderName&"\"&directory)
+		CreateFolderDemo = vFolder.Path
+	End If
 Else
-Set vFolder = fso.CreateFolder(backupdir&"billerData\Downloads\"&FolderName)
-CreateFolderDemo = vFolder.Path
+	Set vFolder = fso.CreateFolder(backupdir&"billerData\Downloads\"&FolderName)
+	CreateFolderDemo = vFolder.Path
+	Set vFolder = fso.CreateFolder(backupdir&"billerData\Downloads\"&FolderName&"\"&directory)
+	CreateFolderDemo = vFolder.Path
 End If
 
 '***************************************************************************************************
@@ -87,11 +95,11 @@ set filesys=CreateObject("Scripting.FileSystemObject")
 
 If filesys.FileExists(currentpath&"FFIC SLA Report.xlsx") Then
 
-filesys.CopyFile currentpath&"FFIC SLA Report.xlsx", backupdir&"billerData\Downloads\"&FolderName&"\"
+filesys.CopyFile currentpath&"FFIC SLA Report.xlsx", backupdir&"billerData\Downloads\"&FolderName&"\"&directory&"\"
 
 'filesys.MoveFile "C:\Biller\Workbench\BackUp\"&FolderName&"\FFIC SLA Report.xlsx" , "C:\Biller\Workbench\BackUp\"&FolderName&"\FFIC SLA Report_"&directory &".xlsx"
 
-filesys.MoveFile backupdir&"billerData\Downloads\"&FolderName&"\FFIC SLA Report.xlsx" , backupdir&"billerData\Downloads\"&FolderName&"\SLA Report_"&directory &"_"&times &".xlsx"
+filesys.MoveFile backupdir&"billerData\Downloads\"&FolderName&"\"&directory&"\FFIC SLA Report.xlsx" , backupdir&"billerData\Downloads\"&FolderName&"\"&directory&"\SLA Report_"&directory &"_"&times &".xlsx"
 
 End If
 
@@ -102,9 +110,9 @@ set filesys=CreateObject("Scripting.FileSystemObject")
 
 If filesys.FileExists(currentpath&"FFIC ILC Report.xlsx") Then
 
-filesys.CopyFile currentpath&"FFIC ILC Report.xlsx", backupdir&"billerData\Downloads\"&FolderName&"\"
+filesys.CopyFile currentpath&"FFIC ILC Report.xlsx", backupdir&"billerData\Downloads\"&FolderName&"\"&directory&"\"
 
-filesys.MoveFile backupdir&"billerData\Downloads\"&FolderName&"\FFIC ILC Report.xlsx" , backupdir&"billerData\Downloads\"&FolderName&"\ILC Report_"&directory &"_"&times &".xlsx"
+filesys.MoveFile backupdir&"billerData\Downloads\"&FolderName&"\"&directory&"\FFIC ILC Report.xlsx" , backupdir&"billerData\Downloads\"&FolderName&"\"&directory&"\ILC Report_"&directory &"_"&times &".xlsx"
 
 End If
 End If
