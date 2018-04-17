@@ -7,7 +7,7 @@
 
 <html>
 <head>
-
+<title>BILLER</title>
 <link rel="stylesheet" href="resources/css/font-awesome-4.7.0.css" /> 
 <link rel="stylesheet" href="resources/css/bootstrap-min-3.3.7.css">
 <link rel="stylesheet" href="resources/css/bootstrap-select.min-1.6.3.css" />
@@ -44,7 +44,7 @@
 		},1000);	
 	}); 
 </script>
-<link rel="shortcut icon" href="resources/image/biller-icon.ico"/>
+<link rel="icon" type="image/png" href="resources/image/biller-icon.ico"/>
 </head>
 
 <body>

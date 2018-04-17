@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <head>
+<title>BILLER</title>
 <link rel="stylesheet" href="resources/css/bootstrap-min-3.3.7.css"> 
 <link rel="stylesheet" href="resources/css/font-awesome-4.7.0.css">
 <link rel="stylesheet" href="resources/css/login.css">
@@ -11,7 +12,7 @@
 <script src="resources/js/jquery-3.2.1-min.js"></script>
 <script src="resources/js/bootstrap.min.3.3.7.js"></script>
 <script src="resources/js/login.js"> </script>
-<link rel="shortcut icon" href="resources/image/biller-icon.ico"/>
+<link rel="icon" type="image/png" href="resources/image/biller-icon.ico"/>
 <script type="text/javascript">
 $(document).ready(function(){
 	$("[name='password']").keyup(function(event) {

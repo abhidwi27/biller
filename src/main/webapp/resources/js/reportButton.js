@@ -30,11 +30,15 @@ $(function() {
 		var reportTable = $('#report').DataTable();
 		var reportTable2 = $('#report').dataTable();
 		var totSum = 0;
-		
+		var reportDataType = $("#reportDataType .radio-inline input:radio[name='reportRadio']:checked").val();
 		if(visibleColumns.length != 0){
 			var totHoursVisible = false;
 			for(var i=0; i<visibleColumns.length; i++){
-				if(visibleColumns[i] == 11 ){
+				if(reportDataType == 1 && visibleColumns[i] == 11 ){
+					totHoursVisible = true;
+					break;
+				}
+				if(reportDataType == 0 && visibleColumns[i] == 6 ){
 					totHoursVisible = true;
 					break;
 				}
@@ -42,6 +46,9 @@ $(function() {
 			if(!totHoursVisible){
 				var msg = "Total Hours can not be calulcated if this column is hidden."
 				billerAlert(msg,true, 'Okay', false, '','', "Alert !");
+				setTimeout(function(){
+					$(".biller-loader-div").fadeOut("slow");
+				}, 10);
 				return;
 			}
 		}
@@ -120,22 +127,22 @@ $(function() {
 			success : function(strlockResponseMap) {
 				var lockResponseMap = JSON.parse(strlockResponseMap);
 				if (lockResponseMap.msg == "success") {
-					editMode = true;
+					editMode[tower] = true;
 					billerAlert("Table lock established successfully.",true, 'Okay', false, '','', "Alert !");					
 				} else if (lockResponseMap.lockedBy != undefined && lockResponseMap.lockedBy.userID == userProfile.userID) {
-					editMode = true;
+					editMode[tower] = true;
 					billerAlert("You have already established Lock..!!",true, 'Okay', false, '','', "Alert !");					
 				} else if(lockResponseMap.lockedBy != undefined && lockResponseMap.lockedBy != ''){
-					editMode = false;
+					editMode[tower] = false;
 					var msg = "Table is already locked by " + lockResponseMap.lockedBy.name;
 					billerAlert(msg,true, 'Okay', false, '','', "Alert !");					
 				} else if(lockResponseMap.lockedForTower != ''){
-					editMode = false;
+					editMode[tower] = false;
 					var msg = "You have already established for tower " + lockResponseMap.lockedForTower;
 					billerAlert(msg,true, 'Okay', false, '','', "Alert !");
 				} 
 				
-				if (!editMode){
+				if (!editMode[tower]){
 					$('#reportEdit').find('span i').addClass('biller-icon-disabled');
 					$('#reportCopy').find('span i').addClass('biller-icon-disabled');
 					$('#reportSave').find('span i').addClass('biller-icon-disabled');
@@ -168,7 +175,8 @@ $(function() {
 
 	/* Edit  button */
 	$("#reportEdit").click(function(e) {
-		if(!editMode){
+		var tower = $('#currentTower').val();
+		if(!editMode[tower]){
 			e.stopPropagation();
 			e.preventDefault();
 			return;
@@ -178,6 +186,7 @@ $(function() {
 		var reportTable2 = $('#report').dataTable();
 		var rowCount = 0;
 		var rowNodeList = [];
+		var rowNodeIndexList = [];
 						
 		reportTable.rows().every(function(){
 			var rowIdx = this.index();
@@ -185,6 +194,7 @@ $(function() {
 			if($(rowNode).find('td input[type="checkbox"]').prop('checked')){
 				rowCount = rowCount + 1;
 				rowNodeList[rowCount - 1] = rowNode;
+				rowNodeIndexList[rowCount - 1] = rowIdx;
 			}
 		});
 
@@ -194,7 +204,7 @@ $(function() {
 		} else if(rowCount <= 30){					
 				for ( var r = 0; r< rowNodeList.length; r++){				
 					var rowNode = rowNodeList[r];
-					var rowIdx = $(rowNode).index();
+					var rowIdx =  rowNodeIndexList[r];
 					var rowID = '#' +  $(rowNode).find('td input[type="checkbox"]').attr('id');
 					
 					if($(rowNode).find('td input[type="checkbox"]').prop('checked')){	
@@ -244,8 +254,9 @@ $(function() {
 	
 	
 	// Copy Button
-	$("#reportCopy").click(function(e) {						
-		if(!editMode){
+	$("#reportCopy").click(function(e) {
+		var tower = $('#currentTower').val();
+		if(!editMode[tower]){
 			e.stopPropagation();
 			e.preventDefault();
 			return;
@@ -375,8 +386,8 @@ $(function() {
   });
 
 	$("#reportSave").click(function(e) {
-		
-		if(!editMode){
+		var tower = $('#currentTower').val();
+		if(!editMode[tower]){
 			e.stopPropagation();
 			e.preventDefault();
 			return;
@@ -414,7 +425,7 @@ $(function() {
 			  			rowData[0] = rowIDSplit[1] ;		  			
 			  			var i = 0;
 			  			
-			  			$(rowNode).find('td:visible').each(function(){
+			  			$(rowNode).find('td').each(function(){
 			  				if(visibleColumns.length != 0){
 				  				var thisColumnIndex = visibleColumns[i];			  				
 				  				var thisInputVal = $(this).find('input[type="text"]').val();
@@ -444,7 +455,7 @@ $(function() {
 			  			var selectedRowID = rowID;
 			  			rowData[0] = "\"" + rowIDSplit[1]+"\"";
 			  			
-			  			$(rowNode).find('td:visible').each(function(){
+			  			$(rowNode).find('td').each(function(){
 			  				if(visibleColumns.length != 0){
 				  				var thisColumnIndex = visibleColumns[i];
 				  				var thisInputVal = $(this).find('input[type="text"]').val();			  				
@@ -489,7 +500,7 @@ $(function() {
     			if(result){
     				var msg = "Data saved successfully";
     				billerAlert(msg,true, 'Okay', false, '','', "Alert !");
-    				editMode = false;
+    				editMode[tower] = false;
     				rowEditMap = {};
     				copyInfo = {};
     				copyEditMap = {};

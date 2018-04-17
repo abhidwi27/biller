@@ -18,7 +18,7 @@
 	--biller-header-font-color-hover: #fff;
 	--biller-header-right-links-background-color-hover: #000080;
 	--biller-home-navtab-background-color: #6666b2;	
-	--biller-home-navtab-background-color-hover: #46b5c1 ;
+	--biller-home-navtab-background-color-hover: #00ffff ;
 	--biller-home-navtab-background-color-active: #6666b2;
 	--biller-home-navtab-font-color: #fff;
 	--biller-home-navtab-font-color-hover: #00ffff;
@@ -41,11 +41,11 @@
 	--biller-header-font-color: #fff;
 	--biller-alert-message-font-color: #000;
 	--biller-header-close-icon-color: #fff;
-	--biller-status-round-tab-border: #269abc;
-	--biller-status-linear-bar-color: #39b3d7;
-	--biller-status-round-tab-active: #39b3d7;
+	--biller-status-round-tab-border: #aeaef7;
+	--biller-status-linear-bar-color: #aeaef7;
+	--biller-status-round-tab-active: #6666b2;
 	--biller-status-round-tab-icon-color: #fff;
-	--biller-status-round-tab-background: #39b3d7;
+	--biller-status-round-tab-background: #aeaef7;
 	--biller-form-control-border-color: #4c4ca6;
 	--biller-icon-disabled-color: #bbbbdd;
 	--biller-main-footer-background-color: #fff;
@@ -211,6 +211,12 @@ body {
 .biller-year-dropdown {
 	margin-top: -5px;
 	margin-left: -40px;
+	
+}
+
+.biller-download-filename-dropdown {
+	margin-top: -5px;
+	margin-left: 19px;
 	
 }
 

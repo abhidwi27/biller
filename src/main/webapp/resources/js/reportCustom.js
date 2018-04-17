@@ -14,8 +14,17 @@ $(document).ready(function(){
 		var billable = $("#customBillable option:selected").val();
 		var remarks = $("#customRemarks option:selected").val();
 		var accountId = $('#currentAccount').val(); 
+		var month = $("#reportMonth").val();
+		var year = $("#reportYear option:selected").text().trim();
 		var url;
 		var dataFilter = {};
+		var strExcel;
+		if(dataType == 0){
+			strExcel = 'Custom_ILC_Report_';
+		}else{
+			strExcel = 'Custom_SLA_Report_';
+		}
+		excelFileName = strExcel + month + "_" + year;
 		
 		dataFilter["dataType"] = dataType;
 		dataFilter["billCycle"] = billCycle;

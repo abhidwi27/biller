@@ -5,7 +5,12 @@ import static com.app.biller.util.BillerHelper.getUserProfile;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -63,29 +68,15 @@ public class FileController {
 
 	@RequestMapping(value = "/download.do", method = RequestMethod.GET)
 	@ResponseBody
-	public void downloadFiles(@RequestParam("billCycle") String billCycle, @RequestParam("weekEnd") String weekEnd,
-			@RequestParam("fileType") int fileType, HttpSession userSession, HttpServletResponse response) {
-		String fileName;
-		String filePath = "C:\\billerdata\\downloads";
-		String month = referenceDataService.getMonthForBillCycle(billCycle);
-		filePath = filePath + "\\" + month + "-" + billCycle.substring(2, 6);
-		if (fileType == 0) {
-			fileName = "FFIC_ILC_";
-		} else {
-			fileName = "FFIC_SLA_";
-		}
-		fileName = fileName + weekEnd + ".xlsx";
+	public void downloadFiles(@RequestParam("month") String month, @RequestParam("year") String year, @RequestParam("weekEnd") String weekEnd,
+			@RequestParam("filename") String fileName, HttpSession userSession, HttpServletResponse response) {
+		
+		String filePath = "C:\\billerdata\\downloads\\" + month + "-" + year + "\\" + weekEnd;
+		
 		String fullFilePath = filePath + "\\" + fileName;
-		// Path file = Paths.get(filePath, fileName);
+		
 		try {
-			// Files.copy(file, response.getOutputStream());
-			// response.setContentType("application/application/vnd.ms-excel");
-			// add response header
-			// response.addHeader("Content-Disposition", "attachment; filename=" +
-			// fileName);
-			// response.addHeader("Content-Disposition", "inline; filename=" + fileName);
-			// response.getOutputStream().flush();
-			// return new FileSystemResource(new File(fullFilePath));
+		
 			response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8");
 			File xlfile = new File(fullFilePath);
 			response.setHeader("Content-disposition", "attachment; filename=\"" + fileName + "\"");
@@ -98,8 +89,43 @@ public class FileController {
 			bfos.flush();
 		} catch (IOException e) {
 			System.out.println("Error :- " + e.getMessage());
-			// return null;
+			
 		}
-		// return "Click Link to Download File.";
+		
+	}
+	
+	@RequestMapping(value = "/filename.do", method = RequestMethod.GET)
+	@ResponseBody
+	public List<String> getFileName( @RequestParam("month") String month,
+			@RequestParam("year") String year, @RequestParam("weekEnd") String weekEnd, @RequestParam("fileType") int fileType,
+			HttpSession userSession) {
+		
+		List<String> fileNameList  = new ArrayList<String>();
+		
+		String filePath = "C:\\billerdata\\downloads\\" + month + "-" + year + "\\" + weekEnd;
+		
+		File[] files = new File(filePath).listFiles(new FilenameFilter() { 
+			
+			
+			
+			@Override 
+			public boolean accept(File dir, String name) { 
+				String startsWith;
+				if(fileType == 0) {
+					startsWith = "ILC";
+				}else {
+					startsWith = "SLA";
+				}
+				
+				return name.endsWith(".xlsx") && name.startsWith(startsWith); 
+			} 
+		});
+		if(files != null && files.length != 0) {
+			for(File file : files) {
+				fileNameList.add(file.getName());
+			}
+		}
+		
+		return fileNameList;
 	}
 }
