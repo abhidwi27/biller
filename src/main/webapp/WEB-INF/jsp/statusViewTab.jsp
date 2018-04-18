@@ -10,7 +10,9 @@
 </head>
 
 <div role="tabpanel" class="tab-pane fade" id="statusTab">
-	
+<div class="biller-status-header">
+	<span><h5></h5></span>
+</div>
 <div class="billerProgress">
 	<div class="row">
        <div class="col-md-12 board">                    

@@ -28,11 +28,15 @@ $(document).ready(function(){
 function updateStatusView(approvalStatus){
 	 var groupApproval = approvalStatus["groupApproval"];
 	 var userApprovalList = approvalStatus["userApprovalList"];
+	 var billCycleStr = approvalStatus["billCycle"];
 	 var userListID;	 
 	 var userProfile = JSON.parse($('#strUserProfile').val());	 
 	 var roleID = userProfile.roleID;
 	 var roleDesc = userProfile.roleDesc;
 	 var exitLoop = false;
+	 
+	 $('#statusTab .biller-status-header span h5').html('');
+	 $('#statusTab .biller-status-header span h5').html('Status for bill cycle ' + billCycleStr);
 	 
 	 $.each(groupApproval, function(key,value){
 		 var selector = "#" + key + "GroupTab";
