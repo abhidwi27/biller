@@ -530,7 +530,7 @@ $(function() {
 				var reportTable = $('#report').DataTable();
 				var reportTable2 = $('#report').dataTable();
 				var row = $(this).closest('tr');
-				var rowIdx = $(row).index();
+				var rowIdx = reportTable.row(row).index();
 				var rowNode = reportTable2.fnGetNodes(rowIdx);
 				var rowData = new Array();
 				var oldData = reportTable.row(rowIdx).data();
@@ -557,7 +557,7 @@ $(function() {
 				var reportTable = $('#report').DataTable();
 				var reportTable2 = $('#report').dataTable();
 				var row = $(this).closest('tr');
-				var rowIdx = $(row).index();
+				var rowIdx = reportTable.row(row).index();
 				var rowNode = reportTable2.fnGetNodes(rowIdx);
 				var oldData = rowEditDataMap[rowID];
 				
