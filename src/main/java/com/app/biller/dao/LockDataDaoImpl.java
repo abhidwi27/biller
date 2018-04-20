@@ -105,7 +105,7 @@ public class LockDataDaoImpl implements LockDataDao {
 		if(count == 0) {
 		jdbcTemplate.update(insertDataLock, new Object[] { billCycle, towerID, userID });
 		}else {
-			jdbcTemplate.update(updateDataLock, new Object[] { billCycle, towerID, userID });	
+			jdbcTemplate.update(updateDataLock, new Object[] { userID , billCycle, towerID});	
 		}
 	}
 
