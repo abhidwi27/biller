@@ -355,15 +355,23 @@ $(function() {
 			insertedRow = reportTable.row(rowCount).data();
 			
 			// New row is added at last, looping to bring it next to copied row.
-			for (var i = rowCount; i > rowIdx + 1; i--) {
-				var tempRow = reportTable.row(i - 1).data();
-				var tempRowInstance = $('#report').dataTable().fnGetNodes(i - 1);
+			var insertedRowViewIndex = reportTable.rows( { order: 'applied' } ).nodes().indexOf( newRow );
+			var copiedRowViewIndex = reportTable.rows( { order: 'applied' } ).nodes().indexOf( rowNodeForCopy );			
+			var sortMap = [];
+			reportTable.rows().every(function(){
+				var thisRowViewIndex = reportTable.rows( { order: 'applied' } ).nodes().indexOf( $('#report').dataTable().fnGetNodes(this) );
+				var thisRowReportTableIndex = this.index();
+				sortMap[thisRowViewIndex] = thisRowReportTableIndex;
+			});
+			for (var i = insertedRowViewIndex; i > copiedRowViewIndex + 1; i--) {
+				var tempRow = reportTable.row(sortMap[i - 1]).data();				
+				var tempRowInstance = $('#report').dataTable().fnGetNodes(sortMap[i - 1]);				
 				var tempRowID = $(tempRowInstance).find('input[type="checkbox"]').attr("id");
-				reportTable.row(i).data(tempRow);
-				var oldRow = $('#report').dataTable().fnGetNodes(i);
+				reportTable.row(sortMap[i]).data(tempRow);
+				var oldRow = $('#report').dataTable().fnGetNodes(sortMap[i]);
 				$(oldRow).find('input[type="checkbox"]').attr("id", tempRowID);
-				reportTable.row(i - 1).data(insertedRow);
-				var tempNewRow = $('#report').dataTable().fnGetNodes(i - 1);
+				reportTable.row(sortMap[i - 1]).data(insertedRow);
+				var tempNewRow = $('#report').dataTable().fnGetNodes(sortMap[i - 1]);
 				$(tempNewRow).find('input[type="checkbox"]').attr("id", newRowID);
 			}
 	
@@ -372,8 +380,8 @@ $(function() {
 				copyEditMap[newRowIDSelector] = true;
 			}
 	
-			reportTable.draw();
-			var newRowNode = reportTable2.fnGetNodes(rowIdx+1);
+			//reportTable.draw();
+			var newRowNode = reportTable2.fnGetNodes(sortMap[copiedRowViewIndex + 1]);
 			$(newRowNode).find('input[type="checkbox"]').prop("checked", true);
 			$(newRowNode).css("background-color", "#b7e1fe");
 			
