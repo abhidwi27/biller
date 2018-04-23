@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="resources/css/animate.css" />
 <link rel="stylesheet" href="resources/css/style.css">
 <link rel="stylesheet" href="resources/css/billerHome.css">
-
 <style>
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
@@ -29,22 +28,21 @@
 	background: url(resources/image/Preloader_1.gif) center no-repeat #fff;
 }
 </style>
+
 <script src="resources/js/jquery-3.2.1-min.js"></script>
 <script	src="resources/js/jquery.datatable.min-1.10.15.js"> </script>
 <script	src="resources/js/datatables.bootstrap4.min.1.10.15.js"> </script>
 <script src="resources/js/bootstrap.min.3.3.7.js"></script>
 <script src="resources/js/bootstrap-select-min-1.6.3.js"></script>
-<script >
-//paste this code under the head tag or in a separate js file.
-	// Wait for window load
-	 $(window).on("load", function() {
-		// Animate loader off screen
-		setTimeout(function(){	
-			$(".se-pre-con").fadeOut("slow");
-		},1000);	
-	}); 
+<script>
+$(window).on("load", function() {		
+	setTimeout(function(){	
+		$(".se-pre-con").fadeOut("slow");
+	},1000);	
+});
 </script>
 <link rel="icon" type="image/png" href="resources/image/biller-icon.ico"/>
+
 </head>
 
 <body>
@@ -54,6 +52,7 @@
 <jsp:include page="billerLoader.jsp"></jsp:include>
 <jsp:include page="billerHeader.jsp"></jsp:include>
 <jsp:include page="billerAlert.jsp"></jsp:include>
+<jsp:include page="billerClientSession.jsp"></jsp:include>
 
 <br>
 <br>

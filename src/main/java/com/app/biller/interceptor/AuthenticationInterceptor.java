@@ -40,7 +40,13 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
 			response.sendRedirect(request.getContextPath() + "/login.do");
 			return false;
 		}
+		
+		if (uri.endsWith("keepAlive.do")) {	
+			return true;			
+		}
 
 		return true;
 	}
+	
+	
 }

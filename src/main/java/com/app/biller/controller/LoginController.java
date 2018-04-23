@@ -105,4 +105,10 @@ public class LoginController {
 		sessionStatus.setComplete();
 		return "redirect:" + "/login.do	";
 	}
+	
+	@RequestMapping(value = "/keepAlive.do", method = RequestMethod.GET)
+	public void keepSessionAlive(HttpServletRequest request, SessionStatus sessionStatus) {
+		// This method would never be called, just keeping so Spring Dispatcher does not throw
+		// any error and let keep alive request reach preHandle method in Interceptor..
+	}
 }
