@@ -14,6 +14,7 @@ import com.app.biller.domain.Account;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
+import com.app.biller.ui.ItwrReference;
 
 @Service
 public class ReferenceDataServiceImpl implements ReferenceDataService {
@@ -92,5 +93,9 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 	
 	public List<Account> getAccountList(){
 		return referenceDataDao.getAccountList();
+	}
+	
+	public List<ItwrReference> getItwrReferenceData(String wrNo){
+		return referenceDataDao.getItwrReferenceData(wrNo);
 	}
 }

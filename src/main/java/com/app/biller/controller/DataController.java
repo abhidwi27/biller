@@ -32,6 +32,7 @@ import com.app.biller.services.DataValidationService;
 import com.app.biller.services.EmailService;
 import com.app.biller.services.ReferenceDataService;
 import com.app.biller.ui.ApprovalStatus;
+import com.app.biller.ui.ItwrReference;
 import com.app.biller.ui.ResponseDataEnvelope;
 import com.app.biller.ui.ReviewWrapper;
 import com.app.biller.ui.TableData;
@@ -239,5 +240,10 @@ public class DataController {
 					Integer.parseInt(delegateStatus));
 		}
 		return delegateResult;
+	}
+	
+	@RequestMapping(path = "/itwrRef.do", method = RequestMethod.GET)
+	public @ResponseBody List<ItwrReference> getItwrReferenceData(@RequestParam("wrNo") String wrNo, HttpSession userSession) {		
+		return referenceDataService.getItwrReferenceData(wrNo);
 	}
 }
