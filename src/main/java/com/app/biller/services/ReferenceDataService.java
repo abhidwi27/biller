@@ -7,6 +7,7 @@ import com.app.biller.domain.Account;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
+import com.app.biller.ui.ItwrReference;
 
 public interface ReferenceDataService {
 	
@@ -33,4 +34,7 @@ public interface ReferenceDataService {
 	String getMonthForBillCycle(String billCycle);
 	
 	List<Account> getAccountList();
+	
+	List<ItwrReference> getItwrReferenceData(String wrNo);
 }
+

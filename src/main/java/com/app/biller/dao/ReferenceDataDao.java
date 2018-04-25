@@ -6,6 +6,7 @@ import java.util.List;
 import com.app.biller.domain.Account;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
+import com.app.biller.ui.ItwrReference;
 
 public interface ReferenceDataDao {
 
@@ -23,4 +24,5 @@ public interface ReferenceDataDao {
 	
 	List<Account> getAccountList();
 	
+	List<ItwrReference> getItwrReferenceData(String wrNo);
 }

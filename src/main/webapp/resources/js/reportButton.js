@@ -166,11 +166,49 @@ $(function() {
 	});
 	
 	$(document).on( 'change','#report tbody tr td .form-control',  function () {
+		var cellIdx = $(this).closest('td').index();
 		var reportTable = $('#report').DataTable();
 		var reportTable2 = $('#report').dataTable();		
-		var data = '<input type=\"text\" class=\"form-control\" value=\"'+$(this).closest('input').val() +  '\">';
-		var cell= reportTable.cell($(this).closest('td'));		
-	    cell.data( data );
+		if(cellIdx == 8){
+			var cellValue = $(this).closest('input').val();
+			var wrNo;
+			if(cellValue.substr(0,2).toUpperCase() == "WR"){
+				wrNo = cellValue.substr(0,8); 
+			}else{
+				wrNo = cellValue.substr(0,9);
+			}
+			var data = '<input type=\"text\" class=\"form-control\" value=\"'+ wrNo +  '\">';			
+			var rowIdx = $(this).closest('tr').index();				
+			reportTable.cell( rowIdx, 22 ).data(data);			
+			$.ajax({
+				url: 'data/itwrRef.do?wrNo='+wrNo ,
+				type: 'GET',
+				data: false,
+				success: function(itwrRef){
+					if(itwrRef.length !=0){
+						var data;
+						var cellIdxList = [25,26,27,28,2,3];
+						var i=0;
+						var cellNode;
+						delete itwrRef[0].reqNo;
+						for(var prop in itwrRef[0]){
+							cellNode = reportTable.cell( rowIdx, cellIdxList[i] ).node();							
+							if($(cellNode).find('input[type="text"]').length != 0){
+								data = '<input type=\"text\" class=\"form-control\" value=\"'+ itwrRef[0][prop] +  '\">';
+							}else{
+								data = itwrRef[0][prop];							}
+							reportTable.cell( rowIdx, cellIdxList[i] ).data(data);
+						i++;
+						}
+					}
+				}
+				
+			});
+		}else{
+			var data = '<input type=\"text\" class=\"form-control\" value=\"'+$(this).closest('input').val() +  '\">';
+			var cell= reportTable.cell($(this).closest('td'));		
+		    cell.data( data );
+		}
 	});
 
 	/* Edit  button */

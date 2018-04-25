@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import com.app.biller.domain.Account;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
+import com.app.biller.ui.ItwrReference;
 
 @Repository("referenceDataDao")
 public class ReferenceDataDaoImpl implements ReferenceDataDao {
@@ -40,6 +41,9 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 	
 	@Value("${GET_ACCOUNT_LIST}")
 	String getAccountList;
+	
+	@Value("${GET_ITWR_REFERENCE_DATA}")
+	String getItwrReferenceData;
 	
 
 	private JdbcTemplate jdbcTemplate;
@@ -130,5 +134,27 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 		};
 		accountList =  jdbcTemplate.query(getAccountList, rowMapper);
 		return accountList;
+	}
+	
+	public List<ItwrReference> getItwrReferenceData(String wrNo){
+		List<ItwrReference> itwrReferenceList = new ArrayList<ItwrReference>();
+		RowMapper<ItwrReference> rowMapper = new RowMapper<ItwrReference>() {
+			@Override
+			public ItwrReference mapRow(ResultSet rs, int rownumber) throws SQLException {
+				ItwrReference itwrRef = new ItwrReference();
+				
+				itwrRef.setReqNo(rs.getString("req_no"));
+				itwrRef.setReqDesc(rs.getString("req_title"));
+				itwrRef.setFundingType(rs.getString("fund_type"));
+				itwrRef.setCostCenter(rs.getString("cost_center"));
+				itwrRef.setVendor(rs.getString("vendor_class"));
+				itwrRef.setAsm(rs.getString("asm"));
+				itwrRef.setAsd(rs.getString("asd"));
+				
+				return itwrRef;
+			}
+		};
+		itwrReferenceList =  jdbcTemplate.query(getItwrReferenceData, new Object[] {wrNo},rowMapper);
+		return itwrReferenceList;
 	}
 }
