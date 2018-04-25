@@ -57,33 +57,38 @@ public class LoginController {
 	public String processLogin(Model model, @ModelAttribute("loginModel") LoginModel loginModel,
 			HttpServletRequest request) {
 		String viewName = LOGIN_VIEW;
-		if (loginModel != null && !loginModel.getUserId().isEmpty() & !loginModel.getPassword().isEmpty()) {
-			logger.info("UserId: " + loginModel.getUserId() + " | " + "Password: " + loginModel.getPassword());
-			user = loginService.validateCredentials(loginModel.getUserId(), loginModel.getPassword());
-			if (user != null) {
-				Gson gson = new Gson();
-				String strUserProfile = gson.toJson(user);
-				model.addAttribute("userProfile", user);
-				model.addAttribute("strUserProfile", strUserProfile);
-				model.addAttribute("monthList", referenceDataService.getMonth());
-				model.addAttribute("yearList", referenceDataService.getYear());
-				model.addAttribute("towerList", referenceDataService.getTowerList());
-				model.addAttribute("accountList", referenceDataService.getAccountList());
-				if (user.getRoleID() == 2 || user.getRoleID() == 3) {
-					model.addAttribute("delegateUserList", referenceDataService.getDelegateUserList(user.getUserID()));
-					model.addAttribute("delegateByUserList",
-							dataApprovalService.getDelegateByUserList(user.getUserID()));
+		try {
+			if (loginModel != null && !loginModel.getUserId().isEmpty() & !loginModel.getPassword().isEmpty()) {
+				logger.info("UserId: " + loginModel.getUserId() + " | " + "Password: " + loginModel.getPassword());
+				user = loginService.validateCredentials(loginModel.getUserId(), loginModel.getPassword());
+				if (user != null) {
+					Gson gson = new Gson();
+					String strUserProfile = gson.toJson(user);
+					model.addAttribute("userProfile", user);
+					model.addAttribute("strUserProfile", strUserProfile);
+					model.addAttribute("monthList", referenceDataService.getMonth());
+					model.addAttribute("yearList", referenceDataService.getYear());
+					model.addAttribute("towerList", referenceDataService.getTowerList());
+					model.addAttribute("accountList", referenceDataService.getAccountList());
+					if (user.getRoleID() == 2 || user.getRoleID() == 3) {
+						model.addAttribute("delegateUserList", referenceDataService.getDelegateUserList(user.getUserID()));
+						model.addAttribute("delegateByUserList",
+								dataApprovalService.getDelegateByUserList(user.getUserID()));
+					}
+					// viewName = "Home";
+					viewName = loginService.getUserHome(user.getRoleID());
+					return viewName;
+				} else {
+					model.addAttribute("error", "Wrong Username / Password. Authentication Failed");
+					logger.info("Wrong Username / Password. Authentication Failed");
 				}
-				// viewName = "Home";
-				viewName = loginService.getUserHome(user.getRoleID());
-				return viewName;
 			} else {
-				model.addAttribute("error", "Wrong Username / Password. Authentication Failed");
-				logger.info("Wrong Username / Password. Authentication Failed");
+				model.addAttribute("error", "Empty Username / Password. Please enter valid input.");
+				logger.info("Empty Username / Password. Please enter valid input.");
 			}
-		} else {
-			model.addAttribute("error", "Empty Username / Password. Please enter valid input.");
-			logger.info("Empty Username / Password. Please enter valid input.");
+		}catch(Exception ex) {
+			logger.error("Exception in login controller: ", ex);
+			return "error";
 		}
 		return viewName;
 	}
