@@ -1,5 +1,7 @@
 package com.app.biller.services;
 
+import static com.app.biller.util.BillerHelper.getUserEmailId;
+
 import javax.mail.Message;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -7,6 +9,7 @@ import javax.mail.internet.MimeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailException;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessagePreparator;
@@ -24,13 +27,24 @@ public class EmailServiceImpl implements EmailService {
 
 	@Autowired
 	JavaMailSender mailSender;
-	
+
 	@Autowired
 	UserDao userDao;
 
+	@Value("${leads.group.mailid}")
+	private String leadsMailId;
+
+	@Value("${dm.group.mailid}")
+	private String dmMailId;
+
+	@Value("${bam.group.mailid}")
+	private String bamMailId;
+
+	@Value("${pmo.group.mailid}")
+	private String pmoMailId;
+
 	@Override
 	public void sendEmail(Object mailObj) {
-		//TODO: Need to get mail object with all specific mail details required by preparator
 		MimeMessagePreparator preparator = getMessagePreparator(mailObj);
 		try {
 			mailSender.send(preparator);
@@ -50,15 +64,11 @@ public class EmailServiceImpl implements EmailService {
 		};
 		return preparator;
 	}
-	
-	public String getEmailID(String userID) {
-		return userDao.getEmailID(userID);
-	}
-	
+
 	private MimeMessagePreparator getApprovalMessagePreparator(String approveFor,  String approveBy, String billMonth, String billYear) {
-		String toEmailID = this.getEmailID(approveFor);
+		String toEmailID = getUserEmailId(approveFor);
 		String pmoEmailID = this.getPmoEmailID();
-		String approveByEmailID = this.getEmailID(approveBy);
+		String approveByEmailID = getUserEmailId(approveBy);
 		User approveByUserProfile = userDao.createUserProfile(approveBy);
 		User approveForUserProfile = userDao.createUserProfile(approveFor);
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
@@ -76,9 +86,9 @@ public class EmailServiceImpl implements EmailService {
 	}
 	
 	private MimeMessagePreparator getRejectionMessagePreparator(String rejectedFor, String rejectedBy, String rejectComments, String billMonth, String billYear) {
-		String rejectedForEmailID = this.getEmailID(rejectedFor);
+		String rejectedForEmailID = getUserEmailId(rejectedFor);
 		String pmoEmailID = this.getPmoEmailID();
-		String rejectByEmailID = this.getEmailID(rejectedBy);
+		String rejectByEmailID = getUserEmailId(rejectedBy);
 		User rejectedByUserProfile = userDao.createUserProfile(rejectedBy);
 		User rejectedForUserProfile = userDao.createUserProfile(rejectedFor);
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
@@ -90,14 +100,44 @@ public class EmailServiceImpl implements EmailService {
 				mimeMessage.setText("Rejected by " + rejectedBy);
 				mimeMessage.setSubject("Biller Notification: Bill Cycle " + billMonth + "-" + billYear + " rejected by " + rejectedByUserProfile.getName() + " for " + rejectedForUserProfile.getName() );
 				mimeMessage.setText(rejectComments);
-				
 			}
 		};
 		return preparator;
 	}
 
-	public String getPmoEmailID() {
-		return userDao.getPmoEmailID();
+	private MimeMessagePreparator getFileUploadMessagePreparator(String dataType, String billCycle, String weekEnd) {
+		MimeMessagePreparator preparator = new MimeMessagePreparator() {
+			public void prepare(MimeMessage mimeMessage) throws Exception {
+				mimeMessage.setFrom("biller@biller-app.com");
+				mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(leadsMailId));
+				mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(dmMailId));
+				mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(bamMailId));
+				mimeMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(pmoMailId));
+				mimeMessage.setText("New "+ dataType + " Data is Updated for Bill Cycle: "+ billCycle);
+				mimeMessage.setSubject("Biller Notification: New " + dataType + " Data for " + billCycle + " Uploaded.");
+			}
+		};
+		return preparator;
+	}
+
+	private MimeMessagePreparator getDelegationMessagePreparator(String delegatedBy, String delegatedTo, String delegationStatus) {
+		String delegatedByEmailID = getUserEmailId(delegatedBy);
+		MimeMessagePreparator preparator = new MimeMessagePreparator() {
+			public void prepare(MimeMessage mimeMessage) throws Exception {
+				mimeMessage.setFrom("biller@biller-app.com");
+				mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(delegatedByEmailID));
+				mimeMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(pmoMailId));
+				if(delegationStatus.equals("SET")) {
+					String delegatedToEmailID = getUserEmailId(delegatedTo);
+					mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(delegatedToEmailID));
+					mimeMessage.setText("Delegation " + delegationStatus + " By " + delegatedByEmailID + " To " + delegatedToEmailID);
+				} else if(delegationStatus.equals("UNSET")) {
+					mimeMessage.setText("Delegation " + delegationStatus + " By " + delegatedByEmailID);
+				}
+				mimeMessage.setSubject("Biller Notification: Delegation " + delegationStatus + " By " + delegatedByEmailID);	
+			}
+		};
+		return preparator;
 	}
 
 	@Async("threadPoolTaskExecutor")
@@ -120,4 +160,27 @@ public class EmailServiceImpl implements EmailService {
 		}
 	}
 
+	@Async("threadPoolTaskExecutor")
+	public void sendFileUploadEmail(String dataType, String billCycle, String weekEnd) {
+		MimeMessagePreparator preparator = getFileUploadMessagePreparator(dataType, billCycle, weekEnd);
+		try {
+			mailSender.send(preparator);
+		} catch (MailException ex) {
+			logger.error(ex.getMessage());
+		}
+	}
+
+	@Async("threadPoolTaskExecutor")
+	public void sendDelegationEmail(String delegatedBy, String delegatedTo, String delegationStatus) {
+		MimeMessagePreparator preparator = getDelegationMessagePreparator(delegatedBy, delegatedTo, delegationStatus);
+		try {
+			mailSender.send(preparator);
+		} catch (MailException ex) {
+			logger.error(ex.getMessage());
+		}
+	}
+
+	private String getPmoEmailID() {
+		return userDao.getPmoEmailID();
+	}
 }

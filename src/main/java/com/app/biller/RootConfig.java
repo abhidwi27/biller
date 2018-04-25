@@ -14,8 +14,8 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 @Configuration
 @ComponentScan
 @PropertySources({
-	@PropertySource("classpath:sqlquery.properties"),
-	@PropertySource("classpath:biller.properties")})
+	@PropertySource("classpath:sqlquery-${spring.profiles.active}.properties"),
+	@PropertySource("classpath:application-${spring.profiles.active}.properties")})
 public class RootConfig {
 
 	private DriverManagerDataSource dataSource = new DriverManagerDataSource();

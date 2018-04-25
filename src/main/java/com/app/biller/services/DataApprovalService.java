@@ -19,7 +19,9 @@ public interface DataApprovalService {
 	
 	ApprovalStatus getApprovalStatus(String billCycle);
 	
-	int updateDelegateUser(String delegateBy, String delegateTo, int delegateStatus);
+	int setDelegation(String delegatedBy, String delegatedTo);
+
+	int unsetDelegation(String delegatedBy);
 	
 	List<User> getDelegateByUserList(String userID);
 	

@@ -16,28 +16,27 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
 
 	private static final Logger logger = LoggerFactory.getLogger(AuthenticationInterceptor.class);
 
-	private static final long MAX_INACTIVE_SESSION_TIME = 600 * 1000; // 10 mins
+	private static final long MAX_INACTIVE_SESSION_TIME = 1800 * 1000; // 30 mins
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		String uri = request.getRequestURI();
-		if (!uri.endsWith("login.do") && !uri.endsWith("logout.do")) {
+		if (!uri.endsWith("app.do") && !uri.endsWith("logout.do")) {
 			User userProfile = (User) request.getSession().getAttribute("userProfile");
 			if (userProfile == null) {
 				logger.warn("User not Logged in.");
-				response.sendRedirect(request.getContextPath() + "/login.do");
+				response.sendRedirect(request.getContextPath() + "/app.do");
 				return false;
 			}
 		}
 
 		if (System.currentTimeMillis() - request.getSession().getLastAccessedTime() > MAX_INACTIVE_SESSION_TIME) {
-			// System.out.println("Logging out, due to inactive session.");
 			HttpSession session = request.getSession();
 			session.removeAttribute("userProfile");
 			session.invalidate();
 			logger.warn("Inactive session. Logged out.");
-			response.sendRedirect(request.getContextPath() + "/login.do");
+			response.sendRedirect(request.getContextPath() + "/logout.do");
 			return false;
 		}
 
