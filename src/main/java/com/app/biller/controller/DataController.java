@@ -64,6 +64,8 @@ public class DataController {
 	@Autowired
 	ResponseDataEnvelope responseDataEnvelope;
 
+	enum DelegationStatus {SET, UNSET};
+
 	@RequestMapping(path = "/read.do", method = RequestMethod.GET)
 	public @ResponseBody ResponseDataEnvelope readILCorSLAData(@RequestParam("dataType") int dataType,
 			@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID,
@@ -229,14 +231,19 @@ public class DataController {
 	}
 
 	@RequestMapping(path = "/delegate.do", method = RequestMethod.POST)
-	public @ResponseBody int delegateTo(String delegateTo, String delegateStatus, HttpServletRequest request) {
+	public @ResponseBody int manageDelegation(String delegatedTo, String delegateStatus, HttpServletRequest request) {
 		int delegateResult = 0;
 		HttpSession session = request.getSession(false);
-		if (session != null) {
-			User userProfile = getUserProfile(session);
-			String delegateBy = userProfile.getUserID();
-			delegateResult = dataApprovalService.updateDelegateUser(delegateBy, delegateTo,
-					Integer.parseInt(delegateStatus));
+		if (session != null && getUserProfile(session) != null) {
+			String delegatedBy = getUserProfile(session).getUserID();
+			if(Integer.parseInt(delegateStatus) == 0){
+				delegatedTo = "";
+				delegateResult = dataApprovalService.unsetDelegation(delegatedBy);
+				emailService.sendDelegationEmail(delegatedBy, delegatedTo, DelegationStatus.UNSET.toString());
+			} else {
+				delegateResult = dataApprovalService.setDelegation(delegatedBy, delegatedTo);
+				emailService.sendDelegationEmail(delegatedBy, delegatedTo, DelegationStatus.SET.toString());
+			}
 		}
 		return delegateResult;
 	}

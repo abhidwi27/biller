@@ -46,13 +46,14 @@ public class LoginController {
 	@Autowired
 	private DataApprovalService dataApprovalService;
 
-	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/app.do", method = RequestMethod.GET)
 	public String showLogin(Model model) {
 		// model.addAttribute("msg", "Please Enter Login Credentials");
+//		System.out.println("===============================:::: "+testLabel);
 		return LOGIN_VIEW;
 	}
 
-	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
+	@RequestMapping(value = "/app.do", method = RequestMethod.POST)
 	public String processLogin(Model model, @ModelAttribute("loginModel") LoginModel loginModel,
 			HttpServletRequest request) {
 		String viewName = LOGIN_VIEW;
@@ -98,6 +99,6 @@ public class LoginController {
 			cookie.setMaxAge(0);
 		}
 		sessionStatus.setComplete();
-		return "redirect:" + "/login.do	";
+		return "redirect:" + "/app.do	";
 	}
 }

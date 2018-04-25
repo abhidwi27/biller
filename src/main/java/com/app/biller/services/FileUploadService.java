@@ -8,6 +8,5 @@ public interface FileUploadService {
 
 	String uploadILCData(String billCycle, String userId, String uploadDataType, String reportWeekend);
 
-	String uploadSLAData(String billCycle, String userId,String uploadDataType,String reportWeekend);
-	
-	}
+	String uploadSLAData(String billCycle, String userId, String uploadDataType, String reportWeekend);
+}

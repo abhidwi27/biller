@@ -53,8 +53,8 @@ public class WebConfig extends WebMvcConfigurerAdapter implements AsyncConfigure
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		mailSender.setHost("inmbzp5180.in.dst.ibm.com");
 		mailSender.setPort(25);
-		mailSender.setUsername("billeradmin@biller-app.com");
-		mailSender.setPassword("billeradmin");
+		// mailSender.setUsername("biller@biller-app.com");
+		// mailSender.setPassword("billeradmin");
 
 		Properties mailProperties = new Properties();
 		mailProperties.put("mail.smtp.starttls.enable", "true");
