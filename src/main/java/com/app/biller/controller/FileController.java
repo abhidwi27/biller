@@ -48,6 +48,7 @@ public class FileController {
 
 	@Autowired
 	EmailService emailService;
+	
 
 	@RequestMapping(value = "/upload.do", method = RequestMethod.POST)
 	@ResponseBody
@@ -55,6 +56,7 @@ public class FileController {
 			@RequestParam("dataType") String uploadDataType, @RequestParam("reportWeekend") String reportWeekend,
 			HttpSession userSession) {
 		String uploadStatus = "File Upload Failed";
+		//String status = "Success";
 		String status = fileUploadService.uploadFiles(request);
 		if (status.equalsIgnoreCase("Success")) {
 			User userProfile = getUserProfile(userSession);
