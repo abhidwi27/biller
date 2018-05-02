@@ -24,6 +24,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+
+import com.app.biller.dao.ITWRDataDao;
+import com.app.biller.domain.ITWRData;
 import com.app.biller.dao.ILCDataDao;
 import com.app.biller.domain.ILCData;
 import com.app.biller.dao.SLADataDao;
@@ -37,26 +40,32 @@ public class FileUploadServiceImpl implements FileUploadService {
 
 	@Autowired
 	ILCDataDao ilcDataDao;
-
+	
 	@Autowired
 	SLADataDao slaDataDao;
-
+	
+	@Autowired
+	ITWRDataDao itwrDataDao;
+	
 	@Autowired
 	DataApprovalService dataApprovalService;
-
+	
+	
 	@Override
 	public String uploadFiles(MultipartHttpServletRequest request) {
 		// File Upload directory on Server.
 		// String uploadRootPath = request.getServletContext().getRealPath("uploads");
-		// String uploadRootPath = "C:/invoice/uploads";
+		//String uploadRootPath = "C:/invoice/uploads";
 		String newpath = System.getProperty("user.dir");
-		String rootdir[] = newpath.split("\\\\", 2);
+		String rootdir[] = newpath.split("\\\\",2);
 		String uploadRootPath = rootdir[0] + "\\billerData\\Uploads";
 		File uploadRootDir = new File(uploadRootPath);
+
 		// Create directory if it does not exists.
 		if (!uploadRootDir.exists()) {
 			uploadRootDir.mkdirs();
 		}
+
 		Iterator<String> itr = request.getFileNames();
 		List<MultipartFile> files = request.getFiles(itr.next());
 		if (null != files && files.size() > 0) {
@@ -75,32 +84,37 @@ public class FileUploadServiceImpl implements FileUploadService {
 	}
 
 	@Override
-	public String uploadILCData(String billCycle, String userId, String uploadDataType, String reportWeekend) {
-		createILCDataSheet(reportWeekend, uploadDataType);
+	public String uploadILCData(String billCycle, String userId, String uploadDataType,String reportWeekend) {
+		createILCDataSheet(reportWeekend,uploadDataType);
 		ilcDataDao.createILCData(extractILCData(), billCycle, userId, uploadDataType);
+		itwrDataDao.createITWRData(extractITWRData(), billCycle, userId, uploadDataType);
 		return "ILC Report generated successfully";
 	}
 
 	@Override
-	public String uploadSLAData(String billCycle, String userId, String uploadDataType, String reportWeekend) {
-		createILCDataSheet(reportWeekend, uploadDataType);
+	public String uploadSLAData(String billCycle, String userId,String uploadDataType,String reportWeekend) {
+		createILCDataSheet(reportWeekend,uploadDataType);
+
 		ArrayList<SLAData> slaDataList = extractSLAData();
+
 		slaDataDao.createSLAData(slaDataList, billCycle, userId, uploadDataType);
 		dataApprovalService.createGroupApproval(billCycle, userId);
+
 		return "SLA Report generated successfully";
 	}
 
 	private void createILCDataSheet(String reportWeekend, String uploadDataType) {
-		String[] command = { "cmd.exe", "/C", "Start", "/wait", "C:\\biller\\src\\main\\webapp\\Workbench\\trigger.bat",
+
+		String[] command = { "cmd.exe", "/C", "Start","/wait", "C:\\biller\\src\\main\\webapp\\Workbench\\trigger.bat",
 				reportWeekend, uploadDataType };
 		Process process = null;
 		ProcessBuilder processBuilder = new ProcessBuilder(command);
 		try {
 			process = processBuilder.start();
 			process.waitFor();
-			// int exitStatus = process.waitFor();
+			//int exitStatus = process.waitFor();
 			Runtime.getRuntime().exec("taskkill /f /im cmd.exe");
-			// logger.info("Processed finished with status: " + exitStatus);
+			//logger.info("Processed finished with status: " + exitStatus);
 		} catch (InterruptedException e) {
 			logger.error("InterruptedException: ");
 			e.printStackTrace();
@@ -113,6 +127,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 	}
 
 	private ArrayList<ILCData> extractILCData() {
+
 		FileInputStream ilcInput = null;
 		XSSFWorkbook ilcBook = null;
 		XSSFSheet ilcSheet;
@@ -135,8 +150,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 		int cellType;
 
 		try {
-			// ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC
-			// Report.xlsx"));
+			//ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
 			ilcInput = new FileInputStream(new File("C:\\biller\\src\\main\\webapp\\Workbench\\FFIC ILC Report.xlsx"));
 			ilcBook = new XSSFWorkbook(ilcInput);
 			ilcSheet = ilcBook.getSheet("WNPPT");
@@ -144,11 +158,13 @@ public class FileUploadServiceImpl implements FileUploadService {
 			ilcDataList = new ArrayList<ILCData>();
 			dataExists = true;
 			curRow = 1;
+
 			while (dataExists) {
 				row = (XSSFRow) rowIterator.next();
 				cellIterator = row.cellIterator();
 				rowData = new HashMap<String, String>();
 				ilcData = new ILCData();
+
 				while (cellIterator.hasNext()) {
 					cell = cellIterator.next();
 					cellType = ilcSheet.getRow(curRow).getCell(cell.getColumnIndex()).getCellType();
@@ -160,12 +176,10 @@ public class FileUploadServiceImpl implements FileUploadService {
 						break;
 					case 0:
 						numColName = ilcSheet.getRow(0).getCell(cell.getColumnIndex()).getStringCellValue();
-						if (numColName.equals("Total Hrs")) {
-							numColVal = Double.toString(Math
-									.abs(ilcSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
-						} else {
-							numColVal = Long.toString(Math.round(
-									ilcSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
+						if(numColName.equals("Total Hrs") ) {
+						numColVal = Double.toString(Math.abs(ilcSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
+						}else {
+							numColVal = Long.toString(Math.round(ilcSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
 						}
 						rowData.put(numColName, numColVal);
 						break;
@@ -176,13 +190,15 @@ public class FileUploadServiceImpl implements FileUploadService {
 				ilcData = populateILCDataModel(rowData, ilcData);
 				ilcDataList.add(ilcData);
 				curRow++;
-				// curRowData = ilcSheet.getRow(curRow).getCell(0).getStringCellValue();
+				//curRowData = ilcSheet.getRow(curRow).getCell(0).getStringCellValue();
 				Row curRowDataType = ilcSheet.getRow(curRow);
 				dataExists = (curRowDataType != null);
 				rowData = null;
 				ilcData = null;
 			}
+
 			return ilcDataList;
+
 		} catch (FileNotFoundException fnfe) {
 			logger.info("FileNotFoundException: " + fnfe.getStackTrace());
 			return ilcDataList;
@@ -199,12 +215,16 @@ public class FileUploadServiceImpl implements FileUploadService {
 		}
 	}
 
-	private ArrayList<SLAData> extractSLAData() {
+	
+	
+	private ArrayList<SLAData> extractSLAData(){
+		
+		
 		FileInputStream slaInput = null;
 		XSSFWorkbook slaBook = null;
 		XSSFSheet slaSheet;
 		XSSFRow row;
-		ArrayList<SLAData> sladatalist = null;
+		ArrayList<SLAData> sladatalist=null;
 		Map<String, String> rowData;
 		Iterator<Row> rowIterator;
 		Iterator<Cell> cellIterator;
@@ -220,9 +240,9 @@ public class FileUploadServiceImpl implements FileUploadService {
 		String curRowData;
 		int curRow;
 		int cellType;
+
 		try {
-			// ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC
-			// Report.xlsx"));
+			//ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
 			slaInput = new FileInputStream(new File("C:\\biller\\src\\main\\webapp\\Workbench\\FFIC SLA Report.xlsx"));
 			slaBook = new XSSFWorkbook(slaInput);
 			slaSheet = slaBook.getSheet("WNPPT - Billed Hours");
@@ -230,11 +250,13 @@ public class FileUploadServiceImpl implements FileUploadService {
 			sladatalist = new ArrayList<SLAData>();
 			dataExists = true;
 			curRow = 1;
+
 			while (dataExists) {
 				row = (XSSFRow) rowIterator.next();
 				cellIterator = row.cellIterator();
 				rowData = new HashMap<String, String>();
 				slaData = new SLAData();
+
 				while (cellIterator.hasNext()) {
 					cell = cellIterator.next();
 					cellType = slaSheet.getRow(curRow).getCell(cell.getColumnIndex()).getCellType();
@@ -246,29 +268,31 @@ public class FileUploadServiceImpl implements FileUploadService {
 						break;
 					case 0:
 						numColName = slaSheet.getRow(0).getCell(cell.getColumnIndex()).getStringCellValue();
-						if (numColName.equals("Hours")) {
-							numColVal = Double.toString(Math
-									.abs(slaSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
-						} else {
-							numColVal = Long.toString(Math.round(
-									slaSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
-						}
+						if(numColName.equals("Hours") ) {
+							numColVal = Double.toString(Math.abs(slaSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
+							}else {
+						numColVal = Long.toString(Math
+								.round(slaSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
+							}
 						rowData.put(numColName, numColVal);
 						break;
 					default:
 						break;
 					}
 				}
-				slaData = populateSLADataModel(rowData, slaData);
+				
+				slaData = populateSLADataModel(rowData, slaData);				
 				sladatalist.add(slaData);
 				curRow++;
-				// curRowData = slaSheet.getRow(curRow).getCell(0).getStringCellValue();
+				//curRowData = slaSheet.getRow(curRow).getCell(0).getStringCellValue();
 				Row curRowDataType = slaSheet.getRow(curRow);
 				dataExists = (curRowDataType != null);
 				rowData = null;
 				slaData = null;
 			}
+
 			return sladatalist;
+
 		} catch (FileNotFoundException fnfe) {
 			logger.info("FileNotFoundException: " + fnfe.getStackTrace());
 			return sladatalist;
@@ -283,10 +307,15 @@ public class FileUploadServiceImpl implements FileUploadService {
 				logger.info("Exception occured while closing: " + e);
 			}
 		}
-
+		
 	}
-
-	private SLAData populateSLADataModel(Map<String, String> rowData, SLAData slaModel) {
+	
+	
+	
+	
+	
+	private SLAData populateSLADataModel(Map<String,String> rowData, SLAData slaModel) {
+		
 		slaModel.setWeekEndDate(rowData.get("Week ending"));
 		slaModel.setAsm(rowData.get("ASM"));
 		slaModel.setAsd(rowData.get("ASD"));
@@ -316,16 +345,20 @@ public class FileUploadServiceImpl implements FileUploadService {
 		slaModel.setFundType(rowData.get("Funding Type"));
 		slaModel.setVendorClass(rowData.get("Vendor Classification"));
 		slaModel.setAccountId(rowData.get("Account Id"));
+				
+		
 		return slaModel;
+		
 	}
-
+	
 	private ILCData populateILCDataModel(Map<String, String> rowData, ILCData ilcModel) {
+
 		ilcModel.setEmpID(rowData.get("Emp Ser Num"));
 		ilcModel.setEmpName(rowData.get("EMPLOYEE_NAME"));
 		ilcModel.setClaimCode(rowData.get("Work Item"));
 		ilcModel.setActivity(rowData.get("Activity"));
 		ilcModel.setWeekEndDate(rowData.get("Week Ending Date"));
-		// ilcModel.setTotHrs(Integer.parseInt(rowData.get("Total Hrs")));
+		//ilcModel.setTotHrs(Integer.parseInt(rowData.get("Total Hrs")));
 		ilcModel.setTotHrs(Double.parseDouble(rowData.get("Total Hrs")));
 		ilcModel.setShiftType(rowData.get("ShiftDetails"));
 		ilcModel.setUsInd(rowData.get("US/INDIA"));
@@ -364,4 +397,137 @@ public class FileUploadServiceImpl implements FileUploadService {
 		ilcModel.setAccountId(rowData.get("Account ID"));
 		return ilcModel;
 	}
+
+private ArrayList<ITWRData> extractITWRData(){
+		
+		
+		
+		FileInputStream itwrInput = null;
+		XSSFWorkbook itwrBook = null;
+		XSSFSheet itwrSheet;
+		XSSFRow row;
+		ArrayList<ITWRData> itwrModellist=null;
+		Map<String, String> rowDataItwr;
+		Iterator<Row> rowIteratorItwr;
+		Iterator<Cell> cellIteratorItwr;
+		ITWRData itwrData;
+		Cell cellItwr;
+		DataFormatter formatter;
+		String colName;
+		String colVal;
+		String numColName;
+		String numColVal;
+		int nullcheck;
+		CellType BLANK;
+		boolean dataExists;
+		String curRowData;
+		int curRow;
+		int cellType;
+		
+
+		try {
+			//ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
+			itwrInput = new FileInputStream(new File("C:\\billerData\\Uploads\\ITWR for ILC.xlsx"));
+			itwrBook = new XSSFWorkbook(itwrInput);
+			itwrSheet = itwrBook.getSheet("Sheet1");
+			rowIteratorItwr = itwrSheet.iterator();
+			itwrModellist = new ArrayList<ITWRData>();
+			dataExists = true;
+			curRow = 1;
+
+			while (dataExists) {
+				row = (XSSFRow) rowIteratorItwr.next();
+				cellIteratorItwr = row.cellIterator();
+				rowDataItwr = new HashMap<String, String>();
+				itwrData = new ITWRData();
+
+				while (cellIteratorItwr.hasNext()) {
+					cellItwr = cellIteratorItwr.next();
+					//int cell1= itwrSheet.getRow(curRow).getCell(cell.getColumnIndex()).CELL_TYPE_BLANK;
+					//cellType = itwrSheet.getRow(curRow).getCell(cell.getColumnIndex()).getCellType();
+					
+					//nullcheck = itwrSheet.getRow(curRow).getCell(cellItwr.getColumnIndex()).CELL_TYPE_BLANK;
+					
+					cellType = itwrSheet.getRow(curRow).getCell(cellItwr.getColumnIndex()).getCellType();
+					
+					switch (cellType) {
+					case 1:
+						colName = (itwrSheet.getRow(0).getCell(cellItwr.getColumnIndex()).getStringCellValue()).trim();
+						colVal = (itwrSheet.getRow(curRow).getCell(cellItwr.getColumnIndex()).getStringCellValue()).trim();
+						rowDataItwr.put(colName, colVal);
+						break;
+					case 0:
+						numColName = itwrSheet.getRow(0).getCell(cellItwr.getColumnIndex()).getStringCellValue();
+						
+						numColVal = Long.toString(Math
+								.round(itwrSheet.getRow(curRow).getCell(cellItwr.getColumnIndex()).getNumericCellValue()));
+							
+						rowDataItwr.put(numColName, numColVal);
+						break;
+					case 3:
+						colName = (itwrSheet.getRow(0).getCell(cellItwr.getColumnIndex()).getStringCellValue()).trim();
+						colVal = "NA";
+						rowDataItwr.put(colName, colVal);
+						break;
+					default:
+						break;
+					}
+				}
+				
+				itwrData = populateITWRDataModel(rowDataItwr, itwrData);				
+				itwrModellist.add(itwrData);
+				curRow++;
+				//curRowData = slaSheet.getRow(curRow).getCell(0).getStringCellValue();
+				Row curRowDataType = itwrSheet.getRow(curRow);
+				dataExists = (curRowDataType != null);
+				rowDataItwr = null;
+				itwrData = null;
+			}
+
+			return itwrModellist;
+
+		} catch (FileNotFoundException fnfe) {
+			logger.info("FileNotFoundException: " + fnfe.getStackTrace());
+			return itwrModellist;
+		} catch (Exception e) {
+			logger.info("Exception: " + e.getStackTrace());
+			return itwrModellist;
+		} finally {
+			try {
+				itwrBook.close();
+				itwrInput.close();
+			} catch (Exception e) {
+				logger.info("Exception occured while closing: " + e);
+			}
+		}
+	}
+
+	private ITWRData populateITWRDataModel(Map<String, String> rowData, ITWRData itwrModel) {
+		
+		itwrModel.setReq_no(rowData.get("Request #"));
+		itwrModel.setReq_title(rowData.get("Request Title"));
+		itwrModel.setCoo_intake_no(rowData.get("COO Intake #"));
+		itwrModel.setIt_sme(rowData.get("Business/IT SME"));
+		itwrModel.setBus_area(rowData.get("Business Area"));
+		itwrModel.setWork_type(rowData.get("WorkType"));
+		itwrModel.setDemand_type(rowData.get("Demand Type"));
+		itwrModel.setFund_type(rowData.get("Funding Type"));
+		itwrModel.setCost_center(rowData.get("Cost Center for Allocation Costs"));
+		itwrModel.setVendor_class(rowData.get("Vendor Classification"));
+		itwrModel.setAsm(rowData.get("Primary Resource Manager"));
+		itwrModel.setPrimary_vendor(rowData.get("Primary Vendor"));
+		itwrModel.setAsd(rowData.get("Primary Director"));
+		itwrModel.setOverall_status(rowData.get("Overall Status Indicator"));
+		itwrModel.setVendor_est_hours(rowData.get("Vendor Total Effort Hours (Estimated)"));
+		itwrModel.setVendor_actual_hours(rowData.get("Vendor Total Effort Hours (Actual)"));
+		itwrModel.setPcr_est_hours(rowData.get("PCR's Total Effort Hours (Estimated)"));
+		itwrModel.setPcr_actual_hours(rowData.get("PCR's Total Effort Hours (Actual)"));
+		
+		return itwrModel;
+	}
 }
+
+
+
+
+

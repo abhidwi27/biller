@@ -3,12 +3,18 @@ package com.app.biller.domain;
 import org.springframework.stereotype.Component;
 
 @Component
+
 public class ITWRData {
-	
+
 	private String req_no;
 	private String req_title;
 	private String coo_intake_no;
+	private String created_by;
+	private String request_for;
 	private String it_sme;
+	private String date_created;
+	private String date_completed;
+	private String completed_by;
 	private String bus_area;
 	private String work_type;
 	private String demand_type;
@@ -41,11 +47,41 @@ public class ITWRData {
 	public void setCoo_intake_no(String coo_intake_no) {
 		this.coo_intake_no = coo_intake_no;
 	}
+	public String getCreated_by() {
+		return created_by;
+	}
+	public void setCreated_by(String created_by) {
+		this.created_by = created_by;
+	}
+	public String getRequest_for() {
+		return request_for;
+	}
+	public void setRequest_for(String request_for) {
+		this.request_for = request_for;
+	}
 	public String getIt_sme() {
 		return it_sme;
 	}
 	public void setIt_sme(String it_sme) {
 		this.it_sme = it_sme;
+	}
+	public String getDate_created() {
+		return date_created;
+	}
+	public void setDate_created(String date_created) {
+		this.date_created = date_created;
+	}
+	public String getDate_completed() {
+		return date_completed;
+	}
+	public void setDate_completed(String date_completed) {
+		this.date_completed = date_completed;
+	}
+	public String getCompleted_by() {
+		return completed_by;
+	}
+	public void setCompleted_by(String completed_by) {
+		this.completed_by = completed_by;
 	}
 	public String getBus_area() {
 		return bus_area;
@@ -83,14 +119,14 @@ public class ITWRData {
 	public void setVendor_class(String vendor_class) {
 		this.vendor_class = vendor_class;
 	}
-	public String getPrimary_vendor() {
-		return primary_vendor;
-	}
 	public String getAsm() {
 		return asm;
 	}
 	public void setAsm(String asm) {
 		this.asm = asm;
+	}
+	public String getPrimary_vendor() {
+		return primary_vendor;
 	}
 	public void setPrimary_vendor(String primary_vendor) {
 		this.primary_vendor = primary_vendor;
@@ -130,8 +166,7 @@ public class ITWRData {
 	}
 	public void setPcr_actual_hours(String pcr_actual_hours) {
 		this.pcr_actual_hours = pcr_actual_hours;
-	}
+	} 
 	
-
-
+	
 }
