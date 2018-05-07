@@ -25,6 +25,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 
+import com.app.biller.dao.WIASMDataDao;
+import com.app.biller.domain.WIASMData;
 import com.app.biller.dao.ITWRDataDao;
 import com.app.biller.domain.ITWRData;
 import com.app.biller.dao.ILCDataDao;
@@ -46,6 +48,9 @@ public class FileUploadServiceImpl implements FileUploadService {
 	
 	@Autowired
 	ITWRDataDao itwrDataDao;
+	
+	@Autowired
+	WIASMDataDao wiasmDataDao;
 	
 	@Autowired
 	DataApprovalService dataApprovalService;
@@ -88,6 +93,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 		createILCDataSheet(reportWeekend,uploadDataType);
 		ilcDataDao.createILCData(extractILCData(), billCycle, userId, uploadDataType);
 		itwrDataDao.createITWRData(extractITWRData(), billCycle, userId, uploadDataType);
+		wiasmDataDao.uploadWIASMData(extractWIASMData(), billCycle, userId, uploadDataType);
 		return "ILC Report generated successfully";
 	}
 
@@ -429,7 +435,7 @@ private ArrayList<ITWRData> extractITWRData(){
 			//ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
 			itwrInput = new FileInputStream(new File("C:\\billerData\\Uploads\\ITWR for ILC.xlsx"));
 			itwrBook = new XSSFWorkbook(itwrInput);
-			itwrSheet = itwrBook.getSheet("Sheet1");
+			itwrSheet = itwrBook.getSheet("Sheet2");
 			rowIteratorItwr = itwrSheet.iterator();
 			itwrModellist = new ArrayList<ITWRData>();
 			dataExists = true;
@@ -525,6 +531,122 @@ private ArrayList<ITWRData> extractITWRData(){
 		
 		return itwrModel;
 	}
+
+
+
+	
+	
+	private ArrayList<WIASMData> extractWIASMData() {
+
+		FileInputStream wiASMInput = null;
+		XSSFWorkbook wiASMBook = null;
+		XSSFSheet wiASMSheet;
+		XSSFRow row;
+		ArrayList<WIASMData> wiASMDataList = null;
+		Map<String, String> rowData;
+		Iterator<Row> rowIterator;
+		Iterator<Cell> cellIterator;
+		WIASMData wiASMData;
+		Cell cell;
+		DataFormatter formatter;
+		String colName;
+		String colVal;
+		String numColName;
+		String numColVal;
+		CellType BLANK;
+		boolean dataExists;
+		String curRowData;
+		int curRow;
+		int cellType;
+
+		try {
+			//ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
+			wiASMInput = new FileInputStream(new File("C:\\billerData\\Uploads\\WI Vs ASM.xlsx"));
+			wiASMBook = new XSSFWorkbook(wiASMInput);
+			wiASMSheet = wiASMBook.getSheet("WNPPT New WI");
+			rowIterator = wiASMSheet.iterator();
+			wiASMDataList = new ArrayList<WIASMData>();
+			dataExists = true;
+			curRow = 1;
+
+			while (dataExists) {
+				row = (XSSFRow) rowIterator.next();
+				cellIterator = row.cellIterator();
+				rowData = new HashMap<String, String>();
+				wiASMData = new WIASMData();
+
+				while (cellIterator.hasNext()) {
+					cell = cellIterator.next();
+					cellType = wiASMSheet.getRow(curRow).getCell(cell.getColumnIndex()).getCellType();
+					switch (cellType) {
+					case 1:
+						colName = (wiASMSheet.getRow(0).getCell(cell.getColumnIndex()).getStringCellValue()).trim();
+						colVal = (wiASMSheet.getRow(curRow).getCell(cell.getColumnIndex()).getStringCellValue()).trim();
+						rowData.put(colName, colVal);
+						break;
+					case 0:
+						numColName = wiASMSheet.getRow(0).getCell(cell.getColumnIndex()).getStringCellValue();
+						if(numColName.equals("Total Hrs") ) {
+						numColVal = Double.toString(Math.abs(wiASMSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
+						}else {
+							numColVal = Long.toString(Math.round(wiASMSheet.getRow(curRow).getCell(cell.getColumnIndex()).getNumericCellValue()));
+						}
+						rowData.put(numColName, numColVal);
+						break;
+					default:
+						break;
+					}
+				}
+				wiASMData = populateWIASMDataModel(rowData, wiASMData);
+				wiASMDataList.add(wiASMData);
+				curRow++;
+				//curRowData = wiASMSheet.getRow(curRow).getCell(0).getStringCellValue();
+				Row curRowDataType = wiASMSheet.getRow(curRow);
+				dataExists = (curRowDataType != null);
+				rowData = null;
+				wiASMData = null;
+			}
+
+			return wiASMDataList;
+
+		} catch (FileNotFoundException fnfe) {
+			logger.info("FileNotFoundException: " + fnfe.getStackTrace());
+			return wiASMDataList;
+		} catch (Exception e) {
+			logger.info("Exception: " + e.getStackTrace());
+			return wiASMDataList;
+		} finally {
+			try {
+				wiASMBook.close();
+				wiASMInput.close();
+			} catch (Exception e) {
+				logger.info("Exception occured while closing: " + e);
+			}
+		}
+	}
+	
+	
+	
+	private WIASMData populateWIASMDataModel(Map<String, String> rowData, WIASMData wiASMModel) {
+
+		wiASMModel.setAcc_id(rowData.get("Account ID"));
+		wiASMModel.setWrkItem_id(rowData.get("Work Item ID"));
+		wiASMModel.setWrkItem_desc(rowData.get("Work Item Description"));
+		wiASMModel.setCategory(rowData.get("Category"));
+		wiASMModel.setOn_off_shore(rowData.get("On/ Off shore"));
+		wiASMModel.setBilling_type(rowData.get("Billing Type"));
+		wiASMModel.setApplication(rowData.get("Application"));
+		wiASMModel.setBuss_area(rowData.get("Business Area"));
+		wiASMModel.setBam(rowData.get("Business Area Manager"));
+		wiASMModel.setDm(rowData.get("Delivery Manager"));
+		wiASMModel.setAsm(rowData.get("ASM"));
+		wiASMModel.setAsd(rowData.get("ASD"));
+		
+		return wiASMModel;
+	}
+
+
+
 }
 
 
