@@ -14,6 +14,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.app.biller.domain.Account;
+import com.app.biller.domain.Header;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
 import com.app.biller.ui.ItwrReference;
@@ -44,6 +45,12 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 	
 	@Value("${GET_ITWR_REFERENCE_DATA}")
 	String getItwrReferenceData;
+	
+	@Value("${GET_COLUMN_NAME_BY_INDEX}")
+	String getColumnNameByIndex;
+	
+	@Value("${GET_HEADER_FOR_BULK_UPDATE}")
+	String getHeaderForBulkUpdate;
 	
 
 	private JdbcTemplate jdbcTemplate;
@@ -156,5 +163,45 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 		};
 		itwrReferenceList =  jdbcTemplate.query(getItwrReferenceData, new Object[] {wrNo},rowMapper);
 		return itwrReferenceList;
+	}
+	
+	public String getColumnNameById(int headerId) {				
+		String column = jdbcTemplate.queryForObject(getColumnNameByIndex, new Object[] {headerId}, String.class );
+		return column;
+	}
+	
+	public List<Header> getHeaderForBulkUpdate(){
+		
+		RowMapper<Header> rowMapper = new RowMapper<Header>() {
+			@Override
+			public Header mapRow(ResultSet rs, int rownumber) throws SQLException {
+				Header header= new Header();				
+				header.setHeaderId(rs.getInt("header_id"));
+				header.setHeaderDesc(rs.getString("header_Desc"));
+				return header;
+			}			
+		};
+		List<Header> bulkUpdateHeaderList =  jdbcTemplate.query(getHeaderForBulkUpdate,rowMapper);
+		return bulkUpdateHeaderList;
+	}
+	
+	public List<String> getBulkUpdateData(String billCycle, String column){
+		
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("SELECT DISTINCT sla.")
+		  .append(column).append(" FROM biller.blr_sla_data sla where sla.bill_cycle ='")
+		  .append(billCycle)
+		  .append("' order by 1");
+		
+		RowMapper<String> rowMapper = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+		
+		List<String> bulkUpdateDataList =  jdbcTemplate.query(sb.toString(),rowMapper);
+		return bulkUpdateDataList;
 	}
 }

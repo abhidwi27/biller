@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.app.biller.domain.Account;
+import com.app.biller.domain.Header;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
@@ -36,5 +37,9 @@ public interface ReferenceDataService {
 	List<Account> getAccountList();
 	
 	List<ItwrReference> getItwrReferenceData(String wrNo);
+	
+	List<String> getBulkUpdateData(String billCycle, int headerId);
+	
+	List<Header> getHeaderForBulkUpdate();
 }
 

@@ -25,6 +25,7 @@
 		<li data-toggle="tooltip" data-original-title="Copy"><a id="reportCopy"><span ><i class="fa fa-copy report-button-icon"></i></span></a></li>		
 		<li data-toggle="tooltip" data-original-title="Save"><a id="reportSave"><span ><i class="fa fa-save report-button-icon"></i></span></a></li>
 		<li data-toggle="tooltip" data-original-title="Delete"><a id="reportDelete"><span ><i class="fa fa-trash-o report-button-icon"></i></span></a></li>
+		<li data-toggle="tooltip" data-original-title="Bulk Update"><a id="reportBulkUpdate"><span ><i class="fa fa-th report-button-icon"></i></span></a></li>
 		<li><a ><span class="report-button-icon"> | </span></a></li>
 		<li data-toggle="tooltip" data-original-title="Approve"><a id="reportApprove" ><span ><i class="fa fa-thumbs-o-up report-button-icon"></i></span></a></li>
 		<li data-toggle="tooltip" data-original-title="Reject"><a id="reportReject" data-toggle="modal" ><span ><i class="fa fa-thumbs-o-down report-button-icon"></i></span></a></li>
@@ -39,4 +40,5 @@
 <jsp:include page="reportCustom.jsp"></jsp:include>
 <jsp:include page="reportReject.jsp"></jsp:include>
 <jsp:include page="reportApprove.jsp"></jsp:include>
+<jsp:include page="reportBulkUpdate.jsp"></jsp:include>
 <jsp:include page="reportDelete.jsp"></jsp:include>

@@ -4,6 +4,7 @@ var hasApprovedBillCycle;
 var approveListlength;
 var tableHeader;
 var excelFileName;
+var columnLength;
 
 
 $(document).ready(function(){		
@@ -52,6 +53,7 @@ $(document).ready(function(){
 			 $('#reportLock').hide();
 			 $('#reportEdit').hide();
 			 $('#reportCopy').hide();
+			 $('#reportBulkUpdate').hide();
 			 $('#reportDelete').hide();
 			 $('#reportSave').hide();
 			 $('#reportSaveSubmit').hide();
@@ -61,6 +63,7 @@ $(document).ready(function(){
 			 $('#reportLock').show();
 			 $('#reportEdit').show();
 			 $('#reportCopy').show();
+			 $('#reportBulkUpdate').show();
 			 $('#reportDelete').show();
 			 $('#reportSave').show();
 			 $('#reportSaveSubmit').show();
@@ -125,6 +128,8 @@ $(document).ready(function(){
 						$('#reportCopy').find('span i').addClass('biller-icon-disabled');
 						$('#reportSave').find('span i').addClass('biller-icon-disabled');
 						$('#reportDelete').find('span i').addClass('biller-icon-disabled');
+						$('#reportBulkUpdate').find('span i').addClass('biller-icon-disabled');
+						
 					}else{
 						if($('#reportEdit').find('span i').hasClass('biller-icon-disabled')){
 							$('#reportEdit').find('span i').removeClass('biller-icon-disabled');
@@ -137,6 +142,9 @@ $(document).ready(function(){
 						}
 						if($('#reportDelete').find('span i').hasClass('biller-icon-disabled')){
 							$('#reportDelete').find('span i').removeClass('biller-icon-disabled');
+						}
+						if($('#reportBulkUpdate').find('span i').hasClass('biller-icon-disabled')){
+							$('#reportBulkUpdate').find('span i').removeClass('biller-icon-disabled');
 						}
 					}
 			    	
@@ -217,6 +225,16 @@ $(document).ready(function(){
 				    		});
 				    reportTable.buttons().container().appendTo( '#report_wrapper .col-sm-6:eq(0)' );
 				    dataTableInitialized = true;
+				    
+				    if (reportDataType == 0){
+						columnLength = 43;
+					} else{
+						columnLength = 31;
+					}
+					
+					for (var i=0; i<columnLength; i++){
+						allColumns.push(i);
+					}
 				    
 				    addListContent('#customEmp', employeeList);
 	                addListContent('#customWr', wrList);
