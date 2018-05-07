@@ -3,6 +3,7 @@ var rowEditDataMap = new Object();
 var copyInfo = new Object();
 var copyEditMap = new Object();
 var visibleColumns = [];
+var allColumns = [];
 var headerCheckboxToggle = false;
 
 
@@ -196,7 +197,8 @@ $(function() {
 							if($(cellNode).find('input[type="text"]').length != 0){
 								data = '<input type=\"text\" class=\"form-control\" value=\"'+ itwrRef[0][prop] +  '\">';
 							}else{
-								data = itwrRef[0][prop];							}
+								data = itwrRef[0][prop];
+							}
 							reportTable.cell( rowIdx, cellIdxList[i] ).data(data);
 						i++;
 						}
@@ -623,20 +625,9 @@ function customizeColumns() {
 
 	var columnSelected = "["
 	visibleColumns = [];	
-	var allColumns = [];	
-	var hideColumns = [];
-	var columnLength;	
+	var hideColumns = [];		
 	var reportDataType = $("#reportDataType .radio-inline input:radio[name='reportRadio']:checked").val();
 	
-	if (reportDataType == 0){
-		columnLength = 43;
-	} else{
-		columnLength = 31;
-	}
-	
-	for (var i=0; i<columnLength; i++){
-		allColumns.push(i);
-	}
 	settings = {
 		"scrollX" : true,
 		"aoColumnDefs" : [ {
