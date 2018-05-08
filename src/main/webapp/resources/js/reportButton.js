@@ -169,18 +169,44 @@ $(function() {
 	$(document).on( 'change','#report tbody tr td .form-control',  function () {
 		var cellIdx = $(this).closest('td').index();
 		var reportTable = $('#report').DataTable();
-		var reportTable2 = $('#report').dataTable();		
-		if(cellIdx == 8){
+		var reportTable2 = $('#report').dataTable();
+		var headerIdx;
+		var headerVal;
+		if(visibleColumns.length != 0){
+			headerIdx = visibleColumns[cellIdx];			
+		}else{
+			headerIdx = allColumns[cellIdx];
+		}
+			headerVal = tableHeader[headerIdx].trim();
+			
+		//if(cellIdx == 8){
+		if(headerVal == "Activity"){			
 			var cellValue = $(this).closest('input').val();
+			var rowIdx = $(this).closest('tr').index();
 			var wrNo;
+			var columnsToUpdate = ["WR Description", "Cost Center", "CTC/RTC", "Vendor Class", "ASM", "ASD"];  // This should be same as it exists in DB.
+			var requiredColumnsVisible = true;
+			var columnsToUpdateIdx;
+			for(var i=0; i< columnsToUpdate.length ; i++ ){
+				columnsToUpdateIdx = tableHeader.indexOf(columnsToUpdate[i]);
+				if(visibleColumns.length != 0 && visibleColumns.indexOf(columnsToUpdateIdx) == -1 ){
+					requiredColumnsVisible = false;
+					break;
+				}
+			}
+			if( ! (requiredColumnsVisible) ){
+				var msg = "Required columns are not visible hence it can not be updated.";
+				billerAlert(msg,true, 'Okay', false, '','', "Alert !");
+				return;
+			}
 			if(cellValue.substr(0,2).toUpperCase() == "WR"){
 				wrNo = cellValue.substr(0,8); 
-			}else{
+			}else if(cellValue.substr(0,3).toUpperCase() == "ENH"){
 				wrNo = cellValue.substr(0,9);
+			}else{
+				return;
 			}
-			var data = '<input type=\"text\" class=\"form-control\" value=\"'+ wrNo +  '\">';			
-			var rowIdx = $(this).closest('tr').index();				
-			reportTable.cell( rowIdx, 22 ).data(data);			
+						
 			$.ajax({
 				url: 'data/itwrRef.do?wrNo='+wrNo ,
 				type: 'GET',
@@ -188,7 +214,14 @@ $(function() {
 				success: function(itwrRef){
 					if(itwrRef.length !=0){
 						var data;
-						var cellIdxList = [25,26,27,28,2,3];
+						var cellIdxList=[];
+						var wrColumn = "WR #";
+						var wrColumnIdx;
+						wrColumnIdx = tableHeader.indexOf(wrColumn);
+						//var cellIdxList = [25,26,27,28,2,3];
+						for (var i=0; i< columnsToUpdate.length; i++ ){
+							cellIdxList.push(tableHeader.indexOf( columnsToUpdate[i]));
+						}
 						var i=0;
 						var cellNode;
 						delete itwrRef[0].reqNo;
@@ -200,8 +233,16 @@ $(function() {
 								data = itwrRef[0][prop];
 							}
 							reportTable.cell( rowIdx, cellIdxList[i] ).data(data);
-						i++;
+							i++;
 						}
+						
+						cellNode = reportTable.cell( rowIdx, wrColumnIdx).node();							
+						if($(cellNode).find('input[type="text"]').length != 0){
+							data = '<input type=\"text\" class=\"form-control\" value=\"'+ wrNo +  '\">';
+						}else{
+							data = wrNo;
+						}										
+						reportTable.cell( rowIdx, wrColumnIdx ).data(data);
 					}
 				}
 				
