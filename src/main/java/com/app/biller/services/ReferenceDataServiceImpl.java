@@ -11,6 +11,7 @@ import com.app.biller.dao.ReferenceDataDao;
 import com.app.biller.dao.SLADataDao;
 import com.app.biller.dao.UserDao;
 import com.app.biller.domain.Account;
+import com.app.biller.domain.Header;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
@@ -97,5 +98,14 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 	
 	public List<ItwrReference> getItwrReferenceData(String wrNo){
 		return referenceDataDao.getItwrReferenceData(wrNo);
+	}
+	
+	public List<Header> getHeaderForBulkUpdate(){
+		return referenceDataDao.getHeaderForBulkUpdate();
+	}
+	
+	public List<String> getBulkUpdateData(String billCycle, int headerId){
+		String column = referenceDataDao.getColumnNameById(headerId);
+		return referenceDataDao.getBulkUpdateData(billCycle, column);
 	}
 }

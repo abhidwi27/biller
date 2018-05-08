@@ -253,4 +253,15 @@ public class DataController {
 	public @ResponseBody List<ItwrReference> getItwrReferenceData(@RequestParam("wrNo") String wrNo, HttpSession userSession) {		
 		return referenceDataService.getItwrReferenceData(wrNo);
 	}
+	
+	@RequestMapping(path = "/getBulkUpdateData.do", method = RequestMethod.GET)
+	public @ResponseBody List<String> getBulkUpdateData(@RequestParam("dataType") int dataType,
+			@RequestParam("billCycle") String billCycle, @RequestParam("headerId") int headerId, HttpSession userSession) {	
+		if(dataType != 0) {
+			return referenceDataService.getBulkUpdateData(billCycle, headerId);
+		}else {
+			return null;
+		}
+		
+	}
 }
