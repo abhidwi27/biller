@@ -8,6 +8,7 @@ import com.app.biller.domain.Header;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
 import com.app.biller.ui.ItwrReference;
+import com.app.biller.ui.WIASMReference;
 
 public interface ReferenceDataDao {
 
@@ -32,4 +33,6 @@ public interface ReferenceDataDao {
 	List<Header> getHeaderForBulkUpdate();
 	
 	List<String> getBulkUpdateData(String billCycle, String column);
+	
+	List<WIASMReference> getwiasmReferenceData(String wrkItem);
 }

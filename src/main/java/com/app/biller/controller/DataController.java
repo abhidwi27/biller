@@ -37,6 +37,7 @@ import com.app.biller.ui.ResponseDataEnvelope;
 import com.app.biller.ui.ReviewWrapper;
 import com.app.biller.ui.TableData;
 import com.google.gson.Gson;
+import com.app.biller.ui.WIASMReference;
 
 @Controller
 @RequestMapping("/data")
@@ -252,6 +253,11 @@ public class DataController {
 	@RequestMapping(path = "/itwrRef.do", method = RequestMethod.GET)
 	public @ResponseBody List<ItwrReference> getItwrReferenceData(@RequestParam("wrNo") String wrNo, HttpSession userSession) {		
 		return referenceDataService.getItwrReferenceData(wrNo);
+	}
+	
+	@RequestMapping(path = "/wiasmRef.do", method = RequestMethod.GET)
+	public @ResponseBody List<WIASMReference> getwiasmReferenceData(@RequestParam("wrkitem") String wrkItem, HttpSession userSession) {		
+		return referenceDataService.getwiasmReferenceData(wrkItem);
 	}
 	
 	@RequestMapping(path = "/getBulkUpdateData.do", method = RequestMethod.GET)

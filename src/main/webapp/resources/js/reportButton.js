@@ -247,7 +247,77 @@ $(function() {
 				}
 				
 			});
-		}else{
+		}
+		
+		else if(headerVal == "Claim Code")
+		{			
+			var icellValue = $(this).closest('input').val();
+			var irowIdx = $(this).closest('tr').index();
+			var wrkitem;
+			var icolumnsToUpdate = ["Category","Location","Billing","App Area","Business Area","BAM","DM"];  // This should be same as it exists in data_header table in DB.
+			var irequiredColumnsVisible = true;
+			var icolumnsToUpdateIdx;
+			for(var i=0; i< icolumnsToUpdate.length ; i++ ){
+				icolumnsToUpdateIdx = tableHeader.indexOf(icolumnsToUpdate[i]);
+				if(visibleColumns.length != 0 && visibleColumns.indexOf(icolumnsToUpdateIdx) == -1 ){
+					irequiredColumnsVisible = false;
+					break;
+				}
+			}
+			if( ! (irequiredColumnsVisible) ){
+				var msg = "Required columns are not visible hence it can not be updated.";
+				billerAlert(msg,true, 'Okay', false, '','', "Alert !");
+				return;
+			}
+
+				
+			wrkitem = icellValue;
+		
+			$.ajax({
+				url: 'data/wiasmRef.do?wrkitem='+wrkitem ,
+				type: 'GET',
+				data: false,
+				success: function(wiasmRef){
+					if(wiasmRef.length !=0){
+						var data;
+						var icellIdxList=[];
+						var clmColumn = "Claim Code";
+						var clmColumnIdx;
+						
+						for (var i=0; i< icolumnsToUpdate.length; i++ ){
+							icellIdxList.push(tableHeader.indexOf( icolumnsToUpdate[i]));
+						}
+						
+						var i=0;
+						var icellNode;
+						delete wiasmRef[0].wrkItem_id;
+						for(var prop in wiasmRef[0]){
+							icellNode = reportTable.cell( irowIdx, icellIdxList[i] ).node();							
+							if($(icellNode).find('input[type="text"]').length != 0){
+								data = '<input type=\"text\" class=\"form-control\" value=\"'+ wiasmRef[0][prop] +  '\">';
+							}else{
+								data = wiasmRef[0][prop];
+							}
+							reportTable.cell( irowIdx, icellIdxList[i] ).data(data);
+							i++;
+						}
+						
+					}
+					
+					else
+						{
+						var msg = "Please enter valid claim code.";
+						billerAlert(msg,true, 'Okay', false, '','', "Alert !");
+						return;
+						}
+				}
+				
+			});
+	
+		}
+		
+		
+		else{
 			var data = '<input type=\"text\" class=\"form-control\" value=\"'+$(this).closest('input').val() +  '\">';
 			var cell= reportTable.cell($(this).closest('td'));		
 		    cell.data( data );
