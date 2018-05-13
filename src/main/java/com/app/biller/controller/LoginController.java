@@ -59,9 +59,10 @@ public class LoginController {
 		String viewName = LOGIN_VIEW;
 		try {
 			if (loginModel != null && !loginModel.getUserId().isEmpty() & !loginModel.getPassword().isEmpty()) {
-				logger.info("UserId: " + loginModel.getUserId() + " | " + "Password: " + loginModel.getPassword());
-				user = loginService.validateCredentials(loginModel.getUserId(), loginModel.getPassword());
+				//logger.info("UserId: " + loginModel.getUserId() + " | " + "Password: " + loginModel.getPassword());
+				user = loginService.validateCredentials(loginModel.getUserId(), loginModel.getPassword());				
 				if (user != null) {
+					logger.info("User logged in with ID " + loginModel.getUserId());
 					Gson gson = new Gson();
 					String strUserProfile = gson.toJson(user);
 					model.addAttribute("userProfile", user);

@@ -46,7 +46,13 @@ public class WIASMDataDaoImpl implements WIASMDataDao  {
 	public void uploadWIASMData(ArrayList<WIASMData> wiASMModelList, String billCycle, String userId, String uploadDataType) {
 
 		try {
-			jdbcTemplate.update(deleteWIASMData);
+			logger.info("Deleting WIASM Data..");
+			int result = jdbcTemplate.update(deleteWIASMData);
+			if(result != 0) {
+				logger.info("WIASM Data deleted successfully..");
+			}else {
+				logger.warn("WIASM couldn't be deleted successfully..");
+			}
 		} catch (DataAccessException dae) {
 			logger.info("Delete WIASMData Exception: " + dae.getMessage());
 		}

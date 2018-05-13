@@ -49,7 +49,13 @@ public class ITWRDataDaoImpl implements ITWRDataDao {
 	public void createITWRData(ArrayList<ITWRData> itwrModelList, String billCycle, String userId, String uploadDataType) {
 
 		try {
-			jdbcTemplate.update(deleteITWRData);
+			logger.info("Deleting ITWR Data..");
+			int result = jdbcTemplate.update(deleteITWRData);
+			if(result != 0) {
+				logger.info("ITWR Data deleted successfully");
+			}else {
+				logger.info("ITWR Data couldn't be deleted");
+			}
 		} catch (DataAccessException dae) {
 			logger.info("Delete ITWRData Exception: " + dae.getMessage());
 		}

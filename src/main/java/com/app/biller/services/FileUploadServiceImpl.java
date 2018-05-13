@@ -61,6 +61,8 @@ public class FileUploadServiceImpl implements FileUploadService {
 		// File Upload directory on Server.
 		// String uploadRootPath = request.getServletContext().getRealPath("uploads");
 		//String uploadRootPath = "C:/invoice/uploads";
+		
+		logger.info("Uploading Files...");
 		String newpath = System.getProperty("user.dir");
 		String rootdir[] = newpath.split("\\\\",2);
 		String uploadRootPath = rootdir[0] + "\\billerData\\Uploads";
@@ -80,6 +82,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 				File excelFile = new File(uploadRootDir.getAbsolutePath() + File.separator + fileName);
 				try {
 					multipartFile.transferTo(excelFile);
+					logger.info("Files uploaded successfully..");
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -110,7 +113,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 	}
 
 	private void createILCDataSheet(String reportWeekend, String uploadDataType) {
-
+		logger.info("Creating ILC Datasheet..");
 		String[] command = { "cmd.exe", "/C", "Start","/wait", "C:\\biller\\src\\main\\webapp\\Workbench\\trigger.bat",
 				reportWeekend, uploadDataType };
 		Process process = null;
@@ -154,7 +157,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 		String curRowData;
 		int curRow;
 		int cellType;
-
+		logger.info("Extracting ILC Data..");
 		try {
 			//ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
 			ilcInput = new FileInputStream(new File("C:\\biller\\src\\main\\webapp\\Workbench\\FFIC ILC Report.xlsx"));
@@ -246,7 +249,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 		String curRowData;
 		int curRow;
 		int cellType;
-
+		logger.info("Creating SLA Data...");
 		try {
 			//ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
 			slaInput = new FileInputStream(new File("C:\\biller\\src\\main\\webapp\\Workbench\\FFIC SLA Report.xlsx"));
@@ -429,7 +432,7 @@ private ArrayList<ITWRData> extractITWRData(){
 		String curRowData;
 		int curRow;
 		int cellType;
-		
+		logger.info("Extracting ITWR Data..");
 
 		try {
 			//ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
@@ -558,7 +561,7 @@ private ArrayList<ITWRData> extractITWRData(){
 		String curRowData;
 		int curRow;
 		int cellType;
-
+		logger.info("Extracting WIASM Data...");
 		try {
 			//ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
 			wiASMInput = new FileInputStream(new File("C:\\billerData\\Uploads\\WI Vs ASM.xlsx"));

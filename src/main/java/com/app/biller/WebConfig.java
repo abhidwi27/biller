@@ -3,6 +3,8 @@ package com.app.biller;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,6 +22,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.app.biller.dao.ILCDataDaoImpl;
 import com.app.biller.interceptor.AuthenticationInterceptor;
 
 @EnableWebMvc
@@ -27,10 +30,13 @@ import com.app.biller.interceptor.AuthenticationInterceptor;
 @ComponentScan
 @EnableAsync
 public class WebConfig extends WebMvcConfigurerAdapter implements AsyncConfigurer {
-
+	
+	private static final Logger logger = LoggerFactory.getLogger(WebConfig.class);
+	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new AuthenticationInterceptor());
+		logger.info("Authetication interceptor linked for biller application...");
 	}
 
 	@Bean
@@ -63,6 +69,7 @@ public class WebConfig extends WebMvcConfigurerAdapter implements AsyncConfigure
 		mailProperties.put("mail.debug", "true");
 
 		mailSender.setJavaMailProperties(mailProperties);
+		logger.info("Email properties set for biller application...");
 		return mailSender;
 	}
 

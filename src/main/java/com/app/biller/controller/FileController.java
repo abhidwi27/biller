@@ -54,23 +54,29 @@ public class FileController {
 	@ResponseBody
 	public String uploadFiles(MultipartHttpServletRequest request, @RequestParam("billCycle") String billCycle,
 			@RequestParam("dataType") String uploadDataType, @RequestParam("reportWeekend") String reportWeekend,
-			HttpSession userSession) {
+			HttpSession userSession) throws Exception {
 		String uploadStatus = "File Upload Failed";
+		logger.info("File uploading process started for: " + " billCycle " + billCycle + " datatype " + uploadDataType + " reportWeekend " + reportWeekend);
 		//String status = "Success";
-		String status = fileUploadService.uploadFiles(request);
-		if (status.equalsIgnoreCase("Success")) {
-			User userProfile = getUserProfile(userSession);
-			String userId = userProfile.getUserID();
-			if (uploadDataType.equals("0")) {
-				uploadStatus = fileUploadService.uploadILCData(billCycle, userId, uploadDataType, reportWeekend);
+		try {
+			String status = fileUploadService.uploadFiles(request);
+			if (status.equalsIgnoreCase("Success")) {
+				User userProfile = getUserProfile(userSession);
+				String userId = userProfile.getUserID();
+				if (uploadDataType.equals("0")) {
+					uploadStatus = fileUploadService.uploadILCData(billCycle, userId, uploadDataType, reportWeekend);
+				} else {
+					uploadStatus = fileUploadService.uploadSLAData(billCycle, userId, uploadDataType, reportWeekend);
+				}
+				String dataType = uploadDataType.equals("0") ? "ILC" : "SLA";
+				emailService.sendFileUploadEmail(dataType, billCycle, reportWeekend);
+				return uploadStatus;
 			} else {
-				uploadStatus = fileUploadService.uploadSLAData(billCycle, userId, uploadDataType, reportWeekend);
+				logger.error("File Upload Failed with Status: " + status);
 			}
-			String dataType = uploadDataType.equals("0") ? "ILC" : "SLA";
-			emailService.sendFileUploadEmail(dataType, billCycle, reportWeekend);
-			return uploadStatus;
-		} else {
-			logger.error("File Upload Failed with Status: " + status);
+		}catch (Exception ex) {
+			logger.error("Exception occured while executing uploadFiles method", ex);
+			throw new Exception("Generic Exception", ex);
 		}
 		return uploadStatus;
 	}
@@ -79,7 +85,7 @@ public class FileController {
 	@ResponseBody
 	public void downloadFiles(@RequestParam("month") String month, @RequestParam("year") String year,
 			@RequestParam("weekEnd") String weekEnd, @RequestParam("filename") String fileName, HttpSession userSession,
-			HttpServletResponse response) {
+			HttpServletResponse response) throws Exception {
 		// String filePath = "C:\\billerdata\\downloads\\" + month + "-" + year + "\\" + weekEnd;
 		String filePath = StringUtils.join("C:\\billerdata\\downloads\\", month, "-", year, "\\", weekEnd);
 		String fullFilePath = filePath + "\\" + fileName;
@@ -94,29 +100,35 @@ public class FileController {
 			bufferedOutputStream.write(buffer, 0, buffer.length);
 			fileInputStream.close();
 			bufferedOutputStream.flush();
-		} catch (IOException e) {
-			logger.error(e.getMessage());
+		}  catch (Exception ex) {
+			logger.error("Exception occured while executing downloadFiles method", ex);
+			throw new Exception("Generic Exception", ex);
 		}
 	}
 
 	@RequestMapping(value = "/filename.do", method = RequestMethod.GET)
 	@ResponseBody
 	public List<String> getFileName(@RequestParam("month") String month, @RequestParam("year") String year,
-			@RequestParam("weekEnd") String weekEnd, @RequestParam("fileType") int fileType, HttpSession userSession) {
+			@RequestParam("weekEnd") String weekEnd, @RequestParam("fileType") int fileType, HttpSession userSession) throws Exception {
 		List<String> fileNameList = new ArrayList<String>();
+		try {
 		// String filePath = "C:\\billerdata\\downloads\\" + month + "-" + year + "\\" + weekEnd;
-		String filePath = StringUtils.join("C:\\billerdata\\downloads\\", month, "-", year, "\\", weekEnd);
-		File[] files = new File(filePath).listFiles(new FilenameFilter() {
-			@Override
-			public boolean accept(File dir, String name) {
-				String startsWith = (fileType == 0) ? "ILC" : "SLA";
-				return name.endsWith(".xlsx") && name.startsWith(startsWith);
+			String filePath = StringUtils.join("C:\\billerdata\\downloads\\", month, "-", year, "\\", weekEnd);
+			File[] files = new File(filePath).listFiles(new FilenameFilter() {
+				@Override
+				public boolean accept(File dir, String name) {
+					String startsWith = (fileType == 0) ? "ILC" : "SLA";
+					return name.endsWith(".xlsx") && name.startsWith(startsWith);
+				}
+			});
+			if (files != null && files.length != 0) {
+				for (File file : files) {
+					fileNameList.add(file.getName());
+				}
 			}
-		});
-		if (files != null && files.length != 0) {
-			for (File file : files) {
-				fileNameList.add(file.getName());
-			}
+		}catch (Exception ex) {
+			logger.error("Exception occured while executing fileName method", ex);
+			throw new Exception("Generic Exception", ex);
 		}
 		return fileNameList;
 	}

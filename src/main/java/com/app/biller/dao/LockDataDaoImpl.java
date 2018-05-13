@@ -48,6 +48,7 @@ public class LockDataDaoImpl implements LockDataDao {
 	}
 
 	public User checkLockForTower(String billCycle, int towerID) {
+		logger.info("Checking lock for billCycle " + billCycle + " towerID " + towerID);
 		RowMapper<User> userMap = new RowMapper<User>() {
 			@Override
 			public User mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -73,11 +74,13 @@ public class LockDataDaoImpl implements LockDataDao {
 		if (!lockedBy.isEmpty() && lockedBy.size() == 1) {
 			return lockedBy.get(0);
 		} else {
+			logger.info("No user found who had locked for billCycle " + billCycle + " towerID " + towerID);
 			return null;
 		}
 	}
 	
 	public Tower checkLockByUser(String userID, String billCycle) {
+		logger.info("Checking lock by user billCycle " + billCycle);
 		RowMapper<Tower> rowMap = new RowMapper<Tower>() {
 			@Override
 			public Tower mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -90,6 +93,7 @@ public class LockDataDaoImpl implements LockDataDao {
 		List<Tower> tower = jdbcTemplate.query(checkLockByUser, new Object[] { userID, billCycle }, rowMap);
 
 		if (tower.isEmpty()) {
+			logger.info("No tower locked by userID " + userID);
 			return null;
 		} else if (tower.size() == 1) {
 			return tower.get(0);
@@ -103,14 +107,29 @@ public class LockDataDaoImpl implements LockDataDao {
 		int count = jdbcTemplate.queryForObject(checkLockEntry, new Object[] {billCycle, towerID }, Integer.class);
 		
 		if(count == 0) {
-		jdbcTemplate.update(insertDataLock, new Object[] { billCycle, towerID, userID });
+		int result = jdbcTemplate.update(insertDataLock, new Object[] { billCycle, towerID, userID });
+			if(result != 0) {
+				logger.info("Lock established by userID " + userID + " for towerID " + towerID + " for billCycle " + billCycle);
+			}else {
+				logger.info("Lock couldn't be establish by userID " + userID + " for towerID " + towerID + " for billCycle " + billCycle);
+			}		
 		}else {
-			jdbcTemplate.update(updateDataLock, new Object[] { userID , billCycle, towerID});	
+			int result = jdbcTemplate.update(updateDataLock, new Object[] { userID , billCycle, towerID});
+			if(result != 0) {
+				logger.info("Lock updated by userID " + userID + " for towerID " + towerID + " for billCycle " + billCycle);
+			}else {
+				logger.info("Lock couldn't be updated by userID " + userID + " for towerID " + towerID + " for billCycle " + billCycle);
+			}
 		}
 	}
 
 	public void unSetLock(String userID, String billCycle, int towerID) {
-		jdbcTemplate.update(unsetDataLock, new Object[] { billCycle, userID, towerID });
+		int result = jdbcTemplate.update(unsetDataLock, new Object[] { billCycle, userID, towerID });
+		if(result != 0) {
+			logger.info("Lock unset by userID " + userID + " for towerID " + towerID + " for billCycle " + billCycle);
+		}else {
+			logger.info("Lock couldn't be unset by userID " + userID + " for towerID " + towerID + " for billCycle " + billCycle);
+		}
 	}
 	
 }

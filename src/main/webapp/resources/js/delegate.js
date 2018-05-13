@@ -41,7 +41,10 @@ $(document).ready(function(){
 					billerAlert(msg,true,"Okay",false,"","","Notification");
 		    	}
 		
-		    }
+		    },
+		    error: function(result){
+	 			location.href = 'error.do';
+	 		}
 		});
 	});
 });

@@ -8,6 +8,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
@@ -20,7 +22,9 @@ import com.app.biller.domain.SLAData;
 
 @Repository("slaDataDao")
 public class SLADataDaoImpl implements SLADataDao {
-
+	
+	private static final Logger logger = LoggerFactory.getLogger(SLADataDaoImpl.class);
+	
 	@Value("${SELECT_SLA_EMPLOYEE_LIST}")
 	private String selectSLAEmployeeList;
 	
@@ -80,7 +84,7 @@ public class SLADataDaoImpl implements SLADataDao {
 	
 	@Override
 	public void createSLAData(ArrayList<SLAData> SLAModelList, String billCycle, String userId, String uploadDataType) {
-
+		logger.info("Creating SLA Data for billCycle " + billCycle);
 		/*try {
 			jdbcTemplate.update(deleteIlcData);
 		} catch (DataAccessException dae) {
@@ -292,6 +296,7 @@ public class SLADataDaoImpl implements SLADataDao {
 
 	@Override
 	public void deleteSLAData(String billCycle, List<Integer> seqIDList) {
+		logger.info("Making SLA Data inactive for billCycle " + billCycle + " and seqIdList " + seqIDList.toString());
 		// TODO Auto-generated method stub
 		jdbcTemplate.batchUpdate(deleteSLAData, new BatchPreparedStatementSetter() {
 			@Override
@@ -310,7 +315,7 @@ public class SLADataDaoImpl implements SLADataDao {
 
 	@Override
 	public void createNewSLARecord(String billCycle,  ArrayList<SLAData> newSLADataList) {
-		
+		logger.info("Creating new SLA Record for billCycle " + billCycle);
 		jdbcTemplate.batchUpdate(insertNewSLARecord, new BatchPreparedStatementSetter() {
 			@Override
 			public void setValues(PreparedStatement ps, int i) throws SQLException {
@@ -369,7 +374,8 @@ public class SLADataDaoImpl implements SLADataDao {
 	@Override
 	public ArrayList<SLAData> readCustomSLAData(String billCycle, int towerID, String weekEndDate, String wrNo,
 			String empName, int billable, String remarks, int accountId) {
-
+		logger.info("Reading Customized SLA Data for billCycle " + billCycle + " and towerId " + towerID + " and account Id " + accountId
+				+ " weekendDate " + weekEndDate + " wrNo " + wrNo + " empName " + empName + " billable " +billable + " remarks " + remarks);
 		StringBuilder sb = new StringBuilder();
 
 		sb.append(
@@ -461,7 +467,7 @@ public class SLADataDaoImpl implements SLADataDao {
 	}
 
 	public List<String> getEmployeeList(String billCycle, int towerID) {
-		
+		logger.info("Getting SLA employee list for billCycle " + billCycle + " and towerId " + towerID);
 		Object queryParam[];
 		String getSlaEmployeeQuery;
 		if(towerID != 0 ) {
@@ -484,7 +490,7 @@ public class SLADataDaoImpl implements SLADataDao {
 	}
 
 	public List<String> getWRList(String billCycle, int towerID) {
-		
+		logger.info("Getting SLA WR list for billCycle " + billCycle + " and towerId " + towerID);
 		Object queryParam[];
 		String getSlaWrQuery;
 		if(towerID != 0 ) {
@@ -508,7 +514,7 @@ public class SLADataDaoImpl implements SLADataDao {
 	}
 
 	public List<String> getWeekendList(String billCycle, int towerID) {
-		
+		logger.info("Getting SLA weekend list for billCycle " + billCycle + " and towerId " + towerID);
 		Object queryParam[];
 		String getSlaWeekEndQuery;
 		if(towerID != 0 ) {
@@ -556,6 +562,7 @@ public class SLADataDaoImpl implements SLADataDao {
 	}
 	
 	public String getActiveBillCycle() {
+		logger.info("Getting Active billCycle...");
 		RowMapper<String> rowMap = new RowMapper<String>() {
 			@Override
 			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -569,6 +576,7 @@ public class SLADataDaoImpl implements SLADataDao {
 			return activeBillCycle.get(0);
 		}
 		else {
+			logger.warn("No Active billCycle found...");
 			return null;
 		}
 		

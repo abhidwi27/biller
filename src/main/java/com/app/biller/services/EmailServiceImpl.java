@@ -48,6 +48,7 @@ public class EmailServiceImpl implements EmailService {
 		MimeMessagePreparator preparator = getMessagePreparator(mailObj);
 		try {
 			mailSender.send(preparator);
+			logger.info("Email sent with details: " + preparator.toString());
 		} catch (MailException ex) {
 			logger.error(ex.getMessage());
 		}

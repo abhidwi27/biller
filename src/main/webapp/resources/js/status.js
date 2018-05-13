@@ -10,7 +10,10 @@ $(document).ready(function(){
 		data: false,		
 		success: function(approvalStatus){
 		 updateStatusView(approvalStatus)
-		}
+		},
+		error: function(result){
+ 			location.href = 'error.do';
+ 		}
 	});
 	
 	$('.billerProgress .nav-tabs li span.round-tabs').click(function(){
