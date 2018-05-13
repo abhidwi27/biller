@@ -9,6 +9,7 @@ import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
 import com.app.biller.ui.ItwrReference;
+import com.app.biller.ui.WIASMReference;
 
 public interface ReferenceDataService {
 	
@@ -41,5 +42,7 @@ public interface ReferenceDataService {
 	List<String> getBulkUpdateData(String billCycle, int headerId);
 	
 	List<Header> getHeaderForBulkUpdate();
+	
+	List<WIASMReference> getwiasmReferenceData(String wrNo);
 }
 

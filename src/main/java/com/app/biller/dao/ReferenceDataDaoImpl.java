@@ -18,6 +18,7 @@ import com.app.biller.domain.Header;
 import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
 import com.app.biller.ui.ItwrReference;
+import com.app.biller.ui.WIASMReference;
 
 @Repository("referenceDataDao")
 public class ReferenceDataDaoImpl implements ReferenceDataDao {
@@ -51,6 +52,9 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 	
 	@Value("${GET_HEADER_FOR_BULK_UPDATE}")
 	String getHeaderForBulkUpdate;
+	
+	@Value("${GET_WIASM_REFERENCE_DATA}")
+	String getwiasmReferenceData;
 	
 
 	private JdbcTemplate jdbcTemplate;
@@ -163,6 +167,29 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 		};
 		itwrReferenceList =  jdbcTemplate.query(getItwrReferenceData, new Object[] {wrNo},rowMapper);
 		return itwrReferenceList;
+	}
+	
+	
+	public List<WIASMReference> getwiasmReferenceData(String wrkItem){
+		List<WIASMReference> wiasmReferenceList = new ArrayList<WIASMReference>();
+		RowMapper<WIASMReference> rowMapper = new RowMapper<WIASMReference>() {
+			@Override
+			public WIASMReference mapRow(ResultSet rs, int rownumber) throws SQLException {
+				WIASMReference wiasmRef = new WIASMReference();
+				
+				wiasmRef.setCategory(rs.getString("category"));
+				wiasmRef.setOn_off_shore(rs.getString("on_off_shore"));
+				wiasmRef.setBilling_type(rs.getString("bill_type"));
+				wiasmRef.setApplication(rs.getString("application"));
+				wiasmRef.setBuss_area(rs.getString("bus_area"));
+				wiasmRef.setBam(rs.getString("bam"));
+				wiasmRef.setDm(rs.getString("dm"));
+				
+				return wiasmRef;
+			}
+		};
+		wiasmReferenceList =  jdbcTemplate.query(getwiasmReferenceData, new Object[] {wrkItem},rowMapper);
+		return wiasmReferenceList;
 	}
 	
 	public String getColumnNameById(int headerId) {				

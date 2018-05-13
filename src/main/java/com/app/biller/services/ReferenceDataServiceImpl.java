@@ -16,6 +16,7 @@ import com.app.biller.domain.Month;
 import com.app.biller.domain.Tower;
 import com.app.biller.domain.User;
 import com.app.biller.ui.ItwrReference;
+import com.app.biller.ui.WIASMReference;
 
 @Service
 public class ReferenceDataServiceImpl implements ReferenceDataService {
@@ -98,6 +99,10 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 	
 	public List<ItwrReference> getItwrReferenceData(String wrNo){
 		return referenceDataDao.getItwrReferenceData(wrNo);
+	}
+	
+	public List<WIASMReference> getwiasmReferenceData(String wrkItem){
+		return referenceDataDao.getwiasmReferenceData(wrkItem);
 	}
 	
 	public List<Header> getHeaderForBulkUpdate(){
