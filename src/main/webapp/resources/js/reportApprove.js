@@ -74,7 +74,10 @@ $(document).ready(function(){
 				}else{
 					billerAlert("Error: report could not be approved.",true, 'Okay', false, '','', "Alert !");					
 				}
-			}
+			},
+			error: function(result){
+	 			location.href = 'error.do';
+	 		}
 		});		
 		$(".biller-loader-div").fadeOut("slow");
 	});

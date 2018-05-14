@@ -162,7 +162,10 @@ $(function() {
 						$('#reportDelete').find('span i').removeClass('biller-icon-disabled');
 					}
 				}
-			}
+			},
+			error: function(result){
+	 			location.href = 'error.do';
+	 		}
 		});
 	});
 	
@@ -244,7 +247,10 @@ $(function() {
 						}										
 						reportTable.cell( rowIdx, wrColumnIdx ).data(data);
 					}
-				}
+				},
+				error: function(result){
+		 			location.href = 'error.do';
+		 		}
 				
 			});
 		}
@@ -310,7 +316,10 @@ $(function() {
 						billerAlert(msg,true, 'Okay', false, '','', "Alert !");
 						return;
 						}
-				}
+				},
+				error: function(result){
+		 			location.href = 'error.do';
+		 		}
 				
 			});
 	
@@ -670,7 +679,10 @@ $(function() {
     				var msg = "Error occured while saving data";
     				billerAlert(msg,true, 'Okay', false, '','', "Alert !");
     			}    			
-    		}        			
+    		},
+    		error: function(result){
+	 			location.href = 'error.do';
+	 		}
     	});
     	}, 50);
 	});

@@ -47,7 +47,10 @@ $(document).ready(function(){
 			    contentType: false,
 			    type: 'POST',
 			    success: function(data){
-			    }
+			    },
+			    error: function(result){
+		 			location.href = 'error.do';
+		 		}
 		});
 		 
 	});	

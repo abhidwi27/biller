@@ -77,7 +77,13 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	public void createILCData(ArrayList<ILCData> ilcModelList, String billCycle, String userId, String uploadDataType) {
 
 		try {
-			jdbcTemplate.update(deleteIlcData);
+			logger.info("Deleting ILC Data...");			
+			int result = jdbcTemplate.update(deleteIlcData);
+			if(result == 0) {
+				logger.info("ILC Data deleted successfully...");
+			}else {
+				logger.warn("Couldn't delete ILC Data, may be ILC Table is empty..");
+			}
 		} catch (DataAccessException dae) {
 			logger.info("Delete ILCData Exception: " + dae.getMessage());
 		}
@@ -141,7 +147,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 
 	@Override
 	public ArrayList<ILCData> readILCData(String billCycle, int towerID , int accountId) {
-		
+		logger.info("Reading ILC Data for billCycle " + billCycle + " and towerId " + towerID + " and account Id " + accountId);
 		Object queryParam[];
 		String readIlcQuery;
 		if(towerID != 0 ) {
@@ -210,7 +216,8 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	@Override
 	public ArrayList<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndDate, String wrNo,
 			String empName, int billable, String remarks, int accountId) {
-
+		logger.info("Reading Customized ILC Data for billCycle " + billCycle + " and towerId " + towerID + " and account Id " + accountId
+				+ " weekendDate " + weekEndDate + " wrNo " + wrNo + " empName " + empName + " billable " +billable + " remarks " + remarks);
 		StringBuilder sb = new StringBuilder();
 
 		sb.append(
@@ -319,7 +326,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	}
 
 	public List<String> getEmployeeList(String billCycle, int towerID) {
-		
+		logger.info("Getting ILC employee list for billCycle " + billCycle + " and towerId " + towerID);
 		Object queryParam[];
 		String getIlcEmployeeQuery;
 		if(towerID != 0 ) {
@@ -367,7 +374,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	}
 
 	public List<String> getWeekendList(String billCycle, int towerID) {
-		
+		logger.info("Getting ILC Wekeend list for billCycle " + billCycle + " and towerId " + towerID);
 		Object queryParam[];
 		String getIlcWeekendQuery;
 		if(towerID != 0 ) {
@@ -391,7 +398,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	
 	
 	public List<String> getRemarksList(String billCycle, int towerID) {
-		
+		logger.info("Getting ILC Remakrs list for billCycle " + billCycle + " and towerId " + towerID);
 		Object queryParam[];
 		String getIlcRemarkQuery;
 		if(towerID != 0 ) {

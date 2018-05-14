@@ -67,7 +67,10 @@ $(document).ready(function(){
 						var msg = "Data deleted successfuly";
 						billerAlert(msg,true, 'Okay', false, '','', "Alert !");
 					}
-				}
+				},
+				error: function(result){
+		 			location.href = 'error.do';
+		 		}
 			});
 		}
 		

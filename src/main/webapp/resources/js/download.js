@@ -48,7 +48,10 @@ $(document).ready(function(){
 					$('#downloadFilename').append('<option>' + "File not found" + '</option>');
 				}
 				 $('#downloadFilename').selectpicker('refresh');
-			}
+			},
+			error: function(result){
+	 			location.href = 'error.do';
+	 		}
 		});
 	});
 		

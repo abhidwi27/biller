@@ -56,7 +56,10 @@ $(document).ready(function(){
 					var msg = "Error occured while rejecting";
 					billerAlert(msg,true, 'Okay', false, '','', "Alert !");
 				}
-			}
+			},
+			error: function(result){
+	 			location.href = 'error.do';
+	 		}
 		});
 
 	});

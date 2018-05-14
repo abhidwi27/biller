@@ -242,7 +242,10 @@ $(document).ready(function(){
 	                addListContent('#customRemarks', remarksList);
 	                addListContent('#rejectForUser', rejectForUserList);
 	                
-	            }
+	            },
+		 		error: function(result){
+		 			location.href = 'error.do';
+		 		}
 		 
 			});
 		setTimeout(function(){			

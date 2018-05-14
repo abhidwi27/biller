@@ -4,10 +4,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.biller.dao.GroupApprovalDao;
+import com.app.biller.dao.ReferenceDataDaoImpl;
 import com.app.biller.dao.UserApprovalDao;
 import com.app.biller.dao.UserDao;
 import com.app.biller.domain.GroupApproval;
@@ -17,7 +20,9 @@ import com.app.biller.ui.ApprovalStatus;
 
 @Service
 public class DataApprovalServiceImpl implements DataApprovalService {
-
+	
+	private static final Logger logger = LoggerFactory.getLogger(DataApprovalServiceImpl.class);
+	
 	@Autowired
 	UserApprovalDao userApprovalDao;
 

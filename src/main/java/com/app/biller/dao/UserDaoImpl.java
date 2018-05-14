@@ -84,6 +84,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public User createUserProfile(String userid) {
+		logger.info("Creating user profile for " + userid);
 		User user = jdbcTemplate.queryForObject(selectUserProfile, new Object[] {userid}, new RowMapper<User>() {
 			@Override
 			public User mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -95,11 +96,13 @@ public class UserDaoImpl implements UserDao {
 				return usr;
 			}
 		});
+		logger.info("User profile successfully created for  " + userid);
 		return user;
 	}
 
 	@Override
 	public List<User> getDelegateUserList(String userid) {
+		logger.info("Getting list of users whom " + userid + " can delegate to");
 		RowMapper<User> delegateUserList = new RowMapper<User>() {
 			@Override
 			public User mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -114,26 +117,41 @@ public class UserDaoImpl implements UserDao {
 		List<User> strDelegateList = jdbcTemplate.query(getDelegateUserList, new Object[] {userid, userid},
 				delegateUserList);
 		if (strDelegateList.isEmpty()) {
+			logger.info("There is no user for " + userid + " to delegate to");
 			return null;
 		} else { // list contains more than 1 elements
+			logger.info("Delegate list prepared for " + userid);
 			return strDelegateList;
 		}
 	}
 
 	@Override
 	public int setDelegateUser(String delegatedBy, String delegatedTo) {
+		logger.info("Setting delegation to " + delegatedBy + " for " + delegatedBy);
 		int result = jdbcTemplate.update(setDelegateUser, new Object[]{delegatedTo, delegatedBy});
+		if(result != 0) {
+			logger.info(delegatedBy + " successfully delegated to " + delegatedTo);
+		}else {
+			logger.warn("Coundn't delegated to " + delegatedTo + " by " + delegatedBy);
+		}
 		return result;
 	}
 
 	@Override
 	public int unsetDelegateUser(String delegateBy) {
+		logger.info("Un-setting delegation to " + delegateBy);
 		int result = jdbcTemplate.update(unsetDelegateUser, new Object[]{delegateBy});
+		if(result != 0) {
+			logger.info("un-set delegation complete for " + delegateBy);
+		}else {
+			logger.info("Couldn't un-set delegate for " + delegateBy);
+		}
 		return result;
 	}
 
 	@Override
 	public List<User> getDelegateBy(String userid) {
+		logger.info("Getting list of users who have delegated to " + userid);
 		RowMapper<User> delegateUserList = new RowMapper<User>() {
 			@Override
 			public User mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -148,8 +166,10 @@ public class UserDaoImpl implements UserDao {
 		List<User> strDelegatedBy = jdbcTemplate.query(getDelegateByUserList, new Object[] {userid},
 				delegateUserList);
 		if (strDelegatedBy.isEmpty()) {
+			logger.warn("There is no user who has delegated to " + userid);
 			return null;
 		} else { // list contains more than 1 elements
+			logger.info("List prepared of users who has delegated to " + userid);
 			return strDelegatedBy;
 		}
 	}
@@ -164,6 +184,7 @@ public class UserDaoImpl implements UserDao {
 		};
 		List<String> emailID = jdbcTemplate.query(getEmailID, new Object[]{userID}, emailMap);
 		if (emailID.isEmpty()) {
+			logger.warn("No email found for " + userID);
 			return null;
 		} else { // list contains more than 1 elements
 			return emailID.get(0);
@@ -179,6 +200,7 @@ public class UserDaoImpl implements UserDao {
 		};
 		List<String> emailID = jdbcTemplate.query(getPmoEmailID, new Object[]{}, emailMap);
 		if (emailID.isEmpty()) {
+			logger.warn("No Email ID found for PMO");
 			return null;
 		} else { // list contains more than 1 elements
 			return emailID.get(0);
@@ -188,6 +210,9 @@ public class UserDaoImpl implements UserDao {
 
 	public int getUserCountByRole(int roleID) {
 		int result = jdbcTemplate.queryForObject(getUserCountByRole, new Object[] {roleID}, Integer.class);
+		if(result == 0) {
+			logger.warn("No user found in the system for role ID " + roleID);
+		}
 		return result;
 	}
 }

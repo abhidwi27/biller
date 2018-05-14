@@ -109,7 +109,10 @@ $(document).ready(function(){
 		    	            scroller:       true,
 			    	     });
 		                dataTableInitialized = true;
-				    }
+				    },
+				    error: function(result){
+			 			location.href = 'error.do';
+			 		}
 			 		
 				  });  	  
 			 		  
