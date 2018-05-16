@@ -106,11 +106,13 @@
 			<artifactId>db2jcc4</artifactId>
 			<version>10.1</version>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>com.ibm</groupId>
 			<artifactId>db2jcc</artifactId>
 			<version>9</version>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
