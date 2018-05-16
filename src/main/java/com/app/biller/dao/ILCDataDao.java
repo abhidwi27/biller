@@ -7,7 +7,7 @@ import com.app.biller.domain.ILCData;
 
 public interface ILCDataDao {
 
-	void createILCData(ArrayList<ILCData> ilcModelList, String billCycle, String userId, String uploadDataType);	
+	void createILCData(ArrayList<ILCData> ilcModelList, String billCycle, String userId, String uploadDataType) throws Exception;	
 
 	ArrayList<ILCData> readILCData(String billCycle, int towerID , int accountId);
 
