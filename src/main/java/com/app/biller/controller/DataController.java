@@ -268,7 +268,11 @@ public class DataController {
 		ApprovalStatus approvalStatus;
 		try {
 			String activeBillCycle = referenceDataService.getActiveBillCycle();
-			approvalStatus =  dataApprovalService.getApprovalStatus(activeBillCycle);
+			if(activeBillCycle !=null ) {
+				approvalStatus =  dataApprovalService.getApprovalStatus(activeBillCycle);
+			}else {
+				approvalStatus = null;
+			}
 		}catch (Exception ex) {
 			logger.error("Exception occured while executing getApprovalStatus.", ex);
 			throw new Exception("Generic Exception", ex);
