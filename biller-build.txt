@@ -1,0 +1,4 @@
+# Below line need to be executed only once this will install db2 jars in maven repo.
+#mvn install:install-file -Dfile=../biller/db2-connector/db2jcc4.jar -DgroupId=com.ibm.db2.jcc -DartifactId=db2jcc4 -Dversion=10.1 -Dpackaging=jar -DgeneratePom=true -DcreateChecksum=true
+
+mvn clean install
