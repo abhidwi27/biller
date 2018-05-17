@@ -174,6 +174,30 @@ public class DataController {
 		}
 		return gson.toJson(lockResponseMap);
 	}
+	
+	@RequestMapping(path = "/unlock.do", method = RequestMethod.GET)
+	public @ResponseBody String unlockSLAData(@RequestParam("billCycle") String billCycle,
+			@RequestParam("towerID") int towerID, HttpSession userSession) throws Exception {
+		User userProfile = getUserProfile(userSession);
+		String userID = userProfile.getUserID();
+		Gson gson = new Gson();
+		HashMap<String, Object> unlockResponseMap = new HashMap<String, Object>();
+		try {
+			User lockedBy = dataLockService.checkLockForTower(billCycle, towerID);			
+			unlockResponseMap.put("lockedBy", lockedBy);
+			
+			if (lockedBy != null ) {
+				dataLockService.unSetLock(userID,billCycle, towerID);
+				unlockResponseMap.put("msg", "success");
+			} else {
+				unlockResponseMap.put("msg", "failed");
+			}
+		}catch (Exception ex) {
+			logger.error("Exception occured while executing lock method.");
+			throw new Exception("Generic Exception", ex);
+		}
+		return gson.toJson(unlockResponseMap);
+	}
 
 	@RequestMapping(path = "/delete.do", method = RequestMethod.POST)
 	public @ResponseBody boolean deleteSLAData(@RequestParam("billCycle") String billCycle,
@@ -268,7 +292,11 @@ public class DataController {
 		ApprovalStatus approvalStatus;
 		try {
 			String activeBillCycle = referenceDataService.getActiveBillCycle();
-			approvalStatus =  dataApprovalService.getApprovalStatus(activeBillCycle);
+			if(activeBillCycle !=null ) {
+				approvalStatus =  dataApprovalService.getApprovalStatus(activeBillCycle);
+			}else {
+				approvalStatus = null;
+			}
 		}catch (Exception ex) {
 			logger.error("Exception occured while executing getApprovalStatus.", ex);
 			throw new Exception("Generic Exception", ex);

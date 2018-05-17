@@ -9,7 +9,9 @@ $(document).ready(function(){
 		type: 'GET',
 		data: false,		
 		success: function(approvalStatus){
-		 updateStatusView(approvalStatus)
+			if(approvalStatus != undefined && approvalStatus != ""){
+				updateStatusView(approvalStatus)
+			}
 		},
 		error: function(result){
  			location.href = 'error.do';

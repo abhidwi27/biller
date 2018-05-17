@@ -64,15 +64,45 @@ $(document).ready(function(){
 				if (reviewFlag == 1) {
 					billerAlert("Approval submitted successfully",true, 'Okay', false, '','', "Alert !");
 					if(approveFor ==  userProfile.userID){
-						hasApprovedBillCycle == 1;
+						hasApprovedBillCycle = 1;
 						editMode[tower] = false;
-						//$('#reportLock').find('span i').addClass('biller-icon-disabled');
+						$('#reportLock').find('span i').addClass('biller-icon-disabled');
+						$('#reportUnlock').find('span i').addClass('biller-icon-disabled');
 					}					
 				}else if (reviewFlag == 0){
 					billerAlert("Error: Your have already approved report for selected bill cycle.",true, 'Okay', false, '','', "Alert !");
 					
 				}else{
 					billerAlert("Error: report could not be approved.",true, 'Okay', false, '','', "Alert !");					
+				}
+				if (!editMode[tower]){					
+					$('#reportEdit').find('span i').addClass('biller-icon-disabled');
+					$('#reportCopy').find('span i').addClass('biller-icon-disabled');
+					$('#reportSave').find('span i').addClass('biller-icon-disabled');
+					$('#reportDelete').find('span i').addClass('biller-icon-disabled');
+					$('#reportBulkUpdate').find('span i').addClass('biller-icon-disabled');
+				}else{
+					if($('#reportEdit').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportEdit').find('span i').removeClass('biller-icon-disabled');
+					}
+					if($('#reportCopy').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportCopy').find('span i').removeClass('biller-icon-disabled');
+					}
+					if($('#reportSave').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportSave').find('span i').removeClass('biller-icon-disabled');
+					}
+					if($('#reportDelete').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportDelete').find('span i').removeClass('biller-icon-disabled');
+					}
+					if($('#reportLock').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportLock').find('span i').removeClass('biller-icon-disabled');
+		    		}
+					if($('#reportUnlock').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportUnLock').find('span i').removeClass('biller-icon-disabled');
+		    		}
+					if($('#reportBulkUpdate').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportBulkUpdate').find('span i').removeClass('biller-icon-disabled');
+		    		}
 				}
 			},
 			error: function(result){

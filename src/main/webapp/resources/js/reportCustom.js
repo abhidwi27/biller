@@ -112,17 +112,16 @@ $(document).ready(function(){
 				    },
 				    error: function(result){
 			 			location.href = 'error.do';
-			 		}
+			 		},
+				    complete: function(){			
+				    	$("#report_wrapper .dt-buttons button").css("margin-right", "1em");
+						 $("#report_wrapper .dataTables_scrollHead table").css("margin-left", "2px");
+						 $(".biller-loader-div").fadeOut("slow");
+			        }
 			 		
 				  });  	  
 			 		  
-			 }, 50);
-		setTimeout(function(){			
-			 $("#report_wrapper .dt-buttons button").css("margin-right", "1em");
-			 $("#report_wrapper .dataTables_scrollHead table").css("margin-left", "2px");
-			 $(".biller-loader-div").fadeOut("slow");
-		 }, 1500);
-		
+			 }, 50);	
 	});
 	
 });
