@@ -34,7 +34,8 @@ $(document).ready(function(){
 		var billCycle = month+ year;
 		var reportWeekend = $('#uploadWeekEndDate input[type="text"]').val();
 		var oMyForm = new FormData();
-		 
+		$(".biller-loader-div").fadeIn(1);
+		
 		for( i=0 ; i<uploadFile.files.length ; i++){				
 			oMyForm.append("file", uploadFile.files[i]);
 		}
@@ -46,11 +47,15 @@ $(document).ready(function(){
 			    processData: false,
 			    contentType: false,
 			    type: 'POST',
-			    success: function(data){
+			    success: function(msg){
+			    	billerAlert(msg,true, 'Okay', false, '','', "Alert!");
 			    },
 			    error: function(result){
 		 			location.href = 'error.do';
-		 		}
+		 		},
+			    complete: function(result){
+			    	$(".biller-loader-div").fadeOut("slow");
+			    }
 		});
 		 
 	});	
