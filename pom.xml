@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.app</groupId>
@@ -106,19 +107,18 @@
 			<artifactId>db2jcc4</artifactId>
 			<version>10.1</version>
 		</dependency>
-		<!--
-		<dependency>
-			<groupId>com.ibm</groupId>
-			<artifactId>db2jcc</artifactId>
-			<version>9</version>
-		</dependency>
-		-->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>3.0</version>
 		</dependency>
 	</dependencies>
+	<repositories>
+		<repository>
+			<id>alfresco-public</id>
+			<url>https://artifacts.alfresco.com/nexus/content/repositories/public/</url>
+		</repository>
+	</repositories>
 	<build>
 		<finalName>biller</finalName>
 		<plugins>
