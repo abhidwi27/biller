@@ -7,7 +7,7 @@ import com.app.biller.domain.SLAData;
 
 public interface SLADataDao {
 	
-	void createSLAData(ArrayList<SLAData> slaModelList, String billCycle, String userId, String uploadDataType);
+	void createSLAData(ArrayList<SLAData> slaModelList, String billCycle, String userId, String uploadDataType) throws Exception;
 
 	ArrayList<SLAData> readSLAData(String billCycle, int towerID, int accountId);
 

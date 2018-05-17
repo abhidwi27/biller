@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -83,103 +84,64 @@ public class SLADataDaoImpl implements SLADataDao {
 
 	
 	@Override
-	public void createSLAData(ArrayList<SLAData> SLAModelList, String billCycle, String userId, String uploadDataType) {
+	public void createSLAData(ArrayList<SLAData> SLAModelList, String billCycle, String userId, String uploadDataType) throws Exception {
 		logger.info("Creating SLA Data for billCycle " + billCycle);
-		/*try {
-			jdbcTemplate.update(deleteIlcData);
-		} catch (DataAccessException dae) {
-			logger.info("Delete ILCData Exception: " + dae.getMessage());
-		}*/
+		
+		if(SLAModelList == null) {
+			logger.error("SLAModelList is null, SLAData can not be inserted");
+			throw new Exception("null SLAModelList");
+		}
+		try {
+			int[] batchUpdateResult = jdbcTemplate.batchUpdate(insertSLAData, new BatchPreparedStatementSetter() {
+				@Override
+				public void setValues(PreparedStatement ps, int i) throws SQLException {
+					
+					ps.setString(1, SLAModelList.get(i).getWeekEndDate());
+					ps.setString(2, SLAModelList.get(i).getAsm());
+					ps.setString(3, SLAModelList.get(i).getAsd());
+					ps.setString(4, SLAModelList.get(i).getAsmItwr());
+					ps.setString(5, SLAModelList.get(i).getAsdItwr());
+					ps.setString(6, SLAModelList.get(i).getEmpID());
+					ps.setString(7, SLAModelList.get(i).getEmpName());
+					ps.setString(8, SLAModelList.get(i).getActivity());
+					ps.setString(9, SLAModelList.get(i).getWorkItem());
+					ps.setString(10, SLAModelList.get(i).getOnOffShore());
+					ps.setDouble(11, SLAModelList.get(i).getTotHrs());
+					ps.setString(12, SLAModelList.get(i).getShiftDetail());
+					ps.setString(13, SLAModelList.get(i).getCategory());
+					ps.setString(14, SLAModelList.get(i).getBillType());
+					ps.setString(15, SLAModelList.get(i).getDm());
+					ps.setString(16, SLAModelList.get(i).getAppArea());
+					ps.setString(17, SLAModelList.get(i).getBusinessArea());
+					ps.setString(18, SLAModelList.get(i).getTower());
+					ps.setString(19, SLAModelList.get(i).getBam());
+					ps.setString(20, SLAModelList.get(i).getRemarks());
+					ps.setString(21, SLAModelList.get(i).getIsBillable());
+					ps.setString(22, SLAModelList.get(i).getWrNo());
+					ps.setInt(23, SLAModelList.get(i).getPlannedHrs());
+					ps.setString(24, SLAModelList.get(i).getComments());
+					ps.setString(25, SLAModelList.get(i).getWrDesc());
+					ps.setString(26, SLAModelList.get(i).getCostCenter());
+					ps.setString(27, SLAModelList.get(i).getFundType());
+					ps.setString(28, SLAModelList.get(i).getVendorClass());
+					ps.setString(29, SLAModelList.get(i).getAccountId());
+					ps.setString(30, billCycle);
+					ps.setString(31,userId);					
+				}	
+				@Override
+				public int getBatchSize() {
+					int batchSize = SLAModelList.size();
+					logger.info("SLA Batch Update Size is " +batchSize);
+					return batchSize;
+				}
+			});
+			logger.info("SLA Batch update: records updated = " , batchUpdateResult.length );
+		}catch(DataAccessException dae) {
+			logger.error("SLA Batch Update Error ", dae);
+			throw new Exception("SLA Batch Update Error ");
+		}
 
-		jdbcTemplate.batchUpdate(insertSLAData, new BatchPreparedStatementSetter() {
-			@Override
-			public void setValues(PreparedStatement ps, int i) throws SQLException {
-				
-				ps.setString(1, SLAModelList.get(i).getWeekEndDate());
-				ps.setString(2, SLAModelList.get(i).getAsm());
-				ps.setString(3, SLAModelList.get(i).getAsd());
-				ps.setString(4, SLAModelList.get(i).getAsmItwr());
-				ps.setString(5, SLAModelList.get(i).getAsdItwr());
-				ps.setString(6, SLAModelList.get(i).getEmpID());
-				ps.setString(7, SLAModelList.get(i).getEmpName());
-				ps.setString(8, SLAModelList.get(i).getActivity());
-				ps.setString(9, SLAModelList.get(i).getWorkItem());
-				ps.setString(10, SLAModelList.get(i).getOnOffShore());
-				ps.setDouble(11, SLAModelList.get(i).getTotHrs());
-				ps.setString(12, SLAModelList.get(i).getShiftDetail());
-				ps.setString(13, SLAModelList.get(i).getCategory());
-				ps.setString(14, SLAModelList.get(i).getBillType());
-				ps.setString(15, SLAModelList.get(i).getDm());
-				ps.setString(16, SLAModelList.get(i).getAppArea());
-				ps.setString(17, SLAModelList.get(i).getBusinessArea());
-				ps.setString(18, SLAModelList.get(i).getTower());
-				ps.setString(19, SLAModelList.get(i).getBam());
-				ps.setString(20, SLAModelList.get(i).getRemarks());
-				ps.setString(21, SLAModelList.get(i).getIsBillable());
-				ps.setString(22, SLAModelList.get(i).getWrNo());
-				ps.setInt(23, SLAModelList.get(i).getPlannedHrs());
-				ps.setString(24, SLAModelList.get(i).getComments());
-				ps.setString(25, SLAModelList.get(i).getWrDesc());
-				ps.setString(26, SLAModelList.get(i).getCostCenter());
-				ps.setString(27, SLAModelList.get(i).getFundType());
-				ps.setString(28, SLAModelList.get(i).getVendorClass());
-				ps.setString(29, SLAModelList.get(i).getAccountId());
-				ps.setString(30, billCycle);
-				ps.setString(31,userId);
-				
-				
-				/*ps.setString(1, slaModelList.get(i).getEmpID());
-				ps.setString(2, ilcModelList.get(i).getEmpName());
-				ps.setString(3, ilcModelList.get(i).getClaimCode());
-				ps.setString(4, ilcModelList.get(i).getActivity());
-				ps.setString(5, BillerUtil.getDateStr(ilcModelList.get(i).getWeekEndDate()));
-				ps.setInt(6, ilcModelList.get(i).getTotHrs());
-				ps.setString(7, ilcModelList.get(i).getShiftType());
-				ps.setString(8, ilcModelList.get(i).getUsInd());
-				ps.setString(9, ilcModelList.get(i).getOnOffShore());
-				ps.setString(10, ilcModelList.get(i).getBillingType());
-				ps.setString(11, ilcModelList.get(i).getCategory());
-				ps.setString(12, ilcModelList.get(i).getBam());
-				ps.setString(13, ilcModelList.get(i).getAppArea());
-				ps.setString(14, ilcModelList.get(i).getBusinessArea());
-				ps.setString(15, ilcModelList.get(i).getMonth());
-				ps.setString(16, ilcModelList.get(i).getQuarter());
-				ps.setString(17, ilcModelList.get(i).getDm());
-				ps.setString(18, ilcModelList.get(i).getAsm());
-				ps.setString(19, ilcModelList.get(i).getAsd());
-				ps.setString(20, ilcModelList.get(i).getWrNo());
-				ps.setString(21, ilcModelList.get(i).getIsTicket());
-				ps.setString(22, ilcModelList.get(i).getStaffType());
-				ps.setString(23, ilcModelList.get(i).getIsCTC());
-				ps.setString(24, ilcModelList.get(i).getIsRTC());
-				ps.setInt(25, ilcModelList.get(i).getPlannedHrs());
-				ps.setString(26, ilcModelList.get(i).getIsBillable());
-				ps.setString(27, ilcModelList.get(i).getRemarks());
-				ps.setString(28, ilcModelList.get(i).getCtcOrRtc());
-				ps.setString(29, ilcModelList.get(i).getWorkType());
-				ps.setString(30, ilcModelList.get(i).getWrDesc());
-				ps.setString(31, ilcModelList.get(i).getCostCenter());
-				ps.setString(32, ilcModelList.get(i).getCategory2());
-				ps.setString(33, ilcModelList.get(i).getOnOffLanded());
-				ps.setString(34, ilcModelList.get(i).getTower());
-				ps.setString(35, ilcModelList.get(i).getAsmItwr());
-				ps.setString(36, ilcModelList.get(i).getAsdItwr());
-				ps.setInt(37, ilcModelList.get(i).getItwrActual());
-				ps.setString(38, ilcModelList.get(i).getGroupType());
-				ps.setString(39, ilcModelList.get(i).getVendorClass());
-				ps.setString(40, ilcModelList.get(i).getWrIncDef());
-				ps.setString(41, billCycle);*/
-			}
-
-			@Override
-			public int getBatchSize() {
-				return SLAModelList.size();
-			}
-		});
-
-		// jdbcTemplate.update(insertIlcDataSign, new Object[] { billCycle,
-		// userId,uploadDataType });
-//		System.out.println("created..SLA...");
+		
 	}
 	
 	

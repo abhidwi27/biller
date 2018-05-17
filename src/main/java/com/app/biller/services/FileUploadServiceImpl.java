@@ -57,11 +57,8 @@ public class FileUploadServiceImpl implements FileUploadService {
 	
 	
 	@Override
-	public String uploadFiles(MultipartHttpServletRequest request) {
-		// File Upload directory on Server.
-		// String uploadRootPath = request.getServletContext().getRealPath("uploads");
-		//String uploadRootPath = "C:/invoice/uploads";
-		
+	public String uploadFiles(MultipartHttpServletRequest request) throws Exception {
+		String fileUploadResult = null;
 		logger.info("Uploading Files...");
 		String newpath = System.getProperty("user.dir");
 		String rootdir[] = newpath.split("\\\\",2);
@@ -83,16 +80,18 @@ public class FileUploadServiceImpl implements FileUploadService {
 				try {
 					multipartFile.transferTo(excelFile);
 					logger.info("Files uploaded successfully..");
-				} catch (IOException e) {
-					e.printStackTrace();
+					fileUploadResult = "Success";
+				} catch (Exception e) {
+					logger.error("Exception occured while uploading files", e);
+					throw new Exception(e);
 				}
 			}
 		}
-		return "Success";
+		return fileUploadResult;
 	}
 
 	@Override
-	public String uploadILCData(String billCycle, String userId, String uploadDataType,String reportWeekend) {
+	public String uploadILCData(String billCycle, String userId, String uploadDataType,String reportWeekend) throws Exception {
 		createILCDataSheet(reportWeekend,uploadDataType);
 		ilcDataDao.createILCData(extractILCData(), billCycle, userId, uploadDataType);
 		itwrDataDao.createITWRData(extractITWRData(), billCycle, userId, uploadDataType);
@@ -101,7 +100,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 	}
 
 	@Override
-	public String uploadSLAData(String billCycle, String userId,String uploadDataType,String reportWeekend) {
+	public String uploadSLAData(String billCycle, String userId,String uploadDataType,String reportWeekend) throws Exception {
 		createILCDataSheet(reportWeekend,uploadDataType);
 
 		ArrayList<SLAData> slaDataList = extractSLAData();
@@ -123,13 +122,13 @@ public class FileUploadServiceImpl implements FileUploadService {
 			process.waitFor();
 			//int exitStatus = process.waitFor();
 			Runtime.getRuntime().exec("taskkill /f /im cmd.exe");
-			//logger.info("Processed finished with status: " + exitStatus);
+			logger.info("ILC Data sheet created successfully");
 		} catch (InterruptedException e) {
-			logger.error("InterruptedException: ");
-			e.printStackTrace();
+			logger.error("InterruptedException: ", e);
+			//e.printStackTrace();
 		} catch (IOException e) {
-			logger.error("IOException: ");
-			e.printStackTrace();
+			logger.error("IOException: ", e);
+			//e.printStackTrace();
 		} finally {
 			process.destroy();
 		}
@@ -205,28 +204,31 @@ public class FileUploadServiceImpl implements FileUploadService {
 				rowData = null;
 				ilcData = null;
 			}
-
-			return ilcDataList;
+			logger.info("ILC Data extracted successfully");		
 
 		} catch (FileNotFoundException fnfe) {
-			logger.info("FileNotFoundException: " + fnfe.getStackTrace());
-			return ilcDataList;
-		} catch (Exception e) {
-			logger.info("Exception: " + e.getStackTrace());
-			return ilcDataList;
-		} finally {
+			logger.error("FileNotFoundException: ", fnfe);
+			
+		} catch (NullPointerException npe) {
+			logger.info("NullPointerException: " , npe);
+			
+		}catch (IOException ioe) {
+			logger.error("IOException: " , ioe);
+			
+		}finally {
 			try {
 				ilcBook.close();
 				ilcInput.close();
 			} catch (Exception e) {
-				logger.info("Exception occured while closing: " + e);
+				logger.error("Exception occured while closing: " , e);
 			}
-		}
+		}		
+		return ilcDataList;
 	}
 
 	
 	
-	private ArrayList<SLAData> extractSLAData(){
+	private ArrayList<SLAData> extractSLAData() throws Exception{
 		
 		
 		FileInputStream slaInput = null;
@@ -249,7 +251,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 		String curRowData;
 		int curRow;
 		int cellType;
-		logger.info("Creating SLA Data...");
+		logger.info("Extracting SLA Data...");
 		try {
 			//ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
 			slaInput = new FileInputStream(new File("C:\\biller\\src\\main\\webapp\\Workbench\\FFIC SLA Report.xlsx"));
@@ -298,16 +300,18 @@ public class FileUploadServiceImpl implements FileUploadService {
 				dataExists = (curRowDataType != null);
 				rowData = null;
 				slaData = null;
-			}
-
-			return sladatalist;
-
+			}			
+			logger.info("SLA  Data extracted successfully..");
+			
 		} catch (FileNotFoundException fnfe) {
-			logger.info("FileNotFoundException: " + fnfe.getStackTrace());
-			return sladatalist;
-		} catch (Exception e) {
-			logger.info("Exception: " + e.getStackTrace());
-			return sladatalist;
+			logger.info("FileNotFoundException: ", fnfe);
+			
+		}catch (NullPointerException npe) {
+			logger.info("NullPointerException: " , npe);
+			
+		}catch (IOException ioe) {
+			logger.error("IOException: " , ioe);
+			
 		} finally {
 			try {
 				slaBook.close();
@@ -316,6 +320,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 				logger.info("Exception occured while closing: " + e);
 			}
 		}
+		return sladatalist;
 		
 	}
 	
@@ -409,8 +414,6 @@ public class FileUploadServiceImpl implements FileUploadService {
 
 private ArrayList<ITWRData> extractITWRData(){
 		
-		
-		
 		FileInputStream itwrInput = null;
 		XSSFWorkbook itwrBook = null;
 		XSSFSheet itwrSheet;
@@ -492,15 +495,16 @@ private ArrayList<ITWRData> extractITWRData(){
 				rowDataItwr = null;
 				itwrData = null;
 			}
-
-			return itwrModellist;
-
+			logger.info("ITWR Data extracted..");
 		} catch (FileNotFoundException fnfe) {
-			logger.info("FileNotFoundException: " + fnfe.getStackTrace());
-			return itwrModellist;
-		} catch (Exception e) {
-			logger.info("Exception: " + e.getStackTrace());
-			return itwrModellist;
+			logger.info("FileNotFoundException: ", fnfe);
+			
+		}catch (NullPointerException npe) {
+			logger.info("NullPointerException: " , npe);
+			
+		}catch (IOException ioe) {
+			logger.error("IOException: " , ioe);
+			
 		} finally {
 			try {
 				itwrBook.close();
@@ -509,6 +513,7 @@ private ArrayList<ITWRData> extractITWRData(){
 				logger.info("Exception occured while closing: " + e);
 			}
 		}
+		return itwrModellist;
 	}
 
 	private ITWRData populateITWRDataModel(Map<String, String> rowData, ITWRData itwrModel) {
@@ -609,15 +614,16 @@ private ArrayList<ITWRData> extractITWRData(){
 				rowData = null;
 				wiASMData = null;
 			}
-
-			return wiASMDataList;
-
+			logger.info("WIASM Data extracted ...");
 		} catch (FileNotFoundException fnfe) {
 			logger.info("FileNotFoundException: " + fnfe.getStackTrace());
-			return wiASMDataList;
-		} catch (Exception e) {
-			logger.info("Exception: " + e.getStackTrace());
-			return wiASMDataList;
+			
+		} catch (NullPointerException npe) {
+			logger.info("NullPointerException: " , npe);
+			
+		}catch (IOException ioe) {
+			logger.error("IOException: " , ioe);
+			
 		} finally {
 			try {
 				wiASMBook.close();
@@ -626,6 +632,7 @@ private ArrayList<ITWRData> extractITWRData(){
 				logger.info("Exception occured while closing: " + e);
 			}
 		}
+		return wiASMDataList;
 	}
 	
 	

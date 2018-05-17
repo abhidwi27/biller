@@ -7,7 +7,7 @@ import com.app.biller.domain.ITWRData;
 
 public interface ITWRDataDao {
 
-	void createITWRData(ArrayList<ITWRData> ilcModelList, String billCycle, String userId, String uploadDataType);	
+	void createITWRData(ArrayList<ITWRData> ilcModelList, String billCycle, String userId, String uploadDataType) throws Exception;	
 
 	
 }
