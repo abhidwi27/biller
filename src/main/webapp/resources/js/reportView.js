@@ -51,6 +51,7 @@ $(document).ready(function(){
 		 
 		 if(reportDataType == 0 || userProfile.roleID == 1){
 			 $('#reportLock').hide();
+			 $('#reportUnlock').hide();
 			 $('#reportEdit').hide();
 			 $('#reportCopy').hide();
 			 $('#reportBulkUpdate').hide();
@@ -59,8 +60,10 @@ $(document).ready(function(){
 			 $('#reportSaveSubmit').hide();
 			 $('#reportReject').hide();
 			 $('#reportApprove').hide();
+			 $(".biller-icon-separator").hide();
 		 }else{
 			 $('#reportLock').show();
+			 $('#reportUnlock').show();
 			 $('#reportEdit').show();
 			 $('#reportCopy').show();
 			 $('#reportBulkUpdate').show();
@@ -69,6 +72,7 @@ $(document).ready(function(){
 			 $('#reportSaveSubmit').show();
 			 $('#reportReject').show();
 			 $('#reportApprove').show();
+			 $(".biller-icon-separator").show();
 		 }
 		if( userProfile.roleID != 3){
 			$('#reportReject').hide();
@@ -97,16 +101,18 @@ $(document).ready(function(){
 			    	
 			    	if(hasApprovedBillCycle == 1){
 			    		$('#reportLock').find('span i').addClass('biller-icon-disabled');
+			    		$('#reportUnlock').find('span i').addClass('biller-icon-disabled');
 			    	}
 			    	
 			    	if(tower == 0){
 			    		$('#reportLock').find('span i').addClass('biller-icon-disabled');
+			    		$('#reportUnlock').find('span i').addClass('biller-icon-disabled');
 			    		editMode[tower] = false;
 			    	}
 			    	
-			    	if(approveListlength == 0 && hasApprovedBillCycle ==1 ){
+			    	/*if(approveListlength == 0 && hasApprovedBillCycle ==1 ){
 			    		$('#reportApprove').find('span i').addClass('biller-icon-disabled');
-			    	}
+			    	}*/
 			    	
 			    	if(userProfile.roleID ==3 && hasApprovedBillCycle ==1 ){
 			    		$('#reportReject').find('span i').addClass('biller-icon-disabled');
@@ -115,6 +121,9 @@ $(document).ready(function(){
 			    	if(hasApprovedBillCycle == 0 && tower != 0){
 			    			if(dataLockedBy!= undefined && dataLockedBy.userID == userProfile.userID){
 			    				editMode[tower] =true;
+			    				if($('#reportUnlock').find('span i').hasClass('biller-icon-disabled')){
+									$('#reportUnlock').find('span i').removeClass('biller-icon-disabled');
+					    		}
 			    			}
 				    	if($('#reportLock').find('span i').hasClass('biller-icon-disabled')){
 							$('#reportLock').find('span i').removeClass('biller-icon-disabled');

@@ -5,7 +5,10 @@ $(document).ready(function(){
 	$('#bulkUpdateFirstPage').show();
 	$('#bulkUpdateSecondPage').hide();
 	
+	
 	$('#reportBulkUpdate').click(function(e){
+		tower = $('#currentTower').val();
+		
 		if(hasApprovedBillCycle == 1 || (tower == 0)){
 			e.stopPropagation();
 			e.preventDefault();

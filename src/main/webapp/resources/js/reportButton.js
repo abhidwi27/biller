@@ -128,7 +128,7 @@ $(function() {
 			success : function(strlockResponseMap) {
 				var lockResponseMap = JSON.parse(strlockResponseMap);
 				if (lockResponseMap.msg == "success") {
-					editMode[tower] = true;
+					editMode[tower] = true;					
 					billerAlert("Table lock established successfully.",true, 'Okay', false, '','', "Alert !");					
 				} else if (lockResponseMap.lockedBy != undefined && lockResponseMap.lockedBy.userID == userProfile.userID) {
 					editMode[tower] = true;
@@ -148,6 +148,7 @@ $(function() {
 					$('#reportCopy').find('span i').addClass('biller-icon-disabled');
 					$('#reportSave').find('span i').addClass('biller-icon-disabled');
 					$('#reportDelete').find('span i').addClass('biller-icon-disabled');
+					$('#reportBulkUpdate').find('span i').addClass('biller-icon-disabled');
 				}else{
 					if($('#reportEdit').find('span i').hasClass('biller-icon-disabled')){
 						$('#reportEdit').find('span i').removeClass('biller-icon-disabled');
@@ -161,6 +162,76 @@ $(function() {
 					if($('#reportDelete').find('span i').hasClass('biller-icon-disabled')){
 						$('#reportDelete').find('span i').removeClass('biller-icon-disabled');
 					}
+					if($('#reportUnlock').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportUnlock').find('span i').removeClass('biller-icon-disabled');
+		    		}
+					if($('#reportBulkUpdate').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportBulkUpdate').find('span i').removeClass('biller-icon-disabled');
+		    		}
+				}
+			},
+			error: function(result){
+	 			location.href = 'error.do';
+	 		}
+		});
+	});
+	
+	$("#reportUnlock").click(function(e) {
+		var tower = $('#currentTower').val();
+		var billCycle = $('#currentBillCycle').val();
+		var reportTable = $('#ilcReport').DataTable();
+		var userProfile = JSON.parse($('#strUserProfile').val());
+		
+		if(hasApprovedBillCycle == 1 || (tower == 0)){
+			e.stopPropagation();
+			e.preventDefault();
+			return;
+		}	
+
+		url = 'data/unlock.do?billCycle=' + billCycle + '&towerID=' + tower;
+
+		$.ajax({
+			url : url,
+			data : false,
+			dataType : 'text',
+			processData : false,
+			contentType : false,
+			type : 'GET',
+			success : function(strlockResponseMap) {
+				var lockResponseMap = JSON.parse(strlockResponseMap);
+				if (lockResponseMap.msg == "success") {
+					editMode[tower] = false;					
+					billerAlert("Table unlocked successfully.",true, 'Okay', false, '','', "Alert !");					
+				} else  {
+					editMode[tower] = false;
+					billerAlert("Table couldn't be unlocked, may be it was not locked earlier..!!",true, 'Okay', false, '','', "Alert !");					
+				}
+				
+				if (!editMode[tower]){
+					$('#reportEdit').find('span i').addClass('biller-icon-disabled');
+					$('#reportCopy').find('span i').addClass('biller-icon-disabled');
+					$('#reportSave').find('span i').addClass('biller-icon-disabled');
+					$('#reportDelete').find('span i').addClass('biller-icon-disabled');
+					$('#reportBulkUpdate').find('span i').addClass('biller-icon-disabled');
+				}else{
+					if($('#reportEdit').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportEdit').find('span i').removeClass('biller-icon-disabled');
+					}
+					if($('#reportCopy').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportCopy').find('span i').removeClass('biller-icon-disabled');
+					}
+					if($('#reportSave').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportSave').find('span i').removeClass('biller-icon-disabled');
+					}
+					if($('#reportDelete').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportDelete').find('span i').removeClass('biller-icon-disabled');
+					}
+					if($('#reportUnlock').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportUnlock').find('span i').removeClass('biller-icon-disabled');
+		    		}
+					if($('#reportBulkUpdate').find('span i').hasClass('biller-icon-disabled')){
+						$('#reportBulkUpdate').find('span i').removeClass('biller-icon-disabled');
+		    		}
 				}
 			},
 			error: function(result){
