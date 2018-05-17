@@ -46,7 +46,7 @@ public class ITWRDataDaoImpl implements ITWRDataDao {
 	}
 
 	@Override
-	public void createITWRData(ArrayList<ITWRData> itwrModelList, String billCycle, String userId, String uploadDataType) throws Exception {
+	public void createITWRData(ArrayList<ITWRData> itwrModelList, String billCycle, String userId, String uploadDataType) throws DataAccessException {
 
 		try {
 			logger.info("Deleting ITWR Data..");
@@ -54,16 +54,16 @@ public class ITWRDataDaoImpl implements ITWRDataDao {
 			if(result != 0) {
 				logger.info("ITWR Data deleted successfully");
 			}else {
-				logger.info("ITWR Data couldn't be deleted");
+				logger.info("ITWR Data couldn't be deleted, may be table is already empty");
 			}
 		} catch (DataAccessException dae) {
 			logger.info("Delete ITWRData Exception: ", dae);
-			throw new Exception("ITWRData Delete Error");
+			throw dae;
 		}
 		
 		if(itwrModelList == null) {
 			logger.error("itwrModelList is null, ITWRData can not be inserted");
-			throw new Exception("null itwrModelList");
+			throw new NullPointerException("Null itwrModelList");
 		}
 		
 		try {
@@ -97,13 +97,15 @@ public class ITWRDataDaoImpl implements ITWRDataDao {
 	
 				@Override
 				public int getBatchSize() {
-					return itwrModelList.size();
+					int batchSize = itwrModelList.size();
+					logger.error("ITWR Batch Size is " + batchSize);
+					return batchSize;
 				}
 			});
-			logger.info("ITWR Batch update: records updated = " , batchUpdateResult.length );
+			logger.info("ITWR Batch update: records updated = " + batchUpdateResult.length );
 		}catch(DataAccessException dae) {
 			logger.error("ITWR Batch Update Error", dae);
-			throw new Exception("ITWR Batch Update Error");			
+			throw dae;			
 		}
 	}
 }

@@ -43,7 +43,7 @@ public class WIASMDataDaoImpl implements WIASMDataDao  {
 	}
 
 	@Override
-	public void uploadWIASMData(ArrayList<WIASMData> wiASMModelList, String billCycle, String userId, String uploadDataType) throws Exception {
+	public void uploadWIASMData(ArrayList<WIASMData> wiASMModelList, String billCycle, String userId, String uploadDataType) throws DataAccessException {
 
 		try {
 			logger.info("Deleting WIASM Data..");
@@ -51,16 +51,16 @@ public class WIASMDataDaoImpl implements WIASMDataDao  {
 			if(result != 0) {
 				logger.info("WIASM Data deleted successfully..");
 			}else {
-				logger.warn("WIASM data couldn't be deleted..");
+				logger.warn("WIASM data couldn't be deleted, may be table is already empty	");
 			}
 		} catch (DataAccessException dae) {
 			logger.info("Delete WIASMData Exception: ",dae);
-			throw new Exception("WIASM Delete Error");
+			throw dae;
 		}
 		
 		if(wiASMModelList == null) {
 			logger.error("wiASMModelList is null, WIASMData can not be inserted");
-			throw new Exception("null wiASMModelList");
+			throw new NullPointerException("null wiASMModelList");
 		}
 		
 		try {		
@@ -91,11 +91,11 @@ public class WIASMDataDaoImpl implements WIASMDataDao  {
 				}
 			});
 			
-			logger.info("WIASM Batch update: records updated = " , batchUpdateResult.length );
+			logger.info("WIASM Batch update: records updated = " + batchUpdateResult.length );
 			
 		}catch(DataAccessException dae) {
 			logger.error("WIASM Batch Update Error", dae);
-			throw new Exception("WIASM Batch Update Error");
+			throw dae;
 		}
 
 		

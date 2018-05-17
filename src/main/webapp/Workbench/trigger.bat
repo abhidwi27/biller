@@ -11,4 +11,4 @@ REM cscript ConnectMacro.vbs 13-JUN-2020 0
 
 ECHO " ILC/SLA Generation complete!! please close the window to proceed "
 
-Pause
+exit

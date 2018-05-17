@@ -74,25 +74,25 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	}
 
 	@Override
-	public void createILCData(ArrayList<ILCData> ilcModelList, String billCycle, String userId, String uploadDataType) throws Exception {
+	public void createILCData(ArrayList<ILCData> ilcModelList, String billCycle, String userId, String uploadDataType) throws DataAccessException {
 
 		try {
 			logger.info("Deleting ILC Data...");			
-			int result = jdbcTemplate.update(deleteIlcData, new Object[]  {billCycle}, String.class);
+			int result = jdbcTemplate.update(deleteIlcData, new Object[]  {billCycle});
 			if(result != 0) {
 				logger.info("ILC Data deleted successfully...");
 			}else {
-				logger.warn("Couldn't delete ILC Data, may be ILC Table is empty..");
+				logger.warn("Couldn't delete ILC Data, may be ILC Table is empty or there is no data to delete for bill cycle " +billCycle);
 			}
 		} catch (DataAccessException dae) {
 			logger.info("Delete ILCData Exception: " ,dae);
-			throw new Exception("ILC Delete Error");
+			throw dae;
 			
 		}
 		
 		if(ilcModelList == null) {
 			logger.error("ilcModelList is null, ILC Data can not be inserted");
-			throw new Exception("null ilcModelList");
+			throw new NullPointerException("null ilcModelList");
 		}
 		try {
 			int[] batchUpdateResult = jdbcTemplate.batchUpdate(insertIlcData, new BatchPreparedStatementSetter() {
@@ -149,10 +149,10 @@ public class ILCDataDaoImpl implements ILCDataDao {
 					return batchSize;
 				}
 			});
-			logger.info("ILC Batch update: records updated = " , batchUpdateResult.length );
+			logger.info("ILC Batch update: records updated = " + batchUpdateResult.length );
 		}catch(DataAccessException dae) {
 			logger.error("ILC Batch Update Error", dae);
-			throw new Exception("ILC Batch Update Error");
+			throw dae;
 		}
 
 		// jdbcTemplate.update(insertIlcDataSign, new Object[] { billCycle,

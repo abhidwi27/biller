@@ -19,6 +19,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -91,11 +92,13 @@ public class FileUploadServiceImpl implements FileUploadService {
 	}
 
 	@Override
-	public String uploadILCData(String billCycle, String userId, String uploadDataType,String reportWeekend) throws Exception {
+	public String uploadILCData(String billCycle, String userId, String uploadDataType,String reportWeekend) throws DataAccessException {
 		createILCDataSheet(reportWeekend,uploadDataType);
+		
 		ilcDataDao.createILCData(extractILCData(), billCycle, userId, uploadDataType);
 		itwrDataDao.createITWRData(extractITWRData(), billCycle, userId, uploadDataType);
 		wiasmDataDao.uploadWIASMData(extractWIASMData(), billCycle, userId, uploadDataType);
+		
 		return "ILC Report generated successfully";
 	}
 
@@ -210,7 +213,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 			logger.error("FileNotFoundException: ", fnfe);
 			
 		} catch (NullPointerException npe) {
-			logger.info("NullPointerException: " , npe);
+			logger.info("Ignoring NullPointerException in Create ILC Data");
 			
 		}catch (IOException ioe) {
 			logger.error("IOException: " , ioe);
@@ -219,7 +222,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 			try {
 				ilcBook.close();
 				ilcInput.close();
-			} catch (Exception e) {
+			} catch (IOException e) {
 				logger.error("Exception occured while closing: " , e);
 			}
 		}		
@@ -441,7 +444,7 @@ private ArrayList<ITWRData> extractITWRData(){
 			//ilcInput = new FileInputStream(new File("C:\\invoice\\uploads\\FFIC ILC Report.xlsx"));
 			itwrInput = new FileInputStream(new File("C:\\billerData\\Uploads\\ITWR for ILC.xlsx"));
 			itwrBook = new XSSFWorkbook(itwrInput);
-			itwrSheet = itwrBook.getSheet("Sheet2");
+			itwrSheet = itwrBook.getSheet("Sheet1");
 			rowIteratorItwr = itwrSheet.iterator();
 			itwrModellist = new ArrayList<ITWRData>();
 			dataExists = true;
@@ -500,7 +503,7 @@ private ArrayList<ITWRData> extractITWRData(){
 			logger.info("FileNotFoundException: ", fnfe);
 			
 		}catch (NullPointerException npe) {
-			logger.info("NullPointerException: " , npe);
+			logger.info("Ignoring NullPointerException in Create ITWR Data");
 			
 		}catch (IOException ioe) {
 			logger.error("IOException: " , ioe);
@@ -619,7 +622,7 @@ private ArrayList<ITWRData> extractITWRData(){
 			logger.info("FileNotFoundException: " + fnfe.getStackTrace());
 			
 		} catch (NullPointerException npe) {
-			logger.info("NullPointerException: " , npe);
+			logger.info("Ignoring NullPointerException in Create WIASM Data");
 			
 		}catch (IOException ioe) {
 			logger.error("IOException: " , ioe);
