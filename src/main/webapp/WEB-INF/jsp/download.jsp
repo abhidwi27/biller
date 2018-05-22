@@ -98,7 +98,7 @@
 				     <div class="row biller-row">
 						<div class="col-lg-3 text-left biller-panel-label">
 							<label class="biller-label">
-								File name :
+								Select File :
 							</label>
 						</div>
 						<div class="col-md-9">

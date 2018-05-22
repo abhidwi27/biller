@@ -74,6 +74,9 @@ public class SLADataDaoImpl implements SLADataDao {
 	
 	@Value("${GET_ACTIVE_BILLCYCLE}")
 	private String getActiveBillCycle;
+	
+	@Value("${GET_MODIFIED_BY}")
+	private String getModifiedBy;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -542,5 +545,24 @@ public class SLADataDaoImpl implements SLADataDao {
 			return null;
 		}
 		
+	}
+	
+	public String getModifiedBy(int seqId) {
+		
+		RowMapper<String> rowMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+
+		List<String> modifiedByStr = jdbcTemplate.query(getModifiedBy, new Object[] {seqId},rowMap);
+		
+		if(modifiedByStr.size() > 0) {
+			return modifiedByStr.get(0);
+		}
+		else {			
+			return null;
+		}
 	}
 }

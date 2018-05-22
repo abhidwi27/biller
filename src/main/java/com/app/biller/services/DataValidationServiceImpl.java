@@ -66,12 +66,21 @@ public class DataValidationServiceImpl implements DataValidationService {
 	
 	private ArrayList<SLAData> getSLADataListfromRecords(String recordType, ArrayList<Record> records, String userID) {
 		ArrayList<SLAData> slaDataList = new ArrayList<SLAData>();
+		String modifiedBy = null;
+		String modifiedByArr[] = null;
 		for (Record record : records) {
 			SLAData slaData = new SLAData();
 			String[] rowData;
 			rowData = record.getRowData();
 			if (recordType.equals("update")) {
 				slaData.setSeqID(Integer.parseInt(rowData[0]));
+			}
+			modifiedBy = slaDataDao.getModifiedBy(Integer.parseInt(rowData[0]));
+			if(modifiedBy != null) {
+				modifiedByArr = modifiedBy.split(",");
+			}
+			if(!modifiedByArr[modifiedByArr.length - 1].trim().equals(userID)) {
+				modifiedBy = modifiedBy + ", " + userID;
 			}
 			slaData.setWeekEndDate(rowData[1]);
 			slaData.setAsm(rowData[2]);
@@ -104,7 +113,7 @@ public class DataValidationServiceImpl implements DataValidationService {
 			slaData.setAccountId(rowData[30]);
 			slaData.setChangeLog("");
 			slaData.setActive(1);
-			slaData.setModifiedBy(userID);
+			slaData.setModifiedBy(modifiedBy);
 
 			slaDataList.add(slaData);
 		}
