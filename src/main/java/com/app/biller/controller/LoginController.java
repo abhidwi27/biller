@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
@@ -110,8 +111,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/keepAlive.do", method = RequestMethod.GET)
-	public void keepSessionAlive(HttpServletRequest request, SessionStatus sessionStatus) {
-		// This method would never be called, just keeping so Spring Dispatcher does not throw
-		// any error and let keep alive request reach preHandle method in Interceptor..
+	public @ResponseBody void keepSessionAlive(HttpServletRequest request, SessionStatus sessionStatus) {
+		// This method has been added to stop server session from timing out.
 	}
 }

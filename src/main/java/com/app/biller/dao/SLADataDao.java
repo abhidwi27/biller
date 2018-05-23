@@ -10,6 +10,8 @@ public interface SLADataDao {
 	void createSLAData(ArrayList<SLAData> slaModelList, String billCycle, String userId, String uploadDataType) throws Exception;
 
 	ArrayList<SLAData> readSLAData(String billCycle, int towerID, int accountId);
+	
+	String getModifiedBy(int seqId);
 
 	void updateSLAData(String billCycle, ArrayList<SLAData> records);
 

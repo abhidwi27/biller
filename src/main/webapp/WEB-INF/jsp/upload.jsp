@@ -77,8 +77,23 @@
 								</select>							
 						</div>
 						</div>						
-					</div>
-					<div class="row biller-row">
+					</div>										
+				    <div class="row biller-row">
+				    	<div class="col-lg-3 text-left biller-panel-label">	
+								<label class="biller-label">
+									Weekend :
+								</label>
+						</div>
+			            <div class="form-group col-md-8 biller-weekend-input">
+			                <div class='input-group date col-xs-10' id='uploadWeekEndDate'>
+			                    <input type='text' class="form-control input-sm" />
+			                    <span class="input-group-addon">
+			                        <span class="glyphicon glyphicon-calendar"></span>
+			                    </span>
+			                </div>
+			            </div>
+				     </div>
+				     <div class="row biller-row">
 							<div class="col-md-3 text-left biller-panel-label">	
 								<label class="biller-label">
 									Select Files :
@@ -95,22 +110,7 @@
 									  </span>
 								</div>
 							</div>
-					</div>					
-				    <div class="row biller-row">
-				    	<div class="col-lg-3 text-left biller-panel-label">	
-								<label class="biller-label">
-									Weekend :
-								</label>
-						</div>
-			            <div class="form-group col-md-8 biller-weekend-input">
-			                <div class='input-group date col-xs-10' id='uploadWeekEndDate'>
-			                    <input type='text' class="form-control input-sm" />
-			                    <span class="input-group-addon">
-			                        <span class="glyphicon glyphicon-calendar"></span>
-			                    </span>
-			                </div>
-			            </div>
-				     </div>
+					</div>
 				    <div class="panel-footer">
 						<div class="text-center">
 								<div class="biller-footer">

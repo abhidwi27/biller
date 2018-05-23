@@ -68,8 +68,8 @@ $(window).on("load", function() {
         <ul class="nav nav-pills" role="tablist">
           <li role="presentation" class="active" ><a href="#reportPanel" aria-controls="reportPanel" role="tab" data-toggle="tab"><i class="fa fa-table biller-home-tab-icon"></i><span class="biller-home-tab-icon">Data</span></a></li>
           <li role="presentation" id='uploadTab'><a href="#upload" aria-controls="upload" role="tab" data-toggle="tab"><i class="fa fa-upload biller-home-tab-icon"></i><span class="biller-home-tab-icon">Upload</span></a></li>
-          <li role="presentation" ><a href="#statusTab" aria-controls="statusTab" role="tab" data-toggle="tab"><i class="fa fa-list-ul biller-home-tab-icon"></i><span class="biller-home-tab-icon" >Status</span></a></li>
           <li role="presentation"><a href="#download" aria-controls="download" role="tab" data-toggle="tab"><i class="fa fa-download biller-home-tab-icon"></i><span class="biller-home-tab-icon">Download</span></a></li>
+          <li role="presentation" ><a href="#statusTab" aria-controls="statusTab" role="tab" data-toggle="tab"><i class="fa fa-list-ul biller-home-tab-icon"></i><span class="biller-home-tab-icon" >Status</span></a></li>
           <li role="presentation" id='adminTab'><a href="#admin" aria-controls="admin" role="tab" data-toggle="tab"><i class="fa fa-user-circle-o biller-home-tab-icon"></i><span class="biller-home-tab-icon">Admin</span></a></li>
         </ul>
      

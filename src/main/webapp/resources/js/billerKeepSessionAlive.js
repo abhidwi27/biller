@@ -6,8 +6,7 @@ function keepAlive(){
 		type: 'GET',
 		data: false,
 		success: function(result){
-			// do nothing, this is just a dummy call to keep session alive.
-			// calling this would always return 404 as request would never keepAlive method
+			// do nothing, result will be void. This is just a dummy call to keep session alive.
 			// however, this would accomplish our goal to poll server.
 		},
 		error: function(result){

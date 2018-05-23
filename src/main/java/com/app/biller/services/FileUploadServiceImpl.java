@@ -109,6 +109,8 @@ public class FileUploadServiceImpl implements FileUploadService {
 		ArrayList<SLAData> slaDataList = extractSLAData();
 
 		slaDataDao.createSLAData(slaDataList, billCycle, userId, uploadDataType);
+		itwrDataDao.createITWRData(extractITWRData(), billCycle, userId, uploadDataType);
+		wiasmDataDao.uploadWIASMData(extractWIASMData(), billCycle, userId, uploadDataType);
 		dataApprovalService.createGroupApproval(billCycle, userId);
 
 		return "SLA Report generated successfully";
