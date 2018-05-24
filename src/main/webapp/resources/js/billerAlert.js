@@ -1,4 +1,4 @@
-function billerAlert(message, isFirstBtn, firstBtnLabel, isSecondBtn, secondBtnLabel, alertType, header){
+function billerAlert(message, isFirstBtn, firstBtnLabel, isSecondBtn, secondBtnLabel, alertType, header, alertFirstBtnId, alertSeconBtnId){
 	var selector = "#biller-alert " + ".modal-dialog";
 	$(selector).find(".modal-header span").html("");
 	$(selector).find(".modal-footer").html("");
@@ -6,11 +6,15 @@ function billerAlert(message, isFirstBtn, firstBtnLabel, isSecondBtn, secondBtnL
 	$(selector).find(".modal-header span").append(header);
 	
 	if(isFirstBtn){	
-		var firstBtnDiv = '<a class=\"btn btn-primary btn-outline biller-btn\" data-dismiss=\"modal\" id="alertFirstBtn">' + firstBtnLabel + '</a>' ;
+		if(alertFirstBtnId == '' || alertFirstBtnId == undefined || alertFirstBtnId == null){
+			var firstBtnDiv = '<a class=\"btn btn-primary btn-outline biller-btn\" data-dismiss=\"modal\" id=' + alertFirstBtnId + '>' + firstBtnLabel + '</a>' ;
+		}else{
+			var firstBtnDiv = '<a class=\"btn btn-primary btn-outline biller-btn\"  id=' + alertFirstBtnId + '>' + firstBtnLabel + '</a>' ;	
+		}
 		$(selector).find(".modal-footer").append(firstBtnDiv);
 	}
 	if(isSecondBtn){
-		var secondBtnDiv = '<a class=\"btn btn-primary btn-outline biller-btn\" data-dismiss=\"modal\" id="alertSecondBtn">' + secondBtnLabel + '</a>' ;
+		var secondBtnDiv = '<a class=\"btn btn-primary btn-outline biller-btn\" data-dismiss=\"modal\" id=' + alertSeconBtnId + '>' + secondBtnLabel + '</a>' ;
 		$(selector).find(".modal-footer").append(secondBtnDiv);
 	}	
 	

@@ -9,6 +9,6 @@ public interface FileUploadService {
 
 	String uploadILCData(String billCycle, String userId, String uploadDataType, String reportWeekend) throws DataAccessException;
 
-	String uploadSLAData(String billCycle, String userId,String uploadDataType,String reportWeekend) throws Exception;
+	String uploadSLAData(String billCycle, String userId,String uploadDataType,String reportWeekend, boolean override) throws Exception;
 	
 	}

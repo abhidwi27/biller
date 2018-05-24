@@ -8,7 +8,11 @@ public interface GroupApprovalDao {
 
 	void createGroupApproval(String billCycle, String userID);
 
+	int checkGroupApprovalEntry(String billCycle);
+	
 	void updateGroupApproval(String billCycle, String groupName, int approvalStatus);
+	
+	void resetGroupApproval(String billCycle);
 
 	GroupApproval getGroupApprovals(String billCycle);
 }

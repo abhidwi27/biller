@@ -30,6 +30,7 @@ import com.app.biller.dao.WIASMDataDao;
 import com.app.biller.domain.WIASMData;
 import com.app.biller.dao.ITWRDataDao;
 import com.app.biller.domain.ITWRData;
+import com.app.biller.dao.GroupApprovalDao;
 import com.app.biller.dao.ILCDataDao;
 import com.app.biller.domain.ILCData;
 import com.app.biller.dao.SLADataDao;
@@ -55,6 +56,9 @@ public class FileUploadServiceImpl implements FileUploadService {
 	
 	@Autowired
 	DataApprovalService dataApprovalService;
+	
+	@Autowired
+	GroupApprovalDao groupApprovalDao;
 	
 	
 	@Override
@@ -103,11 +107,20 @@ public class FileUploadServiceImpl implements FileUploadService {
 	}
 
 	@Override
-	public String uploadSLAData(String billCycle, String userId,String uploadDataType,String reportWeekend) throws Exception {
+	public String uploadSLAData(String billCycle, String userId,String uploadDataType,String reportWeekend, boolean override) throws Exception {
+		
+		
+		int count = groupApprovalDao.checkGroupApprovalEntry(billCycle);
+		
+		if(!override && count > 0) {
+			return "false";
+		}
+		
 		createILCDataSheet(reportWeekend,uploadDataType);
-
 		ArrayList<SLAData> slaDataList = extractSLAData();
-
+		if(slaDataList !=null && override) {
+			slaDataDao.deleteSLAData(billCycle);
+		}
 		slaDataDao.createSLAData(slaDataList, billCycle, userId, uploadDataType);
 		itwrDataDao.createITWRData(extractITWRData(), billCycle, userId, uploadDataType);
 		wiasmDataDao.uploadWIASMData(extractWIASMData(), billCycle, userId, uploadDataType);
@@ -215,7 +228,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 			logger.error("FileNotFoundException: ", fnfe);
 			
 		} catch (NullPointerException npe) {
-			logger.info("Ignoring NullPointerException in Create ILC Data");
+			logger.info("Ignoring NullPointerException in Extract ILC Data");
 			
 		}catch (IOException ioe) {
 			logger.error("IOException: " , ioe);
@@ -233,7 +246,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 
 	
 	
-	private ArrayList<SLAData> extractSLAData() throws Exception{
+	private ArrayList<SLAData> extractSLAData(){
 		
 		
 		FileInputStream slaInput = null;
@@ -312,7 +325,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 			logger.info("FileNotFoundException: ", fnfe);
 			
 		}catch (NullPointerException npe) {
-			logger.info("NullPointerException: " , npe);
+			logger.info("Ignoring NullPinterException in extract SLA Data");
 			
 		}catch (IOException ioe) {
 			logger.error("IOException: " , ioe);

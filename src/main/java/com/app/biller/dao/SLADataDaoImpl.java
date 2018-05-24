@@ -77,6 +77,9 @@ public class SLADataDaoImpl implements SLADataDao {
 	
 	@Value("${GET_MODIFIED_BY}")
 	private String getModifiedBy;
+	
+	@Value("${DELETE_SLA_DATA_FOR_BILL_CYCLE}")
+	private String deleteSlaDataForBillCycle;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -138,7 +141,7 @@ public class SLADataDaoImpl implements SLADataDao {
 					return batchSize;
 				}
 			});
-			logger.info("SLA Batch update: records updated = " , batchUpdateResult.length );
+			logger.info("SLA Batch update: records updated = " + batchUpdateResult.length );
 		}catch(DataAccessException dae) {
 			logger.error("SLA Batch Update Error ", dae);
 			throw new Exception("SLA Batch Update Error ");
@@ -275,6 +278,14 @@ public class SLADataDaoImpl implements SLADataDao {
 				return seqIDList.size();
 			}
 		});
+		
+	}
+	
+	@Override
+	public void deleteSLAData(String billCycle) {
+		logger.info("Deleting SLA for billCycle " + billCycle);
+		// TODO Auto-generated method stub
+		int result = jdbcTemplate.update(deleteSlaDataForBillCycle, new Object[] {billCycle});
 		
 	}
 
