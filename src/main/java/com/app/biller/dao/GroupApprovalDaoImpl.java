@@ -31,6 +31,9 @@ public class GroupApprovalDaoImpl implements GroupApprovalDao {
 	@Value("${CHECK_GROUP_APPROVAL_ENTRY}")
 	String checkGroupApprovalEntry;
 	
+	@Value("${RESET_GROUP_APPROVAL}")
+	String resetGroupApproval;
+	
 	private static final Logger logger = LoggerFactory.getLogger(GroupApprovalDaoImpl.class);
 
 	private JdbcTemplate jdbcTemplate;
@@ -81,7 +84,7 @@ public class GroupApprovalDaoImpl implements GroupApprovalDao {
 	}
 
 	public void createGroupApproval(String billCycle, String userID) {
-		int count = jdbcTemplate.queryForObject(checkGroupApprovalEntry, new Object[] { billCycle }, Integer.class);
+		int count = this.checkGroupApprovalEntry(billCycle);
 		
 		if(count == 0) {
 			int result = jdbcTemplate.update(insertGroupApproval, new Object[] { billCycle, userID });
@@ -89,8 +92,33 @@ public class GroupApprovalDaoImpl implements GroupApprovalDao {
 				logger.info("Entry in Group Approval Table for billCycle " +billCycle);
 			}else {
 				logger.warn("Entry cound't be inserted in Group Approval Table for billCycle " +billCycle);
-			}
+			}	
+		}else {
+			this.resetGroupApproval(billCycle);
 		}
+	}
+	
+	public int checkGroupApprovalEntry(String billCycle) {
+		int count = jdbcTemplate.queryForObject(checkGroupApprovalEntry, new Object[] { billCycle }, Integer.class);
+		
+		if(count == 0) {			
+				logger.info("No Entry found in Group Approval Table for billCycle " +billCycle);
+		}else {
+				logger.warn("Entry already exists in Group Approval Table for billCycle " +billCycle);
+		}
+		return count;
+		
+	}
+	
+	public void resetGroupApproval(String billCycle) {
+		int count = jdbcTemplate.update(resetGroupApproval, new Object[] { billCycle });
+		
+		if(count > 0) {			
+				logger.info("Group Approval Table has been reset for billCycle " +billCycle);
+		}else {
+				logger.warn("Group Approval Table couldn't be reset for billCycle " +billCycle);
+		}		
+		
 	}
 
 	public void updateGroupApproval(String billCycle, String groupName, int status) {

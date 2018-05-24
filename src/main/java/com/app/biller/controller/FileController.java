@@ -53,7 +53,7 @@ public class FileController {
 	@RequestMapping(value = "/upload.do", method = RequestMethod.POST)
 	@ResponseBody
 	public String uploadFiles(MultipartHttpServletRequest request, @RequestParam("billCycle") String billCycle,
-			@RequestParam("dataType") String uploadDataType, @RequestParam("reportWeekend") String reportWeekend,
+			@RequestParam("dataType") String uploadDataType, @RequestParam("reportWeekend") String reportWeekend, @RequestParam("override") boolean override,
 			HttpSession userSession) throws Exception {
 		String uploadStatus = "File Upload Failed";
 		logger.info("File uploading process started for: " + " billCycle " + billCycle + " datatype " + uploadDataType + " reportWeekend " + reportWeekend);
@@ -66,7 +66,7 @@ public class FileController {
 				if (uploadDataType.equals("0")) {
 					uploadStatus = fileUploadService.uploadILCData(billCycle, userId, uploadDataType, reportWeekend);
 				} else {
-					uploadStatus = fileUploadService.uploadSLAData(billCycle, userId, uploadDataType, reportWeekend);
+					uploadStatus = fileUploadService.uploadSLAData(billCycle, userId, uploadDataType, reportWeekend, override);
 				}
 				String dataType = uploadDataType.equals("0") ? "ILC" : "SLA";
 				emailService.sendFileUploadEmail(dataType, billCycle, reportWeekend);

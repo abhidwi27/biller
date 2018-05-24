@@ -16,6 +16,8 @@ public interface SLADataDao {
 	void updateSLAData(String billCycle, ArrayList<SLAData> records);
 
 	void deleteSLAData(String billCycle, List<Integer> seqIDList);
+	
+	void deleteSLAData(String billCycle);
 
 	void createNewSLARecord(String billCycle, ArrayList<SLAData> records);
 
