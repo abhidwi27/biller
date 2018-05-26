@@ -58,9 +58,15 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 	@Value("${GET_HEADER_FOR_BULK_UPDATE}")
 	String getHeaderForBulkUpdate;
 	
+
 	@Value("${GET_WIASM_REFERENCE_DATA}")
 	String getwiasmReferenceData;
 	
+
+	@Value("${GET_HEADER_FOR_CUSTOMISE}")
+	String getHeaderForCustomiseUpdate;
+
+
 	private JdbcTemplate jdbcTemplate;
 
 	@Autowired
@@ -235,4 +241,22 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 		List<String> bulkUpdateDataList =  jdbcTemplate.query(sb.toString(),rowMapper);
 		return bulkUpdateDataList;
 	}
+	
+	
+	public List<Header> getHeaderForCustomise(){
+		
+		RowMapper<Header> rowMapper = new RowMapper<Header>() {
+			@Override
+			public Header mapRow(ResultSet rs, int rownumber) throws SQLException {
+				Header header= new Header();				
+				header.setHeaderId(rs.getInt("header_id"));
+				header.setHeaderDesc(rs.getString("header_Desc"));
+				return header;
+			}			
+		};
+		List<Header> customiseUpdateHeaderList =  jdbcTemplate.query(getHeaderForCustomiseUpdate,rowMapper);
+		return customiseUpdateHeaderList;
+	}
+	
+	
 }

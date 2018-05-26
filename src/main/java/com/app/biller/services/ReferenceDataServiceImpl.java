@@ -117,4 +117,50 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 		String column = referenceDataDao.getColumnNameById(headerId);
 		return referenceDataDao.getBulkUpdateData(billCycle, column);
 	}
+	
+	public List<Header> getHeaderForCustomise(){
+		
+		return referenceDataDao.getHeaderForCustomise();
+	}
+	
+	public List<String> getLevel1Values(String billCycle, int dataType, int towerID, int accountId, int key1){
+		if(dataType == 1) {
+			return slaDataDao.getLevel1Values(billCycle, towerID, accountId, key1);
+		}else {
+			return ilcDataDao.getLevel1Values(billCycle, towerID, accountId, key1);
+		}
+	}
+	
+	public List<String> getLevel2Values(String billCycle, int dataType, int towerID, int accountId, int key1, String [] val1, int key2){
+		if(dataType == 1) {
+			return slaDataDao.getLevel2Values(billCycle, towerID, accountId, key1, val1,  key2);
+		}else {
+			return ilcDataDao.getLevel2Values(billCycle, towerID, accountId, key1, val1,  key2);
+		}
+	}
+	
+	public List<String> getLevel3Values(String billCycle, int dataType, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3){
+		if(dataType == 1) {
+			return slaDataDao.getLevel3Values(billCycle, towerID, accountId, key1, val1,  key2, val2, key3);
+		}else {
+			return ilcDataDao.getLevel3Values(billCycle, towerID, accountId, key1, val1,  key2, val2, key3);
+		}
+	}
+	
+	public List<String> getLevel4Values(String billCycle, int dataType, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3, String [] val3, int key4){
+		if(dataType == 1) {
+			return slaDataDao.getLevel4Values(billCycle, towerID, accountId, key1, val1,  key2, val2, key3, val3, key4);
+		}else {
+			return ilcDataDao.getLevel4Values(billCycle, towerID, accountId, key1, val1,  key2, val2, key3, val3, key4);
+		}
+	}
+	
+	public List<String> getLevel5Values(String billCycle, int dataType, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3, String [] val3, int key4, String [] val4, int key5){
+		if(dataType == 1) {
+			return slaDataDao.getLevel5Values(billCycle, towerID, accountId, key1, val1,  key2, val2, key3, val3, key4, val4, key5);
+		}else {
+			return ilcDataDao.getLevel5Values(billCycle, towerID, accountId, key1, val1,  key2, val2, key3, val3, key4, val4, key5);
+		}
+	}
+	
 }

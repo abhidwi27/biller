@@ -107,13 +107,21 @@ public class DataController {
 			if (dataFilter.getDataType() == 0) {
 				logger.info("Reading Customized ILC Data...");
 				dataList = (ArrayList<ILCData>) dataValidationService.readCustomILCData(dataFilter.getBillCycle(),
-						dataFilter.getTowerID(), dataFilter.getWeekEndDate(), dataFilter.getWrNo(), dataFilter.getEmpName(),
-						dataFilter.getBillable(), dataFilter.getRemarks(), dataFilter.getAccountId());
+						dataFilter.getTowerID(), dataFilter.getAccountId(),
+						dataFilter.getKey1(), dataFilter.getVal1(),
+						dataFilter.getKey2(), dataFilter.getVal2(),
+						dataFilter.getKey3(), dataFilter.getVal3(),
+						dataFilter.getKey4(), dataFilter.getVal4(),
+						dataFilter.getKey5(), dataFilter.getVal5());
 			} else {
 				logger.info("Reading Customized SLA Data...");
 				dataList = (ArrayList<SLAData>) dataValidationService.readCustomSLAData(dataFilter.getBillCycle(),
-						dataFilter.getTowerID(), dataFilter.getWeekEndDate(), dataFilter.getWrNo(), dataFilter.getEmpName(),
-						dataFilter.getBillable(), dataFilter.getRemarks(), dataFilter.getAccountId());
+						dataFilter.getTowerID(), dataFilter.getAccountId(),
+						dataFilter.getKey1(), dataFilter.getVal1(),
+						dataFilter.getKey2(), dataFilter.getVal2(),
+						dataFilter.getKey3(), dataFilter.getVal3(),
+						dataFilter.getKey4(), dataFilter.getVal4(),
+						dataFilter.getKey5(), dataFilter.getVal5());
 			}
 		}catch(Exception ex){
 			logger.error("Exception occured while executing readCustom method", ex);
@@ -360,6 +368,52 @@ public class DataController {
 			logger.error("Exception occured while executing getBulkUpdateData method", ex);
 			throw new Exception("Generic Exception", ex);
 		}
+		
+	}
+	
+	@RequestMapping(path = "/level1.do", method = RequestMethod.GET)
+	public @ResponseBody List<String> getLeve1(@RequestParam("dataType") int dataType,
+			@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID, @RequestParam("accountId") int accountId,
+			@RequestParam("key1") int key1, HttpSession userSession) {		
+		return referenceDataService.getLevel1Values(billCycle, dataType, towerID, accountId, key1);
+		
+	}
+	
+	@RequestMapping(path = "/level2.do", method = RequestMethod.GET)
+	public @ResponseBody List<String> getLevel2(@RequestParam("dataType") int dataType,
+			@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID, @RequestParam("accountId") int accountId,
+			@RequestParam("key1") int key1, @RequestParam("val1") String[] val1, @RequestParam("key2") int key2, HttpSession userSession) {		
+		return referenceDataService.getLevel2Values(billCycle, dataType, towerID, accountId, key1, val1, key2);
+		
+	}
+	
+	@RequestMapping(path = "/level3.do", method = RequestMethod.GET)
+	public @ResponseBody List<String> getLevel3(@RequestParam("dataType") int dataType,
+			@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID, @RequestParam("accountId") int accountId,
+			@RequestParam("key1") int key1, @RequestParam("val1") String[] val1, 
+			@RequestParam("key2") int key2, @RequestParam("val2") String[] val2, @RequestParam("key3") int key3, HttpSession userSession) {		
+		return referenceDataService.getLevel3Values(billCycle, dataType, towerID, accountId, key1, val1, key2, val2, key3);
+		
+	}
+	
+	@RequestMapping(path = "/level4.do", method = RequestMethod.GET)
+	public @ResponseBody List<String> getLevel4(@RequestParam("dataType") int dataType,
+			@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID, @RequestParam("accountId") int accountId,
+			@RequestParam("key1") int key1, @RequestParam("val1") String[] val1,
+			@RequestParam("key2") int key2, @RequestParam("val2") String[] val2,
+			@RequestParam("key3") int key3, @RequestParam("val3") String[] val3, @RequestParam("key4") int key4,HttpSession userSession) {		
+		return referenceDataService.getLevel4Values(billCycle, dataType, towerID, accountId, key1, val1, key2, val2, key3, val3, key4);
+		
+	}
+	
+	@RequestMapping(path = "/level5.do", method = RequestMethod.GET)
+	public @ResponseBody List<String> getLevel5(@RequestParam("dataType") int dataType,
+			@RequestParam("billCycle") String billCycle, @RequestParam("towerID") int towerID, @RequestParam("accountId") int accountId,
+			@RequestParam("key1") int key1, @RequestParam("val1") String[] val1,  
+			@RequestParam("key2") int key2, @RequestParam("val2") String[] val2,
+			@RequestParam("key3") int key3, @RequestParam("val3") String[] val3,
+			@RequestParam("key4") int key4, @RequestParam("val4") String[] val4, @RequestParam("key5") int key5,HttpSession userSession) {		
+		return referenceDataService.getLevel5Values(billCycle, dataType, towerID, accountId, key1, val1, key2, val2, key3, val3, key4, val4, key5);
 		
 	}
 }

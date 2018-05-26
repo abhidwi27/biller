@@ -25,6 +25,9 @@ import com.app.biller.util.BillerUtil;
 public class ILCDataDaoImpl implements ILCDataDao {
 
 	private static final Logger logger = LoggerFactory.getLogger(ILCDataDaoImpl.class);
+	
+	@Autowired
+	ReferenceDataDao referenceDataDao;
 
 	@Value("${DELETE_ILC_DATA}")
 	private String deleteIlcData;
@@ -228,62 +231,130 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	}
 
 	@Override
-	public ArrayList<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndDate, String wrNo,
-			String empName, int billable, String remarks, int accountId) {
-		logger.info("Reading Customized ILC Data for billCycle " + billCycle + " and towerId " + towerID + " and account Id " + accountId
-				+ " weekendDate " + weekEndDate + " wrNo " + wrNo + " empName " + empName + " billable " +billable + " remarks " + remarks);
+	public ArrayList<ILCData> readCustomILCData(String billCycle, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3, String [] val3, int key4, String [] val4, int key5, String [] val5) {
+		
 		StringBuilder sb = new StringBuilder();
-
+		ArrayList<ILCData> ilcDataList;
+		String fieldName1 = null;
+		String fieldName2 = null;
+		String fieldName3 = null;
+		String fieldName4 = null;
+		String fieldName5 = null;
+		
+		
+		if(key1 != 0) {
+			fieldName1 = referenceDataDao.getColumnNameById(key1);
+		}
+		if(key2 != 0) {
+			fieldName2 = referenceDataDao.getColumnNameById(key2);
+		}
+		if(key3 !=0) {
+			fieldName3 = referenceDataDao.getColumnNameById(key3);
+		}
+		if(key4 != 0) {
+			fieldName4 = referenceDataDao.getColumnNameById(key4);
+		}
+		if(key5 != 0) {
+			fieldName5 = referenceDataDao.getColumnNameById(key5);
+		}
+		StringBuilder val1Str = new StringBuilder();
+		StringBuilder val2Str = new StringBuilder();
+		StringBuilder val3Str = new StringBuilder();
+		StringBuilder val4Str = new StringBuilder();
+		StringBuilder val5Str = new StringBuilder();
+		
+		if(val1.length != 0) {
+			for(int i=0; i<val1.length-1; i++) {
+				val1Str = val1Str.append("'").append(val1[i]).append("'").append(",");
+			}
+			val1Str = val1Str.append("'").append(val1[val1.length-1]).append("'");
+		}
+		
+		if(val2.length != 0) {
+			for(int i=0; i<val2.length-1; i++) {
+				val2Str = val2Str.append("'").append(val2[i]).append("'").append(",");
+			}
+			val2Str = val2Str.append("'").append(val2[val2.length-1]).append("'");
+		}
+		
+		if(val3.length != 0) {
+			for(int i=0; i<val3.length-1; i++) {
+				val3Str = val3Str.append("'").append(val3[i]).append("'").append(",");
+			}
+			val3Str = val3Str.append("'").append(val3[val3.length-1]).append("'");
+		}
+		
+		if(val4.length != 0) {
+			for(int i=0; i<val4.length-1; i++) {
+				val4Str = val4Str.append("'").append(val4[i]).append("'").append(",");
+			}
+			val4Str = val4Str.append("'").append(val4[val4.length-1]).append("'");
+		}
+		
+		if(val5.length != 0) {
+			for(int i=0; i<val5.length-1; i++) {
+				val5Str = val5Str.append("'").append(val5[i]).append("'").append(",");
+			}
+			val5Str = val5Str.append("'").append(val5[val5.length-1]).append("'");
+		}
+		
+		
 		sb.append(
-				"SELECT * FROM biller.blr_ilc_data ilc where ")
-				.append("ilc.bill_cycle ='").append(billCycle).append("'");
+				"SELECT * FROM biller.blr_ilc_data ilc where ilc.bill_cycle ='")
+		  .append(billCycle).append("'");
+		
+		sb.append(" and ilc.account_id in(select account_desc from biller.blr_accounts ac where ac.account_id= ")				
+		.append(accountId)
+		.append(")");
+		
+		if(val1.length!=0 && fieldName1 != null) {
+			sb.append(" AND ilc.")
+			  .append(fieldName1)
+			  .append(" in ( ")
+			  .append(val1Str.toString())
+			  .append(")");
+			}
+			
+			if(val2.length !=0 && fieldName2 != null) {
+			  sb.append(" AND ilc.")
+			  .append(fieldName2)
+			  .append(" in ( ")
+			  .append(val2Str.toString())
+			  .append(")");
+			}
+			
+			if(val3.length !=0 && fieldName3 != null) {
+			 sb.append(" AND ilc.")
+			  .append(fieldName3)
+			  .append(" in ( ")
+			  .append(val3Str.toString())
+			  .append(")");
+			}
+			
+			if(val4.length !=0 && fieldName4 != null) {
+			  sb.append(" AND ilc.")
+			  .append(fieldName4)
+			  .append(" in ( ")
+			  .append(val4Str.toString())
+			  .append(")");
+			}
+			
+			if(val5.length !=0 && fieldName5 != null) {
+			  sb.append(" AND ilc.")
+			  .append(fieldName5)
+			  .append(" in ( ")
+			  .append(val5Str.toString())
+			  .append(")");
+			}
+		
 		if(towerID != 0) {
 			sb.append(" and ilc.tower in(select tower_desc from biller.blr_tower tower where tower.tower_id= ")				
 			.append(towerID)
 			.append(")");
 		  
 		}
-		
-		if (!(weekEndDate.equals("ALL"))) {
-			sb.append(" and ilc.weekend_date='").append(weekEndDate).append("'");
-		}
-
-		if (!(wrNo.equals("ALL"))) {
-			sb.append(" and ilc.wr_no='").append(wrNo).append("'");
-		}
-
-		if (!(empName.equals("ALL"))) {
-			sb.append(" and ilc.emp_name='").append(empName).append("'");
-		}
-		if (billable !=0) {
-			String isBillable = null;
-			switch (billable) {
-			case 1:
-					isBillable = "Yes";
-					break;
-			case 2:
-					isBillable = "No";
-					break;
-			default:
-					isBillable = null;
-			}
-					
-			sb.append(" and ilc.is_billable='").append(isBillable).append("'");
-		}
-		if (!(remarks.equals("ALL"))) {
-			sb.append(" and ilc.remarks='").append(remarks).append("'");
-		}
-		
-		sb.append(" and ilc.account_id in(select account_desc from biller.blr_accounts ac where ac.account_id= ")				
-			.append(accountId)
-			.append(")");
-		  
-		
-		
-		
-			
-
-		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(sb.toString(),
+		try {  
+		ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(sb.toString(),
 				new RowMapper<ILCData>() {
 					@Override
 					public ILCData mapRow(ResultSet rs, int rownumber) throws SQLException {
@@ -335,7 +406,10 @@ public class ILCDataDaoImpl implements ILCDataDao {
 						return ilcModel;
 					}
 				});
-
+		}catch(DataAccessException dae) {
+			logger.error("Error in read custom ILC Data", dae);
+			ilcDataList = null;
+		}
 		return ilcDataList;
 	}
 
@@ -432,5 +506,323 @@ public class ILCDataDaoImpl implements ILCDataDao {
 
 		List<String> ilcRemarksList = jdbcTemplate.query(getIlcRemarkQuery, queryParam, rowMap);
 		return ilcRemarksList;
+	}
+	
+public List<String> getLevel1Values(String billCycle, int towerID, int accountId, int key1){
+		
+		StringBuilder sb = new StringBuilder();
+		String fieldName = referenceDataDao.getColumnNameById(key1);
+		
+		sb.append("SELECT DISTINCT ilc.")
+		  .append(fieldName)
+		  .append(" FROM biller.blr_ilc_data ilc WHERE ilc.bill_cycle='")
+		  .append(billCycle)
+		  .append("'");
+		
+		sb.append(" AND ilc.account_id in(")
+		  .append("SELECT ac.account_desc FROM biller.blr_accounts ac WHERE ac.account_id=")
+		  .append(accountId)
+		  .append(")");
+		
+		if(towerID !=0) {
+		  sb.append(" AND ilc.tower in(")
+		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
+		  .append(towerID)
+		  .append(")");
+		}
+		
+		sb.append(" ORDER BY 1 ASC");
+		  
+		  
+		
+		RowMapper<String> rowMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+		
+		List<String> level1ValueList = jdbcTemplate.query(sb.toString(), new Object[] {}, rowMap);
+		return level1ValueList;
+	}
+	
+	public List<String> getLevel2Values(String billCycle, int towerID, int accountId, int key1, String [] val1, int key2){
+		StringBuilder sb = new StringBuilder();
+		String fieldName1 = referenceDataDao.getColumnNameById(key1);
+		String fieldName2 = referenceDataDao.getColumnNameById(key2);
+		StringBuilder val1Str = new StringBuilder();
+		
+		if(val1.length != 0) {
+			for(int i=0; i<val1.length-1; i++) {
+				val1Str = val1Str.append("'").append(val1[i]).append("'").append(",");
+			}
+			val1Str = val1Str.append("'").append(val1[val1.length-1]).append("'");
+		}
+		
+		sb.append("SELECT DISTINCT ilc.")
+		  .append(fieldName2)
+		  .append(" FROM biller.blr_ilc_data ilc WHERE ilc.bill_cycle='")
+		  .append(billCycle)
+		  .append("'")
+		  .append(" AND ilc.")
+		  .append(fieldName1)
+		  .append(" in ( ")
+		  .append(val1Str.toString())
+		  .append(")");		
+		
+		sb.append(" AND ilc.account_id in(")
+		  .append("SELECT ac.account_desc FROM biller.blr_accounts ac WHERE ac.account_id=")
+		  .append(accountId)
+		  .append(")");
+		
+		if(towerID !=0) {
+		  sb.append(" AND ilc.tower in(")
+		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
+		  .append(towerID)
+		  .append(")");
+		}
+		
+		sb.append(" ORDER BY 1 ASC");		  
+		
+		RowMapper<String> rowMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+		
+		List<String> level2ValueList = jdbcTemplate.query(sb.toString(), new Object[] {}, rowMap);
+		return level2ValueList;
+	}
+	
+	public List<String> getLevel3Values(String billCycle, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3){
+		StringBuilder sb = new StringBuilder();
+		String fieldName1 = referenceDataDao.getColumnNameById(key1);
+		String fieldName2 = referenceDataDao.getColumnNameById(key2);
+		String fieldName3 = referenceDataDao.getColumnNameById(key3);
+		StringBuilder val1Str = new StringBuilder();
+		StringBuilder val2Str = new StringBuilder();
+		
+		if(val1.length != 0) {
+			for(int i=0; i<val1.length-1; i++) {
+				val1Str = val1Str.append("'").append(val1[i]).append("'").append(",");
+			}
+			val1Str = val1Str.append("'").append(val1[val1.length-1]).append("'");
+		}
+		
+		if(val2.length != 0) {
+			for(int i=0; i<val2.length-1; i++) {
+				val2Str = val2Str.append("'").append(val2[i]).append("'").append(",");
+			}
+			val2Str = val2Str.append("'").append(val2[val2.length-1]).append("'");
+		}
+		
+		sb.append("SELECT DISTINCT ilc.")
+		  .append(fieldName3)
+		  .append(" FROM biller.blr_ilc_data ilc WHERE ilc.bill_cycle='")
+		  .append(billCycle)
+		  .append("'")
+		  .append(" AND ilc.")
+		  .append(fieldName1)
+		  .append(" in ( ")
+		  .append(val1Str.toString())
+		  .append(")")
+		  .append(" AND ilc.")
+		  .append(fieldName2)
+		  .append(" in ( ")
+		  .append(val2Str.toString())
+		  .append(")");
+		
+		sb.append(" AND ilc.account_id in(")
+		  .append("SELECT ac.account_desc FROM biller.blr_accounts ac WHERE ac.account_id=")
+		  .append(accountId)
+		  .append(")");
+		
+		if(towerID !=0) {
+		  sb.append(" AND ilc.tower in(")
+		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
+		  .append(towerID)
+		  .append(")");
+		}
+		
+		sb.append(" ORDER BY 1 ASC");		  
+		
+		RowMapper<String> rowMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+		
+		List<String> level3ValueList = jdbcTemplate.query(sb.toString(), new Object[] {}, rowMap);
+		return level3ValueList;
+	}
+	
+	public List<String> getLevel4Values(String billCycle, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3, String [] val3, int key4){
+		StringBuilder sb = new StringBuilder();
+		String fieldName1 = referenceDataDao.getColumnNameById(key1);
+		String fieldName2 = referenceDataDao.getColumnNameById(key2);
+		String fieldName3 = referenceDataDao.getColumnNameById(key3);
+		String fieldName4 = referenceDataDao.getColumnNameById(key4);
+		StringBuilder val1Str = new StringBuilder();
+		StringBuilder val2Str = new StringBuilder();
+		StringBuilder val3Str = new StringBuilder();
+		
+		if(val1.length != 0) {
+			for(int i=0; i<val1.length-1; i++) {
+				val1Str = val1Str.append("'").append(val1[i]).append("'").append(",");
+			}
+			val1Str = val1Str.append("'").append(val1[val1.length-1]).append("'");
+		}
+		
+		if(val2.length != 0) {
+			for(int i=0; i<val2.length-1; i++) {
+				val2Str = val2Str.append("'").append(val2[i]).append("'").append(",");
+			}
+			val2Str = val2Str.append("'").append(val2[val2.length-1]).append("'");
+		}
+		
+		if(val3.length != 0) {
+			for(int i=0; i<val3.length-1; i++) {
+				val3Str = val3Str.append("'").append(val3[i]).append("'").append(",");
+			}
+			val3Str = val3Str.append("'").append(val3[val3.length-1]).append("'");
+		}
+		
+		sb.append("SELECT DISTINCT ilc.")
+		  .append(fieldName4)
+		  .append(" FROM biller.blr_ilc_data ilc WHERE ilc.bill_cycle='")
+		  .append(billCycle)
+		  .append("'")
+		  .append(" AND ilc.")
+		  .append(fieldName1)
+		  .append(" in ( ")
+		  .append(val1Str.toString())
+		  .append(")")
+		  .append(" AND ilc.")
+		  .append(fieldName2)
+		  .append(" in ( ")
+		  .append(val2Str.toString())
+		  .append(")")
+		  .append(" AND ilc.")
+		  .append(fieldName3)
+		  .append(" in ( ")
+		  .append(val3Str.toString())
+		  .append(")");
+		
+		sb.append(" AND ilc.account_id in(")
+		  .append("SELECT ac.account_desc FROM biller.blr_accounts ac WHERE ac.account_id=")
+		  .append(accountId)
+		  .append(")");
+		
+		if(towerID !=0) {
+		  sb.append(" AND ilc.tower in(")
+		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
+		  .append(towerID)
+		  .append(")");
+		}
+		
+		sb.append(" ORDER BY 1 ASC");		  
+		
+		RowMapper<String> rowMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+		
+		List<String> level4ValueList = jdbcTemplate.query(sb.toString(), new Object[] {}, rowMap);
+		return level4ValueList;
+	}
+	
+	public List<String> getLevel5Values(String billCycle, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3, String [] val3, int key4, String [] val4, int key5){
+		StringBuilder sb = new StringBuilder();
+		String fieldName1 = referenceDataDao.getColumnNameById(key1);
+		String fieldName2 = referenceDataDao.getColumnNameById(key2);
+		String fieldName3 = referenceDataDao.getColumnNameById(key3);
+		String fieldName4 = referenceDataDao.getColumnNameById(key4);
+		String fieldName5 = referenceDataDao.getColumnNameById(key5);
+		StringBuilder val1Str = new StringBuilder();
+		StringBuilder val2Str = new StringBuilder();
+		StringBuilder val3Str = new StringBuilder();
+		StringBuilder val4Str = new StringBuilder();
+		
+		if(val1.length != 0) {
+			for(int i=0; i<val1.length-1; i++) {
+				val1Str = val1Str.append("'").append(val1[i]).append("'").append(",");
+			}
+			val1Str = val1Str.append("'").append(val1[val1.length-1]).append("'");
+		}
+		
+		if(val2.length != 0) {
+			for(int i=0; i<val2.length-1; i++) {
+				val2Str = val2Str.append("'").append(val2[i]).append("'").append(",");
+			}
+			val2Str = val2Str.append("'").append(val2[val2.length-1]).append("'");
+		}
+		
+		if(val3.length != 0) {
+			for(int i=0; i<val3.length-1; i++) {
+				val3Str = val3Str.append("'").append(val3[i]).append("'").append(",");
+			}
+			val3Str = val3Str.append("'").append(val3[val3.length-1]).append("'");
+		}
+		
+		if(val4.length != 0) {
+			for(int i=0; i<val4.length-1; i++) {
+				val4Str = val4Str.append("'").append(val4[i]).append("'").append(",");
+			}
+			val4Str = val4Str.append("'").append(val4[val4.length-1]).append("'");
+		}
+		
+		sb.append("SELECT DISTINCT ilc.")
+		  .append(fieldName5)
+		  .append(" FROM biller.blr_ilc_data ilc WHERE ilc.bill_cycle='")
+		  .append(billCycle)
+		  .append("'")
+		  .append(" AND ilc.")
+		  .append(fieldName1)
+		  .append(" in ( ")
+		  .append(val1Str.toString())
+		  .append(")")
+		  .append(" AND ilc.")
+		  .append(fieldName2)
+		  .append(" in ( ")
+		  .append(val2Str.toString())
+		  .append(")")
+		  .append(" AND ilc.")
+		  .append(fieldName3)
+		  .append(" in ( ")
+		  .append(val3Str.toString())
+		  .append(")")
+		  .append(" AND ilc.")
+		  .append(fieldName4)
+		  .append(" in ( ")
+		  .append(val4Str.toString())
+		  .append(")");
+		
+		sb.append(" AND ilc.account_id in(")
+		  .append("SELECT ac.account_desc FROM biller.blr_accounts ac WHERE ac.account_id=")
+		  .append(accountId)
+		  .append(")");
+		
+		if(towerID !=0) {
+		  sb.append(" AND ilc.tower in(")
+		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
+		  .append(towerID)
+		  .append(")");
+		}
+		
+		sb.append(" ORDER BY 1 ASC");		  
+		
+		RowMapper<String> rowMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+		
+		List<String> level5ValueList = jdbcTemplate.query(sb.toString(), new Object[] {}, rowMap);
+		return level5ValueList;
 	}
 }
