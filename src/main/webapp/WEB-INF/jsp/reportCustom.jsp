@@ -17,7 +17,7 @@
 					<div class="row biller-row">
 								<div class="col-md-2 ">
 									<label class="biller-label biller-modal-label">
-										Key  :
+										Column 1  :
 									</label>
 								</div>
 								<div class="form-group col-md-3 text-left biller-modal-dropdown">																	
@@ -48,7 +48,7 @@
 					<div class="row biller-row">
 								<div class="col-md-2 ">
 									<label class="biller-label biller-modal-label">
-										Key  :
+										Column 2 :
 									</label>
 								</div>
 								<div class="form-group col-md-3 text-left biller-modal-dropdown">																	
@@ -79,7 +79,7 @@
 					<div class="row biller-row">
 								<div class="col-md-2 ">
 									<label class="biller-label biller-modal-label">
-										Key  :
+										Column 3  :
 									</label>
 								</div>
 								<div class="form-group col-md-3 text-left biller-modal-dropdown">																	
@@ -110,7 +110,7 @@
 					<div class="row biller-row">
 								<div class="col-md-2 ">
 									<label class="biller-label biller-modal-label">
-										Key  :
+										Column 4  :
 									</label>
 								</div>
 								<div class="form-group col-md-3 text-left biller-modal-dropdown">																	
@@ -142,7 +142,7 @@
 					<div class="row biller-row">
 								<div class="col-md-2 ">
 									<label class="biller-label biller-modal-label">
-										Key  :
+										Column 5  :
 									</label>
 								</div>
 								<div class="form-group col-md-3 text-left biller-modal-dropdown">																	
