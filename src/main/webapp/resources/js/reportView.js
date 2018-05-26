@@ -5,6 +5,9 @@ var approveListlength;
 var tableHeader;
 var excelFileName;
 var columnLength;
+var optionsToShow = [];
+var optionsToHide = [];
+var allHeaderOptions = [];
 
 
 $(document).ready(function(){		
@@ -244,13 +247,13 @@ $(document).ready(function(){
 					for (var i=0; i<columnLength; i++){
 						allColumns.push(i);
 					}
-				    
-				    addListContent('#customEmp', employeeList);
+					resetCustomizeModal();
+				    /*addListContent('#customEmp', employeeList);
 	                addListContent('#customWr', wrList);
 	                addListContent('#customWeekend', weekEndList);
 	                addListContent('#customRemarks', remarksList);
-	                addListContent('#rejectForUser', rejectForUserList);
-	                
+	                addListContent('#rejectForUser', rejectForUserList);*/	                
+
 	            },
 		 		error: function(result){
 		 			location.href = 'error.do';
@@ -259,6 +262,7 @@ $(document).ready(function(){
 	   			 $("#report_wrapper .dt-buttons button").css("margin-right", "1em");
 				 $("#report_wrapper .dataTables_scrollHead table").css("margin-left", "2px");
 				 $(".biller-loader-div").fadeOut("slow");
+
 	            }
 		 
 			});		 

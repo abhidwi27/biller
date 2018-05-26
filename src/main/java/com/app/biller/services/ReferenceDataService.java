@@ -43,6 +43,19 @@ public interface ReferenceDataService {
 	
 	List<Header> getHeaderForBulkUpdate();
 	
+
 	List<WIASMReference> getwiasmReferenceData(String wrNo);
+
+	List<Header> getHeaderForCustomise();
+	
+	List<String> getLevel1Values(String billCycle, int dataType, int towerID, int accountId, int key1);
+	
+	List<String> getLevel2Values(String billCycle, int dataType, int towerID, int accountId, int key1, String [] val1, int key2);
+	
+	List<String> getLevel3Values(String billCycle, int dataType, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3);
+	
+	List<String> getLevel4Values(String billCycle, int dataType, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3, String [] val3, int key4);
+	
+	List<String> getLevel5Values(String billCycle, int dataType, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3, String [] val3, int key4, String [] val4, int key5);
 }
 

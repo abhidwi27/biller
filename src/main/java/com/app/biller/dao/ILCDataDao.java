@@ -13,8 +13,7 @@ public interface ILCDataDao {
 
 	ArrayList<ILCData> readILCData(String billCycle, int towerID , int accountId);
 
-	ArrayList<ILCData> readCustomILCData(String billCycle, int towerID, String weekEndData, String wrNo,
-			String empName, int billable, String remarks, int accountId);
+	ArrayList<ILCData> readCustomILCData(String billCycle, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3, String [] val3, int key4, String [] val4, int key5, String [] val5);
 
 	List<String> getEmployeeList(String billCycle,int towerID);
 
@@ -23,4 +22,14 @@ public interface ILCDataDao {
 	List<String> getWeekendList(String billCycle, int towerID);
 	
 	List<String> getRemarksList(String billCycle, int towerID);
+	
+	List<String> getLevel1Values(String billCycle, int towerID, int accountId, int key1);
+	
+	List<String> getLevel2Values(String billCycle, int towerID, int accountId, int key1, String [] val1, int key2);
+	
+	List<String> getLevel3Values(String billCycle, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3);
+	
+	List<String> getLevel4Values(String billCycle, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3, String [] val3, int key4);
+	
+	List<String> getLevel5Values(String billCycle, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3, String [] val3, int key4, String [] val4, int key5);
 }
