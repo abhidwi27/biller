@@ -68,6 +68,8 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	@Value("${SELECT_ALL_ILC_REMARKS_LIST}")
 	private String selectAllILCRemarksList;
 	
+	@Value("${SELECT_OTHERS_TOWER_ILC_DATA}")
+	private String selectOtherTowersILCData;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -167,14 +169,18 @@ public class ILCDataDaoImpl implements ILCDataDao {
 		logger.info("Reading ILC Data for billCycle " + billCycle + " and towerId " + towerID + " and account Id " + accountId);
 		Object queryParam[];
 		String readIlcQuery;
-		if(towerID != 0 ) {
-			queryParam = new Object [] {towerID, billCycle , accountId};
-			readIlcQuery = selectIlcData;
-		}else {
+		
+		if(towerID == 0 ) {
 			queryParam = new Object [] { billCycle, accountId };
 			readIlcQuery = selectAllIlcData;
+		}else if(towerID == 7 ) {
+			queryParam = new Object [] {billCycle , accountId};
+			readIlcQuery = selectOtherTowersILCData;
+		}else  {
+			queryParam = new Object [] {towerID, billCycle , accountId};
+			readIlcQuery = selectIlcData;
 		}
-
+		
 		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(readIlcQuery,
 				queryParam, new RowMapper<ILCData>() {
 					@Override
@@ -347,11 +353,14 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			  .append(")");
 			}
 		
-		if(towerID != 0) {
+		if(towerID != 0 && towerID !=7) {
 			sb.append(" and ilc.tower in(select tower_desc from biller.blr_tower tower where tower.tower_id= ")				
 			.append(towerID)
 			.append(")");
 		  
+		}		
+		if(towerID == 7) {
+			sb.append(" and (tower.tower_id not in(1,2,3,4,5,6) or tower.tower_id is null)");		
 		}
 		try {  
 		ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(sb.toString(),
