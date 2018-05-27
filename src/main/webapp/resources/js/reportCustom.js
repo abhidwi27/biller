@@ -6,7 +6,7 @@ $(document).ready(function(){
 		allHeaderOptions.push($(this).val());
 	});
 	
-	$(document).on('change', "#customize select", function(){
+	$(document).on('change', "#customize .selectpicker", function(){
 		$('#customSelectionMessage').hide();
 		var key = $(this).attr('id');
 		var keyIndex = parseInt(key.charAt(3));
@@ -325,7 +325,19 @@ $(document).ready(function(){
 						       $('.multiselect-container li a label').append('<span class=\"checkmark\"></span>');
 						       $('.multiselect-container .multiselect-filter span').remove();
 						       $('.multiselect-container').css('overflow-x', 'auto');
-						    }
+						    },
+						 onChange: function(option, checked, select){
+								 var valueId = $(option).closest('select').attr("id");
+								 resetNextKeyValue(valueId);
+						}, 
+						 onSelectAll: function(){
+								 var keyId = $(this.originalOptions[0]).closest('select').attr("id");
+								 resetNextKeyValue(keyId);
+						},
+						 onDeselectAll: function(){
+							 var keyId = $(this.originalOptions[0]).closest('select').attr("id");
+							 resetNextKeyValue(keyId);
+					}
 					});
 				}
 			}
@@ -368,7 +380,19 @@ $(document).ready(function(){
 						       $('.multiselect-container li a label').append('<span class=\"checkmark\"></span>');
 						       $('.multiselect-container .multiselect-filter span').remove();
 						       $('.multiselect-container').css('overflow-x', 'auto');
-						    }
+						    },
+						onChange: function(option, checked, select){
+								 var valueId = $(option).closest('select').attr("id");
+								 resetNextKeyValue(valueId);
+						}, 
+						 onSelectAll: function(){
+								 var keyId = $(this.originalOptions[0]).closest('select').attr("id");
+								 resetNextKeyValue(keyId);
+						},
+						 onDeselectAll: function(){
+							 var keyId = $(this.originalOptions[0]).closest('select').attr("id");
+							 resetNextKeyValue(keyId);
+						}
 					});
 				}
 			}
@@ -421,7 +445,19 @@ $(document).ready(function(){
 						       $('.multiselect-container li a label').append('<span class=\"checkmark\"></span>');
 						       $('.multiselect-container .multiselect-filter span').remove();
 						       $('.multiselect-container').css('overflow-x', 'auto');
-						    }
+						    },
+						onChange: function(option, checked, select){
+								 var valueId = $(option).closest('select').attr("id");
+								 resetNextKeyValue(valueId);
+						}, 
+						 onSelectAll: function(){
+								 var keyId = $(this.originalOptions[0]).closest('select').attr("id");
+								 resetNextKeyValue(keyId);
+						},
+						 onDeselectAll: function(){
+							 var keyId = $(this.originalOptions[0]).closest('select').attr("id");
+							 resetNextKeyValue(keyId);
+						}
 					});
 				}
 			}
@@ -478,7 +514,19 @@ $(document).ready(function(){
 						       $('.multiselect-container li a label').append('<span class=\"checkmark\"></span>');
 						       $('.multiselect-container .multiselect-filter span').remove();
 						       $('.multiselect-container').css('overflow-x', 'auto');
-						    }
+						    },
+						onChange: function(option, checked, select){
+								 var valueId = $(option).closest('select').attr("id");
+								 resetNextKeyValue(valueId);
+						}, 
+						 onSelectAll: function(){
+								 var keyId = $(this.originalOptions[0]).closest('select').attr("id");
+								 resetNextKeyValue(keyId);
+						},
+						 onDeselectAll: function(){
+							 var keyId = $(this.originalOptions[0]).closest('select').attr("id");
+							 resetNextKeyValue(keyId);
+						}
 					});
 				}
 			}
@@ -562,6 +610,22 @@ function resetCustomizeModal(){
 			$(keySelector).find(optionSelector).show();
 		}
 		
+		$(keySelector).val("0");
+		$(keySelector).selectpicker('refresh');
+		var valueSelector = "#value" + i;
+		$(valueSelector).empty();
+		$(valueSelector).multiselect('destroy');
+		$(valueSelector).multiselect({
+			buttonWidth: '220px',
+		});
+	}
+}
+
+function resetNextKeyValue(valueId){
+	var valueIndex = parseInt(valueId.charAt(5));
+	
+	for (var i=valueIndex+1 ; i<=5 ; i++){
+		var keySelector = "#key" + i;
 		$(keySelector).val("0");
 		$(keySelector).selectpicker('refresh');
 		var valueSelector = "#value" + i;
