@@ -24,8 +24,12 @@
 	font-weight: 600;
 }
 
-.dataTables_filter {
+/* .dataTables_filter {
 	display: none;
+} */
+
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: left;
 }
 
 .table>tbody>tr>td {
