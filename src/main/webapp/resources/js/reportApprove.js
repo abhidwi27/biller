@@ -39,7 +39,8 @@ $(document).ready(function(){
 		var billCycle = $('#currentBillCycle').val();
 		var tower = $('#currentTower').val();
 		var approveFor;		
-		var userProfile = JSON.parse($('#strUserProfile').val());		
+		var userProfile = JSON.parse($('#strUserProfile').val());
+		var accountId = $('#currentAccount').val();
 		if(approveListlength != 0 ) {
 			if($("#approveRadioBlock .radio-inline input:radio[name='approveForRadio']:checked").val() == 0){
 				approveFor = userProfile.userID ;
@@ -49,7 +50,7 @@ $(document).ready(function(){
 		}else{
 			approveFor =  userProfile.userID;
 		}		
-		url = 'data/approve.do?billCycle=' + billCycle + '&approveFor=' + approveFor;
+		url = 'data/approve.do?billCycle=' + billCycle + '&approveFor=' + approveFor + '&accountId=' + accountId ;
 		$.ajax({
 			url : url,
 			data : false,

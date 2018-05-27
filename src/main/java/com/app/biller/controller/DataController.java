@@ -90,7 +90,7 @@ public class DataController {
 			responseDataEnvelope.setWeekEndList(referenceDataService.getWeekendList(billCycle, dataType, towerID));
 			responseDataEnvelope.setRejectForUserList(dataApprovalService.getRejectForUserList(billCycle));
 			responseDataEnvelope.setRemarksList(referenceDataService.getRemarksList(billCycle, dataType, towerID));
-			responseDataEnvelope.setDataLockedBy(dataLockService.checkLockForTower(billCycle, towerID));
+			responseDataEnvelope.setDataLockedBy(dataLockService.checkLockForTower(billCycle, towerID, accountId));
 			responseDataEnvelope.setHasApprovedBillCycle(dataApprovalService.checkPriorApproval(billCycle, userID));
 			logger.info("ResonsetDataEnvelope ready...");
 		}catch(Exception ex) {
@@ -132,7 +132,7 @@ public class DataController {
 
 	@RequestMapping(path = "/update.do", method = RequestMethod.POST)
 	public @ResponseBody boolean updateSLAData(@RequestParam("billCycle") String billCycle,
-			@RequestParam("towerID") int towerID, @RequestBody SaveRecords saveRecords, HttpSession userSession) throws Exception {
+			@RequestParam("towerID") int towerID, @RequestParam("accountId") int accountId, @RequestBody SaveRecords saveRecords, HttpSession userSession) throws Exception {
 		User userProfile = getUserProfile(userSession);
 		String userID = userProfile.getUserID();
 		boolean slaUpdateResult = false;
@@ -140,30 +140,30 @@ public class DataController {
 			logger.info("Updating SLA Data...");
 			dataValidationService.updateSLAData(billCycle, userID, saveRecords.getUpdateRecords());
 			dataValidationService.createNewSLARecord(billCycle, userID, saveRecords.getNewRecords());
-			User lockedBy = dataLockService.checkLockForTower(billCycle, towerID);
+			User lockedBy = dataLockService.checkLockForTower(billCycle, towerID, accountId);
 			if (lockedBy != null) {
 				if (lockedBy.getUserID().equals(userID)) {
-					dataLockService.unSetLock(userID, billCycle, towerID);
+					dataLockService.unSetLock(userID, billCycle, towerID, accountId);
 				}
 			}
 			slaUpdateResult = true;
 		} catch (Exception ex) {
-			logger.error("Exception occured while updating SLA data.");
-			throw new Exception("Generic Exception", ex);
+			logger.error("Exception occured while updating SLA data.", ex);
+			throw ex;
 		}
 		return slaUpdateResult;
 	}
 
 	@RequestMapping(path = "/lock.do", method = RequestMethod.GET)
 	public @ResponseBody String lockSLAData(@RequestParam("billCycle") String billCycle,
-			@RequestParam("towerID") int towerID, HttpSession userSession) throws Exception {
+			@RequestParam("towerID") int towerID, @RequestParam("accountId") int accountId, HttpSession userSession) throws Exception {
 		User userProfile = getUserProfile(userSession);
 		String userID = userProfile.getUserID();
 		Gson gson = new Gson();
 		HashMap<String, Object> lockResponseMap = new HashMap<String, Object>();
 		try {
-			User lockedBy = dataLockService.checkLockForTower(billCycle, towerID);
-			Tower lockedForTower = dataLockService.checkLockByUser(userID, billCycle);
+			User lockedBy = dataLockService.checkLockForTower(billCycle, towerID, accountId);
+			Tower lockedForTower = dataLockService.checkLockByUser(userID, billCycle, accountId);
 			lockResponseMap.put("lockedBy", lockedBy);
 			if (lockedForTower != null) {
 				lockResponseMap.put("lockedForTower", lockedForTower.getTowerName());
@@ -171,31 +171,31 @@ public class DataController {
 				lockResponseMap.put("lockedForTower", "");
 			}
 			if (lockedBy == null && lockedForTower == null) {
-				dataLockService.setLock(billCycle, userID, towerID);
+				dataLockService.setLock(billCycle, userID, towerID, accountId);
 				lockResponseMap.put("msg", "success");
 			} else {
 				lockResponseMap.put("msg", "failed");
 			}
 		}catch (Exception ex) {
-			logger.error("Exception occured while executing lock method.");
-			throw new Exception("Generic Exception", ex);
+			logger.error("Exception occured while executing lock method.", ex);
+			throw ex;
 		}
 		return gson.toJson(lockResponseMap);
 	}
 	
 	@RequestMapping(path = "/unlock.do", method = RequestMethod.GET)
 	public @ResponseBody String unlockSLAData(@RequestParam("billCycle") String billCycle,
-			@RequestParam("towerID") int towerID, HttpSession userSession) throws Exception {
+			@RequestParam("towerID") int towerID, @RequestParam("accountId") int accountId, HttpSession userSession) throws Exception {
 		User userProfile = getUserProfile(userSession);
 		String userID = userProfile.getUserID();
 		Gson gson = new Gson();
 		HashMap<String, Object> unlockResponseMap = new HashMap<String, Object>();
 		try {
-			User lockedBy = dataLockService.checkLockForTower(billCycle, towerID);			
+			User lockedBy = dataLockService.checkLockForTower(billCycle, towerID, accountId);			
 			unlockResponseMap.put("lockedBy", lockedBy);
 			
 			if (lockedBy != null ) {
-				dataLockService.unSetLock(userID,billCycle, towerID);
+				dataLockService.unSetLock(userID,billCycle, towerID, accountId);
 				unlockResponseMap.put("msg", "success");
 			} else {
 				unlockResponseMap.put("msg", "failed");
@@ -225,7 +225,7 @@ public class DataController {
 	@RequestMapping(path = "/approve.do", method = RequestMethod.GET)
 	@ResponseBody
 	public ReviewWrapper approveSLAData(@RequestParam("billCycle") String billCycle,
-			@RequestParam("approveFor") String approveFor, HttpServletRequest request) throws Exception {
+			@RequestParam("approveFor") String approveFor, @RequestParam("accountId") int accountId, HttpServletRequest request) throws Exception {
 		boolean approval = false;
 		String approveBy = "";
 		String roleDesc = "";
@@ -239,9 +239,9 @@ public class DataController {
 				roleDesc = userProfile.getRoleDesc();
 				roleID = userProfile.getRoleID();
 				approval = dataApprovalService.setUserApproval(billCycle, approveBy, approveFor, roleID, roleDesc);
-				Tower LockForTower = dataLockService.checkLockByUser(approveFor, billCycle);
+				Tower LockForTower = dataLockService.checkLockByUser(approveFor, billCycle, accountId);
 				if (approval && LockForTower != null) {
-					dataLockService.unSetLock(approveFor, billCycle, LockForTower.getTowerID());
+					dataLockService.unSetLock(approveFor, billCycle, LockForTower.getTowerID(), accountId);
 				}
 			}
 			String activeBillCycle = referenceDataService.getActiveBillCycle();

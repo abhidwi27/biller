@@ -272,6 +272,8 @@ $(document).ready(function(){
 		    	            scrollY:        380,
 		    	            scrollCollapse: true,
 		    	            scroller:       true,
+		    	            searching: 		true,
+			    	        searchDelay: 500
 			    	     });
 		                dataTableInitialized = true;
 				    },

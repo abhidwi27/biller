@@ -17,19 +17,19 @@ public class DataLockServiceImpl implements DataLockService {
 	@Autowired
 	LockDataDao lockDataDao;
 
-	public User checkLockForTower(String billCycle, int towerID) {
-		return lockDataDao.checkLockForTower(billCycle, towerID);
+	public User checkLockForTower(String billCycle, int towerID, int accountId) {
+		return lockDataDao.checkLockForTower(billCycle, towerID, accountId);
 	}
 
-	public void setLock(String billCycle, String userID, int towerID) {
-		lockDataDao.setLock(billCycle, userID, towerID);
+	public void setLock(String billCycle, String userID, int towerID, int accountId) {
+		lockDataDao.setLock(billCycle, userID, towerID, accountId);
 	}
 
-	public void unSetLock(String userID, String billCycle, int towerID) {
-		lockDataDao.unSetLock(userID, billCycle, towerID);
+	public void unSetLock(String userID, String billCycle, int towerID, int accountId) {
+		lockDataDao.unSetLock(userID, billCycle, towerID, accountId);
 	}
 	
-	public Tower checkLockByUser(String userID, String billCycle) {
-		return lockDataDao.checkLockByUser(userID, billCycle);
+	public Tower checkLockByUser(String userID, String billCycle, int accountId) {
+		return lockDataDao.checkLockByUser(userID, billCycle, accountId);
 	}
 }

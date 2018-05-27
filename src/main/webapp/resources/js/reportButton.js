@@ -109,14 +109,14 @@ $(function() {
 		var billCycle = $('#currentBillCycle').val();
 		var reportTable = $('#ilcReport').DataTable();
 		var userProfile = JSON.parse($('#strUserProfile').val());
-		
+		var accountId = $('#currentAccount').val();
 		if(hasApprovedBillCycle == 1 || (tower == 0)){
 			e.stopPropagation();
 			e.preventDefault();
 			return;
 		}	
 
-		url = 'data/lock.do?billCycle=' + billCycle + '&towerID=' + tower;
+		url = 'data/lock.do?billCycle=' + billCycle + '&towerID=' + tower + '&accountId=' + accountId ;
 
 		$.ajax({
 			url : url,
@@ -181,14 +181,14 @@ $(function() {
 		var billCycle = $('#currentBillCycle').val();
 		var reportTable = $('#ilcReport').DataTable();
 		var userProfile = JSON.parse($('#strUserProfile').val());
-		
+		var accountId = $('#currentAccount').val();
 		if(hasApprovedBillCycle == 1 || (tower == 0)){
 			e.stopPropagation();
 			e.preventDefault();
 			return;
 		}	
 
-		url = 'data/unlock.do?billCycle=' + billCycle + '&towerID=' + tower;
+		url = 'data/unlock.do?billCycle=' + billCycle + '&towerID=' + tower + '&accountId=' + accountId;
 
 		$.ajax({
 			url : url,
@@ -637,6 +637,8 @@ $(function() {
 		var reportTable2 = $('#report').dataTable();
 		var billCycle = $('#currentBillCycle').val();
     	var tower = $('#currentTower').val();
+    	var accountId = $('#currentAccount').val();
+    	
     	var updateRows = [];
     	var newRows=[];
     	var saveRecords = {};
@@ -731,7 +733,7 @@ $(function() {
     	
     	$.ajax({	        		
     		type: 'POST',
-    		url: 'data/update.do?billCycle=' + billCycle + '&towerID=' + tower,
+    		url: 'data/update.do?billCycle=' + billCycle + '&towerID=' + tower + '&accountId=' + accountId,
     		contentType: 'application/json',
     		dataType: 'json',
     		data: JSON.stringify(saveRecords),

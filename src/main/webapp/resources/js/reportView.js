@@ -229,11 +229,13 @@ $(document).ready(function(){
 							    				"thousands": "."
 			    							   },
 				    			data:           tot,
-				    			deferRender:    false,
+				    			deferRender:    true,
 				    	        scrollX: 		true,
 				    	        scrollY:        380,
 				    	        scrollCollapse: true,
-				    	        scroller:       true, 
+				    	        scroller:       true,
+				    	        searching: 		true,
+				    	        searchDelay: 500
 				    		});
 				    reportTable.buttons().container().appendTo( '#report_wrapper .col-sm-6:eq(0)' );
 				    dataTableInitialized = true;
