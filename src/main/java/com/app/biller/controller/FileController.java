@@ -58,6 +58,8 @@ public class FileController {
 		String uploadStatus = "File Upload Failed";
 		logger.info("File uploading process started for: " + " billCycle " + billCycle + " datatype " + uploadDataType + " reportWeekend " + reportWeekend);
 		//String status = "Success";
+		String billMonth = referenceDataService.getMonthForBillCycle(billCycle);
+		String billYear = billCycle.substring(2, 6);
 		try {
 			String status = fileUploadService.uploadFiles(request);
 			if (status.equalsIgnoreCase("Success")) {
@@ -69,7 +71,9 @@ public class FileController {
 					uploadStatus = fileUploadService.uploadSLAData(billCycle, userId, uploadDataType, reportWeekend, override);
 				}
 				String dataType = uploadDataType.equals("0") ? "ILC" : "SLA";
-				emailService.sendFileUploadEmail(dataType, billCycle, reportWeekend);
+				if(!uploadStatus.equals("false")) {
+					emailService.sendFileUploadEmail(dataType, billMonth, billYear, reportWeekend);
+				}
 				return uploadStatus;
 			} else {
 				logger.error("File Upload Failed with Status: " + status);

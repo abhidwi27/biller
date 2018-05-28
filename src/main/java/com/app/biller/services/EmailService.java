@@ -12,7 +12,7 @@ public interface EmailService {
 	
 	void sendRejectionEmail(String rejectedFor, String rejectedBy, String rejectComments, String billMonth, String billYear);
 
-	void sendFileUploadEmail(String dataType, String billCycle, String weekEnd);
+	void sendFileUploadEmail(String dataType, String month, String year, String weekEnd);
 
 	void sendDelegationEmail(String delegatedBy, String delegatedTo, String delegationStatus);
 }

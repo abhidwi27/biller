@@ -50,6 +50,9 @@ public class UserDaoImpl implements UserDao {
 
 	@Value("${GET_USER_COUNT_BY_ROLE}")
 	private String getUserCountByRole;
+	
+	@Value("${GET_EMAIL_ID__LIST_BY_ROLE}")
+	private String getEmailIdListByRole;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -214,5 +217,23 @@ public class UserDaoImpl implements UserDao {
 			logger.warn("No user found in the system for role ID " + roleID);
 		}
 		return result;
+	}
+	
+	public List<String> getEmailListByRole(int roleID){
+		
+		List<String> emailIDList = null;
+		RowMapper<String> emailMap = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+		emailIDList = jdbcTemplate.query(getEmailIdListByRole, new Object[]{roleID}, emailMap);
+		if (emailIDList.isEmpty()) {
+			logger.warn("No Email ID found for selected role " + roleID );
+			return null;
+		} else { // list contains more than 1 elements
+			return emailIDList;
+		}
 	}
 }
