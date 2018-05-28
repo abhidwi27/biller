@@ -27,4 +27,7 @@ public interface UserDao {
 	String getPmoEmailID();
 	
 	int getUserCountByRole(int roleID);
+	
+	List<String> getEmailListByRole(int roleID);
+	
 }
