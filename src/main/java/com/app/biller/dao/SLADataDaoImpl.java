@@ -84,6 +84,9 @@ public class SLADataDaoImpl implements SLADataDao {
 	@Value("${DELETE_SLA_DATA_FOR_BILL_CYCLE}")
 	private String deleteSlaDataForBillCycle;
 	
+	@Value("${SELECT_OTHERS_TOWER_SLA_DATA}")
+	private String selectOthersTowerSlaData;
+	
 	private JdbcTemplate jdbcTemplate;
 
 	@Autowired
@@ -163,12 +166,15 @@ public class SLADataDaoImpl implements SLADataDao {
 		
 		Object queryParam[];
 		String readSlaQuery;
-		if(towerID != 0 ) {
+		if(towerID == 0 ) {
+			queryParam = new Object [] { billCycle, accountId };
+			readSlaQuery = selectAllSLAData;			
+		}else if(towerID == 7 ){
+			queryParam = new Object [] { billCycle, accountId };
+			readSlaQuery = selectOthersTowerSlaData;
+		}else {
 			queryParam = new Object [] {towerID, billCycle, accountId };
 			readSlaQuery = selectSLAData;
-		}else {
-			queryParam = new Object [] { billCycle, accountId };
-			readSlaQuery = selectAllSLAData;
 		}
 		
 		ArrayList<SLAData> slaDataList = (ArrayList<SLAData>) jdbcTemplate.query(readSlaQuery,
@@ -467,11 +473,14 @@ public class SLADataDaoImpl implements SLADataDao {
 		  .append(")");
 		}
 		
-		if(towerID != 0) {
+		if(towerID != 0 && towerID != 7) {
 			sb.append(" and sla.tower in(select tower_desc from biller.blr_tower tower where tower.tower_id= ")				
 			.append(towerID)
 			.append(")");
 		  
+		}
+		if(towerID == 7) {
+			  sb.append(" AND  sla.tower not in(select tower_desc from biller.blr_tower where tower_id in(1,2,3,4,5,6)) ");
 		}
 		
 		
@@ -676,13 +685,15 @@ public class SLADataDaoImpl implements SLADataDao {
 		  .append(accountId)
 		  .append(")");
 		
-		if(towerID !=0) {
+		if(towerID !=0 && towerID !=7) {
 		  sb.append(" AND sla.tower in(")
 		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
 		  .append(towerID)
 		  .append(")");
 		}
-		
+		if(towerID == 7) {
+			  sb.append(" AND  sla.tower not in(select tower_desc from biller.blr_tower where tower_id in(1,2,3,4,5,6)) ");
+		}
 		sb.append(" ORDER BY 1 ASC");
 		  
 		  
@@ -727,13 +738,15 @@ public class SLADataDaoImpl implements SLADataDao {
 		  .append(accountId)
 		  .append(")");
 		
-		if(towerID !=0) {
+		if(towerID !=0 && towerID !=7) {
 		  sb.append(" AND sla.tower in(")
 		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
 		  .append(towerID)
 		  .append(")");
 		}
-		
+		if(towerID == 7) {
+			  sb.append(" AND  sla.tower not in(select tower_desc from biller.blr_tower where tower_id in(1,2,3,4,5,6)) ");
+		}
 		sb.append(" ORDER BY 1 ASC");		  
 		
 		RowMapper<String> rowMap = new RowMapper<String>() {
@@ -790,13 +803,15 @@ public class SLADataDaoImpl implements SLADataDao {
 		  .append(accountId)
 		  .append(")");
 		
-		if(towerID !=0) {
+		if(towerID !=0 && towerID !=7) {
 		  sb.append(" AND sla.tower in(")
 		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
 		  .append(towerID)
 		  .append(")");
 		}
-		
+		if(towerID == 7) {
+			  sb.append(" AND  sla.tower not in(select tower_desc from biller.blr_tower where tower_id in(1,2,3,4,5,6)) ");
+		}
 		sb.append(" ORDER BY 1 ASC");		  
 		
 		RowMapper<String> rowMap = new RowMapper<String>() {
@@ -867,13 +882,15 @@ public class SLADataDaoImpl implements SLADataDao {
 		  .append(accountId)
 		  .append(")");
 		
-		if(towerID !=0) {
+		if(towerID !=0 && towerID !=7) {
 		  sb.append(" AND sla.tower in(")
 		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
 		  .append(towerID)
 		  .append(")");
 		}
-		
+		if(towerID == 7) {
+			  sb.append(" AND  sla.tower not in(select tower_desc from biller.blr_tower where tower_id in(1,2,3,4,5,6)) ");
+		}
 		sb.append(" ORDER BY 1 ASC");		  
 		
 		RowMapper<String> rowMap = new RowMapper<String>() {
@@ -958,13 +975,15 @@ public class SLADataDaoImpl implements SLADataDao {
 		  .append(accountId)
 		  .append(")");
 		
-		if(towerID !=0) {
+		if(towerID !=0 && towerID !=7) {
 		  sb.append(" AND sla.tower in(")
 		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
 		  .append(towerID)
 		  .append(")");
 		}
-		
+		if(towerID == 7) {
+			  sb.append(" AND  sla.tower not in(select tower_desc from biller.blr_tower where tower_id in(1,2,3,4,5,6)) ");
+		}
 		sb.append(" ORDER BY 1 ASC");		  
 		
 		RowMapper<String> rowMap = new RowMapper<String>() {

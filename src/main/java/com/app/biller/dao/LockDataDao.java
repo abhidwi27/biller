@@ -5,12 +5,12 @@ import com.app.biller.domain.User;
 
 public interface LockDataDao {
 	
-	User checkLockForTower(String billCycle, int towerID);
+	User checkLockForTower(String billCycle, int towerID, int accountId);
 	
-	void setLock(String billCycle , String userID, int towerID);
+	void setLock(String billCycle , String userID, int towerID, int accountId );
 	
-	void unSetLock(String userID, String billCycle, int towerID);
+	void unSetLock(String userID, String billCycle, int towerID, int accountId);
 	
-	Tower checkLockByUser(String userID, String billCycle);
+	Tower checkLockByUser(String userID, String billCycle, int accountId);
 	
 }

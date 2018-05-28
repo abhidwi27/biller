@@ -73,12 +73,16 @@ public class DataValidationServiceImpl implements DataValidationService {
 			if (recordType.equals("update")) {
 				slaData.setSeqID(Integer.parseInt(rowData[0]));
 			}
-			modifiedBy = slaDataDao.getModifiedBy(Integer.parseInt(rowData[0]));
-			if(modifiedBy != null) {
-				modifiedByArr = modifiedBy.split(",");
-			}
-			if(!modifiedByArr[modifiedByArr.length - 1].trim().equals(userID)) {
-				modifiedBy = modifiedBy + ", " + userID;
+			if(recordType.equals("update")) {
+				modifiedBy = slaDataDao.getModifiedBy(Integer.parseInt(rowData[0]));
+				if(modifiedBy != null) {
+					modifiedByArr = modifiedBy.split(",");
+				}
+				if(!modifiedByArr[modifiedByArr.length - 1].trim().equals(userID)) {
+					modifiedBy = modifiedBy + ", " + userID;
+				}
+			}else {
+				modifiedBy = userID;
 			}
 			slaData.setWeekEndDate(rowData[1]);
 			slaData.setAsm(rowData[2]);

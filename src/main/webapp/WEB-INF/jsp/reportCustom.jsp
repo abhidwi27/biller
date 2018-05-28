@@ -4,7 +4,9 @@
 
 <head>
 <link rel="stylesheet" href="resources/css/reportCustom.css">
+<link rel="stylesheet" href="resources/css/bootstrap-multiselect.css">
 <script src="resources/js/reportCustom.js"> </script>
+<script src="resources/js/bootstrap-multiselect.js"> </script>
 </head>
 <div id="customize" class="modal fade" role="dialog">
 		<div class="modal-dialog">

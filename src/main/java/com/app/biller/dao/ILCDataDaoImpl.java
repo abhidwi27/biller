@@ -68,6 +68,8 @@ public class ILCDataDaoImpl implements ILCDataDao {
 	@Value("${SELECT_ALL_ILC_REMARKS_LIST}")
 	private String selectAllILCRemarksList;
 	
+	@Value("${SELECT_OTHERS_TOWER_ILC_DATA}")
+	private String selectOtherTowersILCData;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -167,14 +169,18 @@ public class ILCDataDaoImpl implements ILCDataDao {
 		logger.info("Reading ILC Data for billCycle " + billCycle + " and towerId " + towerID + " and account Id " + accountId);
 		Object queryParam[];
 		String readIlcQuery;
-		if(towerID != 0 ) {
-			queryParam = new Object [] {towerID, billCycle , accountId};
-			readIlcQuery = selectIlcData;
-		}else {
+		
+		if(towerID == 0 ) {
 			queryParam = new Object [] { billCycle, accountId };
 			readIlcQuery = selectAllIlcData;
+		}else if(towerID == 7 ) {
+			queryParam = new Object [] {billCycle , accountId};
+			readIlcQuery = selectOtherTowersILCData;
+		}else  {
+			queryParam = new Object [] {towerID, billCycle , accountId};
+			readIlcQuery = selectIlcData;
 		}
-
+		
 		ArrayList<ILCData> ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(readIlcQuery,
 				queryParam, new RowMapper<ILCData>() {
 					@Override
@@ -187,7 +193,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 						ilcModel.setWeekEndDate(rs.getString("weekend_date"));
 						//ilcModel.setTotHrs(Integer.parseInt(rs.getString("total_hours")));
 						ilcModel.setTotHrs(Double.parseDouble(rs.getString("total_hours")));
-						ilcModel.setShiftType(rs.getString("shift_type"));
+						ilcModel.setShiftType(rs.getString("shift_detail"));
 						ilcModel.setUsInd(rs.getString("us_ind"));
 						ilcModel.setOnOffShore(rs.getString("on_off_shore"));
 						ilcModel.setBillingType(rs.getString("billing_type"));
@@ -347,11 +353,14 @@ public class ILCDataDaoImpl implements ILCDataDao {
 			  .append(")");
 			}
 		
-		if(towerID != 0) {
+		if(towerID != 0 && towerID !=7) {
 			sb.append(" and ilc.tower in(select tower_desc from biller.blr_tower tower where tower.tower_id= ")				
 			.append(towerID)
 			.append(")");
 		  
+		}		
+		if(towerID == 7) {
+			  sb.append(" AND  ilc.tower not in(select tower_desc from biller.blr_tower where tower_id in(1,2,3,4,5,6)) ");
 		}
 		try {  
 		ilcDataList = (ArrayList<ILCData>) jdbcTemplate.query(sb.toString(),
@@ -366,7 +375,7 @@ public class ILCDataDaoImpl implements ILCDataDao {
 						ilcModel.setWeekEndDate(rs.getString("weekend_date"));
 						//ilcModel.setTotHrs(Integer.parseInt(rs.getString("total_hours")));
 						ilcModel.setTotHrs(Double.parseDouble(rs.getString("total_hours")));
-						ilcModel.setShiftType(rs.getString("shift_type"));
+						ilcModel.setShiftType(rs.getString("shift_detail"));
 						ilcModel.setUsInd(rs.getString("us_ind"));
 						ilcModel.setOnOffShore(rs.getString("on_off_shore"));
 						ilcModel.setBillingType(rs.getString("billing_type"));
@@ -524,13 +533,15 @@ public List<String> getLevel1Values(String billCycle, int towerID, int accountId
 		  .append(accountId)
 		  .append(")");
 		
-		if(towerID !=0) {
+		if(towerID !=0 && towerID != 7) {
 		  sb.append(" AND ilc.tower in(")
 		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
 		  .append(towerID)
 		  .append(")");
 		}
-		
+		if(towerID == 7) {
+			  sb.append(" AND  ilc.tower not in(select tower_desc from biller.blr_tower where tower_id in(1,2,3,4,5,6)) ");
+		}
 		sb.append(" ORDER BY 1 ASC");
 		  
 		  
@@ -575,11 +586,15 @@ public List<String> getLevel1Values(String billCycle, int towerID, int accountId
 		  .append(accountId)
 		  .append(")");
 		
-		if(towerID !=0) {
+		if(towerID !=0 && towerID != 7) {
 		  sb.append(" AND ilc.tower in(")
 		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
 		  .append(towerID)
 		  .append(")");
+		}
+		
+		if(towerID == 7) {
+			  sb.append(" AND  ilc.tower not in(select tower_desc from biller.blr_tower where tower_id in(1,2,3,4,5,6)) ");
 		}
 		
 		sb.append(" ORDER BY 1 ASC");		  
@@ -638,11 +653,15 @@ public List<String> getLevel1Values(String billCycle, int towerID, int accountId
 		  .append(accountId)
 		  .append(")");
 		
-		if(towerID !=0) {
+		if(towerID !=0 && towerID!=7) {
 		  sb.append(" AND ilc.tower in(")
 		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
 		  .append(towerID)
 		  .append(")");
+		}
+		
+		if(towerID == 7) {
+			  sb.append(" AND  ilc.tower not in(select tower_desc from biller.blr_tower where tower_id in(1,2,3,4,5,6)) ");
 		}
 		
 		sb.append(" ORDER BY 1 ASC");		  
@@ -715,13 +734,15 @@ public List<String> getLevel1Values(String billCycle, int towerID, int accountId
 		  .append(accountId)
 		  .append(")");
 		
-		if(towerID !=0) {
+		if(towerID !=0 && towerID != 7) {
 		  sb.append(" AND ilc.tower in(")
 		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
 		  .append(towerID)
 		  .append(")");
 		}
-		
+		if(towerID == 7) {
+			  sb.append(" AND  ilc.tower not in(select tower_desc from biller.blr_tower where tower_id in(1,2,3,4,5,6)) ");
+		}
 		sb.append(" ORDER BY 1 ASC");		  
 		
 		RowMapper<String> rowMap = new RowMapper<String>() {
@@ -806,13 +827,15 @@ public List<String> getLevel1Values(String billCycle, int towerID, int accountId
 		  .append(accountId)
 		  .append(")");
 		
-		if(towerID !=0) {
+		if(towerID !=0 && towerID != 7) {
 		  sb.append(" AND ilc.tower in(")
 		  .append("SELECT tower_desc FROM biller.blr_tower WHERE tower_id = ")
 		  .append(towerID)
 		  .append(")");
 		}
-		
+		if(towerID == 7) {
+			  sb.append(" AND  ilc.tower not in(select tower_desc from biller.blr_tower where tower_id in(1,2,3,4,5,6)) ");
+		}
 		sb.append(" ORDER BY 1 ASC");		  
 		
 		RowMapper<String> rowMap = new RowMapper<String>() {
