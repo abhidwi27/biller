@@ -1,6 +1,5 @@
 package com.app.biller.services;
 
-import static com.app.biller.util.BillerHelper.getUserEmailId;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -27,6 +26,7 @@ import org.springframework.stereotype.Service;
 
 import com.app.biller.dao.UserDao;
 import com.app.biller.domain.User;
+import com.app.biller.util.BillerHelper;
 import com.app.biller.util.BillerUtil;
 
 
@@ -40,6 +40,9 @@ public class EmailServiceImpl implements EmailService {
 
 	@Autowired
 	UserDao userDao;
+	
+	@Autowired
+	BillerHelper billerHelper;
 
 	@Value("${leads.group.mailid}")
 	private String leadsMailId;
@@ -77,9 +80,9 @@ public class EmailServiceImpl implements EmailService {
 	}
 
 	private MimeMessagePreparator getApprovalMessagePreparator(String approveFor,  String approveBy, String billMonth, String billYear) {
-		String toEmailID = getUserEmailId(approveFor);
+		String toEmailID = billerHelper.getUserEmailId(approveFor);
 		String pmoEmailID = this.getPmoEmailID();
-		String approveByEmailID = getUserEmailId(approveBy);
+		String approveByEmailID = billerHelper.getUserEmailId(approveBy);
 		User approveByUserProfile = userDao.createUserProfile(approveBy);
 		User approveForUserProfile = userDao.createUserProfile(approveFor);
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
@@ -97,9 +100,9 @@ public class EmailServiceImpl implements EmailService {
 	}
 	
 	private MimeMessagePreparator getRejectionMessagePreparator(String rejectedFor, String rejectedBy, String rejectComments, String billMonth, String billYear) {
-		String rejectedForEmailID = getUserEmailId(rejectedFor);
+		String rejectedForEmailID = billerHelper.getUserEmailId(rejectedFor);
 		String pmoEmailID = this.getPmoEmailID();
-		String rejectByEmailID = getUserEmailId(rejectedBy);
+		String rejectByEmailID = billerHelper.getUserEmailId(rejectedBy);
 		User rejectedByUserProfile = userDao.createUserProfile(rejectedBy);
 		User rejectedForUserProfile = userDao.createUserProfile(rejectedFor);
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
@@ -252,20 +255,64 @@ public class EmailServiceImpl implements EmailService {
 	}
 
 	private MimeMessagePreparator getDelegationMessagePreparator(String delegatedBy, String delegatedTo, String delegationStatus) {
-		String delegatedByEmailID = getUserEmailId(delegatedBy);
+		
+		String [] pmoEmailIdlistArr = new String[0];
+		String delegatedByEmailID = billerHelper.getUserEmailId(delegatedBy);
+		String delegateToEmailID = "";
+		InternetAddress[] recipientAddressDelegateCc;
+		if(delegatedTo != null && !delegatedTo.equals("")) {
+			delegateToEmailID = billerHelper.getUserEmailId(delegatedTo);
+		}
+		List<String> pmoEmailIdlist = userDao.getEmailListByRole(8);
+		InternetAddress delegateToCc = null;
+		InternetAddress[] delegateCcArr = new InternetAddress[1];
+		
+		if(pmoEmailIdlist != null) {
+			pmoEmailIdlistArr = userDao.getEmailListByRole(8).toArray(new String [pmoEmailIdlist.size()]);
+		}
+		InternetAddress[] recipientAddressPmo = new InternetAddress[pmoEmailIdlistArr.length];
+		
+		int pmoCounter = 0;
+		try {
+			for (String recipient : pmoEmailIdlistArr) {			
+				recipientAddressPmo[pmoCounter] = new InternetAddress(recipient.trim());
+				pmoCounter++;
+			}
+		}catch(AddressException ae) {
+			logger.error("Error while creating internet address", ae);
+		}
+				
+		try {
+			if(delegateToEmailID!= null && !delegateToEmailID.equals("")) {
+				delegateToCc = new InternetAddress(delegateToEmailID.trim());
+				delegateCcArr[0] = delegateToCc;
+			}else {
+				delegateCcArr[0] = null;
+			}
+		} catch (AddressException e) {
+			logger.error("Error while creating internet address", e);
+		}
+		
+		
+		if (delegateCcArr[0] == null) {
+			recipientAddressDelegateCc  =  recipientAddressPmo;
+		}else {
+			recipientAddressDelegateCc = BillerUtil.joinArrayGeneric(delegateCcArr, recipientAddressPmo);
+		}
+		
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
 			public void prepare(MimeMessage mimeMessage) throws Exception {
 				mimeMessage.setFrom("biller@biller-app.com");
 				mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(delegatedByEmailID));
-				mimeMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(pmoMailId));
+				mimeMessage.addRecipients(Message.RecipientType.CC, recipientAddressDelegateCc);
 				if(delegationStatus.equals("SET")) {
-					String delegatedToEmailID = getUserEmailId(delegatedTo);
+					String delegatedToEmailID = billerHelper.getUserEmailId(delegatedTo);
 					mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(delegatedToEmailID));
-					mimeMessage.setText("Delegation " + delegationStatus + " By " + delegatedByEmailID + " To " + delegatedToEmailID);
+					mimeMessage.setText("Delegation " + delegationStatus + " By " + delegatedBy + " To " + delegatedTo);
 				} else if(delegationStatus.equals("UNSET")) {
 					mimeMessage.setText("Delegation " + delegationStatus + " By " + delegatedByEmailID);
 				}
-				mimeMessage.setSubject("Biller Notification: Delegation " + delegationStatus + " By " + delegatedByEmailID);	
+				mimeMessage.setSubject("Biller Notification: Delegation " + delegationStatus + " By " + delegatedBy);	
 			}
 		};
 		return preparator;
