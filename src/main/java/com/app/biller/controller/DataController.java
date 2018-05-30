@@ -1,6 +1,5 @@
 package com.app.biller.controller;
 
-import static com.app.biller.util.BillerHelper.getUserProfile;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,6 +37,7 @@ import com.app.biller.ui.ReviewWrapper;
 import com.app.biller.ui.TableData;
 import com.google.gson.Gson;
 import com.app.biller.ui.WIASMReference;
+import com.app.biller.util.BillerHelper;
 
 @Controller
 @RequestMapping("/data")
@@ -62,6 +62,9 @@ public class DataController {
 
 	@Autowired
 	TableData tableData;
+	
+	@Autowired
+	BillerHelper billerHelper;
 
 	@Autowired
 	ResponseDataEnvelope responseDataEnvelope;
@@ -74,7 +77,7 @@ public class DataController {
 			@RequestParam("accountId") int accountId, HttpSession userSession) throws Exception {
 		List<?> dataList;
 		try {
-			User userProfile = getUserProfile(userSession);
+			User userProfile = billerHelper.getUserProfile(userSession);
 			String userID = userProfile.getUserID();
 			if (dataType == 0) {
 				dataList = (ArrayList<ILCData>) dataValidationService.readILCData(billCycle, towerID, accountId);
@@ -133,7 +136,7 @@ public class DataController {
 	@RequestMapping(path = "/update.do", method = RequestMethod.POST)
 	public @ResponseBody boolean updateSLAData(@RequestParam("billCycle") String billCycle,
 			@RequestParam("towerID") int towerID, @RequestParam("accountId") int accountId, @RequestBody SaveRecords saveRecords, HttpSession userSession) throws Exception {
-		User userProfile = getUserProfile(userSession);
+		User userProfile = billerHelper.getUserProfile(userSession);
 		String userID = userProfile.getUserID();
 		boolean slaUpdateResult = false;
 		try {
@@ -157,7 +160,7 @@ public class DataController {
 	@RequestMapping(path = "/lock.do", method = RequestMethod.GET)
 	public @ResponseBody String lockSLAData(@RequestParam("billCycle") String billCycle,
 			@RequestParam("towerID") int towerID, @RequestParam("accountId") int accountId, HttpSession userSession) throws Exception {
-		User userProfile = getUserProfile(userSession);
+		User userProfile = billerHelper.getUserProfile(userSession);
 		String userID = userProfile.getUserID();
 		Gson gson = new Gson();
 		HashMap<String, Object> lockResponseMap = new HashMap<String, Object>();
@@ -186,7 +189,7 @@ public class DataController {
 	@RequestMapping(path = "/unlock.do", method = RequestMethod.GET)
 	public @ResponseBody String unlockSLAData(@RequestParam("billCycle") String billCycle,
 			@RequestParam("towerID") int towerID, @RequestParam("accountId") int accountId, HttpSession userSession) throws Exception {
-		User userProfile = getUserProfile(userSession);
+		User userProfile = billerHelper.getUserProfile(userSession);
 		String userID = userProfile.getUserID();
 		Gson gson = new Gson();
 		HashMap<String, Object> unlockResponseMap = new HashMap<String, Object>();
@@ -234,7 +237,7 @@ public class DataController {
 		ReviewWrapper reviewWrapper = new ReviewWrapper();
 		try {
 			if (session != null) {
-				User userProfile = getUserProfile(session);
+				User userProfile = billerHelper.getUserProfile(session);
 				approveBy = userProfile.getUserID();
 				roleDesc = userProfile.getRoleDesc();
 				roleID = userProfile.getRoleID();
@@ -277,7 +280,7 @@ public class DataController {
 		try {
 			String activeBillCycle = referenceDataService.getActiveBillCycle();
 			if (session != null) {
-				User userProfile = getUserProfile(session);
+				User userProfile = billerHelper.getUserProfile(session);
 				userID = userProfile.getUserID();
 				dataApprovalService.rejectUserApproval(billCycle, userID, rejectedFor);
 				String billMonth = referenceDataService.getMonthForBillCycle(billCycle);
@@ -313,12 +316,12 @@ public class DataController {
 	}
 
 	@RequestMapping(path = "/delegate.do", method = RequestMethod.POST)
-	public @ResponseBody int manageDelegation(String delegatedTo, String delegateStatus, HttpServletRequest request) throws Exception {
+	public @ResponseBody int manageDelegation(@RequestParam("delegateTo") String delegatedTo, @RequestParam("delegateStatus") String delegateStatus, HttpServletRequest request) throws Exception {
 		int delegateResult = 0;
 		HttpSession session = request.getSession(false);
 		try {
-			if (session != null && getUserProfile(session) != null) {
-				String delegatedBy = getUserProfile(session).getUserID();
+			if (session != null && billerHelper.getUserProfile(session) != null) {
+				String delegatedBy = billerHelper.getUserProfile(session).getUserID();
 				if(Integer.parseInt(delegateStatus) == 0){
 					delegatedTo = "";
 					delegateResult = dataApprovalService.unsetDelegation(delegatedBy);

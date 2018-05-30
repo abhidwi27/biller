@@ -1,7 +1,5 @@
 package com.app.biller.controller;
 
-import static com.app.biller.util.BillerHelper.getUserProfile;
-
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,6 +26,7 @@ import com.app.biller.services.EmailService;
 import com.app.biller.services.FileDownloadService;
 import com.app.biller.services.FileUploadService;
 import com.app.biller.services.ReferenceDataService;
+import com.app.biller.util.BillerHelper;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -49,6 +48,9 @@ public class FileController {
 	@Autowired
 	EmailService emailService;
 	
+	@Autowired
+	BillerHelper billerHelper;
+	
 
 	@RequestMapping(value = "/upload.do", method = RequestMethod.POST)
 	@ResponseBody
@@ -63,7 +65,7 @@ public class FileController {
 		try {
 			String status = fileUploadService.uploadFiles(request);
 			if (status.equalsIgnoreCase("Success")) {
-				User userProfile = getUserProfile(userSession);
+				User userProfile = billerHelper.getUserProfile(userSession);
 				String userId = userProfile.getUserID();
 				if (uploadDataType.equals("0")) {
 					uploadStatus = fileUploadService.uploadILCData(billCycle, userId, uploadDataType, reportWeekend);

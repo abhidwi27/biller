@@ -5,11 +5,14 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.app.biller.dao.UserDao;
 import com.app.biller.domain.User;
 
-public final class BillerHelper {
+@Service("billerHelper")
+public class BillerHelper {
 	
 	private static final Logger logger = LoggerFactory.getLogger(BillerHelper.class);
 	
@@ -17,14 +20,14 @@ public final class BillerHelper {
 	}
 	
 	@Autowired
-	private static UserDao userDao;
+	UserDao userDao;
 
-	public static User getUserProfile(HttpSession userSession) {
+	public User getUserProfile(HttpSession userSession) {
 		User loggedInUser = (User) userSession.getAttribute("userProfile");
 		return loggedInUser;
 	}
 
-	public static String getUserEmailId(String userId) {
+	public String getUserEmailId(String userId) {
 		return userDao.getEmailID(userId);
 	}
 }
