@@ -1,0 +1,9 @@
+.nav-pills>li {
+	 margin-left: 3px;
+		width: 12%;
+		height: 42px;
+		border: 0px solid black;
+		text-align: center;
+		padding-bottom: 10px;
+		line-height: 0.1;
+}
