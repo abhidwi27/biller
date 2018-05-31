@@ -5,8 +5,7 @@
 <%@ page isELIgnored="false" %>
 
 <head>
-	<title>BILLER</title>
-	<script src="resources/js/status.js"> </script>
+	<title>BILLER</title>	
 	<link rel="stylesheet" href="resources/css/admin.css">
 	<link rel="icon" type="image/png" href="resources/image/biller-icon.ico"/>
 </head>
