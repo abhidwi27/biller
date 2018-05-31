@@ -2,7 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <head>
-<link rel="stylesheet" href="resources/css/reportCustom.css">
+<!--  link rel="stylesheet" href="resources/css/reportCustom.css">-->
 <script src="resources/js/reportCustom.js"> </script>
 </head>
 <div role="tabpanel" class="tab-pane fade" id="adminDelegate">
@@ -35,7 +35,7 @@
 						<div class="row biller-row">
 						<div class="col-md-2 ">
 									<label class="biller-label biller-modal-label">
-										Delegate From  :
+										Delegate For  :
 									</label>
 								</div>
 								<div class="form-group col-md-3 text-left biller-modal-dropdown">																	
@@ -53,7 +53,8 @@
 										
 									</label>
 								</div>
-								<div class="col-md-2 ">
+								
+								<div class="col-md-2">
 									<label class="biller-label biller-modal-label">
 										Delegate To :
 									</label>
