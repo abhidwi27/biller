@@ -11,7 +11,10 @@ var allHeaderOptions = [];
 
 
 $(document).ready(function(){		
-		
+	
+	var tower = $("#reportTower").val("0");
+	$("#reportTower").selectpicker('refresh');
+	
 	var userProfile = JSON.parse($('#strUserProfile').val());	
 	
 	$('#reportDiv').hide();
