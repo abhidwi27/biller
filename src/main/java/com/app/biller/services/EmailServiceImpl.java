@@ -56,29 +56,6 @@ public class EmailServiceImpl implements EmailService {
 	@Value("${pmo.group.mailid}")
 	private String pmoMailId;
 
-	@Override
-	public void sendEmail(Object mailObj) {
-		MimeMessagePreparator preparator = getMessagePreparator(mailObj);
-		try {
-			mailSender.send(preparator);
-			logger.info("Email sent with details: " + preparator.toString());
-		} catch (MailException ex) {
-			logger.error(ex.getMessage());
-		}
-	}
-
-	private MimeMessagePreparator getMessagePreparator(Object mailObj) {
-		MimeMessagePreparator preparator = new MimeMessagePreparator() {
-			public void prepare(MimeMessage mimeMessage) throws Exception {
-				mimeMessage.setFrom("biller@billerinfo.com");
-				mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress("adwived8@in.ibm.com"));
-				mimeMessage.setText("Approved by " + mailObj);
-				mimeMessage.setSubject("Biller Data Approval Notice");
-			}
-		};
-		return preparator;
-	}
-
 	private MimeMessagePreparator getApprovalMessagePreparator(String approveFor,  String approveBy, String billMonth, String billYear) {
 		String toEmailID = billerHelper.getUserEmailId(approveFor);
 		String pmoEmailID = this.getPmoEmailID();
@@ -87,7 +64,7 @@ public class EmailServiceImpl implements EmailService {
 		User approveForUserProfile = userDao.createUserProfile(approveFor);
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
 			public void prepare(MimeMessage mimeMessage) throws Exception {	
-				mimeMessage.setFrom("biller@billerinfo.com");
+				mimeMessage.setFrom("Biller@biller-app.com");
 				mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(toEmailID));
 				mimeMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(pmoEmailID));
 				mimeMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(approveByEmailID));
@@ -107,7 +84,7 @@ public class EmailServiceImpl implements EmailService {
 		User rejectedForUserProfile = userDao.createUserProfile(rejectedFor);
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
 			public void prepare(MimeMessage mimeMessage) throws Exception {
-				mimeMessage.setFrom("biller@billerinfo.com");
+				mimeMessage.setFrom("Biller@biller-app.com");
 				mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(rejectedForEmailID));
 				mimeMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(pmoEmailID));
 				mimeMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(rejectByEmailID));
@@ -119,7 +96,6 @@ public class EmailServiceImpl implements EmailService {
 		return preparator;
 	}
 
-	@SuppressWarnings("unchecked")
 	private MimeMessagePreparator getFileUploadMessagePreparator(String dataType, String month, String year, String weekEnd) {
 		
 		String [] leadsEmailIdlistArr = new String[0];
@@ -127,35 +103,45 @@ public class EmailServiceImpl implements EmailService {
 		String [] bamEmailIdlistArr = new String[0];
 		String [] srBamEmailIdlistArr = new String[0];
 		String [] accountManagerEmailIdlistArr = new String[0];
+		String [] dpeEmailIdlistArr = new String[0];
+		String [] accountExecutiveManagerEmailIdlistArr = new String[0];
 		String [] pmoEmailIdlistArr = new String[0];
 		
 	
 		
 		List<String> leadsEmailIdlist = userDao.getEmailListByRole(1);
 		if(leadsEmailIdlist != null) {
-			leadsEmailIdlistArr = userDao.getEmailListByRole(1).toArray(new String [leadsEmailIdlist.size()]);
+			leadsEmailIdlistArr = leadsEmailIdlist.toArray(new String [leadsEmailIdlist.size()]);
 		}
 		
 		List<String> dmEmailIdlist = userDao.getEmailListByRole(2);
 		if(dmEmailIdlist != null) {
-			dmEmailIdlistArr = userDao.getEmailListByRole(2).toArray(new String [dmEmailIdlist.size()]);
+			dmEmailIdlistArr = dmEmailIdlist.toArray(new String [dmEmailIdlist.size()]);
 		}
 		
 		List<String> bamEmailIdlist = userDao.getEmailListByRole(3);
 		if(bamEmailIdlist != null) {
-			bamEmailIdlistArr = userDao.getEmailListByRole(3).toArray(new String [bamEmailIdlist.size()]);
+			bamEmailIdlistArr = bamEmailIdlist.toArray(new String [bamEmailIdlist.size()]);
 		}
 		List<String> srBamEmailIdlist = userDao.getEmailListByRole(4);
 		if(srBamEmailIdlist != null) {
-			srBamEmailIdlistArr = userDao.getEmailListByRole(4).toArray(new String [srBamEmailIdlist.size()]);
+			srBamEmailIdlistArr = srBamEmailIdlist.toArray(new String [srBamEmailIdlist.size()]);
 		}
 		List<String> accountManagerEmailIdlist = userDao.getEmailListByRole(5);
 		if( accountManagerEmailIdlist != null) {
-			accountManagerEmailIdlistArr = userDao.getEmailListByRole(5).toArray(new String [accountManagerEmailIdlist.size()]);
+			accountManagerEmailIdlistArr = accountManagerEmailIdlist.toArray(new String [accountManagerEmailIdlist.size()]);
+		}		
+		List<String> dpeEmailIdlist = userDao.getEmailListByRole(6);
+		if( dpeEmailIdlist != null) {
+			dpeEmailIdlistArr = dpeEmailIdlist.toArray(new String [accountManagerEmailIdlist.size()]);
+		}
+		List<String> accountExecutiveEmailIdlist = userDao.getEmailListByRole(7);
+		if( accountExecutiveEmailIdlist != null) {
+			accountExecutiveManagerEmailIdlistArr = accountExecutiveEmailIdlist.toArray(new String [accountManagerEmailIdlist.size()]);
 		}
 		List<String> pmoEmailIdlist = userDao.getEmailListByRole(8);		
 		if(pmoEmailIdlist != null) {
-			pmoEmailIdlistArr = userDao.getEmailListByRole(8).toArray(new String [pmoEmailIdlist.size()]);
+			pmoEmailIdlistArr = pmoEmailIdlist.toArray(new String [pmoEmailIdlist.size()]);
 		}
 		
 		
@@ -202,7 +188,16 @@ public class EmailServiceImpl implements EmailService {
 		}catch(AddressException ae) {
 			logger.error("Error while creating internet address", ae);
 		}
-		
+		InternetAddress[] recipientAddressDpe = new InternetAddress[dpeEmailIdlistArr.length];
+		int dpeCounter = 0;
+		try {
+		for (String recipient : dpeEmailIdlistArr) {			
+			recipientAddressDpe[dpeCounter] = new InternetAddress(recipient.trim());
+			dpeCounter++;
+		}
+		}catch(AddressException ae) {
+			logger.error("Error while creating internet address", ae);
+		}
 		InternetAddress[] recipientAddressAccountManager = new InternetAddress[accountManagerEmailIdlistArr.length];
 		int accountManagerCounter = 0;
 		try {
@@ -213,7 +208,16 @@ public class EmailServiceImpl implements EmailService {
 		}catch(AddressException ae) {
 			logger.error("Error while creating internet address", ae);
 		}
-		
+		InternetAddress[] recipientAddressAccountExecutive = new InternetAddress[accountExecutiveManagerEmailIdlistArr.length];
+		int accountExecutiveCounter = 0;
+		try {
+		for (String recipient : accountExecutiveManagerEmailIdlistArr) {			
+			recipientAddressAccountExecutive[accountExecutiveCounter] = new InternetAddress(recipient.trim());
+			accountExecutiveCounter++;
+		}
+		}catch(AddressException ae) {
+			logger.error("Error while creating internet address", ae);
+		}
 		InternetAddress[] recipientAddressPmo = new InternetAddress[pmoEmailIdlistArr.length];
 		int pmoCounter = 0;
 		try {
@@ -224,30 +228,30 @@ public class EmailServiceImpl implements EmailService {
 		}catch(AddressException ae) {
 			logger.error("Error while creating internet address", ae);
 		}
-	
-		InternetAddress[] recipientAddressSLACc = BillerUtil.joinArrayGeneric(recipientAddressBams, recipientAddressSrBam, recipientAddressAccountManager, recipientAddressPmo);
+		InternetAddress[] recipientAddressIlcCc = BillerUtil.joinArrayGeneric(recipientAddressDms, recipientAddressBams, recipientAddressSrBam, recipientAddressDpe, recipientAddressAccountManager, recipientAddressAccountExecutive, recipientAddressPmo);
+		InternetAddress[] recipientAddressSlaCc = BillerUtil.joinArrayGeneric(recipientAddressLeads, recipientAddressBams, recipientAddressSrBam, recipientAddressDpe, recipientAddressAccountManager, recipientAddressAccountExecutive, recipientAddressPmo);
 		if(dataType.equals("ILC")) {
 			MimeMessagePreparator preparator = new MimeMessagePreparator() {
 				public void prepare(MimeMessage mimeMessage) throws Exception {
-					mimeMessage.setFrom("biller@biller-app.com");
+					mimeMessage.setFrom("Biller@biller-app.com");
 					mimeMessage.setRecipients(Message.RecipientType.TO, recipientAddressLeads);
-					mimeMessage.setRecipients(Message.RecipientType.CC, recipientAddressPmo);
-					mimeMessage.setText("New "+ dataType + " Data is uploaded for Bill Cycle: "+ month + "-" + year);
-					mimeMessage.setSubject("Biller Notification: New " + dataType + " Data for " + month + " - " + year + " Uploaded.");
+					mimeMessage.setRecipients(Message.RecipientType.CC, recipientAddressIlcCc);
+					mimeMessage.setText("New "+ dataType + " Data is uploaded for WE: "+ weekEnd);
+					mimeMessage.setSubject("Biller Notification: New " + dataType + " Data for WE: " + weekEnd  + " Uploaded.");
 				}
 			};
 			return preparator;
-		}else {
+		}else {		
 			MimeMessagePreparator preparator = new MimeMessagePreparator() {
 				public void prepare(MimeMessage mimeMessage) throws Exception {
-					mimeMessage.setFrom("biller@biller-app.com");
+					mimeMessage.setFrom("Biller@biller-app.com");
 					mimeMessage.setRecipients(Message.RecipientType.TO, recipientAddressDms);
-					mimeMessage.setRecipients(Message.RecipientType.CC, recipientAddressSLACc);
+					mimeMessage.setRecipients(Message.RecipientType.CC, recipientAddressSlaCc);
 					//mimeMessage.setRecipients(Message.RecipientType.CC, recipientAddressAccountManager);
 					//mimeMessage.addRecipients(Message.RecipientType.CC, recipientAddressPmo);
 					mimeMessage.setText("New "+ dataType + " Data is uploaded for Bill Cycle: "+ month + "-" + year);
 					mimeMessage.setSubject("Biller Notification: New " + dataType + " Data for " + month + " - " + year + " Uploaded.");
-				}
+		}
 			};
 			return preparator;
 		}
@@ -302,7 +306,7 @@ public class EmailServiceImpl implements EmailService {
 		
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
 			public void prepare(MimeMessage mimeMessage) throws Exception {
-				mimeMessage.setFrom("biller@biller-app.com");
+				mimeMessage.setFrom("Biller@biller-app.com");
 				mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(delegatedByEmailID));
 				mimeMessage.addRecipients(Message.RecipientType.CC, recipientAddressDelegateCc);
 				if(delegationStatus.equals("SET")) {
