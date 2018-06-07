@@ -57,5 +57,7 @@ public interface ReferenceDataService {
 	List<String> getLevel4Values(String billCycle, int dataType, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3, String [] val3, int key4);
 	
 	List<String> getLevel5Values(String billCycle, int dataType, int towerID, int accountId, int key1, String [] val1, int key2, String [] val2, int key3, String [] val3, int key4, String [] val4, int key5);
+	
+	String getDelegateStatus(String UserID);
 }
 
