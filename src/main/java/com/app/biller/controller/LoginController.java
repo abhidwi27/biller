@@ -74,7 +74,7 @@ public class LoginController {
 					model.addAttribute("accountList", referenceDataService.getAccountList());
 					model.addAttribute("bulkUpdateHeaderList", referenceDataService.getHeaderForBulkUpdate());
 					model.addAttribute("customizeList", referenceDataService.getHeaderForCustomise());
-					model.addAttribute("delegatestatus",referenceDataService.getDelegateStatus(user.getUserID()));
+					model.addAttribute("delegateStatus",referenceDataService.getDelegateStatus(user.getUserID()));
 					if (user.getRoleID() == 2 || user.getRoleID() == 3) {
 						model.addAttribute("delegateUserList", referenceDataService.getDelegateUserList(user.getUserID()));
 						model.addAttribute("delegateByUserList",
