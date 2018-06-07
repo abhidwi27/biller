@@ -65,6 +65,9 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 
 	@Value("${GET_HEADER_FOR_CUSTOMISE}")
 	String getHeaderForCustomiseUpdate;
+	
+	@Value("${GET_DELEGATED_TO_USER_NAME}")
+	String getDelegatedToUserName;
 
 
 	private JdbcTemplate jdbcTemplate;
@@ -258,5 +261,18 @@ public class ReferenceDataDaoImpl implements ReferenceDataDao {
 		return customiseUpdateHeaderList;
 	}
 	
+	public String getDelegateStatus(String userID) {
+		RowMapper<String> rowMapper = new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rownumber) throws SQLException {
+				return rs.getString(1);
+			}
+		};
+		List<String> delegatedTo = jdbcTemplate.query(getDelegatedToUserName, new Object[] {userID}, rowMapper );
+		if(delegatedTo.size()>0)
+			return delegatedTo.get(0);
+		else
+			return null;		
+	}
 	
 }

@@ -258,7 +258,7 @@ $(function() {
 			var cellValue = $(this).closest('input').val();
 			var rowIdx = $(this).closest('tr').index();
 			var wrNo;
-			var columnsToUpdate = ["WR Description", "Cost Center", "CTC/RTC", "Vendor Class", "ASM", "ASD"];  // This should be same as it exists in DB.
+			var columnsToUpdate = ["WR Description", "CTC/RTC", "Cost Center",  "Vendor Class", "ASM", "ASD"];  // This should be same as it exists in DB.
 			var requiredColumnsVisible = true;
 			var columnsToUpdateIdx;
 			for(var i=0; i< columnsToUpdate.length ; i++ ){

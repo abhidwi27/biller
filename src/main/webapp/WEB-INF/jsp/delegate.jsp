@@ -1,6 +1,9 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ page isELIgnored="false" %>
+
 
 <head>
 <link rel="stylesheet" href="resources/css/delegate.css">
@@ -35,15 +38,26 @@
 								</div>
 					</div>
 					--->
+					<input name="strDelegatedUser" id="delegatedUser" type="hidden" value='${fn:escapeXml(delegateStatus)}' />
 					<div class="row biller-row">
 								<div class="col-md-4 ">
 									<label class="biller-label biller-modal-label">
 										Delegation :
 									</label>
 								</div>
-								<div class="form-group col-md-8 text-left">																	
-									<input id="delegationStatus"  checked data-toggle="toggle"  type="checkbox">
-								</div>
+								<c:choose>
+									<c:when test="${not empty delegateStatus}">
+										<div class="form-group col-md-8 text-left">																	
+											<input id="delegationStatus" checked data-toggle="toggle"  type="checkbox">
+										</div>
+									</c:when>
+									<c:otherwise>
+										<div class="form-group col-md-8 text-left">																	
+											<input id="delegationStatus" data-toggle="toggle"  type="checkbox">
+										</div>
+									</c:otherwise>
+								</c:choose>
+								
 					</div>
 					<div class="row biller-row">
 								<div class="col-md-4 ">
@@ -51,14 +65,15 @@
 										Delegate To :
 									</label>
 								</div>
-								<div class="form-group col-md-8 text-left biller-modal-dropdown">																	
-									<select class="selectpicker"  data-live-search="true" id="delegateToUser">	
+								<div class="form-group col-md-8 text-left biller-modal-dropdown">	
+								<select class="selectpicker"  data-live-search="true" id="delegateToUser">																
+								     <option value="0"> -- Select -- </option>							
 										<c:if test="${not empty delegateUserList}">
-										 <c:forEach var="user" items="${delegateUserList}">
-										   <option value="${user.userID}"> ${user.name}</option>
-										 </c:forEach>
-								        </c:if>																						
-									</select>
+										<c:forEach var="user"	 items="${delegateUserList}">
+											<option value="${user.userID}"> ${user.name}</option>
+										</c:forEach>
+										</c:if>
+								  </select>
 								</div>
 					</div>
 					

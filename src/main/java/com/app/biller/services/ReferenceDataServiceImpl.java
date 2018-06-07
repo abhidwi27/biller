@@ -163,4 +163,9 @@ public class ReferenceDataServiceImpl implements ReferenceDataService {
 		}
 	}
 	
+	public String getDelegateStatus(String userID) {
+		
+		return referenceDataDao.getDelegateStatus(userID);
+		
+	}
 }

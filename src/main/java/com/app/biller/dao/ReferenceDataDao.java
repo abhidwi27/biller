@@ -37,5 +37,7 @@ public interface ReferenceDataDao {
 	List<WIASMReference> getwiasmReferenceData(String wrkItem);
 
 	List<Header> getHeaderForCustomise();
+	
+	String getDelegateStatus(String userID);
 
 }
