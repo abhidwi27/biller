@@ -38,7 +38,7 @@
 								</div>
 					</div>
 					--->
-					<input name="strDelegatedUser" id="delegatedUser" type="hidden" value='${fn:escapeXml(delegatestatus)}' />
+					<input name="strDelegatedUser" id="delegatedUser" type="hidden" value='${fn:escapeXml(delegateStatus)}' />
 					<div class="row biller-row">
 								<div class="col-md-4 ">
 									<label class="biller-label biller-modal-label">
@@ -46,7 +46,7 @@
 									</label>
 								</div>
 								<c:choose>
-									<c:when test="${not empty delegatestatus}">
+									<c:when test="${not empty delegateStatus}">
 										<div class="form-group col-md-8 text-left">																	
 											<input id="delegationStatus" checked data-toggle="toggle"  type="checkbox">
 										</div>
