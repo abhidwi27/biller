@@ -2,8 +2,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <head>
-<!--  link rel="stylesheet" href="resources/css/reportCustom.css">-->
-<script src="resources/js/reportCustom.js"> </script>
 </head>
 <div role="tabpanel" class="tab-pane fade" id="adminDelegate">
 <div class="container container-table">
