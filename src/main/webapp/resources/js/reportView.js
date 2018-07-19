@@ -232,7 +232,7 @@ $(document).ready(function(){
 							    				"thousands": "."
 			    							   },
 				    			data:           tot,
-				    			deferRender:    true,
+				    			deferRender:    false,
 				    	        scrollX: 		true,
 				    	        scrollY:        380,
 				    	        scrollCollapse: true,
