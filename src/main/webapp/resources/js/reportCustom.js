@@ -267,7 +267,7 @@ $(document).ready(function(){
 		    								},
 			    			
 		    			    data:           customData,
-		    	            deferRender:    true,
+		    	            deferRender:    false,
 		    	            scrollX: 		true,
 		    	            scrollY:        380,
 		    	            scrollCollapse: true,
