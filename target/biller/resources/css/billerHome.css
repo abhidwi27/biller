@@ -1,0 +1,87 @@
+.biller-tab-row{
+	margin-top:10px;
+	margin-bottom:-20px;
+}
+
+.card {
+	background: #FFF none repeat scroll 0% 0%;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+	margin-bottom: 30px;
+}
+
+.biller-Home > .nav-tabs {
+	border-bottom: 2px solid #DDD;
+}
+
+.biller-Home > .nav-pills > li.active > a, 
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover	{
+	border-width: 2;
+}
+
+.biller-Home > .nav-pills > li > a {
+	border: 3px;	
+	color: var(--biller-home-navtab-font-color);
+	background: var(--biller-home-navtab-background-color);
+}
+
+.biller-Home > .nav-pills > li.active > a{
+	border: 3px;
+	color: var(--biller-home-navtab-font-color-active) ;
+	background-color: var(--biller-home-navtab-background-color-active);
+	box-shadow: 0 4px 2px #00ffff;
+
+}
+.nav-tabs > li > a:hover {
+	border: 3px;
+	color: var(--biller-home-navtab-font-color-hover);
+	background-color: var(--biller-home-navtab-background-color-hover);
+	
+}
+.biller-Home > .nav-pills > li > a::after {
+	content: "";
+	background: #fff;
+	height: 2px;
+	position: absolute;
+	width: auto;
+	left: 0px;
+	bottom: -1px;
+	transition: all 250ms ease 0s;
+	transform: scale(0);
+}
+
+.biller-Home > .nav-tabs > li.active >a::after,
+.nav-tabs > li:hover > a::after {
+	transform: scale(1);
+}
+
+.biller-Home > .tab-nav > li >a::after {
+	background: #46b5c1 none repeat scroll 0% 0%;
+	color: #fff;
+}
+
+.biller-Home > .tab-pane {
+	padding: 15px 0;
+}
+
+.biller-Home > .tab-content {
+	padding-bottom: 20px;
+	margin-left: 2px;
+	margin-right: 2px;	
+}
+
+.biller-Home > .nav-pills > li {
+	width: 15%;
+	text-align: center;
+}
+
+.biller-home-tab-icon{
+	font-size: 16px;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+.biller-home-margin{
+	margin-left: 10px; 
+	margin-right: 10px;
+}

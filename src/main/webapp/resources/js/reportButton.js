@@ -182,7 +182,7 @@ $(function() {
 		var reportTable = $('#ilcReport').DataTable();
 		var userProfile = JSON.parse($('#strUserProfile').val());
 		var accountId = $('#currentAccount').val();
-		if(hasApprovedBillCycle == 1 || (tower == 0)){
+		if(!editMode[tower]){
 			e.stopPropagation();
 			e.preventDefault();
 			return;
@@ -213,6 +213,7 @@ $(function() {
 					$('#reportSave').find('span i').addClass('biller-icon-disabled');
 					$('#reportDelete').find('span i').addClass('biller-icon-disabled');
 					$('#reportBulkUpdate').find('span i').addClass('biller-icon-disabled');
+					$('#reportUnlock').find('span i').addClass('biller-icon-disabled');
 				}else{
 					if($('#reportEdit').find('span i').hasClass('biller-icon-disabled')){
 						$('#reportEdit').find('span i').removeClass('biller-icon-disabled');

@@ -1,0 +1,523 @@
+2018-09-12 00:04:34 - Creating user profile for vveera
+2018-09-12 00:04:34 - User profile successfully created for  vveera
+2018-09-12 00:04:34 - User logged in with ID vveera
+2018-09-12 00:04:37 - Getting Active billCycle...
+2018-09-12 00:04:37 - Getting group approvals for billCycle 092018
+2018-09-12 00:04:50 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-12 00:04:50 - Uploading Files...
+2018-09-12 00:04:50 - Files uploaded successfully..
+2018-09-12 00:04:50 - Files uploaded successfully..
+2018-09-12 00:04:50 - Files uploaded successfully..
+2018-09-12 00:04:50 - Files uploaded successfully..
+2018-09-12 00:04:50 - Files uploaded successfully..
+2018-09-12 00:04:50 - Files uploaded successfully..
+2018-09-12 00:04:50 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-12 00:04:52 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-12 00:04:52 - Uploading Files...
+2018-09-12 00:04:52 - Files uploaded successfully..
+2018-09-12 00:04:52 - Files uploaded successfully..
+2018-09-12 00:04:52 - Files uploaded successfully..
+2018-09-12 00:04:52 - Files uploaded successfully..
+2018-09-12 00:04:52 - Files uploaded successfully..
+2018-09-12 00:04:52 - Files uploaded successfully..
+2018-09-12 00:04:52 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-12 00:04:52 - Creating ILC Datasheet..
+2018-09-12 00:06:28 - ILC Data sheet created successfully
+2018-09-12 00:06:28 - Extracting SLA Data...
+2018-09-12 00:06:31 - Ignoring NullPinterException in extract SLA Data
+2018-09-12 00:06:31 - Deleting SLA for billCycle 092018
+2018-09-12 00:06:31 - Creating SLA Data for billCycle 092018
+2018-09-12 00:06:31 - SLA Batch Update Size is 1014
+2018-09-12 00:06:33 - SLA Batch update: records updated = 1014
+2018-09-12 00:06:40 - Extracting ITWR Data..
+2018-09-12 00:08:23 - Extracting ITWR Data..
+2018-09-12 00:08:40 - Datasource properties set for Dev environment...
+2018-09-12 00:08:41 - Email properties set for biller application...
+2018-09-12 00:08:42 - Authetication interceptor linked for biller application...
+2018-09-12 00:08:44 - JDBCTemplate linked with datasource...
+2018-09-12 00:08:45 - Datasource properties set for Dev environment...
+2018-09-12 00:08:45 - Email properties set for biller application...
+2018-09-12 00:08:45 - JDBCTemplate linked with datasource...
+2018-09-12 00:08:45 - Authetication interceptor linked for biller application...
+2018-09-12 00:12:17 - Creating user profile for vveera
+2018-09-12 00:12:17 - User profile successfully created for  vveera
+2018-09-12 00:12:17 - User logged in with ID vveera
+2018-09-12 00:12:20 - Getting Active billCycle...
+2018-09-12 00:12:20 - Getting group approvals for billCycle 092018
+2018-09-12 00:12:33 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-12 00:12:33 - Uploading Files...
+2018-09-12 00:12:33 - Files uploaded successfully..
+2018-09-12 00:12:33 - Files uploaded successfully..
+2018-09-12 00:12:33 - Files uploaded successfully..
+2018-09-12 00:12:33 - Files uploaded successfully..
+2018-09-12 00:12:33 - Files uploaded successfully..
+2018-09-12 00:12:33 - Files uploaded successfully..
+2018-09-12 00:12:33 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-12 00:12:36 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-12 00:12:36 - Uploading Files...
+2018-09-12 00:12:36 - Files uploaded successfully..
+2018-09-12 00:12:36 - Files uploaded successfully..
+2018-09-12 00:12:36 - Files uploaded successfully..
+2018-09-12 00:12:36 - Files uploaded successfully..
+2018-09-12 00:12:36 - Files uploaded successfully..
+2018-09-12 00:12:36 - Files uploaded successfully..
+2018-09-12 00:12:36 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-12 00:12:36 - Creating ILC Datasheet..
+2018-09-12 00:14:04 - ILC Data sheet created successfully
+2018-09-12 00:14:04 - Extracting SLA Data...
+2018-09-12 00:14:07 - Ignoring NullPinterException in extract SLA Data
+2018-09-12 00:14:07 - Deleting SLA for billCycle 092018
+2018-09-12 00:14:07 - Creating SLA Data for billCycle 092018
+2018-09-12 00:14:07 - SLA Batch Update Size is 1014
+2018-09-12 00:14:10 - SLA Batch update: records updated = 1014
+2018-09-12 00:14:14 - Extracting ITWR Data..
+2018-09-12 09:16:17 - Creating user profile for vveera
+2018-09-12 09:16:17 - User profile successfully created for  vveera
+2018-09-12 09:16:17 - User logged in with ID vveera
+2018-09-12 09:16:19 - Getting Active billCycle...
+2018-09-12 09:16:19 - No Active billCycle found...
+2018-09-12 09:16:57 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-12 09:16:57 - Uploading Files...
+2018-09-12 09:16:57 - Files uploaded successfully..
+2018-09-12 09:16:57 - Files uploaded successfully..
+2018-09-12 09:16:57 - Files uploaded successfully..
+2018-09-12 09:16:57 - Files uploaded successfully..
+2018-09-12 09:16:57 - Files uploaded successfully..
+2018-09-12 09:16:57 - No Entry found in Group Approval Table for billCycle 092018
+2018-09-12 09:16:57 - Creating ILC Datasheet..
+2018-09-12 09:18:35 - ILC Data sheet created successfully
+2018-09-12 09:18:35 - Extracting SLA Data...
+2018-09-12 09:18:35 - Ignoring NullPinterException in extract SLA Data
+2018-09-12 09:18:35 - Creating SLA Data for billCycle 092018
+2018-09-12 09:18:35 - SLA Batch Update Size is 1014
+2018-09-12 09:18:38 - SLA Batch update: records updated = 1014
+2018-09-12 09:20:06 - Datasource properties set for Dev environment...
+2018-09-12 09:20:06 - Email properties set for biller application...
+2018-09-12 09:20:07 - Authetication interceptor linked for biller application...
+2018-09-12 09:20:09 - JDBCTemplate linked with datasource...
+2018-09-12 09:20:10 - Datasource properties set for Dev environment...
+2018-09-12 09:20:10 - Email properties set for biller application...
+2018-09-12 09:20:10 - JDBCTemplate linked with datasource...
+2018-09-12 09:20:10 - Authetication interceptor linked for biller application...
+2018-09-12 09:20:33 - Datasource properties set for Dev environment...
+2018-09-12 09:20:33 - Email properties set for biller application...
+2018-09-12 09:20:35 - Authetication interceptor linked for biller application...
+2018-09-12 09:20:36 - JDBCTemplate linked with datasource...
+2018-09-12 09:20:37 - Datasource properties set for Dev environment...
+2018-09-12 09:20:37 - Email properties set for biller application...
+2018-09-12 09:20:37 - JDBCTemplate linked with datasource...
+2018-09-12 09:20:37 - Authetication interceptor linked for biller application...
+2018-09-12 09:20:59 - Datasource properties set for Dev environment...
+2018-09-12 09:21:00 - Email properties set for biller application...
+2018-09-12 09:21:00 - Authetication interceptor linked for biller application...
+2018-09-12 09:21:02 - JDBCTemplate linked with datasource...
+2018-09-12 09:21:03 - Datasource properties set for Dev environment...
+2018-09-12 09:21:03 - Email properties set for biller application...
+2018-09-12 09:21:03 - JDBCTemplate linked with datasource...
+2018-09-12 09:21:03 - Authetication interceptor linked for biller application...
+2018-09-12 09:21:28 - Creating user profile for vveera
+2018-09-12 09:21:28 - User profile successfully created for  vveera
+2018-09-12 09:21:28 - User logged in with ID vveera
+2018-09-12 09:21:31 - Getting Active billCycle...
+2018-09-12 09:21:31 - No Active billCycle found...
+2018-09-12 09:22:26 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-12 09:22:26 - Uploading Files...
+2018-09-12 09:22:26 - Files uploaded successfully..
+2018-09-12 09:22:26 - Files uploaded successfully..
+2018-09-12 09:22:26 - Files uploaded successfully..
+2018-09-12 09:22:26 - Files uploaded successfully..
+2018-09-12 09:22:26 - Files uploaded successfully..
+2018-09-12 09:22:26 - No Entry found in Group Approval Table for billCycle 092018
+2018-09-12 09:22:26 - Creating ILC Datasheet..
+2018-09-12 09:24:28 - ILC Data sheet created successfully
+2018-09-12 09:24:28 - Extracting SLA Data...
+2018-09-12 09:24:33 - Ignoring NullPinterException in extract SLA Data
+2018-09-12 09:24:33 - Creating SLA Data for billCycle 092018
+2018-09-12 09:24:33 - SLA Batch Update Size is 1014
+2018-09-12 09:24:36 - SLA Batch update: records updated = 1014
+2018-09-12 09:24:36 - Extracting ITWR Data..
+2018-09-12 09:24:40 - ITWR Data extracted..
+2018-09-12 09:24:40 - Deleting ITWR Data..
+2018-09-12 09:24:40 - ITWR Data couldn't be deleted, may be table is already empty
+2018-09-12 09:24:40 - ITWR Batch Size is 10435
+2018-09-12 09:25:02 - ITWR Batch update: records updated = 10435
+2018-09-12 09:25:02 - Extracting WIASM Data...
+2018-09-12 09:25:02 - WIASM Data extracted ...
+2018-09-12 09:25:02 - Deleting WIASM Data..
+2018-09-12 09:25:02 - WIASM data couldn't be deleted, may be table is already empty	
+2018-09-12 09:25:02 - WIASM Batch Update Size is 360
+2018-09-12 09:25:03 - WIASM Batch update: records updated = 360
+2018-09-12 09:25:03 - No Entry found in Group Approval Table for billCycle 092018
+2018-09-12 09:25:03 - Entry in Group Approval Table for billCycle 092018
+2018-09-12 09:25:03 - No Email ID found for selected role 5
+2018-09-12 09:25:03 - No Email ID found for selected role 6
+2018-09-12 09:25:03 - No Email ID found for selected role 7
+2018-09-12 09:25:24 - Wrong Username / Password. Authentication Failed
+2018-09-12 09:25:28 - Creating user profile for ssbram
+2018-09-12 09:25:28 - User profile successfully created for  ssbram
+2018-09-12 09:25:28 - User logged in with ID ssbram
+2018-09-12 09:25:28 - Getting list of users whom ssbram can delegate to
+2018-09-12 09:25:28 - Delegate list prepared for ssbram
+2018-09-12 09:25:28 - Getting list of users who have delegated to ssbram
+2018-09-12 09:25:28 - There is no user who has delegated to ssbram
+2018-09-12 09:25:30 - Getting Active billCycle...
+2018-09-12 09:25:30 - Getting group approvals for billCycle 092018
+2018-09-12 09:25:37 - Getting data for ResonsetDataEnvelope...
+2018-09-12 09:25:37 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 09:25:37 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 09:25:37 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 09:25:37 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 09:25:37 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-12 09:25:37 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-12 09:25:37 - ResonsetDataEnvelope ready...
+2018-09-12 09:25:41 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 09:25:41 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-12 09:25:41 - Checking lock by user billCycle 092018
+2018-09-12 09:25:41 - No tower locked by userID ssbram
+2018-09-12 09:25:41 - Lock established by userID ssbram for towerID 1 for billCycle 092018
+2018-09-12 09:33:27 - Getting data for ResonsetDataEnvelope...
+2018-09-12 09:33:27 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 09:33:27 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 09:33:27 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 09:33:28 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 09:33:28 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-12 09:33:28 - ResonsetDataEnvelope ready...
+2018-09-12 09:55:35 - Creating user profile for adwivedi
+2018-09-12 09:55:35 - User profile successfully created for  adwivedi
+2018-09-12 09:55:35 - User logged in with ID adwivedi
+2018-09-12 09:55:35 - Getting list of users whom adwivedi can delegate to
+2018-09-12 09:55:35 - Delegate list prepared for adwivedi
+2018-09-12 09:55:35 - Getting list of users who have delegated to adwivedi
+2018-09-12 09:55:35 - There is no user who has delegated to adwivedi
+2018-09-12 09:55:37 - Getting Active billCycle...
+2018-09-12 09:55:37 - Getting group approvals for billCycle 092018
+2018-09-12 09:56:03 - Getting data for ResonsetDataEnvelope...
+2018-09-12 09:56:03 - Getting SLA employee list for billCycle 092018 and towerId 0
+2018-09-12 09:56:03 - Getting SLA WR list for billCycle 092018 and towerId 0
+2018-09-12 09:56:03 - Getting SLA weekend list for billCycle 092018 and towerId 0
+2018-09-12 09:56:03 - Checking lock for billCycle 092018 towerID 0
+2018-09-12 09:56:03 - No user found who had locked for billCycle 092018 towerID 0
+2018-09-12 09:56:03 - Checking prior approval by userID adwivedi for billCyle 092018
+2018-09-12 09:56:03 - ResonsetDataEnvelope ready...
+2018-09-12 09:57:05 - Getting data for ResonsetDataEnvelope...
+2018-09-12 09:57:05 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 09:57:05 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 09:57:05 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 09:57:05 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 09:57:05 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-12 09:57:05 - Checking prior approval by userID adwivedi for billCyle 092018
+2018-09-12 09:57:05 - ResonsetDataEnvelope ready...
+2018-09-12 09:57:12 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 09:57:12 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-12 09:57:12 - Checking lock by user billCycle 092018
+2018-09-12 09:57:12 - No tower locked by userID adwivedi
+2018-09-12 09:57:13 - Lock established by userID adwivedi for towerID 1 for billCycle 092018
+2018-09-12 09:57:43 - Creating user profile for gps
+2018-09-12 09:57:43 - User profile successfully created for  gps
+2018-09-12 09:57:43 - User logged in with ID gps
+2018-09-12 09:57:43 - Getting list of users whom gps can delegate to
+2018-09-12 09:57:43 - Delegate list prepared for gps
+2018-09-12 09:57:43 - Getting list of users who have delegated to gps
+2018-09-12 09:57:43 - There is no user who has delegated to gps
+2018-09-12 09:57:46 - Getting Active billCycle...
+2018-09-12 09:57:46 - Getting group approvals for billCycle 092018
+2018-09-12 09:57:55 - Getting data for ResonsetDataEnvelope...
+2018-09-12 09:57:55 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 09:57:56 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 09:57:56 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 09:57:56 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 09:57:56 - Checking prior approval by userID gps for billCyle 092018
+2018-09-12 09:57:56 - ResonsetDataEnvelope ready...
+2018-09-12 09:58:00 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 09:58:00 - Checking lock by user billCycle 092018
+2018-09-12 09:58:00 - No tower locked by userID gps
+2018-09-12 09:58:15 - Getting data for ResonsetDataEnvelope...
+2018-09-12 09:58:15 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-12 09:58:15 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-12 09:58:15 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-12 09:58:15 - Checking lock for billCycle 092018 towerID 2
+2018-09-12 09:58:15 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-12 09:58:15 - Checking prior approval by userID gps for billCyle 092018
+2018-09-12 09:58:15 - ResonsetDataEnvelope ready...
+2018-09-12 09:58:19 - Checking lock for billCycle 092018 towerID 2
+2018-09-12 09:58:19 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-12 09:58:19 - Checking lock by user billCycle 092018
+2018-09-12 09:58:19 - No tower locked by userID gps
+2018-09-12 09:58:19 - Lock established by userID gps for towerID 2 for billCycle 092018
+2018-09-12 09:58:33 - Checking lock for billCycle 092018 towerID 2
+2018-09-12 09:58:33 - Lock unset by userID gps for towerID 2 for billCycle 092018
+2018-09-12 09:59:41 - Getting data for ResonsetDataEnvelope...
+2018-09-12 09:59:41 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 09:59:41 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 09:59:41 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 09:59:41 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 09:59:41 - Checking prior approval by userID gps for billCyle 092018
+2018-09-12 09:59:41 - ResonsetDataEnvelope ready...
+2018-09-12 10:00:15 - Updating SLA Data...
+2018-09-12 10:00:15 - Creating new SLA Record for billCycle 092018
+2018-09-12 10:00:15 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:00:16 - Getting data for ResonsetDataEnvelope...
+2018-09-12 10:00:16 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 10:00:16 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 10:00:16 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 10:00:16 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:00:16 - Checking prior approval by userID gps for billCyle 092018
+2018-09-12 10:00:16 - ResonsetDataEnvelope ready...
+2018-09-12 10:01:07 - Updating SLA Data...
+2018-09-12 10:01:07 - Creating new SLA Record for billCycle 092018
+2018-09-12 10:01:07 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:01:07 - Getting data for ResonsetDataEnvelope...
+2018-09-12 10:01:07 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 10:01:07 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 10:01:07 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 10:01:07 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:01:07 - Checking prior approval by userID gps for billCyle 092018
+2018-09-12 10:01:07 - ResonsetDataEnvelope ready...
+2018-09-12 10:01:57 - Updating SLA Data...
+2018-09-12 10:01:57 - Creating new SLA Record for billCycle 092018
+2018-09-12 10:01:57 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:01:58 - Getting data for ResonsetDataEnvelope...
+2018-09-12 10:01:58 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 10:01:58 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 10:01:58 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 10:01:58 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:01:58 - Checking prior approval by userID gps for billCyle 092018
+2018-09-12 10:01:58 - ResonsetDataEnvelope ready...
+2018-09-12 10:03:09 - Making SLA Data inactive for billCycle 092018 and seqIdList [19148]
+2018-09-12 10:04:04 - Reading Customized SLA Data...
+2018-09-12 10:05:21 - Getting data for ResonsetDataEnvelope...
+2018-09-12 10:05:22 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 10:05:22 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 10:05:22 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 10:05:22 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:05:22 - Checking prior approval by userID gps for billCyle 092018
+2018-09-12 10:05:22 - ResonsetDataEnvelope ready...
+2018-09-12 10:05:42 - Updating SLA Data...
+2018-09-12 10:05:42 - Creating new SLA Record for billCycle 092018
+2018-09-12 10:05:42 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:05:43 - Getting data for ResonsetDataEnvelope...
+2018-09-12 10:05:43 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 10:05:43 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 10:05:43 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 10:05:43 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:05:43 - Checking prior approval by userID gps for billCyle 092018
+2018-09-12 10:05:43 - ResonsetDataEnvelope ready...
+2018-09-12 10:12:21 - Getting data for ResonsetDataEnvelope...
+2018-09-12 10:12:21 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 10:12:21 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 10:12:21 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 10:12:21 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:12:21 - Checking prior approval by userID gps for billCyle 092018
+2018-09-12 10:12:21 - ResonsetDataEnvelope ready...
+2018-09-12 10:13:11 - Updating SLA Data...
+2018-09-12 10:13:11 - Creating new SLA Record for billCycle 092018
+2018-09-12 10:13:11 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:13:11 - Getting data for ResonsetDataEnvelope...
+2018-09-12 10:13:11 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 10:13:11 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 10:13:11 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 10:13:11 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:13:11 - Checking prior approval by userID gps for billCyle 092018
+2018-09-12 10:13:11 - ResonsetDataEnvelope ready...
+2018-09-12 10:17:56 - Getting data for ResonsetDataEnvelope...
+2018-09-12 10:17:56 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 10:17:56 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 10:17:56 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 10:17:56 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:17:56 - Checking prior approval by userID gps for billCyle 092018
+2018-09-12 10:17:56 - ResonsetDataEnvelope ready...
+2018-09-12 10:19:00 - Checking prior approval by userID adwivedi for billCyle 092018
+2018-09-12 10:19:00 - Checking rejection by userID adwivedi for billCyle 092018
+2018-09-12 10:19:00 - Setting user approval by userID gps for billCyle 092018 for user adwivedi
+2018-09-12 10:19:00 - Approval set by userID gps for billCyle 092018 for user adwivedi
+2018-09-12 10:19:00 - Status couldn't be updated  in Group Approval Table fordm billCycle 092018 as 1
+2018-09-12 10:19:00 - Getting group approvals for billCycle 092018
+2018-09-12 10:19:00 - Checking lock by user billCycle 092018
+2018-09-12 10:19:00 - Lock unset by userID adwivedi for towerID 1 for billCycle 092018
+2018-09-12 10:19:00 - Getting Active billCycle...
+2018-09-12 10:19:00 - Getting group approvals for billCycle 092018
+2018-09-12 10:19:00 - Creating user profile for gps
+2018-09-12 10:19:00 - User profile successfully created for  gps
+2018-09-12 10:19:00 - Creating user profile for adwivedi
+2018-09-12 10:19:00 - User profile successfully created for  adwivedi
+2018-09-12 10:20:14 - Creating user profile for ssbram
+2018-09-12 10:20:14 - User profile successfully created for  ssbram
+2018-09-12 10:20:14 - User logged in with ID ssbram
+2018-09-12 10:20:14 - Getting list of users whom ssbram can delegate to
+2018-09-12 10:20:14 - Delegate list prepared for ssbram
+2018-09-12 10:20:14 - Getting list of users who have delegated to ssbram
+2018-09-12 10:20:14 - There is no user who has delegated to ssbram
+2018-09-12 10:20:17 - Getting Active billCycle...
+2018-09-12 10:20:17 - Getting group approvals for billCycle 092018
+2018-09-12 10:20:27 - Getting data for ResonsetDataEnvelope...
+2018-09-12 10:20:27 - Getting SLA employee list for billCycle 092018 and towerId 0
+2018-09-12 10:20:27 - Getting SLA WR list for billCycle 092018 and towerId 0
+2018-09-12 10:20:27 - Getting SLA weekend list for billCycle 092018 and towerId 0
+2018-09-12 10:20:27 - Checking lock for billCycle 092018 towerID 0
+2018-09-12 10:20:27 - No user found who had locked for billCycle 092018 towerID 0
+2018-09-12 10:20:27 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-12 10:20:27 - ResonsetDataEnvelope ready...
+2018-09-12 10:20:34 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-12 10:20:34 - Checking rejection by userID ssbram for billCyle 092018
+2018-09-12 10:20:34 - Setting user approval by userID ssbram for billCyle 092018 for user ssbram
+2018-09-12 10:20:34 - Approval set by userID ssbram for billCyle 092018 for user ssbram
+2018-09-12 10:20:34 - Status couldn't be updated  in Group Approval Table fordm billCycle 092018 as 1
+2018-09-12 10:20:34 - Getting group approvals for billCycle 092018
+2018-09-12 10:20:34 - Checking lock by user billCycle 092018
+2018-09-12 10:20:34 - No tower locked by userID ssbram
+2018-09-12 10:20:34 - Getting Active billCycle...
+2018-09-12 10:20:34 - Getting group approvals for billCycle 092018
+2018-09-12 10:20:34 - Creating user profile for ssbram
+2018-09-12 10:20:34 - User profile successfully created for  ssbram
+2018-09-12 10:20:34 - Creating user profile for ssbram
+2018-09-12 10:20:34 - User profile successfully created for  ssbram
+2018-09-12 10:21:39 - Setting delegation to ssbram for ssbram
+2018-09-12 10:21:39 - ssbram successfully delegated to spadhi
+2018-09-12 10:21:51 - Creating user profile for spadhi
+2018-09-12 10:21:51 - User profile successfully created for  spadhi
+2018-09-12 10:21:51 - User logged in with ID spadhi
+2018-09-12 10:21:51 - Getting list of users whom spadhi can delegate to
+2018-09-12 10:21:51 - Delegate list prepared for spadhi
+2018-09-12 10:21:51 - Getting list of users who have delegated to spadhi
+2018-09-12 10:21:52 - List prepared of users who has delegated to spadhi
+2018-09-12 10:21:55 - Getting Active billCycle...
+2018-09-12 10:21:55 - Getting group approvals for billCycle 092018
+2018-09-12 10:22:03 - Getting data for ResonsetDataEnvelope...
+2018-09-12 10:22:03 - Getting SLA employee list for billCycle 092018 and towerId 0
+2018-09-12 10:22:03 - Getting SLA WR list for billCycle 092018 and towerId 0
+2018-09-12 10:22:03 - Getting SLA weekend list for billCycle 092018 and towerId 0
+2018-09-12 10:22:03 - Checking lock for billCycle 092018 towerID 0
+2018-09-12 10:22:03 - No user found who had locked for billCycle 092018 towerID 0
+2018-09-12 10:22:03 - Checking prior approval by userID spadhi for billCyle 092018
+2018-09-12 10:22:03 - ResonsetDataEnvelope ready...
+2018-09-12 10:22:27 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-12 10:22:27 - Checking rejection by userID ssbram for billCyle 092018
+2018-09-12 10:22:27 - Checking lock by user billCycle 092018
+2018-09-12 10:22:27 - No tower locked by userID ssbram
+2018-09-12 10:22:27 - Getting Active billCycle...
+2018-09-12 10:22:27 - Getting group approvals for billCycle 092018
+2018-09-12 10:23:53 - Creating user profile for mghosh
+2018-09-12 10:23:53 - User profile successfully created for  mghosh
+2018-09-12 10:23:53 - User logged in with ID mghosh
+2018-09-12 10:23:53 - Getting list of users whom mghosh can delegate to
+2018-09-12 10:23:53 - Delegate list prepared for mghosh
+2018-09-12 10:23:53 - Getting list of users who have delegated to mghosh
+2018-09-12 10:23:53 - There is no user who has delegated to mghosh
+2018-09-12 10:23:56 - Getting Active billCycle...
+2018-09-12 10:23:56 - Getting group approvals for billCycle 092018
+2018-09-12 10:24:21 - Getting data for ResonsetDataEnvelope...
+2018-09-12 10:24:21 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 10:24:21 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 10:24:21 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 10:24:22 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:24:22 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-12 10:24:22 - Checking prior approval by userID mghosh for billCyle 092018
+2018-09-12 10:24:22 - ResonsetDataEnvelope ready...
+2018-09-12 10:24:45 - Getting data for ResonsetDataEnvelope...
+2018-09-12 10:24:45 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 10:24:45 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 10:24:45 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 10:24:45 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 10:24:45 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-12 10:24:45 - Checking prior approval by userID mghosh for billCyle 092018
+2018-09-12 10:24:45 - ResonsetDataEnvelope ready...
+2018-09-12 10:48:54 - User not Logged in.
+2018-09-12 12:24:56 - Creating user profile for adwivedi
+2018-09-12 12:24:56 - User profile successfully created for  adwivedi
+2018-09-12 12:24:56 - User logged in with ID adwivedi
+2018-09-12 12:24:56 - Getting list of users whom adwivedi can delegate to
+2018-09-12 12:24:56 - Delegate list prepared for adwivedi
+2018-09-12 12:24:56 - Getting list of users who have delegated to adwivedi
+2018-09-12 12:24:56 - There is no user who has delegated to adwivedi
+2018-09-12 12:24:58 - Getting Active billCycle...
+2018-09-12 12:24:58 - Getting group approvals for billCycle 092018
+2018-09-12 12:25:26 - Creating user profile for mghosh
+2018-09-12 12:25:26 - User profile successfully created for  mghosh
+2018-09-12 12:25:26 - User logged in with ID mghosh
+2018-09-12 12:25:26 - Getting list of users whom mghosh can delegate to
+2018-09-12 12:25:26 - Delegate list prepared for mghosh
+2018-09-12 12:25:26 - Getting list of users who have delegated to mghosh
+2018-09-12 12:25:26 - There is no user who has delegated to mghosh
+2018-09-12 12:25:27 - Getting Active billCycle...
+2018-09-12 12:25:28 - Getting group approvals for billCycle 092018
+2018-09-12 12:25:37 - Getting data for ResonsetDataEnvelope...
+2018-09-12 12:25:37 - Getting SLA employee list for billCycle 092018 and towerId 0
+2018-09-12 12:25:37 - Getting SLA WR list for billCycle 092018 and towerId 0
+2018-09-12 12:25:37 - Getting SLA weekend list for billCycle 092018 and towerId 0
+2018-09-12 12:25:37 - Checking lock for billCycle 092018 towerID 0
+2018-09-12 12:25:37 - No user found who had locked for billCycle 092018 towerID 0
+2018-09-12 12:25:37 - Checking prior approval by userID mghosh for billCyle 092018
+2018-09-12 12:25:37 - ResonsetDataEnvelope ready...
+2018-09-12 12:26:17 - Getting data for ResonsetDataEnvelope...
+2018-09-12 12:26:17 - Getting SLA employee list for billCycle 092018 and towerId 0
+2018-09-12 12:26:17 - Getting SLA WR list for billCycle 092018 and towerId 0
+2018-09-12 12:26:17 - Getting SLA weekend list for billCycle 092018 and towerId 0
+2018-09-12 12:26:17 - Checking lock for billCycle 092018 towerID 0
+2018-09-12 12:26:17 - No user found who had locked for billCycle 092018 towerID 0
+2018-09-12 12:26:17 - Checking prior approval by userID mghosh for billCyle 092018
+2018-09-12 12:26:17 - ResonsetDataEnvelope ready...
+2018-09-12 12:27:52 - Creating user profile for mghosh
+2018-09-12 12:27:52 - User profile successfully created for  mghosh
+2018-09-12 12:27:52 - User logged in with ID mghosh
+2018-09-12 12:27:52 - Getting list of users whom mghosh can delegate to
+2018-09-12 12:27:52 - Delegate list prepared for mghosh
+2018-09-12 12:27:52 - Getting list of users who have delegated to mghosh
+2018-09-12 12:27:52 - There is no user who has delegated to mghosh
+2018-09-12 12:27:54 - Getting Active billCycle...
+2018-09-12 12:27:54 - Getting group approvals for billCycle 092018
+2018-09-12 12:28:00 - Getting data for ResonsetDataEnvelope...
+2018-09-12 12:28:00 - Getting SLA employee list for billCycle 092018 and towerId 0
+2018-09-12 12:28:01 - Getting SLA WR list for billCycle 092018 and towerId 0
+2018-09-12 12:28:01 - Getting SLA weekend list for billCycle 092018 and towerId 0
+2018-09-12 12:28:01 - Checking lock for billCycle 092018 towerID 0
+2018-09-12 12:28:01 - No user found who had locked for billCycle 092018 towerID 0
+2018-09-12 12:28:01 - Checking prior approval by userID mghosh for billCyle 092018
+2018-09-12 12:28:01 - ResonsetDataEnvelope ready...
+2018-09-12 12:29:00 - Creating user profile for gps
+2018-09-12 12:29:00 - User profile successfully created for  gps
+2018-09-12 12:29:00 - User logged in with ID gps
+2018-09-12 12:29:00 - Getting list of users whom gps can delegate to
+2018-09-12 12:29:00 - Delegate list prepared for gps
+2018-09-12 12:29:00 - Getting list of users who have delegated to gps
+2018-09-12 12:29:00 - There is no user who has delegated to gps
+2018-09-12 12:29:02 - Getting Active billCycle...
+2018-09-12 12:29:02 - Getting group approvals for billCycle 092018
+2018-09-12 12:29:10 - Getting data for ResonsetDataEnvelope...
+2018-09-12 12:29:10 - Getting SLA employee list for billCycle 092018 and towerId 0
+2018-09-12 12:29:10 - Getting SLA WR list for billCycle 092018 and towerId 0
+2018-09-12 12:29:10 - Getting SLA weekend list for billCycle 092018 and towerId 0
+2018-09-12 12:29:10 - Checking lock for billCycle 092018 towerID 0
+2018-09-12 12:29:10 - No user found who had locked for billCycle 092018 towerID 0
+2018-09-12 12:29:10 - Checking prior approval by userID gps for billCyle 092018
+2018-09-12 12:29:10 - ResonsetDataEnvelope ready...
+2018-09-12 12:29:15 - Checking prior approval by userID gps for billCyle 092018
+2018-09-12 12:29:15 - Checking rejection by userID gps for billCyle 092018
+2018-09-12 12:29:15 - Setting user approval by userID gps for billCyle 092018 for user gps
+2018-09-12 12:29:15 - Approval set by userID gps for billCyle 092018 for user gps
+2018-09-12 12:29:15 - Status couldn't be updated  in Group Approval Table fordm billCycle 092018 as 1
+2018-09-12 12:29:15 - Getting group approvals for billCycle 092018
+2018-09-12 12:29:15 - Checking lock by user billCycle 092018
+2018-09-12 12:29:15 - No tower locked by userID gps
+2018-09-12 12:29:15 - Getting Active billCycle...
+2018-09-12 12:29:15 - Getting group approvals for billCycle 092018
+2018-09-12 12:29:15 - Creating user profile for gps
+2018-09-12 12:29:16 - User profile successfully created for  gps
+2018-09-12 12:29:16 - Creating user profile for gps
+2018-09-12 12:29:16 - User profile successfully created for  gps
+2018-09-12 14:29:31 - Creating user profile for adwivedi
+2018-09-12 14:29:31 - User profile successfully created for  adwivedi
+2018-09-12 14:29:31 - User logged in with ID adwivedi
+2018-09-12 14:29:31 - Getting list of users whom adwivedi can delegate to
+2018-09-12 14:29:31 - Delegate list prepared for adwivedi
+2018-09-12 14:29:31 - Getting list of users who have delegated to adwivedi
+2018-09-12 14:29:31 - There is no user who has delegated to adwivedi
+2018-09-12 14:29:33 - Getting Active billCycle...
+2018-09-12 14:29:33 - Getting group approvals for billCycle 092018
+2018-09-12 14:29:43 - Getting data for ResonsetDataEnvelope...
+2018-09-12 14:29:43 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-12 14:29:43 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-12 14:29:43 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-12 14:29:43 - Checking lock for billCycle 092018 towerID 1
+2018-09-12 14:29:43 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-12 14:29:43 - Checking prior approval by userID adwivedi for billCyle 092018
+2018-09-12 14:29:43 - ResonsetDataEnvelope ready...

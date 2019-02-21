@@ -1,0 +1,11 @@
+insert into biller.blr_user(user_id, first_name, middle_name, last_name, role_id, email_id, password) values ('adwivedi','Abhishek','','Dwivedi',2,'adwived8@in.ibm.com','test1234');
+insert into biller.blr_user(user_id, first_name, middle_name, last_name, role_id, email_id, password) values ('vveera','Vivek','K','Veera',8,'vivveera@in.ibm.com','test1234');
+insert into biller.blr_user(user_id, first_name, middle_name, last_name, role_id, email_id, password) values ('ssbram','Sudharshini','','Subramanian',2,'sudsub01@in.ibm.com','test1234');
+insert into biller.blr_user(user_id, first_name, middle_name, last_name, role_id, email_id, password) values ('gps','Grisha','P','S',2,'grishaps@in.ibm.com','test1234');
+insert into biller.blr_user(user_id, first_name, middle_name, last_name, role_id, email_id, password) values ('spadhi','Sonali','S','Padhi',2,'sonpadhi@in.ibm.com','test1234');
+insert into biller.blr_user(user_id, first_name, middle_name, last_name, role_id, email_id, password) values ('mghosh','Madhurima','','Ghosh',3,'','test1234');
+insert into biller.blr_user(user_id, first_name, middle_name, last_name, role_id, email_id, password) values ('cmandala','Chandana','M','Guttikinda',3,'','test1234');
+insert into biller.blr_user(user_id, first_name, middle_name, last_name, role_id, email_id, password) values ('rkumar','Ranjith','','Kumar',3,'','test1234');
+insert into biller.blr_user(user_id, first_name, middle_name, last_name, role_id, email_id, password) values ('dchhipa','Disha','','Chhipa',3,'','test1234');
+insert into biller.blr_user(user_id, first_name, middle_name, last_name, role_id, email_id, password) values ('jpai','Jyothi','','Pai',4,'','test1234');
+insert into biller.blr_user(user_id, first_name, middle_name, last_name, role_id, email_id, password) values ('prabha','Prabah','','Kumar',4,'','test1234');

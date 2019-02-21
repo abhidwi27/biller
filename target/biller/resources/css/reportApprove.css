@@ -1,0 +1,18 @@
+.modal-body .biller-report-Approve{
+	text-align: center;
+	padding-left: 40px;
+	padding-right:40px;
+	opacity: 0.8;
+	padding-bottom:20px;
+	font-size: 17px;
+	font-weight: 500;
+}
+
+.biller-approve-row{
+	height: 35px;
+	margin-bottom: 10px;	
+}
+
+#approveView .modal-content .modal-header .modal-title{
+	text-align: center;
+}

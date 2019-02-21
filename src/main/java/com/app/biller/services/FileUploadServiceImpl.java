@@ -464,7 +464,7 @@ private ArrayList<ITWRData> extractITWRData(){
 			itwrModellist = new ArrayList<ITWRData>();
 			dataExists = true;
 			curRow = 1;
-
+			//int cellIdx=0;
 			while (dataExists) {
 				row = (XSSFRow) rowIteratorItwr.next();
 				cellIteratorItwr = row.cellIterator();
@@ -479,7 +479,7 @@ private ArrayList<ITWRData> extractITWRData(){
 					//nullcheck = itwrSheet.getRow(curRow).getCell(cellItwr.getColumnIndex()).CELL_TYPE_BLANK;
 					
 					cellType = itwrSheet.getRow(curRow).getCell(cellItwr.getColumnIndex()).getCellType();
-					
+				//	System.out.println("Row Index is " + curRow + ", " + "Cell Index is " + cellIdx );
 					switch (cellType) {
 					case 1:
 						colName = (itwrSheet.getRow(0).getCell(cellItwr.getColumnIndex()).getStringCellValue()).trim();
@@ -502,6 +502,7 @@ private ArrayList<ITWRData> extractITWRData(){
 					default:
 						break;
 					}
+//					cellIdx++;
 				}
 				
 				itwrData = populateITWRDataModel(rowDataItwr, itwrData);				
@@ -518,7 +519,7 @@ private ArrayList<ITWRData> extractITWRData(){
 			logger.info("FileNotFoundException: ", fnfe);
 			
 		}catch (NullPointerException npe) {
-			logger.info("Ignoring NullPointerException in Create ITWR Data");
+			logger.info("Ignoring NullPointerException in Create ITWR Data", npe);
 			
 		}catch (IOException ioe) {
 			logger.error("IOException: " , ioe);

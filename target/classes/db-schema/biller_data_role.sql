@@ -1,0 +1,10 @@
+insert into biller.blr_role(role_id, role_desc) values(1,'Lead');
+insert into biller.blr_role(role_id, role_desc) values(2,'Delivery Manager');
+insert into biller.blr_role(role_id, role_desc) values(3,'Business Area Manager');
+insert into biller.blr_role(role_id, role_desc) values(4,'Senior Business Area Manager');
+insert into biller.blr_role(role_id, role_desc) values(5,'Account Manager');
+insert into biller.blr_role(role_id, role_desc) values(6,'Delivery Project Executive');
+insert into biller.blr_role(role_id, role_desc) values(7,'Account Executive');
+insert into biller.blr_role(role_id, role_desc) values(8,'PMO');
+insert into biller.blr_role(role_id, role_desc) values(9,'Admin');
+insert into biller.blr_role(role_id, role_desc) values(10,'Other');

@@ -1,0 +1,54 @@
+2018-06-14 11:06:21 - Creating user profile for adwivedi
+2018-06-14 11:06:21 - User profile successfully created for  adwivedi
+2018-06-14 11:06:21 - User logged in with ID adwivedi
+2018-06-14 11:06:21 - Getting list of users whom adwivedi can delegate to
+2018-06-14 11:06:21 - Delegate list prepared for adwivedi
+2018-06-14 11:06:21 - Getting list of users who have delegated to adwivedi
+2018-06-14 11:06:21 - There is no user who has delegated to adwivedi
+2018-06-14 11:06:25 - Getting Active billCycle...
+2018-06-14 11:06:25 - Getting group approvals for billCycle 022018
+2018-06-14 11:08:06 - Creating user profile for adwivedi
+2018-06-14 11:08:06 - User profile successfully created for  adwivedi
+2018-06-14 11:08:06 - User logged in with ID adwivedi
+2018-06-14 11:08:06 - Getting list of users whom adwivedi can delegate to
+2018-06-14 11:08:06 - Delegate list prepared for adwivedi
+2018-06-14 11:08:06 - Getting list of users who have delegated to adwivedi
+2018-06-14 11:08:06 - There is no user who has delegated to adwivedi
+2018-06-14 11:08:09 - Getting Active billCycle...
+2018-06-14 11:08:09 - Getting group approvals for billCycle 022018
+2018-06-14 11:09:22 - Creating user profile for adwivedi
+2018-06-14 11:09:22 - User profile successfully created for  adwivedi
+2018-06-14 11:09:22 - User logged in with ID adwivedi
+2018-06-14 11:09:22 - Getting list of users whom adwivedi can delegate to
+2018-06-14 11:09:22 - Delegate list prepared for adwivedi
+2018-06-14 11:09:22 - Getting list of users who have delegated to adwivedi
+2018-06-14 11:09:22 - There is no user who has delegated to adwivedi
+2018-06-14 11:09:26 - Getting Active billCycle...
+2018-06-14 11:09:26 - Getting group approvals for billCycle 022018
+2018-06-14 11:40:38 - Datasource properties set for Dev environment...
+2018-06-14 11:40:38 - Email properties set for biller application...
+2018-06-14 11:40:39 - Authetication interceptor linked for biller application...
+2018-06-14 11:40:40 - JDBCTemplate linked with datasource...
+2018-06-14 11:40:41 - Datasource properties set for Dev environment...
+2018-06-14 11:40:41 - Email properties set for biller application...
+2018-06-14 11:40:41 - JDBCTemplate linked with datasource...
+2018-06-14 11:40:41 - Authetication interceptor linked for biller application...
+2018-06-14 11:41:06 - Creating user profile for adwivedi
+2018-06-14 11:41:06 - User profile successfully created for  adwivedi
+2018-06-14 11:41:06 - User logged in with ID adwivedi
+2018-06-14 11:41:06 - Getting list of users whom adwivedi can delegate to
+2018-06-14 11:41:06 - Delegate list prepared for adwivedi
+2018-06-14 11:41:06 - Getting list of users who have delegated to adwivedi
+2018-06-14 11:41:06 - There is no user who has delegated to adwivedi
+2018-06-14 11:41:10 - Getting Active billCycle...
+2018-06-14 11:41:10 - Getting group approvals for billCycle 022018
+2018-06-14 11:41:15 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-14 11:41:16 - Getting data for ResonsetDataEnvelope...
+2018-06-14 11:41:16 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-14 11:41:16 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-14 11:41:16 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-14 11:41:16 - Checking lock for billCycle 012017 towerID 0
+2018-06-14 11:41:16 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-14 11:41:16 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-14 11:41:16 - ResonsetDataEnvelope ready...
+2018-06-14 11:53:56 - Reading Customized ILC Data...

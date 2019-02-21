@@ -9,7 +9,7 @@ $(document).ready(function(){
 	$('#reportBulkUpdate').click(function(e){
 		tower = $('#currentTower').val();
 		
-		if(hasApprovedBillCycle == 1 || (tower == 0)){
+		if(!editMode[tower]){
 			e.stopPropagation();
 			e.preventDefault();
 			return;

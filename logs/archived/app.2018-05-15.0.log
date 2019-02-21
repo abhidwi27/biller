@@ -1,0 +1,518 @@
+2018-05-15 19:54:05 - Datasource properties set for Prod environment...
+2018-05-15 19:54:06 - Email properties set for biller application...
+2018-05-15 19:54:06 - Authetication interceptor linked for biller application...
+2018-05-15 19:54:07 - JDBCTemplate linked with datasource...
+2018-05-15 19:54:08 - Datasource properties set for Prod environment...
+2018-05-15 19:54:08 - Email properties set for biller application...
+2018-05-15 19:54:08 - JDBCTemplate linked with datasource...
+2018-05-15 19:54:08 - Authetication interceptor linked for biller application...
+2018-05-15 19:54:31 - Creating user profile for adwivedi
+2018-05-15 19:54:31 - User profile successfully created for  adwivedi
+2018-05-15 19:54:31 - User logged in with ID adwivedi
+2018-05-15 19:54:32 - Getting list of users whom adwivedi can delegate to
+2018-05-15 19:54:32 - Delegate list prepared for adwivedi
+2018-05-15 19:54:32 - Getting list of users who have delegated to adwivedi
+2018-05-15 19:54:32 - There is no user who has delegated to adwivedi
+2018-05-15 19:54:38 - Getting Active billCycle...
+2018-05-15 19:54:40 - Getting group approvals for billCycle 022018
+2018-05-15 19:54:51 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 19:54:51 - Getting data for ResonsetDataEnvelope...
+2018-05-15 19:54:51 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 19:54:52 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 19:54:52 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 19:54:52 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 19:54:53 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 19:54:53 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 19:54:53 - ResonsetDataEnvelope ready...
+2018-05-15 19:55:22 - Creating user profile for adwivedi
+2018-05-15 19:55:22 - User profile successfully created for  adwivedi
+2018-05-15 19:55:22 - User logged in with ID adwivedi
+2018-05-15 19:55:24 - Getting list of users whom adwivedi can delegate to
+2018-05-15 19:55:24 - Delegate list prepared for adwivedi
+2018-05-15 19:55:24 - Getting list of users who have delegated to adwivedi
+2018-05-15 19:55:24 - There is no user who has delegated to adwivedi
+2018-05-15 19:55:30 - Getting Active billCycle...
+2018-05-15 19:55:31 - Getting group approvals for billCycle 022018
+2018-05-15 19:57:07 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 19:57:08 - Getting data for ResonsetDataEnvelope...
+2018-05-15 19:57:08 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 19:57:08 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 19:57:09 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 19:57:09 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 19:57:09 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 19:57:09 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 19:57:09 - ResonsetDataEnvelope ready...
+2018-05-15 19:58:43 - Creating user profile for adwivedi
+2018-05-15 19:58:43 - User profile successfully created for  adwivedi
+2018-05-15 19:58:43 - User logged in with ID adwivedi
+2018-05-15 19:58:44 - Getting list of users whom adwivedi can delegate to
+2018-05-15 19:58:44 - Delegate list prepared for adwivedi
+2018-05-15 19:58:44 - Getting list of users who have delegated to adwivedi
+2018-05-15 19:58:44 - There is no user who has delegated to adwivedi
+2018-05-15 19:58:55 - Getting Active billCycle...
+2018-05-15 19:58:56 - Getting group approvals for billCycle 022018
+2018-05-15 19:59:47 - Creating user profile for adwivedi
+2018-05-15 19:59:48 - User profile successfully created for  adwivedi
+2018-05-15 19:59:48 - User logged in with ID adwivedi
+2018-05-15 19:59:49 - Getting list of users whom adwivedi can delegate to
+2018-05-15 19:59:49 - Delegate list prepared for adwivedi
+2018-05-15 19:59:49 - Getting list of users who have delegated to adwivedi
+2018-05-15 19:59:49 - There is no user who has delegated to adwivedi
+2018-05-15 19:59:55 - Getting Active billCycle...
+2018-05-15 19:59:56 - Getting group approvals for billCycle 022018
+2018-05-15 20:00:23 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 20:00:23 - Getting data for ResonsetDataEnvelope...
+2018-05-15 20:00:23 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 20:00:24 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 20:00:24 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 20:00:24 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 20:00:24 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 20:00:24 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 20:00:25 - ResonsetDataEnvelope ready...
+2018-05-15 20:20:05 - Creating user profile for adwivedi
+2018-05-15 20:20:05 - User profile successfully created for  adwivedi
+2018-05-15 20:20:05 - User logged in with ID adwivedi
+2018-05-15 20:20:06 - Getting list of users whom adwivedi can delegate to
+2018-05-15 20:20:07 - Delegate list prepared for adwivedi
+2018-05-15 20:20:07 - Getting list of users who have delegated to adwivedi
+2018-05-15 20:20:07 - There is no user who has delegated to adwivedi
+2018-05-15 20:20:09 - Getting Active billCycle...
+2018-05-15 20:20:11 - Getting group approvals for billCycle 022018
+2018-05-15 20:20:13 - Creating user profile for adwivedi
+2018-05-15 20:20:13 - User profile successfully created for  adwivedi
+2018-05-15 20:20:13 - User logged in with ID adwivedi
+2018-05-15 20:20:14 - Getting list of users whom adwivedi can delegate to
+2018-05-15 20:20:14 - Delegate list prepared for adwivedi
+2018-05-15 20:20:14 - Getting list of users who have delegated to adwivedi
+2018-05-15 20:20:14 - There is no user who has delegated to adwivedi
+2018-05-15 20:20:17 - Getting Active billCycle...
+2018-05-15 20:20:19 - Getting group approvals for billCycle 022018
+2018-05-15 20:20:24 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 20:20:24 - Getting data for ResonsetDataEnvelope...
+2018-05-15 20:20:25 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 20:20:25 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 20:20:25 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 20:20:25 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 20:20:26 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 20:20:26 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 20:20:26 - ResonsetDataEnvelope ready...
+2018-05-15 20:26:08 - Creating user profile for adwivedi
+2018-05-15 20:26:09 - User profile successfully created for  adwivedi
+2018-05-15 20:26:09 - User logged in with ID adwivedi
+2018-05-15 20:26:10 - Getting list of users whom adwivedi can delegate to
+2018-05-15 20:26:10 - Delegate list prepared for adwivedi
+2018-05-15 20:26:10 - Getting list of users who have delegated to adwivedi
+2018-05-15 20:26:10 - There is no user who has delegated to adwivedi
+2018-05-15 20:26:14 - Getting Active billCycle...
+2018-05-15 20:26:15 - Getting group approvals for billCycle 022018
+2018-05-15 20:26:23 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 20:26:23 - Getting data for ResonsetDataEnvelope...
+2018-05-15 20:26:23 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 20:26:23 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 20:26:24 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 20:26:24 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 20:26:24 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 20:26:24 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 20:26:25 - ResonsetDataEnvelope ready...
+2018-05-15 20:26:33 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 20:26:34 - Getting data for ResonsetDataEnvelope...
+2018-05-15 20:26:34 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 20:26:35 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 20:26:36 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 20:26:37 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 20:26:37 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 20:26:37 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 20:26:37 - ResonsetDataEnvelope ready...
+2018-05-15 20:28:06 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 20:28:27 - Exception occured while executing read method
+org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.ibm.db2.jcc.am.DisconnectNonTransientConnectionException: [jcc][t4][2043][11550][4.14.113] Exception java.net.ConnectException: Error opening socket to server inmbzp5180.in.dst.ibm.com/9.109.123.180 on port 50,000 with message: Connection timed out: connect. ERRORCODE=-4499, SQLSTATE=08001
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:619) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:684) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:716) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:726) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:776) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at com.app.biller.dao.ILCDataDaoImpl.readILCData(ILCDataDaoImpl.java:161) ~[classes/:na]
+	at com.app.biller.services.DataValidationServiceImpl.readILCData(DataValidationServiceImpl.java:30) ~[classes/:na]
+	at com.app.biller.services.DataValidationServiceImpl.readILCData(DataValidationServiceImpl.java:1) ~[classes/:na]
+	at com.app.biller.controller.DataController.readILCorSLAData(DataController.java:80) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_144]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [servlet-api.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:475) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [catalina.jar:9.0.0.M26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:498) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:796) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1374) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M26]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_144]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M26]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_144]
+Caused by: com.ibm.db2.jcc.am.DisconnectNonTransientConnectionException: [jcc][t4][2043][11550][4.14.113] Exception java.net.ConnectException: Error opening socket to server inmbzp5180.in.dst.ibm.com/9.109.123.180 on port 50,000 with message: Connection timed out: connect. ERRORCODE=-4499, SQLSTATE=08001
+	at com.ibm.db2.jcc.am.ed.a(ed.java:320) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.am.ed.a(ed.java:338) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.t4.vb.a(vb.java:434) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.t4.vb.<init>(vb.java:93) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.t4.a.b(a.java:354) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.t4.b.newAgent_(b.java:2030) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.am.Connection.initConnection(Connection.java:731) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.am.Connection.<init>(Connection.java:680) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.t4.b.<init>(b.java:334) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.DB2SimpleDataSource.getConnection(DB2SimpleDataSource.java:232) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.DB2SimpleDataSource.getConnection(DB2SimpleDataSource.java:198) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.DB2Driver.connect(DB2Driver.java:475) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.DB2Driver.connect(DB2Driver.java:116) ~[db2jcc4-10.1.jar:na]
+	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_144]
+	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_144]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:196) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:159) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 48 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_144]
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_144]
+	at com.ibm.db2.jcc.t4.v.run(v.java:49) ~[db2jcc4-10.1.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.8.0_144]
+	at com.ibm.db2.jcc.t4.vb.a(vb.java:420) ~[db2jcc4-10.1.jar:na]
+	... 66 common frames omitted
+2018-05-15 20:28:27 - Exception handler executed
+2018-05-15 20:32:43 - Datasource properties set for Prod environment...
+2018-05-15 20:32:43 - Email properties set for biller application...
+2018-05-15 20:32:43 - Authetication interceptor linked for biller application...
+2018-05-15 20:32:44 - JDBCTemplate linked with datasource...
+2018-05-15 20:32:45 - Datasource properties set for Prod environment...
+2018-05-15 20:32:45 - Email properties set for biller application...
+2018-05-15 20:32:45 - JDBCTemplate linked with datasource...
+2018-05-15 20:32:45 - Authetication interceptor linked for biller application...
+2018-05-15 20:32:46 - Creating user profile for adwivedi
+2018-05-15 20:32:46 - Exception in login controller: 
+org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is java.sql.SQLException: No suitable driver found for jdbc:db2://inmbzp5180.in.dst.ibm.com:50000/BILLER
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:619) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:684) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:716) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:726) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:794) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at com.app.biller.dao.UserDaoImpl.createUserProfile(UserDaoImpl.java:88) ~[classes/:na]
+	at com.app.biller.services.LoginServiceImpl.validateCredentials(LoginServiceImpl.java:23) ~[classes/:na]
+	at com.app.biller.controller.LoginController.processLogin(LoginController.java:63) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_144]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:475) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [catalina.jar:9.0.0.M26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:498) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:796) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1374) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M26]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_144]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M26]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_144]
+Caused by: java.sql.SQLException: No suitable driver found for jdbc:db2://inmbzp5180.in.dst.ibm.com:50000/BILLER
+	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_144]
+	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_144]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:196) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:159) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 47 common frames omitted
+2018-05-15 20:32:57 - Datasource properties set for Prod environment...
+2018-05-15 20:32:58 - Email properties set for biller application...
+2018-05-15 20:32:58 - Authetication interceptor linked for biller application...
+2018-05-15 20:32:59 - JDBCTemplate linked with datasource...
+2018-05-15 20:33:00 - Datasource properties set for Prod environment...
+2018-05-15 20:33:00 - Email properties set for biller application...
+2018-05-15 20:33:00 - JDBCTemplate linked with datasource...
+2018-05-15 20:33:00 - Authetication interceptor linked for biller application...
+2018-05-15 20:33:14 - Creating user profile for adwivedi
+2018-05-15 20:33:26 - User profile successfully created for  adwivedi
+2018-05-15 20:33:26 - User logged in with ID adwivedi
+2018-05-15 20:36:53 - Exception in login controller: 
+org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.ibm.db2.jcc.am.DisconnectNonTransientConnectionException: [jcc][t4][2043][11550][4.14.113] Exception java.net.ConnectException: Error opening socket to server inmbzp5180.in.dst.ibm.com/9.109.123.180 on port 50,000 with message: Connection timed out: connect. ERRORCODE=-4499, SQLSTATE=08001
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:619) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:684) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:716) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:726) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:776) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at com.app.biller.dao.UserDaoImpl.getPassword(UserDaoImpl.java:69) ~[classes/:na]
+	at com.app.biller.services.LoginServiceImpl.validateCredentials(LoginServiceImpl.java:22) ~[classes/:na]
+	at com.app.biller.controller.LoginController.processLogin(LoginController.java:63) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_144]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:475) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [catalina.jar:9.0.0.M26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:498) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:796) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1374) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M26]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_144]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M26]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_144]
+Caused by: com.ibm.db2.jcc.am.DisconnectNonTransientConnectionException: [jcc][t4][2043][11550][4.14.113] Exception java.net.ConnectException: Error opening socket to server inmbzp5180.in.dst.ibm.com/9.109.123.180 on port 50,000 with message: Connection timed out: connect. ERRORCODE=-4499, SQLSTATE=08001
+	at com.ibm.db2.jcc.am.ed.a(ed.java:320) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.am.ed.a(ed.java:338) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.t4.vb.a(vb.java:434) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.t4.vb.<init>(vb.java:93) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.t4.a.b(a.java:354) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.t4.b.newAgent_(b.java:2030) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.am.Connection.initConnection(Connection.java:731) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.am.Connection.<init>(Connection.java:680) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.t4.b.<init>(b.java:334) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.DB2SimpleDataSource.getConnection(DB2SimpleDataSource.java:232) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.DB2SimpleDataSource.getConnection(DB2SimpleDataSource.java:198) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.DB2Driver.connect(DB2Driver.java:475) ~[db2jcc4-10.1.jar:na]
+	at com.ibm.db2.jcc.DB2Driver.connect(DB2Driver.java:116) ~[db2jcc4-10.1.jar:na]
+	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_144]
+	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_144]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:196) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:159) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 47 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_144]
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_144]
+	at com.ibm.db2.jcc.t4.v.run(v.java:49) ~[db2jcc4-10.1.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.8.0_144]
+	at com.ibm.db2.jcc.t4.vb.a(vb.java:420) ~[db2jcc4-10.1.jar:na]
+	... 65 common frames omitted
+2018-05-15 20:37:16 - Getting list of users whom adwivedi can delegate to
+2018-05-15 20:37:20 - Delegate list prepared for adwivedi
+2018-05-15 20:37:20 - Getting list of users who have delegated to adwivedi
+2018-05-15 20:37:21 - There is no user who has delegated to adwivedi
+2018-05-15 20:43:08 - Creating user profile for adwivedi
+2018-05-15 20:43:18 - User profile successfully created for  adwivedi
+2018-05-15 20:43:18 - User logged in with ID adwivedi
+2018-05-15 20:44:41 - Getting list of users whom adwivedi can delegate to
+2018-05-15 20:45:14 - Delegate list prepared for adwivedi
+2018-05-15 20:45:14 - Getting list of users who have delegated to adwivedi
+2018-05-15 20:45:24 - There is no user who has delegated to adwivedi
+2018-05-15 20:45:32 - Getting Active billCycle...
+2018-05-15 20:46:18 - Getting group approvals for billCycle 022018
+2018-05-15 21:00:05 - Creating user profile for adwivedi
+2018-05-15 21:00:05 - User profile successfully created for  adwivedi
+2018-05-15 21:00:05 - User logged in with ID adwivedi
+2018-05-15 21:00:06 - Getting list of users whom adwivedi can delegate to
+2018-05-15 21:00:07 - Delegate list prepared for adwivedi
+2018-05-15 21:00:07 - Getting list of users who have delegated to adwivedi
+2018-05-15 21:00:07 - There is no user who has delegated to adwivedi
+2018-05-15 21:00:09 - Getting Active billCycle...
+2018-05-15 21:00:11 - Getting group approvals for billCycle 022018
+2018-05-15 21:01:12 - Creating user profile for adwivedi
+2018-05-15 21:01:12 - User profile successfully created for  adwivedi
+2018-05-15 21:01:12 - User logged in with ID adwivedi
+2018-05-15 21:01:13 - Getting list of users whom adwivedi can delegate to
+2018-05-15 21:01:13 - Delegate list prepared for adwivedi
+2018-05-15 21:01:13 - Getting list of users who have delegated to adwivedi
+2018-05-15 21:01:13 - There is no user who has delegated to adwivedi
+2018-05-15 21:01:19 - Getting Active billCycle...
+2018-05-15 21:01:20 - Getting group approvals for billCycle 022018
+2018-05-15 21:02:02 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 21:02:02 - Getting data for ResonsetDataEnvelope...
+2018-05-15 21:02:03 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 21:02:03 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 21:02:03 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 21:02:04 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 21:02:04 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 21:02:04 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 21:02:04 - ResonsetDataEnvelope ready...
+2018-05-15 21:02:31 - Getting data for ResonsetDataEnvelope...
+2018-05-15 21:02:31 - Getting SLA employee list for billCycle 052025 and towerId 0
+2018-05-15 21:02:31 - Getting SLA WR list for billCycle 052025 and towerId 0
+2018-05-15 21:02:31 - Getting SLA weekend list for billCycle 052025 and towerId 0
+2018-05-15 21:02:32 - Checking lock for billCycle 052025 towerID 0
+2018-05-15 21:02:32 - No user found who had locked for billCycle 052025 towerID 0
+2018-05-15 21:02:32 - Checking prior approval by userID adwivedi for billCyle 052025
+2018-05-15 21:02:33 - ResonsetDataEnvelope ready...
+2018-05-15 21:03:08 - Creating user profile for adwivedi
+2018-05-15 21:03:08 - User profile successfully created for  adwivedi
+2018-05-15 21:03:08 - User logged in with ID adwivedi
+2018-05-15 21:03:10 - Getting list of users whom adwivedi can delegate to
+2018-05-15 21:03:10 - Delegate list prepared for adwivedi
+2018-05-15 21:03:10 - Getting list of users who have delegated to adwivedi
+2018-05-15 21:03:10 - There is no user who has delegated to adwivedi
+2018-05-15 21:03:15 - Getting Active billCycle...
+2018-05-15 21:03:16 - Getting group approvals for billCycle 022018
+2018-05-15 21:03:22 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 21:03:23 - Getting data for ResonsetDataEnvelope...
+2018-05-15 21:03:23 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 21:03:23 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 21:03:24 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 21:03:24 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 21:03:24 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 21:03:24 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 21:03:27 - ResonsetDataEnvelope ready...
+2018-05-15 21:03:42 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 21:03:43 - Getting data for ResonsetDataEnvelope...
+2018-05-15 21:03:43 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 21:03:43 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 21:03:44 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 21:03:44 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 21:03:44 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 21:03:44 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 21:03:44 - ResonsetDataEnvelope ready...
+2018-05-15 21:04:16 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 21:04:17 - Getting data for ResonsetDataEnvelope...
+2018-05-15 21:04:17 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 21:04:17 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 21:04:18 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 21:04:18 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 21:04:18 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 21:04:18 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 21:04:18 - ResonsetDataEnvelope ready...
+2018-05-15 21:05:16 - Creating user profile for adwivedi
+2018-05-15 21:05:16 - User profile successfully created for  adwivedi
+2018-05-15 21:05:16 - User logged in with ID adwivedi
+2018-05-15 21:05:17 - Getting list of users whom adwivedi can delegate to
+2018-05-15 21:05:18 - Delegate list prepared for adwivedi
+2018-05-15 21:05:18 - Getting list of users who have delegated to adwivedi
+2018-05-15 21:05:18 - There is no user who has delegated to adwivedi
+2018-05-15 21:05:22 - Getting Active billCycle...
+2018-05-15 21:05:23 - Getting group approvals for billCycle 022018
+2018-05-15 21:05:50 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 21:05:50 - Getting data for ResonsetDataEnvelope...
+2018-05-15 21:05:50 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 21:05:51 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 21:05:51 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 21:05:52 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 21:05:52 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 21:05:52 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 21:05:52 - ResonsetDataEnvelope ready...
+2018-05-15 21:07:00 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 21:07:00 - Getting data for ResonsetDataEnvelope...
+2018-05-15 21:07:00 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 21:07:01 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 21:07:01 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 21:07:01 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 21:07:02 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 21:07:02 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 21:07:02 - ResonsetDataEnvelope ready...
+2018-05-15 21:08:59 - Creating user profile for adwivedi
+2018-05-15 21:09:00 - User profile successfully created for  adwivedi
+2018-05-15 21:09:00 - User logged in with ID adwivedi
+2018-05-15 21:09:01 - Getting list of users whom adwivedi can delegate to
+2018-05-15 21:09:01 - Delegate list prepared for adwivedi
+2018-05-15 21:09:01 - Getting list of users who have delegated to adwivedi
+2018-05-15 21:09:01 - There is no user who has delegated to adwivedi
+2018-05-15 21:09:07 - Getting Active billCycle...
+2018-05-15 21:09:09 - Getting group approvals for billCycle 022018
+2018-05-15 21:09:20 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 21:09:20 - Getting data for ResonsetDataEnvelope...
+2018-05-15 21:09:20 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 21:09:21 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 21:09:21 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 21:09:22 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 21:09:22 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 21:09:22 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 21:09:23 - ResonsetDataEnvelope ready...
+2018-05-15 21:10:04 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-15 21:10:04 - Getting data for ResonsetDataEnvelope...
+2018-05-15 21:10:04 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-15 21:10:05 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-15 21:10:06 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-15 21:10:06 - Checking lock for billCycle 022019 towerID 0
+2018-05-15 21:10:06 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-15 21:10:06 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-15 21:10:07 - ResonsetDataEnvelope ready...

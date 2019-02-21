@@ -1,0 +1,1440 @@
+2018-05-16 12:08:48 - Datasource properties set for Dev environment...
+2018-05-16 12:08:49 - Email properties set for biller application...
+2018-05-16 12:08:49 - Authetication interceptor linked for biller application...
+2018-05-16 12:08:50 - JDBCTemplate linked with datasource...
+2018-05-16 12:08:51 - Datasource properties set for Dev environment...
+2018-05-16 12:08:51 - Email properties set for biller application...
+2018-05-16 12:08:51 - JDBCTemplate linked with datasource...
+2018-05-16 12:08:51 - Authetication interceptor linked for biller application...
+2018-05-16 12:13:12 - Creating user profile for adwivedi
+2018-05-16 12:13:12 - User profile successfully created for  adwivedi
+2018-05-16 12:13:12 - User logged in with ID adwivedi
+2018-05-16 12:13:12 - Getting list of users whom adwivedi can delegate to
+2018-05-16 12:13:12 - Delegate list prepared for adwivedi
+2018-05-16 12:13:12 - Getting list of users who have delegated to adwivedi
+2018-05-16 12:13:12 - List prepared of users who has delegated to adwivedi
+2018-05-16 12:13:15 - Getting Active billCycle...
+2018-05-16 12:13:16 - Getting group approvals for billCycle 052025
+2018-05-16 12:13:22 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-16 12:13:22 - Getting data for ResonsetDataEnvelope...
+2018-05-16 12:13:23 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-16 12:13:23 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-16 12:13:23 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-16 12:13:23 - Checking lock for billCycle 022019 towerID 0
+2018-05-16 12:13:23 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-16 12:13:23 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-16 12:13:23 - ResonsetDataEnvelope ready...
+2018-05-16 12:31:03 - Creating user profile for vveera
+2018-05-16 12:31:03 - User profile successfully created for  vveera
+2018-05-16 12:31:03 - User logged in with ID vveera
+2018-05-16 12:31:05 - Getting Active billCycle...
+2018-05-16 12:31:05 - Getting group approvals for billCycle 052025
+2018-05-16 12:33:34 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-16 12:33:34 - Getting data for ResonsetDataEnvelope...
+2018-05-16 12:33:34 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-16 12:33:34 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-16 12:33:34 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-16 12:33:34 - Checking lock for billCycle 022019 towerID 0
+2018-05-16 12:33:34 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-16 12:33:34 - Checking prior approval by userID vveera for billCyle 022019
+2018-05-16 12:33:34 - ResonsetDataEnvelope ready...
+2018-05-16 13:41:10 - Datasource properties set for Dev environment...
+2018-05-16 13:41:10 - Email properties set for biller application...
+2018-05-16 13:41:10 - Authetication interceptor linked for biller application...
+2018-05-16 13:41:11 - JDBCTemplate linked with datasource...
+2018-05-16 13:41:12 - Datasource properties set for Dev environment...
+2018-05-16 13:41:12 - Email properties set for biller application...
+2018-05-16 13:41:12 - JDBCTemplate linked with datasource...
+2018-05-16 13:41:12 - Authetication interceptor linked for biller application...
+2018-05-16 15:08:29 - Creating user profile for adwivedi
+2018-05-16 15:08:29 - User profile successfully created for  adwivedi
+2018-05-16 15:08:29 - User logged in with ID adwivedi
+2018-05-16 15:08:29 - Getting list of users whom adwivedi can delegate to
+2018-05-16 15:08:29 - Delegate list prepared for adwivedi
+2018-05-16 15:08:29 - Getting list of users who have delegated to adwivedi
+2018-05-16 15:08:29 - List prepared of users who has delegated to adwivedi
+2018-05-16 15:08:33 - Getting Active billCycle...
+2018-05-16 15:08:33 - Getting group approvals for billCycle 052025
+2018-05-16 15:08:59 - Creating user profile for adwivedi
+2018-05-16 15:08:59 - User profile successfully created for  adwivedi
+2018-05-16 15:08:59 - User logged in with ID adwivedi
+2018-05-16 15:08:59 - Getting list of users whom adwivedi can delegate to
+2018-05-16 15:08:59 - Delegate list prepared for adwivedi
+2018-05-16 15:08:59 - Getting list of users who have delegated to adwivedi
+2018-05-16 15:08:59 - List prepared of users who has delegated to adwivedi
+2018-05-16 15:09:02 - Getting Active billCycle...
+2018-05-16 15:09:02 - Getting group approvals for billCycle 052025
+2018-05-16 15:09:07 - Reading ILC Data for billCycle 022019 and towerId 0 and account Id 1
+2018-05-16 15:09:07 - Getting data for ResonsetDataEnvelope...
+2018-05-16 15:09:07 - Getting ILC employee list for billCycle 022019 and towerId 0
+2018-05-16 15:09:07 - Getting ILC Wekeend list for billCycle 022019 and towerId 0
+2018-05-16 15:09:07 - Getting ILC Remakrs list for billCycle 022019 and towerId 0
+2018-05-16 15:09:07 - Checking lock for billCycle 022019 towerID 0
+2018-05-16 15:09:07 - No user found who had locked for billCycle 022019 towerID 0
+2018-05-16 15:09:07 - Checking prior approval by userID adwivedi for billCyle 022019
+2018-05-16 15:09:07 - ResonsetDataEnvelope ready...
+2018-05-16 15:09:22 - Getting data for ResonsetDataEnvelope...
+2018-05-16 15:09:22 - Getting SLA employee list for billCycle 052025 and towerId 0
+2018-05-16 15:09:22 - Getting SLA WR list for billCycle 052025 and towerId 0
+2018-05-16 15:09:22 - Getting SLA weekend list for billCycle 052025 and towerId 0
+2018-05-16 15:09:22 - Checking lock for billCycle 052025 towerID 0
+2018-05-16 15:09:22 - No user found who had locked for billCycle 052025 towerID 0
+2018-05-16 15:09:22 - Checking prior approval by userID adwivedi for billCyle 052025
+2018-05-16 15:09:22 - ResonsetDataEnvelope ready...
+2018-05-16 15:25:23 - Getting data for ResonsetDataEnvelope...
+2018-05-16 15:25:23 - Getting SLA employee list for billCycle 122017 and towerId 0
+2018-05-16 15:25:23 - Getting SLA WR list for billCycle 122017 and towerId 0
+2018-05-16 15:25:23 - Getting SLA weekend list for billCycle 122017 and towerId 0
+2018-05-16 15:25:23 - Checking lock for billCycle 122017 towerID 0
+2018-05-16 15:25:23 - No user found who had locked for billCycle 122017 towerID 0
+2018-05-16 15:25:23 - Checking prior approval by userID adwivedi for billCyle 122017
+2018-05-16 15:25:23 - ResonsetDataEnvelope ready...
+2018-05-16 18:17:49 - Creating user profile for adwivedi
+2018-05-16 18:17:49 - User profile successfully created for  adwivedi
+2018-05-16 18:17:49 - User logged in with ID adwivedi
+2018-05-16 18:17:50 - Getting list of users whom adwivedi can delegate to
+2018-05-16 18:17:50 - Delegate list prepared for adwivedi
+2018-05-16 18:17:50 - Getting list of users who have delegated to adwivedi
+2018-05-16 18:17:50 - List prepared of users who has delegated to adwivedi
+2018-05-16 18:17:53 - Getting Active billCycle...
+2018-05-16 18:17:53 - Getting group approvals for billCycle 052025
+2018-05-16 18:25:25 - Reading ILC Data for billCycle 072022 and towerId 0 and account Id 1
+2018-05-16 18:25:25 - Getting data for ResonsetDataEnvelope...
+2018-05-16 18:25:25 - Getting ILC employee list for billCycle 072022 and towerId 0
+2018-05-16 18:25:25 - Getting ILC Wekeend list for billCycle 072022 and towerId 0
+2018-05-16 18:25:25 - Getting ILC Remakrs list for billCycle 072022 and towerId 0
+2018-05-16 18:25:25 - Checking lock for billCycle 072022 towerID 0
+2018-05-16 18:25:25 - No user found who had locked for billCycle 072022 towerID 0
+2018-05-16 18:25:25 - Checking prior approval by userID adwivedi for billCyle 072022
+2018-05-16 18:25:25 - ResonsetDataEnvelope ready...
+2018-05-16 18:26:11 - Getting data for ResonsetDataEnvelope...
+2018-05-16 18:26:11 - Getting SLA employee list for billCycle 062020 and towerId 0
+2018-05-16 18:26:11 - Getting SLA WR list for billCycle 062020 and towerId 0
+2018-05-16 18:26:11 - Getting SLA weekend list for billCycle 062020 and towerId 0
+2018-05-16 18:26:11 - Checking lock for billCycle 062020 towerID 0
+2018-05-16 18:26:11 - No user found who had locked for billCycle 062020 towerID 0
+2018-05-16 18:26:11 - Checking prior approval by userID adwivedi for billCyle 062020
+2018-05-16 18:26:11 - ResonsetDataEnvelope ready...
+2018-05-16 18:32:50 - Datasource properties set for Prod environment...
+2018-05-16 18:32:50 - Email properties set for biller application...
+2018-05-16 18:32:51 - Authetication interceptor linked for biller application...
+2018-05-16 18:32:52 - JDBCTemplate linked with datasource...
+2018-05-16 18:32:52 - Datasource properties set for Prod environment...
+2018-05-16 18:32:52 - Email properties set for biller application...
+2018-05-16 18:32:53 - JDBCTemplate linked with datasource...
+2018-05-16 18:32:53 - Authetication interceptor linked for biller application...
+2018-05-16 19:53:27 - Datasource properties set for Prod environment...
+2018-05-16 19:53:27 - Email properties set for biller application...
+2018-05-16 19:53:27 - Authetication interceptor linked for biller application...
+2018-05-16 19:53:28 - JDBCTemplate linked with datasource...
+2018-05-16 19:53:29 - Datasource properties set for Prod environment...
+2018-05-16 19:53:29 - Email properties set for biller application...
+2018-05-16 19:53:29 - JDBCTemplate linked with datasource...
+2018-05-16 19:53:29 - Authetication interceptor linked for biller application...
+2018-05-16 19:56:14 - Datasource properties set for Prod environment...
+2018-05-16 19:56:15 - Email properties set for biller application...
+2018-05-16 19:56:15 - Authetication interceptor linked for biller application...
+2018-05-16 19:56:17 - JDBCTemplate linked with datasource...
+2018-05-16 19:56:17 - Datasource properties set for Prod environment...
+2018-05-16 19:56:17 - Email properties set for biller application...
+2018-05-16 19:56:17 - JDBCTemplate linked with datasource...
+2018-05-16 19:56:17 - Authetication interceptor linked for biller application...
+2018-05-16 19:58:16 - Creating user profile for adwivedi
+2018-05-16 19:58:17 - User profile successfully created for  adwivedi
+2018-05-16 19:58:17 - User logged in with ID adwivedi
+2018-05-16 19:58:18 - Getting list of users whom adwivedi can delegate to
+2018-05-16 19:58:18 - Delegate list prepared for adwivedi
+2018-05-16 19:58:18 - Getting list of users who have delegated to adwivedi
+2018-05-16 19:58:18 - There is no user who has delegated to adwivedi
+2018-05-16 19:58:22 - Getting Active billCycle...
+2018-05-16 19:58:24 - Getting group approvals for billCycle 022018
+2018-05-16 20:11:01 - Datasource properties set for Prod environment...
+2018-05-16 20:11:01 - Email properties set for biller application...
+2018-05-16 20:11:01 - Authetication interceptor linked for biller application...
+2018-05-16 20:11:03 - JDBCTemplate linked with datasource...
+2018-05-16 20:11:03 - Datasource properties set for Prod environment...
+2018-05-16 20:11:03 - Email properties set for biller application...
+2018-05-16 20:11:03 - JDBCTemplate linked with datasource...
+2018-05-16 20:11:03 - Authetication interceptor linked for biller application...
+2018-05-16 20:11:05 - Creating user profile for adwivedi
+2018-05-16 20:11:05 - User profile successfully created for  adwivedi
+2018-05-16 20:11:05 - User logged in with ID adwivedi
+2018-05-16 20:11:06 - Getting list of users whom adwivedi can delegate to
+2018-05-16 20:11:07 - Delegate list prepared for adwivedi
+2018-05-16 20:11:07 - Getting list of users who have delegated to adwivedi
+2018-05-16 20:11:07 - There is no user who has delegated to adwivedi
+2018-05-16 20:11:12 - Creating user profile for adwivedi
+2018-05-16 20:11:12 - User profile successfully created for  adwivedi
+2018-05-16 20:11:12 - User logged in with ID adwivedi
+2018-05-16 20:11:13 - Getting list of users whom adwivedi can delegate to
+2018-05-16 20:11:13 - Delegate list prepared for adwivedi
+2018-05-16 20:11:13 - Getting list of users who have delegated to adwivedi
+2018-05-16 20:11:13 - There is no user who has delegated to adwivedi
+2018-05-16 20:11:18 - Getting Active billCycle...
+2018-05-16 20:11:20 - Getting group approvals for billCycle 022018
+2018-05-16 20:15:34 - Datasource properties set for Prod environment...
+2018-05-16 20:15:35 - Email properties set for biller application...
+2018-05-16 20:15:35 - Authetication interceptor linked for biller application...
+2018-05-16 20:15:36 - JDBCTemplate linked with datasource...
+2018-05-16 20:15:36 - Datasource properties set for Prod environment...
+2018-05-16 20:15:36 - Email properties set for biller application...
+2018-05-16 20:15:36 - JDBCTemplate linked with datasource...
+2018-05-16 20:15:37 - Authetication interceptor linked for biller application...
+2018-05-16 20:15:44 - Creating user profile for adwivedi
+2018-05-16 20:15:44 - User profile successfully created for  adwivedi
+2018-05-16 20:15:44 - User logged in with ID adwivedi
+2018-05-16 20:15:45 - Getting list of users whom adwivedi can delegate to
+2018-05-16 20:15:46 - Delegate list prepared for adwivedi
+2018-05-16 20:15:46 - Getting list of users who have delegated to adwivedi
+2018-05-16 20:15:46 - There is no user who has delegated to adwivedi
+2018-05-16 20:15:51 - Getting Active billCycle...
+2018-05-16 20:15:52 - Getting group approvals for billCycle 022018
+2018-05-16 20:18:04 - Datasource properties set for Prod environment...
+2018-05-16 20:18:05 - Email properties set for biller application...
+2018-05-16 20:18:05 - Authetication interceptor linked for biller application...
+2018-05-16 20:18:06 - JDBCTemplate linked with datasource...
+2018-05-16 20:18:07 - Datasource properties set for Prod environment...
+2018-05-16 20:18:07 - Email properties set for biller application...
+2018-05-16 20:18:07 - JDBCTemplate linked with datasource...
+2018-05-16 20:18:07 - Authetication interceptor linked for biller application...
+2018-05-16 20:18:29 - Creating user profile for adwivedi
+2018-05-16 20:18:29 - User profile successfully created for  adwivedi
+2018-05-16 20:18:29 - User logged in with ID adwivedi
+2018-05-16 20:18:30 - Getting list of users whom adwivedi can delegate to
+2018-05-16 20:18:31 - Delegate list prepared for adwivedi
+2018-05-16 20:18:31 - Getting list of users who have delegated to adwivedi
+2018-05-16 20:18:31 - There is no user who has delegated to adwivedi
+2018-05-16 20:19:16 - Getting Active billCycle...
+2018-05-16 20:19:18 - Getting group approvals for billCycle 022018
+2018-05-16 20:20:35 - Creating user profile for adwivedi
+2018-05-16 20:20:36 - User profile successfully created for  adwivedi
+2018-05-16 20:20:36 - User logged in with ID adwivedi
+2018-05-16 20:20:37 - Getting list of users whom adwivedi can delegate to
+2018-05-16 20:20:37 - Delegate list prepared for adwivedi
+2018-05-16 20:20:37 - Getting list of users who have delegated to adwivedi
+2018-05-16 20:20:37 - There is no user who has delegated to adwivedi
+2018-05-16 20:20:49 - Getting Active billCycle...
+2018-05-16 20:20:56 - Getting group approvals for billCycle 022018
+2018-05-16 20:22:11 - Creating user profile for adwivedi
+2018-05-16 20:22:11 - User profile successfully created for  adwivedi
+2018-05-16 20:22:11 - User logged in with ID adwivedi
+2018-05-16 20:22:13 - Getting list of users whom adwivedi can delegate to
+2018-05-16 20:22:13 - Delegate list prepared for adwivedi
+2018-05-16 20:22:13 - Getting list of users who have delegated to adwivedi
+2018-05-16 20:22:14 - There is no user who has delegated to adwivedi
+2018-05-16 20:22:27 - Getting Active billCycle...
+2018-05-16 20:26:36 - Datasource properties set for Dev environment...
+2018-05-16 20:26:36 - Email properties set for biller application...
+2018-05-16 20:26:36 - Authetication interceptor linked for biller application...
+2018-05-16 20:26:37 - JDBCTemplate linked with datasource...
+2018-05-16 20:26:38 - Datasource properties set for Dev environment...
+2018-05-16 20:26:38 - Email properties set for biller application...
+2018-05-16 20:26:38 - JDBCTemplate linked with datasource...
+2018-05-16 20:26:38 - Authetication interceptor linked for biller application...
+2018-05-16 20:26:50 - Creating user profile for adwivedi
+2018-05-16 20:26:50 - User profile successfully created for  adwivedi
+2018-05-16 20:26:50 - User logged in with ID adwivedi
+2018-05-16 20:26:50 - Getting list of users whom adwivedi can delegate to
+2018-05-16 20:26:50 - Delegate list prepared for adwivedi
+2018-05-16 20:26:50 - Getting list of users who have delegated to adwivedi
+2018-05-16 20:26:50 - List prepared of users who has delegated to adwivedi
+2018-05-16 20:26:57 - Getting Active billCycle...
+2018-05-16 20:26:57 - No Active billCycle found...
+2018-05-16 20:29:38 - Creating user profile for adwivedi
+2018-05-16 20:29:38 - User profile successfully created for  adwivedi
+2018-05-16 20:29:38 - User logged in with ID adwivedi
+2018-05-16 20:29:38 - Getting list of users whom adwivedi can delegate to
+2018-05-16 20:29:38 - Delegate list prepared for adwivedi
+2018-05-16 20:29:38 - Getting list of users who have delegated to adwivedi
+2018-05-16 20:29:38 - List prepared of users who has delegated to adwivedi
+2018-05-16 20:29:46 - Getting Active billCycle...
+2018-05-16 20:29:46 - No Active billCycle found...
+2018-05-16 20:30:16 - Creating user profile for adwivedi
+2018-05-16 20:30:16 - User profile successfully created for  adwivedi
+2018-05-16 20:30:16 - User logged in with ID adwivedi
+2018-05-16 20:30:16 - Getting list of users whom adwivedi can delegate to
+2018-05-16 20:30:16 - Delegate list prepared for adwivedi
+2018-05-16 20:30:16 - Getting list of users who have delegated to adwivedi
+2018-05-16 20:30:16 - List prepared of users who has delegated to adwivedi
+2018-05-16 20:30:23 - Getting Active billCycle...
+2018-05-16 20:30:23 - No Active billCycle found...
+2018-05-16 20:32:38 - Creating user profile for adwivedi
+2018-05-16 20:32:38 - User profile successfully created for  adwivedi
+2018-05-16 20:32:38 - User logged in with ID adwivedi
+2018-05-16 20:32:38 - Getting list of users whom adwivedi can delegate to
+2018-05-16 20:32:38 - Delegate list prepared for adwivedi
+2018-05-16 20:32:38 - Getting list of users who have delegated to adwivedi
+2018-05-16 20:32:38 - List prepared of users who has delegated to adwivedi
+2018-05-16 20:32:46 - Getting Active billCycle...
+2018-05-16 20:32:46 - Getting group approvals for billCycle 042018
+2018-05-16 21:13:52 - Datasource properties set for Dev environment...
+2018-05-16 21:13:52 - Email properties set for biller application...
+2018-05-16 21:13:52 - Authetication interceptor linked for biller application...
+2018-05-16 21:13:53 - JDBCTemplate linked with datasource...
+2018-05-16 21:13:53 - Datasource properties set for Dev environment...
+2018-05-16 21:13:53 - Email properties set for biller application...
+2018-05-16 21:13:53 - JDBCTemplate linked with datasource...
+2018-05-16 21:13:54 - Authetication interceptor linked for biller application...
+2018-05-16 21:16:35 - Creating user profile for adwivedi
+2018-05-16 21:16:35 - User profile successfully created for  adwivedi
+2018-05-16 21:16:35 - User logged in with ID adwivedi
+2018-05-16 21:16:35 - Getting list of users whom adwivedi can delegate to
+2018-05-16 21:16:35 - Delegate list prepared for adwivedi
+2018-05-16 21:16:35 - Getting list of users who have delegated to adwivedi
+2018-05-16 21:16:35 - List prepared of users who has delegated to adwivedi
+2018-05-16 21:16:39 - Getting Active billCycle...
+2018-05-16 21:16:39 - Getting group approvals for billCycle 042018
+2018-05-16 21:16:42 - Creating user profile for adwivedi
+2018-05-16 21:16:43 - User profile successfully created for  adwivedi
+2018-05-16 21:16:43 - User logged in with ID adwivedi
+2018-05-16 21:16:43 - Getting list of users whom adwivedi can delegate to
+2018-05-16 21:16:43 - Delegate list prepared for adwivedi
+2018-05-16 21:16:43 - Getting list of users who have delegated to adwivedi
+2018-05-16 21:16:43 - List prepared of users who has delegated to adwivedi
+2018-05-16 21:16:46 - Getting Active billCycle...
+2018-05-16 21:16:46 - Getting group approvals for billCycle 042018
+2018-05-16 21:16:49 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-05-16 21:16:49 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:16:49 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-05-16 21:16:49 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-05-16 21:16:49 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-05-16 21:16:49 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 21:16:49 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 21:16:49 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:16:49 - ResonsetDataEnvelope ready...
+2018-05-16 21:16:54 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:16:54 - Getting SLA employee list for billCycle 012017 and towerId 0
+2018-05-16 21:16:55 - Getting SLA WR list for billCycle 012017 and towerId 0
+2018-05-16 21:16:55 - Getting SLA weekend list for billCycle 012017 and towerId 0
+2018-05-16 21:16:55 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 21:16:55 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 21:16:55 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:16:55 - ResonsetDataEnvelope ready...
+2018-05-16 21:17:15 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-05-16 21:17:15 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:17:15 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-05-16 21:17:15 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-05-16 21:17:15 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-05-16 21:17:15 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 21:17:16 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 21:17:16 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:17:16 - ResonsetDataEnvelope ready...
+2018-05-16 21:17:29 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-05-16 21:17:29 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:17:29 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-05-16 21:17:29 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-05-16 21:17:29 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-05-16 21:17:29 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 21:17:29 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 21:17:29 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:17:29 - ResonsetDataEnvelope ready...
+2018-05-16 21:18:51 - Creating user profile for adwivedi
+2018-05-16 21:18:51 - User profile successfully created for  adwivedi
+2018-05-16 21:18:51 - User logged in with ID adwivedi
+2018-05-16 21:18:51 - Getting list of users whom adwivedi can delegate to
+2018-05-16 21:18:51 - Delegate list prepared for adwivedi
+2018-05-16 21:18:51 - Getting list of users who have delegated to adwivedi
+2018-05-16 21:18:51 - List prepared of users who has delegated to adwivedi
+2018-05-16 21:18:55 - Getting Active billCycle...
+2018-05-16 21:18:55 - Getting group approvals for billCycle 042018
+2018-05-16 21:18:59 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-05-16 21:18:59 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:18:59 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-05-16 21:18:59 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-05-16 21:18:59 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-05-16 21:18:59 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 21:18:59 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 21:18:59 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:18:59 - ResonsetDataEnvelope ready...
+2018-05-16 21:19:07 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:19:07 - Getting SLA employee list for billCycle 012017 and towerId 0
+2018-05-16 21:19:07 - Getting SLA WR list for billCycle 012017 and towerId 0
+2018-05-16 21:19:07 - Getting SLA weekend list for billCycle 012017 and towerId 0
+2018-05-16 21:19:07 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 21:19:07 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 21:19:07 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:19:07 - ResonsetDataEnvelope ready...
+2018-05-16 21:20:18 - Creating user profile for adwivedi
+2018-05-16 21:20:18 - User profile successfully created for  adwivedi
+2018-05-16 21:20:18 - User logged in with ID adwivedi
+2018-05-16 21:20:18 - Getting list of users whom adwivedi can delegate to
+2018-05-16 21:20:18 - Delegate list prepared for adwivedi
+2018-05-16 21:20:18 - Getting list of users who have delegated to adwivedi
+2018-05-16 21:20:18 - List prepared of users who has delegated to adwivedi
+2018-05-16 21:20:21 - Getting Active billCycle...
+2018-05-16 21:20:21 - Getting group approvals for billCycle 042018
+2018-05-16 21:20:25 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:20:25 - Getting SLA employee list for billCycle 012017 and towerId 0
+2018-05-16 21:20:25 - Getting SLA WR list for billCycle 012017 and towerId 0
+2018-05-16 21:20:25 - Getting SLA weekend list for billCycle 012017 and towerId 0
+2018-05-16 21:20:25 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 21:20:25 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 21:20:25 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:20:25 - ResonsetDataEnvelope ready...
+2018-05-16 21:20:55 - Creating user profile for adwivedi
+2018-05-16 21:20:55 - User profile successfully created for  adwivedi
+2018-05-16 21:20:55 - User logged in with ID adwivedi
+2018-05-16 21:20:55 - Getting list of users whom adwivedi can delegate to
+2018-05-16 21:20:55 - Delegate list prepared for adwivedi
+2018-05-16 21:20:55 - Getting list of users who have delegated to adwivedi
+2018-05-16 21:20:55 - List prepared of users who has delegated to adwivedi
+2018-05-16 21:20:58 - Getting Active billCycle...
+2018-05-16 21:20:58 - Getting group approvals for billCycle 042018
+2018-05-16 21:21:01 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:21:01 - Getting SLA employee list for billCycle 012017 and towerId 0
+2018-05-16 21:21:01 - Getting SLA WR list for billCycle 012017 and towerId 0
+2018-05-16 21:21:01 - Getting SLA weekend list for billCycle 012017 and towerId 0
+2018-05-16 21:21:02 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 21:21:02 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 21:21:02 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:21:02 - ResonsetDataEnvelope ready...
+2018-05-16 21:21:14 - Creating user profile for adwivedi
+2018-05-16 21:21:14 - User profile successfully created for  adwivedi
+2018-05-16 21:21:14 - User logged in with ID adwivedi
+2018-05-16 21:21:14 - Getting list of users whom adwivedi can delegate to
+2018-05-16 21:21:14 - Delegate list prepared for adwivedi
+2018-05-16 21:21:14 - Getting list of users who have delegated to adwivedi
+2018-05-16 21:21:14 - List prepared of users who has delegated to adwivedi
+2018-05-16 21:21:18 - Getting Active billCycle...
+2018-05-16 21:21:18 - Getting group approvals for billCycle 042018
+2018-05-16 21:21:21 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:21:21 - Getting SLA employee list for billCycle 012017 and towerId 0
+2018-05-16 21:21:21 - Getting SLA WR list for billCycle 012017 and towerId 0
+2018-05-16 21:21:21 - Getting SLA weekend list for billCycle 012017 and towerId 0
+2018-05-16 21:21:21 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 21:21:21 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 21:21:21 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:21:21 - ResonsetDataEnvelope ready...
+2018-05-16 21:25:43 - Creating user profile for adwivedi
+2018-05-16 21:25:43 - User profile successfully created for  adwivedi
+2018-05-16 21:25:43 - User logged in with ID adwivedi
+2018-05-16 21:25:43 - Getting list of users whom adwivedi can delegate to
+2018-05-16 21:25:43 - Delegate list prepared for adwivedi
+2018-05-16 21:25:43 - Getting list of users who have delegated to adwivedi
+2018-05-16 21:25:43 - List prepared of users who has delegated to adwivedi
+2018-05-16 21:25:46 - Getting Active billCycle...
+2018-05-16 21:25:46 - Getting group approvals for billCycle 042018
+2018-05-16 21:25:54 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:25:54 - Getting SLA employee list for billCycle 012017 and towerId 0
+2018-05-16 21:25:54 - Getting SLA WR list for billCycle 012017 and towerId 0
+2018-05-16 21:25:54 - Getting SLA weekend list for billCycle 012017 and towerId 0
+2018-05-16 21:25:54 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 21:25:54 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 21:25:54 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:25:54 - ResonsetDataEnvelope ready...
+2018-05-16 21:26:06 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:26:06 - Getting SLA employee list for billCycle 012017 and towerId 0
+2018-05-16 21:26:06 - Getting SLA WR list for billCycle 012017 and towerId 0
+2018-05-16 21:26:06 - Getting SLA weekend list for billCycle 012017 and towerId 0
+2018-05-16 21:26:06 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 21:26:06 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 21:26:06 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:26:06 - ResonsetDataEnvelope ready...
+2018-05-16 21:26:57 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:26:57 - Getting SLA employee list for billCycle 012017 and towerId 7
+2018-05-16 21:26:57 - Getting SLA WR list for billCycle 012017 and towerId 7
+2018-05-16 21:26:57 - Getting SLA weekend list for billCycle 012017 and towerId 7
+2018-05-16 21:26:57 - Checking lock for billCycle 012017 towerID 7
+2018-05-16 21:26:57 - No user found who had locked for billCycle 012017 towerID 7
+2018-05-16 21:26:57 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:26:57 - ResonsetDataEnvelope ready...
+2018-05-16 21:27:07 - Checking lock for billCycle 012017 towerID 7
+2018-05-16 21:27:07 - No user found who had locked for billCycle 012017 towerID 7
+2018-05-16 21:27:07 - Checking lock by user billCycle 012017
+2018-05-16 21:27:07 - No tower locked by userID adwivedi
+2018-05-16 21:27:07 - Lock established by userID adwivedi for towerID 7 for billCycle 012017
+2018-05-16 21:27:48 - Creating user profile for adwivedi
+2018-05-16 21:27:48 - User profile successfully created for  adwivedi
+2018-05-16 21:27:48 - User logged in with ID adwivedi
+2018-05-16 21:27:48 - Getting list of users whom adwivedi can delegate to
+2018-05-16 21:27:48 - Delegate list prepared for adwivedi
+2018-05-16 21:27:48 - Getting list of users who have delegated to adwivedi
+2018-05-16 21:27:48 - List prepared of users who has delegated to adwivedi
+2018-05-16 21:27:51 - Getting Active billCycle...
+2018-05-16 21:27:51 - Getting group approvals for billCycle 042018
+2018-05-16 21:27:54 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:27:54 - Getting SLA employee list for billCycle 012017 and towerId 0
+2018-05-16 21:27:54 - Getting SLA WR list for billCycle 012017 and towerId 0
+2018-05-16 21:27:54 - Getting SLA weekend list for billCycle 012017 and towerId 0
+2018-05-16 21:27:54 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 21:27:54 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 21:27:54 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:27:54 - ResonsetDataEnvelope ready...
+2018-05-16 21:27:59 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:27:59 - Getting SLA employee list for billCycle 012017 and towerId 7
+2018-05-16 21:27:59 - Getting SLA WR list for billCycle 012017 and towerId 7
+2018-05-16 21:27:59 - Getting SLA weekend list for billCycle 012017 and towerId 7
+2018-05-16 21:27:59 - Checking lock for billCycle 012017 towerID 7
+2018-05-16 21:27:59 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:27:59 - ResonsetDataEnvelope ready...
+2018-05-16 21:28:27 - Checking lock for billCycle 012017 towerID 7
+2018-05-16 21:28:27 - Checking lock by user billCycle 012017
+2018-05-16 21:29:00 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:29:00 - Checking rejection by userID adwivedi for billCyle 012017
+2018-05-16 21:29:00 - Setting user approval by userID adwivedi for billCyle 012017 for user adwivedi
+2018-05-16 21:29:00 - Approval set by userID adwivedi for billCyle 012017 for user adwivedi
+2018-05-16 21:29:00 - Staus updated for dm in Group Approval Table for billCycle 012017 as 1
+2018-05-16 21:29:00 - Getting group approvals for billCycle 012017
+2018-05-16 21:29:00 - Approval process not yet started for billCycle 012017
+2018-05-16 21:29:00 - Checking lock by user billCycle 012017
+2018-05-16 21:29:00 - Lock unset by userID adwivedi for towerID 7 for billCycle 012017
+2018-05-16 21:29:00 - Getting Active billCycle...
+2018-05-16 21:29:01 - Getting group approvals for billCycle 042018
+2018-05-16 21:32:10 - Creating user profile for adwivedi
+2018-05-16 21:32:10 - User profile successfully created for  adwivedi
+2018-05-16 21:32:10 - User logged in with ID adwivedi
+2018-05-16 21:32:10 - Getting list of users whom adwivedi can delegate to
+2018-05-16 21:32:10 - Delegate list prepared for adwivedi
+2018-05-16 21:32:10 - Getting list of users who have delegated to adwivedi
+2018-05-16 21:32:10 - List prepared of users who has delegated to adwivedi
+2018-05-16 21:32:13 - Getting Active billCycle...
+2018-05-16 21:32:13 - Getting group approvals for billCycle 042018
+2018-05-16 21:32:17 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:32:17 - Getting SLA employee list for billCycle 012017 and towerId 0
+2018-05-16 21:32:17 - Getting SLA WR list for billCycle 012017 and towerId 0
+2018-05-16 21:32:17 - Getting SLA weekend list for billCycle 012017 and towerId 0
+2018-05-16 21:32:17 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 21:32:17 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 21:32:17 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:32:17 - ResonsetDataEnvelope ready...
+2018-05-16 21:32:22 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:32:22 - Checking rejection by userID adwivedi for billCyle 012017
+2018-05-16 21:32:22 - Checking lock by user billCycle 012017
+2018-05-16 21:32:22 - No tower locked by userID adwivedi
+2018-05-16 21:32:22 - Getting Active billCycle...
+2018-05-16 21:32:22 - Getting group approvals for billCycle 042018
+2018-05-16 21:32:27 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:32:27 - Getting SLA employee list for billCycle 022017 and towerId 0
+2018-05-16 21:32:27 - Getting SLA WR list for billCycle 022017 and towerId 0
+2018-05-16 21:32:27 - Getting SLA weekend list for billCycle 022017 and towerId 0
+2018-05-16 21:32:27 - Checking lock for billCycle 022017 towerID 0
+2018-05-16 21:32:27 - No user found who had locked for billCycle 022017 towerID 0
+2018-05-16 21:32:27 - Checking prior approval by userID adwivedi for billCyle 022017
+2018-05-16 21:32:27 - ResonsetDataEnvelope ready...
+2018-05-16 21:32:33 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:32:33 - Getting SLA employee list for billCycle 022017 and towerId 7
+2018-05-16 21:32:33 - Getting SLA WR list for billCycle 022017 and towerId 7
+2018-05-16 21:32:33 - Getting SLA weekend list for billCycle 022017 and towerId 7
+2018-05-16 21:32:33 - Checking lock for billCycle 022017 towerID 7
+2018-05-16 21:32:33 - No user found who had locked for billCycle 022017 towerID 7
+2018-05-16 21:32:33 - Checking prior approval by userID adwivedi for billCyle 022017
+2018-05-16 21:32:33 - ResonsetDataEnvelope ready...
+2018-05-16 21:32:36 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:32:36 - Getting SLA employee list for billCycle 022017 and towerId 7
+2018-05-16 21:32:36 - Getting SLA WR list for billCycle 022017 and towerId 7
+2018-05-16 21:32:36 - Getting SLA weekend list for billCycle 022017 and towerId 7
+2018-05-16 21:32:36 - Checking lock for billCycle 022017 towerID 7
+2018-05-16 21:32:36 - No user found who had locked for billCycle 022017 towerID 7
+2018-05-16 21:32:36 - Checking prior approval by userID adwivedi for billCyle 022017
+2018-05-16 21:32:36 - ResonsetDataEnvelope ready...
+2018-05-16 21:32:44 - Checking lock for billCycle 022017 towerID 7
+2018-05-16 21:32:44 - No user found who had locked for billCycle 022017 towerID 7
+2018-05-16 21:32:44 - Checking lock by user billCycle 022017
+2018-05-16 21:32:44 - No tower locked by userID adwivedi
+2018-05-16 21:32:44 - Lock established by userID adwivedi for towerID 7 for billCycle 022017
+2018-05-16 21:34:58 - Creating user profile for adwivedi
+2018-05-16 21:34:58 - User profile successfully created for  adwivedi
+2018-05-16 21:34:58 - User logged in with ID adwivedi
+2018-05-16 21:34:58 - Getting list of users whom adwivedi can delegate to
+2018-05-16 21:34:58 - Delegate list prepared for adwivedi
+2018-05-16 21:34:58 - Getting list of users who have delegated to adwivedi
+2018-05-16 21:34:58 - List prepared of users who has delegated to adwivedi
+2018-05-16 21:35:02 - Getting Active billCycle...
+2018-05-16 21:35:02 - Getting group approvals for billCycle 042018
+2018-05-16 21:35:08 - Reading ILC Data for billCycle 012017 and towerId 7 and account Id 1
+2018-05-16 21:35:08 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:35:08 - Getting ILC employee list for billCycle 012017 and towerId 7
+2018-05-16 21:35:08 - Getting ILC Wekeend list for billCycle 012017 and towerId 7
+2018-05-16 21:35:08 - Getting ILC Remakrs list for billCycle 012017 and towerId 7
+2018-05-16 21:35:08 - Checking lock for billCycle 012017 towerID 7
+2018-05-16 21:35:08 - No user found who had locked for billCycle 012017 towerID 7
+2018-05-16 21:35:08 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:35:08 - ResonsetDataEnvelope ready...
+2018-05-16 21:35:13 - Getting data for ResonsetDataEnvelope...
+2018-05-16 21:35:13 - Getting SLA employee list for billCycle 012017 and towerId 7
+2018-05-16 21:35:13 - Getting SLA WR list for billCycle 012017 and towerId 7
+2018-05-16 21:35:13 - Getting SLA weekend list for billCycle 012017 and towerId 7
+2018-05-16 21:35:13 - Checking lock for billCycle 012017 towerID 7
+2018-05-16 21:35:13 - No user found who had locked for billCycle 012017 towerID 7
+2018-05-16 21:35:13 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:35:13 - ResonsetDataEnvelope ready...
+2018-05-16 21:35:17 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 21:35:17 - Checking rejection by userID adwivedi for billCyle 012017
+2018-05-16 21:35:17 - Checking lock by user billCycle 012017
+2018-05-16 21:35:17 - No tower locked by userID adwivedi
+2018-05-16 21:35:17 - Getting Active billCycle...
+2018-05-16 21:35:17 - Getting group approvals for billCycle 042018
+2018-05-16 22:59:52 - Creating user profile for adwivedi
+2018-05-16 22:59:52 - User profile successfully created for  adwivedi
+2018-05-16 22:59:52 - User logged in with ID adwivedi
+2018-05-16 22:59:52 - Getting list of users whom adwivedi can delegate to
+2018-05-16 22:59:52 - Delegate list prepared for adwivedi
+2018-05-16 22:59:52 - Getting list of users who have delegated to adwivedi
+2018-05-16 22:59:52 - List prepared of users who has delegated to adwivedi
+2018-05-16 22:59:58 - Getting Active billCycle...
+2018-05-16 22:59:58 - Getting group approvals for billCycle 042018
+2018-05-16 23:00:01 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-05-16 23:00:01 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:00:01 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-05-16 23:00:01 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-05-16 23:00:01 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-05-16 23:00:01 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 23:00:01 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 23:00:01 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 23:00:01 - ResonsetDataEnvelope ready...
+2018-05-16 23:00:04 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:00:04 - Getting SLA employee list for billCycle 012017 and towerId 0
+2018-05-16 23:00:04 - Getting SLA WR list for billCycle 012017 and towerId 0
+2018-05-16 23:00:04 - Getting SLA weekend list for billCycle 012017 and towerId 0
+2018-05-16 23:00:04 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 23:00:04 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 23:00:04 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 23:00:04 - ResonsetDataEnvelope ready...
+2018-05-16 23:00:13 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 23:00:13 - Checking rejection by userID adwivedi for billCyle 012017
+2018-05-16 23:00:13 - Checking lock by user billCycle 012017
+2018-05-16 23:00:13 - No tower locked by userID adwivedi
+2018-05-16 23:00:13 - Getting Active billCycle...
+2018-05-16 23:00:13 - Getting group approvals for billCycle 042018
+2018-05-16 23:00:26 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:00:26 - Getting SLA employee list for billCycle 012017 and towerId 7
+2018-05-16 23:00:26 - Getting SLA WR list for billCycle 012017 and towerId 7
+2018-05-16 23:00:26 - Getting SLA weekend list for billCycle 012017 and towerId 7
+2018-05-16 23:00:26 - Checking lock for billCycle 012017 towerID 7
+2018-05-16 23:00:26 - No user found who had locked for billCycle 012017 towerID 7
+2018-05-16 23:00:26 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 23:00:26 - ResonsetDataEnvelope ready...
+2018-05-16 23:00:32 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:00:32 - Getting SLA employee list for billCycle 022017 and towerId 7
+2018-05-16 23:00:32 - Getting SLA WR list for billCycle 022017 and towerId 7
+2018-05-16 23:00:32 - Getting SLA weekend list for billCycle 022017 and towerId 7
+2018-05-16 23:00:32 - Checking lock for billCycle 022017 towerID 7
+2018-05-16 23:00:32 - Checking prior approval by userID adwivedi for billCyle 022017
+2018-05-16 23:00:32 - ResonsetDataEnvelope ready...
+2018-05-16 23:00:36 - Checking lock for billCycle 022017 towerID 7
+2018-05-16 23:00:36 - Checking lock by user billCycle 022017
+2018-05-16 23:00:41 - Checking prior approval by userID adwivedi for billCyle 022017
+2018-05-16 23:00:41 - Checking rejection by userID adwivedi for billCyle 022017
+2018-05-16 23:00:41 - Setting user approval by userID adwivedi for billCyle 022017 for user adwivedi
+2018-05-16 23:00:41 - Approval set by userID adwivedi for billCyle 022017 for user adwivedi
+2018-05-16 23:00:41 - Staus updated for dm in Group Approval Table for billCycle 022017 as 1
+2018-05-16 23:00:41 - Getting group approvals for billCycle 022017
+2018-05-16 23:00:41 - Approval process not yet started for billCycle 022017
+2018-05-16 23:00:41 - Checking lock by user billCycle 022017
+2018-05-16 23:00:41 - Lock unset by userID adwivedi for towerID 7 for billCycle 022017
+2018-05-16 23:00:41 - Getting Active billCycle...
+2018-05-16 23:00:42 - Getting group approvals for billCycle 042018
+2018-05-16 23:04:31 - Creating user profile for adwivedi
+2018-05-16 23:04:31 - User profile successfully created for  adwivedi
+2018-05-16 23:04:31 - User logged in with ID adwivedi
+2018-05-16 23:04:31 - Getting list of users whom adwivedi can delegate to
+2018-05-16 23:04:31 - Delegate list prepared for adwivedi
+2018-05-16 23:04:31 - Getting list of users who have delegated to adwivedi
+2018-05-16 23:04:31 - List prepared of users who has delegated to adwivedi
+2018-05-16 23:04:33 - Getting Active billCycle...
+2018-05-16 23:04:33 - Getting group approvals for billCycle 042018
+2018-05-16 23:04:40 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:04:40 - Getting SLA employee list for billCycle 012017 and towerId 0
+2018-05-16 23:04:40 - Getting SLA WR list for billCycle 012017 and towerId 0
+2018-05-16 23:04:40 - Getting SLA weekend list for billCycle 012017 and towerId 0
+2018-05-16 23:04:40 - Checking lock for billCycle 012017 towerID 0
+2018-05-16 23:04:40 - No user found who had locked for billCycle 012017 towerID 0
+2018-05-16 23:04:40 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-05-16 23:04:40 - ResonsetDataEnvelope ready...
+2018-05-16 23:04:49 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:04:49 - Getting SLA employee list for billCycle 022017 and towerId 7
+2018-05-16 23:04:49 - Getting SLA WR list for billCycle 022017 and towerId 7
+2018-05-16 23:04:49 - Getting SLA weekend list for billCycle 022017 and towerId 7
+2018-05-16 23:04:49 - Checking lock for billCycle 022017 towerID 7
+2018-05-16 23:04:49 - No user found who had locked for billCycle 022017 towerID 7
+2018-05-16 23:04:49 - Checking prior approval by userID adwivedi for billCyle 022017
+2018-05-16 23:04:49 - ResonsetDataEnvelope ready...
+2018-05-16 23:04:53 - Checking prior approval by userID adwivedi for billCyle 022017
+2018-05-16 23:04:53 - Checking rejection by userID adwivedi for billCyle 022017
+2018-05-16 23:04:53 - Checking lock by user billCycle 022017
+2018-05-16 23:04:53 - No tower locked by userID adwivedi
+2018-05-16 23:04:53 - Getting Active billCycle...
+2018-05-16 23:04:53 - Getting group approvals for billCycle 042018
+2018-05-16 23:04:59 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:04:59 - Getting SLA employee list for billCycle 032017 and towerId 7
+2018-05-16 23:04:59 - Getting SLA WR list for billCycle 032017 and towerId 7
+2018-05-16 23:04:59 - Getting SLA weekend list for billCycle 032017 and towerId 7
+2018-05-16 23:04:59 - Checking lock for billCycle 032017 towerID 7
+2018-05-16 23:04:59 - No user found who had locked for billCycle 032017 towerID 7
+2018-05-16 23:04:59 - Checking prior approval by userID adwivedi for billCyle 032017
+2018-05-16 23:04:59 - ResonsetDataEnvelope ready...
+2018-05-16 23:05:05 - Checking lock for billCycle 032017 towerID 7
+2018-05-16 23:05:05 - No user found who had locked for billCycle 032017 towerID 7
+2018-05-16 23:05:05 - Checking lock by user billCycle 032017
+2018-05-16 23:05:05 - No tower locked by userID adwivedi
+2018-05-16 23:05:05 - Lock established by userID adwivedi for towerID 7 for billCycle 032017
+2018-05-16 23:06:04 - Creating user profile for adwivedi
+2018-05-16 23:06:04 - User profile successfully created for  adwivedi
+2018-05-16 23:06:04 - User logged in with ID adwivedi
+2018-05-16 23:06:04 - Getting list of users whom adwivedi can delegate to
+2018-05-16 23:06:04 - Delegate list prepared for adwivedi
+2018-05-16 23:06:04 - Getting list of users who have delegated to adwivedi
+2018-05-16 23:06:04 - List prepared of users who has delegated to adwivedi
+2018-05-16 23:06:06 - Getting Active billCycle...
+2018-05-16 23:06:06 - Getting group approvals for billCycle 042018
+2018-05-16 23:06:17 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:06:17 - Getting SLA employee list for billCycle 032017 and towerId 7
+2018-05-16 23:06:17 - Getting SLA WR list for billCycle 032017 and towerId 7
+2018-05-16 23:06:17 - Getting SLA weekend list for billCycle 032017 and towerId 7
+2018-05-16 23:06:17 - Checking lock for billCycle 032017 towerID 7
+2018-05-16 23:06:17 - Checking prior approval by userID adwivedi for billCyle 032017
+2018-05-16 23:06:17 - ResonsetDataEnvelope ready...
+2018-05-16 23:06:24 - Checking prior approval by userID adwivedi for billCyle 032017
+2018-05-16 23:06:24 - Checking rejection by userID adwivedi for billCyle 032017
+2018-05-16 23:06:24 - Setting user approval by userID adwivedi for billCyle 032017 for user adwivedi
+2018-05-16 23:06:24 - Approval set by userID adwivedi for billCyle 032017 for user adwivedi
+2018-05-16 23:06:24 - Staus updated for dm in Group Approval Table for billCycle 032017 as 1
+2018-05-16 23:06:24 - Getting group approvals for billCycle 032017
+2018-05-16 23:06:24 - Approval process not yet started for billCycle 032017
+2018-05-16 23:06:24 - Checking lock by user billCycle 032017
+2018-05-16 23:06:24 - Lock unset by userID adwivedi for towerID 7 for billCycle 032017
+2018-05-16 23:06:24 - Getting Active billCycle...
+2018-05-16 23:06:24 - Getting group approvals for billCycle 042018
+2018-05-16 23:06:40 - Checking prior approval by userID ssbram for billCyle 032017
+2018-05-16 23:06:40 - Checking rejection by userID ssbram for billCyle 032017
+2018-05-16 23:06:40 - Setting user approval by userID adwivedi for billCyle 032017 for user ssbram
+2018-05-16 23:06:40 - Approval set by userID adwivedi for billCyle 032017 for user ssbram
+2018-05-16 23:06:40 - Staus updated for dm in Group Approval Table for billCycle 032017 as 1
+2018-05-16 23:06:40 - Getting group approvals for billCycle 032017
+2018-05-16 23:06:40 - Approval process not yet started for billCycle 032017
+2018-05-16 23:06:40 - Checking lock by user billCycle 032017
+2018-05-16 23:06:40 - No tower locked by userID ssbram
+2018-05-16 23:06:40 - Getting Active billCycle...
+2018-05-16 23:06:40 - Getting group approvals for billCycle 042018
+2018-05-16 23:06:48 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:06:48 - Getting SLA employee list for billCycle 042017 and towerId 7
+2018-05-16 23:06:48 - Getting SLA WR list for billCycle 042017 and towerId 7
+2018-05-16 23:06:48 - Getting SLA weekend list for billCycle 042017 and towerId 7
+2018-05-16 23:06:48 - Checking lock for billCycle 042017 towerID 7
+2018-05-16 23:06:48 - No user found who had locked for billCycle 042017 towerID 7
+2018-05-16 23:06:48 - Checking prior approval by userID adwivedi for billCyle 042017
+2018-05-16 23:06:48 - ResonsetDataEnvelope ready...
+2018-05-16 23:06:55 - Checking prior approval by userID ssbram for billCyle 042017
+2018-05-16 23:06:55 - Checking rejection by userID ssbram for billCyle 042017
+2018-05-16 23:06:55 - Setting user approval by userID adwivedi for billCyle 042017 for user ssbram
+2018-05-16 23:06:55 - Approval set by userID adwivedi for billCyle 042017 for user ssbram
+2018-05-16 23:06:55 - Staus updated for dm in Group Approval Table for billCycle 042017 as 1
+2018-05-16 23:06:55 - Getting group approvals for billCycle 042017
+2018-05-16 23:06:55 - Approval process not yet started for billCycle 042017
+2018-05-16 23:06:55 - Checking lock by user billCycle 042017
+2018-05-16 23:06:55 - No tower locked by userID ssbram
+2018-05-16 23:06:55 - Getting Active billCycle...
+2018-05-16 23:06:55 - Getting group approvals for billCycle 042018
+2018-05-16 23:06:58 - Checking lock for billCycle 042017 towerID 7
+2018-05-16 23:06:58 - No user found who had locked for billCycle 042017 towerID 7
+2018-05-16 23:06:58 - Checking lock by user billCycle 042017
+2018-05-16 23:06:58 - No tower locked by userID adwivedi
+2018-05-16 23:06:58 - Lock established by userID adwivedi for towerID 7 for billCycle 042017
+2018-05-16 23:07:05 - Checking prior approval by userID ssbram for billCyle 042017
+2018-05-16 23:07:05 - Checking rejection by userID ssbram for billCyle 042017
+2018-05-16 23:07:05 - Checking lock by user billCycle 042017
+2018-05-16 23:07:05 - No tower locked by userID ssbram
+2018-05-16 23:07:05 - Getting Active billCycle...
+2018-05-16 23:07:05 - Getting group approvals for billCycle 042018
+2018-05-16 23:07:15 - Checking prior approval by userID adwivedi for billCyle 042017
+2018-05-16 23:07:15 - Checking rejection by userID adwivedi for billCyle 042017
+2018-05-16 23:07:15 - Setting user approval by userID adwivedi for billCyle 042017 for user adwivedi
+2018-05-16 23:07:15 - Approval set by userID adwivedi for billCyle 042017 for user adwivedi
+2018-05-16 23:07:15 - Staus updated for dm in Group Approval Table for billCycle 042017 as 1
+2018-05-16 23:07:15 - Getting group approvals for billCycle 042017
+2018-05-16 23:07:15 - Approval process not yet started for billCycle 042017
+2018-05-16 23:07:15 - Checking lock by user billCycle 042017
+2018-05-16 23:07:15 - Lock unset by userID adwivedi for towerID 7 for billCycle 042017
+2018-05-16 23:07:15 - Getting Active billCycle...
+2018-05-16 23:07:15 - Getting group approvals for billCycle 042018
+2018-05-16 23:07:25 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:07:25 - Getting SLA employee list for billCycle 052017 and towerId 7
+2018-05-16 23:07:25 - Getting SLA WR list for billCycle 052017 and towerId 7
+2018-05-16 23:07:25 - Getting SLA weekend list for billCycle 052017 and towerId 7
+2018-05-16 23:07:25 - Checking lock for billCycle 052017 towerID 7
+2018-05-16 23:07:25 - No user found who had locked for billCycle 052017 towerID 7
+2018-05-16 23:07:25 - Checking prior approval by userID adwivedi for billCyle 052017
+2018-05-16 23:07:25 - ResonsetDataEnvelope ready...
+2018-05-16 23:07:27 - Checking lock for billCycle 052017 towerID 7
+2018-05-16 23:07:27 - No user found who had locked for billCycle 052017 towerID 7
+2018-05-16 23:07:27 - Checking lock by user billCycle 052017
+2018-05-16 23:07:27 - No tower locked by userID adwivedi
+2018-05-16 23:07:27 - Lock established by userID adwivedi for towerID 7 for billCycle 052017
+2018-05-16 23:07:32 - Updating SLA Data...
+2018-05-16 23:07:32 - Creating new SLA Record for billCycle 052017
+2018-05-16 23:07:32 - Checking lock for billCycle 052017 towerID 7
+2018-05-16 23:07:32 - Lock unset by userID adwivedi for towerID 7 for billCycle 052017
+2018-05-16 23:07:32 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:07:32 - Getting SLA employee list for billCycle 052017 and towerId 7
+2018-05-16 23:07:32 - Getting SLA WR list for billCycle 052017 and towerId 7
+2018-05-16 23:07:32 - Getting SLA weekend list for billCycle 052017 and towerId 7
+2018-05-16 23:07:32 - Checking lock for billCycle 052017 towerID 7
+2018-05-16 23:07:32 - No user found who had locked for billCycle 052017 towerID 7
+2018-05-16 23:07:32 - Checking prior approval by userID adwivedi for billCyle 052017
+2018-05-16 23:07:32 - ResonsetDataEnvelope ready...
+2018-05-16 23:09:10 - Creating user profile for adwivedi
+2018-05-16 23:09:10 - User profile successfully created for  adwivedi
+2018-05-16 23:09:10 - User logged in with ID adwivedi
+2018-05-16 23:09:10 - Getting list of users whom adwivedi can delegate to
+2018-05-16 23:09:10 - Delegate list prepared for adwivedi
+2018-05-16 23:09:10 - Getting list of users who have delegated to adwivedi
+2018-05-16 23:09:10 - List prepared of users who has delegated to adwivedi
+2018-05-16 23:09:13 - Getting Active billCycle...
+2018-05-16 23:09:13 - Getting group approvals for billCycle 042018
+2018-05-16 23:09:20 - Creating user profile for rkumar
+2018-05-16 23:09:20 - User profile successfully created for  rkumar
+2018-05-16 23:09:20 - User logged in with ID rkumar
+2018-05-16 23:09:20 - Getting list of users whom rkumar can delegate to
+2018-05-16 23:09:20 - Delegate list prepared for rkumar
+2018-05-16 23:09:20 - Getting list of users who have delegated to rkumar
+2018-05-16 23:09:20 - There is no user who has delegated to rkumar
+2018-05-16 23:09:23 - Getting Active billCycle...
+2018-05-16 23:09:23 - Getting group approvals for billCycle 042018
+2018-05-16 23:09:39 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:09:39 - Getting SLA employee list for billCycle 022017 and towerId 0
+2018-05-16 23:09:39 - Getting SLA WR list for billCycle 022017 and towerId 0
+2018-05-16 23:09:39 - Getting SLA weekend list for billCycle 022017 and towerId 0
+2018-05-16 23:09:39 - Checking lock for billCycle 022017 towerID 0
+2018-05-16 23:09:39 - No user found who had locked for billCycle 022017 towerID 0
+2018-05-16 23:09:39 - Checking prior approval by userID rkumar for billCyle 022017
+2018-05-16 23:09:39 - ResonsetDataEnvelope ready...
+2018-05-16 23:09:59 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:09:59 - Getting SLA employee list for billCycle 022017 and towerId 0
+2018-05-16 23:09:59 - Getting SLA WR list for billCycle 022017 and towerId 0
+2018-05-16 23:09:59 - Getting SLA weekend list for billCycle 022017 and towerId 0
+2018-05-16 23:09:59 - Checking lock for billCycle 022017 towerID 0
+2018-05-16 23:09:59 - No user found who had locked for billCycle 022017 towerID 0
+2018-05-16 23:09:59 - Checking prior approval by userID rkumar for billCyle 022017
+2018-05-16 23:09:59 - ResonsetDataEnvelope ready...
+2018-05-16 23:10:05 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:10:05 - Getting SLA employee list for billCycle 022017 and towerId 0
+2018-05-16 23:10:05 - Getting SLA WR list for billCycle 022017 and towerId 0
+2018-05-16 23:10:05 - Getting SLA weekend list for billCycle 022017 and towerId 0
+2018-05-16 23:10:05 - Checking lock for billCycle 022017 towerID 0
+2018-05-16 23:10:05 - No user found who had locked for billCycle 022017 towerID 0
+2018-05-16 23:10:05 - Checking prior approval by userID rkumar for billCyle 022017
+2018-05-16 23:10:05 - ResonsetDataEnvelope ready...
+2018-05-16 23:10:08 - Checking prior approval by userID rkumar for billCyle 022017
+2018-05-16 23:10:08 - Checking rejection by userID rkumar for billCyle 022017
+2018-05-16 23:10:08 - Setting user approval by userID rkumar for billCyle 022017 for user rkumar
+2018-05-16 23:10:08 - Approval set by userID rkumar for billCyle 022017 for user rkumar
+2018-05-16 23:10:08 - Staus updated for bam in Group Approval Table for billCycle 022017 as 1
+2018-05-16 23:10:08 - Getting group approvals for billCycle 022017
+2018-05-16 23:10:08 - Approval process not yet started for billCycle 022017
+2018-05-16 23:10:08 - Checking lock by user billCycle 022017
+2018-05-16 23:10:08 - No tower locked by userID rkumar
+2018-05-16 23:10:08 - Getting Active billCycle...
+2018-05-16 23:10:08 - Getting group approvals for billCycle 042018
+2018-05-16 23:10:16 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:10:16 - Getting SLA employee list for billCycle 032017 and towerId 7
+2018-05-16 23:10:16 - Getting SLA WR list for billCycle 032017 and towerId 7
+2018-05-16 23:10:16 - Getting SLA weekend list for billCycle 032017 and towerId 7
+2018-05-16 23:10:16 - Checking lock for billCycle 032017 towerID 7
+2018-05-16 23:10:16 - No user found who had locked for billCycle 032017 towerID 7
+2018-05-16 23:10:16 - Checking prior approval by userID rkumar for billCyle 032017
+2018-05-16 23:10:16 - ResonsetDataEnvelope ready...
+2018-05-16 23:10:19 - Checking lock for billCycle 032017 towerID 7
+2018-05-16 23:10:19 - No user found who had locked for billCycle 032017 towerID 7
+2018-05-16 23:10:19 - Checking lock by user billCycle 032017
+2018-05-16 23:10:19 - No tower locked by userID rkumar
+2018-05-16 23:10:19 - Lock updated by userID rkumar for towerID 7 for billCycle 032017
+2018-05-16 23:10:32 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:10:32 - Getting SLA employee list for billCycle 032017 and towerId 7
+2018-05-16 23:10:32 - Getting SLA WR list for billCycle 032017 and towerId 7
+2018-05-16 23:10:32 - Getting SLA weekend list for billCycle 032017 and towerId 7
+2018-05-16 23:10:32 - Checking lock for billCycle 032017 towerID 7
+2018-05-16 23:10:32 - Checking prior approval by userID rkumar for billCyle 032017
+2018-05-16 23:10:32 - ResonsetDataEnvelope ready...
+2018-05-16 23:10:35 - Checking prior approval by userID rkumar for billCyle 032017
+2018-05-16 23:10:35 - Checking rejection by userID rkumar for billCyle 032017
+2018-05-16 23:10:35 - Setting user approval by userID rkumar for billCyle 032017 for user rkumar
+2018-05-16 23:10:35 - Approval set by userID rkumar for billCyle 032017 for user rkumar
+2018-05-16 23:10:35 - Staus updated for bam in Group Approval Table for billCycle 032017 as 1
+2018-05-16 23:10:35 - Getting group approvals for billCycle 032017
+2018-05-16 23:10:35 - Approval process not yet started for billCycle 032017
+2018-05-16 23:10:35 - Checking lock by user billCycle 032017
+2018-05-16 23:10:35 - Lock unset by userID rkumar for towerID 7 for billCycle 032017
+2018-05-16 23:10:35 - Getting Active billCycle...
+2018-05-16 23:10:36 - Getting group approvals for billCycle 042018
+2018-05-16 23:10:42 - Checking prior approval by userID rkumar for billCyle 032017
+2018-05-16 23:10:42 - Checking rejection by userID rkumar for billCyle 032017
+2018-05-16 23:10:42 - Checking lock by user billCycle 032017
+2018-05-16 23:10:42 - No tower locked by userID rkumar
+2018-05-16 23:10:42 - Getting Active billCycle...
+2018-05-16 23:10:42 - Getting group approvals for billCycle 042018
+2018-05-16 23:45:09 - Datasource properties set for Dev environment...
+2018-05-16 23:45:09 - Email properties set for biller application...
+2018-05-16 23:45:10 - Authetication interceptor linked for biller application...
+2018-05-16 23:45:12 - JDBCTemplate linked with datasource...
+2018-05-16 23:45:12 - Datasource properties set for Dev environment...
+2018-05-16 23:45:12 - Email properties set for biller application...
+2018-05-16 23:45:12 - JDBCTemplate linked with datasource...
+2018-05-16 23:45:12 - Authetication interceptor linked for biller application...
+2018-05-16 23:45:30 - Datasource properties set for Dev environment...
+2018-05-16 23:45:30 - Email properties set for biller application...
+2018-05-16 23:45:31 - Authetication interceptor linked for biller application...
+2018-05-16 23:45:32 - JDBCTemplate linked with datasource...
+2018-05-16 23:45:32 - Datasource properties set for Dev environment...
+2018-05-16 23:45:33 - Email properties set for biller application...
+2018-05-16 23:45:33 - JDBCTemplate linked with datasource...
+2018-05-16 23:45:33 - Authetication interceptor linked for biller application...
+2018-05-16 23:45:52 - Datasource properties set for Dev environment...
+2018-05-16 23:45:52 - Email properties set for biller application...
+2018-05-16 23:45:52 - Authetication interceptor linked for biller application...
+2018-05-16 23:45:53 - JDBCTemplate linked with datasource...
+2018-05-16 23:45:53 - Datasource properties set for Dev environment...
+2018-05-16 23:45:54 - Email properties set for biller application...
+2018-05-16 23:45:54 - JDBCTemplate linked with datasource...
+2018-05-16 23:45:54 - Authetication interceptor linked for biller application...
+2018-05-16 23:46:37 - Datasource properties set for Dev environment...
+2018-05-16 23:46:37 - Email properties set for biller application...
+2018-05-16 23:46:38 - Authetication interceptor linked for biller application...
+2018-05-16 23:46:39 - JDBCTemplate linked with datasource...
+2018-05-16 23:46:39 - Datasource properties set for Dev environment...
+2018-05-16 23:46:39 - Email properties set for biller application...
+2018-05-16 23:46:39 - JDBCTemplate linked with datasource...
+2018-05-16 23:46:39 - Authetication interceptor linked for biller application...
+2018-05-16 23:49:41 - Creating user profile for adwivedi
+2018-05-16 23:49:41 - User profile successfully created for  adwivedi
+2018-05-16 23:49:41 - User logged in with ID adwivedi
+2018-05-16 23:49:41 - Getting list of users whom adwivedi can delegate to
+2018-05-16 23:49:41 - Delegate list prepared for adwivedi
+2018-05-16 23:49:41 - Getting list of users who have delegated to adwivedi
+2018-05-16 23:49:41 - List prepared of users who has delegated to adwivedi
+2018-05-16 23:49:44 - Getting Active billCycle...
+2018-05-16 23:49:44 - Getting group approvals for billCycle 042018
+2018-05-16 23:50:36 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:50:36 - Getting SLA employee list for billCycle 042017 and towerId 7
+2018-05-16 23:50:36 - Getting SLA WR list for billCycle 042017 and towerId 7
+2018-05-16 23:50:36 - Getting SLA weekend list for billCycle 042017 and towerId 7
+2018-05-16 23:50:36 - Checking lock for billCycle 042017 towerID 7
+2018-05-16 23:50:36 - No user found who had locked for billCycle 042017 towerID 7
+2018-05-16 23:50:36 - Checking prior approval by userID adwivedi for billCyle 042017
+2018-05-16 23:50:36 - ResonsetDataEnvelope ready...
+2018-05-16 23:50:44 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:50:44 - Getting SLA employee list for billCycle 042017 and towerId 7
+2018-05-16 23:50:44 - Getting SLA WR list for billCycle 042017 and towerId 7
+2018-05-16 23:50:44 - Getting SLA weekend list for billCycle 042017 and towerId 7
+2018-05-16 23:50:44 - Checking lock for billCycle 042017 towerID 7
+2018-05-16 23:50:44 - No user found who had locked for billCycle 042017 towerID 7
+2018-05-16 23:50:44 - Checking prior approval by userID adwivedi for billCyle 042017
+2018-05-16 23:50:44 - ResonsetDataEnvelope ready...
+2018-05-16 23:50:46 - Checking prior approval by userID adwivedi for billCyle 042017
+2018-05-16 23:50:46 - Checking rejection by userID adwivedi for billCyle 042017
+2018-05-16 23:50:46 - Checking lock by user billCycle 042017
+2018-05-16 23:50:46 - No tower locked by userID adwivedi
+2018-05-16 23:50:46 - Getting Active billCycle...
+2018-05-16 23:50:47 - Getting group approvals for billCycle 042018
+2018-05-16 23:50:52 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:50:52 - Getting SLA employee list for billCycle 052017 and towerId 7
+2018-05-16 23:50:52 - Getting SLA WR list for billCycle 052017 and towerId 7
+2018-05-16 23:50:52 - Getting SLA weekend list for billCycle 052017 and towerId 7
+2018-05-16 23:50:52 - Checking lock for billCycle 052017 towerID 7
+2018-05-16 23:50:52 - No user found who had locked for billCycle 052017 towerID 7
+2018-05-16 23:50:52 - Checking prior approval by userID adwivedi for billCyle 052017
+2018-05-16 23:50:52 - ResonsetDataEnvelope ready...
+2018-05-16 23:50:56 - Checking lock for billCycle 052017 towerID 7
+2018-05-16 23:50:56 - No user found who had locked for billCycle 052017 towerID 7
+2018-05-16 23:50:56 - Checking lock by user billCycle 052017
+2018-05-16 23:50:56 - No tower locked by userID adwivedi
+2018-05-16 23:50:56 - Lock updated by userID adwivedi for towerID 7 for billCycle 052017
+2018-05-16 23:50:59 - Checking lock for billCycle 052017 towerID 7
+2018-05-16 23:50:59 - Lock unset by userID adwivedi for towerID 7 for billCycle 052017
+2018-05-16 23:51:02 - Checking lock for billCycle 052017 towerID 7
+2018-05-16 23:51:02 - No user found who had locked for billCycle 052017 towerID 7
+2018-05-16 23:51:10 - Checking prior approval by userID adwivedi for billCyle 052017
+2018-05-16 23:51:10 - Checking rejection by userID adwivedi for billCyle 052017
+2018-05-16 23:51:10 - Setting user approval by userID adwivedi for billCyle 052017 for user adwivedi
+2018-05-16 23:51:10 - Approval set by userID adwivedi for billCyle 052017 for user adwivedi
+2018-05-16 23:51:10 - Staus updated for dm in Group Approval Table for billCycle 052017 as 1
+2018-05-16 23:51:10 - Getting group approvals for billCycle 052017
+2018-05-16 23:51:10 - Approval process not yet started for billCycle 052017
+2018-05-16 23:51:10 - Checking lock by user billCycle 052017
+2018-05-16 23:51:10 - No tower locked by userID adwivedi
+2018-05-16 23:51:10 - Getting Active billCycle...
+2018-05-16 23:51:10 - Getting group approvals for billCycle 042018
+2018-05-16 23:51:14 - Checking lock for billCycle 052017 towerID 7
+2018-05-16 23:51:14 - No user found who had locked for billCycle 052017 towerID 7
+2018-05-16 23:51:32 - Checking lock for billCycle 052017 towerID 7
+2018-05-16 23:51:32 - No user found who had locked for billCycle 052017 towerID 7
+2018-05-16 23:52:46 - Checking lock for billCycle 052017 towerID 7
+2018-05-16 23:52:46 - No user found who had locked for billCycle 052017 towerID 7
+2018-05-16 23:52:46 - Checking lock by user billCycle 052017
+2018-05-16 23:52:46 - No tower locked by userID adwivedi
+2018-05-16 23:52:46 - Lock updated by userID adwivedi for towerID 7 for billCycle 052017
+2018-05-16 23:53:03 - Checking prior approval by userID adwivedi for billCyle 052017
+2018-05-16 23:53:03 - Checking rejection by userID adwivedi for billCyle 052017
+2018-05-16 23:53:03 - Checking lock by user billCycle 052017
+2018-05-16 23:53:03 - Getting Active billCycle...
+2018-05-16 23:53:03 - Getting group approvals for billCycle 042018
+2018-05-16 23:53:20 - Checking lock for billCycle 052017 towerID 7
+2018-05-16 23:53:20 - Lock unset by userID adwivedi for towerID 7 for billCycle 052017
+2018-05-16 23:53:36 - Checking lock for billCycle 052017 towerID 7
+2018-05-16 23:53:36 - No user found who had locked for billCycle 052017 towerID 7
+2018-05-16 23:53:53 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:53:53 - Getting SLA employee list for billCycle 062017 and towerId 7
+2018-05-16 23:53:53 - Getting SLA WR list for billCycle 062017 and towerId 7
+2018-05-16 23:53:53 - Getting SLA weekend list for billCycle 062017 and towerId 7
+2018-05-16 23:53:53 - Checking lock for billCycle 062017 towerID 7
+2018-05-16 23:53:53 - No user found who had locked for billCycle 062017 towerID 7
+2018-05-16 23:53:53 - Checking prior approval by userID adwivedi for billCyle 062017
+2018-05-16 23:53:53 - ResonsetDataEnvelope ready...
+2018-05-16 23:54:02 - Checking lock for billCycle 062017 towerID 7
+2018-05-16 23:54:02 - No user found who had locked for billCycle 062017 towerID 7
+2018-05-16 23:54:12 - Checking lock for billCycle 062017 towerID 7
+2018-05-16 23:54:12 - No user found who had locked for billCycle 062017 towerID 7
+2018-05-16 23:54:12 - Checking lock by user billCycle 062017
+2018-05-16 23:54:12 - No tower locked by userID adwivedi
+2018-05-16 23:54:12 - Lock established by userID adwivedi for towerID 7 for billCycle 062017
+2018-05-16 23:54:17 - Checking prior approval by userID adwivedi for billCyle 062017
+2018-05-16 23:54:17 - Checking rejection by userID adwivedi for billCyle 062017
+2018-05-16 23:54:17 - Setting user approval by userID adwivedi for billCyle 062017 for user adwivedi
+2018-05-16 23:54:17 - Approval set by userID adwivedi for billCyle 062017 for user adwivedi
+2018-05-16 23:54:17 - Staus updated for dm in Group Approval Table for billCycle 062017 as 1
+2018-05-16 23:54:17 - Getting group approvals for billCycle 062017
+2018-05-16 23:54:17 - Approval process not yet started for billCycle 062017
+2018-05-16 23:54:17 - Checking lock by user billCycle 062017
+2018-05-16 23:54:17 - Lock unset by userID adwivedi for towerID 7 for billCycle 062017
+2018-05-16 23:54:17 - Getting Active billCycle...
+2018-05-16 23:54:18 - Getting group approvals for billCycle 042018
+2018-05-16 23:54:31 - Checking lock for billCycle 062017 towerID 7
+2018-05-16 23:54:31 - No user found who had locked for billCycle 062017 towerID 7
+2018-05-16 23:55:40 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:55:40 - Getting SLA employee list for billCycle 072017 and towerId 7
+2018-05-16 23:55:40 - Getting SLA WR list for billCycle 072017 and towerId 7
+2018-05-16 23:55:40 - Getting SLA weekend list for billCycle 072017 and towerId 7
+2018-05-16 23:55:40 - Checking lock for billCycle 072017 towerID 7
+2018-05-16 23:55:40 - No user found who had locked for billCycle 072017 towerID 7
+2018-05-16 23:55:40 - Checking prior approval by userID adwivedi for billCyle 072017
+2018-05-16 23:55:40 - ResonsetDataEnvelope ready...
+2018-05-16 23:55:43 - Checking lock for billCycle 072017 towerID 7
+2018-05-16 23:55:43 - No user found who had locked for billCycle 072017 towerID 7
+2018-05-16 23:55:43 - Checking lock by user billCycle 072017
+2018-05-16 23:55:43 - No tower locked by userID adwivedi
+2018-05-16 23:55:43 - Lock established by userID adwivedi for towerID 7 for billCycle 072017
+2018-05-16 23:55:48 - Checking prior approval by userID adwivedi for billCyle 072017
+2018-05-16 23:55:48 - Checking rejection by userID adwivedi for billCyle 072017
+2018-05-16 23:55:48 - Setting user approval by userID adwivedi for billCyle 072017 for user adwivedi
+2018-05-16 23:55:48 - Approval set by userID adwivedi for billCyle 072017 for user adwivedi
+2018-05-16 23:55:48 - Staus updated for dm in Group Approval Table for billCycle 072017 as 1
+2018-05-16 23:55:48 - Getting group approvals for billCycle 072017
+2018-05-16 23:55:48 - Approval process not yet started for billCycle 072017
+2018-05-16 23:55:48 - Checking lock by user billCycle 072017
+2018-05-16 23:55:48 - Lock unset by userID adwivedi for towerID 7 for billCycle 072017
+2018-05-16 23:55:48 - Getting Active billCycle...
+2018-05-16 23:55:48 - Getting group approvals for billCycle 042018
+2018-05-16 23:56:11 - Creating user profile for adwivedi
+2018-05-16 23:56:11 - User profile successfully created for  adwivedi
+2018-05-16 23:56:11 - User logged in with ID adwivedi
+2018-05-16 23:56:11 - Getting list of users whom adwivedi can delegate to
+2018-05-16 23:56:11 - Delegate list prepared for adwivedi
+2018-05-16 23:56:11 - Getting list of users who have delegated to adwivedi
+2018-05-16 23:56:11 - List prepared of users who has delegated to adwivedi
+2018-05-16 23:56:17 - Getting Active billCycle...
+2018-05-16 23:56:17 - Getting group approvals for billCycle 042018
+2018-05-16 23:56:27 - Reading ILC Data for billCycle 072017 and towerId 7 and account Id 1
+2018-05-16 23:56:27 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:56:27 - Getting ILC employee list for billCycle 072017 and towerId 7
+2018-05-16 23:56:27 - Getting ILC Wekeend list for billCycle 072017 and towerId 7
+2018-05-16 23:56:27 - Getting ILC Remakrs list for billCycle 072017 and towerId 7
+2018-05-16 23:56:28 - Checking lock for billCycle 072017 towerID 7
+2018-05-16 23:56:28 - No user found who had locked for billCycle 072017 towerID 7
+2018-05-16 23:56:28 - Checking prior approval by userID adwivedi for billCyle 072017
+2018-05-16 23:56:28 - ResonsetDataEnvelope ready...
+2018-05-16 23:56:31 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:56:31 - Getting SLA employee list for billCycle 072017 and towerId 7
+2018-05-16 23:56:31 - Getting SLA WR list for billCycle 072017 and towerId 7
+2018-05-16 23:56:31 - Getting SLA weekend list for billCycle 072017 and towerId 7
+2018-05-16 23:56:31 - Checking lock for billCycle 072017 towerID 7
+2018-05-16 23:56:31 - No user found who had locked for billCycle 072017 towerID 7
+2018-05-16 23:56:31 - Checking prior approval by userID adwivedi for billCyle 072017
+2018-05-16 23:56:31 - ResonsetDataEnvelope ready...
+2018-05-16 23:56:38 - Checking prior approval by userID adwivedi for billCyle 072017
+2018-05-16 23:56:38 - Checking rejection by userID adwivedi for billCyle 072017
+2018-05-16 23:56:38 - Checking lock by user billCycle 072017
+2018-05-16 23:56:38 - No tower locked by userID adwivedi
+2018-05-16 23:56:38 - Getting Active billCycle...
+2018-05-16 23:56:38 - Getting group approvals for billCycle 042018
+2018-05-16 23:56:44 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:56:44 - Getting SLA employee list for billCycle 082017 and towerId 7
+2018-05-16 23:56:44 - Getting SLA WR list for billCycle 082017 and towerId 7
+2018-05-16 23:56:44 - Getting SLA weekend list for billCycle 082017 and towerId 7
+2018-05-16 23:56:44 - Checking lock for billCycle 082017 towerID 7
+2018-05-16 23:56:44 - No user found who had locked for billCycle 082017 towerID 7
+2018-05-16 23:56:44 - Checking prior approval by userID adwivedi for billCyle 082017
+2018-05-16 23:56:44 - ResonsetDataEnvelope ready...
+2018-05-16 23:56:46 - Checking lock for billCycle 082017 towerID 7
+2018-05-16 23:56:46 - No user found who had locked for billCycle 082017 towerID 7
+2018-05-16 23:56:46 - Checking lock by user billCycle 082017
+2018-05-16 23:56:46 - No tower locked by userID adwivedi
+2018-05-16 23:56:46 - Lock established by userID adwivedi for towerID 7 for billCycle 082017
+2018-05-16 23:56:49 - Checking prior approval by userID adwivedi for billCyle 082017
+2018-05-16 23:56:49 - Checking rejection by userID adwivedi for billCyle 082017
+2018-05-16 23:56:49 - Setting user approval by userID adwivedi for billCyle 082017 for user adwivedi
+2018-05-16 23:56:49 - Approval set by userID adwivedi for billCyle 082017 for user adwivedi
+2018-05-16 23:56:49 - Staus updated for dm in Group Approval Table for billCycle 082017 as 1
+2018-05-16 23:56:49 - Getting group approvals for billCycle 082017
+2018-05-16 23:56:49 - Approval process not yet started for billCycle 082017
+2018-05-16 23:56:49 - Checking lock by user billCycle 082017
+2018-05-16 23:56:49 - Lock unset by userID adwivedi for towerID 7 for billCycle 082017
+2018-05-16 23:56:49 - Getting Active billCycle...
+2018-05-16 23:56:49 - Getting group approvals for billCycle 042018
+2018-05-16 23:56:55 - Checking prior approval by userID adwivedi for billCyle 082017
+2018-05-16 23:56:55 - Checking rejection by userID adwivedi for billCyle 082017
+2018-05-16 23:56:55 - Checking lock by user billCycle 082017
+2018-05-16 23:56:55 - No tower locked by userID adwivedi
+2018-05-16 23:56:56 - Getting Active billCycle...
+2018-05-16 23:56:56 - Getting group approvals for billCycle 042018
+2018-05-16 23:57:04 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:57:04 - Getting SLA employee list for billCycle 082017 and towerId 0
+2018-05-16 23:57:04 - Getting SLA WR list for billCycle 082017 and towerId 0
+2018-05-16 23:57:04 - Getting SLA weekend list for billCycle 082017 and towerId 0
+2018-05-16 23:57:04 - Checking lock for billCycle 082017 towerID 0
+2018-05-16 23:57:04 - No user found who had locked for billCycle 082017 towerID 0
+2018-05-16 23:57:04 - Checking prior approval by userID adwivedi for billCyle 082017
+2018-05-16 23:57:04 - ResonsetDataEnvelope ready...
+2018-05-16 23:57:10 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:57:10 - Getting SLA employee list for billCycle 092017 and towerId 0
+2018-05-16 23:57:10 - Getting SLA WR list for billCycle 092017 and towerId 0
+2018-05-16 23:57:10 - Getting SLA weekend list for billCycle 092017 and towerId 0
+2018-05-16 23:57:10 - Checking lock for billCycle 092017 towerID 0
+2018-05-16 23:57:10 - No user found who had locked for billCycle 092017 towerID 0
+2018-05-16 23:57:10 - Checking prior approval by userID adwivedi for billCyle 092017
+2018-05-16 23:57:10 - ResonsetDataEnvelope ready...
+2018-05-16 23:57:14 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:57:14 - Getting SLA employee list for billCycle 092017 and towerId 1
+2018-05-16 23:57:14 - Getting SLA WR list for billCycle 092017 and towerId 1
+2018-05-16 23:57:14 - Getting SLA weekend list for billCycle 092017 and towerId 1
+2018-05-16 23:57:14 - Checking lock for billCycle 092017 towerID 1
+2018-05-16 23:57:14 - No user found who had locked for billCycle 092017 towerID 1
+2018-05-16 23:57:14 - Checking prior approval by userID adwivedi for billCyle 092017
+2018-05-16 23:57:14 - ResonsetDataEnvelope ready...
+2018-05-16 23:57:16 - Checking lock for billCycle 092017 towerID 1
+2018-05-16 23:57:16 - No user found who had locked for billCycle 092017 towerID 1
+2018-05-16 23:57:16 - Checking lock by user billCycle 092017
+2018-05-16 23:57:16 - No tower locked by userID adwivedi
+2018-05-16 23:57:16 - Lock established by userID adwivedi for towerID 1 for billCycle 092017
+2018-05-16 23:57:19 - Checking lock for billCycle 092017 towerID 1
+2018-05-16 23:57:19 - Lock unset by userID adwivedi for towerID 1 for billCycle 092017
+2018-05-16 23:57:24 - Checking lock for billCycle 092017 towerID 1
+2018-05-16 23:57:24 - No user found who had locked for billCycle 092017 towerID 1
+2018-05-16 23:57:28 - Checking lock for billCycle 092017 towerID 1
+2018-05-16 23:57:28 - No user found who had locked for billCycle 092017 towerID 1
+2018-05-16 23:57:28 - Checking lock by user billCycle 092017
+2018-05-16 23:57:28 - No tower locked by userID adwivedi
+2018-05-16 23:57:28 - Lock updated by userID adwivedi for towerID 1 for billCycle 092017
+2018-05-16 23:58:04 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:58:04 - Getting SLA employee list for billCycle 052025 and towerId 1
+2018-05-16 23:58:04 - Getting SLA WR list for billCycle 052025 and towerId 1
+2018-05-16 23:58:04 - Getting SLA weekend list for billCycle 052025 and towerId 1
+2018-05-16 23:58:04 - Checking lock for billCycle 052025 towerID 1
+2018-05-16 23:58:04 - No user found who had locked for billCycle 052025 towerID 1
+2018-05-16 23:58:04 - Checking prior approval by userID adwivedi for billCyle 052025
+2018-05-16 23:58:04 - ResonsetDataEnvelope ready...
+2018-05-16 23:58:13 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:58:13 - Getting SLA employee list for billCycle 052025 and towerId 6
+2018-05-16 23:58:13 - Getting SLA WR list for billCycle 052025 and towerId 6
+2018-05-16 23:58:13 - Getting SLA weekend list for billCycle 052025 and towerId 6
+2018-05-16 23:58:13 - Checking lock for billCycle 052025 towerID 6
+2018-05-16 23:58:13 - No user found who had locked for billCycle 052025 towerID 6
+2018-05-16 23:58:13 - Checking prior approval by userID adwivedi for billCyle 052025
+2018-05-16 23:58:13 - ResonsetDataEnvelope ready...
+2018-05-16 23:58:31 - Creating user profile for cmandala
+2018-05-16 23:58:31 - User profile successfully created for  cmandala
+2018-05-16 23:58:31 - User logged in with ID cmandala
+2018-05-16 23:58:31 - Getting list of users whom cmandala can delegate to
+2018-05-16 23:58:31 - Delegate list prepared for cmandala
+2018-05-16 23:58:31 - Getting list of users who have delegated to cmandala
+2018-05-16 23:58:31 - There is no user who has delegated to cmandala
+2018-05-16 23:58:35 - Getting Active billCycle...
+2018-05-16 23:58:35 - Getting group approvals for billCycle 042018
+2018-05-16 23:58:43 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:58:43 - Getting SLA employee list for billCycle 052025 and towerId 7
+2018-05-16 23:58:43 - Getting SLA WR list for billCycle 052025 and towerId 7
+2018-05-16 23:58:43 - Getting SLA weekend list for billCycle 052025 and towerId 7
+2018-05-16 23:58:43 - Checking lock for billCycle 052025 towerID 7
+2018-05-16 23:58:43 - Checking prior approval by userID cmandala for billCyle 052025
+2018-05-16 23:58:43 - ResonsetDataEnvelope ready...
+2018-05-16 23:58:48 - Checking lock for billCycle 052025 towerID 7
+2018-05-16 23:58:48 - Checking lock by user billCycle 052025
+2018-05-16 23:58:48 - No tower locked by userID cmandala
+2018-05-16 23:58:57 - Getting data for ResonsetDataEnvelope...
+2018-05-16 23:58:57 - Getting SLA employee list for billCycle 052025 and towerId 4
+2018-05-16 23:58:57 - Getting SLA WR list for billCycle 052025 and towerId 4
+2018-05-16 23:58:57 - Getting SLA weekend list for billCycle 052025 and towerId 4
+2018-05-16 23:58:57 - Checking lock for billCycle 052025 towerID 4
+2018-05-16 23:58:57 - No user found who had locked for billCycle 052025 towerID 4
+2018-05-16 23:58:57 - Checking prior approval by userID cmandala for billCyle 052025
+2018-05-16 23:58:57 - ResonsetDataEnvelope ready...
+2018-05-16 23:59:09 - Checking lock for billCycle 052025 towerID 4
+2018-05-16 23:59:09 - No user found who had locked for billCycle 052025 towerID 4
+2018-05-16 23:59:09 - Checking lock by user billCycle 052025
+2018-05-16 23:59:09 - No tower locked by userID cmandala
+2018-05-16 23:59:09 - Lock established by userID cmandala for towerID 4 for billCycle 052025
+2018-05-17 00:01:59 - Creating user profile for cmandala
+2018-05-17 00:01:59 - User profile successfully created for  cmandala
+2018-05-17 00:01:59 - User logged in with ID cmandala
+2018-05-17 00:01:59 - Getting list of users whom cmandala can delegate to
+2018-05-17 00:01:59 - Delegate list prepared for cmandala
+2018-05-17 00:01:59 - Getting list of users who have delegated to cmandala
+2018-05-17 00:01:59 - There is no user who has delegated to cmandala
+2018-05-17 00:02:08 - Getting Active billCycle...
+2018-05-17 00:02:08 - Getting group approvals for billCycle 042018
+2018-05-17 00:02:17 - Getting data for ResonsetDataEnvelope...
+2018-05-17 00:02:17 - Getting SLA employee list for billCycle 052025 and towerId 1
+2018-05-17 00:02:17 - Getting SLA WR list for billCycle 052025 and towerId 1
+2018-05-17 00:02:17 - Getting SLA weekend list for billCycle 052025 and towerId 1
+2018-05-17 00:02:17 - Checking lock for billCycle 052025 towerID 1
+2018-05-17 00:02:17 - No user found who had locked for billCycle 052025 towerID 1
+2018-05-17 00:02:17 - Checking prior approval by userID cmandala for billCyle 052025
+2018-05-17 00:02:17 - ResonsetDataEnvelope ready...
+2018-05-17 00:02:28 - Checking lock for billCycle 052025 towerID 1
+2018-05-17 00:02:28 - No user found who had locked for billCycle 052025 towerID 1
+2018-05-17 00:02:28 - Checking lock by user billCycle 052025
+2018-05-17 00:02:34 - Getting data for ResonsetDataEnvelope...
+2018-05-17 00:02:34 - Getting SLA employee list for billCycle 052025 and towerId 4
+2018-05-17 00:02:34 - Getting SLA WR list for billCycle 052025 and towerId 4
+2018-05-17 00:02:34 - Getting SLA weekend list for billCycle 052025 and towerId 4
+2018-05-17 00:02:34 - Checking lock for billCycle 052025 towerID 4
+2018-05-17 00:02:34 - Checking prior approval by userID cmandala for billCyle 052025
+2018-05-17 00:02:34 - ResonsetDataEnvelope ready...
+2018-05-17 00:03:17 - Updating SLA Data...
+2018-05-17 00:03:17 - Creating new SLA Record for billCycle 052025
+2018-05-17 00:03:18 - Checking lock for billCycle 052025 towerID 4
+2018-05-17 00:03:18 - Lock unset by userID cmandala for towerID 4 for billCycle 052025
+2018-05-17 00:03:19 - Getting data for ResonsetDataEnvelope...
+2018-05-17 00:03:19 - Getting SLA employee list for billCycle 052025 and towerId 4
+2018-05-17 00:03:19 - Getting SLA WR list for billCycle 052025 and towerId 4
+2018-05-17 00:03:19 - Getting SLA weekend list for billCycle 052025 and towerId 4
+2018-05-17 00:03:19 - Checking lock for billCycle 052025 towerID 4
+2018-05-17 00:03:19 - No user found who had locked for billCycle 052025 towerID 4
+2018-05-17 00:03:19 - Checking prior approval by userID cmandala for billCyle 052025
+2018-05-17 00:03:19 - ResonsetDataEnvelope ready...
+2018-05-17 00:09:20 - Datasource properties set for Dev environment...
+2018-05-17 00:09:20 - Email properties set for biller application...
+2018-05-17 00:09:20 - Authetication interceptor linked for biller application...
+2018-05-17 00:09:21 - JDBCTemplate linked with datasource...
+2018-05-17 00:09:22 - Datasource properties set for Dev environment...
+2018-05-17 00:09:22 - Email properties set for biller application...
+2018-05-17 00:09:22 - JDBCTemplate linked with datasource...
+2018-05-17 00:09:22 - Authetication interceptor linked for biller application...
+2018-05-17 15:11:15 - Datasource properties set for Dev environment...
+2018-05-17 15:11:15 - Email properties set for biller application...
+2018-05-17 15:11:16 - Authetication interceptor linked for biller application...
+2018-05-17 15:11:17 - JDBCTemplate linked with datasource...
+2018-05-17 15:11:18 - Datasource properties set for Dev environment...
+2018-05-17 15:11:18 - Email properties set for biller application...
+2018-05-17 15:11:18 - JDBCTemplate linked with datasource...
+2018-05-17 15:11:18 - Authetication interceptor linked for biller application...
+2018-05-17 18:18:44 - Exception in login controller: 
+org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:619) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:684) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:716) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:726) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:776) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at com.app.biller.dao.UserDaoImpl.getPassword(UserDaoImpl.java:69) ~[classes/:na]
+	at com.app.biller.services.LoginServiceImpl.validateCredentials(LoginServiceImpl.java:22) ~[classes/:na]
+	at com.app.biller.controller.LoginController.processLogin(LoginController.java:63) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_144]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:475) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [catalina.jar:9.0.0.M26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:498) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:796) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1374) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M26]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_144]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M26]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_144]
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:590) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:57) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1606) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_144]
+	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_144]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:196) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:159) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 47 common frames omitted
+Caused by: com.mysql.cj.core.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_144]
+	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_144]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:54) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:93) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:133) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:149) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.mysqla.io.MysqlaSocketConnection.connect(MysqlaSocketConnection.java:83) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.mysqla.MysqlaSession.connect(MysqlaSession.java:122) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:1726) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1596) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	... 58 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_144]
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_144]
+	at com.mysql.cj.core.io.StandardSocketFactory.connect(StandardSocketFactory.java:202) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.mysqla.io.MysqlaSocketConnection.connect(MysqlaSocketConnection.java:57) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	... 61 common frames omitted
+2018-05-17 18:19:11 - Datasource properties set for Dev environment...
+2018-05-17 18:19:11 - Email properties set for biller application...
+2018-05-17 18:19:11 - Authetication interceptor linked for biller application...
+2018-05-17 18:19:12 - JDBCTemplate linked with datasource...
+2018-05-17 18:19:13 - Datasource properties set for Dev environment...
+2018-05-17 18:19:13 - Email properties set for biller application...
+2018-05-17 18:19:13 - JDBCTemplate linked with datasource...
+2018-05-17 18:19:13 - Authetication interceptor linked for biller application...
+2018-05-17 18:19:22 - Exception in login controller: 
+org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:619) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:684) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:716) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:726) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:776) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at com.app.biller.dao.UserDaoImpl.getPassword(UserDaoImpl.java:69) ~[classes/:na]
+	at com.app.biller.services.LoginServiceImpl.validateCredentials(LoginServiceImpl.java:22) ~[classes/:na]
+	at com.app.biller.controller.LoginController.processLogin(LoginController.java:63) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_144]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:475) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [catalina.jar:9.0.0.M26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:498) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:796) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1374) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M26]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_144]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M26]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_144]
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:590) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:57) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1606) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:633) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:347) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:219) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_144]
+	at java.sql.DriverManager.getConnection(Unknown Source) ~[na:1.8.0_144]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:196) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:159) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77) ~[spring-jdbc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 47 common frames omitted
+Caused by: com.mysql.cj.core.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[na:1.8.0_144]
+	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[na:1.8.0_144]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:54) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:93) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createException(ExceptionFactory.java:133) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.core.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:149) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.mysqla.io.MysqlaSocketConnection.connect(MysqlaSocketConnection.java:83) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.mysqla.MysqlaSession.connect(MysqlaSession.java:122) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:1726) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:1596) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	... 58 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_144]
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_144]
+	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_144]
+	at com.mysql.cj.core.io.StandardSocketFactory.connect(StandardSocketFactory.java:202) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	at com.mysql.cj.mysqla.io.MysqlaSocketConnection.connect(MysqlaSocketConnection.java:57) ~[mysql-connector-java-6.0.6.jar:6.0.6]
+	... 61 common frames omitted
+2018-05-17 18:20:26 - Datasource properties set for Prod environment...
+2018-05-17 18:20:27 - Email properties set for biller application...
+2018-05-17 18:20:27 - Authetication interceptor linked for biller application...
+2018-05-17 18:20:29 - JDBCTemplate linked with datasource...
+2018-05-17 18:20:30 - Datasource properties set for Prod environment...
+2018-05-17 18:20:30 - Email properties set for biller application...
+2018-05-17 18:20:30 - JDBCTemplate linked with datasource...
+2018-05-17 18:20:30 - Authetication interceptor linked for biller application...

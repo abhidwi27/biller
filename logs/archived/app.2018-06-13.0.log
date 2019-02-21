@@ -1,0 +1,562 @@
+2018-06-13 16:36:51 - Datasource properties set for Prod environment...
+2018-06-13 16:36:51 - Email properties set for biller application...
+2018-06-13 16:36:52 - Authetication interceptor linked for biller application...
+2018-06-13 16:36:53 - JDBCTemplate linked with datasource...
+2018-06-13 16:36:54 - Datasource properties set for Prod environment...
+2018-06-13 16:36:54 - Email properties set for biller application...
+2018-06-13 16:36:54 - JDBCTemplate linked with datasource...
+2018-06-13 16:36:54 - Authetication interceptor linked for biller application...
+2018-06-13 16:37:03 - Creating user profile for adwivedi
+2018-06-13 16:37:03 - User profile successfully created for  adwivedi
+2018-06-13 16:37:03 - User logged in with ID adwivedi
+2018-06-13 16:37:09 - Getting Active billCycle...
+2018-06-13 16:37:10 - Getting group approvals for billCycle 052018
+2018-06-13 16:40:22 - Datasource properties set for Dev environment...
+2018-06-13 16:40:22 - Email properties set for biller application...
+2018-06-13 16:40:23 - Authetication interceptor linked for biller application...
+2018-06-13 16:40:24 - JDBCTemplate linked with datasource...
+2018-06-13 16:40:25 - Datasource properties set for Dev environment...
+2018-06-13 16:40:25 - Email properties set for biller application...
+2018-06-13 16:40:25 - JDBCTemplate linked with datasource...
+2018-06-13 16:40:25 - Authetication interceptor linked for biller application...
+2018-06-13 16:40:43 - Datasource properties set for Dev environment...
+2018-06-13 16:40:43 - Email properties set for biller application...
+2018-06-13 16:40:43 - Authetication interceptor linked for biller application...
+2018-06-13 16:40:45 - JDBCTemplate linked with datasource...
+2018-06-13 16:40:45 - Datasource properties set for Dev environment...
+2018-06-13 16:40:45 - Email properties set for biller application...
+2018-06-13 16:40:45 - JDBCTemplate linked with datasource...
+2018-06-13 16:40:45 - Authetication interceptor linked for biller application...
+2018-06-13 16:41:37 - Creating user profile for adwivedi
+2018-06-13 16:41:37 - User profile successfully created for  adwivedi
+2018-06-13 16:41:37 - User logged in with ID adwivedi
+2018-06-13 16:41:37 - Getting list of users whom adwivedi can delegate to
+2018-06-13 16:41:37 - Delegate list prepared for adwivedi
+2018-06-13 16:41:37 - Getting list of users who have delegated to adwivedi
+2018-06-13 16:41:37 - There is no user who has delegated to adwivedi
+2018-06-13 16:41:41 - Getting Active billCycle...
+2018-06-13 16:41:41 - Getting group approvals for billCycle 022018
+2018-06-13 16:41:49 - Reading ILC Data for billCycle 052025 and towerId 0 and account Id 1
+2018-06-13 16:41:49 - Getting data for ResonsetDataEnvelope...
+2018-06-13 16:41:49 - Getting ILC employee list for billCycle 052025 and towerId 0
+2018-06-13 16:41:49 - Getting ILC Wekeend list for billCycle 052025 and towerId 0
+2018-06-13 16:41:49 - Getting ILC Remakrs list for billCycle 052025 and towerId 0
+2018-06-13 16:41:49 - Checking lock for billCycle 052025 towerID 0
+2018-06-13 16:41:49 - No user found who had locked for billCycle 052025 towerID 0
+2018-06-13 16:41:49 - Checking prior approval by userID adwivedi for billCyle 052025
+2018-06-13 16:41:49 - ResonsetDataEnvelope ready...
+2018-06-13 16:41:55 - Reading Customized ILC Data...
+2018-06-13 16:41:55 - Reading Customized ILC Data...
+2018-06-13 16:42:19 - Creating user profile for adwivedi
+2018-06-13 16:42:19 - User profile successfully created for  adwivedi
+2018-06-13 16:42:19 - User logged in with ID adwivedi
+2018-06-13 16:42:19 - Getting list of users whom adwivedi can delegate to
+2018-06-13 16:42:19 - Delegate list prepared for adwivedi
+2018-06-13 16:42:19 - Getting list of users who have delegated to adwivedi
+2018-06-13 16:42:19 - There is no user who has delegated to adwivedi
+2018-06-13 16:42:24 - Getting Active billCycle...
+2018-06-13 16:42:24 - Getting group approvals for billCycle 022018
+2018-06-13 16:42:28 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 16:42:28 - Getting data for ResonsetDataEnvelope...
+2018-06-13 16:42:28 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 16:42:29 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 16:42:29 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 16:42:29 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 16:42:29 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 16:42:29 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 16:42:29 - ResonsetDataEnvelope ready...
+2018-06-13 16:42:40 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 16:42:40 - Getting data for ResonsetDataEnvelope...
+2018-06-13 16:42:40 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 16:42:40 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 16:42:40 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 16:42:40 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 16:42:40 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 16:42:40 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 16:42:40 - ResonsetDataEnvelope ready...
+2018-06-13 16:42:56 - Reading Customized ILC Data...
+2018-06-13 16:42:56 - Reading Customized ILC Data...
+2018-06-13 16:43:08 - Creating user profile for adwivedi
+2018-06-13 16:43:08 - User profile successfully created for  adwivedi
+2018-06-13 16:43:08 - User logged in with ID adwivedi
+2018-06-13 16:43:08 - Getting list of users whom adwivedi can delegate to
+2018-06-13 16:43:08 - Delegate list prepared for adwivedi
+2018-06-13 16:43:08 - Getting list of users who have delegated to adwivedi
+2018-06-13 16:43:08 - There is no user who has delegated to adwivedi
+2018-06-13 16:43:12 - Getting Active billCycle...
+2018-06-13 16:43:12 - Getting group approvals for billCycle 022018
+2018-06-13 16:43:14 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 16:43:14 - Getting data for ResonsetDataEnvelope...
+2018-06-13 16:43:14 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 16:43:15 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 16:43:15 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 16:43:15 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 16:43:15 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 16:43:15 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 16:43:15 - ResonsetDataEnvelope ready...
+2018-06-13 16:44:27 - Reading Customized ILC Data...
+2018-06-13 16:45:49 - Reading Customized ILC Data...
+2018-06-13 16:46:11 - Reading Customized ILC Data...
+2018-06-13 16:53:14 - Reading Customized ILC Data...
+2018-06-13 16:53:46 - Reading Customized ILC Data...
+2018-06-13 16:53:46 - Reading Customized ILC Data...
+2018-06-13 16:54:32 - Creating user profile for adwivedi
+2018-06-13 16:54:32 - User profile successfully created for  adwivedi
+2018-06-13 16:54:32 - User logged in with ID adwivedi
+2018-06-13 16:54:32 - Getting list of users whom adwivedi can delegate to
+2018-06-13 16:54:32 - Delegate list prepared for adwivedi
+2018-06-13 16:54:32 - Getting list of users who have delegated to adwivedi
+2018-06-13 16:54:32 - There is no user who has delegated to adwivedi
+2018-06-13 16:54:36 - Getting Active billCycle...
+2018-06-13 16:54:36 - Getting group approvals for billCycle 022018
+2018-06-13 16:54:39 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 16:54:39 - Getting data for ResonsetDataEnvelope...
+2018-06-13 16:54:39 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 16:54:39 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 16:54:39 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 16:54:39 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 16:54:39 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 16:54:39 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 16:54:39 - ResonsetDataEnvelope ready...
+2018-06-13 16:58:20 - Reading Customized ILC Data...
+2018-06-13 16:59:51 - Reading Customized ILC Data...
+2018-06-13 17:00:33 - Creating user profile for adwivedi
+2018-06-13 17:00:33 - User profile successfully created for  adwivedi
+2018-06-13 17:00:33 - User logged in with ID adwivedi
+2018-06-13 17:00:33 - Getting list of users whom adwivedi can delegate to
+2018-06-13 17:00:33 - Delegate list prepared for adwivedi
+2018-06-13 17:00:33 - Getting list of users who have delegated to adwivedi
+2018-06-13 17:00:33 - There is no user who has delegated to adwivedi
+2018-06-13 17:00:40 - Getting Active billCycle...
+2018-06-13 17:00:40 - Getting group approvals for billCycle 022018
+2018-06-13 17:00:49 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 17:00:49 - Getting data for ResonsetDataEnvelope...
+2018-06-13 17:00:49 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 17:00:50 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 17:00:50 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 17:00:50 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 17:00:50 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 17:00:50 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 17:00:50 - ResonsetDataEnvelope ready...
+2018-06-13 17:06:20 - Creating user profile for adwivedi
+2018-06-13 17:06:20 - Reading Customized ILC Data...
+2018-06-13 17:06:20 - User profile successfully created for  adwivedi
+2018-06-13 17:06:20 - User logged in with ID adwivedi
+2018-06-13 17:06:20 - Reading Customized ILC Data...
+2018-06-13 17:06:20 - Getting list of users whom adwivedi can delegate to
+2018-06-13 17:06:20 - Delegate list prepared for adwivedi
+2018-06-13 17:06:20 - Getting list of users who have delegated to adwivedi
+2018-06-13 17:06:20 - There is no user who has delegated to adwivedi
+2018-06-13 17:06:27 - Getting Active billCycle...
+2018-06-13 17:06:27 - Getting group approvals for billCycle 022018
+2018-06-13 17:06:32 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 17:06:32 - Getting data for ResonsetDataEnvelope...
+2018-06-13 17:06:32 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 17:06:33 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 17:06:33 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 17:06:33 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 17:06:33 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 17:06:33 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 17:06:33 - ResonsetDataEnvelope ready...
+2018-06-13 17:06:41 - Reading Customized ILC Data...
+2018-06-13 17:06:41 - Reading Customized ILC Data...
+2018-06-13 17:07:18 - Creating user profile for adwivedi
+2018-06-13 17:07:18 - User profile successfully created for  adwivedi
+2018-06-13 17:07:18 - User logged in with ID adwivedi
+2018-06-13 17:07:18 - Getting list of users whom adwivedi can delegate to
+2018-06-13 17:07:18 - Delegate list prepared for adwivedi
+2018-06-13 17:07:18 - Getting list of users who have delegated to adwivedi
+2018-06-13 17:07:18 - There is no user who has delegated to adwivedi
+2018-06-13 17:07:22 - Getting Active billCycle...
+2018-06-13 17:07:22 - Getting group approvals for billCycle 022018
+2018-06-13 17:08:04 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 17:08:04 - Getting data for ResonsetDataEnvelope...
+2018-06-13 17:08:04 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 17:08:05 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 17:08:05 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 17:08:05 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 17:08:05 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 17:08:05 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 17:08:05 - ResonsetDataEnvelope ready...
+2018-06-13 17:08:23 - Reading Customized ILC Data...
+2018-06-13 17:08:23 - Reading Customized ILC Data...
+2018-06-13 17:08:47 - Creating user profile for adwivedi
+2018-06-13 17:08:47 - User profile successfully created for  adwivedi
+2018-06-13 17:08:47 - User logged in with ID adwivedi
+2018-06-13 17:08:47 - Getting list of users whom adwivedi can delegate to
+2018-06-13 17:08:47 - Delegate list prepared for adwivedi
+2018-06-13 17:08:47 - Getting list of users who have delegated to adwivedi
+2018-06-13 17:08:47 - There is no user who has delegated to adwivedi
+2018-06-13 17:08:54 - Getting Active billCycle...
+2018-06-13 17:08:54 - Getting group approvals for billCycle 022018
+2018-06-13 17:08:58 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 17:08:59 - Getting data for ResonsetDataEnvelope...
+2018-06-13 17:08:59 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 17:08:59 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 17:08:59 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 17:08:59 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 17:08:59 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 17:08:59 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 17:08:59 - ResonsetDataEnvelope ready...
+2018-06-13 17:09:43 - Reading Customized ILC Data...
+2018-06-13 17:09:43 - Reading Customized ILC Data...
+2018-06-13 17:12:20 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 17:12:21 - Getting data for ResonsetDataEnvelope...
+2018-06-13 17:12:21 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 17:12:21 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 17:12:21 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 17:12:21 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 17:12:21 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 17:12:21 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 17:12:21 - ResonsetDataEnvelope ready...
+2018-06-13 17:14:54 - Reading Customized ILC Data...
+2018-06-13 17:20:24 - Reading Customized ILC Data...
+2018-06-13 17:23:01 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 17:23:01 - Getting data for ResonsetDataEnvelope...
+2018-06-13 17:23:01 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 17:23:01 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 17:23:02 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 17:23:02 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 17:23:02 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 17:23:02 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 17:23:02 - ResonsetDataEnvelope ready...
+2018-06-13 17:23:44 - Reading Customized ILC Data...
+2018-06-13 17:26:22 - Reading Customized ILC Data...
+2018-06-13 17:26:37 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 17:26:37 - Getting data for ResonsetDataEnvelope...
+2018-06-13 17:26:37 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 17:26:37 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 17:26:37 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 17:26:37 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 17:26:37 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 17:26:37 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 17:26:37 - ResonsetDataEnvelope ready...
+2018-06-13 17:27:10 - Reading Customized ILC Data...
+2018-06-13 17:27:25 - Reading Customized ILC Data...
+2018-06-13 17:29:03 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 17:29:03 - Getting data for ResonsetDataEnvelope...
+2018-06-13 17:29:03 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 17:29:03 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 17:29:03 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 17:29:04 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 17:29:04 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 17:29:04 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 17:29:04 - ResonsetDataEnvelope ready...
+2018-06-13 17:29:30 - Reading Customized ILC Data...
+2018-06-13 17:31:11 - Reading Customized ILC Data...
+2018-06-13 17:31:27 - Creating user profile for adwivedi
+2018-06-13 17:31:27 - User profile successfully created for  adwivedi
+2018-06-13 17:31:27 - User logged in with ID adwivedi
+2018-06-13 17:31:27 - Getting list of users whom adwivedi can delegate to
+2018-06-13 17:31:27 - Delegate list prepared for adwivedi
+2018-06-13 17:31:27 - Getting list of users who have delegated to adwivedi
+2018-06-13 17:31:27 - There is no user who has delegated to adwivedi
+2018-06-13 17:31:36 - Getting Active billCycle...
+2018-06-13 17:31:36 - Getting group approvals for billCycle 022018
+2018-06-13 17:31:40 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 17:31:40 - Getting data for ResonsetDataEnvelope...
+2018-06-13 17:31:40 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 17:31:40 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 17:31:40 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 17:31:40 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 17:31:40 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 17:31:40 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 17:31:40 - ResonsetDataEnvelope ready...
+2018-06-13 17:32:57 - Reading Customized ILC Data...
+2018-06-13 17:33:05 - Reading Customized ILC Data...
+2018-06-13 17:36:25 - Creating user profile for adwivedi
+2018-06-13 17:36:25 - User profile successfully created for  adwivedi
+2018-06-13 17:36:25 - User logged in with ID adwivedi
+2018-06-13 17:36:25 - Getting list of users whom adwivedi can delegate to
+2018-06-13 17:36:25 - Delegate list prepared for adwivedi
+2018-06-13 17:36:25 - Getting list of users who have delegated to adwivedi
+2018-06-13 17:36:25 - There is no user who has delegated to adwivedi
+2018-06-13 17:36:32 - Getting Active billCycle...
+2018-06-13 17:36:32 - Getting group approvals for billCycle 022018
+2018-06-13 18:36:47 - User not Logged in.
+2018-06-13 18:36:48 - User not Logged in.
+2018-06-13 18:37:10 - Creating user profile for adwivedi
+2018-06-13 18:37:10 - User profile successfully created for  adwivedi
+2018-06-13 18:37:10 - User logged in with ID adwivedi
+2018-06-13 18:37:10 - Getting list of users whom adwivedi can delegate to
+2018-06-13 18:37:10 - Delegate list prepared for adwivedi
+2018-06-13 18:37:10 - Getting list of users who have delegated to adwivedi
+2018-06-13 18:37:10 - There is no user who has delegated to adwivedi
+2018-06-13 18:37:24 - Getting Active billCycle...
+2018-06-13 18:37:24 - Getting group approvals for billCycle 022018
+2018-06-13 18:37:29 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 18:37:30 - Getting data for ResonsetDataEnvelope...
+2018-06-13 18:37:30 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 18:37:30 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 18:37:30 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 18:37:30 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 18:37:30 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 18:37:30 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 18:37:30 - ResonsetDataEnvelope ready...
+2018-06-13 18:40:17 - Exception handler executed
+2018-06-13 18:40:18 - Exception handler executed
+2018-06-13 18:40:36 - Creating user profile for adwivedi
+2018-06-13 18:40:36 - User profile successfully created for  adwivedi
+2018-06-13 18:40:36 - User logged in with ID adwivedi
+2018-06-13 18:40:36 - Getting list of users whom adwivedi can delegate to
+2018-06-13 18:40:36 - Delegate list prepared for adwivedi
+2018-06-13 18:40:36 - Getting list of users who have delegated to adwivedi
+2018-06-13 18:40:36 - There is no user who has delegated to adwivedi
+2018-06-13 18:40:43 - Getting Active billCycle...
+2018-06-13 18:40:43 - Getting group approvals for billCycle 022018
+2018-06-13 18:40:47 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 18:40:47 - Getting data for ResonsetDataEnvelope...
+2018-06-13 18:40:47 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 18:40:47 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 18:40:47 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 18:40:47 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 18:40:47 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 18:40:47 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 18:40:47 - ResonsetDataEnvelope ready...
+2018-06-13 18:41:54 - Creating user profile for adwivedi
+2018-06-13 18:41:54 - User profile successfully created for  adwivedi
+2018-06-13 18:41:54 - User logged in with ID adwivedi
+2018-06-13 18:41:54 - Getting list of users whom adwivedi can delegate to
+2018-06-13 18:41:54 - Delegate list prepared for adwivedi
+2018-06-13 18:41:54 - Getting list of users who have delegated to adwivedi
+2018-06-13 18:41:54 - There is no user who has delegated to adwivedi
+2018-06-13 18:42:03 - Getting Active billCycle...
+2018-06-13 18:42:03 - Getting group approvals for billCycle 022018
+2018-06-13 18:42:07 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 18:42:07 - Getting data for ResonsetDataEnvelope...
+2018-06-13 18:42:07 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 18:42:07 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 18:42:07 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 18:42:07 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 18:42:07 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 18:42:07 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 18:42:07 - ResonsetDataEnvelope ready...
+2018-06-13 18:44:19 - Exception handler executed
+2018-06-13 18:44:20 - Exception handler executed
+2018-06-13 18:45:47 - Datasource properties set for Dev environment...
+2018-06-13 18:45:48 - Email properties set for biller application...
+2018-06-13 18:45:48 - Authetication interceptor linked for biller application...
+2018-06-13 18:45:49 - JDBCTemplate linked with datasource...
+2018-06-13 18:45:50 - Datasource properties set for Dev environment...
+2018-06-13 18:45:50 - Email properties set for biller application...
+2018-06-13 18:45:50 - JDBCTemplate linked with datasource...
+2018-06-13 18:45:50 - Authetication interceptor linked for biller application...
+2018-06-13 18:45:59 - Creating user profile for adwivedi
+2018-06-13 18:45:59 - User profile successfully created for  adwivedi
+2018-06-13 18:45:59 - User logged in with ID adwivedi
+2018-06-13 18:45:59 - Getting list of users whom adwivedi can delegate to
+2018-06-13 18:45:59 - Delegate list prepared for adwivedi
+2018-06-13 18:45:59 - Getting list of users who have delegated to adwivedi
+2018-06-13 18:45:59 - There is no user who has delegated to adwivedi
+2018-06-13 18:46:08 - Getting Active billCycle...
+2018-06-13 18:46:08 - Getting group approvals for billCycle 022018
+2018-06-13 18:46:11 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 18:46:12 - Getting data for ResonsetDataEnvelope...
+2018-06-13 18:46:12 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 18:46:12 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 18:46:12 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 18:46:12 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 18:46:12 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 18:46:12 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 18:46:12 - ResonsetDataEnvelope ready...
+2018-06-13 18:47:05 - Exception handler executed
+2018-06-13 18:47:05 - Exception handler executed
+2018-06-13 18:47:48 - Creating user profile for adwivedi
+2018-06-13 18:47:48 - User profile successfully created for  adwivedi
+2018-06-13 18:47:48 - User logged in with ID adwivedi
+2018-06-13 18:47:49 - Getting list of users whom adwivedi can delegate to
+2018-06-13 18:47:49 - Delegate list prepared for adwivedi
+2018-06-13 18:47:49 - Getting list of users who have delegated to adwivedi
+2018-06-13 18:47:49 - There is no user who has delegated to adwivedi
+2018-06-13 18:47:56 - Getting Active billCycle...
+2018-06-13 18:47:56 - Getting group approvals for billCycle 022018
+2018-06-13 18:47:59 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 18:47:59 - Getting data for ResonsetDataEnvelope...
+2018-06-13 18:47:59 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 18:48:00 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 18:48:00 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 18:48:00 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 18:48:00 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 18:48:00 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 18:48:00 - ResonsetDataEnvelope ready...
+2018-06-13 18:48:53 - Exception handler executed
+2018-06-13 18:48:53 - Exception handler executed
+2018-06-13 18:49:03 - Creating user profile for adwivedi
+2018-06-13 18:49:03 - User profile successfully created for  adwivedi
+2018-06-13 18:49:03 - User logged in with ID adwivedi
+2018-06-13 18:49:03 - Getting list of users whom adwivedi can delegate to
+2018-06-13 18:49:03 - Delegate list prepared for adwivedi
+2018-06-13 18:49:03 - Getting list of users who have delegated to adwivedi
+2018-06-13 18:49:03 - There is no user who has delegated to adwivedi
+2018-06-13 18:49:06 - Getting Active billCycle...
+2018-06-13 18:49:06 - Getting group approvals for billCycle 022018
+2018-06-13 18:49:09 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 18:49:09 - Getting data for ResonsetDataEnvelope...
+2018-06-13 18:49:09 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 18:49:10 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 18:49:10 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 18:49:10 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 18:49:10 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 18:49:10 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 18:49:10 - ResonsetDataEnvelope ready...
+2018-06-13 18:49:59 - Exception handler executed
+2018-06-13 18:50:00 - Exception handler executed
+2018-06-13 18:50:20 - Creating user profile for adwivedi
+2018-06-13 18:50:20 - User profile successfully created for  adwivedi
+2018-06-13 18:50:20 - User logged in with ID adwivedi
+2018-06-13 18:50:20 - Getting list of users whom adwivedi can delegate to
+2018-06-13 18:50:20 - Delegate list prepared for adwivedi
+2018-06-13 18:50:20 - Getting list of users who have delegated to adwivedi
+2018-06-13 18:50:20 - There is no user who has delegated to adwivedi
+2018-06-13 18:50:24 - Getting Active billCycle...
+2018-06-13 18:50:24 - Getting group approvals for billCycle 022018
+2018-06-13 18:50:28 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 18:50:29 - Getting data for ResonsetDataEnvelope...
+2018-06-13 18:50:29 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 18:50:29 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 18:50:29 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 18:50:29 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 18:50:29 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 18:50:29 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 18:50:29 - ResonsetDataEnvelope ready...
+2018-06-13 18:51:16 - Exception handler executed
+2018-06-13 18:51:17 - Exception handler executed
+2018-06-13 18:51:33 - Creating user profile for adwivedi
+2018-06-13 18:51:33 - User profile successfully created for  adwivedi
+2018-06-13 18:51:33 - User logged in with ID adwivedi
+2018-06-13 18:51:33 - Getting list of users whom adwivedi can delegate to
+2018-06-13 18:51:33 - Delegate list prepared for adwivedi
+2018-06-13 18:51:33 - Getting list of users who have delegated to adwivedi
+2018-06-13 18:51:33 - There is no user who has delegated to adwivedi
+2018-06-13 18:51:39 - Getting Active billCycle...
+2018-06-13 18:51:39 - Getting group approvals for billCycle 022018
+2018-06-13 18:52:01 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 18:52:01 - Getting data for ResonsetDataEnvelope...
+2018-06-13 18:52:01 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 18:52:01 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 18:52:01 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 18:52:02 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 18:52:02 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 18:52:02 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 18:52:02 - ResonsetDataEnvelope ready...
+2018-06-13 18:53:45 - Exception handler executed
+2018-06-13 18:53:46 - Exception handler executed
+2018-06-13 18:55:23 - Creating user profile for adwivedi
+2018-06-13 18:55:23 - User profile successfully created for  adwivedi
+2018-06-13 18:55:23 - User logged in with ID adwivedi
+2018-06-13 18:55:23 - Getting list of users whom adwivedi can delegate to
+2018-06-13 18:55:23 - Delegate list prepared for adwivedi
+2018-06-13 18:55:23 - Getting list of users who have delegated to adwivedi
+2018-06-13 18:55:23 - There is no user who has delegated to adwivedi
+2018-06-13 18:55:31 - Getting Active billCycle...
+2018-06-13 18:55:31 - Getting group approvals for billCycle 022018
+2018-06-13 18:55:37 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 18:55:37 - Getting data for ResonsetDataEnvelope...
+2018-06-13 18:55:37 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 18:55:38 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 18:55:38 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 18:55:38 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 18:55:38 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 18:55:38 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 18:55:38 - ResonsetDataEnvelope ready...
+2018-06-13 19:00:35 - Exception handler executed
+2018-06-13 19:06:42 - Creating user profile for adwivedi
+2018-06-13 19:06:42 - User profile successfully created for  adwivedi
+2018-06-13 19:06:42 - User logged in with ID adwivedi
+2018-06-13 19:06:42 - Getting list of users whom adwivedi can delegate to
+2018-06-13 19:06:42 - Delegate list prepared for adwivedi
+2018-06-13 19:06:42 - Getting list of users who have delegated to adwivedi
+2018-06-13 19:06:42 - There is no user who has delegated to adwivedi
+2018-06-13 19:06:50 - Getting Active billCycle...
+2018-06-13 19:06:51 - Getting group approvals for billCycle 022018
+2018-06-13 19:06:59 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 19:06:59 - Getting data for ResonsetDataEnvelope...
+2018-06-13 19:06:59 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 19:06:59 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 19:06:59 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 19:06:59 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 19:06:59 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 19:06:59 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 19:06:59 - ResonsetDataEnvelope ready...
+2018-06-13 19:07:52 - Reading Customized ILC Data...
+2018-06-13 19:09:02 - Reading Customized ILC Data...
+2018-06-13 19:10:17 - Creating user profile for adwivedi
+2018-06-13 19:10:17 - User profile successfully created for  adwivedi
+2018-06-13 19:10:17 - User logged in with ID adwivedi
+2018-06-13 19:10:17 - Getting list of users whom adwivedi can delegate to
+2018-06-13 19:10:17 - Delegate list prepared for adwivedi
+2018-06-13 19:10:17 - Getting list of users who have delegated to adwivedi
+2018-06-13 19:10:17 - There is no user who has delegated to adwivedi
+2018-06-13 19:10:21 - Getting Active billCycle...
+2018-06-13 19:10:21 - Getting group approvals for billCycle 022018
+2018-06-13 19:10:23 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 19:10:24 - Getting data for ResonsetDataEnvelope...
+2018-06-13 19:10:24 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 19:10:24 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 19:10:24 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 19:10:24 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 19:10:24 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 19:10:24 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 19:10:24 - ResonsetDataEnvelope ready...
+2018-06-13 19:10:43 - Reading Customized ILC Data...
+2018-06-13 19:10:44 - Reading Customized ILC Data...
+2018-06-13 19:12:00 - Creating user profile for adwivedi
+2018-06-13 19:12:00 - User profile successfully created for  adwivedi
+2018-06-13 19:12:00 - User logged in with ID adwivedi
+2018-06-13 19:12:00 - Getting list of users whom adwivedi can delegate to
+2018-06-13 19:12:00 - Delegate list prepared for adwivedi
+2018-06-13 19:12:00 - Getting list of users who have delegated to adwivedi
+2018-06-13 19:12:00 - There is no user who has delegated to adwivedi
+2018-06-13 19:12:03 - Getting Active billCycle...
+2018-06-13 19:12:04 - Getting group approvals for billCycle 022018
+2018-06-13 19:12:06 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 19:12:06 - Getting data for ResonsetDataEnvelope...
+2018-06-13 19:12:06 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 19:12:07 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 19:12:07 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 19:12:07 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 19:12:07 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 19:12:07 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 19:12:07 - ResonsetDataEnvelope ready...
+2018-06-13 19:12:45 - Reading Customized ILC Data...
+2018-06-13 19:12:51 - Reading Customized ILC Data...
+2018-06-13 19:17:09 - Creating user profile for adwivedi
+2018-06-13 19:17:09 - User profile successfully created for  adwivedi
+2018-06-13 19:17:09 - User logged in with ID adwivedi
+2018-06-13 19:17:09 - Getting list of users whom adwivedi can delegate to
+2018-06-13 19:17:09 - Delegate list prepared for adwivedi
+2018-06-13 19:17:09 - Getting list of users who have delegated to adwivedi
+2018-06-13 19:17:09 - There is no user who has delegated to adwivedi
+2018-06-13 19:17:12 - Getting Active billCycle...
+2018-06-13 19:17:12 - Getting group approvals for billCycle 022018
+2018-06-13 19:17:17 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 19:17:17 - Getting data for ResonsetDataEnvelope...
+2018-06-13 19:17:17 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 19:17:17 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 19:17:17 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 19:17:17 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 19:17:18 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 19:17:18 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 19:17:18 - ResonsetDataEnvelope ready...
+2018-06-13 19:17:33 - Reading Customized ILC Data...
+2018-06-13 19:18:53 - Reading Customized ILC Data...
+2018-06-13 19:19:39 - Creating user profile for adwivedi
+2018-06-13 19:19:39 - User profile successfully created for  adwivedi
+2018-06-13 19:19:39 - User logged in with ID adwivedi
+2018-06-13 19:19:40 - Getting list of users whom adwivedi can delegate to
+2018-06-13 19:19:40 - Delegate list prepared for adwivedi
+2018-06-13 19:19:40 - Getting list of users who have delegated to adwivedi
+2018-06-13 19:19:40 - There is no user who has delegated to adwivedi
+2018-06-13 19:19:46 - Getting Active billCycle...
+2018-06-13 19:19:46 - Getting group approvals for billCycle 022018
+2018-06-13 19:19:53 - Reading ILC Data for billCycle 012017 and towerId 0 and account Id 1
+2018-06-13 19:19:53 - Getting data for ResonsetDataEnvelope...
+2018-06-13 19:19:53 - Getting ILC employee list for billCycle 012017 and towerId 0
+2018-06-13 19:19:53 - Getting ILC Wekeend list for billCycle 012017 and towerId 0
+2018-06-13 19:19:53 - Getting ILC Remakrs list for billCycle 012017 and towerId 0
+2018-06-13 19:19:53 - Checking lock for billCycle 012017 towerID 0
+2018-06-13 19:19:53 - No user found who had locked for billCycle 012017 towerID 0
+2018-06-13 19:19:53 - Checking prior approval by userID adwivedi for billCyle 012017
+2018-06-13 19:19:53 - ResonsetDataEnvelope ready...
+2018-06-13 19:20:07 - Reading Customized ILC Data...
+2018-06-13 19:20:09 - Reading Customized ILC Data...

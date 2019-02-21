@@ -130,10 +130,12 @@ $(document).ready(function(){
 			    				if($('#reportUnlock').find('span i').hasClass('biller-icon-disabled')){
 									$('#reportUnlock').find('span i').removeClass('biller-icon-disabled');
 					    		}
+			    			}else{
+			    				editMode[tower] = false;
 			    			}
-				    	if($('#reportLock').find('span i').hasClass('biller-icon-disabled')){
-							$('#reportLock').find('span i').removeClass('biller-icon-disabled');
-			    		}
+			    			if($('#reportLock').find('span i').hasClass('biller-icon-disabled')){
+			    				$('#reportLock').find('span i').removeClass('biller-icon-disabled');
+			    			}
 			    	}else{
 			    		editMode[tower] = false;
 			    	}
@@ -144,6 +146,7 @@ $(document).ready(function(){
 						$('#reportSave').find('span i').addClass('biller-icon-disabled');
 						$('#reportDelete').find('span i').addClass('biller-icon-disabled');
 						$('#reportBulkUpdate').find('span i').addClass('biller-icon-disabled');
+						$('#reportUnlock').find('span i').addClass('biller-icon-disabled');
 						
 					}else{
 						if($('#reportEdit').find('span i').hasClass('biller-icon-disabled')){
@@ -256,8 +259,8 @@ $(document).ready(function(){
 				    /*addListContent('#customEmp', employeeList);
 	                addListContent('#customWr', wrList);
 	                addListContent('#customWeekend', weekEndList);
-	                addListContent('#customRemarks', remarksList);
-	                addListContent('#rejectForUser', rejectForUserList);*/	                
+	                addListContent('#customRemarks', remarksList);*/
+	                addListContent('#rejectForUser', rejectForUserList);	                
 
 	            },
 		 		error: function(result){

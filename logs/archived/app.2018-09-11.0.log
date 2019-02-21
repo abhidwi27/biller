@@ -1,0 +1,1278 @@
+2018-09-11 21:06:23 - Datasource properties set for Prod environment...
+2018-09-11 21:06:23 - Email properties set for biller application...
+2018-09-11 21:06:24 - Authetication interceptor linked for biller application...
+2018-09-11 21:06:25 - JDBCTemplate linked with datasource...
+2018-09-11 21:06:26 - Datasource properties set for Prod environment...
+2018-09-11 21:06:26 - Email properties set for biller application...
+2018-09-11 21:06:26 - JDBCTemplate linked with datasource...
+2018-09-11 21:06:26 - Authetication interceptor linked for biller application...
+2018-09-11 21:06:44 - Datasource properties set for Dev environment...
+2018-09-11 21:06:45 - Email properties set for biller application...
+2018-09-11 21:06:45 - Authetication interceptor linked for biller application...
+2018-09-11 21:06:46 - JDBCTemplate linked with datasource...
+2018-09-11 21:06:47 - Datasource properties set for Dev environment...
+2018-09-11 21:06:47 - Email properties set for biller application...
+2018-09-11 21:06:47 - JDBCTemplate linked with datasource...
+2018-09-11 21:06:47 - Authetication interceptor linked for biller application...
+2018-09-11 21:09:13 - Creating user profile for vveera
+2018-09-11 21:09:13 - User profile successfully created for  vveera
+2018-09-11 21:09:13 - User logged in with ID vveera
+2018-09-11 21:09:16 - Getting Active billCycle...
+2018-09-11 21:09:16 - No Active billCycle found...
+2018-09-11 21:09:43 - File uploading process started for:  billCycle 092018 datatype 0 reportWeekend 07-Sep-2018
+2018-09-11 21:09:43 - Uploading Files...
+2018-09-11 21:09:43 - Files uploaded successfully..
+2018-09-11 21:09:43 - Files uploaded successfully..
+2018-09-11 21:09:43 - Files uploaded successfully..
+2018-09-11 21:09:43 - Files uploaded successfully..
+2018-09-11 21:09:43 - Files uploaded successfully..
+2018-09-11 21:09:43 - Files uploaded successfully..
+2018-09-11 21:09:43 - Creating ILC Datasheet..
+2018-09-11 21:11:10 - ILC Data sheet created successfully
+2018-09-11 21:11:10 - Extracting ILC Data..
+2018-09-11 21:11:18 - Ignoring NullPointerException in Extract ILC Data
+2018-09-11 21:11:18 - Deleting ILC Data...
+2018-09-11 21:11:18 - Couldn't delete ILC Data, may be ILC Table is empty or there is no data to delete for bill cycle 092018
+2018-09-11 21:11:18 - ILC Batch Update Size is 1597
+2018-09-11 21:11:22 - ILC Batch update: records updated = 1597
+2018-09-11 21:11:22 - Extracting ITWR Data..
+2018-09-11 21:11:23 - Ignoring NullPointerException in Create ITWR Data
+2018-09-11 21:11:23 - Deleting ITWR Data..
+2018-09-11 21:11:23 - ITWR Data couldn't be deleted, may be table is already empty
+2018-09-11 21:11:23 - ITWR Batch Size is 0
+2018-09-11 21:11:23 - ITWR Batch update: records updated = 0
+2018-09-11 21:11:23 - Extracting WIASM Data...
+2018-09-11 21:11:23 - WIASM Data extracted ...
+2018-09-11 21:11:23 - Deleting WIASM Data..
+2018-09-11 21:11:24 - WIASM data couldn't be deleted, may be table is already empty	
+2018-09-11 21:11:24 - WIASM Batch Update Size is 360
+2018-09-11 21:11:24 - WIASM Batch update: records updated = 360
+2018-09-11 21:11:24 - No Email ID found for selected role 5
+2018-09-11 21:11:24 - No Email ID found for selected role 6
+2018-09-11 21:11:24 - No Email ID found for selected role 7
+2018-09-11 21:11:52 - Reading ILC Data for billCycle 092018 and towerId 0 and account Id 1
+2018-09-11 21:11:52 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:11:52 - Getting ILC employee list for billCycle 092018 and towerId 0
+2018-09-11 21:11:52 - Getting ILC Wekeend list for billCycle 092018 and towerId 0
+2018-09-11 21:11:53 - Getting ILC Remakrs list for billCycle 092018 and towerId 0
+2018-09-11 21:11:53 - Checking lock for billCycle 092018 towerID 0
+2018-09-11 21:11:53 - No user found who had locked for billCycle 092018 towerID 0
+2018-09-11 21:11:53 - Checking prior approval by userID vveera for billCyle 092018
+2018-09-11 21:11:53 - ResonsetDataEnvelope ready...
+2018-09-11 21:12:17 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 21:12:17 - Uploading Files...
+2018-09-11 21:12:17 - Files uploaded successfully..
+2018-09-11 21:12:17 - Files uploaded successfully..
+2018-09-11 21:12:17 - Files uploaded successfully..
+2018-09-11 21:12:17 - Files uploaded successfully..
+2018-09-11 21:12:17 - Files uploaded successfully..
+2018-09-11 21:12:17 - Files uploaded successfully..
+2018-09-11 21:12:17 - No Entry found in Group Approval Table for billCycle 092018
+2018-09-11 21:12:17 - Creating ILC Datasheet..
+2018-09-11 21:13:54 - ILC Data sheet created successfully
+2018-09-11 21:13:54 - Extracting SLA Data...
+2018-09-11 21:13:54 - Ignoring NullPinterException in extract SLA Data
+2018-09-11 21:13:54 - Creating SLA Data for billCycle 092018
+2018-09-11 21:13:54 - SLA Batch Update Size is 1014
+2018-09-11 21:13:57 - SLA Batch update: records updated = 1014
+2018-09-11 21:13:57 - Extracting ITWR Data..
+2018-09-11 21:13:57 - Ignoring NullPointerException in Create ITWR Data
+2018-09-11 21:13:57 - Deleting ITWR Data..
+2018-09-11 21:13:57 - ITWR Data couldn't be deleted, may be table is already empty
+2018-09-11 21:13:57 - ITWR Batch Size is 0
+2018-09-11 21:13:57 - ITWR Batch update: records updated = 0
+2018-09-11 21:13:57 - Extracting WIASM Data...
+2018-09-11 21:13:57 - WIASM Data extracted ...
+2018-09-11 21:13:57 - Deleting WIASM Data..
+2018-09-11 21:13:57 - WIASM data couldn't be deleted, may be table is already empty	
+2018-09-11 21:13:57 - WIASM Batch Update Size is 360
+2018-09-11 21:13:58 - WIASM Batch update: records updated = 360
+2018-09-11 21:13:58 - No Entry found in Group Approval Table for billCycle 092018
+2018-09-11 21:13:58 - Entry in Group Approval Table for billCycle 092018
+2018-09-11 21:13:58 - No Email ID found for selected role 5
+2018-09-11 21:13:58 - No Email ID found for selected role 6
+2018-09-11 21:13:58 - No Email ID found for selected role 7
+2018-09-11 21:18:22 - Creating user profile for vveera
+2018-09-11 21:18:22 - User profile successfully created for  vveera
+2018-09-11 21:18:22 - User logged in with ID vveera
+2018-09-11 21:18:24 - Getting Active billCycle...
+2018-09-11 21:18:24 - Getting group approvals for billCycle 092018
+2018-09-11 21:20:13 - Creating user profile for adwivedi
+2018-09-11 21:20:13 - User profile successfully created for  adwivedi
+2018-09-11 21:20:13 - User logged in with ID adwivedi
+2018-09-11 21:20:13 - Getting list of users whom adwivedi can delegate to
+2018-09-11 21:20:13 - Delegate list prepared for adwivedi
+2018-09-11 21:20:13 - Getting list of users who have delegated to adwivedi
+2018-09-11 21:20:13 - There is no user who has delegated to adwivedi
+2018-09-11 21:20:15 - Getting Active billCycle...
+2018-09-11 21:20:15 - Getting group approvals for billCycle 092018
+2018-09-11 21:20:47 - Creating user profile for gps
+2018-09-11 21:20:47 - User profile successfully created for  gps
+2018-09-11 21:20:47 - User logged in with ID gps
+2018-09-11 21:20:47 - Getting list of users whom gps can delegate to
+2018-09-11 21:20:47 - Delegate list prepared for gps
+2018-09-11 21:20:47 - Getting list of users who have delegated to gps
+2018-09-11 21:20:47 - List prepared of users who has delegated to gps
+2018-09-11 21:20:49 - Getting Active billCycle...
+2018-09-11 21:20:49 - Getting group approvals for billCycle 092018
+2018-09-11 21:20:57 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:20:57 - Getting SLA employee list for billCycle 092018 and towerId 0
+2018-09-11 21:20:58 - Getting SLA WR list for billCycle 092018 and towerId 0
+2018-09-11 21:20:58 - Getting SLA weekend list for billCycle 092018 and towerId 0
+2018-09-11 21:20:58 - Checking lock for billCycle 092018 towerID 0
+2018-09-11 21:20:58 - No user found who had locked for billCycle 092018 towerID 0
+2018-09-11 21:20:58 - Checking prior approval by userID gps for billCyle 092018
+2018-09-11 21:20:58 - ResonsetDataEnvelope ready...
+2018-09-11 21:21:13 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:21:13 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 21:21:13 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 21:21:13 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 21:21:14 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:21:14 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:21:14 - Checking prior approval by userID gps for billCyle 092018
+2018-09-11 21:21:14 - ResonsetDataEnvelope ready...
+2018-09-11 21:21:18 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:21:18 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:21:18 - Checking lock by user billCycle 092018
+2018-09-11 21:21:18 - No tower locked by userID gps
+2018-09-11 21:21:18 - Lock established by userID gps for towerID 1 for billCycle 092018
+2018-09-11 21:22:20 - Creating user profile for ssbram
+2018-09-11 21:22:20 - User profile successfully created for  ssbram
+2018-09-11 21:22:20 - User logged in with ID ssbram
+2018-09-11 21:22:20 - Getting list of users whom ssbram can delegate to
+2018-09-11 21:22:20 - Delegate list prepared for ssbram
+2018-09-11 21:22:20 - Getting list of users who have delegated to ssbram
+2018-09-11 21:22:20 - There is no user who has delegated to ssbram
+2018-09-11 21:22:22 - Getting Active billCycle...
+2018-09-11 21:22:22 - Getting group approvals for billCycle 092018
+2018-09-11 21:22:34 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:22:34 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 21:22:34 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 21:22:34 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 21:22:34 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:22:34 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 21:22:34 - ResonsetDataEnvelope ready...
+2018-09-11 21:22:43 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:22:43 - Checking lock by user billCycle 092018
+2018-09-11 21:22:43 - No tower locked by userID ssbram
+2018-09-11 21:22:47 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:22:47 - Lock couldn't be unset by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:23:17 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:23:17 - Lock couldn't be unset by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:23:29 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:23:29 - Checking lock by user billCycle 092018
+2018-09-11 21:23:29 - No tower locked by userID ssbram
+2018-09-11 21:26:29 - Creating user profile for ssbram
+2018-09-11 21:26:29 - User profile successfully created for  ssbram
+2018-09-11 21:26:29 - User logged in with ID ssbram
+2018-09-11 21:26:29 - Getting list of users whom ssbram can delegate to
+2018-09-11 21:26:29 - Delegate list prepared for ssbram
+2018-09-11 21:26:29 - Getting list of users who have delegated to ssbram
+2018-09-11 21:26:29 - There is no user who has delegated to ssbram
+2018-09-11 21:26:38 - Getting Active billCycle...
+2018-09-11 21:26:38 - Getting group approvals for billCycle 092018
+2018-09-11 21:26:49 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:26:49 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 21:26:49 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 21:26:49 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 21:26:49 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:26:49 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 21:26:49 - ResonsetDataEnvelope ready...
+2018-09-11 21:29:34 - Datasource properties set for Dev environment...
+2018-09-11 21:29:34 - Email properties set for biller application...
+2018-09-11 21:29:35 - Authetication interceptor linked for biller application...
+2018-09-11 21:29:37 - JDBCTemplate linked with datasource...
+2018-09-11 21:29:38 - Datasource properties set for Dev environment...
+2018-09-11 21:29:38 - Email properties set for biller application...
+2018-09-11 21:29:38 - JDBCTemplate linked with datasource...
+2018-09-11 21:29:38 - Authetication interceptor linked for biller application...
+2018-09-11 21:29:39 - Creating user profile for ssbram
+2018-09-11 21:29:39 - User profile successfully created for  ssbram
+2018-09-11 21:29:39 - User logged in with ID ssbram
+2018-09-11 21:29:39 - Getting list of users whom ssbram can delegate to
+2018-09-11 21:29:39 - Delegate list prepared for ssbram
+2018-09-11 21:29:39 - Getting list of users who have delegated to ssbram
+2018-09-11 21:29:39 - There is no user who has delegated to ssbram
+2018-09-11 21:29:42 - Getting Active billCycle...
+2018-09-11 21:29:42 - Getting group approvals for billCycle 092018
+2018-09-11 21:30:06 - Creating user profile for ssbram
+2018-09-11 21:30:06 - User profile successfully created for  ssbram
+2018-09-11 21:30:06 - User logged in with ID ssbram
+2018-09-11 21:30:06 - Getting list of users whom ssbram can delegate to
+2018-09-11 21:30:06 - Delegate list prepared for ssbram
+2018-09-11 21:30:06 - Getting list of users who have delegated to ssbram
+2018-09-11 21:30:06 - There is no user who has delegated to ssbram
+2018-09-11 21:30:09 - Getting Active billCycle...
+2018-09-11 21:30:09 - Getting group approvals for billCycle 092018
+2018-09-11 21:30:16 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:30:16 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 21:30:16 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 21:30:16 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 21:30:17 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:30:17 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 21:30:17 - ResonsetDataEnvelope ready...
+2018-09-11 21:30:20 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:30:20 - Lock couldn't be unset by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:31:31 - Creating user profile for ssbram
+2018-09-11 21:31:31 - User profile successfully created for  ssbram
+2018-09-11 21:31:31 - User logged in with ID ssbram
+2018-09-11 21:31:31 - Getting list of users whom ssbram can delegate to
+2018-09-11 21:31:31 - Delegate list prepared for ssbram
+2018-09-11 21:31:31 - Getting list of users who have delegated to ssbram
+2018-09-11 21:31:31 - There is no user who has delegated to ssbram
+2018-09-11 21:31:33 - Getting Active billCycle...
+2018-09-11 21:31:33 - Getting group approvals for billCycle 092018
+2018-09-11 21:31:44 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:31:44 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 21:31:44 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 21:31:44 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 21:31:44 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:31:44 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 21:31:44 - ResonsetDataEnvelope ready...
+2018-09-11 21:31:49 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:31:49 - Checking lock by user billCycle 092018
+2018-09-11 21:31:49 - No tower locked by userID ssbram
+2018-09-11 21:34:56 - Creating user profile for ssbram
+2018-09-11 21:34:56 - User profile successfully created for  ssbram
+2018-09-11 21:34:56 - User logged in with ID ssbram
+2018-09-11 21:34:56 - Getting list of users whom ssbram can delegate to
+2018-09-11 21:34:56 - Delegate list prepared for ssbram
+2018-09-11 21:34:56 - Getting list of users who have delegated to ssbram
+2018-09-11 21:34:56 - There is no user who has delegated to ssbram
+2018-09-11 21:34:59 - Getting Active billCycle...
+2018-09-11 21:34:59 - Getting group approvals for billCycle 092018
+2018-09-11 21:35:07 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:35:07 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 21:35:07 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 21:35:07 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 21:35:07 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:35:07 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 21:35:07 - ResonsetDataEnvelope ready...
+2018-09-11 21:35:15 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:35:15 - Checking lock by user billCycle 092018
+2018-09-11 21:35:15 - No tower locked by userID ssbram
+2018-09-11 21:35:57 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:35:57 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 21:35:57 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 21:35:57 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 21:35:57 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:35:57 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:35:57 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 21:35:57 - ResonsetDataEnvelope ready...
+2018-09-11 21:36:05 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:36:05 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:36:05 - Checking lock by user billCycle 092018
+2018-09-11 21:36:05 - No tower locked by userID ssbram
+2018-09-11 21:36:05 - Lock established by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:36:17 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:36:17 - Lock unset by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:37:26 - Creating user profile for ssbram
+2018-09-11 21:37:26 - User profile successfully created for  ssbram
+2018-09-11 21:37:26 - User logged in with ID ssbram
+2018-09-11 21:37:26 - Getting list of users whom ssbram can delegate to
+2018-09-11 21:37:26 - Delegate list prepared for ssbram
+2018-09-11 21:37:26 - Getting list of users who have delegated to ssbram
+2018-09-11 21:37:26 - There is no user who has delegated to ssbram
+2018-09-11 21:37:29 - Getting Active billCycle...
+2018-09-11 21:37:29 - Getting group approvals for billCycle 092018
+2018-09-11 21:37:34 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:37:34 - Getting SLA employee list for billCycle 092017 and towerId 0
+2018-09-11 21:37:35 - Getting SLA WR list for billCycle 092017 and towerId 0
+2018-09-11 21:37:35 - Getting SLA weekend list for billCycle 092017 and towerId 0
+2018-09-11 21:37:35 - Checking lock for billCycle 092017 towerID 0
+2018-09-11 21:37:35 - No user found who had locked for billCycle 092017 towerID 0
+2018-09-11 21:37:35 - Checking prior approval by userID ssbram for billCyle 092017
+2018-09-11 21:37:35 - ResonsetDataEnvelope ready...
+2018-09-11 21:37:40 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:37:40 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 21:37:40 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 21:37:40 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 21:37:40 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:37:40 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 21:37:40 - ResonsetDataEnvelope ready...
+2018-09-11 21:37:44 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:37:44 - Checking lock by user billCycle 092018
+2018-09-11 21:37:44 - No tower locked by userID ssbram
+2018-09-11 21:37:48 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:37:48 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 21:37:48 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 21:37:48 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 21:37:48 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:37:48 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:37:48 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 21:37:48 - ResonsetDataEnvelope ready...
+2018-09-11 21:37:59 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:37:59 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:37:59 - Checking lock by user billCycle 092018
+2018-09-11 21:37:59 - No tower locked by userID ssbram
+2018-09-11 21:37:59 - Lock updated by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:38:02 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:38:02 - Lock unset by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:38:35 - Creating user profile for ssbram
+2018-09-11 21:38:35 - User profile successfully created for  ssbram
+2018-09-11 21:38:35 - User logged in with ID ssbram
+2018-09-11 21:38:35 - Getting list of users whom ssbram can delegate to
+2018-09-11 21:38:35 - Delegate list prepared for ssbram
+2018-09-11 21:38:35 - Getting list of users who have delegated to ssbram
+2018-09-11 21:38:35 - There is no user who has delegated to ssbram
+2018-09-11 21:38:38 - Getting Active billCycle...
+2018-09-11 21:38:38 - Getting group approvals for billCycle 092018
+2018-09-11 21:38:45 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:38:45 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 21:38:46 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 21:38:46 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 21:38:46 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:38:46 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 21:38:46 - ResonsetDataEnvelope ready...
+2018-09-11 21:38:52 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:38:52 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 21:38:52 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 21:38:52 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 21:38:52 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:38:52 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:38:52 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 21:38:52 - ResonsetDataEnvelope ready...
+2018-09-11 21:38:54 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:38:54 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:38:54 - Checking lock by user billCycle 092018
+2018-09-11 21:38:54 - No tower locked by userID ssbram
+2018-09-11 21:38:54 - Lock updated by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:38:56 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:38:56 - Lock unset by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:39:10 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:39:10 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:39:10 - Checking lock by user billCycle 092018
+2018-09-11 21:39:10 - No tower locked by userID ssbram
+2018-09-11 21:39:10 - Lock updated by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:39:19 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:39:19 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 21:39:19 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 21:39:19 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 21:39:19 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:39:19 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:39:19 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 21:39:19 - ResonsetDataEnvelope ready...
+2018-09-11 21:54:16 - User not Logged in.
+2018-09-11 21:56:14 - Creating user profile for ssbram
+2018-09-11 21:56:14 - User profile successfully created for  ssbram
+2018-09-11 21:56:14 - User logged in with ID ssbram
+2018-09-11 21:56:14 - Getting list of users whom ssbram can delegate to
+2018-09-11 21:56:14 - Delegate list prepared for ssbram
+2018-09-11 21:56:14 - Getting list of users who have delegated to ssbram
+2018-09-11 21:56:14 - There is no user who has delegated to ssbram
+2018-09-11 21:56:17 - Getting Active billCycle...
+2018-09-11 21:56:17 - Getting group approvals for billCycle 092018
+2018-09-11 21:56:27 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:56:27 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 21:56:27 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 21:56:27 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 21:56:27 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:56:27 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:56:27 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 21:56:27 - ResonsetDataEnvelope ready...
+2018-09-11 21:56:36 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:56:36 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:56:36 - Checking lock by user billCycle 092018
+2018-09-11 21:56:36 - No tower locked by userID ssbram
+2018-09-11 21:56:36 - Lock established by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:57:14 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:57:14 - Lock unset by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:57:21 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:57:21 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:57:21 - Checking lock by user billCycle 092018
+2018-09-11 21:57:21 - No tower locked by userID ssbram
+2018-09-11 21:57:21 - Lock updated by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:57:31 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:57:31 - Lock unset by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:58:23 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:58:23 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 21:58:23 - Checking lock by user billCycle 092018
+2018-09-11 21:58:23 - No tower locked by userID ssbram
+2018-09-11 21:58:23 - Lock updated by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 21:58:27 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 21:58:27 - Checking lock by user billCycle 092018
+2018-09-11 21:59:01 - Getting data for ResonsetDataEnvelope...
+2018-09-11 21:59:01 - Getting SLA employee list for billCycle 092018 and towerId 3
+2018-09-11 21:59:01 - Getting SLA WR list for billCycle 092018 and towerId 3
+2018-09-11 21:59:01 - Getting SLA weekend list for billCycle 092018 and towerId 3
+2018-09-11 21:59:01 - Checking lock for billCycle 092018 towerID 3
+2018-09-11 21:59:01 - No user found who had locked for billCycle 092018 towerID 3
+2018-09-11 21:59:01 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 21:59:01 - ResonsetDataEnvelope ready...
+2018-09-11 21:59:03 - Checking lock for billCycle 092018 towerID 3
+2018-09-11 21:59:03 - No user found who had locked for billCycle 092018 towerID 3
+2018-09-11 21:59:03 - Checking lock by user billCycle 092018
+2018-09-11 21:59:03 - No tower locked by userID ssbram
+2018-09-11 21:59:03 - Lock established by userID ssbram for towerID 3 for billCycle 092018
+2018-09-11 22:00:09 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:00:09 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:00:09 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:00:09 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:00:09 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:00:09 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:00:09 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:00:09 - ResonsetDataEnvelope ready...
+2018-09-11 22:00:11 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:00:11 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:00:11 - Checking lock by user billCycle 092018
+2018-09-11 22:01:03 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:01:03 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:01:03 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:01:03 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:01:03 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:01:03 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:01:03 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:01:03 - ResonsetDataEnvelope ready...
+2018-09-11 22:01:07 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:01:07 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:01:07 - Checking lock by user billCycle 092018
+2018-09-11 22:01:15 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:01:15 - Getting SLA employee list for billCycle 092018 and towerId 3
+2018-09-11 22:01:15 - Getting SLA WR list for billCycle 092018 and towerId 3
+2018-09-11 22:01:15 - Getting SLA weekend list for billCycle 092018 and towerId 3
+2018-09-11 22:01:15 - Checking lock for billCycle 092018 towerID 3
+2018-09-11 22:01:15 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:01:15 - ResonsetDataEnvelope ready...
+2018-09-11 22:01:18 - Checking lock for billCycle 092018 towerID 3
+2018-09-11 22:01:19 - Lock unset by userID ssbram for towerID 3 for billCycle 092018
+2018-09-11 22:01:32 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:01:32 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:01:32 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:01:32 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:01:32 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:01:32 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:01:32 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:01:32 - ResonsetDataEnvelope ready...
+2018-09-11 22:01:45 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:01:45 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:01:45 - Checking lock by user billCycle 092018
+2018-09-11 22:01:45 - No tower locked by userID ssbram
+2018-09-11 22:01:45 - Lock established by userID ssbram for towerID 2 for billCycle 092018
+2018-09-11 22:07:53 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:07:53 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:07:53 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:07:53 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:07:53 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:07:53 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:07:53 - ResonsetDataEnvelope ready...
+2018-09-11 22:07:57 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:07:57 - Checking lock by user billCycle 092018
+2018-09-11 22:08:03 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:08:03 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:08:03 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:08:03 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:08:03 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:08:03 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:08:03 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:08:03 - ResonsetDataEnvelope ready...
+2018-09-11 22:09:00 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:09:00 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:09:00 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:09:00 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:09:00 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:09:01 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:09:01 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:09:01 - ResonsetDataEnvelope ready...
+2018-09-11 22:09:47 - Creating user profile for ssbram
+2018-09-11 22:09:47 - User profile successfully created for  ssbram
+2018-09-11 22:09:47 - User logged in with ID ssbram
+2018-09-11 22:09:47 - Getting list of users whom ssbram can delegate to
+2018-09-11 22:09:47 - Delegate list prepared for ssbram
+2018-09-11 22:09:47 - Getting list of users who have delegated to ssbram
+2018-09-11 22:09:47 - There is no user who has delegated to ssbram
+2018-09-11 22:09:58 - Getting Active billCycle...
+2018-09-11 22:09:58 - Getting group approvals for billCycle 092018
+2018-09-11 22:10:13 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:10:13 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:10:13 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:10:13 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:10:13 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:10:13 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:10:13 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:10:13 - ResonsetDataEnvelope ready...
+2018-09-11 22:11:10 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:11:10 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:11:10 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:11:10 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:11:10 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:11:10 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:11:10 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:11:10 - ResonsetDataEnvelope ready...
+2018-09-11 22:12:11 - Creating user profile for gps
+2018-09-11 22:12:11 - User profile successfully created for  gps
+2018-09-11 22:12:11 - User logged in with ID gps
+2018-09-11 22:12:12 - Getting list of users whom gps can delegate to
+2018-09-11 22:12:12 - Delegate list prepared for gps
+2018-09-11 22:12:12 - Getting list of users who have delegated to gps
+2018-09-11 22:12:12 - List prepared of users who has delegated to gps
+2018-09-11 22:12:14 - Getting Active billCycle...
+2018-09-11 22:12:14 - Getting group approvals for billCycle 092018
+2018-09-11 22:12:23 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:12:23 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 22:12:23 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 22:12:23 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 22:12:23 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 22:12:23 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 22:12:23 - Checking prior approval by userID gps for billCyle 092018
+2018-09-11 22:12:23 - ResonsetDataEnvelope ready...
+2018-09-11 22:12:26 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 22:12:26 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 22:12:26 - Checking lock by user billCycle 092018
+2018-09-11 22:12:26 - No tower locked by userID gps
+2018-09-11 22:12:26 - Lock established by userID gps for towerID 1 for billCycle 092018
+2018-09-11 22:12:40 - Creating user profile for ssbram
+2018-09-11 22:12:40 - User profile successfully created for  ssbram
+2018-09-11 22:12:40 - User logged in with ID ssbram
+2018-09-11 22:12:40 - Getting list of users whom ssbram can delegate to
+2018-09-11 22:12:40 - Delegate list prepared for ssbram
+2018-09-11 22:12:40 - Getting list of users who have delegated to ssbram
+2018-09-11 22:12:40 - There is no user who has delegated to ssbram
+2018-09-11 22:12:42 - Getting Active billCycle...
+2018-09-11 22:12:42 - Getting group approvals for billCycle 092018
+2018-09-11 22:12:52 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:12:52 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 22:12:52 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 22:12:52 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 22:12:52 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 22:12:52 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:12:52 - ResonsetDataEnvelope ready...
+2018-09-11 22:12:54 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 22:12:54 - Checking lock by user billCycle 092018
+2018-09-11 22:12:54 - No tower locked by userID ssbram
+2018-09-11 22:13:01 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:13:01 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:13:01 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:13:01 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:13:01 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:13:01 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:13:01 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:13:01 - ResonsetDataEnvelope ready...
+2018-09-11 22:13:04 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:13:04 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:13:04 - Checking lock by user billCycle 092018
+2018-09-11 22:13:04 - No tower locked by userID ssbram
+2018-09-11 22:13:04 - Lock established by userID ssbram for towerID 2 for billCycle 092018
+2018-09-11 22:13:27 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:13:27 - Getting SLA employee list for billCycle 092018 and towerId 3
+2018-09-11 22:13:27 - Getting SLA WR list for billCycle 092018 and towerId 3
+2018-09-11 22:13:27 - Getting SLA weekend list for billCycle 092018 and towerId 3
+2018-09-11 22:13:27 - Checking lock for billCycle 092018 towerID 3
+2018-09-11 22:13:27 - No user found who had locked for billCycle 092018 towerID 3
+2018-09-11 22:13:27 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:13:27 - ResonsetDataEnvelope ready...
+2018-09-11 22:13:30 - Checking lock for billCycle 092018 towerID 3
+2018-09-11 22:13:30 - No user found who had locked for billCycle 092018 towerID 3
+2018-09-11 22:13:30 - Checking lock by user billCycle 092018
+2018-09-11 22:13:53 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:13:53 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:13:53 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:13:53 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:13:53 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:13:53 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:13:53 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:13:53 - ResonsetDataEnvelope ready...
+2018-09-11 22:14:52 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:14:52 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:14:52 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:14:52 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:14:52 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:14:52 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:14:52 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:14:52 - ResonsetDataEnvelope ready...
+2018-09-11 22:18:00 - Datasource properties set for Dev environment...
+2018-09-11 22:18:00 - Email properties set for biller application...
+2018-09-11 22:18:01 - Authetication interceptor linked for biller application...
+2018-09-11 22:18:03 - JDBCTemplate linked with datasource...
+2018-09-11 22:18:04 - Datasource properties set for Dev environment...
+2018-09-11 22:18:04 - Email properties set for biller application...
+2018-09-11 22:18:04 - JDBCTemplate linked with datasource...
+2018-09-11 22:18:04 - Authetication interceptor linked for biller application...
+2018-09-11 22:18:11 - Creating user profile for ssbram
+2018-09-11 22:18:11 - User profile successfully created for  ssbram
+2018-09-11 22:18:11 - User logged in with ID ssbram
+2018-09-11 22:18:12 - Getting list of users whom ssbram can delegate to
+2018-09-11 22:18:12 - Delegate list prepared for ssbram
+2018-09-11 22:18:12 - Getting list of users who have delegated to ssbram
+2018-09-11 22:18:12 - There is no user who has delegated to ssbram
+2018-09-11 22:18:14 - Getting Active billCycle...
+2018-09-11 22:18:14 - Getting group approvals for billCycle 092018
+2018-09-11 22:18:26 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:18:26 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:18:26 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:18:26 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:19:05 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:19:17 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:19:53 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:19:53 - ResonsetDataEnvelope ready...
+2018-09-11 22:21:40 - Creating user profile for ssbram
+2018-09-11 22:21:40 - User profile successfully created for  ssbram
+2018-09-11 22:21:40 - User logged in with ID ssbram
+2018-09-11 22:21:40 - Getting list of users whom ssbram can delegate to
+2018-09-11 22:21:40 - Delegate list prepared for ssbram
+2018-09-11 22:21:40 - Getting list of users who have delegated to ssbram
+2018-09-11 22:21:40 - There is no user who has delegated to ssbram
+2018-09-11 22:21:43 - Getting Active billCycle...
+2018-09-11 22:21:43 - Getting group approvals for billCycle 092018
+2018-09-11 22:22:01 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:22:01 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:22:01 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:22:01 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:22:06 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:22:06 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:22:14 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:22:14 - ResonsetDataEnvelope ready...
+2018-09-11 22:22:40 - Datasource properties set for Dev environment...
+2018-09-11 22:22:40 - Email properties set for biller application...
+2018-09-11 22:22:41 - Authetication interceptor linked for biller application...
+2018-09-11 22:22:43 - JDBCTemplate linked with datasource...
+2018-09-11 22:22:44 - Datasource properties set for Dev environment...
+2018-09-11 22:22:44 - Email properties set for biller application...
+2018-09-11 22:22:44 - JDBCTemplate linked with datasource...
+2018-09-11 22:22:44 - Authetication interceptor linked for biller application...
+2018-09-11 22:22:52 - Creating user profile for ssbram
+2018-09-11 22:22:52 - User profile successfully created for  ssbram
+2018-09-11 22:22:52 - User logged in with ID ssbram
+2018-09-11 22:22:52 - Getting list of users whom ssbram can delegate to
+2018-09-11 22:22:52 - Delegate list prepared for ssbram
+2018-09-11 22:22:52 - Getting list of users who have delegated to ssbram
+2018-09-11 22:22:52 - There is no user who has delegated to ssbram
+2018-09-11 22:22:56 - Getting Active billCycle...
+2018-09-11 22:22:57 - Getting group approvals for billCycle 092018
+2018-09-11 22:23:08 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:23:08 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:23:08 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:23:08 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:23:08 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:23:08 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:23:08 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:23:08 - ResonsetDataEnvelope ready...
+2018-09-11 22:23:12 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:23:12 - No user found who had locked for billCycle 092018 towerID 2
+2018-09-11 22:23:12 - Checking lock by user billCycle 092018
+2018-09-11 22:23:12 - No tower locked by userID ssbram
+2018-09-11 22:23:12 - Lock established by userID ssbram for towerID 2 for billCycle 092018
+2018-09-11 22:23:29 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:23:29 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 22:23:29 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 22:23:29 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 22:23:29 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 22:23:29 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 22:23:29 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:23:29 - ResonsetDataEnvelope ready...
+2018-09-11 22:23:32 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 22:23:32 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 22:23:32 - Checking lock by user billCycle 092018
+2018-09-11 22:23:37 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:23:37 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 22:23:37 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 22:23:37 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 22:23:37 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 22:23:37 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 22:23:37 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:23:37 - ResonsetDataEnvelope ready...
+2018-09-11 22:23:43 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 22:23:43 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 22:23:43 - Checking lock by user billCycle 092018
+2018-09-11 22:23:55 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:23:55 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:23:55 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:23:55 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:23:55 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:23:55 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:23:55 - ResonsetDataEnvelope ready...
+2018-09-11 22:23:58 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:23:58 - Lock unset by userID ssbram for towerID 2 for billCycle 092018
+2018-09-11 22:24:11 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:24:11 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 22:24:11 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 22:24:11 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 22:24:11 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 22:24:11 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 22:24:11 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:24:11 - ResonsetDataEnvelope ready...
+2018-09-11 22:24:14 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 22:24:14 - No user found who had locked for billCycle 092018 towerID 1
+2018-09-11 22:24:14 - Checking lock by user billCycle 092018
+2018-09-11 22:24:14 - No tower locked by userID ssbram
+2018-09-11 22:24:14 - Lock established by userID ssbram for towerID 1 for billCycle 092018
+2018-09-11 22:24:38 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:24:38 - Getting SLA employee list for billCycle 092018 and towerId 1
+2018-09-11 22:24:38 - Getting SLA WR list for billCycle 092018 and towerId 1
+2018-09-11 22:24:38 - Getting SLA weekend list for billCycle 092018 and towerId 1
+2018-09-11 22:24:38 - Checking lock for billCycle 092018 towerID 1
+2018-09-11 22:24:38 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:24:38 - ResonsetDataEnvelope ready...
+2018-09-11 22:30:20 - Creating user profile for ssbram
+2018-09-11 22:30:20 - User profile successfully created for  ssbram
+2018-09-11 22:30:20 - User logged in with ID ssbram
+2018-09-11 22:30:20 - Getting list of users whom ssbram can delegate to
+2018-09-11 22:30:20 - Delegate list prepared for ssbram
+2018-09-11 22:30:20 - Getting list of users who have delegated to ssbram
+2018-09-11 22:30:20 - There is no user who has delegated to ssbram
+2018-09-11 22:30:23 - Getting Active billCycle...
+2018-09-11 22:30:23 - Getting group approvals for billCycle 092018
+2018-09-11 22:30:36 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:30:36 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:30:36 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:30:36 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:30:36 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:30:36 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:30:36 - ResonsetDataEnvelope ready...
+2018-09-11 22:51:48 - Creating user profile for ssbram
+2018-09-11 22:51:48 - User profile successfully created for  ssbram
+2018-09-11 22:51:48 - User logged in with ID ssbram
+2018-09-11 22:51:48 - Getting list of users whom ssbram can delegate to
+2018-09-11 22:51:48 - Delegate list prepared for ssbram
+2018-09-11 22:51:48 - Getting list of users who have delegated to ssbram
+2018-09-11 22:51:48 - There is no user who has delegated to ssbram
+2018-09-11 22:51:51 - Getting Active billCycle...
+2018-09-11 22:51:51 - Getting group approvals for billCycle 092018
+2018-09-11 22:52:02 - Getting data for ResonsetDataEnvelope...
+2018-09-11 22:52:02 - Getting SLA employee list for billCycle 092018 and towerId 2
+2018-09-11 22:52:02 - Getting SLA WR list for billCycle 092018 and towerId 2
+2018-09-11 22:52:02 - Getting SLA weekend list for billCycle 092018 and towerId 2
+2018-09-11 22:52:02 - Checking lock for billCycle 092018 towerID 2
+2018-09-11 22:52:02 - Checking prior approval by userID ssbram for billCyle 092018
+2018-09-11 22:52:02 - ResonsetDataEnvelope ready...
+2018-09-11 22:59:05 - Creating user profile for vveera
+2018-09-11 22:59:05 - User profile successfully created for  vveera
+2018-09-11 22:59:05 - User logged in with ID vveera
+2018-09-11 22:59:07 - Getting Active billCycle...
+2018-09-11 22:59:07 - No Active billCycle found...
+2018-09-11 23:02:05 - File uploading process started for:  billCycle 012017 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:02:05 - Uploading Files...
+2018-09-11 23:02:05 - Files uploaded successfully..
+2018-09-11 23:02:05 - Files uploaded successfully..
+2018-09-11 23:02:05 - Files uploaded successfully..
+2018-09-11 23:02:05 - Files uploaded successfully..
+2018-09-11 23:02:05 - Files uploaded successfully..
+2018-09-11 23:02:05 - Files uploaded successfully..
+2018-09-11 23:02:05 - No Entry found in Group Approval Table for billCycle 012017
+2018-09-11 23:02:05 - Creating ILC Datasheet..
+2018-09-11 23:03:33 - ILC Data sheet created successfully
+2018-09-11 23:03:33 - Extracting SLA Data...
+2018-09-11 23:03:36 - Ignoring NullPinterException in extract SLA Data
+2018-09-11 23:03:36 - Creating SLA Data for billCycle 012017
+2018-09-11 23:03:36 - SLA Batch Update Size is 1014
+2018-09-11 23:03:38 - SLA Batch update: records updated = 1014
+2018-09-11 23:03:38 - Extracting ITWR Data..
+2018-09-11 23:03:40 - Ignoring NullPointerException in Create ITWR Data
+2018-09-11 23:03:40 - Deleting ITWR Data..
+2018-09-11 23:03:40 - ITWR Data couldn't be deleted, may be table is already empty
+2018-09-11 23:03:40 - ITWR Batch Size is 0
+2018-09-11 23:03:40 - ITWR Batch update: records updated = 0
+2018-09-11 23:03:40 - Extracting WIASM Data...
+2018-09-11 23:03:40 - WIASM Data extracted ...
+2018-09-11 23:03:40 - Deleting WIASM Data..
+2018-09-11 23:03:40 - WIASM data couldn't be deleted, may be table is already empty	
+2018-09-11 23:03:40 - WIASM Batch Update Size is 360
+2018-09-11 23:03:41 - WIASM Batch update: records updated = 360
+2018-09-11 23:03:41 - No Entry found in Group Approval Table for billCycle 012017
+2018-09-11 23:03:41 - Entry in Group Approval Table for billCycle 012017
+2018-09-11 23:03:41 - No Email ID found for selected role 5
+2018-09-11 23:03:41 - No Email ID found for selected role 6
+2018-09-11 23:03:41 - No Email ID found for selected role 7
+2018-09-11 23:06:22 - Datasource properties set for Dev environment...
+2018-09-11 23:06:23 - Email properties set for biller application...
+2018-09-11 23:06:24 - Authetication interceptor linked for biller application...
+2018-09-11 23:06:25 - JDBCTemplate linked with datasource...
+2018-09-11 23:06:26 - Datasource properties set for Dev environment...
+2018-09-11 23:06:26 - Email properties set for biller application...
+2018-09-11 23:06:26 - JDBCTemplate linked with datasource...
+2018-09-11 23:06:26 - Authetication interceptor linked for biller application...
+2018-09-11 23:06:51 - Creating user profile for vveera
+2018-09-11 23:06:51 - User profile successfully created for  vveera
+2018-09-11 23:06:51 - User logged in with ID vveera
+2018-09-11 23:06:53 - Getting Active billCycle...
+2018-09-11 23:06:53 - No Active billCycle found...
+2018-09-11 23:07:15 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:07:15 - Uploading Files...
+2018-09-11 23:07:15 - Files uploaded successfully..
+2018-09-11 23:07:15 - Files uploaded successfully..
+2018-09-11 23:07:15 - Files uploaded successfully..
+2018-09-11 23:07:15 - Files uploaded successfully..
+2018-09-11 23:07:15 - Files uploaded successfully..
+2018-09-11 23:07:15 - Files uploaded successfully..
+2018-09-11 23:07:15 - No Entry found in Group Approval Table for billCycle 092018
+2018-09-11 23:07:15 - Creating ILC Datasheet..
+2018-09-11 23:08:40 - ILC Data sheet created successfully
+2018-09-11 23:08:40 - Extracting SLA Data...
+2018-09-11 23:08:43 - Ignoring NullPinterException in extract SLA Data
+2018-09-11 23:08:43 - Creating SLA Data for billCycle 092018
+2018-09-11 23:08:43 - SLA Batch Update Size is 1014
+2018-09-11 23:08:46 - SLA Batch update: records updated = 1014
+2018-09-11 23:09:49 - Extracting ITWR Data..
+2018-09-11 23:12:52 - Datasource properties set for Dev environment...
+2018-09-11 23:12:52 - Email properties set for biller application...
+2018-09-11 23:12:53 - Authetication interceptor linked for biller application...
+2018-09-11 23:12:54 - JDBCTemplate linked with datasource...
+2018-09-11 23:12:55 - Datasource properties set for Dev environment...
+2018-09-11 23:12:55 - Email properties set for biller application...
+2018-09-11 23:12:55 - JDBCTemplate linked with datasource...
+2018-09-11 23:12:55 - Authetication interceptor linked for biller application...
+2018-09-11 23:13:14 - Creating user profile for vveera
+2018-09-11 23:13:14 - User profile successfully created for  vveera
+2018-09-11 23:13:14 - User logged in with ID vveera
+2018-09-11 23:13:17 - Getting Active billCycle...
+2018-09-11 23:13:17 - No Active billCycle found...
+2018-09-11 23:13:36 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:13:36 - Uploading Files...
+2018-09-11 23:13:36 - Files uploaded successfully..
+2018-09-11 23:13:36 - Files uploaded successfully..
+2018-09-11 23:13:36 - Files uploaded successfully..
+2018-09-11 23:13:36 - Files uploaded successfully..
+2018-09-11 23:13:36 - Files uploaded successfully..
+2018-09-11 23:13:36 - Files uploaded successfully..
+2018-09-11 23:13:36 - No Entry found in Group Approval Table for billCycle 092018
+2018-09-11 23:13:36 - Creating ILC Datasheet..
+2018-09-11 23:15:04 - ILC Data sheet created successfully
+2018-09-11 23:15:04 - Extracting SLA Data...
+2018-09-11 23:15:08 - Ignoring NullPinterException in extract SLA Data
+2018-09-11 23:15:08 - Creating SLA Data for billCycle 092018
+2018-09-11 23:15:08 - SLA Batch Update Size is 1014
+2018-09-11 23:15:10 - SLA Batch update: records updated = 1014
+2018-09-11 23:15:15 - Extracting ITWR Data..
+2018-09-11 23:16:25 - Ignoring NullPointerException in Create ITWR Data
+2018-09-11 23:16:25 - Deleting ITWR Data..
+2018-09-11 23:16:25 - ITWR Data couldn't be deleted, may be table is already empty
+2018-09-11 23:16:25 - ITWR Batch Size is 0
+2018-09-11 23:16:25 - ITWR Batch update: records updated = 0
+2018-09-11 23:16:25 - Extracting WIASM Data...
+2018-09-11 23:18:04 - Datasource properties set for Dev environment...
+2018-09-11 23:18:04 - Email properties set for biller application...
+2018-09-11 23:18:04 - Authetication interceptor linked for biller application...
+2018-09-11 23:18:06 - JDBCTemplate linked with datasource...
+2018-09-11 23:18:07 - Datasource properties set for Dev environment...
+2018-09-11 23:18:07 - Email properties set for biller application...
+2018-09-11 23:18:07 - JDBCTemplate linked with datasource...
+2018-09-11 23:18:07 - Authetication interceptor linked for biller application...
+2018-09-11 23:18:18 - Creating user profile for vveera
+2018-09-11 23:18:18 - User profile successfully created for  vveera
+2018-09-11 23:18:18 - User logged in with ID vveera
+2018-09-11 23:18:20 - Getting Active billCycle...
+2018-09-11 23:18:20 - No Active billCycle found...
+2018-09-11 23:18:33 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:18:33 - Uploading Files...
+2018-09-11 23:18:33 - Files uploaded successfully..
+2018-09-11 23:18:33 - Files uploaded successfully..
+2018-09-11 23:18:33 - Files uploaded successfully..
+2018-09-11 23:18:33 - Files uploaded successfully..
+2018-09-11 23:18:33 - Files uploaded successfully..
+2018-09-11 23:18:33 - Files uploaded successfully..
+2018-09-11 23:18:33 - No Entry found in Group Approval Table for billCycle 092018
+2018-09-11 23:18:33 - Creating ILC Datasheet..
+2018-09-11 23:20:14 - ILC Data sheet created successfully
+2018-09-11 23:20:14 - Extracting SLA Data...
+2018-09-11 23:20:17 - Ignoring NullPinterException in extract SLA Data
+2018-09-11 23:20:17 - Creating SLA Data for billCycle 092018
+2018-09-11 23:20:17 - SLA Batch Update Size is 1014
+2018-09-11 23:20:20 - SLA Batch update: records updated = 1014
+2018-09-11 23:20:49 - Extracting ITWR Data..
+2018-09-11 23:20:58 - Ignoring NullPointerException in Create ITWR Data
+2018-09-11 23:20:58 - Deleting ITWR Data..
+2018-09-11 23:20:58 - ITWR Data couldn't be deleted, may be table is already empty
+2018-09-11 23:20:58 - ITWR Batch Size is 0
+2018-09-11 23:20:58 - ITWR Batch update: records updated = 0
+2018-09-11 23:20:58 - Extracting WIASM Data...
+2018-09-11 23:20:58 - WIASM Data extracted ...
+2018-09-11 23:20:58 - Deleting WIASM Data..
+2018-09-11 23:20:58 - WIASM data couldn't be deleted, may be table is already empty	
+2018-09-11 23:20:58 - WIASM Batch Update Size is 360
+2018-09-11 23:20:59 - WIASM Batch update: records updated = 360
+2018-09-11 23:20:59 - No Entry found in Group Approval Table for billCycle 092018
+2018-09-11 23:20:59 - Entry in Group Approval Table for billCycle 092018
+2018-09-11 23:21:47 - Datasource properties set for Dev environment...
+2018-09-11 23:21:47 - Email properties set for biller application...
+2018-09-11 23:21:48 - Authetication interceptor linked for biller application...
+2018-09-11 23:21:49 - JDBCTemplate linked with datasource...
+2018-09-11 23:21:50 - Datasource properties set for Dev environment...
+2018-09-11 23:21:50 - Email properties set for biller application...
+2018-09-11 23:21:50 - JDBCTemplate linked with datasource...
+2018-09-11 23:21:50 - Authetication interceptor linked for biller application...
+2018-09-11 23:22:14 - Creating user profile for vveera
+2018-09-11 23:22:14 - User profile successfully created for  vveera
+2018-09-11 23:22:14 - User logged in with ID vveera
+2018-09-11 23:22:17 - Getting Active billCycle...
+2018-09-11 23:22:17 - Getting group approvals for billCycle 092018
+2018-09-11 23:22:30 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:22:30 - Uploading Files...
+2018-09-11 23:22:30 - Files uploaded successfully..
+2018-09-11 23:22:30 - Files uploaded successfully..
+2018-09-11 23:22:30 - Files uploaded successfully..
+2018-09-11 23:22:30 - Files uploaded successfully..
+2018-09-11 23:22:30 - Files uploaded successfully..
+2018-09-11 23:22:30 - Files uploaded successfully..
+2018-09-11 23:22:30 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-11 23:22:33 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:22:33 - Uploading Files...
+2018-09-11 23:22:33 - Files uploaded successfully..
+2018-09-11 23:22:33 - Files uploaded successfully..
+2018-09-11 23:22:33 - Files uploaded successfully..
+2018-09-11 23:22:33 - Files uploaded successfully..
+2018-09-11 23:22:33 - Files uploaded successfully..
+2018-09-11 23:22:33 - Files uploaded successfully..
+2018-09-11 23:22:33 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-11 23:22:33 - Creating ILC Datasheet..
+2018-09-11 23:24:08 - ILC Data sheet created successfully
+2018-09-11 23:24:08 - Extracting SLA Data...
+2018-09-11 23:24:11 - Ignoring NullPinterException in extract SLA Data
+2018-09-11 23:24:11 - Deleting SLA for billCycle 092018
+2018-09-11 23:24:11 - Creating SLA Data for billCycle 092018
+2018-09-11 23:24:11 - SLA Batch Update Size is 1014
+2018-09-11 23:24:14 - SLA Batch update: records updated = 1014
+2018-09-11 23:24:20 - Extracting ITWR Data..
+2018-09-11 23:24:21 - Ignoring NullPointerException in Create ITWR Data
+2018-09-11 23:24:21 - Deleting ITWR Data..
+2018-09-11 23:24:21 - ITWR Data couldn't be deleted, may be table is already empty
+2018-09-11 23:24:21 - ITWR Batch Size is 0
+2018-09-11 23:24:21 - ITWR Batch update: records updated = 0
+2018-09-11 23:24:21 - Extracting WIASM Data...
+2018-09-11 23:24:21 - WIASM Data extracted ...
+2018-09-11 23:24:21 - Deleting WIASM Data..
+2018-09-11 23:24:21 - WIASM data couldn't be deleted, may be table is already empty	
+2018-09-11 23:24:21 - WIASM Batch Update Size is 360
+2018-09-11 23:24:22 - WIASM Batch update: records updated = 360
+2018-09-11 23:24:22 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-11 23:24:22 - Group Approval Table has been reset for billCycle 092018
+2018-09-11 23:25:34 - Datasource properties set for Dev environment...
+2018-09-11 23:25:35 - Email properties set for biller application...
+2018-09-11 23:25:36 - Authetication interceptor linked for biller application...
+2018-09-11 23:25:39 - JDBCTemplate linked with datasource...
+2018-09-11 23:25:41 - Datasource properties set for Dev environment...
+2018-09-11 23:25:41 - Email properties set for biller application...
+2018-09-11 23:25:41 - JDBCTemplate linked with datasource...
+2018-09-11 23:25:41 - Authetication interceptor linked for biller application...
+2018-09-11 23:25:47 - Creating user profile for vveera
+2018-09-11 23:25:47 - User profile successfully created for  vveera
+2018-09-11 23:25:47 - User logged in with ID vveera
+2018-09-11 23:25:49 - Getting Active billCycle...
+2018-09-11 23:25:49 - Getting group approvals for billCycle 092018
+2018-09-11 23:26:03 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:26:03 - Uploading Files...
+2018-09-11 23:26:03 - Files uploaded successfully..
+2018-09-11 23:26:03 - Files uploaded successfully..
+2018-09-11 23:26:03 - Files uploaded successfully..
+2018-09-11 23:26:03 - Files uploaded successfully..
+2018-09-11 23:26:03 - Files uploaded successfully..
+2018-09-11 23:26:03 - Files uploaded successfully..
+2018-09-11 23:26:03 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-11 23:26:04 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:26:04 - Uploading Files...
+2018-09-11 23:26:04 - Files uploaded successfully..
+2018-09-11 23:26:04 - Files uploaded successfully..
+2018-09-11 23:26:04 - Files uploaded successfully..
+2018-09-11 23:26:04 - Files uploaded successfully..
+2018-09-11 23:26:04 - Files uploaded successfully..
+2018-09-11 23:26:04 - Files uploaded successfully..
+2018-09-11 23:26:04 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-11 23:26:04 - Creating ILC Datasheet..
+2018-09-11 23:27:48 - ILC Data sheet created successfully
+2018-09-11 23:27:48 - Extracting SLA Data...
+2018-09-11 23:27:52 - Ignoring NullPinterException in extract SLA Data
+2018-09-11 23:27:52 - Deleting SLA for billCycle 092018
+2018-09-11 23:27:52 - Creating SLA Data for billCycle 092018
+2018-09-11 23:27:52 - SLA Batch Update Size is 1014
+2018-09-11 23:27:54 - SLA Batch update: records updated = 1014
+2018-09-11 23:27:59 - Extracting ITWR Data..
+2018-09-11 23:28:41 - Ignoring NullPointerException in Create ITWR Data
+2018-09-11 23:28:41 - Deleting ITWR Data..
+2018-09-11 23:28:42 - ITWR Data couldn't be deleted, may be table is already empty
+2018-09-11 23:28:42 - ITWR Batch Size is 0
+2018-09-11 23:28:42 - ITWR Batch update: records updated = 0
+2018-09-11 23:28:42 - Extracting WIASM Data...
+2018-09-11 23:28:42 - WIASM Data extracted ...
+2018-09-11 23:28:42 - Deleting WIASM Data..
+2018-09-11 23:28:42 - WIASM data couldn't be deleted, may be table is already empty	
+2018-09-11 23:28:42 - WIASM Batch Update Size is 360
+2018-09-11 23:28:42 - WIASM Batch update: records updated = 360
+2018-09-11 23:28:42 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-11 23:28:42 - Group Approval Table has been reset for billCycle 092018
+2018-09-11 23:31:03 - Datasource properties set for Dev environment...
+2018-09-11 23:31:03 - Email properties set for biller application...
+2018-09-11 23:31:04 - Authetication interceptor linked for biller application...
+2018-09-11 23:31:06 - JDBCTemplate linked with datasource...
+2018-09-11 23:31:07 - Datasource properties set for Dev environment...
+2018-09-11 23:31:07 - Email properties set for biller application...
+2018-09-11 23:31:07 - JDBCTemplate linked with datasource...
+2018-09-11 23:31:07 - Authetication interceptor linked for biller application...
+2018-09-11 23:34:50 - Datasource properties set for Dev environment...
+2018-09-11 23:34:51 - Email properties set for biller application...
+2018-09-11 23:34:51 - Authetication interceptor linked for biller application...
+2018-09-11 23:34:53 - JDBCTemplate linked with datasource...
+2018-09-11 23:34:54 - Datasource properties set for Dev environment...
+2018-09-11 23:34:54 - Email properties set for biller application...
+2018-09-11 23:34:54 - JDBCTemplate linked with datasource...
+2018-09-11 23:34:54 - Authetication interceptor linked for biller application...
+2018-09-11 23:35:06 - Creating user profile for vveera
+2018-09-11 23:35:06 - User profile successfully created for  vveera
+2018-09-11 23:35:06 - User logged in with ID vveera
+2018-09-11 23:35:09 - Getting Active billCycle...
+2018-09-11 23:35:09 - Getting group approvals for billCycle 092018
+2018-09-11 23:35:24 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:35:24 - Uploading Files...
+2018-09-11 23:35:24 - Files uploaded successfully..
+2018-09-11 23:35:24 - Files uploaded successfully..
+2018-09-11 23:35:24 - Files uploaded successfully..
+2018-09-11 23:35:24 - Files uploaded successfully..
+2018-09-11 23:35:24 - Files uploaded successfully..
+2018-09-11 23:35:24 - Files uploaded successfully..
+2018-09-11 23:35:24 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-11 23:35:25 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:35:25 - Uploading Files...
+2018-09-11 23:35:25 - Files uploaded successfully..
+2018-09-11 23:35:25 - Files uploaded successfully..
+2018-09-11 23:35:25 - Files uploaded successfully..
+2018-09-11 23:35:25 - Files uploaded successfully..
+2018-09-11 23:35:25 - Files uploaded successfully..
+2018-09-11 23:35:25 - Files uploaded successfully..
+2018-09-11 23:35:25 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-11 23:35:25 - Creating ILC Datasheet..
+2018-09-11 23:36:55 - ILC Data sheet created successfully
+2018-09-11 23:36:55 - Extracting SLA Data...
+2018-09-11 23:36:59 - Ignoring NullPinterException in extract SLA Data
+2018-09-11 23:36:59 - Deleting SLA for billCycle 092018
+2018-09-11 23:36:59 - Creating SLA Data for billCycle 092018
+2018-09-11 23:36:59 - SLA Batch Update Size is 1014
+2018-09-11 23:37:01 - SLA Batch update: records updated = 1014
+2018-09-11 23:37:10 - Extracting ITWR Data..
+2018-09-11 23:44:16 - Datasource properties set for Dev environment...
+2018-09-11 23:44:17 - Email properties set for biller application...
+2018-09-11 23:44:17 - Authetication interceptor linked for biller application...
+2018-09-11 23:44:20 - JDBCTemplate linked with datasource...
+2018-09-11 23:44:21 - Datasource properties set for Dev environment...
+2018-09-11 23:44:21 - Email properties set for biller application...
+2018-09-11 23:44:21 - JDBCTemplate linked with datasource...
+2018-09-11 23:44:21 - Authetication interceptor linked for biller application...
+2018-09-11 23:44:28 - Creating user profile for vveera
+2018-09-11 23:44:28 - User profile successfully created for  vveera
+2018-09-11 23:44:28 - User logged in with ID vveera
+2018-09-11 23:44:30 - Getting Active billCycle...
+2018-09-11 23:44:30 - Getting group approvals for billCycle 092018
+2018-09-11 23:44:43 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:44:43 - Uploading Files...
+2018-09-11 23:44:43 - Files uploaded successfully..
+2018-09-11 23:44:43 - Files uploaded successfully..
+2018-09-11 23:44:43 - Exception occured while uploading files
+java.io.IOException: Destination file [C:\billerData\Uploads\ITWR for ILC.xlsx] already exists and could not be deleted
+	at org.springframework.web.multipart.commons.CommonsMultipartFile.transferTo(CommonsMultipartFile.java:160) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at com.app.biller.services.FileUploadServiceImpl.uploadFiles(FileUploadServiceImpl.java:86) ~[classes/:na]
+	at com.app.biller.controller.FileController.uploadFiles(FileController.java:66) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_181]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:475) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [catalina.jar:9.0.0.M26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:498) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:796) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1374) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M26]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M26]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_181]
+2018-09-11 23:44:43 - Exception occured while executing uploadFiles method
+java.lang.Exception: java.io.IOException: Destination file [C:\billerData\Uploads\ITWR for ILC.xlsx] already exists and could not be deleted
+	at com.app.biller.services.FileUploadServiceImpl.uploadFiles(FileUploadServiceImpl.java:91) ~[classes/:na]
+	at com.app.biller.controller.FileController.uploadFiles(FileController.java:66) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_181]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:475) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [catalina.jar:9.0.0.M26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:498) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:796) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1374) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M26]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M26]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_181]
+Caused by: java.io.IOException: Destination file [C:\billerData\Uploads\ITWR for ILC.xlsx] already exists and could not be deleted
+	at org.springframework.web.multipart.commons.CommonsMultipartFile.transferTo(CommonsMultipartFile.java:160) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at com.app.biller.services.FileUploadServiceImpl.uploadFiles(FileUploadServiceImpl.java:86) ~[classes/:na]
+	... 40 common frames omitted
+2018-09-11 23:44:43 - Exception handler executed
+2018-09-11 23:44:55 - Creating user profile for vveera
+2018-09-11 23:44:55 - User profile successfully created for  vveera
+2018-09-11 23:44:55 - User logged in with ID vveera
+2018-09-11 23:44:57 - Getting Active billCycle...
+2018-09-11 23:44:57 - Getting group approvals for billCycle 092018
+2018-09-11 23:45:10 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:45:10 - Uploading Files...
+2018-09-11 23:45:10 - Files uploaded successfully..
+2018-09-11 23:45:10 - Files uploaded successfully..
+2018-09-11 23:45:10 - Files uploaded successfully..
+2018-09-11 23:45:10 - Files uploaded successfully..
+2018-09-11 23:45:10 - Files uploaded successfully..
+2018-09-11 23:45:10 - Files uploaded successfully..
+2018-09-11 23:45:11 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-11 23:45:12 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:45:12 - Uploading Files...
+2018-09-11 23:45:12 - Files uploaded successfully..
+2018-09-11 23:45:12 - Files uploaded successfully..
+2018-09-11 23:45:12 - Files uploaded successfully..
+2018-09-11 23:45:12 - Files uploaded successfully..
+2018-09-11 23:45:12 - Files uploaded successfully..
+2018-09-11 23:45:12 - Files uploaded successfully..
+2018-09-11 23:45:12 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-11 23:45:12 - Creating ILC Datasheet..
+2018-09-11 23:46:39 - ILC Data sheet created successfully
+2018-09-11 23:46:39 - Extracting SLA Data...
+2018-09-11 23:46:41 - Ignoring NullPinterException in extract SLA Data
+2018-09-11 23:46:41 - Deleting SLA for billCycle 092018
+2018-09-11 23:46:41 - Creating SLA Data for billCycle 092018
+2018-09-11 23:46:41 - SLA Batch Update Size is 1014
+2018-09-11 23:46:43 - SLA Batch update: records updated = 1014
+2018-09-11 23:46:50 - Extracting ITWR Data..
+2018-09-11 23:48:45 - Ignoring NullPointerException in Create ITWR Data
+java.lang.NullPointerException: null
+	at com.app.biller.services.FileUploadServiceImpl.extractITWRData(FileUploadServiceImpl.java:481) [classes/:na]
+	at com.app.biller.services.FileUploadServiceImpl.uploadSLAData(FileUploadServiceImpl.java:125) [classes/:na]
+	at com.app.biller.controller.FileController.uploadFiles(FileController.java:73) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_181]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_181]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_181]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_181]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) [spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:475) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:651) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [catalina.jar:9.0.0.M26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [catalina.jar:9.0.0.M26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:498) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:796) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1374) [tomcat-coyote.jar:9.0.0.M26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.0.M26]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.0.M26]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_181]
+2018-09-11 23:51:29 - Datasource properties set for Dev environment...
+2018-09-11 23:51:29 - Email properties set for biller application...
+2018-09-11 23:51:30 - Authetication interceptor linked for biller application...
+2018-09-11 23:51:31 - JDBCTemplate linked with datasource...
+2018-09-11 23:51:32 - Datasource properties set for Dev environment...
+2018-09-11 23:51:32 - Email properties set for biller application...
+2018-09-11 23:51:32 - JDBCTemplate linked with datasource...
+2018-09-11 23:51:32 - Authetication interceptor linked for biller application...
+2018-09-11 23:51:52 - Datasource properties set for Dev environment...
+2018-09-11 23:51:52 - Email properties set for biller application...
+2018-09-11 23:51:53 - Authetication interceptor linked for biller application...
+2018-09-11 23:51:55 - JDBCTemplate linked with datasource...
+2018-09-11 23:51:56 - Datasource properties set for Dev environment...
+2018-09-11 23:51:56 - Email properties set for biller application...
+2018-09-11 23:51:56 - JDBCTemplate linked with datasource...
+2018-09-11 23:51:56 - Authetication interceptor linked for biller application...
+2018-09-11 23:52:10 - Creating user profile for vveera
+2018-09-11 23:52:10 - User profile successfully created for  vveera
+2018-09-11 23:52:10 - User logged in with ID vveera
+2018-09-11 23:52:13 - Getting Active billCycle...
+2018-09-11 23:52:13 - Getting group approvals for billCycle 092018
+2018-09-11 23:52:26 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:52:26 - Uploading Files...
+2018-09-11 23:52:26 - Files uploaded successfully..
+2018-09-11 23:52:26 - Files uploaded successfully..
+2018-09-11 23:52:26 - Files uploaded successfully..
+2018-09-11 23:52:26 - Files uploaded successfully..
+2018-09-11 23:52:26 - Files uploaded successfully..
+2018-09-11 23:52:26 - Files uploaded successfully..
+2018-09-11 23:52:26 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-11 23:52:28 - File uploading process started for:  billCycle 092018 datatype 1 reportWeekend 07-Sep-2018
+2018-09-11 23:52:28 - Uploading Files...
+2018-09-11 23:52:28 - Files uploaded successfully..
+2018-09-11 23:52:28 - Files uploaded successfully..
+2018-09-11 23:52:28 - Files uploaded successfully..
+2018-09-11 23:52:28 - Files uploaded successfully..
+2018-09-11 23:52:28 - Files uploaded successfully..
+2018-09-11 23:52:28 - Files uploaded successfully..
+2018-09-11 23:52:28 - Entry already exists in Group Approval Table for billCycle 092018
+2018-09-11 23:52:28 - Creating ILC Datasheet..
+2018-09-11 23:53:51 - ILC Data sheet created successfully
+2018-09-11 23:53:51 - Extracting SLA Data...
+2018-09-11 23:53:53 - Ignoring NullPinterException in extract SLA Data
+2018-09-11 23:53:53 - Deleting SLA for billCycle 092018
+2018-09-11 23:53:53 - Creating SLA Data for billCycle 092018
+2018-09-11 23:53:53 - SLA Batch Update Size is 1014
+2018-09-11 23:53:56 - SLA Batch update: records updated = 1014
+2018-09-11 23:54:00 - Extracting ITWR Data..
+2018-09-11 23:58:27 - Datasource properties set for Dev environment...
+2018-09-11 23:58:27 - Email properties set for biller application...
+2018-09-11 23:58:28 - Authetication interceptor linked for biller application...
+2018-09-11 23:58:29 - JDBCTemplate linked with datasource...
+2018-09-11 23:58:31 - Datasource properties set for Dev environment...
+2018-09-11 23:58:31 - Email properties set for biller application...
+2018-09-11 23:58:31 - JDBCTemplate linked with datasource...
+2018-09-11 23:58:31 - Authetication interceptor linked for biller application...
